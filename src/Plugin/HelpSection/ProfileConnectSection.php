@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\soe_profile\Plugin\HelpSection;
+namespace Drupal\engineering_profile\Plugin\HelpSection;
 
 use Drupal\help\Plugin\HelpSection\HelpSectionPluginBase;
 

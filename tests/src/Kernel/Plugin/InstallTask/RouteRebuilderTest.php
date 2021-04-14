@@ -1,15 +1,15 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\engineering_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\soe_profile\Plugin\InstallTask\RouteRebuilder;
+use Drupal\engineering_profile\Plugin\InstallTask\RouteRebuilder;
 
 /**
  * Class RouteRebuilderTest.
  *
- * @coversDefaultClass \Drupal\soe_profile\Plugin\InstallTask\RouteRebuilder
+ * @coversDefaultClass \Drupal\engineering_profile\Plugin\InstallTask\RouteRebuilder
  */
 class RouteRebuilderTest extends KernelTestBase {
 

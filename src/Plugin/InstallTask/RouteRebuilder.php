@@ -1,17 +1,17 @@
 <?php
 
-namespace Drupal\soe_profile\Plugin\InstallTask;
+namespace Drupal\engineering_profile\Plugin\InstallTask;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
-use Drupal\soe_profile\InstallTaskBase;
+use Drupal\engineering_profile\InstallTaskBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Rebuilds the routes.
  *
  * @InstallTask(
- *   id="soe_profile_route_rebuilder"
+ *   id="engineering_profile_route_rebuilder"
  * )
  */
 class RouteRebuilder extends InstallTaskBase implements ContainerFactoryPluginInterface {
