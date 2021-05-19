@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\soe_profile;
+namespace Drupal\engineering_profile;
 
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -8,7 +8,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 /**
  * Base class for install task plugins.
  *
- * @package Drupal\soe_profile
+ * @package Drupal\engineering_profile
  */
 abstract class InstallTaskBase extends PluginBase implements InstallTaskInterface {
 

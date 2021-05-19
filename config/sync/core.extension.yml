@@ -182,12 +182,12 @@ module:
   externalauth: 10
   menu_link_weight: 10
   paragraphs: 11
-  soe_profile: 1000
+  engineering_profile: 1000
 theme:
   stable9: 0
   seven: 0
   stanford_basic: 0
   soe_basic: 0
-profile: soe_profile
+profile: engineering_profile
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

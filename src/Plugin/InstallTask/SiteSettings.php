@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\soe_profile\Plugin\InstallTask;
+namespace Drupal\engineering_profile\Plugin\InstallTask;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -9,7 +9,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\State\StateInterface;
 use Drupal\externalauth\AuthmapInterface;
-use Drupal\soe_profile\InstallTaskBase;
+use Drupal\engineering_profile\InstallTaskBase;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * SNOW site settings installation.
  *
  * @InstallTask(
- *   id="soe_profile_site_settings"
+ *   id="engineering_profile_site_settings"
  * )
  */
 class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInterface {
@@ -86,7 +86,7 @@ class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInte
     $this->client = $client;
     $this->authmap = $authmap;
     $this->state = $state;
-    $this->logger = $logger_factory->get('soe_profile');
+    $this->logger = $logger_factory->get('engineering_profile');
   }
 
   /**
@@ -104,7 +104,7 @@ class SiteSettings extends InstallTaskBase implements ContainerFactoryPluginInte
     // @codeCoverageIgnoreStart
     foreach ($node_pages as $page => $uuid) {
       if ($node = $this->getNode($uuid)) {
-        $this->state->set("soe_profile.$page", '/node/' . $node->id());
+        $this->state->set("engineering_profile.$page", '/node/' . $node->id());
       }
     }
 

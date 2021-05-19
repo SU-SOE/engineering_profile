@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\soe_profile\Annotation;
+namespace Drupal\engineering_profile\Annotation;
 
 use Drupal\Component\Annotation\Plugin;
 
