@@ -176,6 +176,7 @@ hidden:
   path: true
   promote: true
   sticky: true
+  su_type_delete: true
   title: true
   uid: true
   url_redirects: true

@@ -156,3 +156,4 @@ hidden:
   su_news_dek: true
   su_news_headline: true
   su_news_publishing_date: true
+  su_type_delete: true
