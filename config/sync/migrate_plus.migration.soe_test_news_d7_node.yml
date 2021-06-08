@@ -1,6 +1,6 @@
 uuid: 0d94b698-17a5-4eb9-8f37-bbfea8a6e879
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: soe_test_news_d7_node
 class: null
@@ -17,7 +17,7 @@ source:
       - http://test-grunt.docksal/export/news
   ids:
     nid:
-      type: string
+      type: interger
   item_selector: /nodes/node
   fields:
     -
@@ -37,14 +37,12 @@ process:
     - plugin: migration_lookup
       migration: soe_test_news_d7_paragraphs
       source: Nid
-    - plugin: extract
       index:
         - '0'
   su_news_components/target_revision_id:
     - plugin: migration_lookup
       migration: soe_test_news_d7_paragraphs
       source: Nid
-    - plugin: extract
       index:
         - 1
 destination:
