@@ -10,52 +10,28 @@ migration_tags: { }
 migration_group: news_items_d7
 label: 'SOE News Paragraphs'
 source:
-  track_changes: true
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
-  urls: 'http://test-grunt.docksal/export/news'
-  constants:
-    status: 1
-    type: stanford_news
-    basic_html: basic_html
-    minimal_html: minimal_html
+  urls:
+    - http://test-grunt.docksal/export/news
+  ids:
+    nid:
+      type: string
   item_selector: /nodes/node
   fields:
     -
       name: nid
       label: NID
-      selector: nid
-    -
-      name: title
-      label: Title
-      selector: title
+      selector: Nid
     -
       name: body
-      label: Body
-      selector: body
-  ids:
-    nid:
-      type: string
+      label: body
+      selector: Body
 process:
-  title: title
-  status: constants/status
-  type: constants/type
-  paragraph:
-    plugin: migration_lookup
-    migration: soe_test_news_d7_node
-    source: nid
-  su_news_components/target_id:
-    plugin: extract
-    source: '@paragraph'
-    index:
-      - 0
-  su_news_components/target_revision_id:
-    plugin: extract
-    source: '@paragraph'
-    index:
-      - 1
+  su_wysiwyg_text/value: body
+  su_wysiwyg_text/format: basic_html
 destination:
-  plugin: 'entity:node'
-  default_bundle: stanford_news
-migration_dependencies: null
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: stanford_wysiwyg
+migration_dependencies: { }

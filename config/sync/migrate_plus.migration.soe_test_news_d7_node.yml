@@ -13,7 +13,8 @@ source:
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
-  urls: 'http://test-grunt.docksal/export/news'
+  urls:
+      - http://test-grunt.docksal/export/news
   ids:
     nid:
       type: string
@@ -22,31 +23,30 @@ source:
     -
       name: nid
       label: NID
-      selector: nid
+      selector: Nid
     -
       name: title
       label: Title
-      selector: title
+      selector: Title
     -
       name: body
       label: Body
-      selector: body
+      selector: Body
 process:
-  title: title
-  paragraph:
-    plugin: migration_lookup
-    migration: soe_test_news_d7_paragraphs
-    source: nid
   su_news_components/target_id:
-    plugin: extract
-    source: '@paragraph'
-    index:
-      - 0
+    - plugin: migration_lookup
+      migration: soe_test_news_d7_paragraphs
+      source: Nid
+    - plugin: extract
+      index:
+        - '0'
   su_news_components/target_revision_id:
-    plugin: extract
-    source: '@paragraph'
-    index:
-      - 1
+    - plugin: migration_lookup
+      migration: soe_test_news_d7_paragraphs
+      source: Nid
+    - plugin: extract
+      index:
+        - 1
 destination:
   plugin: 'entity:node'
   default_bundle: stanford_news
