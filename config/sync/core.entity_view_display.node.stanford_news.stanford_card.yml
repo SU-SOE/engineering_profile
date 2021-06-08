@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
-    - field.field.node.stanford_news.su_news_headline
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics
@@ -101,9 +100,9 @@ content:
     label: hidden
     settings:
       image:
-        image_formatter: image_style
+        image_formatter: responsive_image_style
         image_formatter_image_style: cta_2x_1014x676
-        image_formatter_responsive_image_style: full_responsive
+        image_formatter_responsive_image_style: card_2_1
         image_formatter_view_mode: default
       video:
         video_formatter: entity
@@ -154,5 +153,4 @@ hidden:
   su_news_byline: true
   su_news_components: true
   su_news_dek: true
-  su_news_headline: true
   su_news_publishing_date: true
