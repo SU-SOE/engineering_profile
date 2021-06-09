@@ -1,6 +1,6 @@
 uuid: 0d94b698-17a5-4eb9-8f37-bbfea8a6e879
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: soe_test_news_d7_node
 class: null
@@ -10,14 +10,21 @@ migration_tags: { }
 migration_group: news_items_d7
 label: 'SOE News Nodes'
 source:
+  track_changes: true
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
       - http://test-grunt.docksal/export/news
+  constants:
+    status: 1
+    type: stanford_news
+    basic_html: basic_html
+    image_destination: 'public://media/image/galleries/'
+    alt: ''
   ids:
     nid:
-      type: interger
+      type: string
   item_selector: /nodes/node
   fields:
     -
@@ -25,7 +32,7 @@ source:
       label: NID
       selector: Nid
     -
-      name: title
+      name: Title
       label: Title
       selector: Title
     -
@@ -33,18 +40,23 @@ source:
       label: Body
       selector: Body
 process:
+  su_news_headline: Title
+  status: constants/status
+  type: constants/type
+  paragraph:
+    plugin: migration_lookup
+    migration: soe_test_news_d7_paragraphs
+    source: nid
   su_news_components/target_id:
-    - plugin: migration_lookup
-      migration: soe_test_news_d7_paragraphs
-      source: Nid
-      index:
-        - '0'
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 0
   su_news_components/target_revision_id:
-    - plugin: migration_lookup
-      migration: soe_test_news_d7_paragraphs
-      source: Nid
-      index:
-        - 1
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 1
 destination:
   plugin: 'entity:node'
   default_bundle: stanford_news

@@ -5,8 +5,6 @@ dependencies: {  }
 id: news_items_d7
 label: 'News Items D7'
 description: 'Used to import news items from D7. '
-source_type: null
+source_type: 'Drupal 7'
 module: null
-shared_configuration:
-  source:
-    key: legacy
+shared_configuration: null

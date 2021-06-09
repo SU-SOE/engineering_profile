@@ -6,7 +6,7 @@ id: soe_test_news_d7_paragraphs
 class: null
 field_plugin_method: null
 cck_plugin_method: null
-migration_tags: { }
+migration_tags: {  }
 migration_group: news_items_d7
 label: 'SOE News Paragraphs'
 source:
@@ -14,7 +14,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - http://test-grunt.docksal/export/news
+    - 'http://test-grunt.docksal/export/news'
   ids:
     nid:
       type: string
@@ -34,4 +34,4 @@ process:
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: stanford_wysiwyg
-migration_dependencies: { }
+migration_dependencies: {  }
