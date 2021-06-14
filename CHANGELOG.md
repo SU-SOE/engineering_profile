@@ -1,4 +1,64 @@
-# Stanford Profile
+# Engineering Profile
+
+8.x-2.9
+--------------------------------------------------------------------------------
+_Release Date: 2021-05-18_
+
+- Disabled banner paragraph behavior.
+
+8.x-2.8
+--------------------------------------------------------------------------------
+_Release Date: 2021-05-07_
+
+- D8CORE-4145: adding the margin bottom to the intro for events. (#410) (e07a55a)
+- D8CORE-3523: Added User Search form (#412) (3167707)
+- D8CORE-4093: removing the margin top from the button on lists (#405) (d8d588e)
+- D8CORE-3951: fixing the pagination to the infinite scroll and a Load More button (#411) (751a62b)
+- D8CORE-3970: removed the extra h2 (#409) (a964622)
+- Adjusted citation author fields to prevent only first name data entry (911a7ef)
+- D8CORE-3104 D8CORE-3455 D8CORE-3456 D8CORE-3981 Help text and form tweaks (#408) (97b2d2e)
+- D8CORE-2729 enable the hero banner behavior (#407) (1a9da8b)
+
+8.x-2.7
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-21_
+
+- Changed the news card image back to a 2:1 ratio.
+
+8.x-2.6
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-19_
+
+- Added experimental label to basic page types field and view
+- D8CORE-4068 Allow publication authors to have only one name part (#402)
+
+8.x-2.5
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-19_
+
+- Hotfix for tweaks to basic page+ functionality
+- disabled "Preview" button on node form
+- D8CORE-3480 Disallow image gallery media in the wysiwyg.
+
+8.x-2.4
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-12_
+
+- D8CORE-3254: Basic Page+ with views and teaser display (#388)
+- Allow users to change the taxonomy term description text
+- D8CORE-2572 Added and configured content_lock to prevent simultaneous edits (#395)
+- D8CORE-2766: Don't require the field on the global message form. (#357)
+- D8CORE-4033: updated view config to allow filtering past events lists (#397)
+- D8CORE-3953 Replace "whitelist" with "allowed" for stanford_ssp (#394)
+- D8CORE-4020: fix double h2 tags (#396)
+- D8CORE-2853 test for unpublishing the home page (#392)
+- D8CORE-3538 Add "Other" citation type (#390)
+- D8CORE-3458 Dont display unpublished profiles in the lists (#389)
+- D8CORE-3945 Changed the news card image style for better resolution
+- Corrected dependency in composer.json
+- D8CORE-3536 Display publications as a teaser in the paragraph (#387)
+- D8CORE-3947: adding classes to the filtered by for publications in order to style them (#386)
+- D8CORE-3126 Intranet Configs (#379)
 
 8.x-2.3
 --------------------------------------------------------------------------------

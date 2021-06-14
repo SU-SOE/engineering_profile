@@ -26,9 +26,9 @@ settings:
     generational: false
     credentials: false
   minimum_components:
-    given: true
     family: true
     title: false
+    given: false
     middle: false
     generational: false
     credentials: false
@@ -94,7 +94,7 @@ settings:
     title: Title
     given: 'First Name'
     middle: 'Middle name'
-    family: 'Last Name'
+    family: 'Last Name/Company'
     generational: Generational
     credentials: Credentials
   title_display:

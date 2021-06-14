@@ -27,6 +27,8 @@ module:
   config_split: 0
   config_update: 0
   confirm_leave: 0
+  content_lock: 0
+  content_lock_timeout: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -113,7 +115,6 @@ module:
   rest: 0
   rh_node: 0
   role_delegation: 0
-  search: 0
   search_api: 0
   search_api_db: 0
   seckit: 0
@@ -127,6 +128,7 @@ module:
   soe_paragraph_stories: 0
   soe_paragraphs: 0
   sophron: 0
+  stanford_basic_page_types: 0
   stanford_date_formats: 0
   stanford_events: 0
   stanford_events_importer: 0
@@ -141,6 +143,7 @@ module:
   stanford_paragraph_card: 0
   stanford_person: 0
   stanford_person_importer: 0
+  stanford_profile_admin: 0
   stanford_profile_drush: 0
   stanford_profile_helper: 0
   stanford_profile_styles: 0
