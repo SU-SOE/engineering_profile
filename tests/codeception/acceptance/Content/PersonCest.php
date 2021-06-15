@@ -193,6 +193,7 @@ class PersonCest {
       'su_person_last_name' => "Wick",
       'su_person_type_group' => $foo->id(),
     ]);
+    drupal_flush_all_caches();
     $I->logInWithRole('administrator');
     $I->amOnPage('/people/foo');
     $I->canSee($node->label());
