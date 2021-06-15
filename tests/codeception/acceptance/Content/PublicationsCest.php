@@ -58,6 +58,7 @@ class PublicationsCest {
     ], 'taxonomy_term');
     \Drupal::service('cache.render')->deleteAll();
     \Drupal::service('router.builder')->rebuild();
+    drupal_flush_all_caches();
     $I->amOnPage('/publications');
     $I->canSeeLink($term->label());
   }
