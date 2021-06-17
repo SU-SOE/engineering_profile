@@ -32,17 +32,22 @@ source:
       label: NID
       selector: Nid
     -
-      name: Title
+      name: title
       label: Title
       selector: Title
+    -
+      name: byline
+      label: Byline
+      selector: Byline
     -
       name: body
       label: Body
       selector: Body
 process:
-  title: Title
+  title: title
   status: constants/status
   type: constants/type
+  su_news_byline: byline
   paragraph:
     plugin: migration_lookup
     migration: soe_test_news_d7_paragraphs
