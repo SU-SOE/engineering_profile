@@ -40,6 +40,18 @@ source:
       label: Byline
       selector: Byline
     -
+      name: byline
+      label: Byline
+      selector: Byline
+    -
+      name: teaser
+      label: Teaser
+      selector: Teaser
+    -
+      name: items
+      label: Items
+      selector: imageCollections/item
+    -
       name: body
       label: Body
       selector: Body
@@ -48,6 +60,49 @@ process:
   status: constants/status
   type: constants/type
   su_news_byline: byline
+  su_news_dek: teaser
+  su_news_featured_media:
+    -
+      plugin: callback
+      callable: simplexml_load_string
+      source: items
+    -
+      plugin: sub_process
+      process:
+        basename:
+          plugin: callback
+          callable: basename
+          source: imageUrl
+        image_name:
+          plugin: null_coalesce
+          source:
+            - imageTitle
+            - '@basename'
+        image_file:
+          - plugin: file_import
+            source: imageUrl
+            destination: constants/image_destination
+            id_only: true
+            reuse: true
+        image_credits:
+          plugin: concat
+          source:
+            - caption
+            - constants/credit_prefix
+            - credits
+            - constants/credit_suffix
+        target_id:
+          - plugin: entity_generate
+            source: '@image_name'
+            value_key: name
+            bundle_key: bundle
+            bundle: image
+            entity_type: media
+            ignore_case: true
+            values:
+              field_media_image/target_id: '@image_file'
+              field_media_image_caption/value: '@image_credits'
+              field_media_image_caption/format: constants/minimal_html
   paragraph:
     plugin: migration_lookup
     migration: soe_test_news_d7_paragraphs
