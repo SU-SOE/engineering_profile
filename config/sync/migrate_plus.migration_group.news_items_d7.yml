@@ -1,0 +1,10 @@
+uuid: 87a9fe00-d721-46fa-88a4-325d9acd6dc3
+langcode: en
+status: true
+dependencies: {  }
+id: news_items_d7
+label: 'News Items D7'
+description: 'Used to import news items from D7. '
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null
