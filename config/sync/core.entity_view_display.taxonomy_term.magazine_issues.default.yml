@@ -1,0 +1,41 @@
+uuid: 9e09c024-d1c4-4a20-96db-0a4ada484227
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.magazine_issues.su_accent_color
+    - field.field.taxonomy_term.magazine_issues.su_issue_number
+    - taxonomy.vocabulary.magazine_issues
+  module:
+    - text
+id: taxonomy_term.magazine_issues.default
+targetEntityType: taxonomy_term
+bundle: magazine_issues
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  su_accent_color:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  su_issue_number:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  search_api_excerpt: true

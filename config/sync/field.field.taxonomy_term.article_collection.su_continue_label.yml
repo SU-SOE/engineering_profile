@@ -1,0 +1,21 @@
+uuid: 6f7eee44-8293-4d8f-a3e5-5cbaa92b4e8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_continue_label
+    - taxonomy.vocabulary.article_collection
+id: taxonomy_term.article_collection.su_continue_label
+field_name: su_continue_label
+entity_type: taxonomy_term
+bundle: article_collection
+label: 'Continue Label'
+description: 'This is the header text for the collection block showing at the bottom of articles in the collection.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Continue reading articles from '
+default_value_callback: ''
+settings: {  }
+field_type: string

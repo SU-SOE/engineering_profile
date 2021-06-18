@@ -1,0 +1,8 @@
+uuid: cf29627e-7811-4acb-aea7-e53a32172073
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Collection'
+vid: article_collection
+description: 'Terms used to group magazine articles into a collection or series'
+weight: 0

@@ -1,0 +1,29 @@
+uuid: 65a1ec1c-6945-4914-a142-38b8b9f6b01a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_accent_color
+    - taxonomy.vocabulary.accent_color
+    - taxonomy.vocabulary.magazine_issues
+id: taxonomy_term.magazine_issues.su_accent_color
+field_name: su_accent_color
+entity_type: taxonomy_term
+bundle: magazine_issues
+label: 'Accent Color'
+description: 'These terms identify the associated accent color.  Select a color.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      accent_color: accent_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

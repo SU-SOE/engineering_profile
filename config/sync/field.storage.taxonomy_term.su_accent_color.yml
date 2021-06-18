@@ -1,0 +1,19 @@
+uuid: 67999aae-5325-442c-8d58-3c1fee055481
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.su_accent_color
+field_name: su_accent_color
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

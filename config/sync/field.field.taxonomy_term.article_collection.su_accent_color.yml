@@ -1,0 +1,29 @@
+uuid: e51441ca-2349-4c91-bad1-1c229f093b7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_accent_color
+    - taxonomy.vocabulary.accent_color
+    - taxonomy.vocabulary.article_collection
+id: taxonomy_term.article_collection.su_accent_color
+field_name: su_accent_color
+entity_type: taxonomy_term
+bundle: article_collection
+label: 'Accent Color'
+description: 'These terms identify the associated accent color.  Select a color.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      accent_color: accent_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

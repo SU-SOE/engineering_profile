@@ -1,0 +1,21 @@
+uuid: 6e2258fd-bdd1-48fd-a85b-bd2ddbea6746
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_intro_label
+    - taxonomy.vocabulary.article_collection
+id: taxonomy_term.article_collection.su_intro_label
+field_name: su_intro_label
+entity_type: taxonomy_term
+bundle: article_collection
+label: 'Intro Label'
+description: 'This is the text that will show up on the grey intro block on the article page for the collection'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'This article is part of '
+default_value_callback: ''
+settings: {  }
+field_type: string
