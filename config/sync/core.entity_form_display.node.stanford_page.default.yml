@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
+    - field.field.node.stanford_page.su_department
     - field.field.node.stanford_page.su_page_banner
     - field.field.node.stanford_page.su_page_components
     - field.field.node.stanford_page.su_page_description
@@ -27,7 +28,7 @@ third_party_settings:
         - su_page_description
         - su_basic_page_type
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details_sidebar
       region: content
       format_settings:
@@ -70,7 +71,7 @@ content:
     third_party_settings: {  }
   stanford_intranet__access:
     type: entity_access
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -94,6 +95,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  su_department:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   su_page_banner:
     type: paragraphs
     weight: 8
