@@ -30,7 +30,7 @@ source:
       selector: Body
 process:
   su_wysiwyg_text/value: body
-  su_wysiwyg_text/format: basic_html
+  su_wysiwyg_text/format: HTML
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: stanford_wysiwyg
