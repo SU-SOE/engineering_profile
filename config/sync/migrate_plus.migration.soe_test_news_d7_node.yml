@@ -58,8 +58,8 @@ process:
   su_news_byline:
     plugin: str_replace
     source: byline
-    search: "By "
-    replace: ""
+    search: 'By '
+    replace: ''
   su_news_dek: teaser
   su_news_publishing_date:
     plugin: format_date
@@ -73,6 +73,7 @@ process:
   su_news_components/target_id:
     plugin: extract
     source: '@paragraph'
+    format: html
     index:
       - 0
   su_news_components/target_revision_id:
