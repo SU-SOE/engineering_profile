@@ -52,10 +52,6 @@ source:
       name: date
       label: Date
       selector: Date
-    -
-      name: items
-      label: Items
-      selector: imageCollections/item
 process:
   title: title
   status: constants/status
@@ -71,40 +67,10 @@ process:
     source: date
     from_format: Y-m-d
     to_format: Y-m-d
-  su_news_banner:
-    -
-      plugin: callback
-      callable: simplexml_load_string
-      source: items
-    -
-      plugin: sub_process
-      process:
-        basename:
-          plugin: callback
-          callable: basename
-          source: imageUrl
-        image_name:
-          plugin: null_coalesce
-          source:
-            - imageTitle
-            - '@basename'
-        image_file:
-          - plugin: file_import
-            source: imageUrl
-            destination: constants/image_destination
-            id_only: true
-            reuse: true
-        target_id:
-          - plugin: entity_generate
-            source: '@image_name'
-            value_key: name
-            bundle_key: bundle
-            bundle: image
-            entity_type: media
-            ignore_case: true
-            values:
-              field_media_image/target_id: '@image_file'
-              field_media_image_caption/format: constants/minimal_html
+  su_news_banner/target_id:
+    plugin: migration_lookup
+    migration: soe_news_test_d7_images
+    source: nid
   paragraph:
     plugin: migration_lookup
     migration: soe_test_news_d7_paragraphs
@@ -125,3 +91,4 @@ destination:
 migration_dependencies:
   required:
     - soe_test_news_d7_paragraphs
+    - soe_news_test_d7_images
