@@ -15,7 +15,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - 'http://test-grunt.docksal/export/news'
+    - 'https://eng-dev.stanford.edu/export/news'
   constants:
     status: 1
     type: stanford_news
