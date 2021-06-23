@@ -10,6 +10,8 @@ migration_tags: {  }
 migration_group: news_items_d7
 label: 'SOE News Paragraphs'
 source:
+  constants:
+    text_format: stanford_html
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
@@ -30,7 +32,7 @@ source:
       selector: Body
 process:
   su_wysiwyg_text/value: body
-  su_wysiwyg_text/format: full_html
+  su_wysiwyg_text/format: constants/text_format
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: stanford_wysiwyg
