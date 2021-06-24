@@ -56,6 +56,10 @@ source:
       name: image
       label: Image
       selector: imageCollections/item/imageUrl
+    -
+      name: imageCaption
+      label: Image caption
+      selector: imageCollections/item/caption
 process:
   title: title
   status: constants/status
@@ -75,6 +79,7 @@ process:
     plugin: migration_lookup
     migration: soe_news_test_d7_media
     source: nid
+  su_news_banner_media_caption: imageCaption
   paragraph:
     plugin: migration_lookup
     migration: soe_test_news_d7_paragraphs
