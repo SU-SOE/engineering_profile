@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.magazine_issues.su_accent_color
     - field.field.taxonomy_term.magazine_issues.su_issue_number
     - taxonomy.vocabulary.magazine_issues
   module:
@@ -43,12 +42,6 @@ content:
     weight: 5
     region: content
     third_party_settings: {  }
-  su_accent_color:
-    weight: 3
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   su_issue_number:
     weight: 1
     settings:

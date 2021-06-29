@@ -28,8 +28,6 @@ class ListsCest {
       'display_id' => 'vertical_teaser_term',
       'items_to_display' => 100,
     ]);
-    sleep(3);
-    //drupal_flush_all_caches();
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee('Headliner');
     $I->canSee('Lorem Ipsum');

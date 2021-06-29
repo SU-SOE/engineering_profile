@@ -1,8 +1,0 @@
-uuid: 231def79-55c3-46cf-9452-dd25b2937e2f
-langcode: en
-status: true
-dependencies: {  }
-name: 'Accent Color'
-vid: accent_color
-description: ''
-weight: 0

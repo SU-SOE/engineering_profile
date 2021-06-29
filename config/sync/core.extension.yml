@@ -71,8 +71,8 @@ module:
   imagemagick: 0
   inline_entity_form: 0
   inline_form_errors: 0
-  jumpstart_ui: 0
   jsonapi: 0
+  jumpstart_ui: 0
   key: 0
   layout_builder: 0
   layout_builder_modal: 0

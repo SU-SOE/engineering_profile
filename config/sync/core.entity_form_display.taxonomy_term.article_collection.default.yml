@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.article_collection.su_accent_color
     - field.field.taxonomy_term.article_collection.su_collect_subtitle
     - field.field.taxonomy_term.article_collection.su_continue_label
     - field.field.taxonomy_term.article_collection.su_intro_label
@@ -45,12 +44,6 @@ content:
     weight: 7
     region: content
     third_party_settings: {  }
-  su_accent_color:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   su_collect_subtitle:
     weight: 1
     settings:
