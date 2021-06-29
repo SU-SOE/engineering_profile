@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.stanford_news.su_accent_color
     - field.field.node.stanford_news.su_mag_featured
     - field.field.node.stanford_news.su_magazine_issue
+    - field.field.node.stanford_news.su_magazine_story
     - field.field.node.stanford_news.su_news_banner
     - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
@@ -157,6 +158,7 @@ hidden:
   su_accent_color: true
   su_mag_featured: true
   su_magazine_issue: true
+  su_magazine_story: true
   su_news_banner: true
   su_news_banner_media_caption: true
   su_news_byline: true
