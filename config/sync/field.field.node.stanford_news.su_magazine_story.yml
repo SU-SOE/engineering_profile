@@ -1,0 +1,23 @@
+uuid: 600e9825-9239-4786-9621-f3cc227a01d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_magazine_story
+    - node.type.stanford_news
+id: node.stanford_news.su_magazine_story
+field_name: su_magazine_story
+entity_type: node
+bundle: stanford_news
+label: 'Magazine Story'
+description: 'If this option is selected, this content will be treated as a Magazine story.  If it is not, it will be treated as a normal news story.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

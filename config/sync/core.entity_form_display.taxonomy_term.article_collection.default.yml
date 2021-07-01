@@ -1,0 +1,71 @@
+uuid: 2f54df62-92ed-4c6c-92f6-3ee5680a3cbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.article_collection.su_collect_subtitle
+    - field.field.taxonomy_term.article_collection.su_continue_label
+    - field.field.taxonomy_term.article_collection.su_intro_label
+    - taxonomy.vocabulary.article_collection
+  module:
+    - path
+    - text
+id: taxonomy_term.article_collection.default
+targetEntityType: taxonomy_term
+bundle: article_collection
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  su_collect_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  su_continue_label:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  su_intro_label:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden: {  }
