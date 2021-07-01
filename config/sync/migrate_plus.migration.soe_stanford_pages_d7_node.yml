@@ -34,6 +34,10 @@ source:
       name: title
       label: Title
       selector: Title
+    -
+      name: body
+      label: Body
+      selector: Body
 process:
   title: title
   status: constants/status
