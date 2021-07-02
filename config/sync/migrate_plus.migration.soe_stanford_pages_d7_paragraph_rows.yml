@@ -54,5 +54,5 @@ destination:
   plugin: 'entity_reference_revisions:paragraph_row'
   default_bundle: node_stanford_page_row
 migration_dependencies:
-  required
+  required:
     - soe_stanford_pages_d7_paragraphs

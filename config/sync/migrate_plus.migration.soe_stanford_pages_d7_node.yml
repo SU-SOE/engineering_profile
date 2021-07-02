@@ -1,6 +1,6 @@
 uuid: 095736e8-e35c-4867-a77b-d44c60b71f28
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: soe_stanford_pages_d7_node
 class: null
