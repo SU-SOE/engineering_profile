@@ -61,4 +61,5 @@ destination:
   default_bundle: stanford_page
 migration_dependencies:
   required:
+    - soe_stanford_pages_d7_paragraphs_rows
     - soe_stanford_pages_d7_paragraphs
