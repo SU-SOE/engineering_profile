@@ -62,4 +62,3 @@ destination:
 migration_dependencies:
   required:
     - soe_stanford_pages_d7_paragraphs_rows
-    - soe_stanford_pages_d7_paragraphs

@@ -22,18 +22,39 @@ source:
       type: string
   item_selector: /nodes/node
   fields:
+  fields:
     -
       name: nid
       label: NID
       selector: Nid
     -
+      name: title
+      label: Title
+      selector: Title
+    -
       name: body
-      label: body
+      label: Body
       selector: Body
 process:
-  su_page_components/value: body
-  su_page_components/format: constants/text_format
+  title: title
+  status: constants/status
+  type: constants/type
+  paragraph:
+    plugin: migration_lookup
+    migration: soe_stanford_pages_d7_paragraphs
+    source: nid
+  su_page_components/target_id:
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 0
+  su_page_components/target_revision_id:
+    plugin: extract
+    source: '@paragraph'
+    index:
+      - 1
 destination:
   plugin: 'entity_reference_revisions:paragraph_row'
   default_bundle: node_stanford_page_row
-migration_dependencies: {  }
+migration_dependencies:
+  - soe_stanford_pages_d7_paragraphs
