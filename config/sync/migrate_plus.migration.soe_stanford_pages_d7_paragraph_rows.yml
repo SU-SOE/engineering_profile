@@ -36,8 +36,6 @@ source:
       label: Body
       selector: Body
 process:
-  title: title
-  status: constants/status
   paragraph:
     plugin: migration_lookup
     migration: soe_stanford_pages_d7_paragraphs
