@@ -38,7 +38,6 @@ source:
 process:
   title: title
   status: constants/status
-  type: constants/type
   paragraph:
     plugin: migration_lookup
     migration: soe_stanford_pages_d7_paragraphs
@@ -57,4 +56,5 @@ destination:
   plugin: 'entity_reference_revisions:paragraph_row'
   default_bundle: node_stanford_page_row
 migration_dependencies:
-  - soe_stanford_pages_d7_paragraphs
+  required
+    - soe_stanford_pages_d7_paragraphs

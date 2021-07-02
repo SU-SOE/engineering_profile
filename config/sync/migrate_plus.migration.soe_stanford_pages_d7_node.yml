@@ -1,6 +1,6 @@
 uuid: 095736e8-e35c-4867-a77b-d44c60b71f28
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: soe_stanford_pages_d7_node
 class: null
@@ -44,7 +44,7 @@ process:
   type: constants/type
   paragraph:
     plugin: migration_lookup
-    migration: soe_stanford_pages_d7_paragraphs
+    migration: soe_stanford_pages_d7_paragraph_rows
     source: nid
   su_page_components/target_id:
     plugin: extract
@@ -61,4 +61,4 @@ destination:
   default_bundle: stanford_page
 migration_dependencies:
   required:
-    - soe_stanford_pages_d7_paragraphs_rows
+    - soe_stanford_pages_d7_paragraph_rows
