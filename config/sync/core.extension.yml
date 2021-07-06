@@ -44,6 +44,7 @@ module:
   editor: 0
   element_class_formatter: 0
   encrypt: 0
+  engineering_profile_helper: 0
   entity_reference_revisions: 0
   entity_usage: 0
   environment_indicator: 0
@@ -70,6 +71,7 @@ module:
   imagemagick: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  jsonapi: 0
   jumpstart_ui: 0
   key: 0
   layout_builder: 0
@@ -105,6 +107,7 @@ module:
   path: 0
   path_alias: 0
   path_redirect_import: 0
+  pdb: 0
   rabbit_hole: 0
   react_paragraphs: 0
   react_paragraphs_behaviors: 0

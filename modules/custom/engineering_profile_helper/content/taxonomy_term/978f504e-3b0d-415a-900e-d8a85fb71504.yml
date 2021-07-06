@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 978f504e-3b0d-415a-900e-d8a85fb71504
+  bundle: department
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Bioengineering
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /department/bioengineering
+      langcode: en
+      pathauto: 0

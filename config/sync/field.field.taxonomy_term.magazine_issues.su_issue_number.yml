@@ -1,0 +1,23 @@
+uuid: 1509393b-6ec3-4301-8c55-8dca62d27397
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_issue_number
+    - taxonomy.vocabulary.magazine_issues
+id: taxonomy_term.magazine_issues.su_issue_number
+field_name: su_issue_number
+entity_type: taxonomy_term
+bundle: magazine_issues
+label: 'Issue Number'
+description: 'This is the issue number.  Enter <i>just</i> the number for the issue, e.g. 5, 7, 18, 35, etc.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

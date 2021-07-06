@@ -195,6 +195,7 @@ class PersonCest {
     ]);
     drupal_flush_all_caches();
     $I->logInWithRole('administrator');
+    drupal_flush_all_caches();
     $I->amOnPage('/people/foo');
     $I->canSee($node->label());
     $node->setUnpublished()->save();

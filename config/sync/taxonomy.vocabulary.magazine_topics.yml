@@ -1,0 +1,8 @@
+uuid: 12721cb2-533c-4122-b5e2-f3dbb00a31d2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Magazine Topics'
+vid: magazine_topics
+description: ''
+weight: 0

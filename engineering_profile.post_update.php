@@ -23,7 +23,7 @@ function engineering_profile_removed_post_updates() {
 }
 
 /**
- * Set the UUID's on block configs.
+ * Disable the core search module.
  */
 function engineering_profile_post_update_8200_uuids() {
   $config_factory = \Drupal::configFactory();

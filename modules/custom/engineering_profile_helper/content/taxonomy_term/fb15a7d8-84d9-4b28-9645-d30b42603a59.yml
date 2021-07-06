@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: fb15a7d8-84d9-4b28-9645-d30b42603a59
+  bundle: magazine_topics
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Security
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /magazine/security
+      langcode: en
+      pathauto: 0

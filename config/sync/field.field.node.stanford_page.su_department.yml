@@ -1,0 +1,29 @@
+uuid: 17b09a98-93c8-40fc-aff3-65addb9c8730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_department
+    - node.type.stanford_page
+    - taxonomy.vocabulary.department
+id: node.stanford_page.su_department
+field_name: su_department
+entity_type: node
+bundle: stanford_page
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department: department
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

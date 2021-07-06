@@ -1,0 +1,49 @@
+uuid: cbe24a5a-7516-4bcf-a1fd-6c6369a7b30c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.article_collection.su_collect_subtitle
+    - field.field.taxonomy_term.article_collection.su_continue_label
+    - field.field.taxonomy_term.article_collection.su_intro_label
+    - taxonomy.vocabulary.article_collection
+  module:
+    - text
+id: taxonomy_term.article_collection.default
+targetEntityType: taxonomy_term
+bundle: article_collection
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  su_collect_subtitle:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  su_continue_label:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  su_intro_label:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

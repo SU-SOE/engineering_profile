@@ -1,0 +1,8 @@
+uuid: b608b168-6614-4e94-9791-df0d4df524c3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Magazine Issues'
+vid: magazine_issues
+description: 'Terms used to group magazine content into issues'
+weight: 0
