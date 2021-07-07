@@ -1,0 +1,64 @@
+uuid: 6846f843-ff17-469a-b5ee-b8fa3b04872d
+langcode: en
+status: true
+dependencies: {  }
+id: soe_news_test_d7_images
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: news_items_d7
+label: 'Import images from SOE News D7'
+source:
+  track_changes: true
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: simple_xml
+  urls:
+    - 'https://eng-dev.stanford.edu/export/news'
+  fields:
+    -
+      name: nid
+      label: NID
+      selector: Nid
+    -
+      name: image
+      label: Image
+      selector: imageCollections/item/imageUrl
+  ids:
+    nid:
+      type: string
+  item_selector: /nodes/node
+  constants:
+    DRUPAL_FILE_DIRECTORY: 'public://images/news/'
+process:
+  pseudo_destination_filename:
+    -
+      plugin: callback
+      callable: basename
+      source: image
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Cannot import empty image filename.'
+  pseudo_destination_path:
+    -
+      plugin: concat
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - '@pseudo_destination_filename'
+  uri:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: image
+    -
+      plugin: file_copy
+      source:
+        - image
+        - '@pseudo_destination_path'
+      file_exists: rename
+      move: false
+destination:
+  plugin: 'entity:file'
+migration_dependencies: null
