@@ -58,7 +58,7 @@ source:
       selector: imageCollections/item/imageUrl
     -
       name: imageCaption
-      label: 'Image caption'
+      label: Image caption
       selector: imageCollections/item/caption
 process:
   title: title
