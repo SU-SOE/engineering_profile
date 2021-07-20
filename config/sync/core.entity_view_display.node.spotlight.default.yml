@@ -22,62 +22,30 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  su_soe_department:
-    weight: 105
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  su_spotlight_affiliation:
-    weight: 106
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  su_spotlight_degrees:
-    weight: 104
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   su_spotlight_feature_image:
     type: entity_reference_entity_view
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
-  su_spotlight_person_title:
-    weight: 103
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   su_spotlight_quote:
-    weight: 107
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
 hidden:
+  links: true
   search_api_excerpt: true
+  su_soe_department: true
+  su_spotlight_affiliation: true
+  su_spotlight_degrees: true
+  su_spotlight_person_title: true
