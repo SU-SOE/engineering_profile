@@ -1,0 +1,43 @@
+uuid: 376cd41d-a534-4522-a584-a28b16e3bac6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_soe_department
+    - field.field.node.spotlight.su_spotlight_affiliation
+    - field.field.node.spotlight.su_spotlight_degrees
+    - field.field.node.spotlight.su_spotlight_feature_image
+    - field.field.node.spotlight.su_spotlight_person_title
+    - field.field.node.spotlight.su_spotlight_quote
+    - node.type.spotlight
+  module:
+    - text
+    - user
+id: node.spotlight.teaser
+targetEntityType: node
+bundle: spotlight
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true
+  su_soe_department: true
+  su_spotlight_affiliation: true
+  su_spotlight_degrees: true
+  su_spotlight_feature_image: true
+  su_spotlight_person_title: true
+  su_spotlight_quote: true
