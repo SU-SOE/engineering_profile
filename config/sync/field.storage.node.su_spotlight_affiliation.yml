@@ -1,0 +1,20 @@
+uuid: e247ddf2-1c62-4ca6-8952-aa2ee9501734
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.su_spotlight_affiliation
+field_name: su_spotlight_affiliation
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
