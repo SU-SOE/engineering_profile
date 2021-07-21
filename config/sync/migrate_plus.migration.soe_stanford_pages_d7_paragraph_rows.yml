@@ -22,7 +22,6 @@ source:
       type: string
   item_selector: /nodes/node
   fields:
-  fields:
     -
       name: nid
       label: NID

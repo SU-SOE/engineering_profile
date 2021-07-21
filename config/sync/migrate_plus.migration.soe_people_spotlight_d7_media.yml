@@ -24,7 +24,7 @@ source:
     -
       name: image
       label: Image
-      selector: imageCollections/item/imageUrl
+      selector: imagePath
   ids:
     nid:
       type: string
@@ -50,15 +50,15 @@ process:
   filename: 'Image file'
   field_media_image/target_id:
     plugin: migration_lookup
-    migration: soe_news_test_d7_images
+    migration: soe_people_spotlight_d7_images
     source: nid
   thumbnail/target_id:
     plugin: migration_lookup
-    migration: soe_news_test_d7_images
+    migration: soe_people_spotlight_d7_images
     source: nid
 destination:
   plugin: 'entity:media'
   default_bundle: image
 migration_dependencies:
   required:
-    - soe_news_test_d7_images
+    - soe_people_spotlight_d7_images

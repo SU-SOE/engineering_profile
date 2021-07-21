@@ -19,7 +19,7 @@ source:
   constants:
     status: 1
     type: spotlight
-    basic_html: basic_html
+    basic_html: stanford_html
     minimal_html: minimal_html
     image_destination: 'public://media/image/spotlight/'
     alt: ''
@@ -37,13 +37,17 @@ source:
       label: Body
       selector: Body
     -
+      name: name
+      label: Name
+      selector: Name
+    -
+      name: leadTextQuote
+      label: 'Lead Text Quote'
+      selector: leadTextQuote
+    -
       name: title
       label: Title
       selector: Title
-    -
-      name: leadTextQuote
-      label: "Lead Text Quote"
-      selector: LeadTextQuote
     -
       name: affiliation
       label: Affiliation
@@ -58,7 +62,7 @@ source:
       selector: Department
     -
       name: imageCredit
-      label: "Image Credit"
+      label: 'Image Credit'
       selector: imageCredit
     -
       name: image
@@ -66,16 +70,20 @@ source:
       selector: imagePath
     -
       name: altImage
-      label: "Alt Image"
+      label: 'Alt Image'
       selector: altImage
 process:
+  title: name
+  body: body
   status: constants/status
   type: constants/type
   su_spotlight_affiliation:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: affiliation
-    - plugin: entity_generate
+    -
+      plugin: entity_generate
       value_key: name
       bundle_key: vid
       bundle: affiliation
@@ -97,11 +105,23 @@ process:
       bundle: department
       entity_type: taxonomy_term
       ignore_case: true
-  su_spotlight_quote: department
-  su_spotlight_person_title: department
+  su_spotlight_quote: leadTextQuote
+  su_spotlight_person_title: title
+  su_spotlight_feature_image/target_id:
+    plugin: migration_lookup
+    migration: soe_people_spotlight_d7_media
+    source: nid
+    index:
+      - 0
+  su_spotlight_feature_image/target_revision_id:
+    plugin: migration_lookup
+    migration: soe_people_spotlight_d7_media
+    source: nid
+    index:
+      - 1
 destination:
   plugin: 'entity:node'
-  default_bundle: stanford_news
+  default_bundle: spotlight
 migration_dependencies:
   required:
     - soe_people_spotlight_d7_media

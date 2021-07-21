@@ -24,7 +24,7 @@ source:
     -
       name: image
       label: Image
-      selector: imageCollections/item/imageUrl
+      selector: imagePath
   ids:
     nid:
       type: string
