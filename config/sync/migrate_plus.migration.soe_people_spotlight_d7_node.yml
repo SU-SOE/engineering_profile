@@ -68,10 +68,6 @@ source:
       name: image
       label: Image
       selector: imagePath
-    -
-      name: altImage
-      label: 'Alt Image'
-      selector: altImage
 process:
   title: name
   body: body

@@ -25,6 +25,10 @@ source:
       name: image
       label: Image
       selector: imagePath
+    -
+      name: altImage
+      label: 'Alt Image'
+      selector: altImage
   ids:
     nid:
       type: string
@@ -52,6 +56,7 @@ process:
     plugin: migration_lookup
     migration: soe_people_spotlight_d7_images
     source: nid
+  field_media_image/alt: altImage
   thumbnail/target_id:
     plugin: migration_lookup
     migration: soe_people_spotlight_d7_images
