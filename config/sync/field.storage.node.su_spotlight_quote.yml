@@ -4,14 +4,13 @@ status: true
 dependencies:
   module:
     - node
-    - text
 id: node.su_spotlight_quote
 field_name: su_spotlight_quote
 entity_type: node
-type: text
+type: string_long
 settings:
-  max_length: 255
-module: text
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

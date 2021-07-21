@@ -99,12 +99,12 @@ content:
     type: string_textfield
     region: content
   su_spotlight_quote:
-    weight: 6
+    weight: 26
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: string_textarea
     region: content
   title:
     type: string_textfield

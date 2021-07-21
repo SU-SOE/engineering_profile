@@ -36,11 +36,11 @@ content:
     third_party_settings: {  }
     region: content
   su_spotlight_quote:
-    weight: 1
-    label: hidden
+    weight: 3
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    type: basic_string
     region: content
 hidden:
   links: true

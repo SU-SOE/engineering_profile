@@ -5,23 +5,15 @@ dependencies:
   config:
     - field.storage.node.su_spotlight_quote
     - node.type.spotlight
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    plain_text: plain_text
-    stanford_html: '0'
-    stanford_minimal_html: '0'
 id: node.spotlight.su_spotlight_quote
 field_name: su_spotlight_quote
 entity_type: node
 bundle: spotlight
-label: 'Quote '
-description: 'This text will appear in block displays throughout the site and will also lead the content on the profile page display.  On block displays it will be trimmed to 105 characters and surrounded by quotation marks. On the profile page this text will appear in it''s entirety.'
+label: 'Spotlight Quote'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string_long
