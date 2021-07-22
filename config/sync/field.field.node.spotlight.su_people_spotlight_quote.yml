@@ -1,15 +1,15 @@
-uuid: b51f1399-68c5-421a-86c9-58c21b9fba95
+uuid: 6feb47a5-c162-46f3-9811-26bf662f5d98
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.su_spotlight_quote
+    - field.storage.node.su_people_spotlight_quote
     - node.type.spotlight
-id: node.spotlight.su_spotlight_quote
-field_name: su_spotlight_quote
+id: node.spotlight.su_people_spotlight_quote
+field_name: su_people_spotlight_quote
 entity_type: node
 bundle: spotlight
-label: 'Spotlight Quote'
+label: 'People Spotlight Quote'
 description: ''
 required: false
 translatable: false

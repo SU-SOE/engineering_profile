@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_people_spotlight_quote
     - field.field.node.spotlight.su_soe_department
     - field.field.node.spotlight.su_spotlight_affiliation
     - field.field.node.spotlight.su_spotlight_degrees
     - field.field.node.spotlight.su_spotlight_feature_image
     - field.field.node.spotlight.su_spotlight_person_title
-    - field.field.node.spotlight.su_spotlight_quote
     - node.type.spotlight
   module:
     - text
@@ -26,6 +26,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  su_people_spotlight_quote:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   su_spotlight_feature_image:
     type: entity_reference_entity_view
     weight: 0
@@ -34,13 +41,6 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    region: content
-  su_spotlight_quote:
-    weight: 3
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
     region: content
 hidden:
   links: true

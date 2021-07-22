@@ -1,11 +1,11 @@
-uuid: 2d76052e-eec5-47bf-8c24-e0e078940b94
+uuid: c002259d-b67b-4ef7-a90a-a912ea5a7490
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.su_spotlight_quote
-field_name: su_spotlight_quote
+id: node.su_people_spotlight_quote
+field_name: su_people_spotlight_quote
 entity_type: node
 type: string_long
 settings:
