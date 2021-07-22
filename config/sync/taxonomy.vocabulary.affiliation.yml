@@ -1,0 +1,8 @@
+uuid: 39114085-7d59-4cbe-943e-d231fa1e5fe3
+langcode: en
+status: true
+dependencies: {  }
+name: Affiliation
+vid: affiliation
+description: ''
+weight: 0

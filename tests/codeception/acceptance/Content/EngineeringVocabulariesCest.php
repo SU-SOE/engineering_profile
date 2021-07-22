@@ -12,6 +12,7 @@ class EngineeringVocabulariesCest {
         $I->amOnPage('/admin/structure/taxonomy');
         $I->canSee('Department');
         $I->canSee('Magazine Topics');
+        $I->canSee('Affiliation');
         $I->amOnPage('/admin/structure/taxonomy/manage/department/overview');
         $deparments_terms = [
             'Aeronautics and Astronautics',
@@ -45,5 +46,18 @@ class EngineeringVocabulariesCest {
             $I->canSee($term);
         }
 
+        $I->amOnPage('/admin/structure/taxonomy/manage/affiliation/overview');
+        $affiliation_terms = [
+            'Alumni',
+            'Faculty',
+            'Giving',
+            'Office of the Dean',
+            'Staff',
+            'Students',
+        ];
+        foreach ($affiliation_terms as $term){
+            $I->canSee($term);
+        }
       }
+
 }

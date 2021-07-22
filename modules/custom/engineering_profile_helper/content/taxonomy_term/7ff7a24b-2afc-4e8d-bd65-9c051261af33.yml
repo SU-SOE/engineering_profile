@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 7ff7a24b-2afc-4e8d-bd65-9c051261af33
+  bundle: affiliation
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Faculty
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
