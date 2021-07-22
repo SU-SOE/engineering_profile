@@ -101,7 +101,7 @@ process:
       bundle: department
       entity_type: taxonomy_term
       ignore_case: true
-  su_spotlight_quote: leadTextQuote
+  su_people_spotlight_quote: leadTextQuote
   su_spotlight_person_title: title
   su_spotlight_feature_image/target_id:
     plugin: migration_lookup
