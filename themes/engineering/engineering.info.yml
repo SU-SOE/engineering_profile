@@ -2,9 +2,23 @@ name: Engineering
 type: theme
 description: 'Engineering theme based on Stanford Basic.'
 package: Engineer
-core: 9.x
+core_version_requirement: ^8 || ^9
 libraries:
   - engineering/global-styling
   - engineering/
- 
-base theme: false
+
+base theme: stanford_basic
+
+regions:
+  page_top: 'Page top'
+  header: Header
+  search: Search
+  menu: Menu
+  help: Help
+  content: Content
+  footer: Footer
+  page_bottom: 'Page bottom'
+
+features:
+  - favicon
+  - logo
