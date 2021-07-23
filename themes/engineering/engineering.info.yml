@@ -1,0 +1,10 @@
+name: Engineering
+type: theme
+description: 'Engineering theme based on Stanford Basic.'
+package: Engineer
+core: 9.x
+libraries:
+  - engineering/global-styling
+  - engineering/
+ 
+base theme: false
