@@ -145,6 +145,8 @@ class PersonCest {
       'parent' => ['target_id' => $foo->id()],
     ], 'taxonomy_term');
 
+    drupal_flush_all_caches();
+
     $I->amOnPage('/people');
     $I->canSeeLink('Foo');
     $I->canSeeLink('Bar');

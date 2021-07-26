@@ -1,0 +1,10 @@
+uuid: 7b913bcf-0257-4e98-98dc-09cfab9a4a74
+langcode: en
+status: true
+dependencies: {  }
+id: stanford_pages_d7
+label: 'Stanford Pages D7'
+description: 'Used to import Stanford pages from the D7 site.'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

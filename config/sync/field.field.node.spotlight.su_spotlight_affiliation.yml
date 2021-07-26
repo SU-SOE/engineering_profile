@@ -1,0 +1,29 @@
+uuid: bf8d35d7-b8a7-48b6-87ef-db9560662baf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_spotlight_affiliation
+    - node.type.spotlight
+    - taxonomy.vocabulary.affiliation
+id: node.spotlight.su_spotlight_affiliation
+field_name: su_spotlight_affiliation
+entity_type: node
+bundle: spotlight
+label: Affiliation
+description: 'Select the appropriate affiliation(s) for this person.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      affiliation: affiliation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: ff27c625-8786-4ab5-aae1-28e5e7c8eda4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.spotlight
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    stanford_html: stanford_html
+    stanford_minimal_html: stanford_minimal_html
+    plain_text: '0'
+id: node.spotlight.body
+field_name: body
+entity_type: node
+bundle: spotlight
+label: 'Spotlight Story'
+description: 'This text will follow the "Lead text/quote" text on the profile page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

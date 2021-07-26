@@ -77,8 +77,8 @@ class RolesCest {
     $this->runLinkExistCheck($I, $links);
 
     $links = [
-      'Local Footer',
-      'Site Settings',
+      '/admin/config/system/local-footer' => 'Local Footer',
+      '/admin/config/system/basic-site-settings' => 'Site Settings',
     ];
     $this->runLinkExistCheck($I, $links, FALSE);
 
@@ -110,8 +110,8 @@ class RolesCest {
     $this->runLinkExistCheck($I, $links);
 
     $links = [
-      'Local Footer',
-      'Site Settings',
+      '/admin/config/system/local-footer' => 'Local Footer',
+      '/admin/config/system/basic-site-settings' => 'Site Settings',
     ];
     $this->runLinkExistCheck($I, $links, FALSE);
 

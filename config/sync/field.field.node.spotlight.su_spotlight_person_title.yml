@@ -1,0 +1,19 @@
+uuid: daaabd33-236e-4228-9c81-9f7a71a6a88d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_spotlight_person_title
+    - node.type.spotlight
+id: node.spotlight.su_spotlight_person_title
+field_name: su_spotlight_person_title
+entity_type: node
+bundle: spotlight
+label: Title
+description: 'This text field displays the person''s title. Ex. Professor of English'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
