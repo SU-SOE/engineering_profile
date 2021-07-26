@@ -1,0 +1,151 @@
+uuid: 8d1a6d60-756b-42a8-b82b-525b598b3eca
+langcode: en
+status: true
+dependencies: {  }
+id: magazine_items_d7_node
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: {  }
+migration_group: magazine_items_d7
+label: 'SOE Magazine Nodes'
+source:
+  track_changes: true
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: simple_xml
+  urls:
+    - 'https://engineering.stanford.edu/export/magazine'
+  constants:
+    status: 1
+    type: stanford_news
+    basic_html: basic_html
+    minimal_html: minimal_html
+    image_destination: 'public://media/image/news/'
+    alt: ''
+    magazine_story: true
+  ids:
+    nid:
+      type: string
+  item_selector: /nodes/node
+  fields:
+    -
+      name: nid
+      label: NID
+      selector: Nid
+    -
+      name: title
+      label: Title
+      selector: Title
+    -
+      name: byline
+      label: Byline
+      selector: Byline
+    -
+      name: dek
+      label: Dek
+      selector: Dek
+    -
+      name: body
+      label: Body
+      selector: Body
+    -
+      name: date
+      label: Date
+      selector: Date
+    -
+      name: image
+      label: Image
+      selector: FeaturedImagePath
+    -
+      name: imageCaption
+      label: 'Image caption'
+      selector: featuredImageCaption
+    -
+      name: department
+      label: Department
+      selector: Department
+    -
+      name: topics
+      label: Topics
+      selector: Topics
+    -
+      name: pathalias
+      label: 'Path Alias'
+      selector: UrlAlias
+    -
+      name: featured
+      label: Featured
+      selector: featuredStatus
+process:
+  title: title
+  status: constants/status
+  type: constants/type
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: pathalias
+  su_news_byline:
+    plugin: str_replace
+    source: byline
+    search: 'By '
+    replace: ''
+  su_news_dek: dek
+  su_news_publishing_date:
+    plugin: format_date
+    source: date
+    from_format: Y-m-d
+    to_format: Y-m-d
+  su_news_banner/target_id:
+    plugin: migration_lookup
+    migration: magazine_items_d7_media
+    source: nid
+  su_news_banner_media_caption: imageCaption
+  body_paragraph:
+    plugin: migration_lookup
+    migration: magazine_items_paragraphs_d7
+    source: nid
+  su_news_components/target_id:
+    plugin: extract
+    source: '@body_paragraph'
+    index:
+      - 0
+  su_news_components/target_revision_id:
+    plugin: extract
+    source: '@body_paragraph'
+    index:
+      - 1
+  su_magazine_story: constants/magazine_story
+  su_soe_department:
+    -
+      plugin: explode
+      delimiter: ', '
+      source: department
+    -
+      plugin: entity_generate
+      #source: department
+      value_key: name
+      bundle_key: vid
+      bundle: department
+      entity_type: taxonomy_term
+      ignore_case: true
+  su_soe_mag_topics:
+    -
+      plugin: explode
+      delimiter: ', '
+      source: topics
+    -
+      plugin: entity_generate
+      #source: topics
+      value_key: name
+      bundle_key: vid
+      bundle: magazine_topics
+      entity_type: taxonomy_term
+      ignore_case: true
+destination:
+  plugin: 'entity:node'
+  default_bundle: stanford_news
+migration_dependencies:
+  required:
+    - magazine_items_paragraphs_d7
+    - magazine_items_d7_media
