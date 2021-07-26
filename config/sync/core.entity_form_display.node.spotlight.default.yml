@@ -64,7 +64,7 @@ content:
     region: content
     third_party_settings: {  }
   su_people_spotlight_quote:
-    weight: 26
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
