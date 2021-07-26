@@ -5,12 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_people_spotlight_quote
     - field.field.node.spotlight.su_soe_department
     - field.field.node.spotlight.su_spotlight_affiliation
     - field.field.node.spotlight.su_spotlight_degrees
     - field.field.node.spotlight.su_spotlight_feature_image
     - field.field.node.spotlight.su_spotlight_person_title
-    - field.field.node.spotlight.su_spotlight_quote
     - node.type.spotlight
   module:
     - text
@@ -35,9 +35,9 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  su_people_spotlight_quote: true
   su_soe_department: true
   su_spotlight_affiliation: true
   su_spotlight_degrees: true
   su_spotlight_feature_image: true
   su_spotlight_person_title: true
-  su_spotlight_quote: true
