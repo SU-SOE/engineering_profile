@@ -70,7 +70,8 @@ source:
       selector: imagePath
 process:
   title: name
-  body: body
+  body/value: body
+  body/format: constants/basic_html
   status: constants/status
   type: constants/type
   su_spotlight_affiliation:
