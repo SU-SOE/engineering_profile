@@ -44,7 +44,7 @@ filters:
   typogrify:
     id: typogrify
     provider: typogrify
-    status: true
+    status: false
     weight: 10
     settings:
       smartypants_enabled: '1'
