@@ -1,10 +1,9 @@
 uuid: 7a223042-8728-4b6a-a0fa-dcb7bb050ae3
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
-    - field.storage.node.su_news_dek
     - field.storage.node.su_news_featured_media
     - field.storage.node.su_news_publishing_date
     - field.storage.node.su_news_source
@@ -329,11 +328,6 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: title
-          plugin_id: field
-        su_news_dek:
-          id: su_news_dek
-          table: node__su_news_dek
-          field: su_news_dek
           plugin_id: field
         su_news_topics:
           id: su_news_topics
@@ -674,7 +668,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.su_news_dek'
         - 'config:field.storage.node.su_news_featured_media'
         - 'config:field.storage.node.su_news_publishing_date'
         - 'config:field.storage.node.su_news_source'
@@ -915,7 +908,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.su_news_dek'
         - 'config:field.storage.node.su_news_featured_media'
         - 'config:field.storage.node.su_news_publishing_date'
         - 'config:field.storage.node.su_news_source'
@@ -1164,7 +1156,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.su_news_dek'
         - 'config:field.storage.node.su_news_featured_media'
         - 'config:field.storage.node.su_news_publishing_date'
         - 'config:field.storage.node.su_news_source'
@@ -1455,7 +1446,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.su_news_dek'
         - 'config:field.storage.node.su_news_featured_media'
         - 'config:field.storage.node.su_news_publishing_date'
         - 'config:field.storage.node.su_news_source'
@@ -1594,7 +1584,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.su_news_dek'
         - 'config:field.storage.node.su_news_featured_media'
         - 'config:field.storage.node.su_news_publishing_date'
         - 'config:field.storage.node.su_news_source'
@@ -1703,7 +1692,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.su_news_dek'
         - 'config:field.storage.node.su_news_featured_media'
         - 'config:field.storage.node.su_news_publishing_date'
         - 'config:field.storage.node.su_news_source'

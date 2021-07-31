@@ -5,14 +5,14 @@ dependencies:
   config:
     - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
+    - field.field.node.stanford_news.su_article_banner_caption
+    - field.field.node.stanford_news.su_article_dek
     - field.field.node.stanford_news.su_mag_featured
     - field.field.node.stanford_news.su_magazine_issue
     - field.field.node.stanford_news.su_magazine_story
     - field.field.node.stanford_news.su_news_banner
-    - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
     - field.field.node.stanford_news.su_news_components
-    - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_source
@@ -123,6 +123,22 @@ content:
     weight: 9
     region: content
     third_party_settings: {  }
+  su_article_banner_caption:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  su_article_dek:
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   su_mag_featured:
     weight: 30
     settings:
@@ -150,14 +166,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  su_news_banner_media_caption:
-    type: string_textfield
-    weight: 12
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   su_news_byline:
     weight: 4
     settings:
@@ -177,14 +185,6 @@ content:
       form_display_mode: default
       default_paragraph_type: stanford_wysiwyg
     third_party_settings: {  }
-    region: content
-  su_news_dek:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   su_news_featured_media:
     weight: 8

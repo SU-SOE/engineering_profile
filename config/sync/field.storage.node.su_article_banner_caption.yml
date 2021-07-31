@@ -1,16 +1,14 @@
-uuid: a11a5495-1797-4e93-ac9a-7b3881324215
+uuid: be81f46c-9553-4898-9529-3fa3c8e487a3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.su_news_banner_media_caption
-field_name: su_news_banner_media_caption
+id: node.su_article_banner_caption
+field_name: su_article_banner_caption
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 320
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false
