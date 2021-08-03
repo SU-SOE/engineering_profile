@@ -123,7 +123,6 @@ process:
       source: department
     -
       plugin: entity_generate
-      #source: department
       value_key: name
       bundle_key: vid
       bundle: department
@@ -136,7 +135,6 @@ process:
       source: topics
     -
       plugin: entity_generate
-      #source: topics
       value_key: name
       bundle_key: vid
       bundle: magazine_topics

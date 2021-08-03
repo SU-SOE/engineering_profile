@@ -25,7 +25,6 @@ source:
       name: image
       label: Image
       selector: FeaturedImagePath
-    
   ids:
     nid:
       type: string
