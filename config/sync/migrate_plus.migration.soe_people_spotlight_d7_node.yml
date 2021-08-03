@@ -88,6 +88,9 @@ process:
       method: process
       source: affiliation
     -
+      plugin: callback
+      callable: trim
+    -
       plugin: entity_generate
       value_key: name
       bundle_key: vid
@@ -103,6 +106,9 @@ process:
     -
       plugin: explode
       delimiter: ', '
+    -
+      plugin: callback
+      callable: trim
     -
       plugin: entity_generate
       value_key: name
