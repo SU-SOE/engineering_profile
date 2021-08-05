@@ -2,6 +2,6 @@ global-styling:
    version: 1.0
    css:
     theme:
-      dist/css/base.css : {}
+      dist/css/engineering.styles.css : {}
    js:
      lib/js/engineering.js : {}
