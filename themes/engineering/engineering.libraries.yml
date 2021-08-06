@@ -4,4 +4,7 @@ global-styling:
     theme:
       dist/css/engineering.styles.css : {}
    js:
-     lib/js/engineering.js : {}
+     lib/js/engineering.js : {
+       scope: footer,
+       attributes: { type: module }
+     }

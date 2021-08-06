@@ -93,7 +93,22 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+/**
+ * Behavior Example that works with Webpack.
+ *
+ * @see: https://www.npmjs.com/package/drupal-behaviors-loader
+ *
+ * Webpack wraps everything in enclosures and hides the global variables from
+ * scripts so special handling is needed.
+ */
+window.Drupal.behaviors.engineering = {
+  // Attach Drupal Behavior.
+  attach: function attach(context, settings) {// console.log("Attached.");
+  },
+  // Detach Example.
+  detach: function detach() {// console.log("Detached.");
+  }
+};
 
 /***/ }),
 
@@ -110,6 +125,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0__);
 // Main Webpack entry file.
  // Your code goes below.
+
+console.log('works');
 
 /***/ })
 
