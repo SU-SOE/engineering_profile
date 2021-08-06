@@ -1,0 +1,20 @@
+uuid: 853417f5-87ca-4f0f-9029-c789227660b5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - engineering
+id: engineering_local_tasks
+theme: engineering
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

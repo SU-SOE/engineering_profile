@@ -122,9 +122,6 @@ process:
       delimiter: ', '
       source: department
     -
-      plugin: callback
-      callable: trim
-    -
       plugin: entity_generate
       value_key: name
       bundle_key: vid
@@ -136,9 +133,6 @@ process:
       plugin: explode
       delimiter: ', '
       source: topics
-    -
-      plugin: callback
-      callable: trim
     -
       plugin: entity_generate
       value_key: name
