@@ -126,8 +126,6 @@ __webpack_require__.r(__webpack_exports__);
 // Main Webpack entry file.
  // Your code goes below.
 
-console.log('works');
-
 /***/ })
 
 /******/ });
