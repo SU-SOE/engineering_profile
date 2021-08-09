@@ -53,6 +53,7 @@ class NewsCest {
    */
   public function testViewPagesExist(AcceptanceTester $I) {
     $I->amOnPage("/news");
+    sleep(5);
     $I->see("No results found");
     $I->seeLink('Faculty');
     $I->click("a[href='/news/staff']");
