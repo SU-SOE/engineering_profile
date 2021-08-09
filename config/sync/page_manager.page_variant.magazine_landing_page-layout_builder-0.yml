@@ -1,0 +1,108 @@
+uuid: 25d08052-8598-4bdf-a341-55b16447404f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.magazine_landing_page
+id: magazine_landing_page-layout_builder-0
+label: 'Layout Builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: 12067df9-ee35-4adf-b2b6-9ea276e9c98f
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: soe_basic_full_width_header
+      layout_settings:
+        label: 'Section - Header'
+        context_mapping: {  }
+      components:
+        0148e9b7-2334-4a10-9590-932f2d8866c5:
+          uuid: 0148e9b7-2334-4a10-9590-932f2d8866c5
+          region: main
+          configuration:
+            id: jumpstart_ui_page_heading
+            label: 'Heading Block'
+            provider: jumpstart_ui
+            label_display: '0'
+            heading_text: Magazine
+            wrapper: h1
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Magazine Navigation'
+        context_mapping: {  }
+      components:
+        979b755d-ea0b-48af-86e6-4d61d77b3c47:
+          uuid: 979b755d-ea0b-48af-86e6-4d61d77b3c47
+          region: content
+          configuration:
+            id: 'block_content:6cfa30a1-1ccb-45df-9890-4dac70c0107d'
+            label: 'Magazine Navigation'
+            provider: block_content
+            label_display: '0'
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: magazine-latest-news-header
+        centered: centered-container
+        columns: default
+        label: 'Latest News Header'
+        context_mapping: {  }
+      components:
+        9dab0914-a56e-4f8d-a544-f629337947a0:
+          uuid: 9dab0914-a56e-4f8d-a544-f629337947a0
+          region: main
+          configuration:
+            id: 'block_content:5317212b-e9af-4117-85a0-105bfba36666'
+            label: 'Magazine Latest News Block'
+            provider: block_content
+            label_display: '0'
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: section-magazine-views-views
+        centered: centered-container
+        columns: default
+        label: 'Section - Views'
+        context_mapping: {  }
+      components:
+        016c5d80-2604-4117-b324-feec5e44a6bf:
+          uuid: 016c5d80-2604-4117-b324-feec5e44a6bf
+          region: main
+          configuration:
+            id: 'views_block:magazine-block_1'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: '20'
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+page: magazine_landing_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
