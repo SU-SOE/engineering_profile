@@ -1,11 +1,13 @@
 name: Engineering
 type: theme
-description: 'Engineering theme based on Stanford Basic.'
+description: 'Engineering theme based on SOE Basic.'
 package: Engineer
 core_version_requirement: ^8 || ^9
 libraries:
-  - engineering/global-styling
-  - engineering/
+  - soe_basic/allpages
+  - engineering/engineering-styling
+#  - engineering/global-styling
+#  - engineering/
 
 base theme: soe_basic
 
@@ -22,3 +24,13 @@ regions:
 features:
   - favicon
   - logo
+
+components:
+  namespaces:
+    basic: templates
+
+ckeditor_stylesheets:
+  - dist/css/ckeditor.css
+
+libraries-override:
+  jumpstart_ui/base: false
