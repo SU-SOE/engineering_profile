@@ -1,12 +1,12 @@
 uuid: ba4866ff-ce79-42fb-8bfd-335e193b376e
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - node.type.spotlight
   module:
     - node
+    - ui_patterns_views
     - user
 id: person_spotlight
 label: 'Person Spotlight'
@@ -67,11 +67,27 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: default
-      row:
-        type: 'entity:node'
+        type: grid
         options:
-          view_mode: teaser
+          uses_fields: false
+          columns: 3
+          automatic_width: true
+          alignment: horizontal
+          col_class_default: true
+          col_class_custom: ''
+          row_class_default: true
+          row_class_custom: ''
+      row:
+        type: ui_patterns
+        options:
+          default_field_elements: 0
+          inline:
+            title: 0
+          separator: ''
+          hide_empty: 0
+          pattern: card
+          pattern_mapping: {  }
+          pattern_variant: default
       fields:
         title:
           id: title
@@ -162,12 +178,13 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Person Spotlight'
+      title: 'Landing Page Person Spotlight'
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -177,14 +194,16 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: Page
-    position: 1
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: 'Spotlight landing page block'
+    position: 2
     display_options:
       display_extenders: {  }
-      path: person-spotlight
+      display_description: ''
+      block_description: 'People Spotlight grid'
+      enabled: false
     cache_metadata:
       max-age: -1
       contexts:

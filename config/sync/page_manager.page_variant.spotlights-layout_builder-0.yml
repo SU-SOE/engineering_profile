@@ -1,0 +1,68 @@
+uuid: fe7fdeb6-74e1-4c49-a7bf-2511144749aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.spotlights
+id: spotlights-layout_builder-0
+label: 'Layout Builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: 226ebe09-0d72-4511-a78c-028652783bfa
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: soe_basic_full_width_header
+      layout_settings:
+        label: Title
+        context_mapping: {  }
+      components:
+        34ec11d8-9af4-4076-9743-c78a298d4be1:
+          uuid: 34ec11d8-9af4-4076-9743-c78a298d4be1
+          region: main
+          configuration:
+            id: jumpstart_ui_page_heading
+            label: 'Heading Block'
+            provider: jumpstart_ui
+            label_display: visible
+            heading_text: Spotlights
+            wrapper: h1
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: ds_1col
+      layout_settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+        context_mapping: {  }
+      components:
+        4ad52cd8-41c9-42b3-970a-faf97c4e9f41:
+          uuid: 4ad52cd8-41c9-42b3-970a-faf97c4e9f41
+          region: ds_content
+          configuration:
+            id: 'views_block:spotlight-vertical_teaser_term_list'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+page: spotlights
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

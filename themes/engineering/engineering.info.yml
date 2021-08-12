@@ -22,3 +22,13 @@ regions:
 features:
   - favicon
   - logo
+
+components:
+  namespaces:
+    basic: templates
+
+ckeditor_stylesheets:
+  - dist/css/ckeditor.css
+
+libraries-override:
+  jumpstart_ui/base: false

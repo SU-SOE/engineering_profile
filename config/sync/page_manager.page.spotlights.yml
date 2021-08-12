@@ -1,0 +1,12 @@
+uuid: 159c9295-6f7e-4c34-b8c6-45a91e05fffe
+langcode: en
+status: true
+dependencies: {  }
+id: spotlights
+label: Spotlights
+description: 'Landing page for Spotlights'
+use_admin_theme: false
+path: /spotlights
+access_logic: and
+access_conditions: {  }
+parameters: {  }
