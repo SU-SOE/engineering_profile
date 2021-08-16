@@ -1,0 +1,12 @@
+uuid: 0ab5b1e3-5ad1-42f7-946b-3ceba54ddf68
+langcode: en
+status: true
+dependencies: {  }
+id: spotlights
+label: Spotlights
+description: ''
+use_admin_theme: false
+path: /spotlights
+access_logic: and
+access_conditions: {  }
+parameters: {  }

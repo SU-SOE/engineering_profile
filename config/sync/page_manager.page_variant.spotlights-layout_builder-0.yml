@@ -1,0 +1,43 @@
+uuid: 8adc557c-a5cd-4e81-b84e-0363d0c083f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.spotlights
+id: spotlights-layout_builder-0
+label: 'Layout Builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: 083a764e-d325-44f4-8972-3e79e06cb8b4
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: ''
+        centered: centered-container
+        columns: default
+        label: ''
+        context_mapping: {  }
+      components:
+        d5bc7000-7913-40a5-969c-f4b2280e50a5:
+          uuid: d5bc7000-7913-40a5-969c-f4b2280e50a5
+          region: main
+          configuration:
+            id: 'views_block:spotlights-block_1'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+page: spotlights
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
