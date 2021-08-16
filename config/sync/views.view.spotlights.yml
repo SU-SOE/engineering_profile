@@ -55,10 +55,19 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 5
+          items_per_page: 21
           offset: 0
       style:
-        type: default
+        type: grid
+        options:
+          grouping: {  }
+          columns: 3
+          automatic_width: true
+          alignment: horizontal
+          col_class_default: true
+          col_class_custom: ''
+          row_class_default: true
+          row_class_custom: ''
       row:
         type: ui_patterns
         options:
@@ -414,6 +423,76 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.su_people_spotlight_quote'
+        - 'config:field.storage.node.su_spotlight_feature_image'
+        - 'config:field.storage.node.su_spotlight_person_title'
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Block (Featured block)'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      title: 'Featured spotlight'
+      defaults:
+        title: false
+        pager: false
+        style: false
+        row: false
+      display_description: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 1
+          offset: 0
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: ui_patterns
+        options:
+          default_field_elements: 0
+          inline:
+            title: 0
+            su_spotlight_person_title: 0
+            su_people_spotlight_quote: 0
+            su_spotlight_feature_image: 0
+          separator: ''
+          hide_empty: 0
+          pattern: card
+          pattern_mapping:
+            'views_row:title':
+              destination: card_super_headline
+              weight: 0
+              plugin: views_row
+              source: title
+            'views_row:su_spotlight_feature_image':
+              destination: card_image
+              weight: 1
+              plugin: views_row
+              source: su_spotlight_feature_image
+            'views_row:su_spotlight_person_title':
+              destination: card_headline
+              weight: 2
+              plugin: views_row
+              source: su_spotlight_person_title
+            'views_row:su_people_spotlight_quote':
+              destination: card_body
+              weight: 3
+              plugin: views_row
+              source: su_people_spotlight_quote
+          pattern_variant: default
     cache_metadata:
       max-age: -1
       contexts:

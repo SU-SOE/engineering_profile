@@ -14,6 +14,49 @@ variant_settings:
   weight: 0
   sections:
     -
+      layout_id: soe_basic_full_width_header
+      layout_settings:
+        label: 'Spotlights Header'
+        context_mapping: {  }
+      components:
+        f0010c71-4e5b-4b23-9691-acfed9aebbd9:
+          uuid: f0010c71-4e5b-4b23-9691-acfed9aebbd9
+          region: main
+          configuration:
+            id: jumpstart_ui_page_heading
+            label: 'Heading Block'
+            provider: jumpstart_ui
+            label_display: '0'
+            heading_text: Spotlights
+            wrapper: h1
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: ''
+        centered: centered-container
+        columns: default
+        label: ''
+        context_mapping: {  }
+      components:
+        0a29b51c-82f7-49ef-b849-70e2c2aa4111:
+          uuid: 0a29b51c-82f7-49ef-b849-70e2c2aa4111
+          region: main
+          configuration:
+            id: 'views_block:spotlights-block_2'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
       layout_id: defaults
       layout_settings:
         extra_classes: ''
