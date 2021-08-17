@@ -1,0 +1,20 @@
+uuid: b20e18cb-be6d-4823-ae23-2c6e34f1c07d
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - engineering
+id: engineering_help
+theme: engineering
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

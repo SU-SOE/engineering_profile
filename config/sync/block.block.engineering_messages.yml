@@ -1,0 +1,20 @@
+uuid: e4d9515b-3894-401f-bfae-3737d7841f5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - engineering
+id: engineering_messages
+theme: engineering
+region: content
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }

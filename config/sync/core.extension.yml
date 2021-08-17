@@ -44,6 +44,7 @@ module:
   editor: 0
   element_class_formatter: 0
   encrypt: 0
+  engineering_magazine: 0
   engineering_profile_helper: 0
   entity_reference_revisions: 0
   entity_usage: 0
@@ -195,6 +196,7 @@ theme:
   seven: 0
   stanford_basic: 0
   soe_basic: 0
+  engineering: 0
 profile: engineering_profile
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

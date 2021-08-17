@@ -38,21 +38,7 @@ variant_settings:
       layout_settings:
         label: 'Magazine Navigation'
         context_mapping: {  }
-      components:
-        979b755d-ea0b-48af-86e6-4d61d77b3c47:
-          uuid: 979b755d-ea0b-48af-86e6-4d61d77b3c47
-          region: content
-          configuration:
-            id: 'block_content:6cfa30a1-1ccb-45df-9890-4dac70c0107d'
-            label: 'Magazine Navigation'
-            provider: block_content
-            label_display: '0'
-            status: true
-            info: ''
-            view_mode: full
-            context_mapping: {  }
-          additional: {  }
-          weight: 0
+      components: {  }
       third_party_settings: {  }
     -
       layout_id: defaults
@@ -74,6 +60,17 @@ variant_settings:
             status: true
             info: ''
             view_mode: full
+            context_mapping: {  }
+          additional: {  }
+          weight: 1
+        bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8:
+          uuid: bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8
+          region: main
+          configuration:
+            id: magazine_navigation_block
+            label: 'Magazine Navigation - block title'
+            provider: engineering_magazine
+            label_display: visible
             context_mapping: {  }
           additional: {  }
           weight: 0
