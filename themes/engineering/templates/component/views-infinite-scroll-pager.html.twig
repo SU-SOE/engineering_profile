@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * The views infinite scroll pager template.
+ */
+#}
+
+{% if items.next %}
+  <div{{ attributes }}>
+    <div class="pager__item">
+      <a class="button load-more" href="{{ items.next.href }}" title="{{ 'Load more items'|t }}" rel="next">{{ options.button_text }}</a>
+    </div>
+  </div>
+{% endif %}
+
