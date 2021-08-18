@@ -40,6 +40,7 @@ const distJS = path.resolve(distDir, 'js');
 
 // Start configuring webpack.
 var webpackConfig = {
+  watch: true,
   // What am i?
   name: 'engineering',
   // Allows for map files.
