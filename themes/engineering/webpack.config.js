@@ -40,8 +40,14 @@ const distJS = path.resolve(distDir, 'js');
 
 // Start configuring webpack.
 var webpackConfig = {
-  watch: true,
-  // What am i?
+  // Turns on watch
+  watch: false,
+  watchOptions: {
+    aggregateTimeout: 200,
+    poll: 1000,
+    ignored: /node_modules/,
+  },
+// What am i?
   name: 'engineering',
   // Allows for map files.
   devtool: 'source-map',
