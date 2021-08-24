@@ -13,11 +13,13 @@
 
 .card-grid__row {
   display: flex;
-  padding-bottom: 2em;
+  flex-wrap: wrap;
+
 
   .card-grid__column {
-    // flex-basis: 1 1 33%;
-    //height: 100%;
+
+    padding-bottom: 2em;
+
 
     .su-card {
       height: 100%;
@@ -32,7 +34,7 @@
         }
       }
 
-      .views-field-created{
+      .views-field-su-news-publishing-date{
         color:#606060;
         font-size: 1em;
         font-weight: 100;
@@ -49,6 +51,20 @@
           &:hover{
             color: #333333;
           }
+        }
+      }
+
+      .views-field-su-magazine-issue {
+        display: block;
+        margin-top: 2em;
+        padding: .5em;
+        text-align: center;
+        width: fit-content;
+        background-color: #8c1515;
+        color:white;
+        a {
+          color:white;
+
         }
       }
 

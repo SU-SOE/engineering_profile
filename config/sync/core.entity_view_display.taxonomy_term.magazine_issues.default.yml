@@ -38,23 +38,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 0
-          6abc74b0-97ae-451a-928a-f918505530d8:
-            uuid: 6abc74b0-97ae-451a-928a-f918505530d8
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:taxonomy_term:magazine_issues:su_issue_number'
-              formatter:
-                label: above
-                settings:
-                  thousand_separator: ''
-                  prefix_suffix: true
-                third_party_settings: {  }
-                type: number_integer
-            additional: {  }
-            weight: 1
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -69,7 +52,7 @@ third_party_settings:
               id: 'views_block:magazine-block_2'
               label: ''
               provider: views
-              label_display: visible
+              label_display: '0'
               views_label: ''
               items_per_page: none
               context_mapping: {  }
