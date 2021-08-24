@@ -30,7 +30,10 @@ function engineering_magazine_theme($existing, $type, $theme, $path) {
   return [
     'magazine_navigation_block' => [
       'template' => 'block/magazine-navigation',
-      'variables' => ['test_var' => "This test variable is from the module"],
+      'variables' => [
+        'test_var' => "This test variable is from the module",
+        'topics' => null,
+      ],
     ]
   ];
 }

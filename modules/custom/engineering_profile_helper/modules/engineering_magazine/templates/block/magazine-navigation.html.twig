@@ -5,19 +5,21 @@
  */
 #}
 <div{{ attributes.addClass('flex-container') }}>
-    <div class="flex-12-of-12">
-        <h2>Research & Ideas | </h2> |
-        <select name="topics">
-            <option value="something">Something</option>
-            <option value="else">Something Else</option>
-        </select>
-        <span>Issues</span>
-        <form>
-            <input type="text" value="Something goes here"></input>
-        </form>
+
+    <div class="flex-12-of-12 magazine-landing-nav">
+
+        <h2 class="magazine-landing-nav__item"><a href="/magazine">Research & Ideas</a></h2>
+        <div class="magazine-landing-nav__item">Topics <span id="magazine-landing-nav__topics-toggle" aria-expanded="false" aria-label="Open the Topics menu">+</span></div>
+        <div class="magazine-landing-nav__item"><a href="/magazine/issue">Issues</a></div>
+
     </div>
-    <div>
-        <p>Test Variable = {{ test_variable_module }}</p>
-        <p>Test 2 = {{ test_var }}</p>
+
+</div>
+
+<div class="magazine-landing-nav__topics_panel" aria-labeledby="magazine-landing-nav__topics-toggle">
+    <div class="magazine-terms-list">
+        {% for term in topics%}
+            <div class='magazine-term'><a href="{{ term['path'] }}">{{ term['name'] }}</a></div>
+        {% endfor %}
     </div>
 </div>
