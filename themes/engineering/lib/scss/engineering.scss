@@ -6,7 +6,67 @@
   color: $su-color-bright-red;
 }
 
-// Your SASS here
-// body {
-//   background-image: url("../../assets/img/test.jpg");
-// }
+
+
+// Engineering Card Grid
+// used in the magazine, other places.
+
+.card-grid__row {
+  display: flex;
+  padding-bottom: 2em;
+
+  .card-grid__column {
+    // flex-basis: 1 1 33%;
+    //height: 100%;
+
+    .su-card {
+      height: 100%;
+
+      .views-field-title {
+        a {
+          color: black;
+
+          &:hover{
+            text-decoration-color: black;
+          }
+        }
+      }
+
+      .views-field-created{
+        color:#606060;
+        font-size: 1em;
+        font-weight: 100;
+        margin-bottom: 10px;
+      }
+
+      .views-field-su-soe-mag-topics {
+        margin-top: 1em;
+        a{
+          color: #8c1515;
+          font-weight: 400;
+          text-decoration: underline;
+
+          &:hover{
+            color: #333333;
+          }
+        }
+      }
+
+    }
+  }
+
+  @include magazine-grid-rows(1);
+
+  &:nth-of-type(2n) {
+    @include magazine-grid-rows(2);
+  }
+
+  &:nth-of-type(3n) {
+    @include magazine-grid-rows(3);
+  }
+
+}
+
+
+
+

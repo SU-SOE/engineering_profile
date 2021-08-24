@@ -1,0 +1,75 @@
+uuid: 50706bad-a46e-4b4a-88a7-af15e413a7f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.magazine_topics
+    - views.view.magazine
+  module:
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          6177ecdb-ec64-4f80-8aa9-16836ef36ecb:
+            uuid: 6177ecdb-ec64-4f80-8aa9-16836ef36ecb
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:taxonomy_term:magazine_topics:description'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Topic Stories'
+          context_mapping: {  }
+        components:
+          83a74267-7bcd-4b9f-b31f-8da1a7a8a40e:
+            uuid: 83a74267-7bcd-4b9f-b31f-8da1a7a8a40e
+            region: content
+            configuration:
+              id: 'views_block:magazine-block_3'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.magazine_topics.default
+targetEntityType: taxonomy_term
+bundle: magazine_topics
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

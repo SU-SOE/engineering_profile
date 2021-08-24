@@ -19,16 +19,14 @@ variant_settings:
         label: 'Section - Header'
         context_mapping: {  }
       components:
-        0148e9b7-2334-4a10-9590-932f2d8866c5:
-          uuid: 0148e9b7-2334-4a10-9590-932f2d8866c5
+        bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8:
+          uuid: bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8
           region: main
           configuration:
-            id: jumpstart_ui_page_heading
-            label: 'Heading Block'
-            provider: jumpstart_ui
+            id: magazine_navigation_block
+            label: 'Magazine Navigation - block title'
+            provider: engineering_magazine
             label_display: '0'
-            heading_text: Magazine
-            wrapper: h1
             context_mapping: {  }
           additional: {  }
           weight: 0
@@ -49,28 +47,17 @@ variant_settings:
         label: 'Latest News Header'
         context_mapping: {  }
       components:
-        9dab0914-a56e-4f8d-a544-f629337947a0:
-          uuid: 9dab0914-a56e-4f8d-a544-f629337947a0
+        f55c9802-c4f7-448a-a2be-89a30b81d385:
+          uuid: f55c9802-c4f7-448a-a2be-89a30b81d385
           region: main
           configuration:
-            id: 'block_content:5317212b-e9af-4117-85a0-105bfba36666'
-            label: 'Magazine Latest News Block'
+            id: 'block_content:19b76306-c0b8-4dcd-8dde-562796493bab'
+            label: 'Magazine Landing Page Lede text'
             provider: block_content
             label_display: '0'
             status: true
             info: ''
             view_mode: full
-            context_mapping: {  }
-          additional: {  }
-          weight: 1
-        bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8:
-          uuid: bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8
-          region: main
-          configuration:
-            id: magazine_navigation_block
-            label: 'Magazine Navigation - block title'
-            provider: engineering_magazine
-            label_display: visible
             context_mapping: {  }
           additional: {  }
           weight: 0
