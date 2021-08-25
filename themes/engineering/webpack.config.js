@@ -41,7 +41,7 @@ const distJS = path.resolve(distDir, 'js');
 // Start configuring webpack.
 var webpackConfig = {
   // Turns on watch
-  watch: false,
+  watch: true,
   watchOptions: {
     aggregateTimeout: 200,
     poll: 1000,

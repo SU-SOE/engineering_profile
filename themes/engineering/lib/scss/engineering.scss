@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@import "./config";
-@import "utlities/variables/index";
-@import "components/button";
+@import "./config",
+"utlities/variables/index",
+"components/index";
 
 .demo-class-stanford {
   color: $su-color-bright-red;

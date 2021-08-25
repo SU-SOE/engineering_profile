@@ -11,7 +11,6 @@ dependencies:
     - taxonomy.vocabulary.department
   content:
     - 'taxonomy_term:affiliation:018f428b-ad4c-43c9-b1e7-09a7a5170b9a'
-    - 'taxonomy_term:affiliation:100e6641-f907-4544-b5c1-bdb38aeb9f7f'
     - 'taxonomy_term:affiliation:1696228e-a0d6-457e-886a-f8faf8e1a1ae'
     - 'taxonomy_term:affiliation:aa69684d-ac15-4573-9ae0-cd067b6d3d62'
     - 'taxonomy_term:affiliation:ea1c87cb-2b74-4b7c-9e8e-8ab065d2fc83'
@@ -365,7 +364,7 @@ display:
           click_sort_column: target_id
           type: media_responsive_image_formatter
           settings:
-            view_mode: stanford_image_stanford_circle
+            view_mode: stanford_image_medium
             image_style: ''
             link: true
           group_column: target_id
@@ -389,16 +388,16 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: 'Read {{ title }}''s story '
-            make_link: false
+            alter_text: false
+            text: '{{ view_node }}'
+            make_link: true
             path: ''
-            absolute: false
+            absolute: true
             external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: ''
+            alt: 'Read {{ title }}'
             rel: ''
             link_class: ''
             prefix: ''
@@ -427,7 +426,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: view
+          text: 'Read {{ title }}'
           output_url_as_text: false
           absolute: false
           entity_type: node
@@ -682,7 +681,6 @@ display:
           value:
             251: 251
             261: 261
-            266: 266
             256: 256
             246: 246
           group: 1
@@ -712,7 +710,7 @@ display:
               site_builder: '0'
               site_developer: '0'
               soe_site_embedder: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -797,6 +795,8 @@ display:
             su_spotlight_person_title: 0
             su_people_spotlight_quote: 0
             su_spotlight_feature_image: 0
+            view_node: 0
+            nothing: 0
           separator: ''
           hide_empty: 0
           pattern: card
@@ -806,19 +806,29 @@ display:
               weight: 0
               plugin: views_row
               source: title
+            'views_row:nothing':
+              destination: card_cta_label
+              weight: 1
+              plugin: views_row
+              source: nothing
+            'views_row:view_node':
+              destination: card_link
+              weight: 2
+              plugin: views_row
+              source: view_node
             'views_row:su_spotlight_feature_image':
               destination: card_image
-              weight: 1
+              weight: 3
               plugin: views_row
               source: su_spotlight_feature_image
             'views_row:su_spotlight_person_title':
               destination: card_headline
-              weight: 2
+              weight: 4
               plugin: views_row
               source: su_spotlight_person_title
             'views_row:su_people_spotlight_quote':
               destination: card_body
-              weight: 3
+              weight: 5
               plugin: views_row
               source: su_people_spotlight_quote
           pattern_variant: default
@@ -1084,7 +1094,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: 'Read {{ title }}''s story '
@@ -1120,13 +1130,13 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'No results.'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           text: view
-          output_url_as_text: false
-          absolute: false
+          output_url_as_text: true
+          absolute: true
           entity_type: node
           plugin_id: entity_link
         nothing:
