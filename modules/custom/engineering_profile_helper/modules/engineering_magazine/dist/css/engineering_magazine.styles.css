@@ -5,7 +5,11 @@
   background: initial;
   background-color: #00ece9;
   height: initial;
-  padding: initial; }
+  padding: initial;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100%;
+  width: 100vw; }
   .section-bgcolor--title.section-editorial-content .magazine-landing-nav {
     width: 100%;
     width: 100vw;

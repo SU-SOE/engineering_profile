@@ -6,16 +6,37 @@ dependencies:
     - taxonomy.vocabulary.magazine_topics
     - views.view.magazine
   module:
+    - engineering_magazine
     - layout_builder
     - layout_discovery
     - layout_library
     - text
     - views
+  theme:
+    - soe_basic
 third_party_settings:
   layout_builder:
     allow_custom: false
     enabled: true
     sections:
+      -
+        layout_id: soe_basic_full_width_header
+        layout_settings:
+          label: 'Magazine Navigation'
+          context_mapping: {  }
+        components:
+          624f69de-e990-4632-a66e-76495fc29988:
+            uuid: 624f69de-e990-4632-a66e-76495fc29988
+            region: main
+            configuration:
+              id: magazine_navigation_block
+              label: 'Magazine Navigation'
+              provider: engineering_magazine
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
       -
         layout_id: layout_onecol
         layout_settings:
