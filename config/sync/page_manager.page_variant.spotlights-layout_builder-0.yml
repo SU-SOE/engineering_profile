@@ -14,13 +14,16 @@ variant_settings:
   weight: 0
   sections:
     -
-      layout_id: soe_basic_full_width_header
+      layout_id: defaults
       layout_settings:
-        label: 'Spotlights Header'
+        extra_classes: bare-header
+        centered: centered-container
+        columns: default
+        label: Header
         context_mapping: {  }
       components:
-        f0010c71-4e5b-4b23-9691-acfed9aebbd9:
-          uuid: f0010c71-4e5b-4b23-9691-acfed9aebbd9
+        faa1e13d-7962-4129-be52-9595ef96d268:
+          uuid: faa1e13d-7962-4129-be52-9595ef96d268
           region: main
           configuration:
             id: jumpstart_ui_page_heading
@@ -36,7 +39,7 @@ variant_settings:
     -
       layout_id: defaults
       layout_settings:
-        extra_classes: ''
+        extra_classes: engineering-accent-color__image
         centered: centered-container
         columns: default
         label: ''
@@ -59,7 +62,7 @@ variant_settings:
     -
       layout_id: defaults
       layout_settings:
-        extra_classes: ''
+        extra_classes: engineering-accent-color__image
         centered: centered-container
         columns: default
         label: ''
