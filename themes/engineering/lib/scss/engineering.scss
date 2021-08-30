@@ -2,7 +2,9 @@
 
 @import "./config",
 "utlities/variables/index",
-"components/index";
+"utlities/mixins/index",
+"components/index",
+"base/index";
 
 .demo-class-stanford {
   color: $su-color-bright-red;

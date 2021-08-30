@@ -1,0 +1,38 @@
+//Flex mixins
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin font-size($font-size: 21px, $font-weight: 400, $line-height: 31px, $letter-spacing: normal) {
+  font-size: $font-size;
+  // font-size: $font-size * 0.1rem;
+  // example using rem values and 62.5% font-size so 1rem = 10px
+
+  line-height: $line-height ;
+
+  letter-spacing: $letter-spacing;
+
+  font-weight: $font-weight;
+}
