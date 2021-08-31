@@ -1,0 +1,32 @@
+uuid: aeb61f7c-1d1b-4329-8068-d2a4c17fab66
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.spotlights
+  module:
+    - node
+    - views
+  theme:
+    - engineering
+id: views_block__spotlights_block_3
+theme: engineering
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:spotlights-block_3'
+settings:
+  id: 'views_block:spotlights-block_3'
+  label: 'More News'
+  provider: views
+  label_display: '0'
+  views_label: 'More News'
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      spotlight: spotlight
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
