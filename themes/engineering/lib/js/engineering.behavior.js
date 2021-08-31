@@ -18,10 +18,13 @@
         return accentColors[(Math.random() * accentColors.length) | 0];
       }
 
-      $(".engineering-accent-color__link a,.engineering-accent-color__image img").each(function () {
+      $(".engineering-accent-color__link a").each(function () {
         $(this).css('text-decoration', 'underline');
         $(this).css('text-decoration-color', getAccentColor());
-        //Adds different highlight color to spotlight headshot images.
+      });
+
+      //Adds different highlight color to spotlight headshot images.
+      $(".engineering-accent-color__image img").each(function () {
         $(this).css('border-color', getAccentColor());
       });
 
