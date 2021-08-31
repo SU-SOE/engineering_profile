@@ -6,7 +6,7 @@ dependencies:
     - focal_point
     - image_effects
 name: large_headshot_circle
-label: 'Large Headshot Circle (302 x 302)'
+label: 'Large Headshot Circle (360 x 360)'
 effects:
   541b5a61-8e94-47c5-b4d7-b3dd569b6712:
     uuid: 541b5a61-8e94-47c5-b4d7-b3dd569b6712
@@ -28,8 +28,8 @@ effects:
     weight: 3
     data:
       mask_image: modules/custom/stanford_image_styles/img/mask-image.png
-      mask_width: '302'
-      mask_height: '302'
+      mask_width: '360'
+      mask_height: '360'
       placement: center-center
       x_offset: ''
       y_offset: ''

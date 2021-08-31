@@ -101,6 +101,31 @@
   line-height: 32px;
   font-weight: 400; }
 
+.spotlight-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 83px;
+  margin-bottom: 74px; }
+  .spotlight-banner .su-spotlight-feature-image {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .spotlight-banner .spotlight-banner__text {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3; }
+  .spotlight-banner img {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    display: block; }
+
+.spotlight-banner__text {
+  margin-left: 45px; }
+
 .bare-header {
   margin-top: 95px; }
 

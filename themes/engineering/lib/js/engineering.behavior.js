@@ -4,8 +4,8 @@
   Drupal.behaviors.engineeringTheme = {
     // Attach Drupal Behavior.
     attach(context, settings) {
-      console.log('I got into the engineering behavior. yeet!');
 
+      // Color map for highlights
       ///  #00ece9 - teal
       ///  #ff525c - orange
       ///  #ffbd54 - yellow

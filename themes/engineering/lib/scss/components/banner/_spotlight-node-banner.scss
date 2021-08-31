@@ -1,0 +1,26 @@
+// Main purpose: style entire node of individual Spotlight pages.
+.spotlight-banner{
+  display: flex;
+  margin-top: 83px;
+  margin-bottom: 74px;
+
+  .su-spotlight-feature-image{
+    flex: 1;
+  }
+
+  .spotlight-banner__text{
+    flex: 3;
+  }
+
+  img{
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    display: block;
+  }
+}
+.spotlight-banner__text{
+  margin-left: 45px;
+}
