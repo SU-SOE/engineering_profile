@@ -23,6 +23,8 @@ source:
     minimal_html: minimal_html
     image_destination: 'public://media/image/news/'
     alt: ''
+    magazine_story: true
+    magazine_topic: 'School Stories'
   ids:
     nid:
       type: string
@@ -94,6 +96,17 @@ process:
     source: '@paragraph'
     index:
       - 1
+  su_magazine_story: constants/magazine_story
+  su_soe_mag_topics:
+    -
+      plugin: default_value
+      default_value: 'School News'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: magazine_topics
 destination:
   plugin: 'entity:node'
   default_bundle: stanford_news

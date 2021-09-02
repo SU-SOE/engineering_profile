@@ -1,10 +1,12 @@
-global-styling:
-   version: 1.0
-   css:
+engineering-styling:
+  version: 1.0
+  css:
     theme:
-      dist/css/engineering.styles.css : {}
-   js:
-     lib/js/engineering.js : {
-       scope: footer,
-       attributes: { type: module }
-     }
+      dist/css/engineering.styles.css : {weight: 100}
+    component:
+      dist/css/engineering.components.css : {}
+  js:
+    dist/js/engineering.script.js : {}
+  dependencies:
+    - core/jquery
+

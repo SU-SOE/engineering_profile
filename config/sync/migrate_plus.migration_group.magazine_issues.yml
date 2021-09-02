@@ -1,0 +1,10 @@
+uuid: 2a9520b5-6411-4641-9689-06d828ece0b0
+langcode: en
+status: true
+dependencies: {  }
+id: magazine_issues
+label: 'Magazine Issues D7'
+description: 'Migrations for Magazine Issues'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

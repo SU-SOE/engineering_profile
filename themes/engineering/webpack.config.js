@@ -7,15 +7,15 @@
 // Requires / Dependencies /////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-const path =                      require('path');
-const webpack =                   require('webpack');
-const autoprefixer =              require('autoprefixer');
-const FileManagerPlugin =         require('filemanager-webpack-plugin');
-const UglifyJsPlugin =            require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin =      require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin =   require("optimize-css-assets-webpack-plugin");
-const WebpackAssetsManifest =     require("webpack-assets-manifest");
-const ExtraWatchWebpackPlugin =   require("extra-watch-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const WebpackAssetsManifest = require("webpack-assets-manifest");
+const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -48,6 +48,7 @@ var webpackConfig = {
   entry: {
     "engineering.script": path.resolve(srcJS, "engineering.js"),
     "engineering.styles": path.resolve(srcSass, "engineering.scss"),
+    "engineering.components": path.resolve(srcSass, "components/index.scss")
   },
   // Where put build?
   output: {
@@ -177,7 +178,7 @@ var webpackConfig = {
     new FixStyleOnlyEntriesPlugin(),
     // Output css files.
     new MiniCssExtractPlugin({
-      filename:  "../css/[name].css"
+      filename: "../css/[name].css"
     }),
     // A webpack plugin to manage files before or after the build.
     // https://www.npmjs.com/package/filemanager-webpack-plugin
@@ -186,21 +187,21 @@ var webpackConfig = {
         delete: [distDir]
       },
       // onEnd: {
-        // copy: [
-          // {
-          //   source: npmPackage + "/decanter/core/src/templates/**/*.twig",
-          //   destination: distDir + "/templates/decanter/"
-          // },
-          // {
-          //   source: srcDir + "/assets/**/*",
-          //   destination: distDir + "/assets/"
-          // }
-        // ],
+      // copy: [
+      // {
+      //   source: npmPackage + "/decanter/core/src/templates/**/*.twig",
+      //   destination: distDir + "/templates/decanter/"
+      // },
+      // {
+      //   source: srcDir + "/assets/**/*",
+      //   destination: distDir + "/assets/"
+      // }
+      // ],
       // },
     }),
     // Add a plugin to watch other files other than that required by webpack.
     // https://www.npmjs.com/package/filewatcher-webpack-plugin
-    new ExtraWatchWebpackPlugin( {
+    new ExtraWatchWebpackPlugin({
       files: [
         srcDir + '/**/*.twig',
         srcDir + '/**/*.json'
@@ -210,4 +211,4 @@ var webpackConfig = {
 };
 
 // Add the configuration.
-module.exports = [ webpackConfig ];
+module.exports = [webpackConfig];

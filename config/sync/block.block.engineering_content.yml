@@ -1,0 +1,20 @@
+uuid: f219cfe5-e78e-461f-ad71-31788ffc3f7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - engineering
+id: engineering_content
+theme: engineering
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

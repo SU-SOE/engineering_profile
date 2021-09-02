@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// Card styles for magazine landing page
+
+div[class*="magazine-block-"] {
+    .views-row {
+        .views-col{
+            .su-card {
+                margin: 1em;
+            }
+        }
+    }
+}
+
+
