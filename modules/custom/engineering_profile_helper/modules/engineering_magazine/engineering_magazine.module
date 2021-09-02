@@ -34,5 +34,3 @@ function engineering_magazine_theme() {
   ];
 }
 
-echo 'works';
-exit;
