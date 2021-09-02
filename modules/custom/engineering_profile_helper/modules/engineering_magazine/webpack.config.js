@@ -47,6 +47,7 @@ var webpackConfig = {
     // What build?
     entry: {
         "engineering_magazine.script": path.resolve(srcJS, "magazine_navigation.js"),
+        "engineering_magazine_curtain.script": path.resolve(srcJS, "magazine_curtain.js"),
         "engineering_magazine.styles": path.resolve(srcSass, "components/index.scss"),
     },
     // Where put build?

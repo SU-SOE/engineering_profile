@@ -50,3 +50,5 @@ engineering_magazine:
       dist/css/engineering_magazine.styles.css: {}
   js:
     dist/js/engineering_magazine.script.js: {}
+    dist/js/engineering_magazine_curtain.script.js: {}
+

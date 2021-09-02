@@ -31,9 +31,14 @@ function engineering_magazine_theme($existing, $type, $theme, $path) {
     'magazine_navigation_block' => [
       'template' => 'block/magazine-navigation',
       'variables' => [
-        'test_var' => "This test variable is from the module",
         'topics' => null,
       ],
-    ]
+    ],
+    'magazine_curtain_block' => [
+      'variables'=> [
+        'curtain_variable' => 'this is my curtain variable.',
+        'curtain_content' => null,
+      ],
+    ],
   ];
 }

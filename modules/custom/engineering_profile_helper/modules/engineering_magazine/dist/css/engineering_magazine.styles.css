@@ -102,5 +102,40 @@
   margin: 0 auto 60px;
   text-align: center; }
 
+.magazine-topics__term-name {
+  width: 100%;
+  text-align: center; }
+  .magazine-topics__term-name h2 {
+    font-size: 2.8em;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin: -9px 0 10px; }
+
+.hero-curtain {
+  position: relative;
+  background-color: red;
+  z-index: 10; }
+  .hero-curtain > * {
+    z-index: 10; }
+  .hero-curtain img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    width: 100%;
+    height: 100vh; }
+  .hero-curtain .curtain-content {
+    background-color: aliceblue;
+    height: 100%;
+    width: 100%; }
+  .hero-curtain.below-hero {
+    margin-bottom: 0 !important; }
+
+.hero-curtain-reveal {
+  position: fixed;
+  top: 0; }
+  .hero-curtain-reveal.below-hero {
+    position: relative; }
+
 
 /*# sourceMappingURL=engineering_magazine.styles.css.map*/

@@ -9,15 +9,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 
 /**
- * Provides a 'Magazine Navigation' Block.
+ * Provides a 'Magazine Curtain' Block.
  *
  * @Block(
- *   id = "magazine_navigation_block",
- *   admin_label = @Translation("Magazine Navigation"),
+ *   id = "magazine_curtain_block",
+ *   admin_label = @Translation("Magazine Curtain"),
  *   category = @Translation("SoE Magazine"),
  * )
  */
-class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
@@ -57,6 +57,28 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
     );
   }
 
+
+  /**
+   * Figure out the vocabulary and term that we are looking at by examining the path.
+   */
+  public function whatsMyTerm() {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_array = explode('/', $current_path);
+    array_shift($path_array);
+    dpm(['current path' => $path_array]);
+    switch ($path_array[0]) {
+      case 'magazine':
+        // we are on the landing page:
+        return 'Landing Page Curtain';
+      case 'taxonomy':
+        // we are on a term page.
+        return 'Taxonomy Term Page Curtain';
+      default:
+        return 'something went wrong, and I got the default.';
+    }
+  }
+
+
   /**
    * Get the magazine_topics vocabulary so we can build a dropdown menu for it.
    */
@@ -78,10 +100,11 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
    * {@inheritdoc}
    */
   public function build() {
-    $this->getMagazineTopics();
+
     return [
-      '#theme' => 'magazine_navigation_block',
+      '#theme' => 'magazine_curtain_block',
       '#topics' => $this->getMagazineTopics(),
+      '#curtain_content' => $this->whatsMyTerm(),
       '#attached' => [
         'library' => [
           'engineering_magazine/engineering_magazine'
