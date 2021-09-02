@@ -1244,6 +1244,7 @@ display:
         use_more_text: false
         link_display: false
         link_url: false
+        title: false
       exposed_block: false
       arguments:
         term_node_taxonomy_name_depth:
@@ -1327,7 +1328,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
           autosubmit_hide: true
-      css_class: soe-spotlight--cards
+      css_class: 'soe-spotlight--cards centered-container'
       use_ajax: false
       style:
         type: grid
@@ -1350,6 +1351,7 @@ display:
       use_more_text: 'See more stories'
       link_display: custom_url
       link_url: /spotlights
+      title: 'Related spotlights'
     cache_metadata:
       max-age: -1
       contexts:

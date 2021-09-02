@@ -130,6 +130,10 @@ function engineering_preprocess_select(array &$variables) {
  * Implements hook_preprocess_field().
  */
 function engineering_preprocess_field(array &$variables, $hook) {
+  if ($variables['element']['#field_name'] == "node_post_date"){
+    $timestamp = strtotime($variables["items"][0]["content"][0]["#markup"]);
+    $variables["items"][0]["content"][0]["#markup"] = date('M Y', $timestamp);
+  }
   /*switch ($variables['element']['#field_name']) {
   }*/
 }

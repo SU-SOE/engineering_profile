@@ -17,10 +17,10 @@ provider: null
 plugin: 'views_block:spotlights-block_3'
 settings:
   id: 'views_block:spotlights-block_3'
-  label: 'More News'
+  label: ''
   provider: views
-  label_display: '0'
-  views_label: 'More News'
+  label_display: visible
+  views_label: ''
   items_per_page: none
 visibility:
   node_type:

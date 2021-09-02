@@ -112,9 +112,18 @@
         -ms-flex: 1;
             flex: 1; }
   .spotlight-banner .spotlight-banner__text {
-    -webkit-box-flex: 3;
-        -ms-flex: 3;
-            flex: 3; }
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    padding: 60px 0; }
+    .spotlight-banner .spotlight-banner__text .spotlight {
+      font-size: 30px;
+      line-height: 33px;
+      font-weight: 900; }
+      .spotlight-banner .spotlight-banner__text .spotlight h1 {
+        font-size: 55px;
+        line-height: 60px;
+        font-weight: 900; }
   .spotlight-banner img {
     width: 360px;
     height: 360px;
@@ -125,6 +134,22 @@
 
 .spotlight-banner__text {
   margin-left: 45px; }
+
+.spotlight-banner__quote-date {
+  max-width: 100ch; }
+
+.spotlight.node-post-date {
+  float: right;
+  text-align: right;
+  font-style: italic;
+  width: 100%; }
+
+.su-spotlight-degrees,
+.su-soe-department {
+  font-size: 28px;
+  line-height: 35px;
+  font-weight: 400;
+  float: left; }
 
 
 /*# sourceMappingURL=engineering.components.css.map*/
