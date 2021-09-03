@@ -1,0 +1,110 @@
+uuid: 25d08052-8598-4bdf-a341-55b16447404f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.magazine_landing_page
+id: magazine_landing_page-layout_builder-0
+label: 'Layout Builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: 12067df9-ee35-4adf-b2b6-9ea276e9c98f
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Magazine Curtain'
+        context_mapping: {  }
+      components:
+        52ab4aec-9446-4acd-89fe-216556cd9d3d:
+          uuid: 52ab4aec-9446-4acd-89fe-216556cd9d3d
+          region: content
+          configuration:
+            id: magazine_curtain_block
+            label: 'Magazine Curtain'
+            provider: engineering_magazine
+            label_display: '0'
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: soe_basic_full_width_header
+      layout_settings:
+        label: 'Section - Header'
+        context_mapping: {  }
+      components:
+        bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8:
+          uuid: bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8
+          region: main
+          configuration:
+            id: magazine_navigation_block
+            label: 'Magazine Navigation - block title'
+            provider: engineering_magazine
+            label_display: '0'
+            context_mapping: {  }
+          additional: {  }
+          weight: 6
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Magazine Navigation'
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: magazine-latest-news-header
+        centered: centered-container
+        columns: default
+        label: 'Latest News Header'
+        context_mapping: {  }
+      components:
+        f55c9802-c4f7-448a-a2be-89a30b81d385:
+          uuid: f55c9802-c4f7-448a-a2be-89a30b81d385
+          region: main
+          configuration:
+            id: 'block_content:19b76306-c0b8-4dcd-8dde-562796493bab'
+            label: 'Magazine Landing Page Lede text'
+            provider: block_content
+            label_display: '0'
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: section-magazine-views-views
+        centered: centered-container
+        columns: default
+        label: 'Section - Views'
+        context_mapping: {  }
+      components:
+        016c5d80-2604-4117-b324-feec5e44a6bf:
+          uuid: 016c5d80-2604-4117-b324-feec5e44a6bf
+          region: main
+          configuration:
+            id: 'views_block:magazine-block_1'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: '20'
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+page: magazine_landing_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

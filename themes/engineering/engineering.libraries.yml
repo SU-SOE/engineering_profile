@@ -1,12 +1,15 @@
 engineering-styling:
-   version: 1.0
-   css:
+  version: 1.0
+  css:
     theme:
       dist/css/engineering.styles.css : {weight: 100}
     component:
       dist/css/engineering.components.css : {}
-   js:
-     lib/js/engineering.js : {
-       scope: footer,
-       attributes: { type: module }
-     }
+  js:
+    dist/js/engineering.script.js : {
+      scope: footer,
+      attributes: { type: module }
+    }
+  dependencies:
+    - core/jquery
+

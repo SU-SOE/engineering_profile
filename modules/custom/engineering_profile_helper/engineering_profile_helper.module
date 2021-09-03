@@ -28,9 +28,7 @@ function engineering_profile_helper_help($route_name, RouteMatchInterface $route
  */
 function engineering_profile_helper_theme() {
   return [
-    'engineering_profile_helper' => [
-      'render element' => 'children',
-    ],
+
   ];
 }
 

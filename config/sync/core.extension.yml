@@ -31,6 +31,7 @@ module:
   content_lock_timeout: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -42,8 +43,10 @@ module:
   ds_extras: 0
   dynamic_page_cache: 0
   editor: 0
+  editoria11y: 0
   element_class_formatter: 0
   encrypt: 0
+  engineering_magazine: 0
   engineering_profile_helper: 0
   entity_reference_revisions: 0
   entity_usage: 0
@@ -122,6 +125,7 @@ module:
   responsive_image: 0
   rest: 0
   rh_node: 0
+  rh_taxonomy: 0
   role_delegation: 0
   search_api: 0
   search_api_db: 0
@@ -180,6 +184,7 @@ module:
   views_block_filter_block: 0
   views_bulk_operations: 0
   views_contextual_filters_or: 0
+  views_data_export: 0
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
   views_ui: 0
