@@ -28,15 +28,15 @@
         $(this).css('border-color', getAccentColor());
       });
 
-     $(".soe-spotlight--cards .su-link").each(function (){
-       $(this).removeClass('su-card__link su-link--action');
-       $(this).addClass('su-link--external');
-     })
+      $(".soe-spotlight--cards .su-link").each(function () {
+        $(this).removeClass('su-card__link su-link--action');
+        $(this).addClass('su-link--external');
+      })
     },
 
     // Detach Example.
     detach() {
-      // console.log("Detached.");
+
     }
   };
 })(jQuery, Drupal);
