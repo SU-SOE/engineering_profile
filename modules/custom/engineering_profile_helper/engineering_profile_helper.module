@@ -31,3 +31,16 @@ function engineering_profile_helper_theme() {
 
   ];
 }
+
+/**
+ * @param $form
+ * @param $form_state
+ *
+ */
+function engineering_profile_form_views_exposed_form_alter(&$form, &$form_state){
+  // Changes the label of the first item on dropdown for exposed filter on /spotlight
+  if($form["#id"] == 'views-exposed-form-spotlights-block-1'){
+    $form['tid']['#options']["All"] = t('All People');
+    $form['tid_1']['#options']["All"] = t('All Department');
+  }
+}

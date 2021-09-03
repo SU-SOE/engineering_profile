@@ -1,6 +1,11 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
-@import "./config";
+@import "./config",
+"utlities/variables/index",
+"utlities/mixins/index",
+"components/index",
+"base/index",
+"page/index";
 
 .demo-class-stanford {
   color: $su-color-bright-red;

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.soe-load-more {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  .button{
+    background-color: $su-color-light-teal;
+  }
+}

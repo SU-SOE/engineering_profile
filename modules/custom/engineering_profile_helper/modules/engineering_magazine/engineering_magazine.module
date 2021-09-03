@@ -42,3 +42,4 @@ function engineering_magazine_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+

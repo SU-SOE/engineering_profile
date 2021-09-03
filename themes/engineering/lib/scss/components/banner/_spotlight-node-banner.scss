@@ -1,0 +1,57 @@
+@import "../../utlities/mixins";
+@import "../../utlities/variables";
+
+// Main purpose: style entire node of individual Spotlight pages.
+.spotlight-banner{
+  display: flex;
+  margin-top: 83px;
+  margin-bottom: 74px;
+
+  .su-spotlight-feature-image{
+    flex: 1;
+  }
+
+  .spotlight-banner__text{
+    flex: 2;
+    padding: 60px 0;
+
+    .spotlight{
+      @include font-size(30px, 900, 33px, null);
+
+      h1{
+        @include font-size(55px, 900, 60px, null);
+      }
+    }
+  }
+
+  img{
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    display: block;
+  }
+}
+.spotlight-banner__text{
+  margin-left: 45px;
+}
+
+.spotlight-banner__quote-date{
+  max-width: 100ch;
+}
+
+//Date on Spotlight
+.spotlight.node-post-date{
+  float: right;
+  text-align: right;
+  font-style: italic;
+  width: 100%;
+
+}
+
+.su-spotlight-degrees,
+.su-soe-department{
+  @include font-size(28px, $soe-font-thin, 35px, null);
+  float: left;
+}

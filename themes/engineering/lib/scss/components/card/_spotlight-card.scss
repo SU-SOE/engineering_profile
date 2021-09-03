@@ -1,0 +1,78 @@
+@import "../../utlities/variables/colors";
+@import "../../utlities/mixins";
+
+.soe-spotlight--cards{
+  img{
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    display:block;
+    margin:auto;
+  }
+
+  //Main purpose here is to make all cards same height.
+  .views-row{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 128px;
+
+    .su-card {
+      height: 100%;
+      margin: 20px;
+      padding: 36px 34px;
+    }
+
+    .su-card .image{
+      flex: 1;
+      display: block;
+      width: 100%;
+
+      img {
+        width: 260px;
+        height: 260px;
+      }
+    }
+
+    .su-card .su-card__contents{
+      flex: 3;
+
+      h2{
+        @include font-size(22.5px, 900, 24.75px, null);
+      }
+    }
+  }
+
+  // Main purpose here is to style the cards texts and spacing
+  .su-card__contents{
+    &{
+      @include font-size(32px, 900, 34.5px, null);
+    }
+
+    .soe--person-title{
+      @include font-size(21px, 400, 32px, null);
+    }
+
+    spotlight__quote{
+      @include font-size(44px, 900, 48px, null);
+    }
+
+    span > a {
+      color: $su-color-black;
+      font-size: 22.5px;
+      font-weight: 900;
+      line-height: 25px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      @include font-size(21px, null, 25px, null);
+    }
+
+    .su-link{
+      @include font-size(20px, 600, 25px, null);
+      width: 100%;
+    }
+  }
+}

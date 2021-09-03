@@ -9,7 +9,7 @@ id: node.spotlight.su_spotlight_person_title
 field_name: su_spotlight_person_title
 entity_type: node
 bundle: spotlight
-label: Title
+label: 'Title of Individual'
 description: 'This text field displays the person''s title. Ex. Professor of English'
 required: false
 translatable: false

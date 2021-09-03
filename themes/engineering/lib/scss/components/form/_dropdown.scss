@@ -1,0 +1,15 @@
+@import "../../utlities/mixins";
+
+#views-exposed-form-spotlights-block-1{
+  .form-item-tid,
+  .form-item-tid-1{
+    float: right;
+    max-width: 280px;
+    width: 280px;
+    margin-right: 30px;
+  }
+
+  input, select, textarea{
+    @include font-size(21px, 400, 32px, null);
+  }
+}
