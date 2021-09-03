@@ -121,8 +121,7 @@
       });
     },
     // Detach Example.
-    detach: function detach() {// console.log("Detached.");
-    }
+    detach: function detach() {}
   };
 })(jQuery, Drupal);
 

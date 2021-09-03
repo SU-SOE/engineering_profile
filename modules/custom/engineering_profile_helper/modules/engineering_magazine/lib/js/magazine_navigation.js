@@ -2,7 +2,6 @@
 
     Drupal.behaviors.engineeringMagazine = {
         attach: function (context, settings) {
-            console.log('I got into the JS successfully. yeet!');
 
             const toggleButton = $('#magazine-landing-nav__topics-toggle');
 

@@ -96,7 +96,6 @@
 (function ($, Drupal) {
   Drupal.behaviors.engineeringMagazine = {
     attach: function attach(context, settings) {
-      console.log('I got into the JS successfully. yeet!');
       var toggleButton = $('#magazine-landing-nav__topics-toggle');
       toggleButton.click(function () {
         $('.magazine-landing-nav__topics_panel').slideToggle();
