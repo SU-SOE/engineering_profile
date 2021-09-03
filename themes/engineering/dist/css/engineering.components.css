@@ -1,4 +1,4 @@
-.magazine-block-1 .views-row .views-col .su-card {
+div[class*="magazine-block-"] .views-row .views-col .su-card {
   margin: 1em; }
 
 .soe-spotlight--cards img {
@@ -150,5 +150,6 @@
   line-height: 35px;
   font-weight: 400;
   float: left; }
+
 
 /*# sourceMappingURL=engineering.components.css.map*/
