@@ -32,6 +32,10 @@
         $(this).removeClass('su-card__link su-link--action');
         $(this).addClass('su-link--external');
       })
+
+      $(".engineering-accent-color__background").each(function () {
+        $(this).css('background-color', getAccentColor());
+      })
     },
 
     // Detach Example.

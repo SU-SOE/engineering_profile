@@ -1,10 +1,22 @@
 <div id="magazine-curtain" class="magazine-curtain hero-curtain hero-scroll">
 
-	<div class="curtain-content">
-		<h1>This is my curtain.</h1>
+	<div class="curtain-image">
+		<img src="{{ curtain_content.media_url }}"/>
+	</div>
 
-		<p>Curtain content:
-			{{ curtain_content }}</p>
+	<div class="curtain-content">
+
+		<a href="{{ curtain_content.issue_url }}" class="engineering-accent-color__background">
+			<h1>Stanford Engineering Magazine | Issue
+				{{ curtain_content.issue_number}}
+			</h1>
+		</a>
+
+		<p>Scroll to
+			<strong>explore the latest news</strong>
+			{# curtain_content.text #}</p>
+
+
 	</div>
 
 </div>
