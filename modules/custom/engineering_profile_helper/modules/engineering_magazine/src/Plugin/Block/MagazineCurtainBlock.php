@@ -65,7 +65,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     $current_path = \Drupal::service('path.current')->getPath();
     $path_array = explode('/', $current_path);
     array_shift($path_array);
-    //dpm(['current path' => $path_array]);
     switch ($path_array[0]) {
       case 'magazine':
         // we are on the landing page:
