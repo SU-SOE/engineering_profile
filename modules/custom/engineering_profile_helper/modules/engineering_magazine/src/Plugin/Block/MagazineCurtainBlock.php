@@ -8,6 +8,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\media\Entity\Media;
+use Drupal\path_alias\AliasManager;
 
 /**
  * Provides a 'Magazine Curtain' Block.
@@ -26,6 +27,11 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
   protected $entity_type_manager;
 
   /**
+   * @var \Drupal\path_alias\AliasManager $path_alias_manager
+   */
+  protected $path_alias_manager;
+
+  /**
    * @var array $magazine_topics
    */
   protected $magazine_topics;
@@ -35,10 +41,12 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    * @param string $plugin_id
    * @param mixed $plugin_definition
    * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
+   * @param \Drupal\Core\Path\AliasManager $path_alias_manager
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity_type_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity_type_manager, AliasManager $path_alias_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entity_type_manager = $entity_type_manager;
+    $this->path_alias_manager = $path_alias_manager;
   }
 
   /**
@@ -54,7 +62,8 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('path_alias.manager')
     );
   }
 
@@ -101,11 +110,7 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
   /**
    * We want the latest Featured Story and issue so we can feed the information into the curtain.
    */
-  public function getNewestFeatured() {
-    $newest_featured = [
-      'su_mag_featured' => true,
-      'su_magazine_story' => true,
-    ];
+  protected function getNewestFeatured() {
     $entity = $this->entity_type_manager->getStorage('node');
     $query = $entity->getQuery();
     $ids = $query->condition('type', 'stanford_news')
@@ -122,7 +127,30 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     }
     // We need a default image for a fallback.
     dpm('Could not find a newest featured node.');
+  }
 
+  /**
+   * Get the newest issue.
+   */
+  protected function getNewestIssue() {
+    $entity = $this->entity_type_manager->getStorage('taxonomy_term');
+    $query = $entity->getQuery();
+    $tids = $query->condition('vid', 'magazine_issues')
+      ->sort('su_issue_number', 'DESC')
+      ->pager(1)
+      ->execute();
+    $terms = $entity->loadMultiple($tids);
+    if (count($terms) == 1) {
+      $term = array_shift($terms);
+      $term_name = $term->name->getString();
+      $term_path = $term->get('path')->alias;
+      dpm($term);
+      return [
+        'term_name' => $term_name,
+        'issue_url' => $term_path,
+      ];
+    }
+    dpm('Could not find the newest issue.');
   }
 
   /**
@@ -140,13 +168,17 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function build() {
-    $this->getNewestFeatured();
+    //$this->getNewestFeatured();
+    //dpm($this->getNewestIssue());
+    $issue = $this->getNewestIssue();
     return [
       '#theme' => 'magazine_curtain_block',
       '#topics' => $this->getMagazineTopics(),
       '#curtain_content' => [
         'text' => $this->whatsMyTerm(),
         'media_url'=> $this->getNewestFeatured(),
+        'issue_number' => $issue['term_name'],
+        'issue_url' => $issue['issue_url'],
       ],
       '#attached' => [
         'library' => [

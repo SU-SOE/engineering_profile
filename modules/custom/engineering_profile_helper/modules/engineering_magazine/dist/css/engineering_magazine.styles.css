@@ -164,6 +164,8 @@
     .hero-curtain .curtain-content p {
       margin-top: 4em;
       color: white; }
+    .hero-curtain .curtain-content .scroll-down {
+      color: white; }
   .hero-curtain.below-hero {
     margin-bottom: 0 !important; }
 
