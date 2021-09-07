@@ -81,36 +81,67 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/js/magazine_navigation.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/js/engineering.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./lib/js/magazine_navigation.js":
-/*!***************************************!*\
-  !*** ./lib/js/magazine_navigation.js ***!
-  \***************************************/
+/***/ "./lib/js/engineering.behavior.js":
+/*!****************************************!*\
+  !*** ./lib/js/engineering.behavior.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 (function ($, Drupal) {
-  Drupal.behaviors.engineeringMagazine = {
+  Drupal.behaviors.engineeringTheme = {
+    // Attach Drupal Behavior.
     attach: function attach(context, settings) {
-      var toggleButton = $('#magazine-landing-nav__topics-toggle');
-      toggleButton.click(function () {
-        $('.magazine-landing-nav__topics_panel').slideToggle();
+      // Color map for highlights
+      ///  #00ece9 - teal
+      ///  #ff525c - orange
+      ///  #ffbd54 - yellow
+      function getAccentColor() {
+        var accentColors = ["#00ece9", "#ff525c", "#ffbd54"]; //return accentColors[Math.floor(Math.random() * accentColors.length)];
 
-        if (toggleButton.getAttribute('aria-expanded') == 'false') {
-          toggleButton.attr('aria-expanded', 'true');
-        } else {
-          toggleButton.attr('aria-expanded', 'false');
-        }
+        return accentColors[Math.random() * accentColors.length | 0];
+      }
+
+      $(".engineering-accent-color__link a").each(function () {
+        $(this).css('text-decoration', 'underline');
+        $(this).css('text-decoration-color', getAccentColor());
+      }); //Adds different highlight color to spotlight headshot images.
+
+      $(".engineering-accent-color__image img").each(function () {
+        $(this).css('border-color', getAccentColor());
       });
-    }
+      $(".soe-spotlight--cards .su-link").each(function () {
+        $(this).removeClass('su-card__link su-link--action');
+        $(this).addClass('su-link--external');
+      });
+    },
+    // Detach Example.
+    detach: function detach() {}
   };
 })(jQuery, Drupal);
+
+/***/ }),
+
+/***/ "./lib/js/engineering.js":
+/*!*******************************!*\
+  !*** ./lib/js/engineering.js ***!
+  \*******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./engineering.behavior.js */ "./lib/js/engineering.behavior.js");
+/* harmony import */ var _engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0__);
+// Main Webpack entry file.
+ // Your code goes below.
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=engineering_magazine.script.js.map
+//# sourceMappingURL=engineering.script.js.map
