@@ -5,7 +5,7 @@ namespace Drupal\engineering_magazine\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Provides a 'Magazine Navigation' Block.
@@ -19,7 +19,7 @@ use Drupal\Core\Entity\EntityTypeManager;
 class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var \Drupal\Core\Entity\EntityTypeManager
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
@@ -35,10 +35,10 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
    *   The plugin id.
    * @param mixed $plugin_definition
    *   The plugin definition.
-   * @param \Drupal\Core\Entity\EntityTypeManager $entityTypeManager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   Inject a type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entityTypeManager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entity_type_manager = $entityTypeManager;
   }
