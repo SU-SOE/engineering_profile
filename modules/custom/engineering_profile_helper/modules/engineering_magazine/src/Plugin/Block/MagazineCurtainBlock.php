@@ -3,12 +3,11 @@
 namespace Drupal\engineering_magazine\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\media\Entity\Media;
-use Drupal\path_alias\AliasManager;
+use Drupal\node\Entity\Node;
 
 /**
  * Provides a 'Magazine Curtain' Block.
@@ -22,38 +21,39 @@ use Drupal\path_alias\AliasManager;
 class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
+   * @var \Drupal\Core\Entity\EntityTypeManager
    */
-  protected $entity_type_manager;
+  protected $entityTypeManager;
 
   /**
-   * @var \Drupal\path_alias\AliasManager $path_alias_manager
+   * @var array
    */
-  protected $path_alias_manager;
-
-  /**
-   * @var array $magazine_topics
-   */
-  protected $magazine_topics;
+  protected $magazineTopics;
 
   /**
    * @param array $configuration
+   *   The configuration.
    * @param string $plugin_id
+   *   The plugin id.
    * @param mixed $plugin_definition
-   * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
-   * @param \Drupal\Core\Path\AliasManager $path_alias_manager
+   *   The plugin definition.
+   * @param \Drupal\Core\Entity\EntityTypeManager $entityTypeManager
+   *   Inject the type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity_type_manager, AliasManager $path_alias_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->entity_type_manager = $entity_type_manager;
-    $this->path_alias_manager = $path_alias_manager;
+    $this->entity_type_manager = $entityTypeManager;
   }
 
   /**
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   The container.
    * @param array $configuration
+   *   The configuration.
    * @param string $plugin_id
+   *   The plugin ID.
    * @param mixed $plugin_definition
+   *   The plugin definition.
    *
    * @return static
    */
@@ -67,7 +67,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     );
   }
 
-
   /**
    * Figure out the vocabulary and term that we are looking at by examining the path.
    */
@@ -76,20 +75,19 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     $path_array = explode('/', $current_path);
     array_shift($path_array);
 
-
-
     switch ($path_array[0]) {
       case 'magazine':
-        // we are on the landing page:
+        // We are on the landing page:
         return 'Landing Page Curtain';
+
       case 'taxonomy':
-        // we are on a term page.
+        // We are on a term page.
         return 'Taxonomy Term Page Curtain';
+
       default:
         return 'something went wrong, and I got the default.';
     }
   }
-
 
   /**
    * Get the magazine_topics vocabulary so we can build a dropdown menu for it.
@@ -114,19 +112,20 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     $entity = $this->entity_type_manager->getStorage('node');
     $query = $entity->getQuery();
     $ids = $query->condition('type', 'stanford_news')
-      ->condition('su_magazine_story', true)
-      ->condition('su_mag_featured', true)
-      ->condition('status', true)
+      ->condition('su_magazine_story', TRUE)
+      ->condition('su_mag_featured', TRUE)
+      ->condition('status', TRUE)
       ->sort('su_news_publishing_date', 'DESC')
       ->pager(1)
       ->execute();
     $nodes = $entity->loadMultiple($ids);
-    if (count($nodes) == 1){
+    if (count($nodes) == 1) {
       $node = array_shift($nodes);
       return $this->getImageUrl($node);
     }
     // We need a default image for a fallback.
-    dpm('Could not find a newest featured node.');
+    throw new \Exception("Could not find a featured node");
+
   }
 
   /**
@@ -144,19 +143,21 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $term = array_shift($terms);
       $term_name = $term->name->getString();
       $term_path = $term->get('path')->alias;
-      dpm($term);
       return [
         'term_name' => $term_name,
         'issue_url' => $term_path,
       ];
     }
-    dpm('Could not find the newest issue.');
+    throw new \Exception("Could not find an issue");
   }
 
   /**
-   * get an image URL for a news node
+   * Get an image URL for a news node.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node to get the image from.
    */
-  protected function getImageUrl($node) {
+  protected function getImageUrl(Node $node) {
     $media_field = $node->get('su_news_banner')->target_id;
     $media_entity_load = Media::load($media_field);
     $uri = $media_entity_load->field_media_image->entity->getFileUri();
@@ -168,21 +169,20 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function build() {
-    //$this->getNewestFeatured();
-    //dpm($this->getNewestIssue());
+
     $issue = $this->getNewestIssue();
     return [
       '#theme' => 'magazine_curtain_block',
       '#topics' => $this->getMagazineTopics(),
       '#curtain_content' => [
         'text' => $this->whatsMyTerm(),
-        'media_url'=> $this->getNewestFeatured(),
+        'media_url' => $this->getNewestFeatured(),
         'issue_number' => $issue['term_name'],
         'issue_url' => $issue['issue_url'],
       ],
       '#attached' => [
         'library' => [
-          'engineering_magazine/engineering_magazine'
+          'engineering_magazine/engineering_magazine',
         ],
       ],
     ];

@@ -2,15 +2,12 @@
 
 namespace Drupal\engineering_profile_helper\Plugin\migrate\process;
 
-use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\Plugin\MigrationInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Provides a 'MagazineArticlesToIssues' migrate process plugin.
@@ -19,7 +16,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
  *  id = "magazine_articles_to_issues"
  * )
  */
-class MagazineArticlesToIssues extends ProcessPluginBase implements ContainerFactoryPluginInterface{
+class MagazineArticlesToIssues extends ProcessPluginBase implements ContainerFactoryPluginInterface {
 
   /**
    * The entity type manager.
@@ -124,23 +121,18 @@ class MagazineArticlesToIssues extends ProcessPluginBase implements ContainerFac
     return $instance;
   }
 
-
   /**
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     $nodes = $this->entityTypeManager->getStorage('node')->loadByProperties([
-          'title' => $value,
-          'type' => 'stanford_news',
-        ]);
+      'title' => $value,
+      'type' => 'stanford_news',
+    ]);
     if (count($nodes) == 1) {
       return array_key_first($nodes);
     }
-    return null;
-
-    var_export('ERROR!!!!!');
-    var_export($value);
-    die();
+    return NULL;
   }
 
 }
