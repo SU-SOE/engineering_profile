@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.stanford_card
     - field.storage.node.su_people_spotlight_quote
     - field.storage.node.su_spotlight_feature_image
     - field.storage.node.su_spotlight_person_title
@@ -22,7 +21,6 @@ dependencies:
     - taxonomy
     - ui_patterns_views
     - user
-    - views_autosubmit
     - views_infinite_scroll
     - views_taxonomy_term_name_depth
 id: spotlights
@@ -740,7 +738,7 @@ display:
         groups:
           1: AND
       exposed_form:
-        type: autosubmit
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -749,8 +747,7 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
-          autosubmit_hide: true
-      css_class: soe-spotlight--cards
+      css_class: 'soe-spotlight--cards soe-link__button'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1318,7 +1315,7 @@ display:
         groups:
           1: AND
       exposed_form:
-        type: autosubmit
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -1327,7 +1324,6 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
-          autosubmit_hide: true
       css_class: 'soe-spotlight--cards centered-container'
       use_ajax: false
       style:
@@ -1342,10 +1338,51 @@ display:
           row_class_default: true
           row_class_custom: ''
       row:
-        type: 'entity:node'
+        type: ui_patterns
         options:
-          relationship: none
-          view_mode: stanford_card
+          default_field_elements: 0
+          inline:
+            title: 0
+            su_spotlight_person_title: 0
+            su_people_spotlight_quote: 0
+            su_spotlight_feature_image: 0
+            view_node: 0
+            nothing: 0
+          separator: ''
+          hide_empty: 0
+          pattern: card
+          pattern_mapping:
+            'views_row:title':
+              destination: card_super_headline
+              weight: 0
+              plugin: views_row
+              source: title
+            'views_row:su_spotlight_feature_image':
+              destination: card_image
+              weight: 1
+              plugin: views_row
+              source: su_spotlight_feature_image
+            'views_row:su_spotlight_person_title':
+              destination: card_super_headline
+              weight: 2
+              plugin: views_row
+              source: su_spotlight_person_title
+            'views_row:su_people_spotlight_quote':
+              destination: card_body
+              weight: 3
+              plugin: views_row
+              source: su_people_spotlight_quote
+            'views_row:view_node':
+              destination: card_link
+              weight: 4
+              plugin: views_row
+              source: view_node
+            'views_row:nothing':
+              destination: card_cta_label
+              weight: 5
+              plugin: views_row
+              source: nothing
+          pattern_variant: default
       use_more: true
       use_more_always: false
       use_more_text: 'See more stories'
