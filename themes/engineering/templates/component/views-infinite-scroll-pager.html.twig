@@ -7,7 +7,7 @@
 
 {% if items.next %}
   <div{{ attributes }}>
-    <div class="soe-load-more pager__item">
+    <div class="soe-link__button pager__item">
       <a class="button su-button su-button--unstyled" href="{{ items.next.href }}" title="{{ 'Load more items'|t }}" rel="next">{{ options.button_text }}</a>
     </div>
   </div>

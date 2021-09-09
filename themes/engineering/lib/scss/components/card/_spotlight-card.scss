@@ -40,6 +40,10 @@
 
       h2{
         @include font-size(22.5px, 900, 24.75px, null);
+        margin-bottom: 3px;
+      }
+      span{
+        margin-bottom: 30px;
       }
     }
   }
@@ -54,7 +58,7 @@
       @include font-size(21px, 400, 32px, null);
     }
 
-    spotlight__quote{
+    .spotlight__quote{
       @include font-size(44px, 900, 48px, null);
     }
 

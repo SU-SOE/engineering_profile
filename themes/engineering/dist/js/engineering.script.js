@@ -119,6 +119,7 @@
         $(this).removeClass('su-card__link su-link--action');
         $(this).addClass('su-link--external');
       });
+      $('form-actions').hide();
     },
     // Detach Example.
     detach: function detach() {}

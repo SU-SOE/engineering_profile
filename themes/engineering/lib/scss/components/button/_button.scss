@@ -1,11 +1,33 @@
-@charset "UTF-8";
+@import "../../utilities";
 
-.soe-load-more {
-  display: block;
-  width: 100%;
-  text-align: center;
-
-  .button{
+  .soe-link__button .button,
+  .js-pager__items .soe-link__button.pager__item .button{
+    display: block;
+    width: 100%;
+    text-align: center;
     background-color: $su-color-light-teal;
+    color: $su-color-black;
+  }
+
+.more-link.soe-link__button{
+  display: inline-block;
+}
+
+.soe-spotlight--cards .js-pager__items.pager,
+.more-link.soe-link__button {
+  margin-bottom: 13.3rem;
+}
+
+
+// More button styles.
+.soe-more-stories-link__button .button{
+  text-align: center;
+}
+
+// Spotlights apply button for dropdown
+#views-exposed-form-spotlights-block-1{
+  .form-actions{
+
   }
 }
+
