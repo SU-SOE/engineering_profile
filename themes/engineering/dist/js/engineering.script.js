@@ -97,10 +97,12 @@
   Drupal.behaviors.engineeringTheme = {
     // Attach Drupal Behavior.
     attach: function attach(context, settings) {
-      // Color map for highlights
+      // Variables
+      var firstPath = window.location.pathname.split('/')[1]; // Color map for highlights
       ///  #00ece9 - teal
       ///  #ff525c - orange
       ///  #ffbd54 - yellow
+
       function getAccentColor() {
         var accentColors = ["#00ece9", "#ff525c", "#ffbd54"]; //return accentColors[Math.floor(Math.random() * accentColors.length)];
 
@@ -118,8 +120,15 @@
       $(".soe-spotlight--cards .su-link").each(function () {
         $(this).removeClass('su-card__link su-link--action');
         $(this).addClass('su-link--external');
-      });
-      $('form-actions').hide();
+      }); // Adds comma and space to individual spotlight pages where both
+
+      if (firstPath === "spotlight") {
+        if (document.getElementsByClassName('su-spotlight-degrees').length > 0 && document.getElementsByClassName('su-spotlight-degrees').length > 0) {
+          var divSpotlightDegree = document.getElementsByClassName('su-spotlight-degrees');
+          divSpotlightDegree[0].innerHTML += ',&nbsp;';
+        }
+      } //$('form-actions').hide();
+
     },
     // Detach Example.
     detach: function detach() {}

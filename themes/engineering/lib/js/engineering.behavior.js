@@ -4,6 +4,8 @@
   Drupal.behaviors.engineeringTheme = {
     // Attach Drupal Behavior.
     attach(context, settings) {
+      // Variables
+      const firstPath = window.location.pathname.split('/')[1];
 
       // Color map for highlights
       ///  #00ece9 - teal
@@ -33,7 +35,18 @@
         $(this).addClass('su-link--external');
       })
 
-      $('form-actions').hide();
+      // Adds comma and space to individual spotlight pages where both
+      if(firstPath === "spotlight"){
+        if(document.getElementsByClassName('su-spotlight-degrees').length > 0 &&
+          document.getElementsByClassName('su-spotlight-degrees').length > 0){
+          var divSpotlightDegree = document.getElementsByClassName('su-spotlight-degrees');
+          divSpotlightDegree[0].innerHTML += ',&nbsp;';
+        }
+      }
+
+
+
+      //$('form-actions').hide();
     },
 
     // Detach Example.
