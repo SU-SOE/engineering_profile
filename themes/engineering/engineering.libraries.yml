@@ -13,3 +13,7 @@ engineering-styling:
   dependencies:
     - core/jquery
 
+engineering-news-override:
+  version: 1.0
+  js:
+    dist/js/engineering-stanford-news-override.behavior.js
