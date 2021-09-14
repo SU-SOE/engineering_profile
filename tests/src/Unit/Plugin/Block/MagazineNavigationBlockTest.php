@@ -67,6 +67,7 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
   /**
    *
    * @covers \Drupal\engineering_magazine\Plugin\Block\MagazineNavigationBlock
+   * @covers ::create
    */
   public function testBuild() {
     $build = $this->blockObject->build();
