@@ -1,0 +1,215 @@
+<?php
+
+namespace Drupal\Tests\engineering_profile\Unit\Plugin\Block;
+
+use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\engineering_magazine\Plugin\Block\MagazineCurtainBlock;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
+use Drupal\path\Plugin\Field\FieldType\PathItem;
+use Drupal\Core\Entity\Query\Sql\Query;
+use Drupal\media\Entity\Media;
+
+/**
+ * Class SignupBlockTest.
+ *
+ * @group stanford_news
+ * @coversDefaultClass \Drupal\stanford_news\Plugin\Block\SignupBlock
+ */
+class MagazineCurtainBlockTest extends MagazineTestBase {
+
+
+  /**
+   * @var \Drupal\stanford_news\Plugin\Block\MagazineCurtainBlock
+   */
+  protected $blockObject;
+
+  /**
+   * @var
+   */
+  protected $path_field;
+
+  protected $node;
+
+  protected $media;
+
+  /**
+   * @var
+   */
+  protected static $modules = [
+    'system',
+    'engineering_magazine',
+    'node',
+    'taxonomy',
+    'field',
+    'user',
+    'media',
+    'file',
+  ];
+
+  /**
+   * {@inheritDoc}
+   */
+  protected function setUp(): void {
+    parent::setUp();
+
+    $config = [
+      "id" => "magazine_navigation_block",
+      "label" => "Newsletter Signup",
+      "label_display" => "visible",
+    ];
+
+    $this->media = $this->getMockBuilder(Media::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+    $this->media->method('load')
+      ->willReturn($this->getMockMediaImage());
+
+
+
+    $this->node = $this->getMockBuilder(Node::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+    $this->node->method('get')
+      ->willReturn($this->getMockedNode());
+
+    $this->blockObject = new MagazineCurtainBlock($config, '', ["provider" => "engineering_magazine"], $this->entityManager);
+  }
+
+  public function loadByPropertiesCallback() {
+    $taxonomy_term = $this->getMockBuilder(Term::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+    $taxonomy_term->setName('Mock Term');
+    $taxonomy_term->method('get')
+      ->with('path')
+      ->willReturn($this->path_field);
+    return [ 0 => $taxonomy_term];
+  }
+
+  public function loadMultipleCallback($param) {
+
+    var_export(PHP_EOL.'Got in the callback, param is: '. PHP_EOL);
+    var_export(get_class($param[0]));
+
+    return [0 => $this->taxonomyTerm];
+
+    switch ($param) {
+      case 'node':
+        return 'a node';
+      case 'taxonomy_term':
+        return 'a taxonomy term';
+      default:
+        return 'failure string.';
+    }
+
+
+
+  }
+
+
+  /**
+   *
+   */
+  public function getPathCallback() {
+    return '/magazine';
+  }
+
+  /**
+   *
+   */
+
+  public function getQueryCallback() {
+    $this->path_field = $this->getMockBuilder(PathItem::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+    $this->path_field->alias = '/foo/bar';
+
+    $query = $this->getMockBuilder(Query::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+    $query->method('condition')->will($this->returnValue($query));
+    $query->method('sort')->will($this->returnValue($query));
+    $query->method('pager')->will($this->returnValue($query));
+    $query->method('execute')->will($this->returnValue([0 => $this->path_field]));
+    return $query;
+  }
+
+  /**
+   *
+   */
+
+  public function getMockMediaImage() {
+
+    $entity = new \stdClass();
+    $entity->getFileUri = function () {
+      return 'public://xxx/something.jpg';
+    };
+
+    $mock_path = new \stdClass();
+    $mock_path->alias = '/mock/path';
+
+    $mock_media_entity = new \stdClass();
+    $mock_media_entity->entity = $entity;
+    $mock_media_entity->path = $mock_path;
+    return $mock_media_entity;
+  }
+
+
+
+
+
+
+  /**
+   *
+   */
+  public function testBuild() {
+    $build = $this->blockObject->build();
+    $this->assertArrayEquals([
+      '#theme' => 'magazine_navigation_block',
+      '#attached' => [
+        'library' => [
+          0 => 'engineering_magazine/engineering_magazine',
+        ],
+      ],
+      '#topics' => [
+          [
+            'name' => 'Mock Term',
+            'path' => NULL,
+          ],
+      ],
+    ], $build);
+  }
+
+  /**
+   *
+   */
+  public function testAccess() {
+    $account = $this->createMock(AccountInterface::class);
+    $this->assertTrue($this->blockObject->access($account));
+  }
+
+}
+
+/**
+ * Temporary mock for file_create_url().
+ *
+ * @see https://www.drupal.org/project/drupal/issues/2669074
+ */
+if (!function_exists('Drupal\engineering_magazine\Plugin\Block\file_create_url')) {
+
+  /**
+   * Mock for file_create_url().
+   *
+   * @param string $uri
+   *   Uri to be processed.
+   *
+   * @return string
+   *   Process url.
+   */
+  function file_create_url($uri): string {
+    return $uri;
+  }
+
+}

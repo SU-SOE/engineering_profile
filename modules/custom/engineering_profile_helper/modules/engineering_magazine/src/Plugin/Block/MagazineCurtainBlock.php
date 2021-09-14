@@ -5,7 +5,7 @@ namespace Drupal\engineering_magazine\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 
@@ -21,7 +21,7 @@ use Drupal\node\Entity\Node;
 class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var \Drupal\Core\Entity\EntityTypeManager
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
@@ -40,7 +40,7 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    * @param \Drupal\Core\Entity\EntityTypeManager $entityTypeManager
    *   Inject the type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entityTypeManager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->entity_type_manager = $entityTypeManager;
   }
@@ -124,7 +124,7 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       return $this->getImageUrl($node);
     }
     // We need a default image for a fallback.
-    throw new \Exception("Could not find a featured node");
+    throw new \RuntimeException("Could not find a featured node");
 
   }
 
@@ -141,14 +141,15 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     $terms = $entity->loadMultiple($tids);
     if (count($terms) == 1) {
       $term = array_shift($terms);
-      $term_name = $term->name->getString();
+
+      $term_name = $term->getName();
       $term_path = $term->get('path')->alias;
       return [
         'term_name' => $term_name,
         'issue_url' => $term_path,
       ];
     }
-    throw new \Exception("Could not find an issue");
+    throw new \RuntimeException("Could not find an issue");
   }
 
   /**
@@ -158,9 +159,11 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    *   The node to get the image from.
    */
   protected function getImageUrl(Node $node) {
-    $media_field = $node->get('su_news_banner')->target_id;
-    $media_entity_load = Media::load($media_field);
-    $uri = $media_entity_load->field_media_image->entity->getFileUri();
+    $uri = $node->get('su_news_banner')
+      ->entity
+      ->field_media_image
+      ->entity
+      ->getFileUri();
     $media_url = file_create_url($uri);
     return $media_url;
   }
