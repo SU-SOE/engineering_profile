@@ -6,11 +6,18 @@
 "base/index",
 "page/index";
 
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100);
+$primary-font: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+
 .demo-class-stanford {
   color: $su-color-bright-red;
 }
 
-
+h1, h2, h3, h4, h5 {
+  font-family: $roboto-slab;
+}
 
 // Engineering Card Grid
 // used in the magazine, other places.
