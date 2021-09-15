@@ -104,7 +104,7 @@
         "su-soe/soe_basic": "^8.1.0",
         "su-soe/soe_paragraphs": "^8.1.0",
         "su-sws/stanford_profile": "^8.2.0",
-        "su-sws/stanford_profile_helper": "dev-global-messages-test as 8.1.24"
+        "su-sws/stanford_profile_helper": "dev-global_messages_tests as 8.1.24"
     },
     "config": {
         "sort-packages": true
