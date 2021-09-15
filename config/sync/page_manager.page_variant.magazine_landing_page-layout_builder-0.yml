@@ -64,21 +64,7 @@ variant_settings:
         columns: default
         label: 'Latest News Header'
         context_mapping: {  }
-      components:
-        f55c9802-c4f7-448a-a2be-89a30b81d385:
-          uuid: f55c9802-c4f7-448a-a2be-89a30b81d385
-          region: main
-          configuration:
-            id: 'block_content:19b76306-c0b8-4dcd-8dde-562796493bab'
-            label: 'Magazine Landing Page Lede text'
-            provider: block_content
-            label_display: '0'
-            status: true
-            info: ''
-            view_mode: full
-            context_mapping: {  }
-          additional: {  }
-          weight: 0
+      components: {  }
       third_party_settings: {  }
     -
       layout_id: defaults

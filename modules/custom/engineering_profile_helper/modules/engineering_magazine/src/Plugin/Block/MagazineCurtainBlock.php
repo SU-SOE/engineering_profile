@@ -6,8 +6,8 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Logger\LoggerChannelTrait;
 
 /**
  * Provides a 'Magazine Curtain' Block.
@@ -19,6 +19,8 @@ use Drupal\node\Entity\Node;
  * )
  */
 class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  use LoggerChannelTrait;
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -37,7 +39,7 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    *   The plugin id.
    * @param mixed $plugin_definition
    *   The plugin definition.
-   * @param \Drupal\Core\Entity\EntityTypeManager $entityTypeManager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   Inject the type manager.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager) {
@@ -65,28 +67,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $container->get('entity_type.manager'),
       $container->get('path_alias.manager')
     );
-  }
-
-  /**
-   * Figure out the vocabulary and term that we are looking at by examining the path.
-   */
-  public function whatsMyTerm() {
-    $current_path = \Drupal::service('path.current')->getPath();
-    $path_array = explode('/', $current_path);
-    array_shift($path_array);
-
-    switch ($path_array[0]) {
-      case 'magazine':
-        // We are on the landing page:
-        return 'Landing Page Curtain';
-
-      case 'taxonomy':
-        // We are on a term page.
-        return 'Taxonomy Term Page Curtain';
-
-      default:
-        return 'something went wrong, and I got the default.';
-    }
   }
 
   /**
@@ -173,13 +153,33 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    */
   public function build() {
 
-    $issue = $this->getNewestIssue();
+    try {
+      $issue = $this->getNewestIssue();
+    }
+    catch (\Exception $e) {
+      // Log the exception.
+      $logger = $this->getLogger('engineering_magazine');
+      $logger->error('Could not find the newest issue.');
+      // Return an empty array.
+      return [];
+    }
+
+    try {
+      $newestFeatured = $this->getNewestFeatured();
+    }
+    catch (\Exception $e) {
+      // Log the exception.
+      $logger = $this->getLogger('engineering_magazine');
+      $logger->error('Coult not find the newest featured story.');
+      // Return an empty array.
+      return [];
+    }
+
     return [
       '#theme' => 'magazine_curtain_block',
       '#topics' => $this->getMagazineTopics(),
       '#curtain_content' => [
-        'text' => $this->whatsMyTerm(),
-        'media_url' => $this->getNewestFeatured(),
+        'media_url' => $newestFeatured ,
         'issue_number' => $issue['term_name'],
         'issue_url' => $issue['issue_url'],
       ],
