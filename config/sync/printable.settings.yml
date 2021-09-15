@@ -31,7 +31,7 @@ paper_size: A4
 page_orientation: Portrait
 path_to_binary: ''
 pdf_location: ''
-send_to_printer: false
+send_to_printer: true
 close_window: false
 list_attribute: true
 printable_print_link_locations:

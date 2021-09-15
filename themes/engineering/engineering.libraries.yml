@@ -15,8 +15,5 @@ engineering-styling:
 
 engineering-news-override:
   version: 1.0
-  css:
-    theme:
-      dist/css/engineering.components.css: { media: print }
   js:
-    dist/js/engineering-stanford-news-override.behavior.js
+    dist/js/engineering-stanford-news-override.behavior.js: {}
