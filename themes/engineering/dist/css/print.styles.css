@@ -9,8 +9,11 @@ h2.block__title,
   width: 25%;
   font-size: 24px; }
   .soe-print__header img.img-responsive {
-    width: 22%;
+    width: 30%;
     height: auto; }
+
+.soe-printable__page {
+  margin: 32px; }
 
 .node--layout-printable {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;

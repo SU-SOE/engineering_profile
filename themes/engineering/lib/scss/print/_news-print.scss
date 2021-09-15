@@ -12,10 +12,15 @@ h2.block__title,
   font-size: 24px;
 
   img.img-responsive {
-    width: 22%;
+    width: 30%;
     height: auto;
   }
 }
+
+.soe-printable__page{
+  margin: 32px;
+}
+
 
 // Wrapping all styles in this class for added insurance against these being fired on other pages.
 // Not that this css file should be available anywhere else.
