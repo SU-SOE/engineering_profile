@@ -1,0 +1,144 @@
+//Removing unnecessary content
+.more-link,
+#main-content,
+h2.stanford-news__title,
+h2.block__title,
+.stanford-news--cards{
+  display: none;
+}
+
+.soe-print__header {
+  width: 25%;
+  font-size: 24px;
+
+  img.img-responsive {
+    width: 22%;
+    height: auto;
+  }
+}
+
+// Wrapping all styles in this class for added insurance against these being fired on other pages.
+// Not that this css file should be available anywhere else.
+.node--layout-printable{
+
+  //Typography
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  font-size: 20px;
+
+  h1,
+  h2,
+  h3{
+    font-family: "Roboto Slab", serif;
+  }
+
+  h1{
+    font-size: 55px;
+    margin: 55px 0 24px 0;
+  }
+
+  //Header styles
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .su-news-dek{
+    width: 554px;
+    margin-bottom: 12px;
+  }
+
+  .stanford-news.datetime{
+    &:after {
+      content: "\00a0\00a0";
+    }
+  }
+
+  .byline-social-media-wrapper {
+    margin: 0 0 12px;
+
+    .news-date-pipe-byline {
+      font-size: 18px;
+      display: flex;
+    }
+
+    .su-news-byline.node.stanford-news.string.label-hidden {
+      &:before {
+        content: '\00a0\00a0';
+      }
+    }
+  }
+
+  // Image and body styles
+  .su-news-banner-media-caption{
+    font-size: 16px;
+    color: #53565a;
+  }
+
+  .su-wysiwyg-text {
+    margin-top: 82px;
+  }
+}
+
+
+
+
+// @todo Remove the following, which was taken from the D7 SOE site, and I used as a reference.
+/*
+
+.print-content {
+    margin-top: 30px; }
+    .print-content .node-stanford-magazine-article h2:first-child {
+      font-size: 26px;
+      line-height: 1.2em;
+      width: 90%;
+      margin: 40px auto 10px; }
+  .print-content .node-stanford-magazine-article h3 {
+    font-size: 16px; }
+  .print-content .node-stanford-magazine-article h4 {
+    font-size: 13px; }
+  .print-content .node-stanford-magazine-article p {
+    font-size: 13px;
+    line-height: 18px; }
+  .print-content .node-stanford-magazine-article .content {
+    width: 90%;
+    margin: 0 auto; }
+  .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-topics {
+    width: 100%;
+    margin: 0 auto; }
+    .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-topics .field-items {
+      display: inline-flex; }
+      .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-topics .field-items .field-item a:after {
+        content: ', \00a0';
+        color: #333333; }
+      .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-topics .field-items .field-item:last-child a:after {
+        content: none; }
+    .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-topics a {
+      color: #b1040e;
+      font-size: 13px;
+      font-weight: 300;
+      margin: 0 auto 18px; }
+  .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-byline,
+  .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-date {
+    color: #606060;
+    font-size: 13px;
+    font-weight: 300;
+    display: inline-flex;
+    margin: 0 auto 32px; }
+  .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-date {
+    margin-left: 0; }
+    .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-date .field-item:after {
+      content: '\00a0 | \00a0'; }
+  .print-content .node-stanford-magazine-article .field-name-field-s-mag-article-dek {
+    font-size: 18px;
+    line-height: 1.3em;
+    margin: 20px auto 22px;
+    width: 90%; }
+  .print-content .node-stanford-magazine-article .field-name-body {
+    margin: 0 auto; }
+    .print-content .node-stanford-magazine-article .field-name-body .caption {
+      color: #606060;
+      font-size: 9px;
+      font-style: italic;
+      text-align: center;
+      margin: 0 auto; }
+*/

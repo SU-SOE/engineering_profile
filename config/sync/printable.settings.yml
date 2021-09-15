@@ -1,4 +1,5 @@
 printable_entities:
+  node: node
   block: '0'
   block_content: '0'
   config_pages: '0'
@@ -7,7 +8,6 @@ printable_entities:
   encrypted_field_value: '0'
   file: '0'
   media: '0'
-  node: '0'
   page_variant: '0'
   path_alias: '0'
   paragraph_row: '0'
@@ -23,7 +23,7 @@ printable_entities:
   menu_link_content: '0'
   paragraph: '0'
 open_target_blank: true
-css_include: profiles/custom/engineering_profile/modules/custom/soe_print_sheets/dist/css/soe_print_help.styles.css
+css_include: profiles/custom/engineering_profile/themes/engineering/dist/css/print.styles.css
 extract_links: '0'
 save_pdf: false
 pdf_tool: ''
@@ -31,7 +31,7 @@ paper_size: A4
 page_orientation: Portrait
 path_to_binary: ''
 pdf_location: ''
-send_to_printer: true
+send_to_printer: false
 close_window: false
 list_attribute: true
 printable_print_link_locations:

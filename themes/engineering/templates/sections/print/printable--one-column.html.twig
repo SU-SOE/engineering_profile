@@ -1,0 +1,15 @@
+{#
+/**
+ * Single Column Container with configuration options.
+ */
+#}
+
+{# Add a few classes to the outer wrapper by default. #}
+{% set attributes = attributes.addClass('print') %}
+
+
+<div{{ attributes }}>
+  <div {{ main_attributes }}>
+    {{ content.main }}
+  </div>
+</div>
