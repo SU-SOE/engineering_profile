@@ -30,7 +30,6 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
    */
   protected $path_field;
 
-  protected $node;
 
   protected $media;
 
@@ -54,9 +53,14 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
   protected function setUp(): void {
     parent::setUp();
 
+    $this->storage->method('loadMultiple')
+      ->willReturnOnConsecutiveCalls(
+        [0 => $this->node], [0 => $this->taxonomyTerm],
+      );
+
     $config = [
-      "id" => "magazine_navigation_block",
-      "label" => "Newsletter Signup",
+      "id" => "magazine_curtain_block",
+      "label" => "Magazine Curtain",
       "label_display" => "visible",
     ];
 
@@ -65,14 +69,6 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
       ->getMock();
     $this->media->method('load')
       ->willReturn($this->getMockMediaImage());
-
-
-
-    $this->node = $this->getMockBuilder(Node::class)
-      ->disableOriginalConstructor()
-      ->getMock();
-    $this->node->method('get')
-      ->willReturn($this->getMockedNode());
 
     $this->blockObject = new MagazineCurtainBlock($config, '', ["provider" => "engineering_magazine"], $this->entityManager);
   }
@@ -86,26 +82,6 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
       ->with('path')
       ->willReturn($this->path_field);
     return [ 0 => $taxonomy_term];
-  }
-
-  public function loadMultipleCallback($param) {
-
-    var_export(PHP_EOL.'Got in the callback, param is: '. PHP_EOL);
-    var_export(get_class($param[0]));
-
-    return [0 => $this->taxonomyTerm];
-
-    switch ($param) {
-      case 'node':
-        return 'a node';
-      case 'taxonomy_term':
-        return 'a taxonomy term';
-      default:
-        return 'failure string.';
-    }
-
-
-
   }
 
 
@@ -156,29 +132,31 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
     return $mock_media_entity;
   }
 
-
-
-
-
-
   /**
    *
    */
   public function testBuild() {
     $build = $this->blockObject->build();
+    var_dump($build);
     $this->assertArrayEquals([
-      '#theme' => 'magazine_navigation_block',
       '#attached' => [
         'library' => [
-          0 => 'engineering_magazine/engineering_magazine',
+          0 => 'engineering_magazine/engineering_magazine'
         ],
       ],
+      '#theme' => 'magazine_navigation_block',
+      '#theme' => 'magazine_curtain_block',
       '#topics' => [
-          [
+          0 => [
             'name' => 'Mock Term',
-            'path' => NULL,
+            'path' => null,
+            ],
           ],
-      ],
+     '#curtain_content' => [
+        'media_url' => '#',
+        'issue_number' => 'Mock Term',
+        'issue_url' => null,
+     ],
     ], $build);
   }
 
@@ -188,28 +166,6 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
   public function testAccess() {
     $account = $this->createMock(AccountInterface::class);
     $this->assertTrue($this->blockObject->access($account));
-  }
-
-}
-
-/**
- * Temporary mock for file_create_url().
- *
- * @see https://www.drupal.org/project/drupal/issues/2669074
- */
-if (!function_exists('Drupal\engineering_magazine\Plugin\Block\file_create_url')) {
-
-  /**
-   * Mock for file_create_url().
-   *
-   * @param string $uri
-   *   Uri to be processed.
-   *
-   * @return string
-   *   Process url.
-   */
-  function file_create_url($uri): string {
-    return $uri;
   }
 
 }

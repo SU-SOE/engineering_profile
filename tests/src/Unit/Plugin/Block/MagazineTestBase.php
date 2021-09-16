@@ -10,6 +10,7 @@ use Drupal\Core\Entity\EntityTypeRepositoryInterface;
 use Drupal\Core\Path\CurrentPathStack;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\path\Plugin\Field\FieldType\PathItem;
+use Drupal\Core\Logger\LoggerChannelFactory;
 use Drupal\node\Entity\Node;
 
 /**
@@ -26,6 +27,8 @@ abstract class MagazineTestBase extends UnitTestCase {
   protected $entityManager;
 
   protected $pathManager;
+
+  protected $logger;
 
   protected $entityTypeRepository;
 
@@ -68,8 +71,6 @@ abstract class MagazineTestBase extends UnitTestCase {
       ->getMock();
     $this->node->method('get')
       ->will($this->returnValue($this->getMockedNode()));
-    //$this->node->entity = $this->getMockedNode();
-
 
     $this->container = new ContainerBuilder();
     $this->container->set('string_translation', $this->getStringTranslationStub());
@@ -82,10 +83,6 @@ abstract class MagazineTestBase extends UnitTestCase {
       ->will($this->returnCallback([$this, 'loadCallback']));
     $this->storage->method('getQuery')
       ->will($this->returnCallback([$this, 'getQueryCallback']));
-    $this->storage->method('loadMultiple')
-      ->willReturnOnConsecutiveCalls(
-        [0 => $this->taxonomyTerm], [0 => $this->node]
-      );
       //->will($this->returnCallback([$this, 'loadMultipleCallback']));
 
     $this->entityManager = $this->getMockBuilder(EntityTypeManagerInterface::class)
@@ -104,11 +101,19 @@ abstract class MagazineTestBase extends UnitTestCase {
       ->disableOriginalConstructor()
       ->getMock();
 
+    $this->logger = $this->getMockBuilder(LoggerChannelFactory::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+    $this->logger->method('get')
+      ->will($this->returnCallback([$this, 'getLoggerCallback']));
+
+
     $this->container->set('entity.type_manager', $this->entityManager);
     $this->container->set('entity_type.manager', $this->entityManager);
     $this->container->set('path.current', $this->pathManager);
     $this->container->set('entity_type.repository', $this->entityTypeRepository);
     $this->container->set('entity.type_manager', $this->entityManager);
+    $this->container->set('logger.factory', $this->logger);
 
     \Drupal::setContainer($this->container);
 
@@ -126,35 +131,35 @@ abstract class MagazineTestBase extends UnitTestCase {
   /**
    *
    */
-  public function loadByPropertiesCallback($param = NULL) {
+  public function loadByPropertiesCallback() {
     return;
   }
 
   /**
    *
    */
-  public function loadCallback($param = NULL) {
+  public function loadCallback() {
     return;
   }
 
   /**
    *
    */
-  public function getQueryCallback($param = NULL) {
+  public function getQueryCallback() {
     return;
   }
 
   /**
    *
    */
-  public function loadMultipleCallback($param = NULL) {
+  public function loadMultipleCallback() {
     return;
   }
 
   /**
    *
    */
-  public function getPathCallback($param = NULL) {
+  public function getPathCallback() {
     return;
   }
 
@@ -180,6 +185,14 @@ abstract class MagazineTestBase extends UnitTestCase {
     return new class {
       public function getFileUri() {
         return 'public://xxx/something.jpg';
+      }
+    };
+  }
+
+  public function getLoggerCallback() {
+    return new class{
+      public function error() {
+        return true;
       }
     };
   }

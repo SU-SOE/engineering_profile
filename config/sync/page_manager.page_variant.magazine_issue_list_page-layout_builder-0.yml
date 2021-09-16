@@ -1,0 +1,61 @@
+uuid: f0253fab-6637-4416-8995-a59079a16806
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.magazine_issue_list_page
+id: magazine_issue_list_page-layout_builder-0
+label: 'Layout Builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: 68b94330-42f4-4d86-8aa0-d7f50e991ddd
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: soe_basic_full_width_header
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        274db6a9-e5c9-4178-b5d1-3b97e46f5a1d:
+          uuid: 274db6a9-e5c9-4178-b5d1-3b97e46f5a1d
+          region: main
+          configuration:
+            id: magazine_navigation_block
+            label: 'Magazine Navigation'
+            provider: engineering_magazine
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+    -
+      layout_id: defaults
+      layout_settings:
+        extra_classes: ''
+        centered: centered-container
+        columns: default
+        label: ''
+        context_mapping: {  }
+      components:
+        3a32ebf9-d7c2-4890-a9e0-1bc2046aa01f:
+          uuid: 3a32ebf9-d7c2-4890-a9e0-1bc2046aa01f
+          region: main
+          configuration:
+            id: 'views_block:magazine-block_4'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+      third_party_settings: {  }
+page: magazine_issue_list_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
