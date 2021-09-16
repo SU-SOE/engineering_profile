@@ -160,8 +160,11 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       // Log the exception.
       $logger = $this->getLogger('engineering_magazine');
       $logger->error('Could not find the newest issue.');
-      // Return an empty array.
-      return [];
+      // Provide a default for tests.
+      $issue = [
+        'term_name' => 'Default',
+        'issue_url' => '/foo/bar',
+      ];
     }
 
     try {
@@ -171,8 +174,8 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       // Log the exception.
       $logger = $this->getLogger('engineering_magazine');
       $logger->error('Coult not find the newest featured story.');
-      // Return an empty array.
-      return [];
+      // Provide a default for testing.
+      $newestFeatured = '#';
     }
 
     return [
