@@ -150,5 +150,8 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   font-weight: 400;
   float: left; }
 
+.widget-wrapper-print {
+  display: block; }
+
 
 /*# sourceMappingURL=engineering.components.css.map*/
