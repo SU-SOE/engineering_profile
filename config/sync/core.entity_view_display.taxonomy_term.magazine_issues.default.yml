@@ -53,23 +53,6 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
-          a21a0acd-7020-4126-8f65-f32817ce82a5:
-            uuid: a21a0acd-7020-4126-8f65-f32817ce82a5
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:taxonomy_term:magazine_issues:su_issue_number'
-              formatter:
-                label: above
-                settings:
-                  thousand_separator: ''
-                  prefix_suffix: true
-                third_party_settings: {  }
-                type: number_integer
-            additional: {  }
-            weight: 2
         third_party_settings: {  }
       -
         layout_id: layout_onecol
