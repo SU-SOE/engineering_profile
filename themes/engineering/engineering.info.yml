@@ -6,8 +6,7 @@ core_version_requirement: ^8 || ^9
 libraries:
   - soe_basic/allpages
   - engineering/engineering-styling
-#  - engineering/global-styling
-#  - engineering/
+  - engineering/engineering-news-override
 
 base theme: soe_basic
 
@@ -34,3 +33,6 @@ ckeditor_stylesheets:
 
 libraries-override:
   jumpstart_ui/base: false
+  stanford_news/news_node:
+    js:
+      dist/js/news-node.behaviors.js: false

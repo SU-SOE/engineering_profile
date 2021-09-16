@@ -55,6 +55,7 @@ var webpackConfig = {
   entry: {
     "engineering.script": path.resolve(srcJS, "engineering.js"),
     "engineering.styles": path.resolve(srcSass, "engineering.scss"),
+    "print.styles": path.resolve(srcSass, "print.scss"),
     "engineering.components": path.resolve(srcSass, "components/index.scss")
   },
   // Where put build?
