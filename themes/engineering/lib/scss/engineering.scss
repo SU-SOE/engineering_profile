@@ -25,6 +25,22 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+// Various Roboto applications
+.su-drop-cap {
+  font-family: $roboto-slab;
+}
+
+
+.su-card__contents {
+
+}
+
+.su-hero .su-hero__card .su-card__contents {
+  h1, h2, h3, h4, h5 {
+    font-family: $roboto-slab;
+  }
+}
+
 // Engineering Card Grid
 // used in the magazine, other places.
 
@@ -36,6 +52,7 @@ h1, h2, h3, h4, h5 {
   .card-grid__column {
 
     padding-bottom: 2em;
+    max-width: 1192px; // TODO: This needs to be replaced with a relative value
 
 
     .su-card {
@@ -62,10 +79,11 @@ h1, h2, h3, h4, h5 {
         a{
           color: #8c1515;
           font-weight: 400;
-          text-decoration: underline;
+          text-decoration: none;
 
           &:hover{
             color: #333333;
+            text-decoration: underline;
           }
         }
       }
@@ -78,10 +96,16 @@ h1, h2, h3, h4, h5 {
         width: fit-content;
         background-color: #8c1515;
         color:white;
-        a {
-          color:white;
 
+        a {
+          color: #333333;;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
+
       }
 
     }
