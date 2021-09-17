@@ -82,11 +82,7 @@ display:
       style:
         type: grid
         options:
-          grouping:
-            -
-              field: su_magazine_issue
-              rendered: false
-              rendered_strip: false
+          grouping: {  }
           columns: 3
           automatic_width: false
           alignment: horizontal
@@ -933,7 +929,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: engineering-accent-color__background
           element_default_classes: true
           empty: ''
           hide_empty: true
@@ -957,7 +953,9 @@ display:
       defaults:
         fields: false
         use_ajax: false
+        title: false
       use_ajax: true
+      title: 'Landing Page Card Grid'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1023,6 +1021,7 @@ display:
       defaults:
         arguments: false
         sorts: false
+        title: false
       sorts:
         su_mag_featured_value:
           id: su_mag_featured_value
@@ -1049,6 +1048,7 @@ display:
             label: ''
           granularity: second
           plugin_id: datetime
+      title: 'Issue Landing Page Card Grid'
     cache_metadata:
       max-age: -1
       contexts:
