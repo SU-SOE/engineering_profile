@@ -148,7 +148,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     position: absolute;
-    background-color: #ccc;
+    background-color: transparent;
     color: white;
     height: 100%;
     width: 100%;
