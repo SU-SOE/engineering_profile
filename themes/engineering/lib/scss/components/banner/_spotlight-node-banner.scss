@@ -55,3 +55,7 @@
   @include font-size(28px, $soe-font-thin, 35px, null);
   float: left;
 }
+
+.node.spotlight.title {
+  //display: none;
+}
