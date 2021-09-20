@@ -1,9 +1,9 @@
-uuid: 2b9cffb6-419f-4105-8276-8d7f62d5ba88
+uuid: 066dcab5-1770-4893-8344-2d3287ed3203
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - core.base_field_override.node.spotlight.title
+    - core.entity_view_mode.node.spotlights_hero
     - field.field.node.spotlight.body
     - field.field.node.spotlight.su_people_spotlight_quote
     - field.field.node.spotlight.su_soe_department
@@ -12,22 +12,13 @@ dependencies:
     - field.field.node.spotlight.su_spotlight_feature_image
     - field.field.node.spotlight.su_spotlight_person_title
     - node.type.spotlight
-    - views.view.spotlights
   module:
-    - ctools
-    - ds
-    - element_class_formatter
     - field_formatter_class
     - field_group
-    - jumpstart_ui
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
     - layout_library
-    - stanford_media
-    - text
     - user
-    - views
 third_party_settings:
   field_group:
     group_spotlight_header:
@@ -37,7 +28,7 @@ third_party_settings:
       parent_name: ''
       weight: 0
       format_type: html_element
-      region: main
+      region: content
       format_settings:
         element: div
         show_label: false
@@ -52,14 +43,12 @@ third_party_settings:
       label: 'Spotlight Header'
     group_spotlights_banner_header_t:
       children:
-        - 'bundle_field:node'
-        - node_title
         - su_spotlight_degrees
         - su_soe_department
       parent_name: group_spotlight_header
       weight: 4
       format_type: html_element
-      region: main
+      region: content
       format_settings:
         show_empty_fields: false
         id: ''
@@ -74,12 +63,11 @@ third_party_settings:
       label: 'Spotlights Banner Header Text'
     group_spotlight_date_:
       children:
-        - node_post_date
         - su_people_spotlight_quote
       parent_name: ''
       weight: 1
       format_type: html_element
-      region: main
+      region: content
       format_settings:
         show_empty_fields: false
         id: ''
@@ -104,37 +92,22 @@ third_party_settings:
       blacklisted_blocks: {  }
       restricted_categories: {  }
       allowed_layouts: {  }
-id: node.spotlight.default
+id: node.spotlight.spotlights_hero
 targetEntityType: node
 bundle: spotlight
-mode: default
+mode: spotlights_hero
 content:
-  body:
-    type: text_default
-    weight: 3
-    region: main
+  su_people_spotlight_quote:
+    type: basic_string
+    weight: 5
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  su_people_spotlight_quote:
-    type: wrapper_class
-    weight: 5
-    region: main
-    label: hidden
-    settings:
-      link_class: ''
-      tag: p
-      class: ''
-      link: false
-      summary: false
-      trim: 200
-    third_party_settings:
-      field_formatter_class:
-        class: ''
   su_soe_department:
     type: entity_reference_label
     weight: 7
-    region: main
+    region: content
     label: hidden
     settings:
       link: false
@@ -146,24 +119,23 @@ content:
   su_spotlight_degrees:
     type: string
     weight: 6
-    region: main
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   su_spotlight_feature_image:
-    type: media_responsive_image_formatter
+    type: entity_reference_label
     weight: 3
-    region: main
+    region: content
     label: hidden
     settings:
-      view_mode: person_spotlight_circle
-      image_style: ''
       link: false
     third_party_settings:
       field_formatter_class:
         class: ''
 hidden:
+  body: true
   links: true
   search_api_excerpt: true
   su_spotlight_affiliation: true
