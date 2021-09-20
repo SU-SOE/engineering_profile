@@ -119,12 +119,6 @@
             "services": {
                 "drush.services.yml": "^9"
             }
-        },
-        "enable-patching": true,
-        "patches": {
-            "drupal/printable": {
-                "https://www.drupal.org/project/printable/issues/3225094": "https://www.drupal.org/files/issues/2021-07-23/3225094_2.patch"
-            }
         }
     }
 }
