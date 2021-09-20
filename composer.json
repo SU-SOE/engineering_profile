@@ -20,7 +20,7 @@
         {
             "type": "vcs",
             "url": "https://git.drupalcode.org/project/printable"
-        }
+        },
         {
             "type": "package",
             "package": {
