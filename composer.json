@@ -18,6 +18,10 @@
             "url": "https://git.drupalcode.org/project/printable"
         },
         {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/printable"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "ckeditor-plugin/a11ychecker",
