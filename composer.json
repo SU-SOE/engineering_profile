@@ -8,7 +8,14 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": [
+                "drupal/printable"
+            ]
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/printable"
         },
         {
             "type": "package",
@@ -98,7 +105,7 @@
     "require": {
         "ext-imagick": "*",
         "composer/installers": "^1.2",
-        "drupal/printable": "^2.0",
+        "drupal/printable": "dev-2.x",
         "drupal/views_autosubmit": "^1.4",
         "drupal/views_data_export": "^1.0",
         "drupal/views_bulk_edit": "^2.6",
@@ -120,6 +127,11 @@
                 "drush.services.yml": "^9"
             }
         },
-        "patches": {}
+        "enable-patching": true,
+        "patches": {
+            "drupal/printable": {
+                "https://www.drupal.org/project/printable/issues/3225094": "https://www.drupal.org/files/issues/2021-07-23/3225094_2.patch"
+            }
+        }
     }
 }

@@ -104,6 +104,7 @@ install:
   - 'paragraphs:paragraphs'
   - 'paragraphs_edit:paragraphs_edit'
   - 'pathauto:pathauto'
+  - 'printable:printable'
   - 'react_paragraphs:react_paragraphs'
   - 'redirect:redirect'
   - 'role_delegation:role_delegation'
