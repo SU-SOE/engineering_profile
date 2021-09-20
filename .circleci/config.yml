@@ -49,7 +49,6 @@ d8_codeception: &d8_codeception
         name: Run Codeception Tests
         command: |
           composer global require SU-SWS/stanford-caravan:dev-8.x-1.x
-          /var/www/html/composer install --vvv
           ~/.composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=/var/www/test
     - store_test_results:
         path: /var/www/html/artifacts/behat
