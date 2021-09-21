@@ -1,10 +1,17 @@
 <?php
 
-namespace Drupal\Tests\engineering_profile\Unit\Plugin\Block;
+namespace Drupal\Tests\engineering_profile\Kernel\Plugin\Block;
 
 
+use Drupal\KernelTests\KernelTestBase;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\NodeType;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
 use Drupal\engineering_magazine\Plugin\Block\MagazineNavigationBlock;
+use Drupal\Tests\engineering_profile\Kernel\Plugin\Block\MagazineTestBase;
 
 
 /**
@@ -24,22 +31,6 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
 
 
   /**
-   * @var array
-   *  Array of modules
-   */
-  protected static $modules = [
-    'system',
-    'engineering_profile_helper',
-    'engineering_magazine',
-    'node',
-    'taxonomy',
-    'field',
-    'user',
-    'text',
-    'config_pages',
-  ];
-
-  /**
    * {@inheritDoc}
    */
   protected function setUp(): void {
@@ -51,17 +42,7 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
       "label_display" => "visible",
     ];
 
-
-
-
-    $this->blockObject = new MagazineNavigationBlock($config, '', ["provider" => "engineering_magazine"], $this->entityManager);
-  }
-
-  /**
-   *
-   */
-  public function loadByPropertiesCallback() {
-    return [0 => $this->taxonomyTerm];
+    $this->blockObject = new MagazineNavigationBlock($config, '', ["provider" => "engineering_magazine"], \Drupal::entityTypeManager());
   }
 
   /**
@@ -71,19 +52,14 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
    */
   public function testBuild() {
     $build = $this->blockObject->build();
-    $this->assertArrayEquals([
+    $this->assertEquals([
       '#theme' => 'magazine_navigation_block',
       '#attached' => [
         'library' => [
           0 => 'engineering_magazine/engineering_magazine',
         ],
       ],
-      '#topics' => [
-          [
-            'name' => 'Mock Term',
-            'path' => NULL,
-          ],
-      ],
+      '#topics' => [],
     ], $build);
   }
 

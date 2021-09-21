@@ -7,7 +7,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
-use Drupal\Core\Logger\LoggerChannelTrait;
 
 /**
  * Provides a 'Magazine Curtain' Block.
@@ -19,8 +18,6 @@ use Drupal\Core\Logger\LoggerChannelTrait;
  * )
  */
 class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginInterface {
-
-  use LoggerChannelTrait;
 
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
@@ -157,10 +154,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $issue = $this->getNewestIssue();
     }
     catch (\Exception $e) {
-      // Log the exception.
-      $logger = $this->getLogger('engineering_magazine');
-      $logger->error('Could not find the newest issue.');
-      // Provide a default for tests.
       $issue = [
         'term_name' => 'Default',
         'issue_url' => '/foo/bar',
@@ -171,10 +164,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $newestFeatured = $this->getNewestFeatured();
     }
     catch (\Exception $e) {
-      // Log the exception.
-      $logger = $this->getLogger('engineering_magazine');
-      $logger->error('Coult not find the newest featured story.');
-      // Provide a default for testing.
       $newestFeatured = '#';
     }
 
