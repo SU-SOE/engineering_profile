@@ -135,7 +135,7 @@ third_party_settings:
                 label: hidden
                 type: entity_reference_label
                 settings:
-                  link: true
+                  link: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -143,7 +143,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -8
+            weight: -7
           ed59e692-8246-442b-ade3-10e5637ca812:
             uuid: ed59e692-8246-442b-ade3-10e5637ca812
             region: spotlight_hero_text
@@ -154,9 +154,9 @@ third_party_settings:
               label_display: '0'
               formatter:
                 label: hidden
-                type: string
+                type: entity_title_heading
                 settings:
-                  link_to_entity: false
+                  tag: h2
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -164,7 +164,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -10
+            weight: -9
           9aefecf1-0dc5-45db-b66d-2035ac32a77b:
             uuid: 9aefecf1-0dc5-45db-b66d-2035ac32a77b
             region: spotlight_hero_text
@@ -185,7 +185,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -9
+            weight: -8
           1f727be4-d8e3-4b75-a583-195a135c4959:
             uuid: 1f727be4-d8e3-4b75-a583-195a135c4959
             region: spotlight_hero_text
@@ -208,7 +208,28 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
+            weight: -6
+          b63d5396-c701-4d64-b0f9-a2b1b5f4e830:
+            uuid: b63d5396-c701-4d64-b0f9-a2b1b5f4e830
+            region: spotlight_hero_text
+            configuration:
+              id: 'field_block:node:spotlight:type'
+              label: 'Content type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_id
+                settings:
+                  link: 0
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -265,7 +286,7 @@ third_party_settings:
         layout_settings:
           extra_classes: ''
           centered: centered-container
-          columns: flex-10-of-12
+          columns: flex-12-of-12
           label: 'Related Spotlights'
           context_mapping: {  }
         components:
