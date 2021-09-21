@@ -169,14 +169,16 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
 .spotlight-banner__text {
   margin-left: 45px; }
 
-.spotlight-banner__quote-date {
+.node-spotlight-created {
   max-width: 100ch; }
 
-.spotlight.node-post-date {
+.spotlight.spotlight-header__date {
   float: right;
   text-align: right;
   font-style: italic;
-  width: 100%; }
+  width: 100%;
+  font-size: 20px;
+  font-weight: inherit; }
 
 .su-spotlight-degrees,
 .su-soe-department {
@@ -184,6 +186,11 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   line-height: 35px;
   font-weight: 400;
   float: left; }
+
+.su-people-spotlight-quote {
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 900; }
 
 
 /*# sourceMappingURL=engineering.components.css.map*/

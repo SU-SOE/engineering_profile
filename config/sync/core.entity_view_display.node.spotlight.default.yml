@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.base_field_override.node.spotlight.title
-    - core.entity_view_mode.node.full
     - field.field.node.spotlight.body
     - field.field.node.spotlight.su_people_spotlight_quote
     - field.field.node.spotlight.su_soe_department
@@ -15,16 +14,10 @@ dependencies:
     - node.type.spotlight
     - views.view.spotlights
   module:
-    - ds
-    - element_class_formatter
-    - field_formatter_class
-    - field_group
     - jumpstart_ui
     - layout_builder
-    - layout_builder_restrictions
+    - layout_discovery
     - layout_library
-    - stanford_media
-    - text
     - user
     - views
   theme:
@@ -40,8 +33,8 @@ third_party_settings:
           label: 'Spotlight Header'
           context_mapping: {  }
         components:
-          31598514-ad87-4040-9715-b8d851d4fd47:
-            uuid: 31598514-ad87-4040-9715-b8d851d4fd47
+          c334a4be-2fef-4c76-a735-8d4312230619:
+            uuid: c334a4be-2fef-4c76-a735-8d4312230619
             region: spotlight_hero_image
             configuration:
               id: 'field_block:node:spotlight:su_spotlight_feature_image'
@@ -54,7 +47,7 @@ third_party_settings:
                 settings:
                   view_mode: stanford_image_large
                   image_style: ''
-                  link: true
+                  link: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -63,12 +56,12 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 0
-          da911519-e43d-47a2-80f1-65afd2070ae5:
-            uuid: da911519-e43d-47a2-80f1-65afd2070ae5
+          90087c67-5f11-44a2-a588-839d2e2973fe:
+            uuid: 90087c67-5f11-44a2-a588-839d2e2973fe
             region: spotlight_hero_text
             configuration:
-              id: 'field_block:node:spotlight:su_soe_department'
-              label: Department
+              id: 'field_block:node:spotlight:type'
+              label: 'Content type'
               provider: layout_builder
               label_display: '0'
               formatter:
@@ -78,14 +71,14 @@ third_party_settings:
                   link: false
                 third_party_settings:
                   field_formatter_class:
-                    class: ''
+                    class: spotlight-banner-text__header
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -7
-          ed59e692-8246-442b-ade3-10e5637ca812:
-            uuid: ed59e692-8246-442b-ade3-10e5637ca812
+            weight: 0
+          63d93c8e-eb7c-44f1-9bed-188a48aabf70:
+            uuid: 63d93c8e-eb7c-44f1-9bed-188a48aabf70
             region: spotlight_hero_text
             configuration:
               id: 'field_block:node:spotlight:title'
@@ -96,7 +89,7 @@ third_party_settings:
                 label: hidden
                 type: entity_title_heading
                 settings:
-                  tag: h2
+                  tag: h1
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -104,9 +97,9 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -9
-          9aefecf1-0dc5-45db-b66d-2035ac32a77b:
-            uuid: 9aefecf1-0dc5-45db-b66d-2035ac32a77b
+            weight: 1
+          a704578a-b413-4b74-a71e-43967f0ba5cb:
+            uuid: a704578a-b413-4b74-a71e-43967f0ba5cb
             region: spotlight_hero_text
             configuration:
               id: 'field_block:node:spotlight:su_spotlight_degrees'
@@ -125,22 +118,20 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -8
-          1f727be4-d8e3-4b75-a583-195a135c4959:
-            uuid: 1f727be4-d8e3-4b75-a583-195a135c4959
+            weight: 2
+          3f3c9a5f-b8bc-4ce5-930e-4c8942b34819:
+            uuid: 3f3c9a5f-b8bc-4ce5-930e-4c8942b34819
             region: spotlight_hero_text
             configuration:
-              id: 'field_block:node:spotlight:created'
-              label: 'Authored on'
+              id: 'field_block:node:spotlight:su_soe_department'
+              label: Department
               provider: layout_builder
               label_display: '0'
               formatter:
                 label: hidden
-                type: timestamp
+                type: entity_reference_label
                 settings:
-                  date_format: stanford_month_date_year
-                  custom_date_format: ''
-                  timezone: ''
+                  link: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
@@ -148,40 +139,19 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -6
-          b63d5396-c701-4d64-b0f9-a2b1b5f4e830:
-            uuid: b63d5396-c701-4d64-b0f9-a2b1b5f4e830
-            region: spotlight_hero_text
-            configuration:
-              id: 'field_block:node:spotlight:type'
-              label: 'Content type'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: entity_reference_entity_id
-                settings:
-                  link: 0
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
-            weight: -10
+            weight: 3
         third_party_settings: {  }
       -
         layout_id: defaults
         layout_settings:
-          extra_classes: ''
+          extra_classes: spotlight-main-content
           centered: centered-container
           columns: flex-8-of-12
-          label: Cotent
+          label: 'Main Content'
           context_mapping: {  }
         components:
-          66b02ee3-254f-4826-bc56-ff77c918c3ec:
-            uuid: 66b02ee3-254f-4826-bc56-ff77c918c3ec
+          54aa6b91-104e-446c-9493-838e3d7d722b:
+            uuid: 54aa6b91-104e-446c-9493-838e3d7d722b
             region: main
             configuration:
               id: 'field_block:node:spotlight:su_people_spotlight_quote'
@@ -199,9 +169,9 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 0
-          c361ff3c-a0ef-44c2-8ddc-c5468be80f3a:
-            uuid: c361ff3c-a0ef-44c2-8ddc-c5468be80f3a
+            weight: -9
+          4b652f44-9246-4499-affb-8e0d9cba4535:
+            uuid: 4b652f44-9246-4499-affb-8e0d9cba4535
             region: main
             configuration:
               id: 'field_block:node:spotlight:body'
@@ -219,20 +189,40 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 1
+            weight: -8
+          4f9158ff-4e01-4db7-b830-516f99233707:
+            uuid: 4f9158ff-4e01-4db7-b830-516f99233707
+            region: main
+            configuration:
+              id: 'field_block:node:spotlight:created'
+              label: 'Authored on'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: timestamp
+                settings:
+                  date_format: custom
+                  custom_date_format: 'M Y'
+                  timezone: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
       -
-        layout_id: defaults
+        layout_id: layout_onecol
         layout_settings:
-          extra_classes: ''
-          centered: centered-container
-          columns: flex-12-of-12
-          label: 'Related Spotlights'
+          label: ''
           context_mapping: {  }
         components:
-          782978be-562a-4a78-93d8-52aa3337b847:
-            uuid: 782978be-562a-4a78-93d8-52aa3337b847
-            region: main
+          31905f92-5c91-48bf-b2d8-21116ef04019:
+            uuid: 31905f92-5c91-48bf-b2d8-21116ef04019
+            region: content
             configuration:
               id: 'views_block:spotlights-block_3'
               label: ''
@@ -246,74 +236,18 @@ third_party_settings:
         third_party_settings: {  }
   layout_library:
     enable: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      whitelisted_blocks: {  }
-      blacklisted_blocks: {  }
-      restricted_categories: {  }
-      allowed_layouts: {  }
 id: node.spotlight.default
 targetEntityType: node
 bundle: spotlight
 mode: default
-content:
-  body:
-    type: text_default
-    weight: 3
-    region: main
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  su_people_spotlight_quote:
-    type: wrapper_class
-    weight: 5
-    region: main
-    label: hidden
-    settings:
-      link_class: ''
-      tag: p
-      class: ''
-      link: false
-      summary: false
-      trim: 200
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-  su_soe_department:
-    type: entity_reference_label
-    weight: 7
-    region: main
-    label: hidden
-    settings:
-      link: false
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-      ds:
-        ds_limit: ''
-  su_spotlight_degrees:
-    type: string
-    weight: 6
-    region: main
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  su_spotlight_feature_image:
-    type: media_responsive_image_formatter
-    weight: 3
-    region: main
-    label: hidden
-    settings:
-      view_mode: person_spotlight_circle
-      image_style: ''
-      link: false
-    third_party_settings:
-      field_formatter_class:
-        class: ''
+content: {  }
 hidden:
+  body: true
   links: true
   search_api_excerpt: true
+  su_people_spotlight_quote: true
+  su_soe_department: true
   su_spotlight_affiliation: true
+  su_spotlight_degrees: true
+  su_spotlight_feature_image: true
   su_spotlight_person_title: true

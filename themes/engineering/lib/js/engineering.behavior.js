@@ -37,16 +37,12 @@
 
       // Adds comma and space to individual spotlight pages where both
       if(firstPath === "spotlight"){
-        if(document.getElementsByClassName('su-spotlight-degrees').length > 0 &&
-          document.getElementsByClassName('su-spotlight-degrees').length > 0){
+        if(document.getElementsByClassName('node-spotlight-su-spotlight-degrees').length > 0 &&
+          document.getElementsByClassName('node-spotlight-su-soe-department').length > 0){
           var divSpotlightDegree = document.getElementsByClassName('su-spotlight-degrees');
           divSpotlightDegree[0].innerHTML += ',&nbsp;';
         }
       }
-
-
-
-      //$('form-actions').hide();
     },
 
     // Detach Example.

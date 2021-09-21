@@ -169,14 +169,16 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
 .spotlight-banner__text {
   margin-left: 45px; }
 
-.spotlight-banner__quote-date {
+.node-spotlight-created {
   max-width: 100ch; }
 
-.spotlight.node-post-date {
+.spotlight.spotlight-header__date {
   float: right;
   text-align: right;
   font-style: italic;
-  width: 100%; }
+  width: 100%;
+  font-size: 20px;
+  font-weight: inherit; }
 
 .su-spotlight-degrees,
 .su-soe-department {
@@ -185,16 +187,19 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   font-weight: 400;
   float: left; }
 
-.bare-header {
-  margin-top: 95px; }
-
-.ds-entity--spotlight .main-region {
-  margin-bottom: 83px; }
-
 .su-people-spotlight-quote {
   font-size: 30px;
   line-height: 48px;
   font-weight: 900; }
+
+.bare-header {
+  margin-top: 95px; }
+
+.node_view ul.pre_links li a[href$='printable/print'] {
+  display: none; }
+
+.spotlight-main-content .main-region {
+  margin-bottom: 83px; }
 
 .spotlights-block-3 h2.block__title {
   text-align: center; }

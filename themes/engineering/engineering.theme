@@ -104,15 +104,21 @@ function engineering_preprocess_node(array &$variables) {
 
 }
 
-function engineering_preprocess_ds_entity_view(&$variables){
-  dpm($variables);
-}
-
 /**
  * Implements hook_theme_suggestions_views_view_alter().
  */
 function engineering_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
-
+  if(isset($variables["view"]->build_info["title"])){
+    if($variables["view"]->build_info["title"] == "Related spotlights"){
+      $variables["more"]["#url"]->setOption('attributes', [
+        'class'=>[
+          'button',
+          'su-button',
+          'su-button--unstyled'
+        ]
+      ]);
+    }
+  }
 }
 
 /**
@@ -133,10 +139,14 @@ function engineering_preprocess_select(array &$variables) {
  * Implements hook_preprocess_field().
  */
 function engineering_preprocess_field(array &$variables, $hook) {
-  if ($variables['element']['#field_name'] == "node_post_date"){
-    $timestamp = strtotime($variables["items"][0]["content"][0]["#markup"]);
-    $variables["items"][0]["content"][0]["#markup"] = date('M Y', $timestamp);
-  }
+  //Converts 'authored on' to month/year format.
+/*  if($variables["element"]["#bundle"] == "spotlight"){
+    if ($variables["element"]["#field_name"] == "created") {
+      $timestamp = strtotime($variables["element"][0]["#markup"]);
+      $variables["items"][0]["content"]["#markup"] = date('M Y', $timestamp);
+    }
+  }*/
+
   /*switch ($variables['element']['#field_name']) {
   }*/
 }
