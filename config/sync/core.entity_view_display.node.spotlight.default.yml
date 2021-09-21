@@ -1,0 +1,30 @@
+uuid: ff13d56d-d531-4d35-86fe-45cc8b2e434c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_people_spotlight_quote
+    - field.field.node.spotlight.su_soe_department
+    - field.field.node.spotlight.su_spotlight_affiliation
+    - field.field.node.spotlight.su_spotlight_degrees
+    - field.field.node.spotlight.su_spotlight_feature_image
+    - field.field.node.spotlight.su_spotlight_person_title
+    - node.type.spotlight
+  module:
+    - user
+id: node.spotlight.default
+targetEntityType: node
+bundle: spotlight
+mode: default
+content: {  }
+hidden:
+  body: true
+  links: true
+  search_api_excerpt: true
+  su_people_spotlight_quote: true
+  su_soe_department: true
+  su_spotlight_affiliation: true
+  su_spotlight_degrees: true
+  su_spotlight_feature_image: true
+  su_spotlight_person_title: true
