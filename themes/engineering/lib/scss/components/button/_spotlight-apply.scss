@@ -1,0 +1,9 @@
+input#edit-submit-spotlights {
+  display: none;
+
+  &.show-spotlight-apply__button{
+    display: block;
+  }
+}
+
+

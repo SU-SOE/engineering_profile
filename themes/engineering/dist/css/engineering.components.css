@@ -86,7 +86,8 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
       height: 302px; }
 
 .soe-link__button .button,
-.js-pager__items .soe-link__button.pager__item .button {
+.soe-link__button .js-pager__items .soe-link__button.pager__item .button,
+.soe-link__button .js-pager__items .pager__item .button {
   display: block;
   width: 100%;
   text-align: center;
@@ -102,6 +103,11 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
 
 .soe-more-stories-link__button .button {
   text-align: center; }
+
+input#edit-submit-spotlights {
+  display: none; }
+  input#edit-submit-spotlights.show-spotlight-apply__button {
+    display: block; }
 
 #views-exposed-form-spotlights-block-1 {
   display: -webkit-box;

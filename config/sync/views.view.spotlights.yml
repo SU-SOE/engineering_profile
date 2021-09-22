@@ -739,7 +739,7 @@ display:
         groups:
           1: AND
       exposed_form:
-        type: autosubmit
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -748,8 +748,7 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
-          autosubmit_hide: true
-      css_class: soe-spotlight--cards
+      css_class: 'soe-spotlight--cards soe-link__button'
     cache_metadata:
       max-age: -1
       contexts:

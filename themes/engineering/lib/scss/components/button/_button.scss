@@ -1,13 +1,17 @@
 @import "../../utilities";
 
-  .soe-link__button .button,
-  .js-pager__items .soe-link__button.pager__item .button{
+.soe-link__button{
+  & .button,
+  & .js-pager__items .soe-link__button.pager__item .button,
+  & .js-pager__items .pager__item .button{
     display: block;
     width: 100%;
     text-align: center;
     background-color: $su-color-light-teal;
     color: $su-color-black;
   }
+}
+
 
 .more-link.soe-link__button{
   display: inline-block;

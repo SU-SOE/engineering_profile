@@ -43,6 +43,12 @@
           divSpotlightDegree[0].innerHTML += ',&nbsp;';
         }
       }
+
+      // This is a less than ideal solution for removing ajax from Spotlight filter button.
+      // Thankfully a solution is in the works: https://www.drupal.org/project/drupal/issues/2904754
+      // After this moves into Core, this can be removed.
+      $("#edit-submit-spotlights").attr("hidden",true);
+      $('#edit-submit-spotlights').clone().appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden",false).addClass('show-spotlight-apply__button');
     },
 
     // Detach Example.

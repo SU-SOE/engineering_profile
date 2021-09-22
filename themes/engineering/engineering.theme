@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * @file
  * Functions to support theming in the engineering theme.
@@ -126,6 +128,11 @@ function engineering_theme_suggestions_views_view_alter(array &$suggestions, arr
  */
 function engineering_preprocess_form(array &$variables) {
   //$variables['attributes']['novalidate'] = 'novalidate';
+}
+
+function engineering_form_views_exposed_form_alter(&$form, FormStateInterface $form_state){
+  $oh = "Hi Mark";
+  $form["actions"]["submit"]["#value"] = "Filter";
 }
 
 /**
