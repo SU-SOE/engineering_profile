@@ -1,9 +1,11 @@
+@charset "UTF-8";
+
 @import "../../utilities";
 
-.soe-link__button{
+.soe-link__button {
   & .button,
   & .js-pager__items .soe-link__button.pager__item .button,
-  & .js-pager__items .pager__item .button{
+  & .js-pager__items .pager__item .button {
     display: block;
     width: 100%;
     text-align: center;
@@ -13,7 +15,7 @@
 }
 
 
-.more-link.soe-link__button{
+.more-link.soe-link__button {
   display: inline-block;
 }
 
@@ -24,14 +26,8 @@
 
 
 // More button styles.
-.soe-more-stories-link__button .button{
+.soe-more-stories-link__button .button {
   text-align: center;
 }
 
-// Spotlights apply button for dropdown
-#views-exposed-form-spotlights-block-1{
-  .form-actions{
-
-  }
-}
 

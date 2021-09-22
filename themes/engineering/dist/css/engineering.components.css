@@ -14,7 +14,6 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   display: flex;
   margin-bottom: 128px; }
   .soe-spotlight--cards .views-row .su-card {
-    height: 100%;
     margin: 20px;
     padding: 36px 34px; }
   .soe-spotlight--cards .views-row .su-card .image {

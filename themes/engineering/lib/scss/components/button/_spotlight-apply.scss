@@ -1,7 +1,9 @@
+@charset "UTF-8";
+
 input#edit-submit-spotlights {
   display: none;
 
-  &.show-spotlight-apply__button{
+  &.show-spotlight-apply__button {
     display: block;
   }
 }

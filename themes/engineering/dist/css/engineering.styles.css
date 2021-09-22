@@ -14,7 +14,6 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   display: flex;
   margin-bottom: 128px; }
   .soe-spotlight--cards .views-row .su-card {
-    height: 100%;
     margin: 20px;
     padding: 36px 34px; }
   .soe-spotlight--cards .views-row .su-card .image {
@@ -206,6 +205,11 @@ input#edit-submit-spotlights {
 
 .spotlight-main-content .main-region {
   margin-bottom: 83px; }
+
+.su-people-spotlight-quote {
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 900; }
 
 .spotlights-block-3 h2.block__title {
   text-align: center; }
