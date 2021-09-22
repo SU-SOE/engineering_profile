@@ -1,4 +1,6 @@
-@import "../utilities/mixins";
+@charset "UTF-8";
+
+@import "../../utilities/mixins/index.scss";
 
 .su-people-spotlight-quote{
   @include font-size(30px, 900, 48px, null);

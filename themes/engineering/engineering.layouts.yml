@@ -1,0 +1,13 @@
+soe_spotlight_header:
+  label: "Spotlight header"
+  category: "SOE Theme - Sections"
+  path: templates/sections
+  template: spotlight-header-layout
+  default_region: content
+  icon_map:
+    - [spotlight_image,]
+  regions:
+    spotlight_hero_image:
+      label: "Spotlight Hero Image"
+    spotlight_hero_text:
+      label: "Spotlight Hero Text"

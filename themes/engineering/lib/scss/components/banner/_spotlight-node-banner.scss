@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import "../../utilities/mixins";
 @import "../../utilities/variables";
 
@@ -11,43 +13,59 @@
     flex: 1;
   }
 
-  .spotlight-banner__text{
-    flex: 2;
-    padding: 60px 0;
-
-    .spotlight{
-      @include font-size(30px, 900, 33px, null);
-
-      h1{
-        @include font-size(55px, 900, 60px, null);
-      }
-    }
-  }
-
   img{
     width: 360px;
     height: 360px;
     border-radius: 50%;
     border-width: 5px;
     border-style: solid;
+    margin-right: 0;
     display: block;
   }
 }
+
+.spotlight-banner__text{
+  flex: 2;
+  padding: 60px 0;
+
+  .spotlight{
+    @include font-size(30px, 900, 33px, null);
+    margin-bottom: 25px;
+
+    &.node-title{
+      margin-bottom: 3px;
+    }
+
+    &.su-spotlight-degrees,
+    &.su-soe-department{
+      @include font-size(28px, 400, 35px, null);
+    }
+
+    h1{
+      @include font-size(55px, 900, 60px, null);
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
 .spotlight-banner__text{
   margin-left: 45px;
 }
 
-.spotlight-banner__quote-date{
+.node-spotlight-created{
   max-width: 100ch;
 }
 
 //Date on Spotlight
-.spotlight.node-post-date{
+.spotlight.spotlight-header__date{
   float: right;
   text-align: right;
   font-style: italic;
   width: 100%;
-
+  font-size: 20px;
+  font-weight: inherit;
 }
 
 .su-spotlight-degrees,
