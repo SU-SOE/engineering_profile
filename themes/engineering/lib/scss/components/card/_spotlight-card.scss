@@ -1,7 +1,9 @@
+@charset "UTF-8";
+
 @import "../../utilities/variables/colors";
 @import "../../utilities/mixins";
 
-.soe-spotlight--cards{
+.soe-spotlight--cards {
   img{
     border-radius: 50%;
     border-width: 5px;
@@ -11,7 +13,7 @@
   }
 
   //Main purpose here is to make all cards same height.
-  .views-row{
+  .views-row {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -24,7 +26,7 @@
       padding: 36px 34px;
     }
 
-    .su-card .image{
+    .su-card .image {
       flex: 1;
       display: block;
       width: 100%;
@@ -35,26 +37,30 @@
       }
     }
 
-    .su-card .su-card__contents{
+    .su-card .su-card__contents {
       flex: 3;
 
-      h2{
+      h2 {
         @include font-size(22.5px, 900, 24.75px, null);
+        margin-bottom: 3px;
+      }
+      span {
+        margin-bottom: 30px;
       }
     }
   }
 
   // Main purpose here is to style the cards texts and spacing
-  .su-card__contents{
-    &{
+  .su-card__contents {
+    & {
       @include font-size(32px, 900, 34.5px, null);
     }
 
-    .soe--person-title{
+    .soe--person-title {
       @include font-size(21px, 400, 32px, null);
     }
 
-    spotlight__quote{
+    .spotlight__quote {
       @include font-size(44px, 900, 48px, null);
     }
 
@@ -70,7 +76,7 @@
       @include font-size(21px, null, 25px, null);
     }
 
-    .su-link{
+    .su-link {
       @include font-size(20px, 600, 25px, null);
       width: 100%;
     }

@@ -1,6 +1,14 @@
+@charset "UTF-8";
+
 @import "../../utilities/mixins";
 
 #views-exposed-form-spotlights-block-1{
+  & {
+    display:flex;
+    float: right;
+    padding-right: 20px;
+  }
+
   .form-item-tid,
   .form-item-tid-1{
     float: right;
@@ -11,5 +19,9 @@
 
   input, select, textarea{
     @include font-size(21px, 400, 32px, null);
+  }
+
+  .form-actions{
+    float: right;
   }
 }

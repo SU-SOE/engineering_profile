@@ -33,7 +33,10 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
     .soe-spotlight--cards .views-row .su-card .su-card__contents h2 {
       font-size: 22.5px;
       line-height: 24.75px;
-      font-weight: 900; }
+      font-weight: 900;
+      margin-bottom: 3px; }
+    .soe-spotlight--cards .views-row .su-card .su-card__contents span {
+      margin-bottom: 30px; }
 
 .soe-spotlight--cards .su-card__contents {
   font-size: 32px;
@@ -45,7 +48,7 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   line-height: 32px;
   font-weight: 400; }
 
-.soe-spotlight--cards .su-card__contents spotlight__quote {
+.soe-spotlight--cards .su-card__contents .spotlight__quote {
   font-size: 44px;
   line-height: 48px;
   font-weight: 900; }
@@ -82,12 +85,36 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
       width: 302px;
       height: 302px; }
 
-.soe-load-more {
+.soe-link__button .button,
+.soe-link__button .js-pager__items .soe-link__button.pager__item .button,
+.soe-link__button .js-pager__items .pager__item .button {
   display: block;
   width: 100%;
+  text-align: center;
+  background-color: #00ECE9;
+  color: #2e2d29; }
+
+.more-link.soe-link__button {
+  display: inline-block; }
+
+.soe-spotlight--cards .js-pager__items.pager,
+.more-link.soe-link__button {
+  margin-bottom: 13.3rem; }
+
+.soe-more-stories-link__button .button {
   text-align: center; }
-  .soe-load-more .button {
-    background-color: #00ECE9; }
+
+input#edit-submit-spotlights {
+  display: none; }
+  input#edit-submit-spotlights.show-spotlight-apply__button {
+    display: block; }
+
+#views-exposed-form-spotlights-block-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  padding-right: 20px; }
 
 #views-exposed-form-spotlights-block-1 .form-item-tid,
 #views-exposed-form-spotlights-block-1 .form-item-tid-1 {
@@ -101,6 +128,9 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   line-height: 32px;
   font-weight: 400; }
 
+#views-exposed-form-spotlights-block-1 .form-actions {
+  float: right; }
+
 .spotlight-banner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,38 +141,50 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1; }
-  .spotlight-banner .spotlight-banner__text {
-    -webkit-box-flex: 2;
-        -ms-flex: 2;
-            flex: 2;
-    padding: 60px 0; }
-    .spotlight-banner .spotlight-banner__text .spotlight {
-      font-size: 30px;
-      line-height: 33px;
-      font-weight: 900; }
-      .spotlight-banner .spotlight-banner__text .spotlight h1 {
-        font-size: 55px;
-        line-height: 60px;
-        font-weight: 900; }
   .spotlight-banner img {
     width: 360px;
     height: 360px;
     border-radius: 50%;
     border-width: 5px;
     border-style: solid;
+    margin-right: 0;
     display: block; }
+
+.spotlight-banner__text {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 60px 0; }
+  .spotlight-banner__text .spotlight {
+    font-size: 30px;
+    line-height: 33px;
+    font-weight: 900;
+    margin-bottom: 25px; }
+    .spotlight-banner__text .spotlight.node-title {
+      margin-bottom: 3px; }
+    .spotlight-banner__text .spotlight.su-spotlight-degrees, .spotlight-banner__text .spotlight.su-soe-department {
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: 400; }
+    .spotlight-banner__text .spotlight h1 {
+      font-size: 55px;
+      line-height: 60px;
+      font-weight: 900;
+      margin-bottom: 0; }
 
 .spotlight-banner__text {
   margin-left: 45px; }
 
-.spotlight-banner__quote-date {
+.node-spotlight-created {
   max-width: 100ch; }
 
-.spotlight.node-post-date {
+.spotlight.spotlight-header__date {
   float: right;
   text-align: right;
   font-style: italic;
-  width: 100%; }
+  width: 100%;
+  font-size: 20px;
+  font-weight: inherit; }
 
 .su-spotlight-degrees,
 .su-soe-department {
@@ -151,16 +193,27 @@ div[class*="magazine-block-"] .views-row .views-col .su-card {
   font-weight: 400;
   float: left; }
 
-.widget-wrapper-print {
-  display: block; }
+.su-people-spotlight-quote {
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 900; }
 
 .bare-header {
   margin-top: 95px; }
+
+.node_view ul.pre_links li a[href$='printable/print'] {
+  display: none; }
+
+.spotlight-main-content .main-region {
+  margin-bottom: 83px; }
 
 .su-people-spotlight-quote {
   font-size: 30px;
   line-height: 48px;
   font-weight: 900; }
+
+.spotlights-block-3 h2.block__title {
+  text-align: center; }
 
 .demo-class-stanford {
   color: #b1040e; }
@@ -184,7 +237,8 @@ h1, h2, h3, h4, h5 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .card-grid__row .card-grid__column {
-    padding-bottom: 2em; }
+    padding-bottom: 2em;
+    max-width: 1192px; }
     .card-grid__row .card-grid__column .su-card .views-field-title a {
       color: black; }
       .card-grid__row .card-grid__column .su-card .views-field-title a:hover {

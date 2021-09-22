@@ -6,7 +6,7 @@ id: spotlights
 label: Spotlights
 description: ''
 use_admin_theme: false
-path: /spotlights
+path: /spotlight
 access_logic: and
 access_conditions: {  }
 parameters: {  }
