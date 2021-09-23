@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   module:
+    - editor
     - linkit
+    - mathjax
     - media
+    - stanford_media
     - typogrify
 name: 'Minimal HTML'
 format: stanford_minimal_html
@@ -14,7 +17,7 @@ filters:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -50
     settings:
       allowed_html: '<br> <p> <div> <em> <strong> <cite> <blockquote cite> <code> <dd> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title class="su-button su-button--big su-button--secondary su-link--action">'
       filter_html_help: true
@@ -23,20 +26,20 @@ filters:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 10
+    weight: -48
     settings: {  }
   linkit:
     id: linkit
     provider: linkit
     status: true
-    weight: 0
+    weight: -49
     settings:
       title: true
   media_embed:
     id: media_embed
     provider: media
     status: false
-    weight: 100
+    weight: -37
     settings:
       default_view_mode: default
       allowed_media_types: {  }
@@ -44,21 +47,76 @@ filters:
   typogrify:
     id: typogrify
     provider: typogrify
-    status: false
-    weight: 10
+    status: true
+    weight: -47
     settings:
       smartypants_enabled: '1'
       smartypants_hyphens: '3'
       space_hyphens: '0'
-      widont_enabled: '1'
+      widont_enabled: '0'
       hyphenate_shy: '0'
-      space_to_nbsp: '1'
-      wrap_caps: '1'
-      wrap_ampersand: '1'
+      space_to_nbsp: '0'
+      wrap_caps: '0'
+      wrap_ampersand: '0'
       wrap_abbr: '0'
       wrap_numbers: '0'
-      wrap_initial_quotes: '1'
+      wrap_initial_quotes: '0'
       ligatures: 'a:0:{}'
       arrows: 'a:0:{}'
       fractions: 'a:0:{}'
       quotes: 'a:0:{}'
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -45
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -46
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -39
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -41
+    settings:
+      filter_url_length: 72
+  filter_mathjax:
+    id: filter_mathjax
+    provider: mathjax
+    status: false
+    weight: -38
+    settings: {  }
+  stanford_media_embed_markup:
+    id: stanford_media_embed_markup
+    provider: stanford_media
+    status: false
+    weight: -40
+    settings: {  }
