@@ -120,6 +120,9 @@
       $(".soe-spotlight--cards .su-link").each(function () {
         $(this).removeClass('su-card__link su-link--action');
         $(this).addClass('su-link--external');
+      });
+      $(".engineering-accent-color__background").each(function () {
+        $(this).css('background-color', getAccentColor());
       }); // Adds comma and space to individual spotlight pages where both
 
       if (firstPath === "spotlight") {

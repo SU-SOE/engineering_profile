@@ -3,10 +3,9 @@
 namespace Drupal\engineering_magazine\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Entity\EntityTypeManager;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
  * Provides a 'Magazine Navigation' Block.
@@ -20,31 +19,39 @@ use Drupal\Core\Entity\EntityTypeManager;
 class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entity_type_manager;
+  protected $entityTypeManager;
 
   /**
-   * @var array $magazine_topics
+   * @var array
    */
-  protected $magazine_topics;
+  protected $magazineTopics;
 
   /**
    * @param array $configuration
+   *   The configuration.
    * @param string $plugin_id
+   *   The plugin id.
    * @param mixed $plugin_definition
-   * @param \Drupal\Core\Entity\EntityTypeManager $entity_type_manager
+   *   The plugin definition.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Inject a type manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManager $entity_type_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entityTypeManager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->entity_type_manager = $entity_type_manager;
+    $this->entity_type_manager = $entityTypeManager;
   }
 
   /**
    * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   The container.
    * @param array $configuration
+   *   The configuration.
    * @param string $plugin_id
+   *   The plugin ID.
    * @param mixed $plugin_definition
+   *   The plugin definition.
    *
    * @return static
    */
@@ -84,7 +91,7 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
       '#topics' => $this->getMagazineTopics(),
       '#attached' => [
         'library' => [
-          'engineering_magazine/engineering_magazine'
+          'engineering_magazine/engineering_magazine',
         ],
       ],
     ];

@@ -36,17 +36,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
-          68899781-3c8a-489a-8627-54bc79c186da:
-            uuid: 68899781-3c8a-489a-8627-54bc79c186da
-            region: main
-            configuration:
-              id: magazine_curtain_block
-              label: 'Magazine Curtain'
-              provider: engineering_magazine
-              label_display: '0'
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
         third_party_settings: {  }
       -
         layout_id: layout_onecol
