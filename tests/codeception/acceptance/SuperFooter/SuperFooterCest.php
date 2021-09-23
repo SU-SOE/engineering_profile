@@ -30,7 +30,6 @@ class SuperFooterCest {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/super-footer');
     $I->checkOption('#edit-su-super-foot-enabled-value');
-
     $I->fillField('Super Footer Title', 'Super Footer Title');
     $I->fillField('#edit-su-super-foot-text-0-value', '<p>Super footers are super.</p>');
     $I->fillField('#edit-su-super-foot-link-0-uri', '<front>');
@@ -38,7 +37,6 @@ class SuperFooterCest {
     $I->fillField('#edit-su-super-foot-intranet-0-uri', 'https://stanford.edu/');
     $I->fillField('#edit-su-super-foot-intranet-0-title', 'Intranet Link');
     $I->click('Save');
-    drupal_flush_all_caches();
     $I->amOnPage("/");
     $I->seeElement(".block-config-pages-super-footer");
     $I->canSee("Super Footer Title");

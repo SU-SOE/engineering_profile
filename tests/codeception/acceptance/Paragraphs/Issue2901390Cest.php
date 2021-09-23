@@ -32,7 +32,6 @@ class Issue2901390Cest {
     $I->fillField('Body', 'Lorem Ipsum Custom Block Text');
     $I->click('Add block');
     $I->click('Save layout');
-    drupal_flush_all_caches();
     $I->canSee('Lorem Ipsum Custom Block Text');
   }
 

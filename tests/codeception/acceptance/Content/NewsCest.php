@@ -18,7 +18,6 @@ class NewsCest {
     $I->click('Add Text Area');
     $I->fillField('Body', $intro_text);
     $I->click('Save');
-    drupal_flush_all_caches();
     $I->canSee($intro_text);
   }
 
@@ -54,7 +53,6 @@ class NewsCest {
    */
   public function testViewPagesExist(AcceptanceTester $I) {
     $I->amOnPage("/news");
-    drupal_flush_all_caches();
     $I->see("No results found");
     $I->seeLink('Faculty');
     $I->click("a[href='/news/staff']");

@@ -18,7 +18,6 @@ class EventsCest {
     $I->click('Add Text Area');
     $I->fillField('Body', $intro_text);
     $I->click('Save');
-    drupal_flush_all_caches();
     $I->canSee($intro_text);
   }
 

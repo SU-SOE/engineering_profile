@@ -131,7 +131,7 @@ filters:
       space_hyphens: '0'
       widont_enabled: '1'
       hyphenate_shy: '0'
-      space_to_nbsp: '1'
+      space_to_nbsp: '0'
       wrap_caps: '1'
       wrap_ampersand: '1'
       wrap_abbr: '0'
