@@ -25,7 +25,7 @@ filters:
     id: editor_file_reference
     provider: editor
     status: false
-    weight: -40
+    weight: -39
     settings: {  }
   filter_caption:
     id: filter_caption
@@ -37,7 +37,7 @@ filters:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -41
+    weight: -40
     settings: {  }
   filter_align:
     id: filter_align
@@ -71,13 +71,13 @@ filters:
     id: filter_autop
     provider: filter
     status: false
-    weight: -39
+    weight: -38
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -38
+    weight: -37
     settings: {  }
   linkit:
     id: linkit
@@ -124,12 +124,12 @@ filters:
     id: typogrify
     provider: typogrify
     status: true
-    weight: 10
+    weight: -41
     settings:
       smartypants_enabled: '1'
-      smartypants_hyphens: '3'
+      smartypants_hyphens: '1'
       space_hyphens: '0'
-      widont_enabled: '1'
+      widont_enabled: '0'
       hyphenate_shy: '0'
       space_to_nbsp: '0'
       wrap_caps: '0'
