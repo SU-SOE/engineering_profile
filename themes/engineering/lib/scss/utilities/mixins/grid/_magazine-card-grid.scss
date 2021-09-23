@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/// Mixin for working with grids with different sizes
+/// of columns per row.
+///
+///
+///
+///
+
+@mixin magazine-grid-rows($rowNumber) {
+    @if $rowNumber == 1 {
+        .card-grid__column:nth-child(1) {
+            flex: 1 1 25%;
+        }
+
+        .card-grid__column:nth-child(2) {
+            flex: 1 1 50%;
+        }
+
+        .card-grid__column:nth-child(3) {
+            flex: 1 1 25%;
+        }
+    }
+
+    @if $rowNumber == 2 {
+        .card-grid__column:nth-child(1) {
+            flex: 1 1 50%;
+        }
+
+        .card-grid__column:nth-child(2) {
+            flex: 1 1 25%;
+        }
+
+        .card-grid__column:nth-child(3) {
+            flex: 1 1 25%;
+        }
+    }
+
+    @if $rowNumber == 3 {
+        .card-grid__column:nth-child(1) {
+            flex: 1 1 25%;
+        }
+
+        .card-grid__column:nth-child(2) {
+            flex: 1 1 25%;
+        }
+
+        .card-grid__column:nth-child(3) {
+            flex: 1 1 50%;
+        }
+    }
+}

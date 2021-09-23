@@ -1,0 +1,29 @@
+uuid: bbb10add-d241-4aba-ac31-dd2dcde35c5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+  theme:
+    - engineering
+id: engineering_config_pages_stanford_super_footer
+theme: engineering
+region: footer
+weight: -5
+provider: null
+plugin: config_pages_block
+settings:
+  id: config_pages_block
+  label: 'Super Footer'
+  provider: config_pages
+  label_display: 0
+  config_page_type: stanford_super_footer
+  config_page_view_mode: full
+visibility:
+  config_pages_values_access:
+    id: config_pages_values_access
+    negate: false
+    config_page_field: stanford_super_footer|su_super_foot_enabled|boolean
+    operator: '=='
+    condition_value: '1'
+    context_mapping: {  }

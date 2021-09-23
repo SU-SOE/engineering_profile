@@ -26,10 +26,20 @@ function engineering_magazine_help($route_name, RouteMatchInterface $route_match
 /**
  * Implements hook_theme().
  */
-function engineering_magazine_theme() {
+function engineering_magazine_theme($existing, $type, $theme, $path) {
   return [
-    'engineering_magazine' => [
-      'render element' => 'children',
+    'magazine_navigation_block' => [
+      'template' => 'block/magazine-navigation',
+      'variables' => [
+        'topics' => null,
+      ],
+    ],
+    'magazine_curtain_block' => [
+      'variables'=> [
+        'curtain_variable' => 'this is my curtain variable.',
+        'curtain_content' => null,
+      ],
     ],
   ];
 }
+

@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+@import "./config",
+"utilities/variables/index",
+"components/index",
+"base/index",
+"page/index";
+
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100);
+$primary-font: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+
+.demo-class-stanford {
+  color: $su-color-bright-red;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $roboto-slab;
+}
+
+.su-wysiwyg-text {
+  h1, h2, h3, h4, h5 {
+    font-family: $roboto-slab;
+  }
+}
+
+// Various Roboto applications
+.su-drop-cap {
+  font-family: $roboto-slab;
+}
+
+.su-hero .su-hero__card .su-card__contents {
+  h1, h2, h3, h4, h5 {
+    font-family: $roboto-slab;
+  }
+}
+
+// Engineering Card Grid
+// used in the magazine, other places.
+
+.card-grid__row {
+  display: flex;
+  flex-wrap: wrap;
+
+
+  .card-grid__column {
+
+    padding-bottom: 2em;
+    max-width: 1192px; // TODO: This needs to be replaced with a relative value
+
+
+    .su-card {
+
+      .views-field-title {
+        a {
+          color: black;
+
+          &:hover{
+            text-decoration-color: black;
+          }
+        }
+      }
+
+      .views-field-su-news-publishing-date{
+        color:#606060;
+        font-size: 1em;
+        font-weight: 100;
+        margin-bottom: 10px;
+      }
+
+      .views-field-su-soe-mag-topics {
+        margin-top: 1em;
+        a{
+          color: #8c1515;
+          font-weight: 400;
+          text-decoration: none;
+
+          &:hover{
+            color: #333333;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .views-field-su-magazine-issue {
+        display: block;
+        margin-top: 2em;
+        padding: .5em;
+        text-align: center;
+        width: fit-content;
+        background-color: #8c1515;
+        color:white;
+
+        a {
+          color: #333333;;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  @include magazine-grid-rows(1);
+
+  &:nth-of-type(2n) {
+    @include magazine-grid-rows(2);
+  }
+
+  &:nth-of-type(3n) {
+    @include magazine-grid-rows(3);
+  }
+
+}
+
+
+
+

@@ -1,0 +1,35 @@
+uuid: cabacf9d-1f2d-47cf-9b72-487adea54c2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+name: large_headshot_circle
+label: 'Large Headshot Circle (360 x 360)'
+effects:
+  541b5a61-8e94-47c5-b4d7-b3dd569b6712:
+    uuid: 541b5a61-8e94-47c5-b4d7-b3dd569b6712
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 302
+      height: 302
+      crop_type: focal_point
+  872539c0-4677-4857-a60d-f88e65e25b47:
+    uuid: 872539c0-4677-4857-a60d-f88e65e25b47
+    id: image_convert
+    weight: 2
+    data:
+      extension: png
+  b3807983-880f-46e6-b22f-21d42dc4cb59:
+    uuid: b3807983-880f-46e6-b22f-21d42dc4cb59
+    id: image_effects_mask
+    weight: 3
+    data:
+      mask_image: modules/custom/stanford_image_styles/img/mask-image.png
+      mask_width: '360'
+      mask_height: '360'
+      placement: center-center
+      x_offset: ''
+      y_offset: ''

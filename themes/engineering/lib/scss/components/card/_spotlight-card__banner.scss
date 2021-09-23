@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.soe-spotlight--cards--banner {
+  .views-row {
+    .su-card {
+      display: flex;
+      width: 100%;
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+
+      .image {
+        display: block;
+        width: 100%;
+
+        img {
+          width: 302px;
+          height: 302px;
+        }
+      }
+    }
+  }
+}

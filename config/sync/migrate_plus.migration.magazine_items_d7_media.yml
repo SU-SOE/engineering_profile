@@ -15,7 +15,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - 'https://engineering.stanford.edu/export/magazine'
+    - 'https://eng-dev.stanford.edu/export/magazine'
   fields:
     -
       name: nid
@@ -25,7 +25,6 @@ source:
       name: image
       label: Image
       selector: FeaturedImagePath
-    
   ids:
     nid:
       type: string

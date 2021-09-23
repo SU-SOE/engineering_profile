@@ -1,0 +1,38 @@
+name: Engineering
+type: theme
+description: 'Engineering theme based on SOE Basic.'
+package: Engineer
+core_version_requirement: ^8 || ^9
+libraries:
+  - soe_basic/allpages
+  - engineering/engineering-styling
+  - engineering/engineering-news-override
+
+base theme: soe_basic
+
+regions:
+  page_top: 'Page top'
+  header: Header
+  search: Search
+  menu: Menu
+  help: Help
+  content: Content
+  footer: Footer
+  page_bottom: 'Page bottom'
+
+features:
+  - favicon
+  - logo
+
+components:
+  namespaces:
+    basic: templates
+
+ckeditor_stylesheets:
+  - dist/css/ckeditor.css
+
+libraries-override:
+  jumpstart_ui/base: false
+  stanford_news/news_node:
+    js:
+      dist/js/news-node.behaviors.js: false

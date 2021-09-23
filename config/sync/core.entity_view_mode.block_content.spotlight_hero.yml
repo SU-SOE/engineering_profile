@@ -1,0 +1,10 @@
+uuid: 4b56b104-9de1-4f07-a100-26e930c4b2b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.spotlight_hero
+label: 'Spotlight Hero'
+targetEntityType: block_content
+cache: true

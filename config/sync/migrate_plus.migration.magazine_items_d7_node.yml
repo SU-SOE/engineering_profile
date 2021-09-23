@@ -15,7 +15,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - 'https://engineering.stanford.edu/export/magazine'
+    - 'https://eng-dev.stanford.edu/export/magazine'
   constants:
     status: 1
     type: stanford_news
@@ -122,8 +122,10 @@ process:
       delimiter: ', '
       source: department
     -
+      plugin: callback
+      callable: trim
+    -
       plugin: entity_generate
-      #source: department
       value_key: name
       bundle_key: vid
       bundle: department
@@ -135,8 +137,10 @@ process:
       delimiter: ', '
       source: topics
     -
+      plugin: callback
+      callable: trim
+    -
       plugin: entity_generate
-      #source: topics
       value_key: name
       bundle_key: vid
       bundle: magazine_topics

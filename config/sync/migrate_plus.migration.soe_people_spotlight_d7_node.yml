@@ -68,16 +68,28 @@ source:
       name: image
       label: Image
       selector: imagePath
+    -
+      name: pathalias
+      label: 'Path Alias'
+      selector: Path
 process:
   title: name
-  body: body
+  body/value: body
+  body/format: constants/basic_html
   status: constants/status
   type: constants/type
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: pathalias
   su_spotlight_affiliation:
     -
       plugin: skip_on_empty
       method: process
       source: affiliation
+    -
+      plugin: callback
+      callable: trim
     -
       plugin: entity_generate
       value_key: name
@@ -94,6 +106,9 @@ process:
     -
       plugin: explode
       delimiter: ', '
+    -
+      plugin: callback
+      callable: trim
     -
       plugin: entity_generate
       value_key: name

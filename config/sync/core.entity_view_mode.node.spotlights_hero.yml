@@ -1,0 +1,10 @@
+uuid: efe73833-f127-4802-a222-cc468ca33570
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.spotlights_hero
+label: 'Spotlights Hero'
+targetEntityType: node
+cache: true
