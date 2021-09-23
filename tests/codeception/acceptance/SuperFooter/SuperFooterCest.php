@@ -38,7 +38,7 @@ class SuperFooterCest {
     $I->fillField('#edit-su-super-foot-intranet-0-uri', 'https://stanford.edu/');
     $I->fillField('#edit-su-super-foot-intranet-0-title', 'Intranet Link');
     $I->click('Save');
-    sleep(5);
+    drupal_flush_all_caches();
     $I->amOnPage("/");
     $I->seeElement(".block-config-pages-super-footer");
     $I->canSee("Super Footer Title");
