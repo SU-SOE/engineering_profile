@@ -105,6 +105,7 @@
     "require": {
         "ext-imagick": "*",
         "composer/installers": "^1.2",
+        "drupal/typogrify": "^1.1",
         "drupal/printable": "^2.0",
         "drupal/views_autosubmit": "^1.4",
         "drupal/views_data_export": "^1.0",

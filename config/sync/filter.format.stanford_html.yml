@@ -16,6 +16,7 @@ dependencies:
     - mathjax
     - media
     - stanford_media
+    - typogrify
 name: HTML
 format: stanford_html
 weight: 0
@@ -24,7 +25,7 @@ filters:
     id: editor_file_reference
     provider: editor
     status: false
-    weight: -40
+    weight: -39
     settings: {  }
   filter_caption:
     id: filter_caption
@@ -36,7 +37,7 @@ filters:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -41
+    weight: -40
     settings: {  }
   filter_align:
     id: filter_align
@@ -70,13 +71,13 @@ filters:
     id: filter_autop
     provider: filter
     status: false
-    weight: -39
+    weight: -38
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -38
+    weight: -37
     settings: {  }
   linkit:
     id: linkit
@@ -119,3 +120,24 @@ filters:
     status: true
     weight: -49
     settings: {  }
+  typogrify:
+    id: typogrify
+    provider: typogrify
+    status: true
+    weight: -41
+    settings:
+      smartypants_enabled: '1'
+      smartypants_hyphens: '1'
+      space_hyphens: '0'
+      widont_enabled: '0'
+      hyphenate_shy: '0'
+      space_to_nbsp: '0'
+      wrap_caps: '0'
+      wrap_ampersand: '0'
+      wrap_abbr: '0'
+      wrap_numbers: '0'
+      wrap_initial_quotes: '0'
+      ligatures: 'a:0:{}'
+      arrows: 'a:0:{}'
+      fractions: 'a:0:{}'
+      quotes: 'a:0:{}'
