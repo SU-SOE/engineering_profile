@@ -29,7 +29,7 @@ function engineering_theme_suggestions_block_alter(array &$suggestions, array $v
  */
 function engineering_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
   if(isset($variables["view"]->build_info["title"])){
-    if($variables["view"]->build_info["title"] == "Related spotlights"){
+    if($variables["view"]->build_info["title"] == "Related spotlights" && !empty($variables["more"]["#url"])){
       $variables["more"]["#url"]->setOption('attributes', [
         'class'=>[
           'button',
