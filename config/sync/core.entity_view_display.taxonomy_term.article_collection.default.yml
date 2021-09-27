@@ -8,7 +8,7 @@ dependencies:
     - field.field.taxonomy_term.article_collection.su_intro_label
     - field.field.taxonomy_term.article_collection.su_term_components
     - taxonomy.vocabulary.article_collection
-    - views.view.magazine
+    - views.view.magazine_article_collection
   module:
     - jumpstart_ui
     - layout_builder
@@ -24,7 +24,7 @@ third_party_settings:
       -
         layout_id: defaults
         layout_settings:
-          extra_classes: ''
+          extra_classes: soe-article-collection__term-content
           centered: centered-container
           columns: default
           label: ''
@@ -98,11 +98,11 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          dcf02746-0066-4a43-9d78-57aaaec622c7:
-            uuid: dcf02746-0066-4a43-9d78-57aaaec622c7
+          3d99e30d-3208-4b64-ae99-2405a71a3307:
+            uuid: 3d99e30d-3208-4b64-ae99-2405a71a3307
             region: content
             configuration:
-              id: 'views_block:magazine-block_5'
+              id: 'views_block:magazine_article_collection-block_5'
               label: ''
               provider: views
               label_display: '0'
