@@ -16,7 +16,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - 'https://eng-dev.stanford.edu/export/news'
+    - 'https://engineering.stanford.edu/export/news'
   ids:
     nid:
       type: string

@@ -38,6 +38,12 @@ div[class*="magazine-article-collection-block-"] {
             }
         }
     }
+
+    .views-field-title {
+        h2 {
+            @include modular-typography(0);
+        }
+    }
 }
 
 // Card grid on the term page

@@ -15,7 +15,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - 'https://eng-dev.stanford.edu/export/news'
+    - 'https://engineering.stanford.edu/export/news'
   constants:
     status: 1
     type: stanford_news
@@ -62,6 +62,10 @@ source:
       name: imageCaption
       label: 'Image caption'
       selector: imageCollections/item/caption
+    -
+      name: featured
+      label: Featured
+      selector: Featured
 process:
   title: title
   status: constants/status
@@ -97,6 +101,9 @@ process:
     index:
       - 1
   su_magazine_story: constants/magazine_story
+  su_mag_featured:
+    plugin: featured_process
+    source: featured
   su_soe_mag_topics:
     -
       plugin: default_value

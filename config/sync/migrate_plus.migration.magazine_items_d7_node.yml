@@ -15,7 +15,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: simple_xml
   urls:
-    - 'https://eng-dev.stanford.edu/export/magazine'
+    - 'https://engineering.stanford.edu/export/magazine'
   constants:
     status: 1
     type: stanford_news
@@ -100,7 +100,11 @@ process:
     plugin: migration_lookup
     migration: magazine_items_d7_media
     source: nid
+  su_news_banner/alt: imageCaption
   su_news_banner_media_caption: imageCaption
+  su_mag_featured:
+    plugin: featured_process
+    source: featured
   body_paragraph:
     plugin: migration_lookup
     migration: magazine_items_paragraphs_d7
