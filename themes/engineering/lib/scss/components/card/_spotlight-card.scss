@@ -3,8 +3,6 @@
 @import "../../utilities/variables/colors";
 @import "../../utilities/mixins";
 
-
-
 .soe-spotlight--cards {
   img {
     border-radius: 50%;
@@ -20,9 +18,6 @@
       @include responsive-spacing('margin-bottom', 7);
     }
 
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
 
     @include grid-media-max('lg') {
@@ -54,60 +49,51 @@
     .su-card .su-card__contents {
       flex: 3;
 
-      h2 {
-        @include type-d;
-        font-weight: $su-font-bold;
- 
-     }
       span {
         margin-bottom: 30px;
       }
     }
   }
 
-  // Main purpose here is to style the cards texts and spacing
-  .su-card__contents {
-    & {
-      @include type-d;
-      font-weight: $su-font-bold;
+  // For the card grid only.
+  .views-view-grid {
+    .su-card__contents {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 
-      // @include font-size(32px, 900, 34.5px, null);
+  // Styles for the grid of cards. 
+  .su-card__contents {
+    
+    h2 {
+      @include type-d;
+      @include responsive-spacing('margin-bottom', -1);
+
+      font-weight: $su-font-black;
     }
 
     .soe--person-title {
-      @include type-f;
+      @include type-d;
 
       font-weight: $su-font-regular;
-      // @include font-size(21px, 400, 32px, null);
     }
 
-    .spotlight__quote {
+    .soe-quote {
       @include type-c;
-
       font-weight: $su-font-bold;
-      // @include font-size(44px, 900, 48px, null);
-    }
-
-    span > a {
-      @include type-e;
-
-      color: $su-color-black;
-      font-weight: $su-font-bold;
-    }
-
-    h2 {
-      @include type-e;
     }
 
     .su-link {
-      @include type-f;
+      @include responsive-spacing('padding-top', 2);
+      @include type-d;
 
       font-weight: $su-font-semi-bold;
     }
   }
 }
 
-// Header spotlight.
+// Header spotlight card styles.
 .soe-spotlight--cards--banner {
   &.spotlights {
     .views-row {
@@ -122,10 +108,35 @@
           }
         }
       }
-    }
 
+      h2 {
+        @include type-c;
+        @include responsive-spacing('margin-bottom', -1);
+        font-weight: $su-font-black;
+
+        
+      }
+      
+      .soe--person-title {
+        @include type-c;
+  
+        font-weight: $su-font-regular;
+      }
+
+      .spotlight__quote {
+        @include type-b;
+  
+        font-weight: $su-font-black;
+      }
+
+    }
+    
     .su-link {
-      @include responsive-spacing('padding-top', 5);
+      @include responsive-spacing('padding-top', 2);
+      @include type-d;
+  
+      font-weight: $su-font-semi-bold;
+      margin-top: 0;
     }
   }
 }

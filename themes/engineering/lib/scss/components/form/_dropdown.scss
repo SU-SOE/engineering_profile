@@ -4,32 +4,48 @@
 
 #views-exposed-form-spotlights-block-1 {
   & {
-    display:flex;
-    float: right;
-    padding-right: 20px;
+    @include responsive-spacing('padding-top', 1);
+    @include responsive-spacing('margin', null 3 null 0);
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
 
     @include grid-media-max('lg') {
-      display: block;
-    }
+      @include responsive-spacing('margin-bottom', 3);
 
+      > div {
+        flex: 1 1 100%;
+      }
+    }
   }
 
   .form-item-tid,
-  .form-item-tid-1{
-    float: right;
+  .form-item-tid-1 {
     max-width: 280px;
     width: 280px;
-    margin-right: 30px;
+
+    @include grid-media-max('lg') {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
-  input, select, textarea{
+  input, select, textarea {
     @include font-size(21px, 400, 32px, null);
   }
 
-  .form-actions{
-    float: right;
-    @include grid-media-max('lg') {
-      float: unset;
+  .form-actions {
+    margin: 0;
+
+    .show-spotlight-apply__button {
+      display: inline-block;
+      max-width: 135px;
+      margin: 0 auto;
+      width: 135px;
     }
   }
 }
