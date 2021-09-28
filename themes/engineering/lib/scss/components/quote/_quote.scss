@@ -3,5 +3,8 @@
 @import "../../utilities/mixins";
 
 .su-people-spotlight-quote {
-  @include font-size(30px, 900, 48px, null);
+  @include type-c;
+  @include responsive-spacing('margin-bottom', 3);
+
+  font-weight: $su-font-black;
 }
