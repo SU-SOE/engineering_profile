@@ -158,9 +158,13 @@
 
       $(".engineering-accent-color__link a").each(function () {
         $(this).css('text-decoration', 'underline');
-        $(this).css('text-decoration-color', getAccentColor()).on('mouseover', function () {
-          console.log('chained');
+        $(this).css('text-decoration-color', getAccentColor());
+        var originalColor;
+        $(this).mouseover(function () {
+          originalColor = $(this).css('text-decoration-color');
           $(this).css('text-decoration-color', '#000');
+        }).mouseleave(function () {
+          $(this).css('text-decoration-color', originalColor);
         });
       }); //Adds different highlight color to spotlight headshot images.
 
