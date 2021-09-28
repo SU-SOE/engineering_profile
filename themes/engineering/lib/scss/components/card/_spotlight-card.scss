@@ -3,47 +3,62 @@
 @import "../../utilities/variables/colors";
 @import "../../utilities/mixins";
 
+
+
 .soe-spotlight--cards {
-  img{
+  img {
     border-radius: 50%;
     border-width: 5px;
     border-style: solid;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
   }
 
-  //Main purpose here is to make all cards same height.
   .views-row {
+
+    @include grid-media-min('xl') {
+      @include responsive-spacing('margin-bottom', 7);
+    }
+
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 128px;
+
+    @include grid-media-max('lg') {
+      &.flex-container {
+        display: block;
+
+        > div {
+          max-width: 100%;
+        }
+      }
+    }
 
     .su-card {
-      //height: 100%;
-      margin: 20px;
-      padding: 36px 34px;
+      @include responsive-spacing('margin', 0);
+      @include responsive-spacing('padding', 2);
+
+      @include grid-media-max('lg') {
+        @include responsive-spacing('margin-bottom', 3);
+      }
+
     }
 
     .su-card .image {
       flex: 1;
       display: block;
       width: 100%;
-
-      img {
-        width: 260px;
-        height: 260px;
-      }
     }
 
     .su-card .su-card__contents {
       flex: 3;
 
       h2 {
-        @include font-size(22.5px, 900, 24.75px, null);
-        margin-bottom: 3px;
-      }
+        @include type-d;
+        font-weight: $su-font-bold;
+ 
+     }
       span {
         margin-bottom: 30px;
       }
@@ -53,32 +68,64 @@
   // Main purpose here is to style the cards texts and spacing
   .su-card__contents {
     & {
-      @include font-size(32px, 900, 34.5px, null);
+      @include type-d;
+      font-weight: $su-font-bold;
+
+      // @include font-size(32px, 900, 34.5px, null);
     }
 
     .soe--person-title {
-      @include font-size(21px, 400, 32px, null);
+      @include type-f;
+
+      font-weight: $su-font-regular;
+      // @include font-size(21px, 400, 32px, null);
     }
 
     .spotlight__quote {
-      @include font-size(44px, 900, 48px, null);
+      @include type-c;
+
+      font-weight: $su-font-bold;
+      // @include font-size(44px, 900, 48px, null);
     }
 
     span > a {
+      @include type-e;
+
       color: $su-color-black;
-      font-size: 22.5px;
-      font-weight: 900;
-      line-height: 25px;
-      letter-spacing: 0;
+      font-weight: $su-font-bold;
     }
 
     h2 {
-      @include font-size(21px, null, 25px, null);
+      @include type-e;
     }
 
     .su-link {
-      @include font-size(20px, 600, 25px, null);
-      width: 100%;
+      @include type-f;
+
+      font-weight: $su-font-semi-bold;
+    }
+  }
+}
+
+// Header spotlight.
+.soe-spotlight--cards--banner {
+  &.spotlights {
+    .views-row {
+      margin-bottom: 0;
+
+      @include grid-media-max('lg') {
+        .su-card {
+          display: block;
+
+          img {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+
+    .su-link {
+      @include responsive-spacing('padding-top', 5);
     }
   }
 }

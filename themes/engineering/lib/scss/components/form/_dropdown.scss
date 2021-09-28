@@ -2,11 +2,16 @@
 
 @import "../../utilities/mixins";
 
-#views-exposed-form-spotlights-block-1{
+#views-exposed-form-spotlights-block-1 {
   & {
     display:flex;
     float: right;
     padding-right: 20px;
+
+    @include grid-media-max('lg') {
+      display: block;
+    }
+
   }
 
   .form-item-tid,
@@ -23,5 +28,8 @@
 
   .form-actions{
     float: right;
+    @include grid-media-max('lg') {
+      float: unset;
+    }
   }
 }
