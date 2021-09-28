@@ -6,9 +6,114 @@ dependencies:
     - field.field.taxonomy_term.article_collection.su_collect_subtitle
     - field.field.taxonomy_term.article_collection.su_continue_label
     - field.field.taxonomy_term.article_collection.su_intro_label
+    - field.field.taxonomy_term.article_collection.su_term_components
     - taxonomy.vocabulary.article_collection
+    - views.view.magazine_article_collection
   module:
+    - jumpstart_ui
+    - layout_builder
+    - layout_discovery
+    - layout_library
     - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: defaults
+        layout_settings:
+          extra_classes: soe-article-collection__term-content
+          centered: centered-container
+          columns: default
+          label: ''
+          context_mapping: {  }
+        components:
+          ebf9b8db-c96e-4360-963c-2c75bf7640e2:
+            uuid: ebf9b8db-c96e-4360-963c-2c75bf7640e2
+            region: main
+            configuration:
+              id: 'field_block:taxonomy_term:article_collection:description'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: soe-article-collection__description
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 1
+          58192dcf-53c4-4c4a-bc95-405316b82870:
+            uuid: 58192dcf-53c4-4c4a-bc95-405316b82870
+            region: main
+            configuration:
+              id: 'field_block:taxonomy_term:article_collection:su_collect_subtitle'
+              label: Subtitle
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_title_heading
+                settings:
+                  tag: h2
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 0
+          6c711023-7e35-4849-92a4-76901df9a78c:
+            uuid: 6c711023-7e35-4849-92a4-76901df9a78c
+            region: main
+            configuration:
+              id: 'field_block:taxonomy_term:article_collection:su_term_components'
+              label: Components
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          3d99e30d-3208-4b64-ae99-2405a71a3307:
+            uuid: 3d99e30d-3208-4b64-ae99-2405a71a3307
+            region: content
+            configuration:
+              id: 'views_block:magazine_article_collection-block_5'
+              label: ''
+              provider: views
+              label_display: '0'
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+  layout_library:
+    enable: false
 id: taxonomy_term.article_collection.default
 targetEntityType: taxonomy_term
 bundle: article_collection
@@ -47,3 +152,4 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  su_term_components: true
