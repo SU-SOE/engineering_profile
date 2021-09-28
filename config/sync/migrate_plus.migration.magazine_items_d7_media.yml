@@ -52,7 +52,12 @@ process:
         - '@pseudo_destination_filename'
   name: '@pseudo_destination_filename'
   filename: 'Image file'
-  field_media_image/alt: caption
+  field_media_image/alt:
+    - plugin: utf8convert
+      source: caption
+    -
+      plugin: truncate_string
+      count: 200
   field_media_image/target_id:
     plugin: migration_lookup
     migration: magazine_items_d7_images
