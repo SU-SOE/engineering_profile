@@ -78,7 +78,12 @@ source:
       label: Featured
       selector: featuredStatus
 process:
-  title: title
+  title:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: title
+      message: 'Title field is empty.'
   status: constants/status
   type: constants/type
   path/pathauto:
