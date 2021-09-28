@@ -233,9 +233,46 @@ input#edit-submit-spotlights {
 
 div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card {
   margin: 1em; }
-
-div[class*="magazine-article-collection-block-"] .views-field-title h2 {
-  font-size: 1em; }
+  div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__date-published {
+    color: #606060;
+    font-size: 1em;
+    font-weight: 100;
+    margin-bottom: 10px; }
+  div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__title {
+    font-size: 1em; }
+    div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__title a {
+      color: black; }
+      div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__title a:hover {
+        text-decoration: underline;
+        -webkit-text-decoration-color: #333333;
+                text-decoration-color: #333333; }
+  div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__topics {
+    margin-top: 1em; }
+    div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__topics a {
+      color: #8c1515;
+      font-weight: 400;
+      text-decoration: none; }
+      div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__topics a:hover {
+        text-decoration: underline;
+        -webkit-text-decoration-color: #333333;
+                text-decoration-color: #333333; }
+  div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__issue {
+    display: block;
+    margin-top: 2em;
+    padding: .5em;
+    text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #8c1515;
+    color: white; }
+    div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__issue a {
+      color: #333333;
+      text-decoration: none; }
+      div[class*="magazine-article-collection-block-"] .views-row .views-col .su-card .soe-article-collection__issue a:hover {
+        text-decoration: underline;
+        -webkit-text-decoration-color: #333333;
+                text-decoration-color: #333333; }
 
 .view.magazine-article-collection.block-5 .card-grid__row .card-grid__column {
   -webkit-box-flex: 1;

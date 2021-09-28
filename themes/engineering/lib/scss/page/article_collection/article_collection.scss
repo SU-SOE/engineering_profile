@@ -35,15 +35,66 @@ div[class*="magazine-article-collection-block-"] {
         .views-col{
             .su-card {
                 margin: 1em;
+
+                .soe-article-collection__date-published {
+                    color:#606060;
+                    font-size: 1em;
+                    font-weight: 100;
+                    margin-bottom: 10px;
+                }
+
+                .soe-article-collection__title {
+
+                    @include modular-typography(0);
+
+                    a {
+                        color: black;
+
+                        &:hover{
+                            text-decoration: underline;
+                        text-decoration-color: #333333;
+                        }
+                      }
+                }
+
+                .soe-article-collection__topics {
+                    margin-top: 1em;
+                    a{
+                      color: #8c1515;
+                      font-weight: 400;
+                      text-decoration: none;
+
+                      &:hover{
+                        text-decoration: underline;
+                        text-decoration-color: #333333;
+                      }
+                    }
+                }
+
+                .soe-article-collection__issue {
+                    display: block;
+                    margin-top: 2em;
+                    padding: .5em;
+                    text-align: center;
+                    width: fit-content;
+                    background-color: #8c1515;
+                    color:white;
+
+                    a {
+                      color: #333333;
+                      text-decoration: none;
+
+                      &:hover {
+                        text-decoration: underline;
+                        text-decoration-color: #333333;
+                      }
+                    }
+                }
             }
         }
     }
 
-    .views-field-title {
-        h2 {
-            @include modular-typography(0);
-        }
-    }
+
 }
 
 // Card grid on the term page

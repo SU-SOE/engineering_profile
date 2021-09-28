@@ -111,7 +111,10 @@
 
       $(".engineering-accent-color__link a").each(function () {
         $(this).css('text-decoration', 'underline');
-        $(this).css('text-decoration-color', getAccentColor());
+        $(this).css('text-decoration-color', getAccentColor()).on('mouseover', function () {
+          console.log('chained');
+          $(this).css('text-decoration-color', '#000');
+        });
       }); //Adds different highlight color to spotlight headshot images.
 
       $(".engineering-accent-color__image img").each(function () {
@@ -120,6 +123,11 @@
       $(".soe-spotlight--cards .su-link").each(function () {
         $(this).removeClass('su-card__link su-link--action');
         $(this).addClass('su-link--external');
+        $(this).hover(function () {
+          var element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this;
+          console.log('got in.');
+          $(element).css('text-decoration-color', 'black');
+        });
       });
       $(".engineering-accent-color__background").each(function () {
         $(this).css('background-color', getAccentColor());
