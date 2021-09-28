@@ -42,7 +42,6 @@
         $(this).addClass('su-link--external');
 
         $(this).hover(function (element = this) {
-          console.log('got in.');
           $(element).css('text-decoration-color', 'black');
         });
       })
