@@ -6,8 +6,10 @@ dependencies:
     - field.field.taxonomy_term.article_collection.su_collect_subtitle
     - field.field.taxonomy_term.article_collection.su_continue_label
     - field.field.taxonomy_term.article_collection.su_intro_label
+    - field.field.taxonomy_term.article_collection.su_term_components
     - taxonomy.vocabulary.article_collection
   module:
+    - paragraphs
     - path
     - text
 id: taxonomy_term.article_collection.default
@@ -67,5 +69,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  su_term_components:
+    type: entity_reference_paragraphs
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
 hidden: {  }

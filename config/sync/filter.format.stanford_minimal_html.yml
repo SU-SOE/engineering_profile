@@ -44,27 +44,6 @@ filters:
       default_view_mode: default
       allowed_media_types: {  }
       allowed_view_modes: {  }
-  typogrify:
-    id: typogrify
-    provider: typogrify
-    status: true
-    weight: -47
-    settings:
-      smartypants_enabled: '1'
-      smartypants_hyphens: '3'
-      space_hyphens: '0'
-      widont_enabled: '0'
-      hyphenate_shy: '0'
-      space_to_nbsp: '0'
-      wrap_caps: '0'
-      wrap_ampersand: '0'
-      wrap_abbr: '0'
-      wrap_numbers: '0'
-      wrap_initial_quotes: '0'
-      ligatures: 'a:0:{}'
-      arrows: 'a:0:{}'
-      fractions: 'a:0:{}'
-      quotes: 'a:0:{}'
   editor_file_reference:
     id: editor_file_reference
     provider: editor
@@ -120,3 +99,24 @@ filters:
     status: false
     weight: -40
     settings: {  }
+  typogrify:
+    id: typogrify
+    provider: typogrify
+    status: true
+    weight: -47
+    settings:
+      smartypants_enabled: '1'
+      smartypants_hyphens: '3'
+      space_hyphens: '0'
+      widont_enabled: '0'
+      hyphenate_shy: '0'
+      space_to_nbsp: '0'
+      wrap_caps: '0'
+      wrap_ampersand: '0'
+      wrap_abbr: '0'
+      wrap_numbers: '0'
+      wrap_initial_quotes: '0'
+      ligatures: 'a:0:{}'
+      arrows: 'a:0:{}'
+      fractions: 'a:0:{}'
+      quotes: 'a:0:{}'
