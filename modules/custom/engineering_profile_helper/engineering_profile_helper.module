@@ -6,8 +6,6 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\views\ViewExecutable;
-use \Drupal\Core\Render\Element;
 
 /**
  * Implements hook_help().
@@ -46,42 +44,3 @@ function engineering_profile_form_views_exposed_form_alter(&$form, &$form_state)
     $form['tid_1']['#options']["All"] = t('All People');
   }
 }
-
-/**
- * implements hook_views_pre_render
- */
-function engineering_profile_helper_views_data_alter(array &$data) {
-
-  //dpm($data);
-}
-
-/*
-function engineering_profile_helper_entity_display_build_alter(&$build, $context){
-  $replacement_alt_tag = null;
-  foreach (Element::children($build) as $field_name) {
-    $element =& $build[$field_name];
-
-    //dpm($field_name);
-    if ($field_name == "su_news_banner_media_caption"){
-      $replacement_alt_tag = $element[0]['#context']['value'];
-      //dpm($element);
-    }
-    //if ($field_name == "su_news_banner_media_caption")
-
-    if (!empty($element['#field_type'])
-    && $element['#field_type'] == 'entity_reference'
-    && $element['#formatter'] == 'media_responsive_image_formatter') {
-      foreach($element['#items'] as $key => $item){
-        if (empty($element['#options']['attributes']['alt'])){
-          $element['#options']['attributes']['alt'] = "presentation image";
-          //$image = $item->entity;
-          dpm($item);
-        }
-        //$image = $item->entity;
-        //dpm($item);
-      }
-
-    }
-  }
-}
-*/
