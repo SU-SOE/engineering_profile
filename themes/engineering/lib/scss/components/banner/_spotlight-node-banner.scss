@@ -4,72 +4,68 @@
 @import "../../utilities/variables";
 
 // Main purpose: style entire node of individual Spotlight pages.
-.spotlight-banner{
+.spotlight-banner {
+  @include responsive-spacing('margin', 6 null 5 null);
+
   display: flex;
-  margin-top: 83px;
-  margin-bottom: 74px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 
-  .su-spotlight-feature-image{
-    flex: 1;
-  }
+  .su-spotlight-feature-image {
+    max-width: 360px;
 
-  img{
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    border-width: 5px;
-    border-style: solid;
-    margin-right: 0;
-    display: block;
+    @include grid-media('md') {
+      max-width: 100%;
+    }
+
+    img {
+      border-radius: 50%;
+      border-width: 5px;
+      border-style: solid;
+      margin-right: 0;
+      display: block;
+    }
   }
 }
 
-.spotlight-banner__text{
-  flex: 2;
-  padding: 60px 0;
+.spotlight-banner__text {
+  @include responsive-spacing('margin', 4 null);
 
-  .spotlight{
-    @include font-size(30px, 900, 33px, null);
-    margin-bottom: 25px;
+  .spotlight {
+    @include type-c;
+    @include responsive-spacing('margin', null null 1 null);
 
-    &.node-title{
-      margin-bottom: 3px;
-    }
+    font-weight: $su-font-black;
+
 
     &.su-spotlight-degrees,
-    &.su-soe-department{
-      @include font-size(28px, 400, 35px, null);
+    &.su-soe-department {
+      @include type-c;
+
+      font-weight: $su-font-regular;
     }
 
-    h1{
-      @include font-size(55px, 900, 60px, null);
+    h1 {
+      @include type-b;
+      font-weight: $su-font-black;
+
       margin-bottom: 0;
     }
   }
 }
 
-
-
-.spotlight-banner__text{
-  margin-left: 45px;
-}
-
-.node-spotlight-created{
-  max-width: 100ch;
+.node-spotlight-created {
+  max-width: 100%;
 }
 
 //Date on Spotlight
-.spotlight.spotlight-header__date{
-  float: right;
+.spotlight.spotlight-header__date {
+  @include type-d;
+
   text-align: right;
   font-style: italic;
   width: 100%;
-  font-size: 20px;
-  font-weight: inherit;
-}
-
-.su-spotlight-degrees,
-.su-soe-department{
-  @include font-size(28px, $soe-font-thin, 35px, null);
-  float: left;
+  font-weight: $su-font-regular;
 }

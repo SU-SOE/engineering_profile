@@ -74,12 +74,12 @@ display:
         options:
           grouping: {  }
           columns: 3
-          automatic_width: true
+          automatic_width: false
           alignment: horizontal
           col_class_default: true
-          col_class_custom: ''
+          col_class_custom: flex-4-of-12
           row_class_default: true
-          row_class_custom: ''
+          row_class_custom: flex-container
       row:
         type: ui_patterns
         options:
@@ -289,14 +289,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: div
           element_class: soe-quote
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1369,12 +1369,12 @@ display:
         options:
           grouping: {  }
           columns: 3
-          automatic_width: true
+          automatic_width: false
           alignment: horizontal
           col_class_default: true
-          col_class_custom: ''
+          col_class_custom: flex-4-of-12
           row_class_default: true
-          row_class_custom: ''
+          row_class_custom: flex-container
       row:
         type: ui_patterns
         options:
