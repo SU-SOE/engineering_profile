@@ -10,6 +10,7 @@ dependencies:
     - node.type.stanford_news
   module:
     - datetime
+    - element_class_formatter
     - node
     - stanford_media
     - taxonomy
@@ -92,7 +93,7 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 1
+          default_field_elements: 0
           inline:
             su_news_banner: 0
             created: 0
@@ -801,8 +802,8 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
-          element_class: 'soe-article-collection__title engineering-accent-color__link'
+          element_type: span
+          element_class: engineering-accent-color__link
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -814,9 +815,14 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: wrapper_class
           settings:
-            link_to_entity: true
+            link: true
+            link_class: engineering-accent-color__link
+            tag: span
+            summary: false
+            trim: 200
+            class: ''
           group_column: value
           group_columns: {  }
           group_rows: true
