@@ -73,12 +73,17 @@ process:
       plugin: magazine_articles_to_issues
       source: article-1
   su_magazine_issue:
-    plugin: entity_lookup
-    source: title
-    entity_type: taxonomy_term
-    value_key: name
-    bundle_key: vid
-    bundle: magazine_issues
+    -
+      plugin: skip_on_empty
+      method: row
+      source: title
+      message: 'missing title'
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: magazine_issues
 destination:
   plugin: 'entity:node'
   default_bundle: stanford_news
