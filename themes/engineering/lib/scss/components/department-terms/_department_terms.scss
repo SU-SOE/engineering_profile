@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.soe-departments__term-list {
+    list-style-type: none;
+
+    li {
+        display: inline;
+        &::after {
+            content: ', ';
+        }
+
+        &:last-of-type {
+            &::after{
+                content: '';
+            }
+        }
+
+    }
+}
