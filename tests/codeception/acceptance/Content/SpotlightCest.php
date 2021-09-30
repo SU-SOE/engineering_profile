@@ -27,7 +27,7 @@ class SpotlightCest
 
     $I->amOnPage("/spotlight");
     $I->see("Spotlights");
-//    $I->seeElement('h1.heading-h1');
+    $I->seeElement('h1.heading-h1');
 //    $I->canSeeNumberOfElements(".soe-spotlight--cards .su-card", 2);
 //    $I->seeElement('.su-card__contents');
 //    $I->seeElement(['css' => '.soe-link__button .button']);
