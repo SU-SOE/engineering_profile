@@ -10,21 +10,6 @@ class SpotlightCest
    * Test that the view pages elements exists.
    */
   public function testLandingPagesElements(AcceptanceTester $I) {
-    $I->logInWithRole('administrator');
-
-    $I->createEntity([
-      'type' => 'spotlight',
-      'title' => 'Test spotlight 4',
-    ]);
-    $I->createEntity([
-      'type' => 'spotlight',
-      'title' => 'Test spotlight 5',
-    ]);
-    $I->createEntity([
-      'type' => 'spotlight',
-      'title' => 'Test spotlight 6',
-    ]);
-
     $I->amOnPage("/spotlight");
     $I->see("Spotlights");
 //    $I->canSeeNumberOfElements(".su-card", 3);
