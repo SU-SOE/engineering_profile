@@ -1,0 +1,22 @@
+uuid: f9d692af-9a89-4c24-a83b-91c4468974dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: spotlight_nodes
+label: 'Spotlight Nodes'
+type: 'canonical_entities:node'
+pattern: 'spotlight/[node:title]'
+selection_criteria:
+  37761667-8f84-43f1-aa27-d6c0db2deeb0:
+    id: node_type
+    bundles:
+      spotlight: spotlight
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 37761667-8f84-43f1-aa27-d6c0db2deeb0
+selection_logic: and
+weight: -5
+relationships: {  }
