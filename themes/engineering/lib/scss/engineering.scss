@@ -26,7 +26,10 @@ h1, h2, h3, h4, h5 {
 }
 
 // Various Roboto applications
-.su-drop-cap {
+.su-drop-cap,
+.soe-quote,
+.spotlight__quote ,
+.su-people-spotlight-quote {
   font-family: $roboto-slab;
 }
 
@@ -57,7 +60,7 @@ h1, h2, h3, h4, h5 {
         a {
           color: black;
 
-          &:hover{
+          &:hover {
             text-decoration-color: black;
           }
         }
@@ -72,12 +75,12 @@ h1, h2, h3, h4, h5 {
 
       .views-field-su-soe-mag-topics {
         margin-top: 1em;
-        a{
+        a {
           color: #8c1515;
           font-weight: 400;
           text-decoration: none;
 
-          &:hover{
+          &:hover {
             color: #333333;
             text-decoration: underline;
           }

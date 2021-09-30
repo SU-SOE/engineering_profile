@@ -81,6 +81,7 @@
 
     .soe-quote {
       @include type-c;
+
       font-weight: $su-font-bold;
     }
 
@@ -125,7 +126,7 @@
 
       .spotlight__quote {
         @include type-b;
-  
+
         font-weight: $su-font-black;
       }
 
