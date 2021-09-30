@@ -334,6 +334,15 @@ input#edit-submit-spotlights {
   width: 100%;
   font-weight: 400; }
 
+.soe-departments__term-list {
+  list-style-type: none; }
+  .soe-departments__term-list li {
+    display: inline; }
+    .soe-departments__term-list li::after {
+      content: ', '; }
+    .soe-departments__term-list li:last-of-type::after {
+      content: ''; }
+
 .su-people-spotlight-quote {
   font-size: 1.5625em;
   letter-spacing: -0.012em;
@@ -437,7 +446,6 @@ h1, h2, h3, h4, h5 {
 .su-wysiwyg-text h1, .su-wysiwyg-text h2, .su-wysiwyg-text h3, .su-wysiwyg-text h4, .su-wysiwyg-text h5 {
   font-family: "Roboto Slab", serif; }
 
-.su-drop-cap,
 .soe-quote,
 .spotlight__quote,
 .su-people-spotlight-quote {
