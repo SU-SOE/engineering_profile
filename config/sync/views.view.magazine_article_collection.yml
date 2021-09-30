@@ -92,7 +92,7 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 1
+          default_field_elements: 0
           inline:
             su_news_banner: 0
             created: 0
@@ -101,7 +101,7 @@ display:
             su_news_publishing_date: 0
             su_magazine_issue: 0
           separator: ''
-          hide_empty: 0
+          hide_empty: 1
           pattern: card
           pattern_mapping:
             'views_row:su_news_banner':
