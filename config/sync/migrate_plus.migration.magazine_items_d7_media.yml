@@ -71,5 +71,5 @@ destination:
   plugin: 'entity:media'
   default_bundle: image
 migration_dependencies:
-  required:
+  optional:
     - magazine_items_d7_images

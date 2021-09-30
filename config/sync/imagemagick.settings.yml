@@ -6,10 +6,10 @@ prepend_pre_source: false
 log_warnings: true
 debug: false
 use_identify: true
-locale: en_US.UTF-8
+locale: en_US.utf8
 advanced:
   density: 72
-  colorspace: '0'
+  colorspace: RGB
   profile: ''
   coalesce: true
 image_formats:
