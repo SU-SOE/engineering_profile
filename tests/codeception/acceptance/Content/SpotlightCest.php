@@ -10,9 +10,24 @@ class SpotlightCest
    * Test that the view pages elements exists.
    */
   public function testLandingPagesElements(AcceptanceTester $I) {
+    $I->logInWithRole('administrator');
+
+    $I->createEntity([
+      'type' => 'spotlight',
+      'title' => 'Test spotlight 1',
+    ]);
+    $I->createEntity([
+      'type' => 'spotlight',
+      'title' => 'Test spotlight 2',
+    ]);
+    $I->createEntity([
+      'type' => 'spotlight',
+      'title' => 'Test spotlight 3',
+    ]);
+
     $I->amOnPage("/spotlight");
     $I->see("Spotlights");
-    $I->seeElement('h2.field-content');
+    $I->seeElement('h1.heading-h1');
     $I->seeElement('.su-card__contents');
     $I->seeElement(['css' => '.soe-link__button .button']);
     $I->click(["css" =>".soe-spotlight--cards--banner a.su-link"]);
@@ -39,20 +54,7 @@ class SpotlightCest
    * on the node page.
    */
   public function testMoreNewsView(AcceptanceTester $I) {
-    $I->logInWithRole('administrator');
 
-    $I->createEntity([
-      'type' => 'spotlight',
-      'title' => 'Test spotlight 1',
-    ]);
-    $I->createEntity([
-      'type' => 'spotlight',
-      'title' => 'Test spotlight 2',
-    ]);
-    $I->createEntity([
-      'type' => 'spotlight',
-      'title' => 'Test spotlight 3',
-    ]);
 
     $I->amOnPage("/test-spotlight-2");
     $I->see("Related spotlights");
