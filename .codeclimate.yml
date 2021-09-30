@@ -105,6 +105,7 @@ plugins:
         - dsm
 # exclude these files/paths
 exclude_patterns:
+  - "**/dist/**"
   - "tests/"
   - "**.min.*"
   - "**/Gruntfile.js"

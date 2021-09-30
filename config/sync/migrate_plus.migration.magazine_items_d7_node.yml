@@ -110,20 +110,6 @@ process:
   su_mag_featured:
     plugin: featured_process
     source: featured
-  body_paragraph:
-    plugin: migration_lookup
-    migration: magazine_items_paragraphs_d7
-    source: nid
-  su_news_components/target_id:
-    plugin: extract
-    source: '@body_paragraph'
-    index:
-      - 0
-  su_news_components/target_revision_id:
-    plugin: extract
-    source: '@body_paragraph'
-    index:
-      - 1
   su_magazine_story: constants/magazine_story
   su_soe_department:
     -
@@ -159,6 +145,6 @@ destination:
   plugin: 'entity:node'
   default_bundle: stanford_news
 migration_dependencies:
-  required:
+  optional:
     - magazine_items_paragraphs_d7
     - magazine_items_d7_media

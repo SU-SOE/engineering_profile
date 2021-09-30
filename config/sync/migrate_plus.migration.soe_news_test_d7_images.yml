@@ -57,7 +57,7 @@ process:
       source:
         - image
         - '@pseudo_destination_path'
-      file_exists: replace
+      file_exists: 'use existing'
       move: false
 destination:
   plugin: 'entity:file'
