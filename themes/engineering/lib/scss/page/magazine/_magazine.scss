@@ -10,13 +10,29 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include magazine-grid-rows(1);
+
+  &:nth-of-type(2n) {
+    @include magazine-grid-rows(2);
+  }
+
+  &:nth-of-type(3n) {
+    @include magazine-grid-rows(3);
+  }
+
   .card-grid__column {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     padding-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
 
+
     .su-card {
       margin: 1em;
+      width: fit-content;
+
 
       h2 {
         a {
@@ -87,15 +103,7 @@
     }
   }
 
-  @include magazine-grid-rows(1);
 
-  &:nth-of-type(2n) {
-    @include magazine-grid-rows(2);
-  }
-
-  &:nth-of-type(3n) {
-    @include magazine-grid-rows(3);
-  }
 }
 
 
