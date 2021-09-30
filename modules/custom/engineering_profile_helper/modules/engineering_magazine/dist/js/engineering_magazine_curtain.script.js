@@ -136,15 +136,8 @@
 
       $(window).scroll(function () {
         var curtain = $('.hero-curtain');
-        var curtainPadding = $(curtain).css('padding-bottom');
-        curtainPadding = curtainPadding.substring(0, curtainPadding.length - 2);
         var curtainHeight = $(curtain).height();
-        var scrollPos = 0 - curtainHeight + $(window).scrollTop(); // keeping this here for reference.  can be deleted.
-
-        var curtainTop = $('.hero-curtain').offset().top;
-        var curtainBottom = $('.hero-curtain').offset().top + $('.hero-curtain').height();
-        var screenBottom = $(window).scrollTop() + $(window).innerHeight();
-        var screenTop = $(window).scrollTop(); // end reference
+        var scrollPos = 0 - curtainHeight + $(window).scrollTop();
 
         if (scrollPos < 0) {
           $('.hero-curtain-reveal').removeClass('below-hero');

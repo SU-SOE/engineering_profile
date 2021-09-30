@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.soe-magazine__navigation-rotate-down{
+    transform-origin: center center;
+    transform: rotate(0);
+    transition: transform .5s linear;
+}
+
+.soe-magazine__navigation-rotate-up{
+    transform-origin: center center;
+    transform: rotate(180deg);
+    transition: transform .5s linear;
+}
+
