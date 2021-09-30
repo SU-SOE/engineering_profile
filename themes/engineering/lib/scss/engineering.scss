@@ -1,17 +1,22 @@
 @charset "UTF-8";
 
-@import "./config",
-"utilities/variables/index",
-"components/index",
-"base/index",
-"page/index";
+@import "./config", "utilities/variables/index", "components/index",
+  "base/index", "page/index";
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: $roboto-slab;
 }
 
 .su-wysiwyg-text {
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: $roboto-slab;
   }
 }
@@ -22,7 +27,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .su-hero .su-hero__card .su-card__contents {
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: $roboto-slab;
   }
 }
@@ -49,9 +58,4 @@ h1, h2, h3, h4, h5 {
   &:nth-of-type(3n) {
     @include magazine-grid-rows(3);
   }
-
 }
-
-
-
-

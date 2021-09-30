@@ -1,79 +1,78 @@
 @charset "UTF-8";
 
 .hero-curtain {
-    position: relative;
+  position: relative;
+  z-index: 10;
+  display: flex;
+
+  > * {
     z-index: 10;
+  }
+
+  .curtain-image {
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+
+  .curtain-content {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    text-align: center;
 
-    > * {
-       z-index: 10;
+    a {
+      text-decoration: none;
     }
 
-    .curtain-image {
-        z-index: 10;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        img {
-            object-fit: cover;
-            object-position: center center;
-            width: 100%;
-            height: 100vh;
-        }
+    h1 {
+      display: block;
+      padding: 1em;
+      margin: 0;
+      color: black;
     }
 
-    .curtain-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        flex-direction: column;
-        position: absolute;
-        background-color: transparent;
-        color: white;
-        height: 100%;
-        width: 100%;
-        z-index: 11;
-        text-align: center;
-
-        a {
-            text-decoration: none;
-        }
-
-        h1 {
-            display: block;
-            padding: 1em;
-            margin: 0;
-            color: black;
-        }
-
-        p {
-            color: white;
-        }
-
-        .curtain-content__scroll-text {
-            background-color: black;
-            opacity: 0.5;
-            margin-top: 1rem;
-            padding: 1rem 2rem 1rem 2rem;
-        }
-
-        .scroll-down {
-            color: white;
-        }
+    p {
+      color: white;
     }
 
-    &.below-hero {
-        margin-bottom: 0 !important;
+    .curtain-content__scroll-text {
+      background-color: black;
+      opacity: 0.5;
+      margin-top: 1rem;
+      padding: 1rem 2rem 1rem 2rem;
     }
 
+    .scroll-down {
+      color: white;
+    }
+  }
+
+  &.below-hero {
+    margin-bottom: 0 !important;
+  }
 }
 
 .hero-curtain-reveal {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 
-    &.below-hero {
-        position: relative;
-    }
+  &.below-hero {
+    position: relative;
+  }
 }

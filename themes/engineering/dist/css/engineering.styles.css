@@ -346,7 +346,7 @@ input#edit-submit-spotlights {
 .bare-header {
   margin-top: 95px; }
 
-.node_view ul.pre_links li a[href$='printable/print'] {
+.node_view ul.pre_links li a[href$="printable/print"] {
   display: none; }
 
 .spotlight-main-content .main-region {
@@ -391,7 +391,7 @@ div[class*="magazine-"] .card-grid__row .card-grid__col .su-card {
   div[class*="magazine-"] .card-grid__row .card-grid__col .su-card .soe-mag-card__issue {
     display: block;
     margin-top: 2em;
-    padding: .5em;
+    padding: 0.5em;
     text-align: center;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -466,16 +466,28 @@ div[class*="magazine-"] .card-grid__row .card-grid__col .su-card {
   margin-left: auto;
   margin-right: auto; }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "Roboto Slab", serif; }
 
-.su-wysiwyg-text h1, .su-wysiwyg-text h2, .su-wysiwyg-text h3, .su-wysiwyg-text h4, .su-wysiwyg-text h5 {
+.su-wysiwyg-text h1,
+.su-wysiwyg-text h2,
+.su-wysiwyg-text h3,
+.su-wysiwyg-text h4,
+.su-wysiwyg-text h5 {
   font-family: "Roboto Slab", serif; }
 
 .su-drop-cap {
   font-family: "Roboto Slab", serif; }
 
-.su-hero .su-hero__card .su-card__contents h1, .su-hero .su-hero__card .su-card__contents h2, .su-hero .su-hero__card .su-card__contents h3, .su-hero .su-hero__card .su-card__contents h4, .su-hero .su-hero__card .su-card__contents h5 {
+.su-hero .su-hero__card .su-card__contents h1,
+.su-hero .su-hero__card .su-card__contents h2,
+.su-hero .su-hero__card .su-card__contents h3,
+.su-hero .su-hero__card .su-card__contents h4,
+.su-hero .su-hero__card .su-card__contents h5 {
   font-family: "Roboto Slab", serif; }
 
 .card-grid__row {
