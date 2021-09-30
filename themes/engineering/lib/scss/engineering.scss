@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
-@import "./config", "utilities/variables/index", "components/index",
-  "base/index", "page/index";
+@import "./config",
+"utilities/variables/index",
+"components/index",
+"base/index",
+"page/index";
 
 h1,
 h2,
@@ -36,26 +39,3 @@ h5 {
   }
 }
 
-// Engineering Card Grid
-// used in the magazine, issues, article collections
-
-.card-grid__row {
-  display: flex;
-  flex-wrap: wrap;
-
-  .card-grid__column {
-    padding-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @include magazine-grid-rows(1);
-
-  &:nth-of-type(2n) {
-    @include magazine-grid-rows(2);
-  }
-
-  &:nth-of-type(3n) {
-    @include magazine-grid-rows(3);
-  }
-}

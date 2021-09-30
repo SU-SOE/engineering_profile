@@ -5,74 +5,99 @@
 // Magazine Issues, Magazine Topic pages,
 // and Article collections.
 
-div[class*="magazine-"] {
-  .card-grid__row {
-    .card-grid__col {
-      .su-card {
-        margin: 1em;
 
-        h2 {
-          color: $soe-black;
-        }
+.card-grid__row {
+  display: flex;
+  flex-wrap: wrap;
 
-        .soe-mag-card__date-published {
-          color: $soe-header-grey;
-          font-size: 1em;
-          font-weight: 100;
-          margin-bottom: 10px;
-        }
+  .card-grid__column {
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
 
-        .soe-mag-card__title {
+    .su-card {
+      margin: 1em;
+
+      h2 {
+        a {
           @include modular-typography(0);
+          color: $soe-black;
 
-          a {
-            color: $soe-black;
-
-            &:hover {
-              text-decoration: underline;
-              text-decoration-color: #333333;
-            }
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
           }
         }
+      }
 
-        .soe-mag-card__topics {
-          margin-top: 30px;
-          a {
-            color: $magazine-topics-color;
-            font-size: 18px;
-            font-weight: 400;
-            text-decoration: none;
+      .soe-mag-card__date-published {
+        color: $soe-header-grey;
+        font-size: 1em;
+        font-weight: 100;
+        margin-bottom: 10px;
+      }
 
-            &:hover {
-              text-decoration: underline;
-              text-decoration-color: #333333;
-            }
+      .soe-mag-card__title {
+        @include modular-typography(0);
+
+        a {
+          color: $soe-black;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
           }
         }
+      }
 
-        .soe-mag-card__issue {
-          display: block;
-          margin-top: 2em;
-          padding: 0.5em;
-          text-align: center;
-          width: fit-content;
-          background-color: #8c1515;
-          color: white;
+      .soe-mag-card__topics {
+        margin-top: 30px;
+        a {
+          color: $magazine-topics-color;
+          font-size: 18px;
+          font-weight: 400;
+          text-decoration: none;
 
-          a {
-            color: #333333;
-            text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
+          }
+        }
+      }
 
-            &:hover {
-              text-decoration: underline;
-              text-decoration-color: #333333;
-            }
+      .soe-mag-card__issue {
+        display: block;
+        margin-top: 2em;
+        padding: 0.5em;
+        text-align: center;
+        width: fit-content;
+        background-color: #8c1515;
+        color: #ffffff;
+
+        a {
+          color: #333333;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
           }
         }
       }
     }
   }
+
+  @include magazine-grid-rows(1);
+
+  &:nth-of-type(2n) {
+    @include magazine-grid-rows(2);
+  }
+
+  &:nth-of-type(3n) {
+    @include magazine-grid-rows(3);
+  }
 }
+
 
 .view.magazine {
   header {

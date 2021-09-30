@@ -1,17 +1,17 @@
 @charset "UTF-8";
 
+// Import Decanter Library:
+@import
+'decanter/core/src/scss/decanter-no-markup',
+'utilities/index.scss',
+url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;300;100&display=swap');
+
 // This file imports the base styles from decanter so they can be included
 // or removed by a theme.
 $su-image-path: "~decanter/core/src/img";
 $fa-font-path:  "~@fortawesome/fontawesome-free/webfonts";
 
-// Import Decanter Library:
-@import
-'decanter/core/src/scss/decanter-no-markup',
-'utilities/index.scss';
-
 // Google Fonts
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100);
 $primary-font: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $roboto-slab: 'Roboto Slab', serif;
 

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.magazine_issues.su_issue_number
     - taxonomy.vocabulary.magazine_issues
-    - views.view.magazine
+    - views.view.magazine_issues
   module:
     - layout_builder
     - layout_builder_restrictions
@@ -60,11 +60,11 @@ third_party_settings:
           label: Articles
           context_mapping: {  }
         components:
-          713746fe-1100-417a-bfce-e3c5da8fffb5:
-            uuid: 713746fe-1100-417a-bfce-e3c5da8fffb5
+          6d9e3736-3c55-4156-af6c-8bbe9e6cdb39:
+            uuid: 6d9e3736-3c55-4156-af6c-8bbe9e6cdb39
             region: content
             configuration:
-              id: 'views_block:magazine-block_2'
+              id: 'views_block:magazine_issues-block_2'
               label: ''
               provider: views
               label_display: '0'

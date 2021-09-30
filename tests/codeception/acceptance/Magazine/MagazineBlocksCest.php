@@ -20,7 +20,7 @@ class MagazineBlocksCest {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/magazine');
     $I->canSee('Stanford Engineering Magazine');
-    $I->canSee('Scroll to explore the latest news');
+    $I->canSee('Explore the latest news');
   }
 
 

@@ -1,25 +1,32 @@
 {#
-/**
- * @file
- * Profile magazine_navigation_block
- */
+@file
+Profile magazine_navigation_block
 #}
-<div{{ attributes.addClass('flex-container') }}>
+<div{{attributes.addClass('flex-container')}}>
 
     <div class="flex-12-of-12 magazine-landing-nav">
 
-        <h2 class="magazine-landing-nav__item"><a href="/magazine">Research & Ideas</a></h2>
-        <div class="magazine-landing-nav__item">Topics <span id="magazine-landing-nav__topics-toggle" aria-expanded="false" aria-label="Open the Topics menu">+</span></div>
-        <div class="magazine-landing-nav__item"><a href="/magazine/issue">Issues</a></div>
+        <h2 class="magazine-landing-nav__item">
+            <a href="/magazine">Research & Ideas</a>
+        </h2>
+        <div class="magazine-landing-nav__item">Topics
+            <span id="magazine-landing-nav__topics-toggle" aria-expanded="false" aria-label="Open the Topics menu">+</span>
+        </div>
+        <div class="magazine-landing-nav__item">
+            <a href="/magazine/issue">Issues</a>
+        </div>
 
     </div>
 
 </div>
 
-<div class="magazine-landing-nav__topics_panel" aria-labeledby="magazine-landing-nav__topics-toggle">
+<div class="magazine-landing-nav__topics-panel" aria-labeledby="magazine-landing-nav__topics-toggle">
     <div class="magazine-terms-list">
         {% for term in topics%}
-            <div class='magazine-term'><a href="{{ term['path'] }}">{{ term['name'] }}</a></div>
+            <div class='magazine-term'>
+                <a href="{{ term['path'] }}">{{ term['name'] }}</a>
+            </div>
         {% endfor %}
     </div>
 </div>
+
