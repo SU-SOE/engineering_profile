@@ -5,6 +5,17 @@
 // Magazine Issues, Magazine Topic pages,
 // and Article collections.
 
+.soe-mag-landing__heading_1 {
+  text-align: center;
+  margin: auto;
+}
+.soe-mag-landing__heading_2 {
+  text-align: center;
+  margin: auto;
+  max-width: 30ch;
+  font-family: $primary-font;
+  font-weight: 400;
+}
 
 .card-grid__row {
   display: flex;

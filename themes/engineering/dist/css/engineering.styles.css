@@ -360,6 +360,17 @@ input#edit-submit-spotlights {
 .spotlights-block-3 h2.block__title {
   text-align: center; }
 
+.soe-mag-landing__heading_1 {
+  text-align: center;
+  margin: auto; }
+
+.soe-mag-landing__heading_2 {
+  text-align: center;
+  margin: auto;
+  max-width: 30ch;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
 .card-grid__row {
   display: -webkit-box;
   display: -ms-flexbox;

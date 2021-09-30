@@ -630,8 +630,23 @@ display:
         fields: true
         use_ajax: false
         title: false
+        header: false
       use_ajax: true
       title: 'Landing Page Card Grid'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<H2 class=\"soe-mag-landing__heading_1\">Latest News</H2>\r\n<h3 class=\"soe-mag-landing__heading_2\">What are we working on? What are we thinking about?</h3>"
+            format: stanford_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
