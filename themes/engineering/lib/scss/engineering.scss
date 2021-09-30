@@ -26,11 +26,17 @@ h1, h2, h3, h4, h5 {
 }
 
 // Various Roboto applications
-.su-drop-cap,
 .soe-quote,
 .spotlight__quote ,
 .su-people-spotlight-quote {
   font-family: $roboto-slab;
+}
+
+.su-drop-cap {
+  font-family: $roboto-slab;
+  &::first-letter {
+    font-family: $roboto-slab;
+  }
 }
 
 .su-hero .su-hero__card .su-card__contents {
