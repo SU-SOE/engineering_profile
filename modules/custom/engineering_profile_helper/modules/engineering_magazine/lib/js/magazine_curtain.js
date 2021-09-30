@@ -27,12 +27,12 @@
             }
 
             function heroScroller(classes) {
-                $('.curtain-content').append($('<a>', {
+                $('.curtain-content__scroll-text').append($('<a>', {
                     class: 'scroll-down',
                     href: '#',
                     title: Drupal.t('Scroll Down'),
                     'aria-label': Drupal.t('Scroll Down'),
-                    html: '<div class="scroll-text">' + Drupal.t('Scroll') + '</div><div class="fa fa-arrow-circle-o-down"></div>'
+                    html: '<div class="scroll-text">' + Drupal.t('Click to scroll') + '</div><div class="fa fa-arrow-circle-o-down"></div>'
                 }).click(function (e) {
                     e.preventDefault();
                     $("html, body").animate({

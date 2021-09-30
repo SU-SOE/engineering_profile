@@ -9,3 +9,13 @@ $fa-font-path:  "~@fortawesome/fontawesome-free/webfonts";
 @import
 'decanter/core/src/scss/decanter-no-markup',
 'utilities/index.scss';
+
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100);
+$primary-font: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+
+// color variables
+$magazine-topics-color: #b1040e;
+$soe-black: #2e2d29;
+$soe-header-grey: #606060;

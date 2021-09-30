@@ -164,6 +164,11 @@
     .hero-curtain .curtain-content p {
       margin-top: 4em;
       color: white; }
+    .hero-curtain .curtain-content .curtain-content__scroll-text {
+      background-color: black;
+      opacity: 0.5;
+      margin-top: 1rem;
+      padding: 1rem 2rem 1rem 2rem; }
     .hero-curtain .curtain-content .scroll-down {
       color: white; }
   .hero-curtain.below-hero {
@@ -174,12 +179,6 @@
   top: 0; }
   .hero-curtain-reveal.below-hero {
     position: relative; }
-
-.view.magazine header h1 {
-  text-align: center; }
-
-.view.magazine .views-infinite-scroll-content-wrapper > h3 {
-  text-align: center; }
 
 
 /*# sourceMappingURL=engineering_magazine.styles.css.map*/

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+// Styles for magazine cards in a grid view
+// used in: Magazine Landing Page,
+// Magazine Issues, Magazine Topic pages,
+// and Article collections.
+
+div[class*="magazine-"] {
+    .card-grid__row {
+        .card-grid__col{
+            .su-card {
+                margin: 1em;
+
+                h2 {
+                    color: $soe-black;
+                }
+
+                .soe-mag-card__date-published {
+                    color: $soe-header-grey;
+                    font-size: 1em;
+                    font-weight: 100;
+                    margin-bottom: 10px;
+                }
+
+                .soe-mag-card__title {
+
+                    @include modular-typography(0);
+
+                    a {
+                        color: $soe-black;
+
+                        &:hover {
+                            text-decoration: underline;
+                            text-decoration-color: #333333;
+                        }
+                    }
+                }
+
+                .soe-mag-card__topics {
+                    margin-top: 30px;
+                    a {
+                        color: $magazine-topics-color;
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                            text-decoration-color: #333333;
+                        }
+                    }
+                }
+
+                .soe-mag-card__issue {
+                    display: block;
+                    margin-top: 2em;
+                    padding: .5em;
+                    text-align: center;
+                    width: fit-content;
+                    background-color: #8c1515;
+                    color:white;
+
+                    a {
+                      color: #333333;
+                      text-decoration: none;
+
+                      &:hover {
+                        text-decoration: underline;
+                        text-decoration-color: #333333;
+                      }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.view.magazine {
+    header {
+        h1 {
+            text-align: center;
+        }
+    }
+
+    .views-infinite-scroll-content-wrapper {
+        & > h3 {
+            text-align: center;
+        }
+    }
+
+}
