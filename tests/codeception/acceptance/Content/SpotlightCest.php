@@ -47,7 +47,7 @@ class SpotlightCest
   public function testVocabularyTermsExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage("/admin/structure/taxonomy/manage/department/overview");
-    $I->canSeeNumberOfElements(".term-id", 196);
+    $I->canSeeNumberOfElements(".term-id", 10);
   }
 
   /**
