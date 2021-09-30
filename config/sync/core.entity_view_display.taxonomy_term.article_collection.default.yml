@@ -92,6 +92,69 @@ third_party_settings:
                 view_mode: view_mode
             additional: {  }
             weight: 2
+          dbab5f3f-4222-4a4f-9809-e73e87d741ae:
+            uuid: dbab5f3f-4222-4a4f-9809-e73e87d741ae
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:taxonomy_term:article_collection:description'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          54de81e3-8b46-42af-9525-d94a6672c38b:
+            uuid: 54de81e3-8b46-42af-9525-d94a6672c38b
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:taxonomy_term:article_collection:su_collect_subtitle'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 1
+          f25ab97d-8dec-4c2d-987d-d8258abe52d0:
+            uuid: f25ab97d-8dec-4c2d-987d-d8258abe52d0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:taxonomy_term:article_collection:su_intro_label'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 2
+          bf218da4-a0ed-464c-b049-e8818a61e737:
+            uuid: bf218da4-a0ed-464c-b049-e8818a61e737
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:taxonomy_term:article_collection:su_continue_label'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 3
         third_party_settings: {  }
       -
         layout_id: layout_onecol
