@@ -12,9 +12,8 @@ class SpotlightCest
   public function testLandingPagesElements(AcceptanceTester $I) {
     $I->amOnPage("/spotlight");
     $I->see("Spotlights");
-    $I->see("Apply");
-    $I->click(["css" =>".soe-spotlight--cards--banner a.su-link"]);
-    $I->click(["css" =>"#views-exposed-form-spotlights-block-1"]);
+    $I->seeOptionIsSelected("#edit-tid", "All Departments");
+    $I->seeOptionIsSelected("#edit-tid-1", "All People");
   }
 
   public function testLandingPageForm(AcceptanceTester $I){
