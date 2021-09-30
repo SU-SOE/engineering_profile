@@ -14,20 +14,21 @@ class SpotlightCest
 
     $I->createEntity([
       'type' => 'spotlight',
-      'title' => 'Test spotlight 1',
+      'title' => 'Test spotlight 4',
     ]);
     $I->createEntity([
       'type' => 'spotlight',
-      'title' => 'Test spotlight 2',
+      'title' => 'Test spotlight 5',
     ]);
     $I->createEntity([
       'type' => 'spotlight',
-      'title' => 'Test spotlight 3',
+      'title' => 'Test spotlight 6',
     ]);
 
     $I->amOnPage("/spotlight");
     $I->see("Spotlights");
     $I->seeElement('h1.heading-h1');
+    $I->canSeeNumberOfElements(".soe-spotlight--cards .su-card", 2);
     $I->seeElement('.su-card__contents');
     $I->seeElement(['css' => '.soe-link__button .button']);
     $I->click(["css" =>".soe-spotlight--cards--banner a.su-link"]);
@@ -54,7 +55,20 @@ class SpotlightCest
    * on the node page.
    */
   public function testMoreNewsView(AcceptanceTester $I) {
+    $I->logInWithRole('administrator');
 
+    $I->createEntity([
+      'type' => 'spotlight',
+      'title' => 'Test spotlight 1',
+    ]);
+    $I->createEntity([
+      'type' => 'spotlight',
+      'title' => 'Test spotlight 2',
+    ]);
+    $I->createEntity([
+      'type' => 'spotlight',
+      'title' => 'Test spotlight 3',
+    ]);
 
     $I->amOnPage("/test-spotlight-2");
     $I->see("Related spotlights");
