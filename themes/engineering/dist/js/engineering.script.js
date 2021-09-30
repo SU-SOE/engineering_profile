@@ -214,8 +214,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./engineering.behavior.js */ "./lib/js/engineering.behavior.js");
 /* harmony import */ var _engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_engineering_behavior_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _engineering_stanford_news_override_behavior__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./engineering-stanford-news-override.behavior */ "./lib/js/engineering-stanford-news-override.behavior.js");
-/* harmony import */ var _engineering_stanford_news_override_behavior__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_engineering_stanford_news_override_behavior__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _engineering_stanford_news_override_behavior_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./engineering-stanford-news-override.behavior.js */ "./lib/js/engineering-stanford-news-override.behavior.js");
+/* harmony import */ var _engineering_stanford_news_override_behavior_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_engineering_stanford_news_override_behavior_js__WEBPACK_IMPORTED_MODULE_1__);
 // Main Webpack entry file.
 
  // Your code goes below.
