@@ -19,11 +19,7 @@ class MagazineCest {
 
     $I->logInWithRole('site_manager');
 
-    /**
-     * Test the node page exists.
-     */
-    $I->amOnPage('/magazine/article/magazine-test');
-    $I->canSeeResponseCodeIs(200);
+
     /**
      * Test the landing page exists.
      */
@@ -35,11 +31,18 @@ class MagazineCest {
     $I->canSee('Latest News');
     $I->canSee('What are we working on?');
     $I->canSee($magazineStory->getTitle());
+
+    /**
+     * Test the node page exists.
+     */
+    $I->amOnPage($magazineStory->toUrl()->toString());
+    $I->canSeeResponseCodeIs(200);
     /**
      * Test to make sure there's a related departments field.
      */
     $I->canSee('Related Departments');
     $I->canSee('Test Department');
+
     /**
      * Test to make sure the department landing page exists.
      */
@@ -62,7 +65,7 @@ class MagazineCest {
      * And that it links back to the correct page.
      */
     $I->click($magazineStory->getTitle());
-    $I->seeCurrentUrlEquals('/magazine/article/magazine-test');
+    $I->seeCurrentUrlEquals($magazineStory->toUrl()->toString());
     /**
      * Check to make sure our issue path works.
      */
@@ -74,7 +77,7 @@ class MagazineCest {
      * And that it links back to the correct page.
      */
     $I->click($magazineStory->getTitle());
-    $I->seeCurrentUrlEquals('/magazine/article/magazine-test');
+    $I->seeCurrentUrlEquals($magazineStory->toUrl()->toString());
 
   }
 
@@ -91,7 +94,7 @@ class MagazineCest {
     $article_collection = $this->createArticleCollection($I);
     $department = $this->createDepartment($I);
     $node = $I->createEntity([
-      'type' => 'stanford_page',
+      'type' => 'stanford_news',
       'title' => $name,
       'su_magazine_story' => TRUE,
       'su_soe_department' => $department->id(),
@@ -99,6 +102,7 @@ class MagazineCest {
       'su_soe_mag_topics' => $mag_topic->id(),
       'su_soe_mag_collection' => $article_collection->id(),
       'su_mag_featured_value' => TRUE,
+      'status' => 1,
     ]);
     $I->runDrush('cr');
     return $node;
