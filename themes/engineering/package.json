@@ -1,7 +1,7 @@
 {
 	"name": "engineering",
 	"version": "0.1.0",
-	"repository": "https://github.com/SU-SWS/stanford_module_example",
+	"repository": "https://github.com/SU-SOE/engineering_profile",
 	"config": {
 		"srcSass": "lib/scss",
 		"distSass": "dist/css",

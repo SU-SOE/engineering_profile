@@ -11,7 +11,7 @@ entity_type: taxonomy_term
 bundle: article_collection
 label: Subtitle
 description: 'Please enter the text that will show below the collection title. (Max length: 255 char)'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

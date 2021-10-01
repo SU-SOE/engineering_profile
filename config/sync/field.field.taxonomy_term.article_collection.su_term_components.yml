@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.su_term_components
-    - paragraphs.paragraphs_type.stanford_accordion
     - paragraphs.paragraphs_type.stanford_card
     - paragraphs.paragraphs_type.stanford_gallery
     - paragraphs.paragraphs_type.stanford_image_cta
@@ -31,7 +30,6 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      stanford_accordion: stanford_accordion
       stanford_card: stanford_card
       stanford_gallery: stanford_gallery
       stanford_image_cta: stanford_image_cta
@@ -42,8 +40,8 @@ settings:
       stanford_wysiwyg: stanford_wysiwyg
     target_bundles_drag_drop:
       stanford_accordion:
-        enabled: true
         weight: 15
+        enabled: false
       stanford_banner:
         weight: 16
         enabled: false

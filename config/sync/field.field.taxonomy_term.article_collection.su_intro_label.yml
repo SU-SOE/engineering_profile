@@ -11,7 +11,7 @@ entity_type: taxonomy_term
 bundle: article_collection
 label: 'Intro Label'
 description: 'This is the text that will show up on the grey intro block on the article page for the collection'
-required: true
+required: false
 translatable: false
 default_value:
   -

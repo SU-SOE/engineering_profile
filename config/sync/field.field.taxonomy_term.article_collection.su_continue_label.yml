@@ -11,7 +11,7 @@ entity_type: taxonomy_term
 bundle: article_collection
 label: 'Continue Label'
 description: 'This is the header text for the collection block showing at the bottom of articles in the collection.'
-required: true
+required: false
 translatable: false
 default_value:
   -
