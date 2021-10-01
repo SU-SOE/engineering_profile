@@ -30,7 +30,7 @@
     flex-direction: column;
     position: absolute;
     background-color: transparent;
-    color: white;
+    color: $su-color-white;
     height: 100%;
     width: 100%;
     z-index: 11;
@@ -44,22 +44,22 @@
       display: block;
       padding: 1em;
       margin: 0;
-      color: black;
+      color: $su-color-black;
     }
 
     p {
-      color: white;
+      color: $su-color-white;
     }
 
     .curtain-content__scroll-text {
-      background-color: black;
+      background-color: $su-color-black;
       opacity: 0.5;
       margin-top: 1rem;
       padding: 1rem 2rem 1rem 2rem;
     }
 
     .scroll-down {
-      color: white;
+      color: $su-color-white;
     }
   }
 
