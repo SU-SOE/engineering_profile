@@ -35,8 +35,8 @@ function engineering_magazine_theme($existing, $type, $theme, $path) {
       ],
     ],
     'magazine_curtain_block' => [
+      'template' => 'block/magazine-curtain-block',
       'variables'=> [
-        'curtain_variable' => 'this is my curtain variable.',
         'curtain_content' => null,
       ],
     ],

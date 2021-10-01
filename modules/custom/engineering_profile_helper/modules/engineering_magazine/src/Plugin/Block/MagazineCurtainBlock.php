@@ -100,7 +100,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $node = array_shift($nodes);
       return $this->getImageUrl($node);
     }
-    // We need a default image for a fallback.
     throw new \RuntimeException("Could not find a featured node");
 
   }
@@ -149,6 +148,10 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function build() {
+
+    // For the sake of automated testing,
+    // we need to provide simple defaults here if there is no
+    // featured story or issue available.
 
     try {
       $issue = $this->getNewestIssue();

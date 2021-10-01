@@ -18,20 +18,23 @@ class MagazineCest {
     $magazineStory = $this->createMagazineNode($I, 'Magazine Test');
 
     $I->logInWithRole('site_manager');
-    /**
-     * Test the landing page exists.
-     */
-    $I->amOnPage('/magazine');
-    $I->canSee('Research & Ideas');
-    $I->canSee('Test Magazine Topic');
-    $I->canSee('Latest News');
-    $I->canSee('What are we working on?');
-    $I->canSee($magazineStory->getTitle());
+
     /**
      * Test the node page exists.
      */
     $I->amOnPage('/magazine/article/magazine-test');
     $I->canSeeResponseCodeIs(200);
+    /**
+     * Test the landing page exists.
+     */
+    $I->amOnPage('/magazine');
+    $I->canSee('Research & Ideas');
+    $I->canSee('Topics');
+    $I->canSee('Issues');
+    $I->canSee('Test Magazine Topic');
+    $I->canSee('Latest News');
+    $I->canSee('What are we working on?');
+    $I->canSee($magazineStory->getTitle());
     /**
      * Test to make sure there's a related departments field.
      */
@@ -54,6 +57,18 @@ class MagazineCest {
      */
     $I->seeCurrentUrlEquals('/magazine/test-magazine/topic');
     $I->canSee('Test Magazine Topic');
+    $I->canSee($magazineStory->getTitle());
+    /**
+     * And that it links back to the correct page.
+     */
+    $I->click($magazineStory->getTitle());
+    $I->seeCurrentUrlEquals('/magazine/article/magazine-test');
+    /**
+     * Check to make sure our issue path works.
+     */
+    $I->amOnPage('/magazine/issue');
+    $I->canSee('Stanford Engineering Magazine');
+    $I->canSee('Issue #9999');
     $I->canSee($magazineStory->getTitle());
     /**
      * And that it links back to the correct page.
@@ -99,7 +114,8 @@ class MagazineCest {
   public function createMagazineIssue(AcceptanceTester $I) {
     return $I->createEntity([
         'vid' => 'magazine_issues',
-        'name' => '101',
+        'name' => 'Issue #9999',
+        'su_issue_number' => 9999,
     ], 'taxonomy_term');
   }
 
