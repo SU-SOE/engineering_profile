@@ -4,7 +4,7 @@ checks:
     enabled: false
   method-complexity:
     config:
-      threshold: 10
+      threshold: 15
 
 plugins:
   # https://docs.codeclimate.com/docs/eslint
@@ -105,7 +105,7 @@ plugins:
         - dsm
 # exclude these files/paths
 exclude_patterns:
-  - "**/dist/**"
+  - "**/dist/**/*"
   - "tests/"
   - "**.min.*"
   - "**/Gruntfile.js"

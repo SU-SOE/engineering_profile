@@ -3,7 +3,12 @@
 // This file imports the base styles from decanter so they can be included
 // or removed by a theme.
 $su-image-path: "~decanter/core/src/img";
-$fa-font-path:  "~@fortawesome/fontawesome-free/webfonts";
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 
 // Import Decanter Library:
-@import 'decanter/core/src/scss/decanter-no-markup';
+@import "decanter/core/src/scss/decanter-no-markup";
+
+//Set up variables for the magazine
+$soe-magazine-nav-color: #00ece9;
+$soe-magazine-nav-item-color: #333333;
+$soe-magazine-topics-panel: #575757;

@@ -40,16 +40,16 @@ variant_settings:
         label: ''
         context_mapping: {  }
       components:
-        3a32ebf9-d7c2-4890-a9e0-1bc2046aa01f:
-          uuid: 3a32ebf9-d7c2-4890-a9e0-1bc2046aa01f
+        8f51b7fd-f213-4ff3-939a-c49f8f07514d:
+          uuid: 8f51b7fd-f213-4ff3-939a-c49f8f07514d
           region: main
           configuration:
-            id: 'views_block:magazine-block_4'
+            id: 'views_block:magazine_issues-block_4'
             label: ''
             provider: views
             label_display: '0'
             views_label: ''
-            items_per_page: none
+            items_per_page: '24'
             context_mapping: {  }
           additional: {  }
           weight: 0

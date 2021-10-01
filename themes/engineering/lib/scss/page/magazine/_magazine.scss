@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+// Styles for magazine cards in a grid view
+// used in: Magazine Landing Page,
+// Magazine Issues, Magazine Topic pages,
+// and Article collections.
+
+.soe-mag-landing__heading_1 {
+  text-align: center;
+  margin: auto;
+}
+.soe-mag-landing__heading_2 {
+  text-align: center;
+  margin: auto;
+  max-width: 30ch;
+  font-family: $primary-font;
+  font-weight: 400;
+}
+
+.card-grid__row {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include magazine-grid-rows(1);
+
+  &:nth-of-type(2n) {
+    @include magazine-grid-rows(2);
+  }
+
+  &:nth-of-type(3n) {
+    @include magazine-grid-rows(3);
+  }
+
+  .card-grid__column {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    .su-card {
+      margin: 1em;
+      width: fit-content;
+
+
+      h2 {
+        a {
+          @include modular-typography(0);
+          color: $soe-black;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
+          }
+        }
+      }
+
+      .soe-mag-card__date-published {
+        color: $soe-header-grey;
+        font-size: 1em;
+        font-weight: 100;
+        margin-bottom: 10px;
+      }
+
+      .soe-mag-card__title {
+        @include modular-typography(0);
+
+        a {
+          color: $soe-black;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
+          }
+        }
+      }
+
+      .soe-mag-card__topics {
+        margin-top: 30px;
+        a {
+          color: $magazine-topics-color;
+          font-size: 18px;
+          font-weight: 400;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
+          }
+        }
+      }
+
+      .soe-mag-card__issue {
+        display: block;
+        margin-top: 2em;
+        padding: 0.5em;
+        text-align: center;
+        width: fit-content;
+        background-color: #8c1515;
+        color: #ffffff;
+
+        a {
+          color: #333333;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: #333333;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+
+.view.magazine {
+  header {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .views-infinite-scroll-content-wrapper {
+    & > h3 {
+      text-align: center;
+    }
+  }
+}

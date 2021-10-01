@@ -63,7 +63,12 @@ source:
       label: 'Article 5'
       selector: Article-5
 process:
-  name: title
+  name:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: title
+      message: 'missing title'
   status: constants/status
   type: constants/type
   su_issue_number:

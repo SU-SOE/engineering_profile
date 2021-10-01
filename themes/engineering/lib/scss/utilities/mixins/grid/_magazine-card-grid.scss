@@ -8,45 +8,45 @@
 ///
 
 @mixin magazine-grid-rows($rowNumber) {
-    @if $rowNumber == 1 {
-        .card-grid__column:nth-child(1) {
-            flex: 1 1 25%;
-        }
-
-        .card-grid__column:nth-child(2) {
-            flex: 1 1 50%;
-        }
-
-        .card-grid__column:nth-child(3) {
-            flex: 1 1 25%;
-        }
+  @if $rowNumber == 1 {
+    .card-grid__column:nth-child(1) {
+      flex: 1;
     }
 
-    @if $rowNumber == 2 {
-        .card-grid__column:nth-child(1) {
-            flex: 1 1 50%;
-        }
-
-        .card-grid__column:nth-child(2) {
-            flex: 1 1 25%;
-        }
-
-        .card-grid__column:nth-child(3) {
-            flex: 1 1 25%;
-        }
+    .card-grid__column:nth-child(2) {
+      flex: 2;
     }
 
-    @if $rowNumber == 3 {
-        .card-grid__column:nth-child(1) {
-            flex: 1 1 25%;
-        }
-
-        .card-grid__column:nth-child(2) {
-            flex: 1 1 25%;
-        }
-
-        .card-grid__column:nth-child(3) {
-            flex: 1 1 50%;
-        }
+    .card-grid__column:nth-child(3) {
+      flex: 1;
     }
+  }
+
+  @if $rowNumber == 2 {
+    .card-grid__column:nth-child(1) {
+      flex: 2;
+    }
+
+    .card-grid__column:nth-child(2) {
+      flex: 1;
+    }
+
+    .card-grid__column:nth-child(3) {
+      flex: 1;
+    }
+  }
+
+  @if $rowNumber == 3 {
+    .card-grid__column:nth-child(1) {
+      flex: 1;
+    }
+
+    .card-grid__column:nth-child(2) {
+      flex: 1;
+    }
+
+    .card-grid__column:nth-child(3) {
+      flex: 2;
+    }
+  }
 }

@@ -27,12 +27,12 @@
             }
 
             function heroScroller(classes) {
-                $('.curtain-content').append($('<a>', {
+                $('.curtain-content__scroll-text').append($('<a>', {
                     class: 'scroll-down',
                     href: '#',
                     title: Drupal.t('Scroll Down'),
                     'aria-label': Drupal.t('Scroll Down'),
-                    html: '<div class="scroll-text">' + Drupal.t('Scroll') + '</div><div class="fa fa-arrow-circle-o-down"></div>'
+                    html: '<div class="scroll-text">' + Drupal.t('Click to scroll') + '</div><div class="fa fa-arrow-circle-o-down"></div>'
                 }).click(function (e) {
                     e.preventDefault();
                     $("html, body").animate({
@@ -45,17 +45,8 @@
 
                 var curtain = $('.hero-curtain');
 
-                var curtainPadding = $(curtain).css('padding-bottom');
-                curtainPadding = curtainPadding.substring(0, curtainPadding.length - 2);
                 var curtainHeight = $(curtain).height();
                 var scrollPos = 0 - curtainHeight + $(window).scrollTop();
-
-                // keeping this here for reference.  can be deleted.
-                var curtainTop = $('.hero-curtain').offset().top;
-                var curtainBottom = $('.hero-curtain').offset().top + $('.hero-curtain').height();
-                var screenBottom = $(window).scrollTop() + $(window).innerHeight();
-                var screenTop = $(window).scrollTop();
-                // end reference
 
                 if (scrollPos < 0) {
                     $('.hero-curtain-reveal').removeClass('below-hero');
