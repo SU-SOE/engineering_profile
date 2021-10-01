@@ -5,11 +5,13 @@
  *
  * @group block
  */
-class MagazineBlocksCest {
+class MagazineCest {
 
-  use MagazineTestTrait;
   /**
-   * Site managers should be able to edit custom blocks.
+   * Test basic magazine functionality
+   * Also covers landing pages for /magazine
+   * and vocabularies for departments
+   * topics, and article collections.
    */
   public function testMagazineStory(AcceptanceTester $I) {
 
@@ -66,6 +68,53 @@ class MagazineBlocksCest {
     $I->amOnPage('/magazine');
     $I->canSee('Stanford Engineering Magazine');
     $I->canSee('Explore the latest news');
+  }
+
+  public function createMagazineNode(AcceptanceTester $I, string $name="Magazine Test Node") {
+    $mag_topic = $this->createMagazineTopic($I);
+    $mag_issue = $this->createMagazineIssue($I);
+    $article_collection = $this->createArticleCollection($I);
+    $department = $this->createDepartment($I);
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $name,
+      'su_magazine_story' => TRUE,
+      'su_soe_department' => $department->id(),
+      'su_magazine_issue' => $mag_issue->id(),
+      'su_soe_mag_topics' => $mag_topic->id(),
+      'su_soe_mag_collection' => $article_collection->id(),
+      'su_mag_featured_value' => TRUE,
+    ]);
+    $I->runDrush('cr');
+    return $node;
+  }
+
+  public function createMagazineTopic(AcceptanceTester $I) {
+    return $I->createEntity([
+        'vid' => 'magazine_topics',
+        'name' => 'Test Magazine Topic',
+    ], 'taxonomy_term');
+  }
+
+  public function createMagazineIssue(AcceptanceTester $I) {
+    return $I->createEntity([
+        'vid' => 'magazine_issues',
+        'name' => '101',
+    ], 'taxonomy_term');
+  }
+
+  public function createArticleCollection(AcceptanceTester $I) {
+    return $I->createEntity([
+        'vid' => 'article_collection',
+        'name' => 'Test Article Collection',
+    ], 'taxonomy_term');
+  }
+
+  public function createDepartment(AcceptanceTester $I) {
+    return $I->createEntity([
+        'vid' => 'department',
+        'name' => 'Test Department',
+    ], 'taxonomy_term');
   }
 
 }
