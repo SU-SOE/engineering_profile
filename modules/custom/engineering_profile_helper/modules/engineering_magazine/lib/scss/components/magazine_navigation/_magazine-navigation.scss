@@ -4,7 +4,7 @@
 
 .section-bgcolor--title.section-editorial-content {
   background: initial;
-  background-color: #00ece9;
+  background-color: $soe-magazine-nav-color;
 
   height: initial;
   padding: initial;
@@ -13,36 +13,39 @@
 
   width: 100vw;
 
-  .magazine-landing-nav {
-
-    width: 100vw;
+  .magazine-landing-navbar{
     display: flex;
     align-items: center;
+  }
+
+  .magazine-landing-nav {
     justify-content: center;
+    width: 100vw;
+    display: flex;
+    align-content: center;
     flex-flow: row;
-    background-color: #00ece9;
-    padding-top: 20px;
+    background-color: $soe-magazine-nav-color;
+    padding: 20px;
 
     a {
-      color: #333333;
+      color:  $su-color-black;
       text-decoration: none;
 
       &:hover {
-        font-weight: 600;
-        color: rgb(51, 51, 51);
+        font-weight: $su-font-semi-bold;
+        color:  $su-color-black;
 
       }
     }
 
     h2 {
       margin-bottom: 0;
-      padding-bottom: 20px;
-      margin-top: 0px;
+      margin-top: 0;
 
       ::after {
         content: "|";
         font-size: 1.3125em;
-        font-weight: 300;
+        font-weight: $su-font-semi-bold;
         padding: 0 30px;
         vertical-align: top;
       }
@@ -50,23 +53,34 @@
 
     .magazine-landing-nav__item {
       font-size: 2em;
-      font-weight: 600;
+      font-weight: $su-font-semi-bold;
       line-height: 1.55em;
-      color: #333333;
+      color: $soe-magazine-nav-item-color;
 
       margin-right: 1em;
-      padding-bottom: 1em;
+
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: underline;
+        }
 
       #magazine-landing-nav__topics-toggle {
         display:inline-block;
         position: relative;
         width: 30px;
         height: 30px;
+        cursor:pointer;
         img {
-
           display:inline;
-
         }
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: $su-color-black, solid, 1px;
+        }
+
       }
     }
   }
@@ -78,7 +92,7 @@
     margin-right: calc(50% - 50vw);
     //width: 100%;
     width: 100vw;
-    background-color: #575757;
+    background-color: $soe-magazine-topics-panel;
     padding: 2em;
 
     .magazine-terms-list {
@@ -99,8 +113,8 @@
 
         a {
           font-size: 1em;
-          font-weight: 400;
-          color: #ffffff;
+          font-weight: $su-font-regular;
+          color: $su-color-white;
           text-decoration: none;
 
           &:hover {
@@ -113,25 +127,7 @@
   }
 }
 
-._9b76306-c0b8-4dcd-8dde-562796493bab {
-  h2 {
-    font-size: 2.8em;
-    font-weight: 600;
-    letter-spacing: 0;
-    margin: -9px 0 10px;
-    text-align: center;
-    padding-top: 2em;
-  }
 
-  h3 {
-    width: 40%;
-    color: #606060;
-    font-weight: 400;
-    letter-spacing: 0;
-    margin: 0 auto 60px;
-    text-align: center;
-  }
-}
 
 .magazine-topics__term-name {
   width: 100%;
@@ -139,7 +135,7 @@
 
   h2 {
     font-size: 2.8em;
-    font-weight: 600;
+    font-weight: $su-font-semi-bold;
     letter-spacing: 0;
     margin: -9px 0 10px;
   }

@@ -29,6 +29,8 @@ const srcSass = path.resolve(srcDir, 'scss');
 const distSass = path.resolve(distDir, 'css');
 const srcJS = path.resolve(srcDir, 'js');
 const distJS = path.resolve(distDir, 'js');
+const srcImg = path.resolve(srcDir, 'img');
+const distImg = path.resolve(distDir, 'img');
 
 // /////////////////////////////////////////////////////////////////////////////
 // Functions ///////////////////////////////////////////////////////////////////
@@ -47,7 +49,7 @@ var webpackConfig = {
   //  poll: 1000,
   //  ignored: /node_modules/,
   //},
-// What am i?
+  // What am i?
   name: 'engineering',
   // Allows for map files.
   devtool: 'source-map',
@@ -192,20 +194,20 @@ var webpackConfig = {
     // https://www.npmjs.com/package/filemanager-webpack-plugin
     new FileManagerPlugin({
       onStart: {
-        delete: [distDir]
+        delete: [distImg]
       },
-      // onEnd: {
-      // copy: [
-      // {
-      //   source: npmPackage + "/decanter/core/src/templates/**/*.twig",
-      //   destination: distDir + "/templates/decanter/"
-      // },
-      // {
-      //   source: srcDir + "/assets/**/*",
-      //   destination: distDir + "/assets/"
-      // }
-      // ],
-      // },
+      onEnd: {
+        copy: [
+          //{
+          //  source: npmPackage + "/decanter/core/src/templates/**/*.twig",
+          //  destination: distDir + "/templates/decanter/"
+          //},
+          {
+            source: srcImg,
+            destination: distImg
+          }
+        ],
+      },
     }),
     // Add a plugin to watch other files other than that required by webpack.
     // https://www.npmjs.com/package/filewatcher-webpack-plugin

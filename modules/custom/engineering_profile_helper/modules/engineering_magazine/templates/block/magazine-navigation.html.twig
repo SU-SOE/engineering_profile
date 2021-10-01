@@ -2,22 +2,30 @@
 @file
 Profile magazine_navigation_block
 #}
-<div{{attributes.addClass('flex-container')}}>
+{%
+
+  set classes = [
+	  'flex-container',
+	  'magazine-landing-navbar',
+  ]
+
+%}
+<div{{attributes.addClass(classes)}}>
 
 	<div class="flex-12-of-12 magazine-landing-nav">
 
 		<h2 class="magazine-landing-nav__item">
-			<a href="/magazine" tabindex="2" aria-label="Go to main magazine page">Research & Ideas</a>
+			<a href="/magazine" aria-label="Go to main magazine page">Research & Ideas</a>
 		</h2>
 		<div class="magazine-landing-nav__item">Topics
 
 
-			<img src="/profiles/custom/engineering_profile/themes/engineering/dist/img/caret-down-black.svg" tabindex="2" alt="Topics menu button" aria-label="Open the Topics menu" aria-role="button" id="magazine-landing-nav__topics-toggle" aria-expanded="false"/>
+			<img src="/profiles/custom/engineering_profile/themes/engineering/dist/img/caret-down-black.svg" alt="Topics menu button" aria-label="Open the Topics menu" aria-role="button" id="magazine-landing-nav__topics-toggle" aria-expanded="false"/>
 
 
 		</div>
 		<div class="magazine-landing-nav__item">
-			<a href="/magazine/issue" tabindex="3" aria-label="View a list of past issues">Issues</a>
+			<a href="/magazine/issue" aria-label="View a list of past issues">Issues</a>
 		</div>
 
 	</div>
@@ -28,7 +36,7 @@ Profile magazine_navigation_block
 	<div class="magazine-terms-list">
 		{% for term in topics%}
 			<div class='magazine-term'>
-				<a href="{{ term['path'] }}" tabindex="{{ loop.index }}">{{ term['name'] }}</a>
+				<a href="{{ term['path'] }}">{{ term['name'] }}</a>
 			</div>
 		{% endfor %}
 	</div>
