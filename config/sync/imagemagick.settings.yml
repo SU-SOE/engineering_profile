@@ -9,7 +9,7 @@ use_identify: true
 locale: en_US.utf8
 advanced:
   density: 72
-  colorspace: RGB
+  colorspace: '0'
   profile: ''
   coalesce: true
 image_formats:
