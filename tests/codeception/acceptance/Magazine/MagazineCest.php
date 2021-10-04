@@ -19,7 +19,6 @@ class MagazineCest {
 
     $I->logInWithRole('site_manager');
 
-
     /**
      * Test the landing page exists.
      */
@@ -37,6 +36,10 @@ class MagazineCest {
      */
     $I->amOnPage($magazineStory->toUrl()->toString());
     $I->canSeeResponseCodeIs(200);
+    /**
+     * Test the pathauto generation
+     */
+    $I->seeCurrentUrlEquals('/magazine/magazine-test');
     /**
      * Test to make sure there's a related departments field.
      */
