@@ -69,7 +69,8 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
   /**
    * We want the latest Featured Story and issue so we can feed the information into the curtain.
    *
-   * @return string The image url of the featured node.
+   * @return string
+   *   The image url of the featured node.
    *
    * @throws \RuntimeException
    */
@@ -95,7 +96,8 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
   /**
    * Get the newest issue.
    *
-   * @return array An array with term name and url.
+   * @return array
+   *   An array with term name and url.
    *
    * @throws \RuntimeException
    */
@@ -126,7 +128,8 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    * @param \Drupal\node\Entity\Node $node
    *   The node to get the image from.
    *
-   * @return string The url of the banner image
+   * @return string
+   *   The url of the banner image
    */
   protected function getImageUrl(Node $node) : string {
     $uri = $node->get('su_news_banner')
@@ -146,7 +149,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
     // For the sake of automated testing,
     // we need to provide simple defaults here if
     // there is no featured story or issue available.
-
     try {
       $issue = $this->getNewestIssue();
     }

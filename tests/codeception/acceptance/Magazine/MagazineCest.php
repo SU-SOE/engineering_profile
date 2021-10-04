@@ -61,7 +61,7 @@ class MagazineCest {
     /**
      * Test to ensure the topic landing page exists.
      */
-    $I->seeCurrentUrlEquals('/magazine/test-magazine/topic');
+    $I->seeCurrentUrlEquals('/magazine/test-magazine-topic');
     $I->canSee('Test Magazine Topic');
     $I->canSee($magazineStory->getTitle());
     /**

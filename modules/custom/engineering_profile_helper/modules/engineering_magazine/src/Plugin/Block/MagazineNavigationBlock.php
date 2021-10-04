@@ -24,7 +24,7 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
   protected $entityTypeManager;
 
   /**
-   * @var array $magazineTopics
+   * @var array
    *   Holds our list of topics for the menu.
    */
   protected $magazineTopics;
@@ -66,10 +66,10 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
   }
 
   /**
-   * Get the magazine_topics vocabulary so we can
-   * build a dropdown menu for it.
+   * Get the magazine_topics vocabulary so we can build a dropdown menu for it.
    *
-   * @return array An array of magazine topics.
+   * @return array
+   *   An array of magazine topics.
    */
   public function getMagazineTopics() : array {
     $terms = $this->entity_type_manager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'magazine_topics']);
