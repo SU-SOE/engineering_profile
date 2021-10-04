@@ -14,22 +14,13 @@ function engineering_profile_helper_help($route_name, RouteMatchInterface $route
   switch ($route_name) {
     // Main module help for the engineering_profile_helper module.
     case 'help.page.engineering_profile_helper':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
+      $output = '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Engineering Profile Helper module') . '</p>';
+      $output .= '<p>' . t('This module holds helper code specifically for the engineering_profile.') . '</p>';
       return $output;
 
     default:
   }
-}
-
-/**
- * Implements hook_theme().
- */
-function engineering_profile_helper_theme() {
-  return [
-
-  ];
 }
 
 /**

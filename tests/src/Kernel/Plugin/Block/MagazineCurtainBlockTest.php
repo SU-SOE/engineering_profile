@@ -46,7 +46,6 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
    */
   public function testBuild() {
     $build = $this->blockObject->build();
-    // var_dump($build);
     $this->assertEquals([
       '#attached' => [
         'library' => [
@@ -55,7 +54,6 @@ class MagazineCurtainBlockTest extends MagazineTestBase {
       ],
       '#theme' => 'magazine_navigation_block',
       '#theme' => 'magazine_curtain_block',
-      '#topics' => [],
       '#curtain_content' => [
         'media_url' => '#',
         'issue_number' => 'Default',

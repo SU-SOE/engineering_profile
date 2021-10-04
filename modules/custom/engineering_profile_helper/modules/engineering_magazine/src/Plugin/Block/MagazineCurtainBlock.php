@@ -67,25 +67,14 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
   }
 
   /**
-   * Get the magazine_topics vocabulary so we can build a dropdown menu for it.
-   */
-  public function getMagazineTopics() {
-    $terms = $this->entity_type_manager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'magazine_topics']);
-    $this->magazine_topics = $terms;
-    $topics_array = [];
-    foreach ($terms as $term) {
-      $topics_array[] = [
-        'name' => $term->getName(),
-        'path' => $term->get('path')->alias,
-      ];
-    }
-    return $topics_array;
-  }
-
-  /**
    * We want the latest Featured Story and issue so we can feed the information into the curtain.
+   *
+   * @return string
+   *   The image url of the featured node.
+   *
+   * @throws \RuntimeException
    */
-  protected function getNewestFeatured() {
+  protected function getNewestFeatured() : string {
     $entity = $this->entity_type_manager->getStorage('node');
     $query = $entity->getQuery();
     $ids = $query->condition('type', 'stanford_news')
@@ -100,15 +89,19 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
       $node = array_shift($nodes);
       return $this->getImageUrl($node);
     }
-    // We need a default image for a fallback.
     throw new \RuntimeException("Could not find a featured node");
 
   }
 
   /**
    * Get the newest issue.
+   *
+   * @return array
+   *   An array with term name and url.
+   *
+   * @throws \RuntimeException
    */
-  protected function getNewestIssue() {
+  protected function getNewestIssue() : array {
     $entity = $this->entity_type_manager->getStorage('taxonomy_term');
     $query = $entity->getQuery();
     $tids = $query->condition('vid', 'magazine_issues')
@@ -134,8 +127,11 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
    *
    * @param \Drupal\node\Entity\Node $node
    *   The node to get the image from.
+   *
+   * @return string
+   *   The url of the banner image
    */
-  protected function getImageUrl(Node $node) {
+  protected function getImageUrl(Node $node) : string {
     $uri = $node->get('su_news_banner')
       ->entity
       ->field_media_image
@@ -148,8 +144,11 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build() : array {
 
+    // For the sake of automated testing,
+    // we need to provide simple defaults here if
+    // there is no featured story or issue available.
     try {
       $issue = $this->getNewestIssue();
     }
@@ -169,7 +168,6 @@ class MagazineCurtainBlock extends BlockBase implements ContainerFactoryPluginIn
 
     return [
       '#theme' => 'magazine_curtain_block',
-      '#topics' => $this->getMagazineTopics(),
       '#curtain_content' => [
         'media_url' => $newestFeatured ,
         'issue_number' => $issue['term_name'],
