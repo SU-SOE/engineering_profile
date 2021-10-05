@@ -98,6 +98,7 @@ module:
   migrate: 0
   migrate_file: 0
   migrate_plus: 0
+  migrate_source_csv: 0
   migrate_tools: 0
   name: 0
   nobots: 0
@@ -138,6 +139,7 @@ module:
   soe_paragraph_stories: 0
   soe_paragraphs: 0
   sophron: 0
+  stanford_actions: 0
   stanford_basic_page_types: 0
   stanford_date_formats: 0
   stanford_events: 0
