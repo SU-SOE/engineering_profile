@@ -46,9 +46,11 @@
         });
       })
 
+
       $(".engineering-accent-color__background").each(function () {
         $(this).css('background-color', getAccentColor());
       })
+
       // Adds comma and space to individual spotlight pages where both
       if (firstPath === "spotlight") {
         if (document.getElementsByClassName('node-spotlight-su-spotlight-degrees').length > 0 &&
@@ -61,8 +63,10 @@
       // This is a less than ideal solution for removing ajax from Spotlight filter button.
       // Thankfully a solution is in the works: https://www.drupal.org/project/drupal/issues/2904754
       // After this moves into Core, this can be removed.
-      $("#edit-submit-spotlights").attr("hidden", true);
-      $('#edit-submit-spotlights').clone().appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden", false).addClass('show-spotlight-apply__button');
+      var oldApplyButton = $("#edit-submit-spotlights").attr("hidden", true);
+      var newApplyButton = $(oldApplyButton).clone().attr("hidden", false);
+      $(oldApplyButton).prop("id", "edit-submit-spotlights-hidden")
+      $(newApplyButton).appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden", false).addClass('show-spotlight-apply__button');
     },
 
     // Detach Example.
