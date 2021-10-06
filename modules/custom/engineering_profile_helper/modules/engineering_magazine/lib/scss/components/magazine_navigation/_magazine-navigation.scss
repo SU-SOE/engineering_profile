@@ -56,13 +56,14 @@
       font-weight: $su-font-semi-bold;
       line-height: 1.55em;
       color: $soe-magazine-nav-item-color;
-
       margin-right: 1em;
 
-        &:hover,
-        &:active,
-        &:focus {
-          text-decoration: underline;
+        a {
+          &:hover,
+          &:active,
+          &:focus {
+            text-decoration: underline;
+          }
         }
 
       #magazine-landing-nav__topics-toggle {
@@ -71,14 +72,21 @@
         width: 30px;
         height: 30px;
         cursor:pointer;
-        img {
-          display:inline;
+
+        &[aria-expanded="true"] {
+          &:hover,
+          &:active,
+          &:focus {
+            border-top: solid 1px $su-color-black;
+          }
         }
 
-        &:hover,
-        &:active,
-        &:focus {
-          border-bottom: $su-color-black, solid, 1px;
+        &[aria-expanded="false"] {
+          &:hover,
+          &:active,
+          &:focus {
+            border-bottom: solid 1px $su-color-black;
+          }
         }
 
       }
