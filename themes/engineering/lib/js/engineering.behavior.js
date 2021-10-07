@@ -60,13 +60,15 @@
         }
       }
 
-      // This is a less than ideal solution for removing ajax from Spotlight filter button.
+      // This is a less than ideal solution for removing ajax call from firing from clicking Spotlight filter button.
       // Thankfully a solution is in the works: https://www.drupal.org/project/drupal/issues/2904754
       // After this moves into Core, this can be removed.
-      var oldApplyButton = $("#edit-submit-spotlights").attr("hidden", true);
-      var newApplyButton = $(oldApplyButton).clone().attr("hidden", false);
-      $(oldApplyButton).prop("id", "edit-submit-spotlights-hidden")
-      $(newApplyButton).appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden", false).addClass('show-spotlight-apply__button');
+      if(!document.getElementById("edit-submit-spotlights-hidden")){
+        var oldApplyButton = $("#edit-submit-spotlights").attr("hidden", true);
+        var newApplyButton = $(oldApplyButton).clone().attr("hidden", false);
+        $(oldApplyButton).prop("id", "edit-submit-spotlights-hidden")
+        $(newApplyButton).appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden", false).addClass('show-spotlight-apply__button');
+      }
     },
 
     // Detach Example.
