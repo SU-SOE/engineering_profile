@@ -208,7 +208,7 @@ process:
       search:
         - 'Article Newspaper/Magazine'
         - Book
-        - Journal Article
+        - 'Journal Article'
         - Other
         - Thesis
       replace:
