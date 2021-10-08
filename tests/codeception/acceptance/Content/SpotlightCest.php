@@ -39,20 +39,25 @@ class SpotlightCest
   public function testRelatedSpotlight(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
 
-    $I->createEntity([
+    $spotlight_1 = $I->createEntity([
       'type' => 'spotlight',
       'title' => 'Test spotlight 1',
     ]);
-    $I->createEntity([
+    $spotlight_2 = $I->createEntity([
       'type' => 'spotlight',
       'title' => 'Test spotlight 2',
     ]);
-    $I->createEntity([
+    $spotlight_3 = $I->createEntity([
       'type' => 'spotlight',
       'title' => 'Test spotlight 3',
     ]);
 
-    $I->amOnPage("/test-spotlight-2");
+    // Make sure we have a legit page
+    $I->amOnPage($spotlight_2->toUrl()->toString());
+    $I->canSeeResponseCodeIs(200);
+    // test to make sure the spotlight pathauto works.
+    $I->seeCurrentUrlEquals('/spotlight/test-spotlight-2');
+
     $I->see("Related spotlights");
     $I->see("Test spotlight 1");
     $I->see("Test spotlight 3");
