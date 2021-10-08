@@ -45,7 +45,7 @@ third_party_settings:
                 label: hidden
                 type: media_responsive_image_formatter
                 settings:
-                  view_mode: stanford_image_large
+                  view_mode: stanford_image_large_square
                   image_style: ''
                   link: false
                 third_party_settings:
