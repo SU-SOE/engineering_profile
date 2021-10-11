@@ -90,6 +90,20 @@
           border-bottom: solid 1px #2e2d29;
           -webkit-box-shadow: none;
                   box-shadow: none; }
+      @media (max-width: 991px) {
+        .section-bgcolor--title.section-editorial-content .magazine-landing-nav .magazine-landing-nav__item {
+          font-size: 1.5em; }
+          .section-bgcolor--title.section-editorial-content .magazine-landing-nav .magazine-landing-nav__item #magazine-landing-nav__topics-toggle {
+            width: .5em;
+            height: .5em;
+            background-size: 1em; } }
+      @media (max-width: 767px) {
+        .section-bgcolor--title.section-editorial-content .magazine-landing-nav .magazine-landing-nav__item {
+          font-size: 1em; }
+          .section-bgcolor--title.section-editorial-content .magazine-landing-nav .magazine-landing-nav__item #magazine-landing-nav__topics-toggle {
+            width: .25em;
+            height: .25em;
+            background-size: .75em; } }
   .section-bgcolor--title.section-editorial-content .magazine-landing-nav__topics-panel {
     display: none;
     clear: both;

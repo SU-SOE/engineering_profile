@@ -97,6 +97,27 @@
         }
 
       }
+
+      @include grid-media-max('md') {
+        font-size: 1.5em;
+
+        #magazine-landing-nav__topics-toggle {
+          width: .5em;
+          height: .5em;
+          background-size:1em;
+        }
+      }
+
+      @include grid-media-max('sm') {
+        font-size: 1em;
+
+        #magazine-landing-nav__topics-toggle {
+          width: .25em;
+          height: .25em;
+          background-size:.75em;
+        }
+      }
+
     }
   }
 
