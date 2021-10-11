@@ -160,7 +160,8 @@
     z-index: 10;
     position: absolute;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    background-size: cover; }
     .hero-curtain .curtain-image img {
       -o-object-fit: cover;
          object-fit: cover;
@@ -201,9 +202,6 @@
     .hero-curtain .curtain-content p {
       color: #ffffff; }
     .hero-curtain .curtain-content .curtain-content__scroll-text {
-      background-color: #2e2d29;
-      opacity: 0.5;
-      margin-top: 1rem;
       padding: 1rem 2rem 1rem 2rem; }
     .hero-curtain .curtain-content .scroll-down {
       color: #ffffff; }

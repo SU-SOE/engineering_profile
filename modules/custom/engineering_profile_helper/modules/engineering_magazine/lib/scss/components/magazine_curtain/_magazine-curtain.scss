@@ -14,6 +14,9 @@
     position: absolute;
     height: 100%;
     width: 100%;
+
+    background-size: cover;
+
     img {
       object-fit: cover;
       object-position: center center;
@@ -52,9 +55,6 @@
     }
 
     .curtain-content__scroll-text {
-      background-color: $su-color-black;
-      opacity: 0.5;
-      margin-top: 1rem;
       padding: 1rem 2rem 1rem 2rem;
     }
 
