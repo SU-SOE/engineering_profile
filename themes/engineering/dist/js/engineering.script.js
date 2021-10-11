@@ -151,8 +151,7 @@
       ///  #ffbd54 - yellow
 
       function getAccentColor() {
-        var accentColors = ["#00ece9", "#ff525c", "#ffbd54"]; //return accentColors[Math.floor(Math.random() * accentColors.length)];
-
+        var accentColors = ["#00ece9", "#ff525c", "#ffbd54"];
         return accentColors[Math.random() * accentColors.length | 0];
       }
 
@@ -188,7 +187,7 @@
           var divSpotlightDegree = document.getElementsByClassName('su-spotlight-degrees');
           divSpotlightDegree[0].innerHTML += ',&nbsp;';
         }
-      } // This is a less than ideal solution for removing ajax from Spotlight filter button.
+      } // This is a less than ideal solution for removing ajax call from firing from clicking Spotlight filter button.
       // Thankfully a solution is in the works: https://www.drupal.org/project/drupal/issues/2904754
       // After this moves into Core, this can be removed.
 

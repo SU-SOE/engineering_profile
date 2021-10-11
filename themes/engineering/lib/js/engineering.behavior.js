@@ -16,7 +16,6 @@
         const accentColors = [
           "#00ece9", "#ff525c", "#ffbd54"
         ];
-        //return accentColors[Math.floor(Math.random() * accentColors.length)];
         return accentColors[(Math.random() * accentColors.length) | 0];
       }
 
