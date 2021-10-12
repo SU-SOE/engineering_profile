@@ -192,7 +192,7 @@ processor_settings:
         datasource_boost: !!float 1
         bundle_boosts:
           stanford_page: !!float 3
-          stanford_person: !!float 21
+          stanford_person: !!float 5
     weights:
       preprocess_index: 0
 tracker_settings:
