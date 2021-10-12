@@ -60,6 +60,10 @@
 
     .scroll-down {
       color: $su-color-white;
+
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
 

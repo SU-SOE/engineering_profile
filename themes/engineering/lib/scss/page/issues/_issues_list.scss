@@ -2,7 +2,9 @@
 
 .view {
   &.magazine-issues {
+
     h3 {
+      @include type-a;
       text-align: center;
       margin: auto;
       @include modular-spacing("margin-top", 1);

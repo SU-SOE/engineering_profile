@@ -58,9 +58,9 @@
       }
 
       .soe-mag-card__date-published {
-        color: $soe-header-grey;
+        color: $su-color-black-80;
         font-size: 1em;
-        font-weight: 100;
+        font-weight: $su-font-regular;
         margin-bottom: 10px;
       }
 
@@ -113,10 +113,11 @@
       }
     }
   }
-
-
 }
 
+.soe-load-more {
+  @include responsive-spacing('margin', 5);
+}
 
 .view.magazine {
   header {

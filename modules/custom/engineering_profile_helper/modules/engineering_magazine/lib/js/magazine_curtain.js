@@ -32,7 +32,7 @@
                     href: '#',
                     title: Drupal.t('Scroll Down'),
                     'aria-label': Drupal.t('Scroll Down'),
-                    html: '<div class="scroll-text">' + Drupal.t('Click to scroll') + '</div><div class="fa fa-arrow-circle-o-down"></div>'
+                    html: '<div class="scroll-text">' + Drupal.t('Click to scroll') + '</div><i class="fas fa-angle-down"></i>'
                 }).click(function (e) {
                     e.preventDefault();
                     $("html, body").animate({
