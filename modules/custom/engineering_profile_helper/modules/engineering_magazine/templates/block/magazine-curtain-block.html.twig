@@ -1,12 +1,10 @@
 <div id="magazine-curtain" class="magazine-curtain hero-curtain hero-scroll">
 
-	<div class="curtain-image">
-		<img src="{{ curtain_content.media_url }}" alt="Presentation image"/>
-	</div>
+	<div class="curtain-image" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.7)), url('{{ curtain_content.media_url }}');"></div>
 
 	<div class="curtain-content">
 
-		<a href="{# curtain_content.issue_url #}" class="engineering-accent-color__background">
+		<a href="{{ curtain_content.issue_url }}" class="engineering-accent-color__background">
 			<h1>Stanford Engineering Magazine |
 				{{ curtain_content.issue_number}}
 			</h1>

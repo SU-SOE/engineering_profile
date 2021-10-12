@@ -69,15 +69,21 @@
       #magazine-landing-nav__topics-toggle {
         display:inline-block;
         position: relative;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         cursor:pointer;
+        background-color: transparent;
+        background-image: url('/profiles/custom/engineering_profile/themes/engineering/dist/img/caret-down-black.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        vertical-align: middle;
 
         &[aria-expanded="true"] {
           &:hover,
           &:active,
           &:focus {
             border-top: solid 1px $su-color-black;
+            box-shadow: none;
           }
         }
 
@@ -86,10 +92,32 @@
           &:active,
           &:focus {
             border-bottom: solid 1px $su-color-black;
+            box-shadow: none;
           }
         }
 
       }
+
+      @include grid-media-max('md') {
+        font-size: 1.5em;
+
+        #magazine-landing-nav__topics-toggle {
+          width: .5em;
+          height: .5em;
+          background-size:1em;
+        }
+      }
+
+      @include grid-media-max('sm') {
+        font-size: 1em;
+
+        #magazine-landing-nav__topics-toggle {
+          width: .25em;
+          height: .25em;
+          background-size:.75em;
+        }
+      }
+
     }
   }
 
