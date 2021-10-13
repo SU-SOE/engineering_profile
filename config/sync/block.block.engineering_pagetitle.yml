@@ -21,14 +21,7 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: |-
-      /node*
-      news*
-      /people*
-      /events*
-      /event-series*
-      /publications*
-      /spotlight*
+    pages: "/node*\r\nnews*\r\n/people*\r\n/events*\r\n/event-series*\r\n/publications*\r\n/spotlight*\r\n/magazine/issue*"
     negate: true
     context_mapping: {  }
   response_code:

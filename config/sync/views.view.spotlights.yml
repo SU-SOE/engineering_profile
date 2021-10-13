@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.su_people_spotlight_quote
+    - field.storage.node.su_soe_department
     - field.storage.node.su_spotlight_degrees
     - field.storage.node.su_spotlight_feature_image
     - field.storage.node.su_spotlight_person_title
@@ -93,6 +94,7 @@ display:
             view_node: 0
             nothing: 0
             su_spotlight_degrees: 0
+            su_soe_department: 0
           separator: ''
           hide_empty: 0
           pattern: card
@@ -117,19 +119,24 @@ display:
               weight: 3
               plugin: views_row
               source: su_spotlight_person_title
+            'views_row:su_soe_department':
+              destination: card_super_headline
+              weight: 4
+              plugin: views_row
+              source: su_soe_department
             'views_row:su_people_spotlight_quote':
               destination: card_body
-              weight: 4
+              weight: 5
               plugin: views_row
               source: su_people_spotlight_quote
             'views_row:view_node':
               destination: card_link
-              weight: 5
+              weight: 6
               plugin: views_row
               source: view_node
             'views_row:nothing':
               destination: card_cta_label
-              weight: 6
+              weight: 7
               plugin: views_row
               source: nothing
           pattern_variant: default
@@ -552,6 +559,69 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        su_soe_department:
+          id: su_soe_department
+          table: node__su_soe_department
+          field: su_soe_department
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: soe--person-title
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -620,6 +690,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.su_people_spotlight_quote'
+        - 'config:field.storage.node.su_soe_department'
         - 'config:field.storage.node.su_spotlight_degrees'
         - 'config:field.storage.node.su_spotlight_feature_image'
         - 'config:field.storage.node.su_spotlight_person_title'
@@ -836,6 +907,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.su_people_spotlight_quote'
+        - 'config:field.storage.node.su_soe_department'
         - 'config:field.storage.node.su_spotlight_degrees'
         - 'config:field.storage.node.su_spotlight_feature_image'
         - 'config:field.storage.node.su_spotlight_person_title'
@@ -1527,6 +1599,7 @@ display:
             view_node: 0
             nothing: 0
             su_spotlight_degrees: 0
+            su_soe_department: 0
           separator: ''
           hide_empty: 0
           pattern: card
@@ -1551,19 +1624,24 @@ display:
               weight: 3
               plugin: views_row
               source: su_spotlight_person_title
+            'views_row:su_soe_department':
+              destination: card_super_headline
+              weight: 4
+              plugin: views_row
+              source: su_soe_department
             'views_row:su_people_spotlight_quote':
               destination: card_body
-              weight: 4
+              weight: 5
               plugin: views_row
               source: su_people_spotlight_quote
             'views_row:view_node':
               destination: card_link
-              weight: 5
+              weight: 6
               plugin: views_row
               source: view_node
             'views_row:nothing':
               destination: card_cta_label
-              weight: 6
+              weight: 7
               plugin: views_row
               source: nothing
           pattern_variant: default
@@ -1583,6 +1661,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.su_people_spotlight_quote'
+        - 'config:field.storage.node.su_soe_department'
         - 'config:field.storage.node.su_spotlight_degrees'
         - 'config:field.storage.node.su_spotlight_feature_image'
         - 'config:field.storage.node.su_spotlight_person_title'
