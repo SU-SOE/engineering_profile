@@ -1,6 +1,13 @@
 # Engineering Profile
 
-8.2.2 Engineering Release
+8.2.3 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-27_
+
+- Hotfix -- corrected css aggregation bug
+- removed unnecessary dependency from theme info.yml
+
+
 --------------------------------------------------------------------------------
 _Release Date: 2021-10-27_
 
