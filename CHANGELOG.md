@@ -1,10 +1,12 @@
 # Engineering Profile
 
-8.x-2.14
+8.2.2 Engineering Release
 --------------------------------------------------------------------------------
-_Release Date: 2021-09-14_
+_Release Date: 2021-10-27_
 
-- D8CORE-4534: adding a skip anchor block to the filtered pub page
+- Removed migrations that will no longer be used
+- updated system.performance to cache correctly
+
 
 8.x-2.15
 --------------------------------------------------------------------------------
@@ -51,6 +53,18 @@ _Release Date: 2021-10-08_
 - D8CORE-4534: adding a skip anchor block to the filtered pub page (#437)
 - Updates from stanford_profile (#187)
 - D8CORE-4749 Add and configure views bulk edit (#449)
+
+8.2.1 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-14_
+
+- Fixup for robots metatags
+
+8.2.0 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-12_
+
+- Initial production release for School of Engineering.
 
 8.x-2.14
 --------------------------------------------------------------------------------
