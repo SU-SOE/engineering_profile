@@ -89,8 +89,6 @@ module:
   media: 0
   media_duplicate_validation: 0
   media_library: 0
-  memcache: 0
-  memcache_admin: 0
   menu_block: 0
   menu_ui: 0
   metatag: 0
@@ -106,6 +104,7 @@ module:
   nobots: 0
   node: 0
   node_revision_delete: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   page_manager: 0
