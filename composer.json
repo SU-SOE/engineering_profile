@@ -134,10 +134,6 @@
             }
         },
         "enable-patching": true,
-        "patches": {
-            "drupal/oembed_providers": {
-                "https://www.drupal.org/project/oembed_providers/issues/3226509": "https://www.drupal.org/files/issues/2021-08-03/oembed_providers-install_entity_type-3226509-2.patch"
-            }
-        }
+        "patches": {}
     }
 }
