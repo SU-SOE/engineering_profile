@@ -65,6 +65,7 @@ module:
   file_mdm_font: 0
   filter: 0
   focal_point: 0
+  fontawesome: 0
   google_analytics: 0
   google_tag: 0
   hal: 0
@@ -104,6 +105,7 @@ module:
   nobots: 0
   node: 0
   node_revision_delete: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   page_manager: 0
@@ -113,7 +115,6 @@ module:
   path_alias: 0
   path_redirect_import: 0
   pdb: 0
-  pdf_api: 0
   printable: 0
   rabbit_hole: 0
   react_paragraphs: 0
@@ -157,7 +158,6 @@ module:
   stanford_person_importer: 0
   stanford_profile_admin: 0
   stanford_profile_drush: 0
-  stanford_profile_helper: 0
   stanford_profile_styles: 0
   stanford_publication: 0
   stanford_ssp: 0
@@ -200,6 +200,7 @@ module:
   config_pages_overrides: 10
   externalauth: 10
   menu_link_weight: 10
+  stanford_profile_helper: 10
   paragraphs: 11
   engineering_profile: 1000
 theme:
