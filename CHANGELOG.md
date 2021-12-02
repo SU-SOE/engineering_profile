@@ -1,6 +1,6 @@
 # Engineering Profile
 
-8.2.4 Engineering Release
+8.2.5 Engineering Release
 --------------------------------------------------------------------------------
 _Release Date: 2021-12-02_
 
@@ -8,6 +8,12 @@ _Release Date: 2021-12-02_
 - fixed simplecast bug
 - added memcache for ace environments.
 
+
+8.2.4 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-27_
+
+- Hotfix -- corrected dependencies
 
 8.2.3 Engineering Release
 --------------------------------------------------------------------------------
