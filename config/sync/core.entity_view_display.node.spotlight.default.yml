@@ -24,8 +24,8 @@ dependencies:
     - engineering
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: soe_spotlight_header
@@ -39,116 +39,116 @@ third_party_settings:
             configuration:
               id: 'field_block:node:spotlight:su_spotlight_feature_image'
               label: 'Feature Image'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: media_responsive_image_formatter
-                settings:
-                  view_mode: stanford_image_large_square
-                  image_style: ''
-                  link: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: media_responsive_image_formatter
+                label: hidden
+                settings:
+                  view_mode: stanford_image_large_square
+                  link: false
+                  image_style: ''
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
             weight: 0
+            additional: {  }
           90087c67-5f11-44a2-a588-839d2e2973fe:
             uuid: 90087c67-5f11-44a2-a588-839d2e2973fe
             region: spotlight_hero_text
             configuration:
               id: 'field_block:node:spotlight:type'
               label: 'Content type'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_reference_label
+                label: hidden
                 settings:
                   link: false
                 third_party_settings:
                   field_formatter_class:
                     class: spotlight-banner-text__header
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 0
+            additional: {  }
           63d93c8e-eb7c-44f1-9bed-188a48aabf70:
             uuid: 63d93c8e-eb7c-44f1-9bed-188a48aabf70
             region: spotlight_hero_text
             configuration:
               id: 'field_block:node:spotlight:title'
               label: Name
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_title_heading
+                label: hidden
                 settings:
                   tag: h1
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 1
+            additional: {  }
           a704578a-b413-4b74-a71e-43967f0ba5cb:
             uuid: a704578a-b413-4b74-a71e-43967f0ba5cb
             region: spotlight_hero_text
             configuration:
               id: 'field_block:node:spotlight:su_spotlight_degrees'
               label: Degrees
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: string
+                label: hidden
                 settings:
                   link_to_entity: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 2
+            additional: {  }
           3f3c9a5f-b8bc-4ce5-930e-4c8942b34819:
             uuid: 3f3c9a5f-b8bc-4ce5-930e-4c8942b34819
             region: spotlight_hero_text
             configuration:
               id: 'field_block:node:spotlight:su_soe_department'
               label: Department
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_reference_label
+                label: hidden
                 settings:
                   link: false
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 3
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
         layout_settings:
+          label: 'Main Content'
+          context_mapping: {  }
           extra_classes: spotlight-main-content
           centered: centered-container
           columns: flex-8-of-12
-          label: 'Main Content'
-          context_mapping: {  }
         components:
           54aa6b91-104e-446c-9493-838e3d7d722b:
             uuid: 54aa6b91-104e-446c-9493-838e3d7d722b
@@ -156,51 +156,54 @@ third_party_settings:
             configuration:
               id: 'field_block:node:spotlight:su_people_spotlight_quote'
               label: 'People Spotlight Quote'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: basic_string
+                label: hidden
                 settings: {  }
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -9
+            additional: {  }
           4b652f44-9246-4499-affb-8e0d9cba4535:
             uuid: 4b652f44-9246-4499-affb-8e0d9cba4535
             region: main
             configuration:
               id: 'field_block:node:spotlight:body'
               label: 'Spotlight Story'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -8
+            additional: {  }
           4f9158ff-4e01-4db7-b830-516f99233707:
             uuid: 4f9158ff-4e01-4db7-b830-516f99233707
             region: main
             configuration:
               id: 'field_block:node:spotlight:created'
               label: 'Authored on'
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: timestamp
+                label: hidden
                 settings:
                   date_format: custom
                   custom_date_format: 'M Y'
@@ -208,11 +211,8 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: -10
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -226,13 +226,13 @@ third_party_settings:
             configuration:
               id: 'views_block:spotlights-block_3'
               label: ''
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

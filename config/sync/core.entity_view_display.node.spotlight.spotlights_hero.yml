@@ -25,11 +25,15 @@ third_party_settings:
       children:
         - su_spotlight_feature_image
         - group_spotlights_banner_header_t
+      label: 'Spotlight Header'
       parent_name: ''
+      region: content
       weight: 0
       format_type: html_element
-      region: content
       format_settings:
+        classes: 'spotlight-banner engineering-accent-color__image'
+        show_empty_fields: false
+        id: ''
         element: div
         show_label: false
         label_element: h3
@@ -37,22 +41,19 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: 'spotlight-banner engineering-accent-color__image'
-        show_empty_fields: false
-      label: 'Spotlight Header'
     group_spotlights_banner_header_t:
       children:
         - su_spotlight_degrees
         - su_soe_department
+      label: 'Spotlights Banner Header Text'
       parent_name: group_spotlight_header
+      region: content
       weight: 4
       format_type: html_element
-      region: content
       format_settings:
+        classes: spotlight-banner__text
         show_empty_fields: false
         id: ''
-        classes: spotlight-banner__text
         element: div
         show_label: false
         label_element: h3
@@ -60,18 +61,18 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: 'Spotlights Banner Header Text'
     group_spotlight_date_:
       children:
         - su_people_spotlight_quote
+      label: Spotlight-date-quote
       parent_name: ''
+      region: content
       weight: 1
       format_type: html_element
-      region: content
       format_settings:
+        classes: spotlight-banner__quote-date
         show_empty_fields: false
         id: ''
-        classes: spotlight-banner__quote-date
         element: div
         show_label: false
         label_element: h3
@@ -79,19 +80,18 @@ third_party_settings:
         attributes: ''
         effect: none
         speed: fast
-      label: Spotlight-date-quote
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
   layout_library:
     enable: false
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
-      whitelisted_blocks: {  }
-      blacklisted_blocks: {  }
-      restricted_categories: {  }
       allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
 id: node.spotlight.spotlights_hero
 targetEntityType: node
 bundle: spotlight
@@ -99,15 +99,13 @@ mode: spotlights_hero
 content:
   su_people_spotlight_quote:
     type: basic_string
-    weight: 5
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 5
+    region: content
   su_soe_department:
     type: entity_reference_label
-    weight: 7
-    region: content
     label: hidden
     settings:
       link: false
@@ -116,24 +114,26 @@ content:
         class: ''
       ds:
         ds_limit: ''
+    weight: 7
+    region: content
   su_spotlight_degrees:
     type: string
-    weight: 6
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 6
+    region: content
   su_spotlight_feature_image:
     type: entity_reference_label
-    weight: 3
-    region: content
     label: hidden
     settings:
       link: false
     third_party_settings:
       field_formatter_class:
         class: ''
+    weight: 3
+    region: content
 hidden:
   body: true
   links: true

@@ -314,27 +314,28 @@ third_party_settings:
                   ds:
                     ds_limit: ''
             weight: 0
+            additional: {  }
           6efc6f03-d761-4069-b688-d97558a82093:
             uuid: 6efc6f03-d761-4069-b688-d97558a82093
             region: main
             configuration:
               id: 'field_block:node:stanford_news:su_soe_department'
               label: 'Related Departments'
-              provider: layout_builder
               label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_reference_label
+                label: hidden
                 settings:
                   link: true
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -389,32 +390,32 @@ bundle: stanford_news
 mode: default
 content:
   su_mag_featured:
-    weight: 13
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 13
     region: main
   su_magazine_issue:
-    weight: 14
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 14
     region: main
   su_magazine_story:
-    weight: 15
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 15
     region: main
   su_news_banner:
     type: entity_reference_entity_view
@@ -487,28 +488,28 @@ content:
     weight: 0
     region: content
   su_soe_department:
-    weight: 10
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 10
     region: main
   su_soe_mag_collection:
-    weight: 12
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 12
     region: main
   su_soe_mag_topics:
-    weight: 11
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 11
     region: main
 hidden:
   layout_builder__layout: true

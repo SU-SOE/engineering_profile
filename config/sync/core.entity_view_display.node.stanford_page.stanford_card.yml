@@ -139,5 +139,6 @@ hidden:
   links: true
   search_api_excerpt: true
   stanford_intranet__access: true
+  su_basic_page_type: true
   su_department: true
   su_page_components: true

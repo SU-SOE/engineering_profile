@@ -55,8 +55,6 @@ variant_settings:
             context_mapping: {  }
             views_label: ''
             items_per_page: none
-            context_mapping: {  }
-          additional: {  }
           weight: 0
           additional: {  }
       third_party_settings: {  }

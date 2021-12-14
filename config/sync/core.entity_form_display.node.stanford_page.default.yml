@@ -96,11 +96,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   su_department:
+    type: options_buttons
     weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   su_page_banner:
     type: paragraphs
     weight: 8

@@ -11,12 +11,12 @@ pattern: '/spotlight/[node:title]'
 selection_criteria:
   50ee02ac-1f57-4f9b-9a07-0c8b0eec9d6c:
     id: node_type
-    bundles:
-      spotlight: spotlight
     negate: false
+    uuid: 50ee02ac-1f57-4f9b-9a07-0c8b0eec9d6c
     context_mapping:
       node: node
-    uuid: 50ee02ac-1f57-4f9b-9a07-0c8b0eec9d6c
+    bundles:
+      spotlight: spotlight
 selection_logic: and
 weight: -5
 relationships: {  }

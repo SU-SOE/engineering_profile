@@ -53,22 +53,23 @@ third_party_settings:
                   tag: h1
                 third_party_settings: {  }
             weight: 0
+            additional: {  }
           8a9f4eb1-1cbc-4bcf-b658-a07356752dfe:
             uuid: 8a9f4eb1-1cbc-4bcf-b658-a07356752dfe
             region: main
             configuration:
+              id: 'field_block:node:stanford_page:su_department'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:stanford_page:su_department'
               formatter:
+                type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -206,12 +207,12 @@ content:
     weight: 7
     region: main
   su_department:
-    weight: 8
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 8
     region: main
   su_page_banner:
     type: entity_reference_revisions_entity_view

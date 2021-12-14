@@ -12,12 +12,12 @@ pattern: 'magazine/collection/[term:name]'
 selection_criteria:
   ed46d998-7ddb-4233-ae65-deb38e868849:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      article_collection: article_collection
     negate: false
+    uuid: ed46d998-7ddb-4233-ae65-deb38e868849
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: ed46d998-7ddb-4233-ae65-deb38e868849
+    bundles:
+      article_collection: article_collection
 selection_logic: and
 weight: -5
 relationships: {  }

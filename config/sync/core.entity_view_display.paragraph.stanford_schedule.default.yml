@@ -54,18 +54,15 @@ content:
       format_type: medium
       format: time_only_no_all_day
       force_chronological: false
-      format_type: medium
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: smartdate_default
     region: su_event_time
   su_schedule_description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
     region: su_event_description
   su_schedule_headline:
     type: string
@@ -73,14 +70,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
     region: su_event_headline
   su_schedule_location:
     type: address_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: address_default
     region: su_event_location
   su_schedule_speaker:
     type: entity_reference_revisions_entity_view
@@ -102,7 +97,6 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: link
     region: su_event_url
 hidden:
   search_api_excerpt: true

@@ -6,13 +6,7 @@ path_to_binaries: ''
 prepend: ''
 log_warnings: true
 debug: false
-use_identify: true
 locale: en_US.utf8
-advanced:
-  density: 72
-  colorspace: '0'
-  profile: ''
-  coalesce: true
 image_formats:
   PNG:
     mime_type: image/png
@@ -60,5 +54,5 @@ advanced:
   colorspace: '0'
   profile: ''
   coalesce: true
-prepend_pre_source: false
 use_identify: true
+prepend_pre_source: false
