@@ -72,7 +72,7 @@ class PublicationsCest {
       'vid' => 'stanford_publication_topics',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
   }
 
