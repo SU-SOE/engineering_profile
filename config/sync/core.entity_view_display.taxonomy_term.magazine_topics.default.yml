@@ -16,8 +16,8 @@ dependencies:
     - soe_basic
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: soe_basic_full_width_header
@@ -31,11 +31,11 @@ third_party_settings:
             configuration:
               id: magazine_navigation_block
               label: 'Magazine Navigation'
-              provider: engineering_magazine
               label_display: '0'
+              provider: engineering_magazine
               context_mapping: {  }
-            additional: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -46,17 +46,17 @@ third_party_settings:
             uuid: 6177ecdb-ec64-4f80-8aa9-16836ef36ecb
             region: content
             configuration:
+              id: 'field_block:taxonomy_term:magazine_topics:description'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:taxonomy_term:magazine_topics:description'
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -70,13 +70,13 @@ third_party_settings:
             configuration:
               id: 'views_block:magazine-block_3'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -86,11 +86,11 @@ bundle: magazine_topics
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   search_api_excerpt: true

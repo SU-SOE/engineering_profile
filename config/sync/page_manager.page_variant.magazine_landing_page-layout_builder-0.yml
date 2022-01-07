@@ -6,12 +6,13 @@ dependencies:
     - page_manager.page.magazine_landing_page
 id: magazine_landing_page-layout_builder-0
 label: 'Layout Builder'
+weight: 0
 variant: layout_builder
 variant_settings:
   id: layout_builder
-  uuid: 12067df9-ee35-4adf-b2b6-9ea276e9c98f
   label: null
   weight: 0
+  uuid: 12067df9-ee35-4adf-b2b6-9ea276e9c98f
   sections:
     -
       layout_id: layout_onecol
@@ -25,11 +26,11 @@ variant_settings:
           configuration:
             id: magazine_curtain_block
             label: 'Magazine Curtain'
-            provider: engineering_magazine
             label_display: '0'
+            provider: engineering_magazine
             context_mapping: {  }
-          additional: {  }
           weight: 0
+          additional: {  }
       third_party_settings: {  }
     -
       layout_id: soe_basic_full_width_header
@@ -43,11 +44,11 @@ variant_settings:
           configuration:
             id: magazine_navigation_block
             label: 'Magazine Navigation - block title'
-            provider: engineering_magazine
             label_display: '0'
+            provider: engineering_magazine
             context_mapping: {  }
-          additional: {  }
           weight: 6
+          additional: {  }
       third_party_settings: {  }
     -
       layout_id: layout_onecol
@@ -59,21 +60,21 @@ variant_settings:
     -
       layout_id: defaults
       layout_settings:
+        label: 'Latest News Header'
+        context_mapping: {  }
         extra_classes: magazine-latest-news-header
         centered: centered-container
         columns: default
-        label: 'Latest News Header'
-        context_mapping: {  }
       components: {  }
       third_party_settings: {  }
     -
       layout_id: defaults
       layout_settings:
+        label: 'Section - Views'
+        context_mapping: {  }
         extra_classes: section-magazine-views-views
         centered: centered-container
         columns: default
-        label: 'Section - Views'
-        context_mapping: {  }
       components:
         016c5d80-2604-4117-b324-feec5e44a6bf:
           uuid: 016c5d80-2604-4117-b324-feec5e44a6bf
@@ -81,16 +82,15 @@ variant_settings:
           configuration:
             id: 'views_block:magazine-block_1'
             label: ''
-            provider: views
             label_display: '0'
+            provider: views
+            context_mapping: {  }
             views_label: ''
             items_per_page: '20'
-            context_mapping: {  }
-          additional: {  }
           weight: 0
+          additional: {  }
       third_party_settings: {  }
 page: magazine_landing_page
-weight: 0
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }

@@ -12,12 +12,12 @@ pattern: 'department/[term:name]'
 selection_criteria:
   72f9bdb8-9d66-4300-814b-7d3a5828d67c:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      department: department
     negate: false
+    uuid: 72f9bdb8-9d66-4300-814b-7d3a5828d67c
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 72f9bdb8-9d66-4300-814b-7d3a5828d67c
+    bundles:
+      department: department
 selection_logic: and
 weight: -5
 relationships: {  }

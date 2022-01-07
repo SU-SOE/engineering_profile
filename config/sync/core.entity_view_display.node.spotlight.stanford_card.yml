@@ -47,13 +47,13 @@ third_party_settings:
         label: hidden
         formatter: default
         settings:
+          link: false
           'link class': ''
           wrapper: h1
           class: ''
-          link: false
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: node.spotlight.stanford_card
 targetEntityType: node
 bundle: spotlight
@@ -61,40 +61,40 @@ mode: stanford_card
 content:
   su_people_spotlight_quote:
     type: wrapper_class
-    weight: 3
-    region: card_body
     label: hidden
     settings:
-      link_class: ''
-      tag: p
       class: ''
+      tag: p
       link: false
+      link_class: ''
       summary: false
       trim: 200
     third_party_settings:
       field_formatter_class:
         class: ''
+    weight: 3
+    region: card_body
   su_spotlight_feature_image:
     type: media_image_formatter
-    weight: 0
-    region: card_image
     label: hidden
     settings:
       view_mode: stanford_image_stanford_circle
-      image_style: stanford_circle
       link: false
+      image_style: stanford_circle
     third_party_settings:
       field_formatter_class:
         class: ''
+    weight: 0
+    region: card_image
   su_spotlight_person_title:
     type: entity_title_heading
-    weight: 2
-    region: card_headline
     label: hidden
     settings:
       tag: h2
       linked: false
     third_party_settings: {  }
+    weight: 2
+    region: card_headline
 hidden:
   body: true
   links: true

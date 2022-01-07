@@ -18,17 +18,17 @@ dependencies:
     - views
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: defaults
         layout_settings:
+          label: ''
+          context_mapping: {  }
           extra_classes: soe-article-collection__term-content
           centered: centered-container
           columns: default
-          label: ''
-          context_mapping: {  }
         components:
           ebf9b8db-c96e-4360-963c-2c75bf7640e2:
             uuid: ebf9b8db-c96e-4360-963c-2c75bf7640e2
@@ -36,62 +36,62 @@ third_party_settings:
             configuration:
               id: 'field_block:taxonomy_term:article_collection:description'
               label: Description
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: text_default
+                label: hidden
                 settings: {  }
                 third_party_settings:
                   field_formatter_class:
                     class: soe-article-collection__description
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 1
+            additional: {  }
           58192dcf-53c4-4c4a-bc95-405316b82870:
             uuid: 58192dcf-53c4-4c4a-bc95-405316b82870
             region: main
             configuration:
               id: 'field_block:taxonomy_term:article_collection:su_collect_subtitle'
               label: Subtitle
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_title_heading
+                label: hidden
                 settings:
                   tag: h2
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 0
+            additional: {  }
           6c711023-7e35-4849-92a4-76901df9a78c:
             uuid: 6c711023-7e35-4849-92a4-76901df9a78c
             region: main
             configuration:
               id: 'field_block:taxonomy_term:article_collection:su_term_components'
               label: Components
-              provider: layout_builder
               label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
-                label: hidden
                 type: entity_reference_revisions_entity_view
+                label: hidden
                 settings:
                   view_mode: default
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-            additional: {  }
             weight: 2
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -104,13 +104,13 @@ third_party_settings:
             configuration:
               id: 'views_block:magazine_article_collection-block_5'
               label: ''
-              provider: views
               label_display: '0'
+              provider: views
+              context_mapping: {  }
               views_label: ''
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 0
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -120,35 +120,35 @@ bundle: article_collection
 mode: default
 content:
   description:
-    label: hidden
     type: text_default
-    weight: 0
-    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   su_collect_subtitle:
-    weight: 1
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   su_continue_label:
-    weight: 3
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: content
   su_intro_label:
-    weight: 2
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

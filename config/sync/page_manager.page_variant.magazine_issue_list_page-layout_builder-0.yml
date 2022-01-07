@@ -6,12 +6,13 @@ dependencies:
     - page_manager.page.magazine_issue_list_page
 id: magazine_issue_list_page-layout_builder-0
 label: 'Layout Builder'
+weight: 0
 variant: layout_builder
 variant_settings:
   id: layout_builder
-  uuid: 68b94330-42f4-4d86-8aa0-d7f50e991ddd
   label: null
   weight: 0
+  uuid: 68b94330-42f4-4d86-8aa0-d7f50e991ddd
   sections:
     -
       layout_id: soe_basic_full_width_header
@@ -25,20 +26,20 @@ variant_settings:
           configuration:
             id: magazine_navigation_block
             label: 'Magazine Navigation'
-            provider: engineering_magazine
             label_display: '0'
+            provider: engineering_magazine
             context_mapping: {  }
-          additional: {  }
           weight: 0
+          additional: {  }
       third_party_settings: {  }
     -
       layout_id: defaults
       layout_settings:
+        label: ''
+        context_mapping: {  }
         extra_classes: ''
         centered: centered-container
         columns: default
-        label: ''
-        context_mapping: {  }
       components:
         8f51b7fd-f213-4ff3-939a-c49f8f07514d:
           uuid: 8f51b7fd-f213-4ff3-939a-c49f8f07514d
@@ -46,16 +47,15 @@ variant_settings:
           configuration:
             id: 'views_block:magazine_issues-block_4'
             label: ''
-            provider: views
             label_display: '0'
+            provider: views
+            context_mapping: {  }
             views_label: ''
             items_per_page: '24'
-            context_mapping: {  }
-          additional: {  }
           weight: 0
+          additional: {  }
       third_party_settings: {  }
 page: magazine_issue_list_page
-weight: 0
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }

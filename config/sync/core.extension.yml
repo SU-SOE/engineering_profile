@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   address: 0
   admin_toolbar: 0
@@ -65,7 +67,6 @@ module:
   file_mdm_font: 0
   filter: 0
   focal_point: 0
-  fontawesome: 0
   google_analytics: 0
   google_tag: 0
   hal: 0
@@ -210,5 +211,3 @@ theme:
   soe_basic: 0
   engineering: 0
 profile: engineering_profile
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

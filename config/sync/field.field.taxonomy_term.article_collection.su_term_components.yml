@@ -28,7 +28,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       stanford_card: stanford_card
       stanford_gallery: stanford_gallery
@@ -38,6 +37,7 @@ settings:
       stanford_schedule: stanford_schedule
       stanford_spacer: stanford_spacer
       stanford_wysiwyg: stanford_wysiwyg
+    negate: 0
     target_bundles_drag_drop:
       stanford_accordion:
         weight: 15
@@ -46,8 +46,8 @@ settings:
         weight: 16
         enabled: false
       stanford_card:
-        enabled: true
         weight: 17
+        enabled: true
       stanford_cta_list:
         weight: 18
         enabled: false
@@ -55,30 +55,30 @@ settings:
         weight: 19
         enabled: false
       stanford_gallery:
-        enabled: true
         weight: 20
+        enabled: true
       stanford_image_cta:
-        enabled: true
         weight: 21
+        enabled: true
       stanford_lists:
-        enabled: true
         weight: 22
-      stanford_media_caption:
         enabled: true
+      stanford_media_caption:
         weight: 23
+        enabled: true
       stanford_person_cta:
         weight: 24
         enabled: false
       stanford_schedule:
-        enabled: true
         weight: 25
-      stanford_spacer:
         enabled: true
+      stanford_spacer:
         weight: 26
+        enabled: true
       stanford_stories:
         weight: 27
         enabled: false
       stanford_wysiwyg:
-        enabled: true
         weight: 28
+        enabled: true
 field_type: entity_reference_revisions
