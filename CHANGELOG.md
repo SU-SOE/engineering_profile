@@ -1,10 +1,18 @@
 # Engineering Profile
 
+8.2.6 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-07_
+
+- updated dependencies
+- Drupal 9.3 update
+
+
 8.2.5 Engineering Release
 --------------------------------------------------------------------------------
 _Release Date: 2021-12-02_
 
-- updated dependencies 
+- updated dependencies
 - fixed simplecast bug
 - added memcache for ace environments.
 
