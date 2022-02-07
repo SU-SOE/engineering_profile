@@ -37,6 +37,61 @@ _Release Date: 2021-10-27_
 - Removed migrations that will no longer be used
 - updated system.performance to cache correctly
 
+8.x-2.20
+--------------------------------------------------------------------------------
+_Release Date: 2022-02-04_
+
+- Fixed event series content width.
+
+8.x-2.19
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-28_
+
+- Fixed search block visibility condition.
+
+8.x-2.18
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-27_
+
+- Updates from stanford_profile (#214)
+- Merge branch 'master' into 8.x-2.x
+- Updates from stanford_profile 2022-01-11
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Added localist url to external source field (#471)
+- Adjust localist end dates for Smart Date "All Day" (#474)
+- Updates from stanford_profile (#209)
+- Added checkbox to hide site search in site settings config page (#472)
+- D8CORE-5183: changes to external links config to skip localist (#473)
+- D8CORE-5119: added help text for the localist import field. (#470)
+- Updates from Stanford Profile 2021-12-10
+- clean config export
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into updates
+- Upgrade drupal core to 9.3.0 with config updates (#469)
+
+8.x-2.17
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-20_
+
+- D8CORE-5266 Update events-legacy importer.
+
+
+8.x-2.15
+--------------------------------------------------------------------------------
+_Release Date: 2021-11-19_
+
+- D8CORE-4521 Localist Events Importer (#463)
+- Change profile helper module weight for priority
+- D8CORE-4677 Use an access token to fetch stanford-only profile images from CAP (#467)
+- D8CORE-4860 Wrap publication importer body text in <p> (#466)
+- D8CORE-4996 Remove taxonomy term on basic page card and list displays (#465)
+- D8CORE-4246 Add fontawesome module for wysiwyg icon support (#464)
+- D8CORE-4876 Enable ajax on publication list view
+- D8CORE-4824 Disable accordion on event series
+- D8CORE-4878: Added configs for oEmbed Providers module (#462)
+- D8CORE-4871: adding a class to the table element and the aside element (#460)
+- Merge branch 'master' into 8.x-2.x
+- D8CORE-4816 Add configurable allowed tags for unstructured embed (#461)
+
 
 8.x-2.16
 --------------------------------------------------------------------------------

@@ -6,6 +6,7 @@ dependencies:
     - media.type.file
     - media.type.google_form
     - media.type.image
+    - media.type.stanford_gallery_images
     - media.type.video
     - node.type.stanford_event
     - node.type.stanford_event_series
@@ -47,6 +48,7 @@ permissions:
   - 'create spotlight content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
+  - 'create stanford_gallery_images media'
   - 'create stanford_news content'
   - 'create stanford_page content'
   - 'create stanford_person content'
@@ -60,6 +62,7 @@ permissions:
   - 'delete own spotlight content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
+  - 'delete own stanford_gallery_images media'
   - 'delete own stanford_news content'
   - 'delete own stanford_page content'
   - 'delete own stanford_person content'
@@ -69,6 +72,7 @@ permissions:
   - 'edit any spotlight content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
+  - 'edit any stanford_gallery_images media'
   - 'edit any stanford_news content'
   - 'edit any stanford_page content'
   - 'edit any stanford_person content'
@@ -81,6 +85,7 @@ permissions:
   - 'edit own spotlight content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
+  - 'edit own stanford_gallery_images media'
   - 'edit own stanford_news content'
   - 'edit own stanford_page content'
   - 'edit own stanford_person content'
