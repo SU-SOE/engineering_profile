@@ -6,6 +6,8 @@ _Release Date: 2022-01-07_
 
 - updated dependencies
 - Drupal 9.3 update
+- Localist URL updates
+- Fixed postdoc vocabulary issue
 
 
 8.2.5 Engineering Release
