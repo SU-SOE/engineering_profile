@@ -508,7 +508,7 @@ display:
             offset: false
             offset_label: Offset
           views_infinite_scroll:
-            button_text: 'Load More'
+            button_text: 'Load More Events'
             automatically_load_content: false
       exposed_form:
         type: basic
@@ -650,8 +650,8 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          contextual_filters_or: false
           query_tags: {  }
+          contextual_filters_or: false
       relationships: {  }
       css_class: stanford-events-list-page
       use_ajax: true

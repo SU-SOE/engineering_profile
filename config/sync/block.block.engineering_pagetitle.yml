@@ -25,12 +25,12 @@ visibility:
     context_mapping: {  }
     pages: |-
       /node*
-      news*
+      /news*
       /people*
       /events*
       /event-series*
       /publications*
-      spotlight*
+      /spotlight*
       /magazine/issue*
   response_code:
     id: response_code
