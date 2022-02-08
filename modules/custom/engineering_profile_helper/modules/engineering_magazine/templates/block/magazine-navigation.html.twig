@@ -1,0 +1,41 @@
+{#
+@file
+Profile magazine_navigation_block
+#}
+{%
+
+  set classes = [
+	  'flex-container',
+	  'magazine-landing-navbar',
+  ]
+
+%}
+<div{{attributes.addClass(classes)}}>
+
+	<div class="flex-12-of-12 magazine-landing-nav">
+
+		<h2 class="magazine-landing-nav__item">
+			<a href="/magazine">Research & Ideas</a>
+		</h2>
+		<div class="magazine-landing-nav__item">Topics
+
+			<button aria-label="Open the Topics menu" id="magazine-landing-nav__topics-toggle" aria-expanded="false"></button>
+
+		</div>
+		<div class="magazine-landing-nav__item">
+			<a href="/magazine/issue" aria-label="View a list of past issues">Issues</a>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="magazine-landing-nav__topics-panel" aria-labelledby="magazine-landing-nav__topics-toggle">
+	<div class="magazine-terms-list">
+		{% for term in topics%}
+			<div class='magazine-term'>
+				<a href="{{ term['path'] }}">{{ term['name'] }}</a>
+			</div>
+		{% endfor %}
+	</div>
+</div>

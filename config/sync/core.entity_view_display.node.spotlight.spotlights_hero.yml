@@ -1,0 +1,142 @@
+uuid: 066dcab5-1770-4893-8344-2d3287ed3203
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.spotlights_hero
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_people_spotlight_quote
+    - field.field.node.spotlight.su_soe_department
+    - field.field.node.spotlight.su_spotlight_affiliation
+    - field.field.node.spotlight.su_spotlight_degrees
+    - field.field.node.spotlight.su_spotlight_feature_image
+    - field.field.node.spotlight.su_spotlight_person_title
+    - node.type.spotlight
+  module:
+    - field_formatter_class
+    - field_group
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - user
+third_party_settings:
+  field_group:
+    group_spotlight_header:
+      children:
+        - su_spotlight_feature_image
+        - group_spotlights_banner_header_t
+      label: 'Spotlight Header'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: 'spotlight-banner engineering-accent-color__image'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_spotlights_banner_header_t:
+      children:
+        - su_spotlight_degrees
+        - su_soe_department
+      label: 'Spotlights Banner Header Text'
+      parent_name: group_spotlight_header
+      region: content
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: spotlight-banner__text
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_spotlight_date_:
+      children:
+        - su_people_spotlight_quote
+      label: Spotlight-date-quote
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: spotlight-banner__quote-date
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
+id: node.spotlight.spotlights_hero
+targetEntityType: node
+bundle: spotlight
+mode: spotlights_hero
+content:
+  su_people_spotlight_quote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  su_soe_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+    weight: 7
+    region: content
+  su_spotlight_degrees:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  su_spotlight_feature_image:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+hidden:
+  body: true
+  links: true
+  search_api_excerpt: true
+  su_spotlight_affiliation: true
+  su_spotlight_person_title: true

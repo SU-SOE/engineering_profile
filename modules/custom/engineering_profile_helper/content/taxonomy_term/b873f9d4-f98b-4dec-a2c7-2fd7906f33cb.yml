@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: b873f9d4-f98b-4dec-a2c7-2fd7906f33cb
+  bundle: department
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Institute for Computational & Mathematical Engineering'
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /department/institute-computational-mathematical-engineering
+      langcode: en
+      pathauto: 0

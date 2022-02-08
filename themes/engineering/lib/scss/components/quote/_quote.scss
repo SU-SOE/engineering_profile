@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import "../../utilities/mixins";
+
+.su-people-spotlight-quote {
+  @include type-c;
+  @include responsive-spacing('margin-bottom', 3);
+
+  font-weight: $su-font-black;
+}

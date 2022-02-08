@@ -1,0 +1,12 @@
+uuid: aef64096-dc65-4362-80f8-3a8aa9f2337b
+langcode: en
+status: true
+dependencies: {  }
+id: magazine_issue_list_page
+label: 'Magazine Issue List Page'
+description: ''
+use_admin_theme: false
+path: /magazine/issue
+access_logic: and
+access_conditions: {  }
+parameters: {  }

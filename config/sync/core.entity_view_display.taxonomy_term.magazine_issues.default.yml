@@ -1,0 +1,108 @@
+uuid: 9e09c024-d1c4-4a20-96db-0a4ada484227
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.magazine_issues.su_issue_number
+    - taxonomy.vocabulary.magazine_issues
+    - views.view.magazine_issues
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_library
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          480bcbb7-ba31-4de8-83e9-b4aa8ccc4533:
+            uuid: 480bcbb7-ba31-4de8-83e9-b4aa8ccc4533
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:magazine_issues:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          b2fabeae-7814-40e2-8a0b-d50775df45cf:
+            uuid: b2fabeae-7814-40e2-8a0b-d50775df45cf
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:magazine_issues:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Articles
+          context_mapping: {  }
+        components:
+          6d9e3736-3c55-4156-af6c-8bbe9e6cdb39:
+            uuid: 6d9e3736-3c55-4156-af6c-8bbe9e6cdb39
+            region: content
+            configuration:
+              id: 'views_block:magazine_issues-block_2'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
+id: taxonomy_term.magazine_issues.default
+targetEntityType: taxonomy_term
+bundle: magazine_issues
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  su_issue_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

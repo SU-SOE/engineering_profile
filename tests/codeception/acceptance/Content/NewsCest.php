@@ -75,7 +75,7 @@ class NewsCest {
     // Redirect as anon.
     $I->runDrush('cr');
     $I->amOnPage('/news');
-    $I->click(".su-news-list__item a:first-of-type");
+    $I->click(".su-news-article a:first-of-type");
     $I->seeCurrentUrlEquals('/');
 
     // See content as admin.
@@ -94,17 +94,14 @@ class NewsCest {
     $I->createEntity([
       'type' => 'stanford_news',
       'title' => 'Test News 1',
-      'su_news_headline' => 'Test News 1',
     ]);
     $I->createEntity([
       'type' => 'stanford_news',
       'title' => 'Test News 2',
-      'su_news_headline' => 'Test News 2',
     ]);
     $I->createEntity([
       'type' => 'stanford_news',
       'title' => 'Test News 3',
-      'su_news_headline' => 'Test News 3',
     ]);
 
     $I->amOnPage("/news/test-news-2");
@@ -141,20 +138,6 @@ class NewsCest {
   }
 
   /**
-   * Special characters should stay.
-   */
-  public function testSpecialCharacters(AcceptanceTester $I) {
-    $faker = Factory::create();
-    $I->logInWithRole('contributor');
-    $I->amOnPage('/node/add/stanford_person');
-    $I->fillField('First Name', 'Foo');
-    $I->fillField('Last Name', 'Bar-Baz & Foo');
-    $I->fillField('Short Title', $faker->text);
-    $I->click('Save');
-    $I->canSee('Foo Bar-Baz & Foo', 'h1');
-  }
-
-  /**
    * Published checkbox should be hidden on term edit pages.
    */
   public function testTermPublishing(AcceptanceTester $I) {
@@ -163,7 +146,7 @@ class NewsCest {
       'vid' => 'stanford_news_topics',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
   }
 

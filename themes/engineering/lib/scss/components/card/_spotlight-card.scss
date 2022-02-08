@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+@import "../../utilities/variables/colors";
+@import "../../utilities/mixins";
+
+.soe-spotlight--cards {
+  img {
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    display: block;
+    margin: auto;
+  }
+
+  .views-row {
+
+    @include grid-media-min('xl') {
+      @include responsive-spacing('margin-bottom', 7);
+    }
+
+    display: flex;
+
+    @include grid-media-max('lg') {
+      &.flex-container {
+        display: block;
+
+        > div {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .su-card {
+      @include responsive-spacing('margin', 0);
+      @include responsive-spacing('padding', 2);
+
+      @include grid-media-max('lg') {
+        @include responsive-spacing('margin-bottom', 3);
+      }
+
+    }
+
+    .su-card .image {
+      flex: 1;
+      display: block;
+      width: 100%;
+    }
+
+    .su-card .su-card__contents {
+      flex: 3;
+
+      span {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  // For the card grid only.
+  .views-view-grid {
+    .su-card__contents {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  // Styles for the grid of cards. 
+  .su-card__contents {
+    
+    h2 {
+      @include type-d;
+      @include responsive-spacing('margin-bottom', -1);
+
+      font-weight: $su-font-black;
+    }
+
+    .soe--person-title {
+      @include type-d;
+
+      font-weight: $su-font-regular;
+    }
+
+    .soe-quote {
+      @include type-c;
+
+      font-weight: $su-font-bold;
+    }
+
+    .su-link {
+      @include responsive-spacing('padding-top', 2);
+      @include type-d;
+
+      font-weight: $su-font-semi-bold;
+    }
+  }
+}
+
+// Header spotlight card styles.
+.soe-spotlight--cards--banner {
+  &.spotlights {
+    .views-row {
+      margin-bottom: 0;
+
+      @include grid-media-max('lg') {
+        .su-card {
+          display: block;
+
+          img {
+            max-width: 300px;
+          }
+        }
+      }
+
+      h2 {
+        @include type-c;
+        @include responsive-spacing('margin-bottom', -1);
+        font-weight: $su-font-black;
+
+        
+      }
+      
+      .soe--person-title {
+        @include type-c;
+  
+        font-weight: $su-font-regular;
+      }
+
+      .spotlight__quote {
+        @include type-b;
+
+        font-weight: $su-font-black;
+      }
+
+    }
+    
+    .su-link {
+      @include responsive-spacing('padding-top', 2);
+      @include type-d;
+  
+      font-weight: $su-font-semi-bold;
+      margin-top: 0;
+    }
+  }
+}

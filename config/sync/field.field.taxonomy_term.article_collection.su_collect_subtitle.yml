@@ -1,0 +1,19 @@
+uuid: 0ae87197-fced-4565-91e2-b92325f01bc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_collect_subtitle
+    - taxonomy.vocabulary.article_collection
+id: taxonomy_term.article_collection.su_collect_subtitle
+field_name: su_collect_subtitle
+entity_type: taxonomy_term
+bundle: article_collection
+label: Subtitle
+description: 'Please enter the text that will show below the collection title. (Max length: 255 char)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

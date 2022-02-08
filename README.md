@@ -1,4 +1,4 @@
-# [SOE Profile](https://github.com/SU-SOE/soe_profile)
+# [SOE Profile](https://github.com/SU-SOE/engineering_profile)
 ##### 8.x
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)

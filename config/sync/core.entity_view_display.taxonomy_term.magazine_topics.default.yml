@@ -1,0 +1,96 @@
+uuid: 50706bad-a46e-4b4a-88a7-af15e413a7f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.magazine_topics
+    - views.view.magazine
+  module:
+    - engineering_magazine
+    - layout_builder
+    - layout_discovery
+    - layout_library
+    - text
+    - views
+  theme:
+    - soe_basic
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: soe_basic_full_width_header
+        layout_settings:
+          label: 'Magazine Navigation'
+          context_mapping: {  }
+        components:
+          624f69de-e990-4632-a66e-76495fc29988:
+            uuid: 624f69de-e990-4632-a66e-76495fc29988
+            region: main
+            configuration:
+              id: magazine_navigation_block
+              label: 'Magazine Navigation'
+              label_display: '0'
+              provider: engineering_magazine
+              context_mapping: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          6177ecdb-ec64-4f80-8aa9-16836ef36ecb:
+            uuid: 6177ecdb-ec64-4f80-8aa9-16836ef36ecb
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:magazine_topics:description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Topic Stories'
+          context_mapping: {  }
+        components:
+          83a74267-7bcd-4b9f-b31f-8da1a7a8a40e:
+            uuid: 83a74267-7bcd-4b9f-b31f-8da1a7a8a40e
+            region: content
+            configuration:
+              id: 'views_block:magazine-block_3'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: taxonomy_term.magazine_topics.default
+targetEntityType: taxonomy_term
+bundle: magazine_topics
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: c4157b09-77ea-4fde-a68e-b71d0cbaefa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_soe_mag_collection
+    - node.type.stanford_news
+    - taxonomy.vocabulary.article_collection
+id: node.stanford_news.su_soe_mag_collection
+field_name: su_soe_mag_collection
+entity_type: node
+bundle: stanford_news
+label: 'Article Collection'
+description: 'If this article is part of a collection series, pick it here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_collection: article_collection
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

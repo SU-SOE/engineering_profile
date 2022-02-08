@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains engineering_magazine.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\pathauto\Entity\PathautoPattern;
+
+/**
+ * Implements hook_help().
+ */
+function engineering_magazine_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the engineering_magazine module.
+    case 'help.page.engineering_magazine':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modifies stanford_news to work for the School of Engineering Magazine content.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function engineering_magazine_theme($existing, $type, $theme, $path) {
+  return [
+    'magazine_navigation_block' => [
+      'template' => 'block/magazine-navigation',
+      'variables' => [
+        'topics' => null,
+      ],
+    ],
+    'magazine_curtain_block' => [
+      'template' => 'block/magazine-curtain-block',
+      'variables'=> [
+        'curtain_content' => null,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function engineering_magazine_pathauto_pattern_alter(PathautoPattern &$pattern, array $context) {
+  // If a story is marked as a magazine story, it needs to get a magazine path.
+  if ($context['bundle'] == 'stanford_news' &&
+    ($context['op'] == 'insert' || $context['op'] == 'update')) {
+
+    $node = $context['data']['node'];
+    if ($node->get('su_magazine_story')->value) {
+      $pattern->setPattern('magazine/[node:title]');
+    }
+  }
+}

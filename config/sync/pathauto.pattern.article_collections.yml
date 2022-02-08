@@ -1,0 +1,23 @@
+uuid: e8af6516-745f-4ade-8f48-cb0694a2e220
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: article_collections
+label: 'Article Collections'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'magazine/collection/[term:name]'
+selection_criteria:
+  ed46d998-7ddb-4233-ae65-deb38e868849:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: ed46d998-7ddb-4233-ae65-deb38e868849
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      article_collection: article_collection
+selection_logic: and
+weight: -5
+relationships: {  }

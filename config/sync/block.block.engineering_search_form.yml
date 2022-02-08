@@ -1,0 +1,28 @@
+uuid: 4e8e6a80-693b-455e-a2e1-0fa797570262
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - system
+    - views
+  theme:
+    - engineering
+id: engineering_search_form
+theme: engineering
+region: content
+weight: -2
+provider: null
+plugin: 'views_exposed_filter_block:search-results'
+settings:
+  id: 'views_exposed_filter_block:search-results'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

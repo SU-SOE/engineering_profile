@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.spotlight-main-content{
+  .main-region{
+    margin-bottom: 83px;
+  }
+}
+
+.spotlights-block-1 {
+  .form-item-tid, .form-item-tid-1 {
+    label {
+      @include hide-visually;
+    }
+  }
+}

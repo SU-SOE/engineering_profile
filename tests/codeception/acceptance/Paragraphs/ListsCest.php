@@ -28,7 +28,6 @@ class ListsCest {
       'display_id' => 'vertical_teaser_term',
       'items_to_display' => 100,
     ]);
-
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee('Headliner');
     $I->canSee('Lorem Ipsum');
@@ -47,7 +46,7 @@ class ListsCest {
 
     $news = $I->createEntity([
       'type' => 'stanford_news',
-      'su_news_headline' => $faker->text(15),
+      'title' => $faker->text(15),
       'su_news_topics' => $topic_term->id(),
       'su_news_publishing_date' => date('Y-m-d', time()),
     ]);
@@ -77,7 +76,7 @@ class ListsCest {
 
     $news = $I->createEntity([
       'type' => 'stanford_news',
-      'su_news_headline' => $faker->text(15),
+      'title' => $faker->text(15),
       'su_news_topics' => $topic_term->id(),
       'su_news_publishing_date' => date('Y-m-d', time()),
     ]);
@@ -111,7 +110,7 @@ class ListsCest {
 
     $news = $I->createEntity([
       'type' => 'stanford_news',
-      'su_news_headline' => $faker->text(15),
+      'title' => $faker->text(15),
       'su_news_topics' => $child_term->id(),
       'su_news_publishing_date' => date('Y-m-d', time()),
     ]);
@@ -425,6 +424,37 @@ class ListsCest {
 
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($news->label());
+  }
+
+  /**
+   * Test basic page types list view
+   */
+  public function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
+    $I->logInWithRole('site_manager');
+    $faker = Factory::create();
+
+    $type_term = $this->createTaxonomyTerm($I, 'basic_page_types', 'Basic Page Test Term');
+
+    $basic_page_entity = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $faker->text(15),
+      'su_basic_page_type' => $type_term->id(),
+    ]);
+
+    $I->amOnPage("/node/{$basic_page_entity->id()}/edit");
+    $I->click('Save');
+
+    $node = $this->getNodeWithList($I, [
+      'target_id' => 'stanford_basic_pages',
+      'display_id' => 'basic_page_type_list',
+      'items_to_display' => 100,
+      'arguments' => 'Basic-Page-Test-Term',
+    ]);
+
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($basic_page_entity->label());
+    $I->cantSee($type_term->label());
   }
 
   /**

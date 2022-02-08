@@ -29,154 +29,12 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-          contextual_filters_or: false
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: infinite_scroll
-        options:
-          items_per_page: 20
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          views_infinite_scroll:
-            button_text: 'Load More'
-            automatically_load_content: false
-      style:
-        type: default
-      row:
-        type: ui_patterns
-        options:
-          default_field_elements: 0
-          inline:
-            view_node: 0
-            title: 0
-            su_event_date_time: 0
-            su_event_date_time_value: 0
-            su_event_date_time_end_value: 0
-            su_event_date_time_value_1: 0
-            su_event_date_time_end_value_1: 0
-            su_event_dek: 0
-            su_event_alt_loc: 0
-            su_event_type: 0
-            su_event_location: 0
-            su_event_subheadline: 0
-            su_event_source: 0
-            su_event_date_time_end_value_2: 0
-          separator: ''
-          hide_empty: 1
-          pattern: events-list
-          variants:
-            media: default
-            lockup: a
-            hero: default
-            brandbar: default
-            link: default
-            button: default
-            date-stacked: default
-            cta: default
-            alert: default
-            card: default
-          pattern_mapping:
-            'views_row:su_event_date_time':
-              destination: su_event_date_time
-              weight: 0
-              plugin: views_row
-              source: su_event_date_time
-            'views_row:su_event_date_time_end_value':
-              destination: su_event_end_month
-              weight: 1
-              plugin: views_row
-              source: su_event_date_time_end_value
-            'views_row:su_event_date_time_value_1':
-              destination: su_event_start_date
-              weight: 2
-              plugin: views_row
-              source: su_event_date_time_value_1
-            'views_row:su_event_date_time_end_value_1':
-              destination: su_event_end_date
-              weight: 3
-              plugin: views_row
-              source: su_event_date_time_end_value_1
-            'views_row:su_event_date_time_value':
-              destination: su_event_start_month
-              weight: 4
-              plugin: views_row
-              source: su_event_date_time_value
-            'views_row:su_event_dek':
-              destination: su_event_dek
-              weight: 5
-              plugin: views_row
-              source: su_event_dek
-            'views_row:su_event_alt_loc':
-              destination: su_event_location
-              weight: 6
-              plugin: views_row
-              source: su_event_alt_loc
-            'views_row:su_event_type':
-              destination: su_event_type
-              weight: 7
-              plugin: views_row
-              source: su_event_type
-            'views_row:su_event_source':
-              destination: su_event_headline
-              weight: 8
-              plugin: views_row
-              source: su_event_source
-            'views_row:su_event_location':
-              destination: su_event_location
-              weight: 9
-              plugin: views_row
-              source: su_event_location
-            'views_row:su_event_subheadline':
-              destination: su_event_subheadline
-              weight: 10
-              plugin: views_row
-              source: su_event_subheadline
-            'views_row:su_event_date_time_end_value_2':
-              destination: su_event_type
-              weight: 11
-              plugin: views_row
-              source: su_event_date_time_end_value_2
+      title: 'Events - Past'
       fields:
         view_node:
           id: view_node
@@ -185,6 +43,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          plugin_id: entity_link
           label: ''
           exclude: false
           alter:
@@ -229,8 +89,6 @@ display:
           text: view
           output_url_as_text: false
           absolute: false
-          entity_type: node
-          plugin_id: entity_link
         title:
           id: title
           table: node_field_data
@@ -238,6 +96,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -293,9 +154,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: title
-          plugin_id: field
         su_event_date_time:
           id: su_event_date_time
           table: node__su_event_date_time
@@ -303,6 +161,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -360,7 +219,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_date_time_value:
           id: su_event_date_time_value
           table: node__su_event_date_time
@@ -368,6 +226,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -412,7 +271,6 @@ display:
           date_format: stanford_short_month
           custom_date_format: ''
           timezone: ''
-          plugin_id: date
         su_event_date_time_end_value:
           id: su_event_date_time_end_value
           table: node__su_event_date_time
@@ -420,6 +278,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -464,7 +323,6 @@ display:
           date_format: stanford_short_month
           custom_date_format: ''
           timezone: ''
-          plugin_id: date
         su_event_date_time_value_1:
           id: su_event_date_time_value_1
           table: node__su_event_date_time
@@ -472,6 +330,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -516,7 +375,6 @@ display:
           date_format: stanford_two_digit_day
           custom_date_format: ''
           timezone: ''
-          plugin_id: date
         su_event_date_time_end_value_1:
           id: su_event_date_time_end_value_1
           table: node__su_event_date_time
@@ -524,6 +382,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -568,7 +427,6 @@ display:
           date_format: stanford_two_digit_day
           custom_date_format: ''
           timezone: ''
-          plugin_id: date
         su_event_dek:
           id: su_event_dek
           table: node__su_event_dek
@@ -576,6 +434,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -631,7 +490,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_alt_loc:
           id: su_event_alt_loc
           table: node__su_event_alt_loc
@@ -639,6 +497,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -694,7 +553,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_type:
           id: su_event_type
           table: node__su_event_type
@@ -702,6 +560,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -757,7 +616,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_location:
           id: su_event_location
           table: node__su_event_location
@@ -765,6 +623,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -819,7 +678,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_subheadline:
           id: su_event_subheadline
           table: node__su_event_subheadline
@@ -827,6 +685,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -882,7 +741,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_source:
           id: su_event_source
           table: node__su_event_source
@@ -890,6 +748,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -949,7 +808,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         su_event_date_time_end_value_2:
           id: su_event_date_time_end_value_2
           table: node__su_event_date_time
@@ -957,6 +815,7 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Time Hense - Past Event Pill'
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -1001,30 +860,128 @@ display:
           date_format: 'raw time hence'
           custom_date_format: ''
           timezone: ''
+      pager:
+        type: infinite_scroll
+        options:
+          offset: 0
+          items_per_page: 20
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Load More Events'
+            automatically_load_content: false
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2>Sorry, no past events available.</h2>'
+            format: stanford_html
+          tokenize: false
+      sorts:
+        su_event_date_time_end_value:
+          id: su_event_date_time_end_value
+          table: node__su_event_date_time
+          field: su_event_date_time_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
           plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: su_event_date_time_end_value
+          exposed: false
+          granularity: second
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: created
+          exposed: false
+          granularity: second
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: title
+          exposed: false
+      arguments: {  }
       filters:
         status:
-          value: '1'
+          id: status
           table: node_field_data
           field: status
-          plugin_id: boolean
           entity_type: node
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         type:
           id: type
           table: node_field_data
           field: type
-          value:
-            stanford_event: stanford_event
           entity_type: node
           entity_field: type
           plugin_id: bundle
+          value:
+            stanford_event: stanford_event
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -1035,6 +992,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: date
           operator: '<='
           value:
             min: ''
@@ -1057,9 +1015,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -1072,72 +1030,117 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: date
-      sorts:
-        su_event_date_time_end_value:
-          id: su_event_date_time_end_value
-          table: node__su_event_date_time
-          field: su_event_date_time_end_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-          plugin_id: date
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-      title: 'Events - Past'
+      style:
+        type: default
+      row:
+        type: ui_patterns
+        options:
+          default_field_elements: 0
+          inline:
+            view_node: 0
+            title: 0
+            su_event_date_time: 0
+            su_event_date_time_value: 0
+            su_event_date_time_end_value: 0
+            su_event_date_time_value_1: 0
+            su_event_date_time_end_value_1: 0
+            su_event_dek: 0
+            su_event_alt_loc: 0
+            su_event_type: 0
+            su_event_location: 0
+            su_event_subheadline: 0
+            su_event_source: 0
+            su_event_date_time_end_value_2: 0
+          separator: ''
+          hide_empty: 1
+          pattern: events_list
+          variants:
+            media: default
+            lockup: a
+            hero: default
+            brandbar: default
+            link: default
+            button: default
+            date-stacked: default
+            cta: default
+            alert: default
+            card: default
+          pattern_mapping:
+            'views_row:su_event_date_time':
+              destination: date_time
+              weight: 0
+              plugin: views_row
+              source: su_event_date_time
+            'views_row:su_event_date_time_end_value':
+              destination: end_month
+              weight: 1
+              plugin: views_row
+              source: su_event_date_time_end_value
+            'views_row:su_event_date_time_value_1':
+              destination: start_date
+              weight: 2
+              plugin: views_row
+              source: su_event_date_time_value_1
+            'views_row:su_event_date_time_end_value_1':
+              destination: end_date
+              weight: 3
+              plugin: views_row
+              source: su_event_date_time_end_value_1
+            'views_row:su_event_date_time_value':
+              destination: start_month
+              weight: 4
+              plugin: views_row
+              source: su_event_date_time_value
+            'views_row:su_event_dek':
+              destination: dek
+              weight: 5
+              plugin: views_row
+              source: su_event_dek
+            'views_row:su_event_alt_loc':
+              destination: location
+              weight: 6
+              plugin: views_row
+              source: su_event_alt_loc
+            'views_row:su_event_type':
+              destination: event_type
+              weight: 7
+              plugin: views_row
+              source: su_event_type
+            'views_row:su_event_source':
+              destination: headline
+              weight: 8
+              plugin: views_row
+              source: su_event_source
+            'views_row:su_event_location':
+              destination: location
+              weight: 9
+              plugin: views_row
+              source: su_event_location
+            'views_row:su_event_subheadline':
+              destination: subheadline
+              weight: 10
+              plugin: views_row
+              source: su_event_subheadline
+            'views_row:su_event_date_time_end_value_2':
+              destination: event_type
+              weight: 11
+              plugin: views_row
+              source: su_event_date_time_end_value_2
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+          contextual_filters_or: false
+      relationships: {  }
+      css_class: stanford-events-past
+      use_ajax: true
       header: {  }
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: '<h2>Sorry, no past events available.</h2>'
-            format: stanford_html
-          plugin_id: text
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      use_ajax: true
-      css_class: stanford-events-past
     cache_metadata:
       max-age: -1
       contexts:
@@ -1155,13 +1158,13 @@ display:
         - 'config:field.storage.node.su_event_subheadline'
         - 'config:field.storage.node.su_event_type'
   past_events_block:
-    display_plugin: block
     id: past_events_block
     display_title: 'Past Events Block'
+    display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
       display_description: ''
+      display_extenders: {  }
       block_description: 'Past Events'
       block_category: 'Events Lists (Views)'
     cache_metadata:

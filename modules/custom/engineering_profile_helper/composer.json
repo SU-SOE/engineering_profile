@@ -1,0 +1,7 @@
+{
+    "name": "su-soe/engineering_profile_helper",
+    "type": "drupal-module",
+    "description": "Engineering Profile Helper module",
+    "keywords": [],
+    "minimum-stability": "dev"
+}

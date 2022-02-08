@@ -13,7 +13,7 @@ field_name: su_page_banner
 entity_type: node
 bundle: stanford_page
 label: 'Top Banner'
-description: 'The top banner displays directly below the navigation and on interior pages, above the page title.'
+description: 'The top banner displays directly below the navigation and on interior pages, below the page title.'
 required: false
 translatable: false
 default_value: {  }
@@ -21,13 +21,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       stanford_banner: stanford_banner
+    negate: 0
     target_bundles_drag_drop:
       stanford_banner:
-        enabled: true
         weight: 4
+        enabled: true
       stanford_card:
         weight: 5
         enabled: false

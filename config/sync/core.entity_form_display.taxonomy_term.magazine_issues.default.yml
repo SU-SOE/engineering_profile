@@ -1,0 +1,52 @@
+uuid: 9bc7c1d3-bc42-4879-bea4-06e6ab70ef64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.magazine_issues.su_issue_number
+    - taxonomy.vocabulary.magazine_issues
+  module:
+    - path
+    - text
+id: taxonomy_term.magazine_issues.default
+targetEntityType: taxonomy_term
+bundle: magazine_issues
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  su_issue_number:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

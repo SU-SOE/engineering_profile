@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory;
+
 /**
  * Test the news functionality.
  */
@@ -126,6 +128,20 @@ class PersonCest {
   }
 
   /**
+   * Special characters should stay.
+   */
+  public function testSpecialCharacters(AcceptanceTester $I) {
+    $faker = Factory::create();
+    $I->logInWithRole('contributor');
+    $I->amOnPage('/node/add/stanford_person');
+    $I->fillField('First Name', 'Foo');
+    $I->fillField('Last Name', 'Bar-Baz & Foo');
+    $I->fillField('Short Title', $faker->text);
+    $I->click('Save');
+    $I->canSee('Foo Bar-Baz & Foo', 'h1');
+  }
+
+  /**
    * D8CORE-2613: Taxonomy menu items don't respect the UI.
    */
   public function testD8Core2613Terms(AcceptanceTester $I) {
@@ -144,6 +160,8 @@ class PersonCest {
       'vid' => 'stanford_person_types',
       'parent' => ['target_id' => $foo->id()],
     ], 'taxonomy_term');
+
+    drupal_flush_all_caches();
 
     $I->amOnPage('/people');
     $I->canSeeLink('Foo');
@@ -174,8 +192,35 @@ class PersonCest {
       'vid' => 'stanford_person_types',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
+  }
+
+  /**
+   * Unpublished profiles should not display in the list.
+   */
+  public function testPublishedStatus(AcceptanceTester $I) {
+    $foo = $I->createEntity([
+      'name' => 'Foo',
+      'vid' => 'stanford_person_types',
+    ], 'taxonomy_term');
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $I->createEntity([
+      'type' => 'stanford_person',
+      'su_person_first_name' => "John",
+      'su_person_last_name' => "Wick",
+      'su_person_type_group' => $foo->id(),
+    ]);
+    drupal_flush_all_caches();
+    $I->logInWithRole('administrator');
+    drupal_flush_all_caches();
+    $I->amOnPage('/people/foo');
+    $I->canSee($node->label());
+    $node->setUnpublished()->save();
+
+    drupal_flush_all_caches();
+    $I->amOnPage('/people/foo');
+    $I->cantSee($node->label());
   }
 
 }

@@ -1,0 +1,46 @@
+@charset 'UTF-8';
+
+// Information about the article collection.
+.soe-article-collection__term-content {
+  background: #efefef;
+  padding: 1em;
+  width: 100%;
+
+  .article-collection {
+    &.su-collect-subtitle {
+      h2 {
+        text-align: center;
+        max-width: 50ch;
+        margin-bottom: 2em;
+        margin-top: 1em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &.description {
+      p {
+        text-align: center;
+        margin: auto;
+        max-width: 100ch;
+      }
+    }
+  }
+}
+
+// Card grid on the term page
+// Here we have four evenly spaced cards
+// per row.
+.view {
+  &.magazine-article-collection {
+    &.block-5 {
+      .card-grid__row {
+        .card-grid__column {
+          flex: 1 1 25%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

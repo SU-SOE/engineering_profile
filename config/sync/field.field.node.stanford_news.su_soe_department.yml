@@ -1,0 +1,29 @@
+uuid: 1dbe33d3-05fb-4774-9f57-490a2828639a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_soe_department
+    - node.type.stanford_news
+    - taxonomy.vocabulary.department
+id: node.stanford_news.su_soe_department
+field_name: su_soe_department
+entity_type: node
+bundle: stanford_news
+label: Department
+description: 'These terms identify the departments associated with this article.  Select one or more department.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department: department
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

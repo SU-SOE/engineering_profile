@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.view {
+  &.magazine-issues {
+
+    h3 {
+      @include type-a;
+      text-align: center;
+      margin: auto;
+      @include modular-spacing("margin-top", 1);
+      @include modular-spacing("margin-bottom", 1);
+
+      a {
+        color: $soe-black;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    header {
+      h1 {
+        color: $soe-header-grey;
+        font-size: 1.3em;
+        text-align: center;
+      }
+    }
+  }
+}
+

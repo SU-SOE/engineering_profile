@@ -12,7 +12,7 @@ class RolesCest {
    */
   public function testRolesExist(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
-    $I->amOnPage('/admin/people/roles');
+    $I->amOnPage('/admin/users/roles');
     $I->canSee('Contributor');
     $I->canSee('Site Editor');
     $I->canSee('Site Manager');
@@ -77,8 +77,8 @@ class RolesCest {
     $this->runLinkExistCheck($I, $links);
 
     $links = [
-      'Local Footer',
-      'Site Settings',
+      '/admin/config/system/local-footer' => 'Local Footer',
+      '/admin/config/system/basic-site-settings' => 'Site Settings',
     ];
     $this->runLinkExistCheck($I, $links, FALSE);
 
@@ -110,8 +110,8 @@ class RolesCest {
     $this->runLinkExistCheck($I, $links);
 
     $links = [
-      'Local Footer',
-      'Site Settings',
+      '/admin/config/system/local-footer' => 'Local Footer',
+      '/admin/config/system/basic-site-settings' => 'Site Settings',
     ];
     $this->runLinkExistCheck($I, $links, FALSE);
 
@@ -230,7 +230,7 @@ class RolesCest {
         continue;
       }
 
-      $I->cantSeeLink($link_text, $path);
+      $I->cantSeeLink($link_text, $path ?? '');
     }
   }
 

@@ -27,7 +27,7 @@ class EventsCest {
   public function testXMLSiteMap(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/search/xmlsitemap/settings/node/stanford_event');
-    $I->seeOptionIsSelected("#edit-xmlsitemap-status", "Excluded");
+    $I->seeOptionIsSelected("#edit-xmlsitemap-status", "Included");
     $I->seeOptionIsSelected("#edit-xmlsitemap-priority", "0.5 (normal)");
   }
 
@@ -207,15 +207,52 @@ class EventsCest {
       'vid' => 'event_audience',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
 
     $term = $I->createEntity([
       'vid' => 'stanford_event_types',
       'name' => 'Foo',
     ], 'taxonomy_term');
-    $I->amOnPage($term->toUrl('edit')->toString());
+    $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->cantSee('Published');
+  }
+
+  /**
+   * Clone events get incremented date.
+   */
+  public function testClone(AcceptanceTester $I) {
+    $user = $I->createUserWithRoles(['contributor']);
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $this->createEventNode($I);
+    $node->set('uid', $user->id())->save();
+    $original_date_time = (int) $node->get('su_event_date_time')[0]->get('value')
+      ->getString();
+    $I->logInAs($user->getAccountName());
+    $I->amOnPage('/admin/content');
+
+    $I->checkOption('[name="views_bulk_operations_bulk_form[0]"]');
+    $I->selectOption('Action', 'Clone selected content');
+    $I->click('Apply to selected items');
+    $I->selectOption('Clone how many times', 2);
+    $I->selectOption('Increment Amount', '3');
+    $I->selectOption('Units', 'Month');
+    $I->click('Apply');
+
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $nids = $node_storage->getQuery()
+      ->condition('type', 'stanford_event')
+      ->sort('nid', 'DESC')
+      ->range(0, 1)
+      ->accessCheck(FALSE)
+      ->execute();
+    $cloned_node = $node_storage->load(reset($nids));
+    $cloned_date_time = $cloned_node->get('su_event_date_time')[0]->get('value')
+      ->getString();
+
+    $I->assertNotEquals($cloned_date_time, $original_date_time);
+    $diff = $cloned_date_time - $original_date_time;
+    $I->assertEquals(6, round($diff / (60 * 60 * 24 * 30.5)));
   }
 
   /**
@@ -267,7 +304,10 @@ class EventsCest {
         "address_line2" => "",
         "organization" => "Asfdasdfa sdfasd fasf",
       ],
-      'su_event_map_link' => 'https://stanford.edu/',
+      'su_event_map_link' => [
+        'uri' => 'https://stanford.edu/',
+        'title' => 'map link',
+      ],
       'su_event_sponsor' => [
         'This is a sponsor',
         'This is two sponsor',

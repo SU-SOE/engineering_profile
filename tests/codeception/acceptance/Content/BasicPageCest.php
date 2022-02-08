@@ -57,7 +57,7 @@ class BasicPageCest {
     $I->canSeeResponseCodeIs(404);
     $I->canSeeNumberOfElements('h1', 1);
 
-    $I->amOnPage('/search/content?keys=stuff&search=');
+    $I->amOnPage('/search?keys=stuff&search=');
     $I->canSeeResponseCodeIs(200);
     $I->canSeeNumberOfElements('h1', 1);
   }
@@ -73,6 +73,87 @@ class BasicPageCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->click('Version History');
     $I->canSeeResponseCodeIs(200);
+  }
+
+  /**
+   * There should be Page Metadata fields
+   */
+  public function testPageDescription(AcceptanceTester $I) {
+    $faker = Factory::create();
+    $title = $faker->text(20);
+    $description = $faker->text(100);
+    $I->logInWithRole('site_manager');
+    $I->amOnPage('/node/add/stanford_page');
+    $I->see('Page Metadata');
+    $I->see('Page Image');
+    $I->see('Basic Page Type');
+    $I->fillField('Title', $title);
+    $I->fillField('Page Description', $description);
+    $I->selectOption('Basic Page Type (experimental)', 'Research Project');
+    $I->click('Save');
+    $I->seeInSource('<meta name="description" content="' . $description . '" />');
+  }
+
+  /**
+   * Test that the vocabulary and default terms exist.
+   */
+  public function testBasicPageVocabularyTermsExists(AcceptanceTester $I) {
+    $I->logInWithRole('site_manager');
+    $I->amOnPage("/admin/structure/taxonomy/manage/basic_page_types/overview");
+    $I->canSeeResponseCodeIs(200);
+    $I->canSee('Research Project');
+    $I->amOnPage("/admin/structure/taxonomy/manage/basic_page_types/add");
+    $I->canSeeResponseCodeIs(200);
+    $I->fillField('Name', 'Test Basic Page Term');
+    $I->click('Save');
+    $I->canSee('Created new term');
+  }
+
+  /**
+   * A site manager should be able to place a page under an unpublished page.
+   */
+  public function testUnpublishedMenuItems(AcceptanceTester $I) {
+    $I->logInWithRole('site_manager');
+    $I->amOnPage('/node/add/stanford_page');
+    $I->fillField('Title', 'Unpublished Parent');
+    $I->checkOption('Provide a menu link');
+    $I->fillField('Menu link title', 'Unpublished Parent');
+    $I->uncheckOption('Published');
+    $I->click('Save');
+    $I->canSee('Unpublished Parent', 'h1');
+
+    $I->amOnPage('/node/add/stanford_page');
+    $I->fillField('Title', 'Child Page');
+    $I->checkOption('Provide a menu link');
+    $I->fillField('Menu link title', 'Child Page');
+    $I->selectOption('Parent link', '-- Unpublished Parent');
+    $I->click('Change parent (update list of weights)');
+    $I->uncheckOption('Published');
+    $I->click('Save');
+    $I->canSee('Child Page', 'h1');
+
+    $I->click('Edit', '.tabs__tab');
+    $I->click('Save');
+    $I->assertEquals('/unpublished-parent/child-page', $I->grabFromCurrentUrl());
+  }
+
+  /**
+   * Clone a basic page.
+   */
+  public function testClone(AcceptanceTester $I) {
+    $I->logInWithRole('contributor');
+    $I->amOnPage('/node/add/stanford_page');
+    $I->fillField('Title', 'Original Node');
+    $I->click('Save');
+    $I->amOnPage('/admin/content');
+    $I->canSee('Original Node');
+    $I->checkOption('[name="views_bulk_operations_bulk_form[0]"]');
+    $I->selectOption('Action', 'Clone selected content');
+    $I->click('Apply to selected items');
+    $I->selectOption('Clone how many times', 2);
+    $I->click('Apply');
+    $links = $I->grabMultiple('a:contains("Original Node")');
+    $I->assertCount(3, $links);
   }
 
 }

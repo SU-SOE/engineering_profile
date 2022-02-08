@@ -1,0 +1,84 @@
+uuid: 460af33b-7e38-4055-b78c-30b8220ec638
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.su_term_components
+    - paragraphs.paragraphs_type.stanford_card
+    - paragraphs.paragraphs_type.stanford_gallery
+    - paragraphs.paragraphs_type.stanford_image_cta
+    - paragraphs.paragraphs_type.stanford_lists
+    - paragraphs.paragraphs_type.stanford_media_caption
+    - paragraphs.paragraphs_type.stanford_schedule
+    - paragraphs.paragraphs_type.stanford_spacer
+    - paragraphs.paragraphs_type.stanford_wysiwyg
+    - taxonomy.vocabulary.article_collection
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.article_collection.su_term_components
+field_name: su_term_components
+entity_type: taxonomy_term
+bundle: article_collection
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      stanford_card: stanford_card
+      stanford_gallery: stanford_gallery
+      stanford_image_cta: stanford_image_cta
+      stanford_lists: stanford_lists
+      stanford_media_caption: stanford_media_caption
+      stanford_schedule: stanford_schedule
+      stanford_spacer: stanford_spacer
+      stanford_wysiwyg: stanford_wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      stanford_accordion:
+        weight: 15
+        enabled: false
+      stanford_banner:
+        weight: 16
+        enabled: false
+      stanford_card:
+        weight: 17
+        enabled: true
+      stanford_cta_list:
+        weight: 18
+        enabled: false
+      stanford_entity:
+        weight: 19
+        enabled: false
+      stanford_gallery:
+        weight: 20
+        enabled: true
+      stanford_image_cta:
+        weight: 21
+        enabled: true
+      stanford_lists:
+        weight: 22
+        enabled: true
+      stanford_media_caption:
+        weight: 23
+        enabled: true
+      stanford_person_cta:
+        weight: 24
+        enabled: false
+      stanford_schedule:
+        weight: 25
+        enabled: true
+      stanford_spacer:
+        weight: 26
+        enabled: true
+      stanford_stories:
+        weight: 27
+        enabled: false
+      stanford_wysiwyg:
+        weight: 28
+        enabled: true
+field_type: entity_reference_revisions

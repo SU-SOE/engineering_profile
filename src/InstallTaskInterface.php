@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\soe_profile;
+namespace Drupal\engineering_profile;
 
 /**
  * Install task plugin interface.
  *
- * @package Drupal\soe_profile
+ * @package Drupal\engineering_profile
  */
 interface InstallTaskInterface {
 

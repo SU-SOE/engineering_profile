@@ -1,0 +1,104 @@
+uuid: ca26b15a-2a7c-4bb7-b458-2edfcbe40935
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.stanford_card
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_people_spotlight_quote
+    - field.field.node.spotlight.su_soe_department
+    - field.field.node.spotlight.su_spotlight_affiliation
+    - field.field.node.spotlight.su_spotlight_degrees
+    - field.field.node.spotlight.su_spotlight_feature_image
+    - field.field.node.spotlight.su_spotlight_person_title
+    - node.type.spotlight
+  module:
+    - ds
+    - element_class_formatter
+    - field_formatter_class
+    - layout_builder
+    - stanford_fields
+    - stanford_media
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: no_classes
+      settings:
+        pattern:
+          field_templates: default
+          variant: default
+    regions:
+      card_image:
+        - su_spotlight_feature_image
+      card_super_headline:
+        - node_title
+      card_headline:
+        - su_spotlight_person_title
+      card_body:
+        - su_people_spotlight_quote
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.spotlight.stanford_card
+targetEntityType: node
+bundle: spotlight
+mode: stanford_card
+content:
+  su_people_spotlight_quote:
+    type: wrapper_class
+    label: hidden
+    settings:
+      class: ''
+      tag: p
+      link: false
+      link_class: ''
+      summary: false
+      trim: 200
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: card_body
+  su_spotlight_feature_image:
+    type: media_image_formatter
+    label: hidden
+    settings:
+      view_mode: stanford_image_stanford_circle
+      link: false
+      image_style: stanford_circle
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: card_image
+  su_spotlight_person_title:
+    type: entity_title_heading
+    label: hidden
+    settings:
+      tag: h2
+      linked: false
+    third_party_settings: {  }
+    weight: 2
+    region: card_headline
+hidden:
+  body: true
+  links: true
+  search_api_excerpt: true
+  su_soe_department: true
+  su_spotlight_affiliation: true
+  su_spotlight_degrees: true

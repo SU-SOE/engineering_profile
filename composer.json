@@ -1,5 +1,5 @@
 {
-    "name": "su-soe/soe_profile",
+    "name": "su-soe/engineering_profile",
     "description": "Installation Profile for the Stanford Webservice's Jumpstart Product.",
     "type": "drupal-custom-profile",
     "license": "GPL-2.0-or-later",
@@ -8,7 +8,14 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": [
+                "drupal/printable"
+            ]
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/printable"
         },
         {
             "type": "package",
@@ -98,16 +105,27 @@
     "require": {
         "ext-imagick": "*",
         "composer/installers": "^1.2",
+        "drupal/editoria11y": "^1.0",
+        "drupal/memcache": "^2.3",
+        "drupal/typogrify": "^1.1",
+        "drupal/printable": "^2.0",
+        "drupal/views_autosubmit": "^1.4",
+        "drupal/views_data_export": "^1.0",
+        "drupal/views_bulk_edit": "^2.6",
+        "su-sws/stanford_actions": "^8.2",
         "su-soe/soe_basic": "^8.1",
         "su-soe/soe_paragraphs": "^8.1",
-        "su-sws/stanford_profile": "^8.2"
+        "su-soe/soe_profile": "^8.2"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "preferred-install": {
+            "drupal/printable": "source"
+        }
     },
     "autoload": {
         "psr-4": {
-            "Drupal\\soe_profile\\": "src/"
+            "Drupal\\engineering_profile\\": "src/"
         }
     },
     "extra": {
@@ -116,6 +134,7 @@
                 "drush.services.yml": "^9"
             }
         },
+        "enable-patching": true,
         "patches": {}
     }
 }

@@ -1,24 +1,24 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Unit\Config;
+namespace Drupal\Tests\engineering_profile\Unit\Config;
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\State\StateInterface;
-use Drupal\soe_profile\Config\ConfigOverrides;
+use Drupal\engineering_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ConfigOverridesTest
  *
- * @group soe_profile
- * @coversDefaultClass \Drupal\soe_profile\Config\ConfigOverrides
+ * @group engineering_profile
+ * @coversDefaultClass \Drupal\engineering_profile\Config\ConfigOverrides
  */
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
-   * @var \Drupal\soe_profile\Config\ConfigOverrides
+   * @var \Drupal\engineering_profile\Config\ConfigOverrides
    */
   protected $overrideService;
 
@@ -83,13 +83,13 @@ class ConfigOverridesTest extends UnitTestCase {
    */
   public function getStateCallback($name) {
     switch ($name) {
-      case 'soe_profile.403_page':
+      case 'engineering_profile.403_page':
         return '/node/403';
 
-      case 'soe_profile.404_page':
+      case 'engineering_profile.404_page':
         return '/node/404';
 
-      case 'soe_profile.front_page':
+      case 'engineering_profile.front_page':
         return '/node/99';
 
     }

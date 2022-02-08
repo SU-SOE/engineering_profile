@@ -1,4 +1,326 @@
-# Stanford Profile
+# Engineering Profile
+
+8.2.6 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-07_
+
+- updated dependencies
+- Drupal 9.3 update
+- Localist URL updates
+- Fixed postdoc vocabulary issue
+
+
+8.2.5 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-12-02_
+
+- updated dependencies
+- fixed simplecast bug
+- added memcache for ace environments.
+
+
+8.2.4 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-27_
+
+- Hotfix -- corrected dependencies
+
+8.2.3 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-27_
+
+- Hotfix -- corrected css aggregation bug
+- removed unnecessary dependency from theme info.yml
+
+
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-27_
+
+- Removed migrations that will no longer be used
+- updated system.performance to cache correctly
+
+8.x-2.20
+--------------------------------------------------------------------------------
+_Release Date: 2022-02-04_
+
+- Fixed event series content width.
+
+8.x-2.19
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-28_
+
+- Fixed search block visibility condition.
+
+8.x-2.18
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-27_
+
+- Updates from stanford_profile (#214)
+- Merge branch 'master' into 8.x-2.x
+- Updates from stanford_profile 2022-01-11
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Added localist url to external source field (#471)
+- Adjust localist end dates for Smart Date "All Day" (#474)
+- Updates from stanford_profile (#209)
+- Added checkbox to hide site search in site settings config page (#472)
+- D8CORE-5183: changes to external links config to skip localist (#473)
+- D8CORE-5119: added help text for the localist import field. (#470)
+- Updates from Stanford Profile 2021-12-10
+- clean config export
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into updates
+- Upgrade drupal core to 9.3.0 with config updates (#469)
+
+8.x-2.17
+--------------------------------------------------------------------------------
+_Release Date: 2022-01-20_
+
+- D8CORE-5266 Update events-legacy importer.
+
+
+8.x-2.15
+--------------------------------------------------------------------------------
+_Release Date: 2021-11-19_
+
+- D8CORE-4521 Localist Events Importer (#463)
+- Change profile helper module weight for priority
+- D8CORE-4677 Use an access token to fetch stanford-only profile images from CAP (#467)
+- D8CORE-4860 Wrap publication importer body text in <p> (#466)
+- D8CORE-4996 Remove taxonomy term on basic page card and list displays (#465)
+- D8CORE-4246 Add fontawesome module for wysiwyg icon support (#464)
+- D8CORE-4876 Enable ajax on publication list view
+- D8CORE-4824 Disable accordion on event series
+- D8CORE-4878: Added configs for oEmbed Providers module (#462)
+- D8CORE-4871: adding a class to the table element and the aside element (#460)
+- Merge branch 'master' into 8.x-2.x
+- D8CORE-4816 Add configurable allowed tags for unstructured embed (#461)
+
+
+8.x-2.16
+--------------------------------------------------------------------------------
+_Release Date: 2021-11-19_
+
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4521 Localist Events Importer (#463)
+- Change profile helper module weight for priority
+- enabled stable9 theme in core.extension
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4677 Use an access token to fetch stanford-only profile images from CAP (#467)
+- D8CORE-4860 Wrap publication importer body text in <p> (#466)
+- D8CORE-4996 Remove taxonomy term on basic page card and list displays (#465)
+- Updates from stanford_profile 2021-11-12
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4246 Add fontawesome module for wysiwyg icon support (#464)
+- D8CORE-4876 Enable ajax on publication list view
+- D8CORE-4824 Disable accordion on event series
+- D8CORE-4878: Added configs for oEmbed Providers module (#462)
+- D8CORE-4871: adding a class to the table element and the aside element (#460)
+- Merge branch 'master' into 8.x-2.x
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Merge branch 'master' into 8.x-2.x
+- 8.2.14
+- 8.2.14
+- D8CORE-4816 Add configurable allowed tags for unstructured embed (#461)
+
+
+8.x-2.15
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-08_
+
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Added publications help text
+- Updates from stanford_profile 2021-10-08
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Index intranet content (#458)
+- Updates from stanford_profile 2021-10-07
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- adjusted publication importer label
+- Updates from stanford_profile 2021-10-05
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Add citation to clonable entities
+- Updates from stanford_profile 2021-09-30
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- tweaks to publication csv importer for easier data
+- Added site manager permission to import publications
+- Updates from stanford_profile 2021-09-29
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Exported config after database updates with latest contrib
+- D8CORE-3749 Publication CSV importer
+- D8CORE-4693 Filter events by the second instead of the day (#457)
+- Updates from stanford_profile 2021-09-25
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4759 add specific view mode for search indexing for better control (#454)
+- D8CORE-4096 Updated help section text (#455)
+- Updates from stanford_profile (#192)
+- D8CORE-3026 added and configured stanford_actions (#453)
+- Updates from stanford_profile 2021-09-18
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Added layout builder role (#451)
+- Updates from stanford_profile 2021-09-16
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Configure the new media embeddable validator (#450)
+- Merge branch 'master' into 8.x-2.x
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Merge branch 'master' into 8.x-2.x
+- 8.2.13
+- 8.2.13
+- D8CORE-4534: adding a skip anchor block to the filtered pub page (#437)
+- D8CORE-4534: adding a skip anchor block to the filtered pub page (#437)
+- Updates from stanford_profile (#187)
+- D8CORE-4749 Add and configure views bulk edit (#449)
+
+8.2.1 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-14_
+
+- Fixup for robots metatags
+
+8.2.0 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2021-10-12_
+
+- Initial production release for School of Engineering.
+
+8.x-2.14
+--------------------------------------------------------------------------------
+_Release Date: 2021-09-14_
+
+- D8CORE-4534: adding a skip anchor block to the filtered pub page
+
+8.x-2.13
+--------------------------------------------------------------------------------
+_Release Date: 2021-09-10_
+
+- Updates from stanford_profile 2021-09-10
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- Merge branch 'master' into 8.x-2.x
+- 8.2.12
+- 8.2.11
+- 8.2.11
+- D8CORE-4643 Swapped out the "menu block" block with a regular "menu" block (#446)
+
+
+8.x-2.12
+--------------------------------------------------------------------------------
+_Release Date: 2021-09-03_
+
+- Updates from stanford_profile (#182)
+- Updates from stanford_profile 2021-08-10
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4653 Add editoria11y module with permissions for contributors (#445)
+- Updates from stanford_profile 2021-08-05
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4681 Enabled rabbit hole taxonomy support (#443)
+- D8CORE-4350 Sort publications by month and day along with year (#444)
+- CAW21-82 Build accordion paragraph component (#440)
+- D8CORE-2277: updated fields help text (#441)
+- D8CORE-2278: Tweaks to Event Series help text (#442)
+- Updates from stanford_profile 2021-07-30
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
+- D8CORE-4668 Allow new google analytics account id format `G-` (#439)
+
+8.x-2.11
+--------------------------------------------------------------------------------
+_Release Date: 2021-07-09_
+
+- Updates from stanford_profile (#175) (940a941)
+- Updates from stanford_profile 2021-07-07 (c93e43b)
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (bcad403)
+- D8CORE-4497 Replaced <h3> with <p> in views no results text (0610b19)
+- D8CORE-4235 Require alt text on gallery images (#433) (758231d)
+- Updates from stanford_profile 2021-07-03 (b5b799b)
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (506de8b)
+- Updates from stanford_profile (#172) (ba4c8e6)
+- D8CORE-4504 Added mathjax for latex formula support (#434) (879cbb6)
+- D8CORE-4194 Add url text for the link on media w caption paragraph (#423) (1122ead)
+- Updates from stanford_profile 2021-07-01 (1f57e2c)
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (b839e04)
+- Added and enabled the PDB module (#432) (de890ff)
+- Updates from stanford_profile (#169) (85353f2)
+- D8CORE-4378: adding the skip to main content on these list page layouts that were missing (#431) (fc11f09)
+- Corrected the events schedule display settings for the pattern refactor (aff23dc)
+- Updates from stanford_profile 2021-06-24 (754ba5c)
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (2f9ffbf)
+- Exported configs after Drupal 9.2.0 upgrade (#429) (a81ffde)
+
+8.x-2.10
+--------------------------------------------------------------------------------
+_Release Date: 2021-06-11_
+
+- Stanford Profile updates 2021-06-09 (01f2213)
+- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into updates-2021-06-09 (cb0baf5)
+- Corrected acceptance tests with the latest dependency updates (#427) (30c2d25)
+- D8CORE-4090 D8CORE-2888 D8CORE-4126: accessbility changes to the news modules. (#425) (b0f2e0d)
+- Updates from stanford_profile 2021-05-29 (d6bac68)
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (3862436)
+- D8CORE-4339 Allow restriction based on the persons affiliation to the university (#424) (15ea056)
+- Updates from stanford_profile 2021-05-27 (f3497e1)
+- Corrected search blocks (0e08393)
+- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (8f43337)
+- D8CORE-2520 reset configs for events refactored patterns (#416) (54d8f44)
+- D8CORE-3158 Enable more paragraph components on news and people (#420) (4bf9741)
+- D8CORE-4245 Disable search module since search api exists (#421) (ceaf186)
+- D8CORE-2898 Removed the headline field in favor of title field (#422) (0fe5ada)
+- Updated stanford_ssp dev version to 2.x (d820722)
+
+8.x-2.9
+--------------------------------------------------------------------------------
+_Release Date: 2021-05-18_
+
+- Disabled banner paragraph behavior.
+
+8.x-2.8
+--------------------------------------------------------------------------------
+_Release Date: 2021-05-07_
+
+- D8CORE-4145: adding the margin bottom to the intro for events. (#410) (e07a55a)
+- D8CORE-3523: Added User Search form (#412) (3167707)
+- D8CORE-4093: removing the margin top from the button on lists (#405) (d8d588e)
+- D8CORE-3951: fixing the pagination to the infinite scroll and a Load More button (#411) (751a62b)
+- D8CORE-3970: removed the extra h2 (#409) (a964622)
+- Adjusted citation author fields to prevent only first name data entry (911a7ef)
+- D8CORE-3104 D8CORE-3455 D8CORE-3456 D8CORE-3981 Help text and form tweaks (#408) (97b2d2e)
+- D8CORE-2729 enable the hero banner behavior (#407) (1a9da8b)
+
+8.x-2.7
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-21_
+
+- Changed the news card image back to a 2:1 ratio.
+
+8.x-2.6
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-19_
+
+- Added experimental label to basic page types field and view
+- D8CORE-4068 Allow publication authors to have only one name part (#402)
+
+8.x-2.5
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-19_
+
+- Hotfix for tweaks to basic page+ functionality
+- disabled "Preview" button on node form
+- D8CORE-3480 Disallow image gallery media in the wysiwyg.
+
+8.x-2.4
+--------------------------------------------------------------------------------
+_Release Date: 2021-04-12_
+
+- D8CORE-3254: Basic Page+ with views and teaser display (#388)
+- Allow users to change the taxonomy term description text
+- D8CORE-2572 Added and configured content_lock to prevent simultaneous edits (#395)
+- D8CORE-2766: Don't require the field on the global message form. (#357)
+- D8CORE-4033: updated view config to allow filtering past events lists (#397)
+- D8CORE-3953 Replace "whitelist" with "allowed" for stanford_ssp (#394)
+- D8CORE-4020: fix double h2 tags (#396)
+- D8CORE-2853 test for unpublishing the home page (#392)
+- D8CORE-3538 Add "Other" citation type (#390)
+- D8CORE-3458 Dont display unpublished profiles in the lists (#389)
+- D8CORE-3945 Changed the news card image style for better resolution
+- Corrected dependency in composer.json
+- D8CORE-3536 Display publications as a teaser in the paragraph (#387)
+- D8CORE-3947: adding classes to the filtered by for publications in order to style them (#386)
+- D8CORE-3126 Intranet Configs (#379)
 
 8.x-2.3
 --------------------------------------------------------------------------------
