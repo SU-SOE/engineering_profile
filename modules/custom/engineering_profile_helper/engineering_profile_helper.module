@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -34,6 +36,40 @@ function engineering_profile_form_views_exposed_form_alter(&$form, &$form_state)
     $form['tid']['#options']["All"] = t('All Departments');
     $form['tid_1']['#options']["All"] = t('All People');
   }
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function engineering_profile_helper_preprocess_views_view_field(&$vars){
+  if (isset($vars['view']) && ($vars['view']->id() == 'spotlights')) {
+    if ($vars['field']->field == 'su_people_spotlight_quote') {
+      // Modify the field for the regular view
+      if ($vars['view']->current_display == 'block_1') {
+        $new_output = _engineering_profile_helper_trim_spotlight_quote($vars['output']);
+        $vars['output'] = Markup::create($new_output);
+      }
+      // Modify the field for the highlighted view at the top of the landing page
+      if ($vars['view']->current_display == 'block_2') {
+        $html = Html::load($vars['output']);
+        $new_output = _engineering_profile_helper_trim_spotlight_quote($html->getElementsByTagName('div')->item(0)->nodeValue);
+        $html->getElementsByTagName('div')->item(0)->nodeValue = $new_output;
+        $vars['output'] = Markup::create($html->saveHTML($html->getElementsByTagName('div')->item(0)));
+      }
+    }
+  }
+}
+
+/**
+ * Trim down content for Spotlight quotes for use in Views.
+ *
+ * @param string $quote The full string value to truncate
+ *
+ */
+function _engineering_profile_helper_trim_spotlight_quote(string $quote) {
+  $string_array = explode("::", wordwrap(trim($quote), 100, "::"));
+  $trimmed_punct = trim($string_array[0], '?!.');
+  return $trimmed_punct . ' &hellip;';
 }
 
 
