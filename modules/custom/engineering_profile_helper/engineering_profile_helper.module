@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -33,6 +35,78 @@ function engineering_profile_form_views_exposed_form_alter(&$form, &$form_state)
   if($form["#id"] == 'views-exposed-form-spotlights-block-1'){
     $form['tid']['#options']["All"] = t('All Departments');
     $form['tid_1']['#options']["All"] = t('All People');
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function engineering_profile_helper_preprocess_views_view_field(&$vars){
+  if (isset($vars['view']) && ($vars['view']->id() == 'spotlights')) {
+    if ($vars['field']->field == 'su_people_spotlight_quote') {
+      // Modify the field for the regular view
+      if ($vars['view']->current_display == 'block_1') {
+        $new_output = _engineering_profile_helper_trim_spotlight_quote($vars['output']);
+        $vars['output'] = Markup::create($new_output);
+      }
+      // Modify the field for the highlighted view at the top of the landing page
+      if ($vars['view']->current_display == 'block_2') {
+        // we have to do this one as HTML.
+        $html = Html::load($vars['output']);
+        $new_output = _engineering_profile_helper_trim_spotlight_quote($html->getElementsByTagName('div')->item(0)->nodeValue);
+        $html->getElementsByTagName('div')->item(0)->nodeValue = $new_output;
+        $vars['output'] = Markup::create($html->saveHTML($html->getElementsByTagName('div')->item(0)));
+      }
+    }
+  }
+}
+
+/**
+ * Trim down content for Spotlight quotes for use in Views.
+ *
+ * @param string $quote The full string value to truncate
+ *
+ */
+function _engineering_profile_helper_trim_spotlight_quote(string $quote) {
+  // Break the string at 100 characters, and explode that into an array.
+  $string_array = explode("::", wordwrap(trim($quote), 100, "::"));
+  // Take the first element of the array, and trim any EOL punctuation
+  $trimmed_punct = trim($string_array[0], '?!.');
+  // Add an ellipsis and return.
+  return $trimmed_punct . ' &hellip;';
+}
+
+/**
+* Implements hook_preprocess_HOOK().
+*/
+function engineering_profile_helper_preprocess_spotlight_header_layout(&$vars) {
+  if (!empty($vars['content']['spotlight_hero_text'])) {
+    // In the case there is a degree and department, we need to merge them together
+    // on to a single line. We do so here so as not to break the Layout for the node page.
+
+    $spotlight_hero_text = &$vars['content']['spotlight_hero_text'];
+
+    foreach ($spotlight_hero_text as $key => $field) {
+      if (!empty($field['content']) && $field['content']['#field_name'] == 'su_spotlight_degrees') {
+        $degrees = &$spotlight_hero_text[$key];
+
+      }
+      if (!empty($field['content']) && $field['content']['#field_name'] == 'su_soe_department') {
+        $department = &$spotlight_hero_text[$key];
+        $department_key = $key;
+      }
+    }
+
+    if (!empty($degrees) && !empty($department)) {
+      // We need to concat the values.
+      $degrees_text = $degrees['content'][0]['#context']['value'];
+      $department_text = $department['content'][0]['#plain_text'];
+      $final_value = $degrees_text . ', ' . $department_text;
+      $degrees['content'][0]['#context']['value'] = $final_value;
+      // Get rid of the department field, since we now have this data in
+      // the Degrees field.
+      unset($spotlight_hero_text[$department_key]);
+    }
   }
 }
 

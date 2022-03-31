@@ -31,6 +31,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - scheduler
     - stanford_publication
     - system
     - taxonomy
@@ -172,6 +173,7 @@ permissions:
   - 'revert stanford_page revisions'
   - 'revert stanford_person revisions'
   - 'revert stanford_publication revisions'
+  - 'schedule publishing of nodes'
   - 'update media'
   - 'use views bulk edit'
   - 'view all media revisions'
