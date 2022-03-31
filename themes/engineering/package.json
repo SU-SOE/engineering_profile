@@ -51,5 +51,5 @@
 	},
 	"description": "=========================== How to Use Grunt with Stanford Module Example ===========================",
 	"author": "Stanford Web Services",
-	"license": "GPLV2"
+	"license": "GPL-2.0-or-later"
 }
