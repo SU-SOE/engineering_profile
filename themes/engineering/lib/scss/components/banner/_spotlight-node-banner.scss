@@ -45,6 +45,7 @@
       @include type-c;
 
       font-weight: $su-font-regular;
+      max-width: 40ch;
     }
 
     h1 {
