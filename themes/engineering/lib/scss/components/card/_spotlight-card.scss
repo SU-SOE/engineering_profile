@@ -18,13 +18,15 @@
       @include responsive-spacing('margin-bottom', 7);
     }
 
+
+
     display: flex;
 
     @include grid-media-max('lg') {
       &.flex-container {
         display: block;
 
-        > div {
+        >div {
           max-width: 100%;
         }
       }
@@ -63,9 +65,9 @@
     }
   }
 
-  // Styles for the grid of cards. 
+  // Styles for the grid of cards.
   .su-card__contents {
-    
+
     h2 {
       @include type-d;
       @include responsive-spacing('margin-bottom', -1);
@@ -115,12 +117,12 @@
         @include responsive-spacing('margin-bottom', -1);
         font-weight: $su-font-black;
 
-        
+
       }
-      
+
       .soe--person-title {
         @include type-c;
-  
+
         font-weight: $su-font-regular;
       }
 
@@ -131,13 +133,26 @@
       }
 
     }
-    
+
     .su-link {
       @include responsive-spacing('padding-top', 2);
       @include type-d;
-  
+
       font-weight: $su-font-semi-bold;
       margin-top: 0;
+    }
+  }
+}
+
+// Overrides for list paragraph
+.viewfield-block__cardgrid {
+  .soe-spotlight--cards {
+    .views-row {
+
+      @include grid-media-min('xl') {
+        @include responsive-spacing('margin-bottom', 1);
+      }
+
     }
   }
 }

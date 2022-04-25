@@ -8,6 +8,7 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
+    - node.type.spotlight
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news

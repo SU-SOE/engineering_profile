@@ -73,8 +73,15 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
-      selected: {  }
+      default: false
+      selected:
+        - spotlight
+        - stanford_event
+        - stanford_event_series
+        - stanford_news
+        - stanford_page
+        - stanford_person
+        - stanford_publication
     languages:
       default: true
       selected: {  }
@@ -85,12 +92,14 @@ processor_settings:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  entity_type: {  }
   highlight:
     weights:
       postprocess_query: 0
     prefix: '<strong>'
     suffix: '</strong>'
     excerpt: true
+    excerpt_always: false
     excerpt_length: 256
     exclude_fields: {  }
     highlight: always
@@ -201,4 +210,5 @@ tracker_settings:
 options:
   cron_limit: 50
   index_directly: true
+  track_changes_in_references: false
 server: database_search
