@@ -156,3 +156,56 @@
     }
   }
 }
+
+// For teasers, we use the Card display mode, with some additional adjustments.
+.ds-entity--spotlight {
+  .su-card {
+
+    .engineering-accent-color__image {
+      @include responsive-spacing('margin-top', 1);
+    }
+
+    img {
+      border-radius: 50%;
+      border-width: 5px;
+      border-style: solid;
+      display: block;
+      margin: auto;
+    }
+
+    h2 {
+      @include type-d;
+      @include responsive-spacing('margin-bottom', -1);
+
+      font-weight: $su-font-black;
+    }
+
+    .soe--person-title {
+      @include type-d;
+
+      font-weight: $su-font-regular;
+    }
+
+    .soe-quote {
+      @include type-c;
+      font-size: 1em;
+      font-weight: $su-font-bold;
+
+    }
+
+    .node-link {
+      @include responsive-spacing('margin-top', 4);
+    }
+
+    .su-link {
+
+      @include type-d;
+      font-weight: $su-font-semi-bold;
+      color: $soe-link-color;
+
+      :hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
