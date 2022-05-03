@@ -115,7 +115,10 @@
         "su-sws/stanford_actions": "^8.2",
         "su-soe/soe_basic": "^8.1",
         "su-soe/soe_paragraphs": "^8.1",
-        "su-soe/soe_profile": "^8.3.2"
+        "su-soe/soe_profile": "8.3.2",
+        "su-sws/stanford_news": "8.2.20",
+        "su-sws/stanford_person": "8.1.18",
+        "su-sws/stanford_publications": "8.1.3"
     },
     "config": {
         "sort-packages": true,
