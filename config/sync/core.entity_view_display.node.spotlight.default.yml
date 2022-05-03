@@ -16,6 +16,7 @@ dependencies:
   module:
     - jumpstart_ui
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
     - layout_library
     - user
@@ -75,7 +76,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: spotlight-banner-text__header
-            weight: 0
+            weight: -10
             additional: {  }
           63d93c8e-eb7c-44f1-9bed-188a48aabf70:
             uuid: 63d93c8e-eb7c-44f1-9bed-188a48aabf70
@@ -96,28 +97,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 1
-            additional: {  }
-          a704578a-b413-4b74-a71e-43967f0ba5cb:
-            uuid: a704578a-b413-4b74-a71e-43967f0ba5cb
-            region: spotlight_hero_text
-            configuration:
-              id: 'field_block:node:spotlight:su_spotlight_degrees'
-              label: Degrees
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: 2
+            weight: -9
             additional: {  }
           3f3c9a5f-b8bc-4ce5-930e-4c8942b34819:
             uuid: 3f3c9a5f-b8bc-4ce5-930e-4c8942b34819
@@ -138,7 +118,49 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 3
+            weight: -6
+            additional: {  }
+          a704578a-b413-4b74-a71e-43967f0ba5cb:
+            uuid: a704578a-b413-4b74-a71e-43967f0ba5cb
+            region: spotlight_hero_text
+            configuration:
+              id: 'field_block:node:spotlight:su_spotlight_degrees'
+              label: Degrees
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: -7
+            additional: {  }
+          756b83ac-6771-4e9e-8345-1ef0f54ef67c:
+            uuid: 756b83ac-6771-4e9e-8345-1ef0f54ef67c
+            region: spotlight_hero_text
+            configuration:
+              id: 'field_block:node:spotlight:su_spotlight_person_title'
+              label: 'Title of Individual'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: su-spotlight-degrees
+            weight: -8
             additional: {  }
         third_party_settings: {  }
       -
@@ -236,6 +258,13 @@ third_party_settings:
         third_party_settings: {  }
   layout_library:
     enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      blacklisted_blocks: {  }
+      whitelisted_blocks: {  }
+      restricted_categories: {  }
 id: node.spotlight.default
 targetEntityType: node
 bundle: spotlight
