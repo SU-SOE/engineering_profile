@@ -30,11 +30,11 @@ class NewsCest {
     $I->see("Sample: Smith Conference");
     $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
     $I->see("Sample: Stanford researchers find that misfiring from jittery neurons");
-    $I->amOnPage("/news/sample-smith-conference");
+    $I->amOnPage("/magazine/sample-smith-conference");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/news/sample-runners-15-feet-new-6-feet-social-distancing");
+    $I->amOnPage("/magazine/sample-runners-15-feet-new-6-feet-social-distancing");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/news/sample-stanford-researchers-find-misfiring-jittery-neurons");
+    $I->amOnPage("/magazine/sample-stanford-researchers-find-misfiring-jittery-neurons");
     $I->see("This page is currently unpublished and not visible to the public.");
     $I->see("News", ".su-multi-menu");
   }
@@ -94,14 +94,17 @@ class NewsCest {
     $I->createEntity([
       'type' => 'stanford_news',
       'title' => 'Test News 1',
+      'su_magazine_story' => false,
     ]);
     $I->createEntity([
       'type' => 'stanford_news',
       'title' => 'Test News 2',
+      'su_magazine_story' => false,
     ]);
     $I->createEntity([
       'type' => 'stanford_news',
       'title' => 'Test News 3',
+      'su_magazine_story' => false,
     ]);
 
     $I->amOnPage("/news/test-news-2");

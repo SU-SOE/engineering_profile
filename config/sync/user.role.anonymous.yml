@@ -5,6 +5,7 @@ dependencies:
   module:
     - field_permissions
     - media
+    - printable
     - system
     - ui_patterns_library
 _core:

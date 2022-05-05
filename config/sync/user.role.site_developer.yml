@@ -15,14 +15,20 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
+    - node.type.spotlight
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
     - node.type.stanford_page
     - node.type.stanford_person
     - node.type.stanford_publication
+    - taxonomy.vocabulary.affiliation
+    - taxonomy.vocabulary.article_collection
     - taxonomy.vocabulary.basic_page_types
+    - taxonomy.vocabulary.department
     - taxonomy.vocabulary.event_audience
+    - taxonomy.vocabulary.magazine_issues
+    - taxonomy.vocabulary.magazine_topics
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
@@ -40,6 +46,7 @@ dependencies:
     - dropzonejs
     - ds
     - editoria11y
+    - engineering_profile
     - entity_reference_revisions
     - entity_usage
     - environment_indicator
