@@ -113,12 +113,9 @@
         "drupal/views_data_export": "^1.0",
         "drupal/views_bulk_edit": "^2.6",
         "su-sws/stanford_actions": "^8.2",
-        "su-soe/soe_basic": "8.1.20",
+        "su-soe/soe_basic": "8.x-dev",
         "su-soe/soe_paragraphs": "^8.1",
-        "su-soe/soe_profile": "8.3.2",
-        "su-sws/stanford_news": "8.2.20",
-        "su-sws/stanford_person": "8.1.18",
-        "su-sws/stanford_publication": "8.1.13"
+        "su-soe/soe_profile": "8.x-dev"
     },
     "config": {
         "sort-packages": true,
