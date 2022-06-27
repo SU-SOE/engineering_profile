@@ -549,7 +549,7 @@ display:
           alignment: horizontal
           row_class_custom: flex-container
           row_class_default: true
-          col_class_custom: flex-3-of-12
+          col_class_custom: flex-4-of-12
           col_class_default: true
       row:
         type: fields
