@@ -154,3 +154,15 @@
   }
 }
 
+.stanford-news {
+  &.su-soe-department {
+    a {
+      text-decoration: none;
+      color: $magazine-topics-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
