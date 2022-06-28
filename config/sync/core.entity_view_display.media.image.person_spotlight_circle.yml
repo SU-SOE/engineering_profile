@@ -28,6 +28,8 @@ content:
     settings:
       image_link: ''
       image_style: large_headshot_circle
+      image_loading:
+        attribute: lazy
     third_party_settings:
       field_formatter_class:
         class: ''
