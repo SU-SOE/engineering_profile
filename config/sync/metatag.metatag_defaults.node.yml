@@ -7,8 +7,13 @@ _core:
 id: node
 label: Content
 tags:
-  canonical_url: '[node:url]'
   description: '[node:su_page_description]'
+  canonical_url: '[node:url]'
   title: '[node:title] | [site:name]'
   og_image: '[node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:large]'
   og_image_url: '[node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:large]'
+  twitter_cards_title: '[current-page:title] | [site:name]'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_description: '[node:su_page_description]'
+  twitter_cards_image: '[node:su_page_banner:entity:su_banner_image:0:entity:field_media_image:large]'
+  twitter_cards_type: summary
