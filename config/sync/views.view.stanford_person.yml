@@ -545,13 +545,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          columns: 3
-          automatic_width: false
-          alignment: horizontal
-          row_class_custom: flex-container
-          row_class_default: true
-          col_class_custom: flex-4-of-12
-          col_class_default: true
+          row_class: ''
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: 'su-list-unstyled grid-container-3'
       row:
         type: fields
       query:
