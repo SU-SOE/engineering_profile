@@ -46,9 +46,9 @@ class ViewsBulkEditCest {
     foreach ($this->nodes as $node) {
       $I->canSee($node->label());
     }
-    $I->checkOption('News Topics Terms');
+    $I->checkOption('News Types');
     $I->fillField('node[stanford_news][su_news_topics][0][target_id]', 'Foo Bar Baz');
-    $I->checkOption('Event Type');
+    $I->checkOption('Event Types');
     $I->selectOption('node[stanford_event][su_event_type]', 'Foo Bar Baz');
     $I->fillField('node[stanford_event][su_event_date_time][0][time_wrapper][value][date]', date('Y-m-d'));
     $I->fillField('node[stanford_event][su_event_date_time][0][time_wrapper][value][time]', '12:00:00');
