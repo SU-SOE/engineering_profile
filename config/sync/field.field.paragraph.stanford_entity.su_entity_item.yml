@@ -27,6 +27,7 @@ settings:
   handler_settings:
     target_bundles:
       stanford_page: stanford_page
+      stanford_course: stanford_course
       stanford_event: stanford_event
       stanford_event_series: stanford_event_series
       stanford_news: stanford_news

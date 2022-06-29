@@ -27,6 +27,7 @@ dependencies:
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
     - taxonomy.vocabulary.stanford_publication_topics
+    - taxonomy.vocabulary.su_shared_tags
   module:
     - content_lock
     - dropzonejs
@@ -90,6 +91,7 @@ permissions:
   - 'create terms in stanford_news_topics'
   - 'create terms in stanford_person_types'
   - 'create terms in stanford_publication_topics'
+  - 'create terms in su_shared_tags'
   - 'create url aliases'
   - 'create video media'
   - 'delete any embeddable media'
@@ -134,6 +136,7 @@ permissions:
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
   - 'delete terms in stanford_publication_topics'
+  - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
   - 'edit any embeddable media'
   - 'edit any spotlight content'
@@ -185,6 +188,7 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view any unpublished stanford_course content'
   - 'view any unpublished stanford_event content'
   - 'view any unpublished stanford_event_series content'
   - 'view any unpublished stanford_news content'

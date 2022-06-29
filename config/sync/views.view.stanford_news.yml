@@ -11,7 +11,6 @@ dependencies:
     - field.storage.node.su_news_topics
     - field.storage.node.su_soe_mag_topics
     - node.type.stanford_news
-    - taxonomy.vocabulary.stanford_news_topics
   module:
     - datetime
     - link
@@ -832,11 +831,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: su-news-list
           default_row_class: 1
           type: ul
-          wrapper_class: su-item-list__wrapper
-          class: su-news-list
+          wrapper_class: ''
+          class: su-list-unstyled
       row:
         type: ui_patterns
         options:
@@ -906,8 +905,8 @@ display:
               plugin: views_row
               source: edit_node
       block_category: 'News Lists (Views)'
-      block_description: 'News List - All Items'
-      css_class: 'stanford-news--list stanford-news--list-any'
+      block_description: ''
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -925,7 +924,7 @@ display:
         - 'config:field.storage.node.su_news_topics'
   term_block:
     id: term_block
-    display_title: 'List - With Filter'
+    display_title: 'Taxonomy Term Page List'
     display_plugin: block
     position: 1
     display_options:
@@ -954,14 +953,15 @@ display:
             format: stanford_html
           tokenize: false
       arguments:
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
+        term_node_tid_depth:
+          id: term_node_tid_depth
+          table: node_field_data
+          field: term_node_tid_depth
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
+          entity_type: node
+          plugin_id: taxonomy_index_tid_depth
           default_action: default
           exception:
             value: all
@@ -972,10 +972,9 @@ display:
           default_argument_type: taxonomy_tid
           default_argument_options:
             term_page: '1'
-            node: true
+            node: false
             limit: false
-            vids:
-              stanford_news_topics: stanford_news_topics
+            vids: {  }
             anyall: ','
           default_argument_skip_url: false
           summary_options:
@@ -987,20 +986,14 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: true
+          specify_validation: false
           validate:
-            type: 'entity:taxonomy_term'
-            fail: empty
-          validate_options:
-            bundles:
-              stanford_news_topics: stanford_news_topics
-            access: true
-            operation: view
-            multiple: 1
-          break_phrase: true
-          add_table: false
-          require_value: false
-          reduce_duplicates: true
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          depth: 10
+          use_taxonomy_term_path: false
       filters:
         status:
           id: status
@@ -1065,11 +1058,11 @@ display:
         type: html_list
         options:
           grouping: {  }
-          row_class: ''
+          row_class: su-news-list
           default_row_class: true
           type: ul
-          wrapper_class: su-news-list__wrapper
-          class: su-news-list
+          wrapper_class: ''
+          class: su-list-unstyled
       row:
         type: ui_patterns
         options:
@@ -1155,7 +1148,7 @@ display:
       display_description: 'Term Block - Filtered'
       exposed_block: false
       display_extenders: {  }
-      block_description: 'News List - With Filter'
+      block_description: ''
       block_category: 'News Lists (Views)'
     cache_metadata:
       max-age: -1
@@ -1372,7 +1365,7 @@ display:
       css_class: su-news-topics
       display_description: 'Topics list'
       display_extenders: {  }
-      block_description: 'News Topics Links - With Filter'
+      block_description: ''
       block_category: 'News Lists (Views)'
       block_hide_empty: true
       allow:
@@ -1484,16 +1477,14 @@ display:
         link_display: false
         link_url: false
       style:
-        type: grid
+        type: html_list
         options:
-          uses_fields: false
-          columns: 3
-          automatic_width: false
-          alignment: horizontal
-          col_class_default: true
-          col_class_custom: flex-4-of-12
-          row_class_default: true
-          row_class_custom: 'flex-container more-news-view'
+          row_class: ''
+          default_row_class: 1
+          uses_fields: 0
+          type: ul
+          wrapper_class: ''
+          class: 'su-list-unstyled grid-container-3'
       row:
         type: 'entity:node'
         options:
@@ -1505,7 +1496,7 @@ display:
           items_per_page: 3
           offset: 0
       block_category: 'News Lists (Views)'
-      block_description: 'News Cards - All Items'
+      block_description: ''
       css_class: 'stanford-news--cards stanford-news--cards-any'
       use_more: false
       use_more_always: false
@@ -1615,16 +1606,14 @@ display:
           break_phrase: false
           not: true
       style:
-        type: grid
+        type: html_list
         options:
+          row_class: ''
+          default_row_class: true
           uses_fields: false
-          columns: 3
-          automatic_width: false
-          alignment: horizontal
-          row_class_custom: 'flex-container more-news-view'
-          row_class_default: true
-          col_class_custom: flex-4-of-12
-          col_class_default: true
+          type: ul
+          wrapper_class: ''
+          class: 'su-list-unstyled grid-container-3'
       row:
         type: 'entity:node'
         options:
@@ -1649,7 +1638,7 @@ display:
       link_display: custom_url
       link_url: /news
       display_extenders: {  }
-      block_description: 'News Cards - All Items'
+      block_description: ''
       block_category: 'News Lists (Views)'
       block_hide_empty: true
     cache_metadata:
@@ -1732,16 +1721,14 @@ display:
           require_value: false
           reduce_duplicates: false
       style:
-        type: grid
+        type: html_list
         options:
-          grouping: {  }
-          columns: 3
-          automatic_width: false
-          alignment: horizontal
-          row_class_custom: 'flex-container more-news-view'
-          row_class_default: true
-          col_class_custom: flex-4-of-12
-          col_class_default: true
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: ''
+          class: 'su-list-unstyled grid-container-3'
       row:
         type: 'entity:node'
         options:
@@ -1757,7 +1744,7 @@ display:
       css_class: 'stanford-news--cards stanford-news--cards-filtered'
       display_description: 'Vertical Teaser Term List'
       display_extenders: {  }
-      block_description: 'News Cards - With Filter'
+      block_description: ''
       block_category: 'News Lists (Views)'
       block_hide_empty: true
     cache_metadata:
