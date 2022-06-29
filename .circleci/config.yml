@@ -75,8 +75,8 @@ merge_upstream: &merge_upstream
 
 # Declare all of the jobs we should run.
 jobs:
-#  run-coverage:
-#    <<: *code_coverage
+  run-coverage:
+    <<: *code_coverage
   run-back-to-dev:
     <<: *back_to_dev
   run-d9-codeception:
