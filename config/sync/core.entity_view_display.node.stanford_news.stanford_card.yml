@@ -134,6 +134,7 @@ hidden:
   su_news_components: true
   su_news_dek: true
   su_news_publishing_date: true
+  su_shared_tags: true
   su_soe_department: true
   su_soe_mag_collection: true
   su_soe_mag_topics: true
