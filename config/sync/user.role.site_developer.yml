@@ -33,6 +33,7 @@ dependencies:
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
     - taxonomy.vocabulary.stanford_publication_topics
+    - taxonomy.vocabulary.su_shared_tags
   module:
     - auto_entitylabel
     - block
@@ -123,6 +124,7 @@ permissions:
   - 'administer config_pages form display'
   - 'administer config_pages types'
   - 'administer content types'
+  - 'administer course importer settings'
   - 'administer crop'
   - 'administer crop types'
   - 'administer devel menu items'
@@ -227,6 +229,7 @@ permissions:
   - 'create terms in stanford_news_topics'
   - 'create terms in stanford_person_types'
   - 'create terms in stanford_publication_topics'
+  - 'create terms in su_shared_tags'
   - 'create url aliases'
   - 'create video media'
   - 'customize shortcut links'
@@ -280,6 +283,7 @@ permissions:
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
   - 'delete terms in stanford_publication_topics'
+  - 'delete terms in su_shared_tags'
   - 'dropzone upload files'
   - 'edit any embeddable media'
   - 'edit any file media'
@@ -315,6 +319,7 @@ permissions:
   - 'edit own stanford_publication content'
   - 'edit own video media'
   - 'edit stanford_basic_site_settings config page entity'
+  - 'edit stanford_courses_importer config page entity'
   - 'edit stanford_events_importer config page entity'
   - 'edit stanford_global_message config page entity'
   - 'edit stanford_local_footer config page entity'
@@ -332,6 +337,7 @@ permissions:
   - 'edit terms in stanford_news_topics'
   - 'edit terms in stanford_person_types'
   - 'edit terms in stanford_publication_topics'
+  - 'edit terms in su_shared_tags'
   - 'link to any page'
   - 'rabbit hole administer taxonomy_term'
   - 'rabbit hole bypass node'
@@ -354,6 +360,7 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view any unpublished stanford_course content'
   - 'view any unpublished stanford_event content'
   - 'view any unpublished stanford_event_series content'
   - 'view any unpublished stanford_news content'

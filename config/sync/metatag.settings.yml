@@ -1,5 +1,42 @@
 entity_type_groups:
   node:
+    spotlight:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
+    stanford_event:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
+    stanford_event_series:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
+    stanford_news:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
     stanford_page:
       basic: basic
       open_graph: open_graph
+      twitter_cards: twitter_cards
+    stanford_person:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
+    stanford_publication:
+      basic: basic
+      open_graph: open_graph
+      twitter_cards: twitter_cards
+tag_trim_method: beforeValue
+tag_trim_maxlength:
+  metatag_maxlength_description: null
+  metatag_maxlength_abstract: null
+  metatag_maxlength_title: null
+  metatag_maxlength_og_description: null
+  metatag_maxlength_og_site_name: null
+  metatag_maxlength_og_title: null
+  metatag_maxlength_twitter_cards_title: null
+  metatag_maxlength_twitter_cards_label1: null
+  metatag_maxlength_twitter_cards_description: null
+  metatag_maxlength_twitter_cards_label2: null

@@ -96,6 +96,7 @@ permissions:
   - 'schedule publishing of nodes'
   - 'update media'
   - 'view all revisions'
+  - 'view any unpublished stanford_course content'
   - 'view any unpublished stanford_event content'
   - 'view any unpublished stanford_event_series content'
   - 'view any unpublished stanford_news content'
