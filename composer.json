@@ -113,9 +113,9 @@
         "drupal/views_data_export": "^1.0",
         "drupal/views_bulk_edit": "^2.6",
         "su-sws/stanford_actions": "^8.2",
-        "su-soe/soe_basic": "8.1.22",
+        "su-soe/soe_basic": "8.x-dev",
         "su-soe/soe_paragraphs": "^8.1",
-        "su-soe/soe_profile": "8.4.5"
+        "su-soe/soe_profile": "8.x-dev"
     },
     "config": {
         "sort-packages": true,
