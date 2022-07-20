@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Engineering_profile_helper.install.
+ */
+
+use Drupal\redirect\Entity\Redirect;
+
+/**
+ * Fix broken manual redirect loops.
+ */
+function engineering_profile_helper_update_9001() {
+
+  // Find a list of manual redirects to fix.
+  $database = \Drupal::database();
+  $query = $database->query("SELECT * FROM redirect WHERE `redirect_source__path` LIKE '%people/%' AND `redirect_redirect__uri` LIKE '%internal:/person%' AND `uid` > 0");
+  $results = $query->fetchAll();
+
+  foreach ($results as $result) {
+    $redirect = Redirect::load($result->rid);
+    $redirect->delete();
+  }
+
+  // Find a list of redundant redirects to delete.
+  $query = $database->query("SELECT * FROM redirect WHERE `redirect_source__path` LIKE '%person/%-0' AND `uid` > 0");
+  $results = $query->fetchAll();
+
+  foreach ($results as $result) {
+    $redirect = Redirect::load($result->rid);
+    $redirect->delete();
+  }
+
+}
