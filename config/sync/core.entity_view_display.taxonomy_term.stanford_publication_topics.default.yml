@@ -139,6 +139,22 @@ third_party_settings:
         - jumpstart_ui_one_column
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
+      restricted_categories:
+        - 'Basic Page Type Lists (Views)'
+        - 'Chaos Tools'
+        - 'Config Pages'
+        - Forms
+        - Help
+        - 'Lists (Views)'
+        - Menus
+        - React
+        - 'SimpleSAMLphp Authentication'
+        - 'Stanford News'
+        - 'Stanford Profile Helper'
+        - 'Stanford SimpleSAML PHP'
+        - System
+        - Views
+        - core
       blacklisted_blocks:
         'Content fields':
           - 'field_block:taxonomy_term:stanford_publication_topics:revision_default'
@@ -180,22 +196,6 @@ third_party_settings:
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
       whitelisted_blocks: {  }
-      restricted_categories:
-        - 'Basic Page Type Lists (Views)'
-        - 'Chaos Tools'
-        - 'Config Pages'
-        - Forms
-        - Help
-        - 'Lists (Views)'
-        - Menus
-        - React
-        - 'SimpleSAMLphp Authentication'
-        - 'Stanford News'
-        - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
-        - System
-        - Views
-        - core
 id: taxonomy_term.stanford_publication_topics.default
 targetEntityType: taxonomy_term
 bundle: stanford_publication_topics

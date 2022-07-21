@@ -128,6 +128,18 @@ third_party_settings:
         - jumpstart_ui_one_column
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
+      restricted_categories:
+        - 'Basic Page Type Lists (Views)'
+        - 'Chaos Tools'
+        - 'Config Pages'
+        - Forms
+        - Help
+        - React
+        - 'SimpleSAMLphp Authentication'
+        - 'Stanford News'
+        - 'Stanford Profile Helper'
+        - 'Stanford SimpleSAML PHP'
+        - System
       blacklisted_blocks:
         'Content fields':
           - 'field_block:taxonomy_term:su_course_quarters:revision_default'
@@ -169,18 +181,6 @@ third_party_settings:
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
       whitelisted_blocks: {  }
-      restricted_categories:
-        - 'Basic Page Type Lists (Views)'
-        - 'Chaos Tools'
-        - 'Config Pages'
-        - Forms
-        - Help
-        - React
-        - 'SimpleSAMLphp Authentication'
-        - 'Stanford News'
-        - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
-        - System
 id: taxonomy_term.su_course_quarters.default
 targetEntityType: taxonomy_term
 bundle: su_course_quarters

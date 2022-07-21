@@ -194,6 +194,17 @@ third_party_settings:
         - jumpstart_ui_one_column
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
+      restricted_categories:
+        - 'Chaos Tools'
+        - 'Config Pages'
+        - Forms
+        - Help
+        - 'Lists (Views)'
+        - React
+        - 'SimpleSAMLphp Authentication'
+        - 'Stanford Profile Helper'
+        - 'Stanford SimpleSAML PHP'
+        - Views
       blacklisted_blocks:
         'Content fields':
           - 'field_block:node:stanford_page:uid'
@@ -255,17 +266,6 @@ third_party_settings:
           - system_breadcrumb_block
         core:
           - page_title_block
-      restricted_categories:
-        - 'Chaos Tools'
-        - 'Config Pages'
-        - Forms
-        - Help
-        - 'Lists (Views)'
-        - React
-        - 'SimpleSAMLphp Authentication'
-        - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
-        - Views
 id: node.stanford_page.default
 targetEntityType: node
 bundle: stanford_page
