@@ -38,7 +38,7 @@ back_to_dev: &back_to_dev
         name: Back to dev
         command: |
           composer global require su-sws/stanford-caravan:dev-8.x-2.x
-          ~/.composer/vendor/bin/sws-caravan back-to-dev ${CIRCLE_TAG} ${CIRCLE_WORKING_DIRECTORY} main
+          ~/.composer/vendor/bin/sws-caravan back-to-dev ${CIRCLE_TAG} ${CIRCLE_WORKING_DIRECTORY} master
 
 d9_codeception: &d9_codeception
   <<: *defaults
@@ -49,7 +49,8 @@ d9_codeception: &d9_codeception
         name: Run Codeception Tests
         command: |
           composer global require su-sws/stanford-caravan:dev-8.x-2.x
-          ~/.composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=/var/www/test
+          ~/.composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=/var/www/test --suites=functional
+#         ~/.composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=/var/www/test
     - store_test_results:
         path: /var/www/html/artifacts/behat
     - store_artifacts:
@@ -101,3 +102,13 @@ workflows:
     jobs:
       - run-coverage
       - run-d9-codeception
+  daily:
+    jobs:
+      - run-merge-upstream
+    triggers:
+      - schedule:
+          cron: "0 5 * * *"
+          filters:
+            branches:
+              only:
+                - /8.x/
