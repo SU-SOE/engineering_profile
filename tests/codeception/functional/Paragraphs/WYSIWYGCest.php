@@ -136,7 +136,7 @@ class WYSIWYGCest {
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
     $I->click('Insert from Media Library');
-    $I->waitForElementVisible('.dropzone');
+    $I->waitForElementVisible('.dropzone', 30);
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->click('Upload and Continue');
     $I->waitForText('Decorative Image');
@@ -161,7 +161,7 @@ class WYSIWYGCest {
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
     $I->click('Insert from Media Library');
-    $I->waitForElementVisible('.dropzone');
+    $I->waitForElementVisible('.dropzone', 30);
     $I->click('Video', '.media-library-menu-video');
     $I->waitForElementVisible('.media-library-add-form-oembed-url');
     $I->clickWithLeftButton('input.media-library-add-form-oembed-url[name="url"]');
@@ -201,7 +201,7 @@ class WYSIWYGCest {
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
     $I->click('Insert from Media Library');
-    $I->waitForElementVisible('.dropzone');
+    $I->waitForElementVisible('.dropzone', 30);
     $I->click('File', '.media-library-menu-file');
     $I->waitForText('txt, rtf, doc, docx');
     $I->dropFileInDropzone(__FILE__);
