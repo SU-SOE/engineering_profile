@@ -96,7 +96,8 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
-
+    // Wait a second for any click events to be applied.
+    $I->wait(1);
     $table_caption = $this->faker->words(4, TRUE);
     $I->click('.cke_button__table');
     $I->waitForText('Table Properties');
@@ -135,8 +136,10 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+    // Wait a second for any click events to be applied.
+    $I->wait(1);
     $I->click('Insert from Media Library');
-    $I->waitForElementVisible('.dropzone', 60);
+    $I->waitForElementVisible('.dropzone');
     $I->dropFileInDropzone(__DIR__ . '/logo.jpg');
     $I->click('Upload and Continue');
     $I->waitForText('Decorative Image');
@@ -160,8 +163,10 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+    // Wait a second for any click events to be applied.
+    $I->wait(1);
     $I->click('Insert from Media Library');
-    $I->waitForElementVisible('.dropzone', 60);
+    $I->waitForElementVisible('.dropzone');
     $I->click('Video', '.media-library-menu-video');
     $I->waitForElementVisible('.media-library-add-form-oembed-url');
     $I->clickWithLeftButton('input.media-library-add-form-oembed-url[name="url"]');
@@ -200,8 +205,10 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+    // Wait a second for any click events to be applied.
+    $I->wait(1);
     $I->click('Insert from Media Library');
-    $I->waitForElementVisible('.dropzone', 60);
+    $I->waitForElementVisible('.dropzone');
     $I->click('File', '.media-library-menu-file');
     $I->waitForText('txt, rtf, doc, docx');
     $I->dropFileInDropzone(__FILE__);
