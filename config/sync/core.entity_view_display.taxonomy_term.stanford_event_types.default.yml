@@ -197,7 +197,7 @@ third_party_settings:
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
-      whitelisted_blocks:
+      allowlisted_blocks:
         Menus:
           - 'system_menu_block:stanford-event-types'
           - 'menu_block:stanford-event-types'
