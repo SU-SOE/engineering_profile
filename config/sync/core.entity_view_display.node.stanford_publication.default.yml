@@ -230,6 +230,22 @@ third_party_settings:
         - jumpstart_ui_one_column
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
+      allowlisted_blocks:
+        Menus:
+          - 'system_menu_block:stanford-event-types'
+          - 'menu_block:stanford-event-types'
+          - 'menu_block:main'
+          - 'system_menu_block:main'
+          - 'system_menu_block:stanford-person-type'
+          - 'menu_block:stanford-person-type'
+          - 'system_menu_block:stanford-publication-topics'
+          - 'menu_block:stanford-publication-topics'
+          - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
+        System:
+          - system_breadcrumb_block
+        core:
+          - page_title_block
       restricted_categories:
         - 'Chaos Tools'
         - 'Config Pages'
@@ -285,22 +301,6 @@ third_party_settings:
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
-      allowlisted_blocks:
-        Menus:
-          - 'system_menu_block:stanford-event-types'
-          - 'menu_block:stanford-event-types'
-          - 'menu_block:main'
-          - 'system_menu_block:main'
-          - 'system_menu_block:stanford-person-type'
-          - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
-          - 'menu_block:stanford-publication-topics'
-          - 'menu_block:news-topics'
-          - 'system_menu_block:news-topics'
-        System:
-          - system_breadcrumb_block
-        core:
-          - page_title_block
 id: node.stanford_publication.default
 targetEntityType: node
 bundle: stanford_publication

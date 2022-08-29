@@ -142,6 +142,10 @@ third_party_settings:
         - jumpstart_ui_one_column
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
+      allowlisted_blocks:
+        Menus:
+          - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
       restricted_categories:
         - 'Basic Page Type Lists (Views)'
         - 'Chaos Tools'
@@ -197,10 +201,6 @@ third_party_settings:
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
-      allowlisted_blocks:
-        Menus:
-          - 'menu_block:news-topics'
-          - 'system_menu_block:news-topics'
 id: taxonomy_term.stanford_news_topics.default
 targetEntityType: taxonomy_term
 bundle: stanford_news_topics
