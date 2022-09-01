@@ -15,24 +15,6 @@ variant_settings:
   uuid: 12067df9-ee35-4adf-b2b6-9ea276e9c98f
   sections:
     -
-      layout_id: layout_onecol
-      layout_settings:
-        label: 'Magazine Curtain'
-        context_mapping: {  }
-      components:
-        52ab4aec-9446-4acd-89fe-216556cd9d3d:
-          uuid: 52ab4aec-9446-4acd-89fe-216556cd9d3d
-          region: content
-          configuration:
-            id: magazine_curtain_block
-            label: 'Magazine Curtain'
-            label_display: '0'
-            provider: engineering_magazine
-            context_mapping: {  }
-          weight: 0
-          additional: {  }
-      third_party_settings: {  }
-    -
       layout_id: soe_basic_full_width_header
       layout_settings:
         label: 'Section - Header'
