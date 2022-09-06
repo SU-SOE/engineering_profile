@@ -7,7 +7,7 @@ label: ACSF
 description: ''
 weight: 0
 stackable: false
-storage: null
+storage: folder
 folder: ../config/envs/acsf
 module:
   acsf: 0

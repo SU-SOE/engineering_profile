@@ -7,7 +7,7 @@ label: Local
 description: ''
 weight: 0
 stackable: false
-storage: null
+storage: folder
 folder: ../config/envs/local
 module:
   dblog: 0
