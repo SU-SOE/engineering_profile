@@ -60,15 +60,17 @@ class NewsCest {
 
   /**
    * Test that the view pages exist.
+   *
+   * Engineering -- we don't use the regular news page.
    */
-  public function testViewPagesExist(AcceptanceTester $I) {
-    $I->amOnPage("/news");
-    $I->canSeeResponseCodeIs(200);
-    $I->seeLink('Faculty');
-    $I->click("a[href='/news/staff']");
-    $I->canSeeResponseCodeIs(200);
-    $I->see("Topics Menu");
-  }
+#  public function testViewPagesExist(AcceptanceTester $I) {
+#    $I->amOnPage("/news");
+#    $I->canSeeResponseCodeIs(200);
+#    $I->seeLink('Faculty');
+#    $I->click("a[href='/news/staff']");
+#    $I->canSeeResponseCodeIs(200);
+#    $I->see("Topics Menu");
+#  }
 
   /**
    * Validate external content redirect.
