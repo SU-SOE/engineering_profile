@@ -280,8 +280,8 @@ class PersonCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label());
     $node->setUnpublished()->save();
-
     drupal_flush_all_caches();
+    $I-amOnPage('/user/logout');
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSee($node->label());
   }
