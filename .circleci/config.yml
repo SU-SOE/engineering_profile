@@ -101,7 +101,6 @@ workflows:
   tests:
     jobs:
       - run-d9-codeception
-          context: github-auth
   #daily:
   #  jobs:
   #    - run-merge-upstream
