@@ -101,13 +101,14 @@ workflows:
   tests:
     jobs:
       - run-d9-codeception
-  daily:
-    jobs:
-      - run-merge-upstream
-    triggers:
-      - schedule:
-          cron: "0 5 * * *"
-          filters:
-            branches:
-              only:
-                - /9.x/
+          context: github-auth
+  #daily:
+  #  jobs:
+  #    - run-merge-upstream
+  #  triggers:
+  #    - schedule:
+  #        cron: "0 5 * * *"
+  #        filters:
+  #          branches:
+  #            only:
+  #              - /9.x/
