@@ -1,5 +1,18 @@
 # Engineering Profile
 
+9.0.0 Engineering Release
+--------------------------------------------------------------------------------
+_Release Date: 2022-09-07_
+
+- Brought up to date with the 9.x monorepo branch of `soe_profile`.
+- SOED9-216: Spotlight filter fix for selecting the featured spotlight when using both filters at once.
+- SOED9-214: Use featured media for article collection cards on landing page
+- Removed magazine curtain
+- dependency updates.
+- drupal core update
+- field_encrypt 3.0 update
+- SSO updates for acquia cloud next
+
 8.5.3 Engineering Release
 --------------------------------------------------------------------------------
 _Release Date: 2022-08-02_

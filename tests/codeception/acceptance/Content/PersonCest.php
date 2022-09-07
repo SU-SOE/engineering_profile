@@ -92,6 +92,7 @@ class PersonCest {
       'su_person_first_name' => $first_name,
       'su_person_last_name' => $last_name,
     ]);
+    $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
     $I->see("$first_name $last_name", 'h1');
     $I->amOnPage('/people');
