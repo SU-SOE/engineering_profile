@@ -17,7 +17,6 @@ dependencies:
     - element_class_formatter
     - field_formatter_class
     - layout_builder
-    - stanford_fields
     - stanford_media
     - user
 third_party_settings:
@@ -36,11 +35,23 @@ third_party_settings:
         - su_spotlight_feature_image
       card_super_headline:
         - node_title
-      card_headline:
         - su_spotlight_person_title
+        - su_spotlight_degrees
+        - su_soe_department
       card_body:
         - su_people_spotlight_quote
+        - node_link
     fields:
+      node_link:
+        plugin_id: node_link
+        weight: 6
+        label: hidden
+        formatter: default
+        settings:
+          'link text': 'Read more'
+          'link class': 'su-link su-link--external'
+          wrapper: ''
+          class: ''
       node_title:
         plugin_id: node_title
         weight: 1
@@ -49,7 +60,7 @@ third_party_settings:
         settings:
           link: false
           'link class': ''
-          wrapper: h1
+          wrapper: h2
           class: ''
   layout_builder:
     enabled: false
@@ -60,11 +71,32 @@ bundle: spotlight
 mode: stanford_card
 content:
   su_people_spotlight_quote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: card_body
+  su_soe_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: 'field-content soe--person-title'
+      ds:
+        ds_limit: ''
+    weight: 4
+    region: card_super_headline
+  su_spotlight_degrees:
     type: wrapper_class
     label: hidden
     settings:
-      class: ''
-      tag: p
+      class: 'field-content soe--person-title'
+      tag: div
       link: false
       link_class: ''
       summary: false
@@ -73,32 +105,37 @@ content:
       field_formatter_class:
         class: ''
     weight: 3
-    region: card_body
+    region: card_super_headline
   su_spotlight_feature_image:
     type: media_image_formatter
     label: hidden
     settings:
-      view_mode: stanford_image_stanford_circle
-      link: false
+      view_mode: person_spotlight_circle
+      link: true
       image_style: stanford_circle
+      remove_alt: false
     third_party_settings:
       field_formatter_class:
-        class: ''
+        class: engineering-accent-color__image
     weight: 0
     region: card_image
   su_spotlight_person_title:
-    type: entity_title_heading
+    type: wrapper_class
     label: hidden
     settings:
-      tag: h2
-      linked: false
-    third_party_settings: {  }
+      class: 'field-content soe--person-title'
+      tag: div
+      link: false
+      link_class: ''
+      summary: false
+      trim: 200
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     weight: 2
-    region: card_headline
+    region: card_super_headline
 hidden:
   body: true
   links: true
   search_api_excerpt: true
-  su_soe_department: true
   su_spotlight_affiliation: true
-  su_spotlight_degrees: true

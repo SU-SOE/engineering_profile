@@ -111,7 +111,7 @@ a.su-link--external {
         color:white;
 
         a {
-          color: #333333;;
+          color: #333333;
           text-decoration: none;
 
           &:hover {
@@ -135,6 +135,15 @@ a.su-link--external {
   }
 
 }
+
+// Fix for stanford people grid
+.stanford-people-grid {
+    .flex-container {
+      justify-content: space-between;
+      margin-top: 1em;
+    }
+}
+
 
 
 

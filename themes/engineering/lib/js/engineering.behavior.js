@@ -43,8 +43,7 @@
         $(this).hover(function (element = this) {
           $(element).css('text-decoration-color', 'black');
         });
-      })
-
+      });
 
       $(".engineering-accent-color__background").each(function () {
         $(this).css('background-color', getAccentColor());

@@ -84,13 +84,6 @@ class MagazineCest {
 
   }
 
-  public function testMagazineCurtainBlock(AcceptanceTester $I) {
-    $I->logInWithRole('site_manager');
-    $I->amOnPage('/magazine');
-    $I->canSee('Stanford Engineering Magazine');
-    $I->canSee('Explore the latest news');
-  }
-
   public function createMagazineNode(AcceptanceTester $I, string $name="Magazine Test Node") {
     $mag_topic = $this->createMagazineTopic($I);
     $mag_issue = $this->createMagazineIssue($I);

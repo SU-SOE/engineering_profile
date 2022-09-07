@@ -65,7 +65,7 @@ function engineering_profile_helper_preprocess_views_view_field(&$vars){
  * Trim down content for Spotlight quotes for use in Views.
  *
  * @param string $quote The full string value to truncate
- *
+ * @return string
  */
 function _engineering_profile_helper_trim_spotlight_quote(string $quote) {
   // Break the string at 100 characters, and explode that into an array.

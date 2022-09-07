@@ -9,6 +9,7 @@
   text-align: center;
   margin: auto;
 }
+
 .soe-mag-landing__heading_2 {
   text-align: center;
   margin: auto;
@@ -136,4 +137,32 @@
 .article-collection__link {
   margin-left:auto;
   margin-right:auto;
+}
+
+.su-mag--mag_topics {
+  margin-bottom: 30px;
+  a {
+    color: $magazine-topics-color;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: #333333;
+    }
+  }
+}
+
+.stanford-news {
+  &.su-soe-department {
+    a {
+      text-decoration: none;
+      color: $magazine-topics-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

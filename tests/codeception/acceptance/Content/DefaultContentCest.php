@@ -24,11 +24,6 @@ class DefaultContentCest {
       $I->amOnPage($page);
       $I->canSeeResponseCodeIs(200);
     }
-
-    $I->amOnPage('/');
-    $I->canSee('Welcome to your site!');
-    $I->canSeeNumberOfElements('meta[property="og:image"][content*="/large/"]', 1);
-    $I->canSeeNumberOfElements('meta[property="og:image:url"][content*="/large/"]', 1);
   }
 
   /**
@@ -44,9 +39,35 @@ class DefaultContentCest {
    * XML Sitemap should exist after cron.
    */
   public function testXmlSitemap(AcceptanceTester $I) {
-    $I->runDrush('cron');
+    $I->runDrush('xmlsitemap:rebuild');
     $I->amOnPage('/sitemap.xml');
     $I->canSeeResponseCodeIs(200);
+  }
+
+  /**
+   * Test the default menu items exist with proper destinations.
+   */
+  public function testMenuItems(AcceptanceTester $I) {
+    $I->logInWithRole('site_manager');
+    $I->amOnPage('/admin/structure/menu/manage/main');
+
+    $pages = [
+      '/about' => 'About',
+      '/news' => 'News',
+      '/people' => 'People',
+      '/research' => 'Research',
+      '/resources' => 'Resources',
+    ];
+    foreach ($pages as $path => $title) {
+      $I->canSeeLink($title, $path);
+
+      $I->click('Edit', '#menu-overview tr:contains("' . $title . '")');
+      $link_url = $I->grabValueFrom('[name="link[0][uri]"]');
+      preg_match('/(\w+) \((\d+)\)/', $link_url, $matches);
+      $I->assertCount(3, $matches, 'Link URL should be in the format "page_name (page_id)"');
+
+      $I->amOnPage('/admin/structure/menu/manage/main');
+    }
   }
 
 }
