@@ -15,20 +15,20 @@ defaults: &defaults
   working_directory: /var/www/html
 
 #Jobs
-code_coverage: &code_coverage
-  <<: *defaults
-  steps:
-    - checkout:
-        path: /var/www/test
-    - run:
-        name: Run PHP Unit Coverage Tests
-        command: |
-          composer global require su-sws/stanford-caravan:dev-8.x-2.x
-          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=/var/www/test --with-coverage
-    - store_test_results:
-        path: /var/www/html/artifacts/phpunit
-    - store_artifacts:
-        path: /var/www/html/artifacts/phpunit/coverage
+#code_coverage: &code_coverage
+#  <<: *defaults
+#  steps:
+#    - checkout:
+#        path: /var/www/test
+#    - run:
+#        name: Run PHP Unit Coverage Tests
+#        command: |
+#          composer global require su-sws/stanford-caravan:dev-8.x-2.x
+#          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=/var/www/test --with-coverage
+#    - store_test_results:
+#        path: /var/www/html/artifacts/phpunit
+#    - store_artifacts:
+#        path: /var/www/html/artifacts/phpunit/coverage
 
 back_to_dev: &back_to_dev
   <<: *defaults
@@ -100,7 +100,6 @@ workflows:
                 - /.*/
   tests:
     jobs:
-      - run-coverage
       - run-d9-codeception-functional
   #daily:
   #  jobs:
