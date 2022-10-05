@@ -76,11 +76,11 @@ merge_upstream: &merge_upstream
 
 # Declare all of the jobs we should run.
 jobs:
-#  run-coverage:
-#    <<: *code_coverage
+  run-coverage:
+    <<: *code_coverage
   run-back-to-dev:
     <<: *back_to_dev
-  run-d9-codeception:
+  run-d9-codeception-functional:
     <<: *d9_codeception
   run-merge-upstream:
     <<: *merge_upstream
@@ -100,7 +100,8 @@ workflows:
                 - /.*/
   tests:
     jobs:
-      - run-d9-codeception
+      - run-coverage
+      - run-d9-codeception-functional
   #daily:
   #  jobs:
   #    - run-merge-upstream
