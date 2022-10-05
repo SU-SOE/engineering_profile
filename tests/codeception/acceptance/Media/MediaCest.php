@@ -2,10 +2,13 @@
 
 use Faker\Factory;
 
+require_once __DIR__ . '/../TestFilesTrait.php';
+
 /**
  * Tests for various media functionality.
  */
 class MediaCest {
+  use TestFilesTrait;
 
   protected $faker;
 
