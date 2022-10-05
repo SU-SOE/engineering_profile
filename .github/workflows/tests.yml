@@ -1,4 +1,4 @@
-name: Codeception Acceptance Tests
+name: Coverage and Acceptance Tests
 on: [push]
 jobs:
   phpunit:
