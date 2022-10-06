@@ -24,6 +24,7 @@ class HomePageCest {
   public function testUnpublishingHomepage(AcceptanceTester $I){
     $I->logInWithRole('site_manager');
     $I->amOnPage('/');
+    $I->canSeeResponseCodeIs(200);
     $I->click('Edit', '.tabs');
     $I->cantSee('Published', 'label');
   }

@@ -19,7 +19,6 @@ class RolesCest {
     $I->canSee('Site Builder');
     $I->canSee('Site Developer');
     $I->canSee('Administrator');
-    $I->canSee('Site Embedder');
   }
 
   /**
@@ -77,8 +76,8 @@ class RolesCest {
     $this->runLinkExistCheck($I, $links);
 
     $links = [
-      '/admin/config/system/local-footer' => 'Local Footer',
-      '/admin/config/system/basic-site-settings' => 'Site Settings',
+      'Local Footer',
+      'Site Settings',
     ];
     $this->runLinkExistCheck($I, $links, FALSE);
 
@@ -110,8 +109,8 @@ class RolesCest {
     $this->runLinkExistCheck($I, $links);
 
     $links = [
-      '/admin/config/system/local-footer' => 'Local Footer',
-      '/admin/config/system/basic-site-settings' => 'Site Settings',
+      'Local Footer',
+      'Site Settings',
     ];
     $this->runLinkExistCheck($I, $links, FALSE);
 
