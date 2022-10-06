@@ -2,7 +2,7 @@ name: Coverage and Acceptance Tests
 on: [push]
 jobs:
   phpunit:
-    name: PHPUnit Coverage Tests
+    name: PHPUnit and Coverage Tests
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:php8
@@ -26,7 +26,8 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
           composer global require su-sws/stanford-caravan:dev-8.x-2.x
-          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project --with-coverage
+          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project
+#          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project --with-coverage
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: failure()
