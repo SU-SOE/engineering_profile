@@ -17,6 +17,7 @@ dependencies:
   module:
     - field_group
     - media_library
+    - metatag
     - paragraphs
     - path
     - react_paragraphs

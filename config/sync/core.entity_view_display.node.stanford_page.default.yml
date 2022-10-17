@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.stanford_page.su_page_components
     - field.field.node.stanford_page.su_page_description
     - field.field.node.stanford_page.su_page_image
+    - field.field.node.stanford_page.su_shared_tags
     - node.type.stanford_page
     - system.menu.main
   module:
@@ -163,6 +164,8 @@ third_party_settings:
   layout_builder_restrictions:
     allowed_block_categories:
       - 'Basic Page Type Lists (Views)'
+      - Book
+      - 'Changelog (Views)'
       - 'Chaos Tools'
       - 'Config Pages'
       - 'Content fields'
@@ -180,13 +183,13 @@ third_party_settings:
       - 'News Lists (Views)'
       - 'PDB React'
       - 'People Lists (Views)'
+      - Printable
       - 'Publication (Views)'
       - React
-      - 'SimpleSAMLphp Authentication'
       - 'Stanford News'
       - 'Stanford Profile Helper'
-      - 'Stanford SimpleSAML PHP'
       - System
+      - 'Taxonomy Terms (Views)'
       - Views
       - core
     entity_view_mode_restriction:
@@ -233,6 +236,7 @@ third_party_settings:
           - 'field_block:node:stanford_page:layout_selection'
           - 'extra_field_block:node:stanford_page:links'
           - 'field_block:node:stanford_page:menu_link'
+          - 'field_block:node:stanford_page:su_metatags'
           - 'field_block:node:stanford_page:promote'
           - 'field_block:node:stanford_page:status'
           - 'field_block:node:stanford_page:rh_action'
@@ -260,8 +264,8 @@ third_party_settings:
           - 'field_block:user:user:name'
           - 'field_block:user:user:preferred_admin_langcode'
           - 'field_block:user:user:preferred_langcode'
-          - 'field_block:user:user:role_change'
           - 'field_block:user:user:roles'
+          - 'field_block:user:user:role_change'
           - 'extra_field_block:user:user:search_api_excerpt'
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
@@ -332,4 +336,5 @@ hidden:
   layout_selection: true
   search_api_excerpt: true
   stanford_intranet__access: true
+  su_metatags: true
   su_shared_tags: true

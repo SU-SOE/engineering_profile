@@ -71,6 +71,12 @@ _Release Date: 2022-08-22_
 
 - Fixed courses field widget with view query parameter.
 
+9.1.3
+--------------------------------------------------------------------------------
+_Release Date: 2022-08-22_
+
+- Fixed courses field widget with view query parameter.
+
 9.1.2
 --------------------------------------------------------------------------------
 _Release Date: 2022-08-15_
