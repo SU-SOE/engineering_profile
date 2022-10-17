@@ -142,6 +142,8 @@ module:
   path_alias: 0
   path_redirect_import: 0
   pdb: 0
+  pdb_react: 0
+  preprocess_event_dispatcher: 0
   printable: 0
   rabbit_hole: 0
   react_paragraphs: 0
@@ -227,6 +229,7 @@ module:
   views_bulk_operations: 0
   views_contextual_filters_or: 0
   views_custom_cache_tag: 0
+  views_event_dispatcher: 0
   views_data_export: 0
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
