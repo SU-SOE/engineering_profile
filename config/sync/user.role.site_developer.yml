@@ -16,6 +16,7 @@ dependencies:
     - media.type.stanford_gallery_images
     - media.type.video
     - node.type.spotlight
+    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -217,6 +218,8 @@ permissions:
   - 'create log entities'
   - 'create media'
   - 'create spotlight content'
+  - 'create new books'
+  - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
   - 'create stanford_gallery_images media'
@@ -248,6 +251,7 @@ permissions:
   - 'delete any log entities'
   - 'delete any media'
   - 'delete any spotlight content'
+  - 'delete any stanford_course content'
   - 'delete any stanford_event content'
   - 'delete any stanford_event_series content'
   - 'delete any stanford_gallery_images media'
@@ -266,6 +270,8 @@ permissions:
   - 'delete own google_form media'
   - 'delete own image media'
   - 'delete own spotlight content'
+  - 'delete own log entities'
+  - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
   - 'delete own stanford_gallery_images media'
@@ -276,6 +282,7 @@ permissions:
   - 'delete own stanford_publication content'
   - 'delete own video media'
   - 'delete spotlight revisions'
+  - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'
   - 'delete stanford_event_series revisions'
   - 'delete stanford_news revisions'
@@ -301,6 +308,8 @@ permissions:
   - 'edit any google_form media'
   - 'edit any image media'
   - 'edit any spotlight content'
+  - 'edit any log entities'
+  - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
   - 'edit any stanford_gallery_images media'
@@ -322,6 +331,8 @@ permissions:
   - 'edit own google_form media'
   - 'edit own image media'
   - 'edit own spotlight content'
+  - 'edit own log entities'
+  - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
   - 'edit own stanford_gallery_images media'
@@ -357,6 +368,7 @@ permissions:
   - 'rabbit hole bypass taxonomy_term'
   - 'revert all revisions'
   - 'revert spotlight revisions'
+  - 'revert stanford_course revisions'
   - 'revert stanford_event revisions'
   - 'revert stanford_event_series revisions'
   - 'revert stanford_news revisions'
@@ -390,6 +402,8 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view spotlight revisions'
+  - 'view scheduled content'
+  - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'

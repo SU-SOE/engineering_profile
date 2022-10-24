@@ -654,34 +654,7 @@ third_party_settings:
         - jumpstart_ui_three_column
         - stanford_person_header
         - stanford_person_body
-      allowlisted_blocks:
-        Menus:
-          - 'system_menu_block:stanford-event-types'
-          - 'menu_block:stanford-event-types'
-          - 'system_menu_block:main'
-          - 'menu_block:main'
-          - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-person-type'
-          - 'menu_block:stanford-publication-topics'
-          - 'system_menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
-          - 'menu_block:news-topics'
-        System:
-          - system_breadcrumb_block
-        core:
-          - page_title_block
-      restricted_categories:
-        - 'Chaos Tools'
-        - 'Config Pages'
-        - Forms
-        - Help
-        - 'Lists (Views)'
-        - React
-        - 'SimpleSAMLphp Authentication'
-        - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
-        - Views
-      blacklisted_blocks:
+      denylisted_blocks:
         'Content fields':
           - 'field_block:node:stanford_person:uid'
           - 'field_block:node:stanford_person:created'
@@ -725,6 +698,33 @@ third_party_settings:
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
+      allowlisted_blocks:
+        Menus:
+          - 'system_menu_block:stanford-event-types'
+          - 'menu_block:stanford-event-types'
+          - 'system_menu_block:main'
+          - 'menu_block:main'
+          - 'menu_block:stanford-person-type'
+          - 'system_menu_block:stanford-person-type'
+          - 'menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-publication-topics'
+          - 'system_menu_block:news-topics'
+          - 'menu_block:news-topics'
+        System:
+          - system_breadcrumb_block
+        core:
+          - page_title_block
+      restricted_categories:
+        - 'Chaos Tools'
+        - 'Config Pages'
+        - Forms
+        - Help
+        - 'Lists (Views)'
+        - React
+        - 'SimpleSAMLphp Authentication'
+        - 'Stanford Profile Helper'
+        - 'Stanford SimpleSAML PHP'
+        - Views
   layout_library:
     enable: false
 id: node.stanford_person.default

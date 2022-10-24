@@ -55,6 +55,17 @@ variant_settings:
             context_mapping: {  }
             views_label: ''
             items_per_page: none
+          weight: 1
+          additional: {  }
+        a438709e-e0b1-4526-92bf-15bc898f8cae:
+          uuid: a438709e-e0b1-4526-92bf-15bc898f8cae
+          region: main
+          configuration:
+            id: jumpstart_ui_skipnav_main_anchor
+            label: 'Main content anchor target'
+            label_display: '0'
+            provider: jumpstart_ui
+            context_mapping: {  }
           weight: 0
           additional: {  }
       third_party_settings: {  }

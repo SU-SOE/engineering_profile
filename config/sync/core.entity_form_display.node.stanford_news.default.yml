@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.stanford_news.su_mag_featured
     - field.field.node.stanford_news.su_magazine_issue
     - field.field.node.stanford_news.su_magazine_story
+    - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
     - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics
+    - field.field.node.stanford_news.su_shared_tags
     - field.field.node.stanford_news.su_soe_department
     - field.field.node.stanford_news.su_soe_mag_collection
     - field.field.node.stanford_news.su_soe_mag_topics
@@ -29,6 +31,7 @@ dependencies:
     - metatag
     - paragraphs
     - scheduler
+    - shs
     - stanford_intranet
 third_party_settings:
   field_group:
@@ -229,7 +232,7 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   su_news_topics:
-    type: entity_reference_autocomplete
+    type: options_shs
     weight: 3
     region: content
     settings:

@@ -107,5 +107,6 @@ hidden:
   stanford_intranet__access: true
   su_basic_page_type: true
   su_department: true
+  su_metatags: true
   su_page_components: true
   su_shared_tags: true

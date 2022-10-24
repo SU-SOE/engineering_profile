@@ -21,6 +21,7 @@ dependencies:
     - metatag
     - react_paragraphs
     - scheduler
+    - shs
     - stanford_intranet
 id: node.stanford_publication.default
 targetEntityType: node

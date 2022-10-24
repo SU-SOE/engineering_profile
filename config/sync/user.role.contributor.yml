@@ -9,6 +9,7 @@ dependencies:
     - media.type.stanford_gallery_images
     - media.type.video
     - node.type.spotlight
+    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -53,6 +54,7 @@ permissions:
   - 'create log entities'
   - 'create media'
   - 'create spotlight content'
+  - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
   - 'create stanford_gallery_images media'
@@ -68,6 +70,8 @@ permissions:
   - 'delete own google_form media'
   - 'delete own image media'
   - 'delete own spotlight content'
+  - 'delete own log entities'
+  - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
   - 'delete own stanford_gallery_images media'
@@ -79,6 +83,8 @@ permissions:
   - 'delete own video media'
   - 'dropzone upload files'
   - 'edit any spotlight content'
+  - 'edit any image media'
+  - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
   - 'edit any stanford_gallery_images media'
@@ -93,6 +99,8 @@ permissions:
   - 'edit own google_form media'
   - 'edit own image media'
   - 'edit own spotlight content'
+  - 'edit own log entities'
+  - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
   - 'edit own stanford_gallery_images media'
@@ -118,6 +126,8 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view spotlight revisions'
+  - 'view scheduled content'
+  - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'

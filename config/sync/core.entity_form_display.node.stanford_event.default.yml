@@ -34,7 +34,9 @@ dependencies:
     - link
     - metatag
     - paragraphs
+    - readonly_field_widget
     - scheduler
+    - shs
     - smart_date
     - stanford_intranet
     - telephone
@@ -141,12 +143,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -220,6 +222,17 @@ content:
       modal: false
       default_tz: user
       custom_tz: America/Los_Angeles
+      allowed_timezones: {  }
+      default_duration: 60
+      default_duration_increments: |-
+        30
+        60|1 hour
+        90
+        120|2 hours
+        custom
+      show_extra: false
+      hide_date: true
+      add_abbreviations: ''
     third_party_settings: {  }
   su_event_dek:
     type: string_textfield

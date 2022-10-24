@@ -548,7 +548,7 @@ display:
           row_class: ''
           default_row_class: true
           type: ul
-          wrapper_class: item-list
+          wrapper_class: ''
           class: 'su-list-unstyled grid-container-3'
       row:
         type: fields

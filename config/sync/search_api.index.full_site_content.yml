@@ -38,6 +38,7 @@ field_settings:
       view_mode:
         'entity:node':
           spotlight: search_indexing
+          stanford_course: search_indexing
           stanford_event: search_indexing
           stanford_event_series: search_indexing
           stanford_news: search_indexing
@@ -220,5 +221,5 @@ tracker_settings:
 options:
   cron_limit: 50
   index_directly: true
-  track_changes_in_references: false
+  track_changes_in_references: true
 server: database_search

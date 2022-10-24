@@ -141,6 +141,7 @@ hidden:
   links: true
   search_api_excerpt: true
   stanford_intranet__access: true
+  su_metatags: true
   su_mag_featured: true
   su_magazine_issue: true
   su_magazine_story: true

@@ -81,6 +81,7 @@ module:
   filter: 0
   flat_taxonomy: 0
   focal_point: 0
+  fontawesome: 0
   google_analytics: 0
   google_tag: 0
   hal: 0
