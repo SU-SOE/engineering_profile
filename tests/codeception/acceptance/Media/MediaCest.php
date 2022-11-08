@@ -263,7 +263,7 @@ class MediaCest {
     $I->click('Filter');
     $I->cantSee($media->label());
 
-    $I->selectOption('Category', $parent_term->label());
+    $I->selectOption('Category', $child_term->label());
     $I->click('Filter');
     $I->canSee($media->label());
 
@@ -271,7 +271,7 @@ class MediaCest {
     $I->click('Filter');
     $I->cantSee($media->label());
 
-    $I->selectOption('Category', '-' . $parent_term->label());
+    $I->selectOption('Category', '-' . $child_term->label());
     $I->click('Filter');
     $I->canSee($media->label());
   }

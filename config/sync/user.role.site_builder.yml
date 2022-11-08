@@ -31,6 +31,7 @@ dependencies:
     - taxonomy.vocabulary.event_audience
     - taxonomy.vocabulary.magazine_issues
     - taxonomy.vocabulary.magazine_topics
+    - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
@@ -176,8 +177,8 @@ permissions:
   - 'create image media'
   - 'create log entities'
   - 'create media'
-  - 'create spotlight content'
   - 'create new books'
+  - 'create spotlight content'
   - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
@@ -194,6 +195,7 @@ permissions:
   - 'create terms in event_audience'
   - 'create terms in magazine_issues'
   - 'create terms in magazine_topics'
+  - 'create terms in media_tags'
   - 'create terms in stanford_event_types'
   - 'create terms in stanford_news_topics'
   - 'create terms in stanford_person_types'
@@ -226,8 +228,8 @@ permissions:
   - 'delete own file media'
   - 'delete own google_form media'
   - 'delete own image media'
-  - 'delete own spotlight content'
   - 'delete own log entities'
+  - 'delete own spotlight content'
   - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
@@ -254,6 +256,7 @@ permissions:
   - 'delete terms in event_audience'
   - 'delete terms in magazine_issues'
   - 'delete terms in magazine_topics'
+  - 'delete terms in media_tags'
   - 'delete terms in stanford_event_types'
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
@@ -264,8 +267,8 @@ permissions:
   - 'edit any file media'
   - 'edit any google_form media'
   - 'edit any image media'
-  - 'edit any spotlight content'
   - 'edit any log entities'
+  - 'edit any spotlight content'
   - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
@@ -286,8 +289,8 @@ permissions:
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
-  - 'edit own spotlight content'
   - 'edit own log entities'
+  - 'edit own spotlight content'
   - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
@@ -312,6 +315,7 @@ permissions:
   - 'edit terms in event_audience'
   - 'edit terms in magazine_issues'
   - 'edit terms in magazine_topics'
+  - 'edit terms in media_tags'
   - 'edit terms in stanford_event_types'
   - 'edit terms in stanford_news_topics'
   - 'edit terms in stanford_person_types'
@@ -354,8 +358,8 @@ permissions:
   - 'view own log entities'
   - 'view own unpublished content'
   - 'view own unpublished media'
-  - 'view spotlight revisions'
   - 'view scheduled content'
+  - 'view spotlight revisions'
   - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
