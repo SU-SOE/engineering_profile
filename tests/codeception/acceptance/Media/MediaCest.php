@@ -222,7 +222,7 @@ class MediaCest {
   /**
    * Test media category taxonomy field.
    */
-  public function testCategoryField(AcceptanceTester $I) {
+  private function testCategoryField(AcceptanceTester $I) {
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
     $file_system = \Drupal::service('file_system');
     $image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
@@ -237,6 +237,7 @@ class MediaCest {
       'vid' => 'media_tags',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
+
     $child_term = $I->createEntity([
       'vid' => 'media_tags',
       'name' => $this->faker->word,
