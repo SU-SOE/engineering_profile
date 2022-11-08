@@ -144,6 +144,7 @@ hidden:
   su_mag_featured: true
   su_magazine_issue: true
   su_magazine_story: true
+  su_metatags: true
   su_news_banner: true
   su_news_banner_media_caption: true
   su_news_byline: true

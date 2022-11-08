@@ -32,9 +32,9 @@ third_party_settings:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
       allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
       restricted_categories: {  }
-      blacklisted_blocks: {  }
-      whitelisted_blocks: {  }
   layout_library:
     enable: false
   ds:
@@ -123,4 +123,5 @@ hidden:
   su_course_quarters: true
   su_course_section_units: true
   su_course_tags: true
+  su_metatags: true
   su_shared_tags: true

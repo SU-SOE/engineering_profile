@@ -2,10 +2,13 @@
 
 use Faker\Factory;
 
+require_once __DIR__ . '/../TestFilesTrait.php';
+
 /**
  * Tests for various media functionality.
  */
 class MediaCest {
+  use TestFilesTrait;
 
   protected $faker;
 
@@ -106,8 +109,8 @@ class MediaCest {
   public function testAllowedEmbedCodes(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/media/add/embeddable');
-    $I->fillField('Name', $this->faker->words(3, true));
-    $I->fillField('Embed Code', '<iframe src="' . $this->faker->url. '"></iframe>');
+    $I->fillField('Name', $this->faker->words(3, TRUE));
+    $I->fillField('Embed Code', '<iframe src="' . $this->faker->url . '"></iframe>');
     $I->click('Save');
     $I->canSee('The given embeddable code is not permitted');
 
@@ -214,6 +217,64 @@ class MediaCest {
     $I->fillField('oEmbed URL', 'https://purl.stanford.edu/fr477qg2469');
     $I->click('Save');
     $I->canSee('has been created.');
+  }
+
+  /**
+   * Test media category taxonomy field.
+   */
+  private function testCategoryField(AcceptanceTester $I) {
+    /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+    $file_system = \Drupal::service('file_system');
+    $image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
+    $file = $I->createEntity(['uri' => $image_path], 'file');
+
+    $unrelated_term = $I->createEntity([
+      'vid' => 'media_tags',
+      'name' => $this->faker->word,
+    ], 'taxonomy_term');
+
+    $parent_term = $I->createEntity([
+      'vid' => 'media_tags',
+      'name' => $this->faker->word,
+    ], 'taxonomy_term');
+
+    $child_term = $I->createEntity([
+      'vid' => 'media_tags',
+      'name' => $this->faker->word,
+      'parent' => $parent_term->id(),
+    ], 'taxonomy_term');
+
+    $media = $I->createEntity([
+      'bundle' => 'image',
+      'field_media_image' => $file->id(),
+      'name' => $this->faker->words(3, TRUE),
+      'su_media_category' => $child_term,
+    ], 'media');
+
+    $I->logInWithRole('site_manager');
+
+    $I->amOnPage($media->toUrl('edit-form')->toString());
+    $I->canSeeInField('Category', '-' . $parent_term->label());
+    $I->click('Save');
+
+    $I->amOnPage('/admin/content/media');
+    $I->canSee($media->label());
+
+    $I->selectOption('Category', $unrelated_term->label());
+    $I->click('Filter');
+    $I->cantSee($media->label());
+
+    $I->selectOption('Category', $child_term->label());
+    $I->click('Filter');
+    $I->canSee($media->label());
+
+    $I->selectOption('Category', $unrelated_term->label());
+    $I->click('Filter');
+    $I->cantSee($media->label());
+
+    $I->selectOption('Category', '-' . $child_term->label());
+    $I->click('Filter');
+    $I->canSee($media->label());
   }
 
 }

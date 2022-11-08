@@ -493,6 +493,7 @@ display:
         options:
           default_field_elements: 0
           inline:
+            su_news_featured_media: 0
             su_news_banner: 0
             created: 0
             title: 0
@@ -503,29 +504,34 @@ display:
           hide_empty: 1
           pattern: card
           pattern_mapping:
-            'views_row:su_news_banner':
+            'views_row:su_news_featured_media':
               destination: card_image
               weight: 0
+              plugin: views_row
+              source: su_news_featured_media
+            'views_row:su_news_banner':
+              destination: card_image
+              weight: 1
               plugin: views_row
               source: su_news_banner
             'views_row:su_news_publishing_date':
               destination: card_super_headline
-              weight: 1
+              weight: 2
               plugin: views_row
               source: su_news_publishing_date
             'views_row:title':
               destination: card_headline
-              weight: 2
+              weight: 3
               plugin: views_row
               source: title
             'views_row:su_soe_mag_topics':
               destination: card_body
-              weight: 3
+              weight: 4
               plugin: views_row
               source: su_soe_mag_topics
             'views_row:su_magazine_issue':
               destination: card_body
-              weight: 4
+              weight: 5
               plugin: views_row
               source: su_magazine_issue
           pattern_variant: default
@@ -641,7 +647,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if su_news_featured_media is not empty %}\r\n{{ su_news_featured_media }}\r\n{% else %}\r\n{{ su_news_banner }} \r\n{% endif %}"
+            text: "{% if su_news_featured_media is empty %}\r\n{{ su_news_banner }} \r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -677,7 +683,7 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: target_id
           type: media_responsive_image_formatter
           settings:

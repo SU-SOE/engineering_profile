@@ -1,6 +1,0 @@
-name: 'Engineering Profile Helper'
-type: module
-description: 'Engineering Profile Helper module'
-core_version_requirement: ^8.8 || ^9
-package: Stanford
-version: 8.x-1.0-dev
