@@ -199,31 +199,34 @@ third_party_settings:
         - jumpstart_ui_two_column
         - jumpstart_ui_three_column
       allowlisted_blocks:
+        'Changelog (Views)':
+          - 'views_block:change_logs-policy_changes'
         Menus:
-          - 'system_menu_block:stanford-event-types'
           - 'menu_block:stanford-event-types'
+          - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
           - 'system_menu_block:main'
-          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
+          - 'system_menu_block:stanford-person-type'
           - 'menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
+          - 'system_menu_block:stanford-publication-topics'
           - 'menu_block:news-topics'
+          - 'system_menu_block:news-topics'
         System:
           - system_breadcrumb_block
         core:
           - page_title_block
       restricted_categories:
+        - Book
         - 'Chaos Tools'
         - 'Config Pages'
         - Forms
         - Help
         - 'Lists (Views)'
+        - Printable
         - React
-        - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
+        - 'Taxonomy Terms (Views)'
         - Views
       blacklisted_blocks:
         'Content fields':

@@ -27,9 +27,10 @@ third_party_settings:
       format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
         open: true
-        description: 'Use the following options to import events from https://events-legacy.stanford.edu/. Go to https://events-legacy.stanford.edu/ to browse the events that would be included in each of the options below. Events will be imported and updated daily or you can use the Save & Import button to execute an update immediately. '
+        description: 'Use these options to import events from <a href="https://events.stanford.edu">Stanford Events calendar</a>. Choose a field to view and select term(s) in a category. Events will be imported and updated daily or you can use the Save & Import button to execute an update immediately.'
         required_fields: false
     group_deprecated:
       children:
@@ -58,11 +59,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  su_event_xml_url:
-    type: stanford_events_importer_apiurl_field_widget
-    weight: 3
+  su_localist_bookmark:
+    type: link_default
+    weight: 4
     region: content
-    settings: {  }
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   su_localist_bookmark:
     type: link_default
@@ -84,3 +87,4 @@ content:
     third_party_settings: {  }
 hidden:
   label: true
+  su_event_xml_url: true

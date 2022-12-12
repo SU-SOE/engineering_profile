@@ -20,16 +20,16 @@ third_party_settings:
       config_item: display.default.display_options.empty.area.content.value
       prefix: ''
       suffix: ''
-    f9b4f4ec-951c-42a7-b246-662b6a8fbfca:
-      field: su_event_xml_url
+    30c698e6-3386-4481-bd16-0aa9d8b29ae0:
+      field: su_localist_url
       delta: 0
       column: uri
-      config_name: migrate_plus.migration.stanford_events_importer
+      config_name: migrate_plus.migration.stanford_localist_importer
       config_item: status
       prefix: ''
       suffix: ''
-    30c698e6-3386-4481-bd16-0aa9d8b29ae0:
-      field: su_localist_url
+    4e51a456-df70-4dc1-95d3-a58fb5c3b509:
+      field: su_localist_bookmark
       delta: 0
       column: uri
       config_name: migrate_plus.migration.stanford_localist_importer
