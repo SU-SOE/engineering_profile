@@ -202,7 +202,7 @@
         "drupal/pdb": "^1.0@alpha",
         "drupal/printable": "^2.1",
         "drupal/rabbit_hole": "^1.0@beta",
-        "drupal/real_aes": "^2.4",
+        "drupal/real_aes": "^2.5",
         "drupal/redirect": "^1.0-beta1",
         "drupal/response_code_condition": "^1.0",
         "drupal/responsive_tables_filter": "^1.9",
