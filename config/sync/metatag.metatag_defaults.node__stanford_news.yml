@@ -5,6 +5,7 @@ dependencies: {  }
 id: node__stanford_news
 label: 'Content: News'
 tags:
+  article_published_time: '[node:su_news_publishing_date]'
   og_image: '[node:su_news_featured_media:entity:field_media_image:large]'
   og_image_url: '[node:su_news_featured_media:entity:field_media_image:large]'
   twitter_cards_description: '[node:su_page_description]'
