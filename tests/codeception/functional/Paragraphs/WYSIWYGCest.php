@@ -286,9 +286,9 @@ class WYSIWYGCest {
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
     $I->waitForAjaxToFinish();
-    //$I->click('Save and select');
-    //$I->waitForElementNotVisible('.MuiDialog-scrollPaper');
-    //$I->click('Insert selected');
+    $I->click('Save and select');
+    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Insert selected');
     $I->canSeeElement('.su-page-components a');
   }
 
