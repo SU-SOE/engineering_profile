@@ -12,5 +12,5 @@ tags:
   twitter_cards_image: '[node:su_news_featured_media:entity:field_media_image:large]'
   twitter_cards_page_url: '[current-page:url]'
   twitter_cards_site: '@stanfordeng'
-  twitter_cards_title: '[current-page:title] | [site:name]'
+  twitter_cards_title: '[current-page:title]'
   twitter_cards_type: summary_large_image
