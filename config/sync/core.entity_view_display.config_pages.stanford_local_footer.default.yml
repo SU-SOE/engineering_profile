@@ -37,7 +37,6 @@ dependencies:
     - ds
     - field_formatter_class
     - link
-    - markup
     - options
     - text
 third_party_settings:
@@ -154,13 +153,6 @@ content:
         class: ''
     weight: 13
     region: signup_form_action
-  su_local_foot_help:
-    type: markup
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 16
-    region: content
   su_local_foot_pr_co:
     type: text_default
     label: hidden

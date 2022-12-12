@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.su_entity_item
-    - node.type.spotlight
+    - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
@@ -33,7 +33,6 @@ settings:
       stanford_news: stanford_news
       stanford_person: stanford_person
       stanford_publication: stanford_publication
-      spotlight: spotlight
     sort:
       field: _none
       direction: ASC

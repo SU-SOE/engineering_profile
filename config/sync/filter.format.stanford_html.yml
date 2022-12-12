@@ -17,7 +17,6 @@ dependencies:
     - media
     - responsive_tables_filter
     - stanford_media
-    - typogrify
 name: HTML
 format: stanford_html
 weight: 0
@@ -59,7 +58,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<br> <b> <em> <strong> <cite> <blockquote cite> <pre class> <code data-* class> <ul type class id> <ol start type class id> <li class id> <dl class> <dt> <dd class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <div class id> <table class id> <caption> <tbody class> <thead> <tfoot> <th scope class id> <td colspan rowspan class id> <tr id> <sup> <sub> <i class> <hr> <s> <aside class> <drupal-media data-entity-type data-entity-uuid data-align data-caption data-* alt data-view-mode title> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title name class> <p class id> <img class src alt title> <span class id> <abbr id title>'
+      allowed_html: '<br> <b> <em> <strong> <cite> <blockquote cite> <pre class> <code data-* class> <ul type class id> <ol start type class id> <li class id> <dl class> <dt> <dd class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <div class id> <table class id> <caption> <tbody class> <thead> <tfoot> <th colspan rowspan scope class id> <td colspan rowspan class id> <tr id> <sup> <sub> <i class> <hr> <s> <aside class> <drupal-media data-entity-type data-entity-uuid data-align data-caption data-* alt data-view-mode title> <a href aria-label hreflang data-entity-substitution data-entity-type data-entity-uuid title name class> <p class id> <img class src alt title><abbr id title> <span class id>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -121,24 +120,11 @@ filters:
     status: true
     weight: -49
     settings: {  }
-  typogrify:
-    id: typogrify
-    provider: typogrify
+  filter_responsive_tables_filter:
+    id: filter_responsive_tables_filter
+    provider: responsive_tables_filter
     status: true
-    weight: -41
+    weight: -42
     settings:
-      smartypants_enabled: '1'
-      smartypants_hyphens: '1'
-      space_hyphens: '0'
-      widont_enabled: '0'
-      hyphenate_shy: '0'
-      space_to_nbsp: '0'
-      wrap_caps: '0'
-      wrap_ampersand: '0'
-      wrap_abbr: '0'
-      wrap_numbers: '0'
-      wrap_initial_quotes: '0'
-      ligatures: 'a:0:{}'
-      arrows: 'a:0:{}'
-      fractions: 'a:0:{}'
-      quotes: 'a:0:{}'
+      tablesaw_type: stack
+      tablesaw_persist: '1'
