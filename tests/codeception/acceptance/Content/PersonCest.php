@@ -311,7 +311,7 @@ class PersonCest {
    *
    * @group metadata
    */
-  public function testMetaData(AcceptanceTester $I) {
+  private function testMetaData(AcceptanceTester $I) {
     $values = [
       'image_alt' => $this->faker->words(3, TRUE),
       'body' => $this->faker->paragraph,
