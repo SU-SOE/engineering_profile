@@ -199,9 +199,9 @@ class NewsCest {
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
 
-    $I->assertEquals($node->label() , $I->grabAttributeFrom('meta[property="og:title"]', 'content'), 'Metadata "og:title" should match.');
+    $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[property="og:title"]', 'content'), 'Metadata "og:title" should match.');
     $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
-    $I->assertEquals('website', $I->grabAttributeFrom('meta[property="og:type"]', 'content'), 'Metadata "og:type" should match.');
+    $I->assertEquals('article', $I->grabAttributeFrom('meta[property="og:type"]', 'content'), 'Metadata "og:type" should match.');
     $I->assertEquals(date('D, m/d/Y - 12:00', time()), $I->grabAttributeFrom('meta[property="article:published_time"]', 'content'), 'Metadata "article:published_time" should match.');
     $I->cantSeeElement('meta', ['name' => 'description']);
     $I->cantSeeElement('meta', ['property' => 'og:image']);
