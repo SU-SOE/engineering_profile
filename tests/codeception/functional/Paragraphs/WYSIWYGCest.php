@@ -284,12 +284,13 @@ class WYSIWYGCest {
     $I->dropFileInDropzone(__DIR__ . '/test.txt');
     $I->click('Upload and Continue');
     $I->waitForText('The media item has been created but has not yet been saved');
-    $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
-    $I->waitForAjaxToFinish();
-    //$I->click('Save and select');
-    //$I->waitForElementNotVisible('.MuiDialog-scrollPaper');
-    //$I->click('Insert selected');
-    //$I->canSeeElement('.su-page-components a');
+    // $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
+    // $I->waitForAjaxToFinish();
+    // $I->click('Save and select');
+    // $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    // $I->click('Insert selected');
+    // $I->canSeeElement('.su-page-components a');
+
   }
 
   /**
