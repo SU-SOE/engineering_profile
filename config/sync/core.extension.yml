@@ -136,6 +136,7 @@ module:
   oembed_providers: 0
   options: 0
   page_cache: 0
+  page_cache_query_ignore: 0
   page_manager: 0
   page_manager_ui: 0
   paragraphs_edit: 0
@@ -204,6 +205,7 @@ module:
   syslog: 0
   system: 0
   taxonomy: 0
+  taxonomy_entity_index: 0
   taxonomy_menu: 0
   telephone: 0
   text: 0

@@ -8,6 +8,7 @@ dependencies:
   module:
     - image
     - media
+    - taxonomy_entity_index
     - user
 id: media
 label: Media

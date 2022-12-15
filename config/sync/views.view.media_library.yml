@@ -10,6 +10,7 @@ dependencies:
     - image
     - media
     - media_library
+    - taxonomy_entity_index
     - user
   enforced:
     module:
