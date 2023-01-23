@@ -57,6 +57,7 @@ module:
   editor: 0
   editoria11y: 0
   element_class_formatter: 0
+  empty_fields: 0
   encrypt: 0
   engineering_magazine: 0
   engineering_profile_helper: 0
