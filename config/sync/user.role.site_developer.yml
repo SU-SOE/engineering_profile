@@ -31,6 +31,7 @@ dependencies:
     - taxonomy.vocabulary.event_audience
     - taxonomy.vocabulary.magazine_issues
     - taxonomy.vocabulary.magazine_topics
+    - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
     - taxonomy.vocabulary.stanford_person_types
@@ -235,6 +236,7 @@ permissions:
   - 'create terms in event_audience'
   - 'create terms in magazine_issues'
   - 'create terms in magazine_topics'
+  - 'create terms in media_tags'
   - 'create terms in stanford_event_types'
   - 'create terms in stanford_news_topics'
   - 'create terms in stanford_person_types'
@@ -297,6 +299,7 @@ permissions:
   - 'delete terms in event_audience'
   - 'delete terms in magazine_issues'
   - 'delete terms in magazine_topics'
+  - 'delete terms in media_tags'
   - 'delete terms in stanford_event_types'
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
@@ -357,6 +360,7 @@ permissions:
   - 'edit terms in event_audience'
   - 'edit terms in magazine_issues'
   - 'edit terms in magazine_topics'
+  - 'edit terms in media_tags'
   - 'edit terms in stanford_event_types'
   - 'edit terms in stanford_news_topics'
   - 'edit terms in stanford_person_types'

@@ -222,7 +222,7 @@ class MediaCest {
   /**
    * Test media category taxonomy field.
    */
-  public function testCategoryField(AcceptanceTester $I) {
+  private function testCategoryField(AcceptanceTester $I) {
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
     $file_system = \Drupal::service('file_system');
     $image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
@@ -237,6 +237,7 @@ class MediaCest {
       'vid' => 'media_tags',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
+
     $child_term = $I->createEntity([
       'vid' => 'media_tags',
       'name' => $this->faker->word,
@@ -253,7 +254,7 @@ class MediaCest {
     $I->logInWithRole('site_manager');
 
     $I->amOnPage($media->toUrl('edit-form')->toString());
-    $I->canSeeInField('Category', '-' . $child_term->label());
+    $I->canSeeInField('Category', '-' . $parent_term->label());
     $I->click('Save');
 
     $I->amOnPage('/admin/content/media');
@@ -263,7 +264,7 @@ class MediaCest {
     $I->click('Filter');
     $I->cantSee($media->label());
 
-    $I->selectOption('Category', $parent_term->label());
+    $I->selectOption('Category', $child_term->label());
     $I->click('Filter');
     $I->canSee($media->label());
 

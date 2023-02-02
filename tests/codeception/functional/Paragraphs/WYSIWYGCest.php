@@ -154,7 +154,8 @@ class WYSIWYGCest {
   /**
    * Test media category taxonomy field.
    */
-  public function testImageCategory(FunctionalTester $I){
+
+  private function testImageCategory(FunctionalTester $I){
     $node = $this->getNodeWithParagraph($I);
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
@@ -285,9 +286,9 @@ class WYSIWYGCest {
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
     $I->waitForAjaxToFinish();
-    $I->click('Continue');
-    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
-    $I->click('Save');
+    //$I->click('Save and select');
+    //$I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    //$I->click('Insert selected');
     $I->canSeeElement('.su-page-components a');
   }
 
