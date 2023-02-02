@@ -44,7 +44,9 @@
 
       {%- if quote|render|striptags('<drupal-placeholder>') is not empty -%}
       <div class="su-stories-paragraph__quote">
-        <p>&ldquo;{{ quote|render|striptags }}... &rdquo;</p>
+        {% autoescape false %}
+          <p>&ldquo;{{- quote|render|striptags -}}... &rdquo;</p>
+        {% endautoescape %}
       </div>
       {%- endif -%}
 
