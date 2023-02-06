@@ -95,9 +95,12 @@
   }
 
   .su-stories-paragraph__quote {
-    @include type-a;
-    font-weight: 800;
-    @include modular-spacing('margin-bottom', 3);
+    p {
+      @include type-b;
+      font-weight: 800;
+      line-height: 1.3;
+      @include modular-spacing('margin-bottom', 3);
+    }
   }
 
   .su-stories-paragraph__node-link {
