@@ -96,7 +96,7 @@
 
   .su-stories-paragraph__quote {
     p {
-      @include type-b;
+      @include type-d;
       font-weight: 800;
       line-height: 1.3;
       @include modular-spacing('margin-bottom', 3);
