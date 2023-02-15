@@ -104,7 +104,7 @@
   }
 
   .su-stories-paragraph__node-link {
-    @include modular-spacing('margin-bottom', 1);
+    margin: 0;
 
     a {
       text-decoration: none;
