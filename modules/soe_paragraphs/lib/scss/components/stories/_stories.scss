@@ -121,8 +121,8 @@
 
   .su-stories-paragraph__content {
     &+ .su-stories-paragraph__cta-region {
-      @include modular-spacing('padding-top', 1);
       @include modular-spacing('padding-bottom', 3);
+      padding-top: 0;
       display: flex;
       justify-content: center;
 
