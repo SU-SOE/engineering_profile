@@ -27,7 +27,7 @@ effects:
     id: image_effects_mask
     weight: 3
     data:
-      mask_image: modules/custom/stanford_image_styles/img/mask-image.png
+      mask_image: modules/custom/stanford_profile_helper/modules/stanford_image_styles/img/mask-image.png
       mask_width: '360'
       mask_height: '360'
       placement: center-center
