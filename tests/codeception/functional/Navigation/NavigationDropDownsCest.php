@@ -15,7 +15,7 @@ class NavigationDropDownsCest {
     $I->amOnPage('/');
     $I->cantSeeElement('button', ['class' => 'su-nav-toggle']);
     $I->amOnPage('/admin/config/system/basic-site-settings');
-    $I->checkOption('Use drop down menus');
+    $I->checkOption('#edit-su-site-dropdowns-value');
     $I->click('Save');
 
     $node_title = Factory::create()->text(20);

@@ -134,7 +134,7 @@ class WYSIWYGCest {
     $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-page-components img');
-    $I->click('Edit', '.local-tasks-block');
+    $I->click('Edit', '.ul.tabs.primary');
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
@@ -157,7 +157,7 @@ class WYSIWYGCest {
   /**
    * Test media category taxonomy field.
    */
-  public function testImageCategory(FunctionalTester $I){
+  private function testImageCategory(FunctionalTester $I){
     $node = $this->getNodeWithParagraph($I);
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
@@ -228,7 +228,7 @@ class WYSIWYGCest {
     $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('iframe');
-    $I->click('Edit', '.local-tasks-block');
+    $I->click('Edit', '.ul.tabs.primary');
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
@@ -271,7 +271,7 @@ class WYSIWYGCest {
     $I->logInWithRole('administrator');
     $I->amOnPage($node->toUrl()->toString());
     $I->cantSeeElement('.su-page-components a');
-    $I->click('Edit', '.local-tasks-block');
+    $I->click('Edit', '.ul.tabs.primary');
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
