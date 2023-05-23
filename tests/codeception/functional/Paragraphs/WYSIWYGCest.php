@@ -96,8 +96,10 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+
     // Wait a second for any click events to be applied.
     $I->wait(1);
+
     $table_caption = $this->faker->words(4, TRUE);
     $I->click('.cke_button__table');
     $I->waitForText('Table Properties');
@@ -136,6 +138,7 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+
     // Wait a second for any click events to be applied.
     $I->wait(1);
     $I->click('Insert from Media Library');
@@ -154,8 +157,7 @@ class WYSIWYGCest {
   /**
    * Test media category taxonomy field.
    */
-
-  private function testImageCategory(FunctionalTester $I){
+  public function testImageCategory(FunctionalTester $I){
     $node = $this->getNodeWithParagraph($I);
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
@@ -230,6 +232,7 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+
     // Wait a second for any click events to be applied.
     $I->wait(1);
     $I->click('Insert from Media Library');
@@ -272,6 +275,7 @@ class WYSIWYGCest {
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
+
     // Wait a second for any click events to be applied.
     $I->wait(1);
     $I->click('Insert from Media Library');
@@ -286,9 +290,9 @@ class WYSIWYGCest {
     $I->waitForText('The media item has been created but has not yet been saved');
     $I->clickWithLeftButton(".ui-dialog-buttonset button:nth-child(2)");
     $I->waitForAjaxToFinish();
-    //$I->click('Save and select');
-    //$I->waitForElementNotVisible('.MuiDialog-scrollPaper');
-    //$I->click('Insert selected');
+    $I->click('Continue');
+    $I->waitForElementNotVisible('.MuiDialog-scrollPaper');
+    $I->click('Save');
     $I->canSeeElement('.su-page-components a');
   }
 

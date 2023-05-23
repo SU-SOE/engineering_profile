@@ -31,7 +31,7 @@ class PublicationsCest {
   }
 
   /**
-   *
+   * Create a book citation
    */
   public function testBookCitation(AcceptanceTester $I) {
     $this->values['term_name'] = $this->faker->words(3, TRUE);
@@ -77,9 +77,9 @@ class PublicationsCest {
       'vid' => 'stanford_publication_topics',
       'name' => $this->faker->text(10),
     ], 'taxonomy_term');
-    \Drupal::service('cache.render')->deleteAll();
-    \Drupal::service('router.builder')->rebuild();
-    drupal_flush_all_caches();
+    $I->amOnPage($term->toUrl('edit-form')->toString());
+    $I->click('Save');
+
     $I->amOnPage('/publications');
     $I->canSeeLink($term->label());
   }
