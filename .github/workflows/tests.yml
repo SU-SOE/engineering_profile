@@ -1,8 +1,8 @@
-name: Coverage and Acceptance Tests
+name: PHPUnit and Acceptance Tests
 on: [push]
 jobs:
   phpunit:
-    name: PHPUnit and Coverage Tests
+    name: PHPUnit Tests
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:latest

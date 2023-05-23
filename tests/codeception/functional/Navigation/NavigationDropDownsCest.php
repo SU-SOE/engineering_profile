@@ -12,9 +12,11 @@ class NavigationDropDownsCest {
    */
   public function testDropdownMenus(FunctionalTester $I) {
     $I->logInWithRole('Administrator');
+    $I->wait(1);
     $I->amOnPage('/');
     $I->cantSeeElement('button', ['class' => 'su-nav-toggle']);
     $I->amOnPage('/admin/config/system/basic-site-settings');
+    $I->seeResponseCodeIs(200);
     $I->checkOption('#edit-su-site-dropdowns-value');
     $I->click('Save');
 

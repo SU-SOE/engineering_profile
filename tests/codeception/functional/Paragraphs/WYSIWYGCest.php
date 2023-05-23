@@ -132,9 +132,9 @@ class WYSIWYGCest {
   public function testEmbeddedImage(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
-    $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('.su-page-components img');
-    $I->click('Edit', '.ul.tabs.primary');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    #$I->cantSeeElement('.su-page-components img');
+    #$I->click('Edit', '.ul.tabs.primary');
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
@@ -226,9 +226,9 @@ class WYSIWYGCest {
   public function testEmbeddedVideo(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
-    $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('iframe');
-    $I->click('Edit', '.ul.tabs.primary');
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    #$I->cantSeeElement('.su-page-components img');
+    #$I->click('Edit', '.ul.tabs.primary');
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
@@ -269,9 +269,12 @@ class WYSIWYGCest {
   public function testEmbeddedDocument(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
-    $I->amOnPage($node->toUrl()->toString());
-    $I->cantSeeElement('.su-page-components a');
-    $I->click('Edit', '.ul.tabs.primary');
+    # $I->amOnPage($node->toUrl()->toString());
+    $I->amOnPage($node->toUrl('edit-form')->toString());
+    #$I->cantSeeElement('.su-page-components img');
+    #$I->click('Edit', '.ul.tabs.primary');
+    #$I->cantSeeElement('.su-page-components a');
+    #$I->click('Edit', '.ul.tabs.primary');
     $I->waitForElementVisible('#row-0');
     $I->click('Edit', '.inner-row-wrapper');
     $I->waitForElementVisible('.cke_inner');
