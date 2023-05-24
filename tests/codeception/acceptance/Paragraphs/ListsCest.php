@@ -278,6 +278,9 @@ class ListsCest {
     $I->cantSee($message);
 
 
+    $message = $this->faker->sentence;
+    $headline_text = $this->faker->words(3, TRUE);
+
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
@@ -317,6 +320,9 @@ class ListsCest {
     $I->canSee($headline_text);
     $I->canSee($message);
 
+
+    $message = $this->faker->sentence;
+    $headline_text = $this->faker->words(3, TRUE);
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
