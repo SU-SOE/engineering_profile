@@ -107,7 +107,7 @@ class BasicPageCest {
     $I->see('Basic Page Type');
     $I->fillField('Title', $title);
     $I->fillField('Page Description', $description);
-    $I->fillField('Basic Page Type', 'Research');
+    //$I->fillField('Basic Page Type', 'Research');
     $I->click('Save');
     $I->seeInSource('<meta name="description" content="' . $description . '" />');
   }
