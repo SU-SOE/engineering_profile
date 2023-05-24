@@ -69,6 +69,7 @@ class MagazineCest {
      */
     $I->click($magazineStory->getTitle());
     $I->seeCurrentUrlEquals($magazineStory->toUrl()->toString());
+
     /**
      * Check to make sure our issue path works.
      */

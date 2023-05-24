@@ -121,7 +121,7 @@ class SubThemeCest {
     }
 
     $I->runDrush('config-import -y');
-    if (!$saml_enabled) {
+    if ($saml_enabled) {
       $I->runDrush('pm-uninstall simplesamlphp_auth -y');
     }
   }

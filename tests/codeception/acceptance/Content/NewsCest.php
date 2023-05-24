@@ -102,15 +102,18 @@ class NewsCest {
 
     $first_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => $this->faker->words(3, TRUE),
+      'title' => 'Test News 1',
+      'su_magazine_story' => false,
     ]);
     $second_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => $this->faker->words(3, TRUE),
+      'title' => 'Test News 2',
+      'su_magazine_story' => false,
     ]);
     $third_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => $this->faker->words(3, TRUE),
+      'title' => 'Test News 3',
+      'su_magazine_story' => false,
     ]);
 
     $I->amOnPage($second_news->toUrl()->toString());
