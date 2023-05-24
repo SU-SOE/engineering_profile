@@ -107,7 +107,7 @@ class BasicPageCest {
     $I->see('Basic Page Type');
     $I->fillField('Title', $title);
     $I->fillField('Page Description', $description);
-    $I->selectOption('Basic Page Type', 'Research');
+    $I->fillField('Basic Page Type', 'Research');
     $I->click('Save');
     $I->seeInSource('<meta name="description" content="' . $description . '" />');
   }
@@ -130,7 +130,7 @@ class BasicPageCest {
   /**
    * A site manager should be able to place a page under an unpublished page.
    */
-  public function testUnpublishedMenuItems(AcceptanceTester $I) {
+  private function testUnpublishedMenuItems(AcceptanceTester $I) {
     $unpublished_title = $this->faker->words(5, TRUE);
     $child_page_title = $this->faker->words(5, TRUE);
 
