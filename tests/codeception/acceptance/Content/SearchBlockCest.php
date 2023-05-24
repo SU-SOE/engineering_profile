@@ -20,6 +20,7 @@ class SearchBlockCest {
     $I->click('Save');
     // The settings might have been created or updated.
     $I->see('Site Settings has been');
+    drupal_flush_all_caches();
     $I->amOnPage('/');
     $I->dontSeeElement('.su-site-search__input');
 
