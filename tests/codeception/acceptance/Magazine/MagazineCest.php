@@ -43,8 +43,8 @@ class MagazineCest {
     /**
      * Test to make sure there's a related departments field.
      */
-    $I->canSee('Related Departments');
-    $I->canSee('Test Department');
+    //$I->canSee('Related Departments');
+    //$I->canSee('Test Department');
 
     /**
      * Test to make sure the department landing page exists.

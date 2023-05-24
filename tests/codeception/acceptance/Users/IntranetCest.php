@@ -56,7 +56,7 @@ class IntranetCest {
     if (!$this->intranetWasEnabled) {
       $I->runDrush('sset stanford_intranet 1');
     }
-
+    $I->amOnPage('/user/logout');
     $I->amOnPage('/');
     $I->canSeeResponseCodeIs(403);
     $I->canSeeNumberOfElements('.su-multi-menu__menu a', 0);
