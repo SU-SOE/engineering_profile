@@ -7,22 +7,21 @@
 // Requires / Dependencies /////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-const path =                      require('path');
-const webpack =                   require('webpack');
-const autoprefixer =              require('autoprefixer');
-const FileManagerPlugin =         require('filemanager-webpack-plugin');
-const UglifyJsPlugin =            require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin =      require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin =   require("optimize-css-assets-webpack-plugin");
-const WebpackAssetsManifest =     require("webpack-assets-manifest");
-const ExtraWatchWebpackPlugin =   require("extra-watch-webpack-plugin");
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer')({ grid: true });
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const WebpackAssetsManifest = require("webpack-assets-manifest");
+const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 // /////////////////////////////////////////////////////////////////////////////
 // Paths ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-const npmPackage = path.resolve(__dirname, 'node_modules');
+const npmPackage = 'node_modules/';
 const srcDir = path.resolve(__dirname, "lib");
 const distDir = path.resolve(__dirname, "dist");
 const srcSass = path.resolve(srcDir, 'scss');
@@ -48,8 +47,7 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
-    "soe_paragraphs.script": path.resolve(srcJS, "soe_paragraphs.js"),
-    "soe_paragraphs.styles": path.resolve(srcSass, "soe_paragraphs.scss"),
+    //"soe_paragraphs.script": path.resolve(srcJS, "soe_paragraphs.js"),
     "cta-list-paragraph.styles": path.resolve(srcSass, "components/cta-list/index.scss"),
     "image-cta-paragraph.styles": path.resolve(srcSass, "components/image-cta/index.scss"),
     "stories-paragraph.styles": path.resolve(srcSass, "components/stories/index.scss")
@@ -75,8 +73,9 @@ var webpackConfig = {
       // Good ol' Babel.
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['@babel/preset-env']
         }
       },
@@ -94,28 +93,21 @@ var webpackConfig = {
               url: true
             }
           },
-          // Post CSS. Run autoprefixer plugin.
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => [
-                autoprefixer({ grid: true })
-              ]
-            }
-          },
+
           // SASS Loader. Add compile paths to include bourbon.
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [
-                npmPackage,
-                srcSass,
-              ],
-              sourceMap: true,
-              lineNumbers: true,
-              outputStyle: 'nested',
-              precision: 10
+              implementation: require('sass'),
+              sassOptions: {
+                fiber: false,
+                includePaths: [
+                  path.resolve(__dirname, npmPackage),
+                  srcSass
+                ],
+                sourceMap: true,
+                lineNumbers: true
+              },
             }
           }
         ]
@@ -166,14 +158,8 @@ var webpackConfig = {
   optimization: {
     // Uglify the Javascript & and CSS.
     minimizer: [
-      // Shrink JS.
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
-      // Shrink CSS.
-      new OptimizeCSSAssetsPlugin({})
+      new CssMinimizerPlugin(),
+
     ],
   },
   // Plugin configuration.
@@ -187,21 +173,13 @@ var webpackConfig = {
     // A webpack plugin to manage files before or after the build.
     // https://www.npmjs.com/package/filemanager-webpack-plugin
     new FileManagerPlugin({
-      onStart: {
-        delete: [distDir]
+      events: {
+        onStart: {
+          delete: [distDir]
+        }
       },
-      // onEnd: {
-        // copy: [
-          // {
-          //   source: npmPackage + "/decanter/core/src/templates/**/*.twig",
-          //   destination: distDir + "/templates/decanter/"
-          // },
-          // {
-          //   source: srcDir + "/assets/**/*",
-          //   destination: distDir + "/assets/"
-          // }
-        // ],
-      // },
+      runTasksInSeries: false,
+      runOnceInWatchMode: false,
     }),
     // Add a plugin to watch other files other than that required by webpack.
     // https://www.npmjs.com/package/filewatcher-webpack-plugin

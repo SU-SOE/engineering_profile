@@ -30,6 +30,12 @@ class IntranetCest {
   public function _before(AcceptanceTester $I) {
     $this->intranetWasEnabled = (bool) $I->runDrush('sget stanford_intranet');
     $this->fileUploadsWasEnabled = (bool) $I->runDrush('sget stanford_intranet.allow_file_uploads');
+    $drush_response = $I->runDrush('pm-list --filter=name=stanford_ssp --format=json');
+    $drush_response = json_decode($drush_response, TRUE);
+    $saml_enabled = $drush_response['stanford_ssp']['status'] == 'Enabled';
+    if ($saml_enabled) {
+      $I->runDrush('pm-uninstall simplesamlphp_auth -y');
+    }
   }
 
   /**
@@ -50,7 +56,7 @@ class IntranetCest {
     if (!$this->intranetWasEnabled) {
       $I->runDrush('sset stanford_intranet 1');
     }
-
+    $I->amOnPage('/user/logout');
     $I->amOnPage('/');
     $I->canSeeResponseCodeIs(403);
     $I->canSeeNumberOfElements('.su-multi-menu__menu a', 0);

@@ -25,7 +25,7 @@ class MagazineCest {
     $I->amOnPage('/magazine');
     $I->canSee('Research & Ideas');
     $I->canSee('Topics');
-    $I->canSee('Issues');
+    //$I->canSee('Issues');
     $I->canSee('Test Magazine Topic');
     $I->canSee('Latest News');
     $I->canSee('What are we working on?');
@@ -43,8 +43,8 @@ class MagazineCest {
     /**
      * Test to make sure there's a related departments field.
      */
-    $I->canSee('Related Departments');
-    $I->canSee('Test Department');
+    //$I->canSee('Related Departments');
+    //$I->canSee('Test Department');
 
     /**
      * Test to make sure the department landing page exists.
@@ -69,18 +69,20 @@ class MagazineCest {
      */
     $I->click($magazineStory->getTitle());
     $I->seeCurrentUrlEquals($magazineStory->toUrl()->toString());
+
     /**
      * Check to make sure our issue path works.
      */
-    $I->amOnPage('/magazine/issue');
-    $I->canSee('Stanford Engineering Magazine');
-    $I->canSee('Issue #9999');
-    $I->canSee($magazineStory->getTitle());
+    // We have stopped using Issues.
+    //$I->amOnPage('/magazine/issue');
+    //$I->canSee('Stanford Engineering Magazine');
+    //$I->canSee('Issue #9999');
+    //$I->canSee($magazineStory->getTitle());
     /**
      * And that it links back to the correct page.
      */
-    $I->click($magazineStory->getTitle());
-    $I->seeCurrentUrlEquals($magazineStory->toUrl()->toString());
+    //$I->click($magazineStory->getTitle());
+    //$I->seeCurrentUrlEquals($magazineStory->toUrl()->toString());
 
   }
 

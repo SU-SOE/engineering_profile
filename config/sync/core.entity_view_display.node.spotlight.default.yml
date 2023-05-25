@@ -212,29 +212,6 @@ third_party_settings:
                     class: ''
             weight: -8
             additional: {  }
-          4f9158ff-4e01-4db7-b830-516f99233707:
-            uuid: 4f9158ff-4e01-4db7-b830-516f99233707
-            region: main
-            configuration:
-              id: 'field_block:node:spotlight:created'
-              label: 'Authored on'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: timestamp
-                label: hidden
-                settings:
-                  date_format: custom
-                  custom_date_format: 'M Y'
-                  timezone: ''
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: -10
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
