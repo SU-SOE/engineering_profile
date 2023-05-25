@@ -12,10 +12,16 @@
  * {{ cta }}
  * {{ quote }}
  * {{ border_color_variant }}
+ * {{ size }}
  *
  */
 #}
-{%- set attributes = attributes.addClass(['su-stories-paragraph', modifier_class]) -%}
+
+{%-  if size|render|striptags is not empty -%}
+{%- set layout_class = ('layout-' ~ size|render|striptags|trim)|lower  -%}
+{%- endif -%}
+
+{%- set attributes = attributes.addClass(['su-stories-paragraph', modifier_class, layout_class]) -%}
 
 {%- if border_color_variant|render|striptags|trim is not empty -%}
 {%- set border_color = 'border-color-' ~ border_color_variant|render|striptags|trim -%}
@@ -38,7 +44,9 @@
 
       {%- if quote|render|striptags('<drupal-placeholder>') is not empty -%}
       <div class="su-stories-paragraph__quote">
-        <p>&ldquo;{{ quote|render|striptags }}... &rdquo;</p>
+        {% autoescape false %}
+          <p>&ldquo;{{- quote|render|striptags -}}... &rdquo;</p>
+        {% endautoescape %}
       </div>
       {%- endif -%}
 
@@ -51,4 +59,5 @@
     {{ cta }}
   </div>
   {%- endif -%}
+
 </div>

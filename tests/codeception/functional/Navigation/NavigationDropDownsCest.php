@@ -11,7 +11,8 @@ class NavigationDropDownsCest {
    * Create some content and test the dropdown menu.
    */
   public function testDropdownMenus(FunctionalTester $I) {
-    $I->logInWithRole('Administrator');
+    $I->logInWithRole('administrator');
+    $I->wait(1);
     $I->amOnPage('/');
     $I->cantSeeElement('button', ['class' => 'su-nav-toggle']);
     $I->amOnPage('/admin/config/system/basic-site-settings');

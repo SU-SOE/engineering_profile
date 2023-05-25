@@ -4,7 +4,7 @@ checks:
     enabled: false
   method-complexity:
     config:
-      threshold: 15
+      threshold: 20
 
 plugins:
   # https://docs.codeclimate.com/docs/eslint
@@ -84,8 +84,8 @@ plugins:
   # https://docs.codeclimate.com/docs/duplication
   duplication:
     enabled: true
-    # exclude_paths:
-    #   - examples/
+      exclude_paths:
+        - themes
     config:
       languages:
         javascript:

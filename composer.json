@@ -103,10 +103,6 @@
         }
     ],
     "require": {
-        "drupal/memcache": "^2.3",
-        "drupal/typogrify": "^1.1",
-        "drupal/views_autosubmit": "^1.4",
-        "drupal/views_data_export": "^1.0",
         "ext-imagick": "*",
         "acquia/drupal-environment-detector": "^1.0",
         "citation-style-language/locales": "1.0.0",
@@ -116,11 +112,13 @@
         "ckeditor-plugin/fakeobjects": "^4.14.0",
         "ckeditor-plugin/link": "^4.14.0",
         "composer/installers": ">=1.2",
+        "drupal/acquia_purge": "^1.1",
         "drupal/address": "^1.2",
         "drupal/admin_toolbar": "^3.1",
         "drupal/allowed_formats": "^1.1",
         "drupal/anchor_link": "^2.5",
         "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/autoservices": "^1.0",
         "drupal/block_content_permissions": "^1.8",
         "drupal/change_labels": "^1.0",
         "drupal/chosen": "^3.0",
@@ -182,6 +180,7 @@
         "drupal/linkit": "^6.0",
         "drupal/markup": "^1.0",
         "drupal/mathjax": "^3.0",
+        "drupal/memcache": "^2.3",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "dev-1.x#567becffbb0589e824fb053f15fb38a5846e7276",
         "drupal/menu_link_weight": "^1.0-beta3",
@@ -213,13 +212,16 @@
         "drupal/taxonomy_menu": "^3.5",
         "drupal/token_or": "^2.0",
         "drupal/transliterate_filenames": "^2.0",
+        "drupal/typogrify": "^1.1",
         "drupal/ui_patterns": "^1.0",
         "drupal/view_unpublished": "^1.0",
         "drupal/viewfield": "^3.0@beta",
+        "drupal/views_autosubmit": "^1.4",
         "drupal/views_block_filter_block": "^1.0@beta",
         "drupal/views_bulk_edit": "^2.6",
         "drupal/views_contextual_filters_or": "^1.3",
         "drupal/views_custom_cache_tag": "^1.2",
+        "drupal/views_data_export": "^1.0",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/views_taxonomy_term_name_depth": "^7.0",
         "drupal/webp": "^1.0@beta",
@@ -240,7 +242,20 @@
         "sort-packages": true,
         "preferred-install": {
             "drupal/printable": "source"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "davidbarratt/custom-installer": true,
+            "simplesamlphp/composer-module-installer": true
         }
+    },
+    "conflict": {
+        "drupal/core": ">=9.5.0",
+        "drupal/core-dev": ">=9.5.0",
+        "drupal/core-composer-scaffold": ">=9.5.0",
+        "symfony/string": ">=6.0",
+        "drupal/real_aes": ">=2.5"
     },
     "autoload": {
         "psr-4": {
@@ -267,7 +282,7 @@
             "drupal/ckeditor_blockimagepaste": {
                 "https://www.drupal.org/project/ckeditor_blockimagepaste/issues/3272772": "https://www.drupal.org/files/issues/2022-04-14/prevent_js_alert_and_block_ms_word_paste-v2.patch"
             },
-            "drupal/default_content":{
+            "drupal/default_content": {
                 "https://www.drupal.org/project/default_content/issues/3160146": "https://git.drupalcode.org/project/default_content/-/merge_requests/15.patch"
             },
             "drupal/jsonapi_extras": {

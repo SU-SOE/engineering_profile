@@ -1,6 +1,7 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  acquia_purge: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
@@ -116,6 +117,8 @@ module:
   media: 0
   media_duplicate_validation: 0
   media_library: 0
+  memcache: 0
+  memcache_admin: 0
   menu_block: 0
   menu_ui: 0
   metatag: 0
@@ -147,6 +150,12 @@ module:
   pdb_react: 0
   preprocess_event_dispatcher: 0
   printable: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_processor_lateruntime: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
   rabbit_hole: 0
   react_paragraphs: 0
   react_paragraphs_behaviors: 0
@@ -219,6 +228,7 @@ module:
   ui_patterns_library: 0
   ui_patterns_views: 0
   ultimate_cron: 0
+  update: 0
   user: 0
   user_event_dispatcher: 0
   view_unpublished: 0

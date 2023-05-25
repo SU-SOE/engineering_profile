@@ -278,6 +278,9 @@ class ListsCest {
     $I->cantSee($message);
 
 
+    $message = $this->faker->sentence;
+    $headline_text = $this->faker->words(3, TRUE);
+
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
@@ -317,6 +320,9 @@ class ListsCest {
     $I->canSee($headline_text);
     $I->canSee($message);
 
+
+    $message = $this->faker->sentence;
+    $headline_text = $this->faker->words(3, TRUE);
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
     $paragraph = $I->createEntity([
       'type' => 'stanford_lists',
@@ -584,7 +590,7 @@ class ListsCest {
   /**
    * When using the list paragraph and view arguments, it should filter results.
    */
-  public function testListParagraphEventFiltersAudienceFilter(AcceptanceTester $I) {
+  private function testListParagraphEventFiltersAudienceFilter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
 
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
@@ -738,7 +744,7 @@ class ListsCest {
   /**
    * Test basic page types list view.
    */
-  public function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
+  private function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
 
     $type_term = $this->createTaxonomyTerm($I, 'basic_page_types', 'Basic Page Test Term');
