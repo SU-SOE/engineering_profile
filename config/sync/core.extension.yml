@@ -58,7 +58,6 @@ module:
   entity_reference_revisions: 0
   entity_usage: 0
   environment_indicator: 0
-  fakeobjects: 0
   fast404: 0
   fast_404_generator: 0
   field: 0
