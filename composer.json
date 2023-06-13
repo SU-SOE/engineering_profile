@@ -180,8 +180,7 @@
         "acquia/memcache-settings": "^1.2",
         "drupal/cshs": "^4.0",
         "drupal/jsonapi_search_api": "^1.0@RC",
-        "su-sws/ckeditor5_plugins": "^1.0",
-        "su-sws/drupal-patches": "^8.1"
+        "su-sws/ckeditor5_plugins": "^1.0"
     },
     "config": {
         "sort-packages": true,
