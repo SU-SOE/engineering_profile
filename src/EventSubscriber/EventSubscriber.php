@@ -8,6 +8,7 @@ use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
 use Drupal\default_content\Event\DefaultContentEvents;
 use Drupal\default_content\Event\ImportEvent;
+use Drupal\file\FileInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -48,7 +49,9 @@ class EventSubscriber implements EventSubscriberInterface {
    * {@inheritDoc}
    */
   public static function getSubscribedEvents() {
-    return [DefaultContentEvents::IMPORT => 'onContentImport'];
+    return [
+      DefaultContentEvents::IMPORT => 'onContentImport',
+    ];
   }
 
   /**
@@ -63,6 +66,11 @@ class EventSubscriber implements EventSubscriberInterface {
     $this->fileSystem = $file_system;
     $this->logger = $logger_factory->get('engineering_profile');
   }
+
+  /**
+   * Empty function to avoid errors until cache is cleared.
+   */
+  public function preSaveEntity(): void {}
 
   /**
    * When content is imported, download the images.
@@ -81,10 +89,26 @@ class EventSubscriber implements EventSubscriberInterface {
         continue;
       }
 
-      $file_uri = $entity->getFileUri();
+      if ($entity->getEntityTypeId() == 'media') {
+        foreach ($entity->getFieldDefinitions() as $field) {
+          if ($field->getType() == 'image') {
+            foreach ($entity->get($field->getName()) as $item) {
+              if (!$item->entity instanceof FileInterface) {
+                continue;
+              }
 
-      if (!file_exists($file_uri)) {
-        $this->getFile($file_uri);
+              $file_uri = $item->entity->getFileUri();
+
+              if (!file_exists($file_uri)) {
+                $this->getFile($file_uri);
+              }
+
+              [$width, $height] = @getimagesize($file_uri);
+              $item->set('width', (int) $width);
+              $item->set('height', (int) $height);
+            }
+          }
+        }
       }
     }
   }

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.stanford_html
+    - filter.format.stanford_minimal_html
     - media.type.embeddable
     - media.type.file
     - media.type.google_form
@@ -38,12 +40,15 @@ dependencies:
     - eck
     - editoria11y
     - field_permissions
+    - filter
     - media
     - menu_admin_per_menu
     - node
     - paragraphs
     - path
+    - pathauto
     - scheduler
+    - stanford_policy
     - stanford_publication
     - system
     - taxonomy
@@ -216,6 +221,8 @@ permissions:
   - 'revert stanford_publication revisions'
   - 'schedule publishing of nodes'
   - 'update media'
+  - 'use text format stanford_html'
+  - 'use text format stanford_minimal_html'
   - 'use views bulk edit'
   - 'view all media revisions'
   - 'view all revisions'
@@ -227,11 +234,13 @@ permissions:
   - 'view any unpublished stanford_news content'
   - 'view any unpublished stanford_page content'
   - 'view any unpublished stanford_person content'
+  - 'view any unpublished stanford_policy content'
   - 'view any unpublished stanford_publication content'
   - 'view editoria11y checker'
   - 'view own log entities'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view policy log'
   - 'view scheduled content'
   - 'view spotlight revisions'
   - 'view stanford_course revisions'

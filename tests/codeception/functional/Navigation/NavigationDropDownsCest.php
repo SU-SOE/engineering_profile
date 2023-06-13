@@ -3,18 +3,48 @@
 use Faker\Factory;
 
 /**
- * Test for the lockup settings
+ * Test for the lockup settings.
+ *
+ * @group navigation
  */
 class NavigationDropDownsCest {
 
   /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * Test constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
+   * Cleanup after test.
+   */
+  public function __after(FunctionalTester $I) {
+    \Drupal::entityTypeManager()
+      ->getStorage('config_pages')
+      ->load('stanford_basic_site_settings')
+      ->set('su_site_dropdowns', NULL)
+      ->save();
+  }
+
+  /**
    * Create some content and test the dropdown menu.
+   *
+   * @group menu_link_weight
    */
   public function testDropdownMenus(FunctionalTester $I) {
     $I->logInWithRole('administrator');
     $I->wait(1);
     $I->amOnPage('/');
     $I->cantSeeElement('button', ['class' => 'su-nav-toggle']);
+
     $I->amOnPage('/admin/config/system/basic-site-settings');
     $I->checkOption('Use drop down menus');
     $I->click('Save');
@@ -27,14 +57,15 @@ class NavigationDropDownsCest {
     $I->checkOption('Provide a menu link');
     $I->fillField('Menu link title', $node_title);
     // The label on the menu parent changes in D9 vs D8
-    $I->selectOption('Parent link', '-- Resources');
-    $I->waitForText('Change the weight of the links within the Resources menu');
+    $I->selectOption('.menu-link-form .select-wrapper--level-0 select', '<main>');
+    $I->selectOption('.menu-link-form .select-wrapper--level-1 select', $parent_menu_title);
+    $I->waitForText("Change the weight of the links within the $parent_menu_title menu");
+
     $I->click('Save');
     $I->canSeeLink($node_title);
 
     $I->amOnPage('/');
-    $I->resizeWindow(1000, 800);
-    $I->seeElement('button', ['class' => 'su-nav-toggle']);
+    $I->seeElement('button.su-nav-toggle');
   }
 
 }
