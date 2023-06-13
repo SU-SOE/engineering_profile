@@ -116,7 +116,7 @@
         "drupal/link_title_formatter": "^2.0",
         "drupal/linkit": "^6.0",
         "drupal/markup": "^1.0",
-        "drupal/mathjax": "^3.0",
+        "drupal/mathjax": "^4.0",
         "drupal/memcache": "^2.3",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.10",
