@@ -73,7 +73,7 @@
         "drupal/config_update": "^1.7",
         "drupal/confirm_leave": "^1.0@beta",
         "drupal/content_lock": "^2.2",
-        "drupal/core": "^9.4.0",
+        "drupal/core": "^9.5.0",
         "drupal/default_content": "^2.0@alpha",
         "drupal/diff": "^1.0@RC",
         "drupal/display_field_copy": "^2.0",
@@ -190,9 +190,6 @@
         }
     },
     "conflict": {
-        "drupal/core": ">=9.5.0",
-        "drupal/core-dev": ">=9.5.0",
-        "drupal/core-composer-scaffold": ">=9.5.0",
         "symfony/string": ">=6.0",
         "drupal/real_aes": ">=2.5"
     },
