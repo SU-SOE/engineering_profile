@@ -36,14 +36,6 @@ third_party_settings:
       config_item: status
       prefix: ''
       suffix: ''
-    4e51a456-df70-4dc1-95d3-a58fb5c3b509:
-      field: su_localist_bookmark
-      delta: 0
-      column: uri
-      config_name: migrate_plus.migration.stanford_localist_importer
-      config_item: status
-      prefix: ''
-      suffix: ''
 id: stanford_events_importer
 label: 'Events Importer'
 token: null
