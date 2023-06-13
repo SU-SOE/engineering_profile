@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel\EventSubscriber;
+namespace Drupal\Tests\engineering_profile\Kernel\EventSubscriber;
 
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\File\FileSystemInterface;
@@ -11,13 +11,13 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\soe_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
+use Drupal\engineering_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
 
 /**
  * Class EventSubscriberTest.
  *
  * @group stanford_profile
- * @coversDefaultClass \Drupal\soe_profile\EventSubscriber\EventSubscriber
+ * @coversDefaultClass \Drupal\engineering_profile\EventSubscriber\EventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
 
@@ -41,7 +41,7 @@ class EventSubscriberTest extends KernelTestBase {
   /**
    * Event subscriber object.
    *
-   * @var \Drupal\soe_profile\EventSubscriber\EventSubscriber
+   * @var \Drupal\engineering_profile\EventSubscriber\EventSubscriber
    */
   protected $eventSubscriber;
 
