@@ -52,6 +52,7 @@
         "drupal/address": "^1.2",
         "drupal/admin_toolbar": "^3.1",
         "drupal/allowed_formats": "^2.0",
+        "drupal/anchor_link": "~1.0",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/autoservices": "^1.0",
         "drupal/block_content_permissions": "^1.8",
@@ -175,7 +176,12 @@
         "su-sws/stanford_media": "^8.3",
         "su-sws/stanford_migrate": "^8.3",
         "su-sws/stanford_profile_helper": "^9.0",
-        "su-sws/stanford_ssp": "^8.2"
+        "su-sws/stanford_ssp": "^8.2",
+        "acquia/memcache-settings": "^1.2",
+        "drupal/cshs": "^4.0",
+        "drupal/jsonapi_search_api": "^1.0@RC",
+        "su-sws/ckeditor5_plugins": "^1.0",
+        "su-sws/drupal-patches": "^8.1"
     },
     "config": {
         "sort-packages": true,

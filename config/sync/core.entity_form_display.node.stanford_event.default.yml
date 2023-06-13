@@ -201,14 +201,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  su_event_contact_info:
-    type: string_textfield
-    weight: 28
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   su_event_cta:
     type: link_default
     weight: 30
