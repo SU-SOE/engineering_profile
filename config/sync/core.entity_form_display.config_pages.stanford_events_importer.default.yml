@@ -67,14 +67,6 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  su_localist_bookmark:
-    type: link_default
-    weight: 4
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   su_localist_url:
     type: localist_url
     weight: 2
