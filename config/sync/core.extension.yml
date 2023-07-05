@@ -34,8 +34,8 @@ module:
   contextual: 0
   core_event_dispatcher: 0
   crop: 0
-  csv_serialization: 0
   cshs: 0
+  csv_serialization: 0
   ctools: 0
   ctools_views: 0
   datetime: 0
