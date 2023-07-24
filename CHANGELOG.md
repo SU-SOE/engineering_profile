@@ -124,6 +124,18 @@ _Release Date: 2022-08-22_
 
 - Fixed courses field widget with view query parameter.
 
+10.0.2
+-------------------------------------------------------------------------------
+- Added to the update hook to handle layout builder menu blocks when updating menu links.
+- Added user json api endpoint.
+
+10.0.1
+--------------------------------------------------------------------------------
+- D8CORE-6792: fix to the CTA image hovers (#298)
+- add ptype classes just in case
+- Remove unwanted paragraph types on publication field
+- Add new layout paragraphs styles class
+
 10.0.0
 --------------------------------------------------------------------------------
 
