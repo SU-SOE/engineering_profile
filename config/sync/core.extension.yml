@@ -55,6 +55,7 @@ module:
   empty_fields: 0
   encrypt: 0
   engineering_magazine: 0
+  engineering_profile: 0
   engineering_profile_helper: 0
   entity_reference_revisions: 0
   entity_usage: 0
@@ -256,12 +257,11 @@ module:
   menu_link_weight: 10
   stanford_profile_helper: 10
   paragraphs: 11
-  engineering_profile: 1000
 theme:
   stable9: 0
   claro: 0
-  stanford_basic: 0
-  soe_basic: 0
-  engineering: 0
+  stanford_basic: 1
+  soe_basic: 2
+  engineering: 3
   minimally_branded_subtheme: 0
 profile: engineering_profile
