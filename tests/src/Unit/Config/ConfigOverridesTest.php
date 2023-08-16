@@ -1,24 +1,24 @@
 <?php
 
-namespace Drupal\Tests\engineering_profile\Unit\Config;
+namespace Drupal\Tests\soe_profile\Unit\Config;
 
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\State\StateInterface;
-use Drupal\engineering_profile\Config\ConfigOverrides;
+use Drupal\soe_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ConfigOverridesTest
  *
- * @group engineering_profile
- * @coversDefaultClass \Drupal\engineering_profile\Config\ConfigOverrides
+ * @group soe_profile
+ * @coversDefaultClass \Drupal\soe_profile\Config\ConfigOverrides
  */
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
-   * @var \Drupal\engineering_profile\Config\ConfigOverrides
+   * @var \Drupal\soe_profile\Config\ConfigOverrides
    */
   protected $overrideService;
 
@@ -41,13 +41,13 @@ class ConfigOverridesTest extends UnitTestCase {
   }
 
   public function testConfigOverrides() {
-    $this->assertEquals('EngineeringProfileConfigOverride', $this->overrideService->getCacheSuffix());
+    $this->assertEquals('SoeProfileConfigOverride', $this->overrideService->getCacheSuffix());
 
     $this->assertNull($this->overrideService->createConfigObject('foo'));
     $this->assertInstanceOf(CacheableMetadata::class, $this->overrideService->getCacheableMetadata('foo'));
 
     $overrides = $this->overrideService->loadOverrides(['system.site']);
-    $this->assertArrayEquals([
+    $this->assertEquals([
       'page' => [
         403 => '/node/403',
         404 => '/node/404',
@@ -66,7 +66,7 @@ class ConfigOverridesTest extends UnitTestCase {
         'ignored_config_entities' => ['stable.settings', 'seven.settings'],
       ],
     ];
-    $this->assertArrayEquals($expected, $overrides);
+    $this->assertEquals($expected, $overrides);
   }
 
   /**
@@ -75,7 +75,7 @@ class ConfigOverridesTest extends UnitTestCase {
   public function testGoogleTagOverrides() {
     $overrides = $this->overrideService->loadOverrides(['google_tag.container.foo_bar']);
     $expected = ['google_tag.container.foo_bar' => ['status' => FALSE]];
-    $this->assertArrayEquals($expected, $overrides);
+    $this->assertEquals($expected, $overrides);
   }
 
   /**
@@ -83,13 +83,13 @@ class ConfigOverridesTest extends UnitTestCase {
    */
   public function getStateCallback($name) {
     switch ($name) {
-      case 'engineering_profile.403_page':
+      case 'soe_profile.403_page':
         return '/node/403';
 
-      case 'engineering_profile.404_page':
+      case 'soe_profile.404_page':
         return '/node/404';
 
-      case 'engineering_profile.front_page':
+      case 'soe_profile.front_page':
         return '/node/99';
 
     }

@@ -7,15 +7,6 @@
  */
 class RolesCest {
 
-  public function _before(AcceptanceTester $I){
-    $drush_response = $I->runDrush('pm-list --filter=name=stanford_ssp --format=json');
-    $drush_response = json_decode($drush_response, TRUE);
-    $saml_enabled = $drush_response['stanford_ssp']['status'] == 'Enabled';
-    if ($saml_enabled) {
-      $I->runDrush('pm-uninstall simplesamlphp_auth -y');
-    }
-  }
-
   /**
    * Default roles should exist.
    */
@@ -28,6 +19,7 @@ class RolesCest {
     $I->canSee('Site Builder');
     $I->canSee('Site Developer');
     $I->canSee('Administrator');
+    $I->canSee('Site Embedder');
   }
 
   /**

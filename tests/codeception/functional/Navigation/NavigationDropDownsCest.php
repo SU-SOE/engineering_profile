@@ -40,8 +40,18 @@ class NavigationDropDownsCest {
    * @group menu_link_weight
    */
   public function testDropdownMenus(FunctionalTester $I) {
-    $I->logInWithRole('administrator');
-    $I->wait(1);
+    $parent_menu_title = $this->faker->word;
+    $I->createEntity([
+      'title' => $parent_menu_title,
+      'menu_name' => 'main',
+      'link' => ['uri' => 'route:<front>'],
+    ], 'menu_link_content');
+
+    $I->logInWithRole('site_manager');
+    $I->resizeWindow(1400, 700);
+    $I->amOnPage('/admin/config/system/basic-site-settings');
+    $I->uncheckOption('Use drop down menus');
+    $I->click('Save');
     $I->amOnPage('/');
     $I->cantSeeElement('button', ['class' => 'su-nav-toggle']);
 

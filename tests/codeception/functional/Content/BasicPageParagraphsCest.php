@@ -97,8 +97,8 @@ class BasicPageParagraphsCest {
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
 
-    #$I->amOnPage("/node/{$node->id()}/revisions");
-    #$I->canSeeNumberOfElements('.diff-revisions tbody tr', 3);
+    $I->amOnPage("/node/{$node->id()}/revisions");
+    $I->canSeeNumberOfElements('.diff-revisions tbody tr', 3);
   }
 
 }

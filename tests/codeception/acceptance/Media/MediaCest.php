@@ -8,21 +8,21 @@ require_once __DIR__ . '/../TestFilesTrait.php';
  * Tests for various media functionality.
  */
 class MediaCest {
+
   use TestFilesTrait;
 
+  /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
   protected $faker;
 
+  /**
+   * Test constructor.
+   */
   public function __construct() {
     $this->faker = Factory::create();
-  }
-
-  public function _before(AcceptanceTester $I){
-    $drush_response = $I->runDrush('pm-list --filter=name=stanford_ssp --format=json');
-    $drush_response = json_decode($drush_response, TRUE);
-    $saml_enabled = $drush_response['stanford_ssp']['status'] == 'Enabled';
-    if ($saml_enabled) {
-      $I->runDrush('pm-uninstall simplesamlphp_auth -y');
-    }
   }
 
   /**
@@ -231,7 +231,7 @@ class MediaCest {
   /**
    * Test media category taxonomy field.
    */
-  private function testCategoryField(AcceptanceTester $I) {
+  public function testCategoryField(AcceptanceTester $I) {
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
     $file_system = \Drupal::service('file_system');
     $image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
@@ -246,7 +246,6 @@ class MediaCest {
       'vid' => 'media_tags',
       'name' => $this->faker->word,
     ], 'taxonomy_term');
-
     $child_term = $I->createEntity([
       'vid' => 'media_tags',
       'name' => $this->faker->word,
@@ -263,7 +262,7 @@ class MediaCest {
     $I->logInWithRole('site_manager');
 
     $I->amOnPage($media->toUrl('edit-form')->toString());
-    $I->canSeeInField('Category', '-' . $parent_term->label());
+    $I->canSeeInField('Category', $child_term->id());
     $I->click('Save');
 
     $I->amOnPage('/admin/content/media');
@@ -273,7 +272,7 @@ class MediaCest {
     $I->click('Filter');
     $I->cantSee($media->label());
 
-    $I->selectOption('Category', $child_term->label());
+    $I->selectOption('Category', $parent_term->label());
     $I->click('Filter');
     $I->canSee($media->label());
 

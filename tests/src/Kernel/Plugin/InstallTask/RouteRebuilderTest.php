@@ -1,15 +1,15 @@
 <?php
 
-namespace Drupal\Tests\engineering_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\soe_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\engineering_profile\Plugin\InstallTask\RouteRebuilder;
+use Drupal\soe_profile\Plugin\InstallTask\RouteRebuilder;
 
 /**
  * Class RouteRebuilderTest.
  *
- * @coversDefaultClass \Drupal\engineering_profile\Plugin\InstallTask\RouteRebuilder
+ * @coversDefaultClass \Drupal\soe_profile\Plugin\InstallTask\RouteRebuilder
  */
 class RouteRebuilderTest extends KernelTestBase {
 
@@ -27,7 +27,7 @@ class RouteRebuilderTest extends KernelTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
-    $this->setInstallProfile('engineering_profile');
+    $this->setInstallProfile('stanford_profile');
     $this->installEntitySchema('user');
     $this->installEntitySchema('node');
     $this->installSchema('node', 'node_access');
