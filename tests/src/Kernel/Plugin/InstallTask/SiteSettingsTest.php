@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\engineering_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\config_pages\Entity\ConfigPagesType;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -52,7 +52,7 @@ class SiteSettingsTest extends KernelTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
-    $this->setInstallProfile('soe_profile');
+    $this->setInstallProfile('engineering_profile');
 
     $this->installEntitySchema('user');
     $this->installEntitySchema('user_role');

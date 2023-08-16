@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel;
+namespace Drupal\Tests\engineering_profile\Kernel;
 
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
@@ -10,7 +10,7 @@ use Drupal\engineering_profile\StanfordProfilePermissions;
 /**
  * Class StanfordProfilePermissionsTest.
  *
- * @group soe_profile
+ * @group engineering_profile
  * @coversDefaultClass \Drupal\engineering_profile\StanfordProfilePermissions
  */
 class StanfordProfilePermissionsTest extends KernelTestBase {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\engineering_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\engineering_profile\Plugin\InstallTask\Users;
@@ -27,7 +27,7 @@ class UsersTest extends KernelTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
-    $this->setInstallProfile('soe_profile');
+    $this->setInstallProfile('engineering_profile');
 
     $this->installEntitySchema('user');
     $this->installEntitySchema('user_role');

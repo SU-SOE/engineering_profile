@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel\Plugin\InstallTask;
+namespace Drupal\Tests\engineering_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\KernelTests\KernelTestBase;

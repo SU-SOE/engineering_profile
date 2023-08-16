@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\soe_profile\Kernel\EventSubscriber;
+namespace Drupal\Tests\engineering_profile\Kernel\EventSubscriber;
 
 use Drupal\consumers\Entity\Consumer;
 use Drupal\Core\File\FileSystemInterface;

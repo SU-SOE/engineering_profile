@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Test that soe_profile_xmlsitemap_link_alter is working.
+ * Test that engineering_profile_xmlsitemap_link_alter is working.
  */
 class XmlsitemapCest {
 
@@ -18,10 +18,10 @@ class XmlsitemapCest {
     /** @var \Drupal\path_alias\AliasManagerInterface $alias_manager */
     $alias_manager = \Drupal::service('path_alias.manager');
 
-    $soe_profile_403_page = \Drupal::config('system.site')->get('page.403');
-    $alias_403 = $alias_manager->getAliasByPath($soe_profile_403_page);
-    $soe_profile_404_page = \Drupal::config('system.site')->get('page.404');
-    $alias_404 = $alias_manager->getAliasByPath($soe_profile_404_page);
+    $engineering_profile_403_page = \Drupal::config('system.site')->get('page.403');
+    $alias_403 = $alias_manager->getAliasByPath($engineering_profile_403_page);
+    $engineering_profile_404_page = \Drupal::config('system.site')->get('page.404');
+    $alias_404 = $alias_manager->getAliasByPath($engineering_profile_404_page);
     $I->dontSeeLink($host . $alias_403);
     $I->dontSeeLink($host . $alias_404);
   }
