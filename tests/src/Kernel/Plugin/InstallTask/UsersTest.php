@@ -3,14 +3,14 @@
 namespace Drupal\Tests\soe_profile\Kernel\Plugin\InstallTask;
 
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\soe_profile\Plugin\InstallTask\Users;
+use Drupal\engineering_profile\Plugin\InstallTask\Users;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 
 /**
  * Class UsersTest.
  *
- * @coversDefaultClass \Drupal\soe_profile\Plugin\InstallTask\Users
+ * @coversDefaultClass \Drupal\engineering_profile\Plugin\InstallTask\Users
  */
 class UsersTest extends KernelTestBase {
 

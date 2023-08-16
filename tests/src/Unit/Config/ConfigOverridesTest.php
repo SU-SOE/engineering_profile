@@ -6,19 +6,19 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\State\StateInterface;
-use Drupal\soe_profile\Config\ConfigOverrides;
+use Drupal\engineering_profile\Config\ConfigOverrides;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ConfigOverridesTest
  *
  * @group soe_profile
- * @coversDefaultClass \Drupal\soe_profile\Config\ConfigOverrides
+ * @coversDefaultClass \Drupal\engineering_profile\Config\ConfigOverrides
  */
 class ConfigOverridesTest extends UnitTestCase {
 
   /**
-   * @var \Drupal\soe_profile\Config\ConfigOverrides
+   * @var \Drupal\engineering_profile\Config\ConfigOverrides
    */
   protected $overrideService;
 

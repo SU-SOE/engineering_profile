@@ -15,12 +15,12 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Drupal\soe_profile\Plugin\InstallTask\SiteSettings;
+use Drupal\engineering_profile\Plugin\InstallTask\SiteSettings;
 
 /**
  * Class SiteSettingsTest.
  *
- * @coversDefaultClass \Drupal\soe_profile\Plugin\InstallTask\SiteSettings
+ * @coversDefaultClass \Drupal\engineering_profile\Plugin\InstallTask\SiteSettings
  */
 class SiteSettingsTest extends KernelTestBase {
 
