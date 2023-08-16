@@ -37,7 +37,6 @@ dependencies:
     - book
     - content_lock
     - dropzonejs
-    - eck
     - editoria11y
     - field_permissions
     - filter
@@ -85,6 +84,7 @@ permissions:
   - 'create log entities'
   - 'create media'
   - 'create new books'
+  - 'create policy log'
   - 'create spotlight content'
   - 'create stanford_course content'
   - 'create stanford_event content'
@@ -140,6 +140,7 @@ permissions:
   - 'delete own stanford_policy content'
   - 'delete own stanford_publication content'
   - 'delete own video media'
+  - 'delete policy log'
   - 'delete spotlight revisions'
   - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'
@@ -196,6 +197,7 @@ permissions:
   - 'edit own stanford_policy content'
   - 'edit own stanford_publication content'
   - 'edit own video media'
+  - 'edit policy log'
   - 'edit terms in affiliation'
   - 'edit terms in article_collection'
   - 'edit terms in basic_page_types'

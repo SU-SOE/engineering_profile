@@ -7,6 +7,7 @@ dependencies:
     - field_permissions
     - media
     - printable
+    - stanford_policy
     - system
     - ui_patterns_library
 _core:
@@ -32,6 +33,7 @@ permissions:
   - 'view own su_site_404'
   - 'view own su_site_home'
   - 'view own su_site_url'
+  - 'view policy log'
   - 'view printer friendly versions'
   - 'view stanford_basic_site_settings config page entity'
   - 'view stanford_global_message config page entity'

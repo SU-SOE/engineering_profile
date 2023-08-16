@@ -40,7 +40,6 @@ dependencies:
     - content_lock
     - contextual
     - dropzonejs
-    - eck
     - editoria11y
     - engineering_profile
     - field_permissions
@@ -107,6 +106,7 @@ permissions:
   - 'create log entities'
   - 'create media'
   - 'create new books'
+  - 'create policy log'
   - 'create spotlight content'
   - 'create stanford_course content'
   - 'create stanford_event content'
@@ -167,6 +167,7 @@ permissions:
   - 'delete own stanford_policy content'
   - 'delete own stanford_publication content'
   - 'delete own video media'
+  - 'delete policy log'
   - 'delete spotlight revisions'
   - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'

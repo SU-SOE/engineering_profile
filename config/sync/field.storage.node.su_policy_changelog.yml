@@ -3,18 +3,17 @@ langcode: en
 status: true
 dependencies:
   module:
-    - eck
     - node
 id: node.su_policy_changelog
 field_name: su_policy_changelog
 entity_type: node
 type: entity_reference
 settings:
-  target_type: log
+  target_type: su_policy_log
 module: core
 locked: false
 cardinality: -1
 translatable: true
-indexes: {  }
+indexes: {}
 persist_with_no_fields: false
 custom_storage: false
