@@ -48,7 +48,6 @@ module:
   dropzonejs: 0
   ds_extras: 0
   dynamic_page_cache: 0
-  eck: 0
   editor: 0
   editoria11y: 0
   element_class_formatter: 0
@@ -264,4 +263,5 @@ theme:
   soe_basic: 2
   engineering: 3
   minimally_branded_subtheme: 0
+  stanford_profile_admin: 0
 profile: engineering_profile
