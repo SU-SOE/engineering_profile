@@ -1,5 +1,5 @@
 status: 1
-pattern: "[node:su_policy_title]"
+pattern: '[node:su_policy_title]'
 escape: false
 preserve_titles: true
 save: false

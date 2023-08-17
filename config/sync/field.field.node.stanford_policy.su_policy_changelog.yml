@@ -10,13 +10,13 @@ field_name: su_policy_changelog
 entity_type: node
 bundle: stanford_policy
 label: Changelog
-description: "Add all prominent changes associated with this policy. Note: Only three most recently edited changelogs will be displayed to the site-visitors on the policy detail page. The complete list of changelogs will be available in the authoring experience."
+description: 'Add all prominent changes associated with this policy. Note: Only three most recently edited changelogs will be displayed to the site-visitors on the policy detail page. The complete list of changelogs will be available in the authoring experience.'
 required: false
 translatable: false
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
-  handler: "default:su_policy_log"
+  handler: 'default:su_policy_log'
   handler_settings:
     target_bundles: null
     sort:
