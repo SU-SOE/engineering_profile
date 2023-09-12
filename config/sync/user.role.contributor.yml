@@ -23,7 +23,6 @@ dependencies:
     - book
     - content_lock
     - dropzonejs
-    - eck
     - editoria11y
     - filter
     - media
@@ -58,6 +57,7 @@ permissions:
   - 'create image media'
   - 'create log entities'
   - 'create media'
+  - 'create policy log'
   - 'create spotlight content'
   - 'create stanford_course content'
   - 'create stanford_event content'

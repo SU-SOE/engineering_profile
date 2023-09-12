@@ -24,14 +24,6 @@ class BasicPageCest {
   }
 
   /**
-   * Make sure the basic page settings are correct.
-   */
-  public function testComponentSettings(AcceptanceTester $I){
-    $response = $I->runDrush('cget core.entity_form_display.node.stanford_page.default content.su_page_components.settings.sizes');
-    $I->assertStringContainsString('stanford_gallery: 12', $response);
-  }
-
-  /**
    * Test placing a basic page in the menu with a child menu item.
    *
    * @group pathauto
@@ -144,7 +136,7 @@ class BasicPageCest {
     $I->see('Basic Page Type');
     $I->fillField('Title', $title);
     $I->fillField('Page Description', $description);
-    //$I->fillField('Basic Page Type', 'Research');
+    $I->fillField('Basic Page Type', $type_term->id());
     $I->click('Save');
     $I->seeInSource('<meta name="description" content="' . $description . '" />');
   }
@@ -169,7 +161,7 @@ class BasicPageCest {
    *
    * @group menu_link_weight
    */
-  private function testUnpublishedMenuItems(AcceptanceTester $I) {
+  public function testUnpublishedMenuItems(AcceptanceTester $I) {
     $unpublished_title = $this->faker->words(5, TRUE);
     $unpublished_node = $I->createEntity([
       'type' => 'stanford_page',
@@ -389,7 +381,16 @@ class BasicPageCest {
     $I->fillField('Search this site', $node->label());
     $I->click('Submit Search');
     $I->canSee($node->label(), 'h2');
-    $I->canSee('Last Updated: ' . date('F j, Y'));
+
+    $time = \Drupal::time()->getCurrentTime();
+    $date_string = \Drupal::service('date.formatter')
+      ->format($time, 'custom', 'F j, Y', self::getTimezone());
+    $I->canSee('Last Updated: ' . $date_string);
+  }
+
+  protected static function getTimezone() {
+    return \Drupal::config('system.date')
+      ->get('timezone.default') ?: @date_default_timezone_get();
   }
 
 }

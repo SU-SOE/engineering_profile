@@ -30,10 +30,6 @@ stories-paragraph:
       type: integer
       label: "Border color option"
       description: "A numerical variant item"
-    size:
-      type: text
-      label: "Size"
-      description: "Large, medium, or small layout chosen"
   use: "@soe_paragraph_stories/stories-paragraph.html.twig"
   libraries:
     - stories-paragraph:

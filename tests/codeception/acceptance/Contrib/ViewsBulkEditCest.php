@@ -32,7 +32,7 @@ class ViewsBulkEditCest {
   /**
    * Bulk editing content changes the field values.
    */
-  private function testBulkEdits(AcceptanceTester $I) {
+  public function testBulkEdits(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $this->createEvents($I);
 
@@ -61,7 +61,7 @@ class ViewsBulkEditCest {
       $I->canSee($node->label());
     }
     $I->checkOption('News Types');
-    // $I->selectOption('node[stanford_news][su_news_topics][]', $news_foo_bar_baz->label());
+    $I->fillField('node[stanford_news][su_news_topics]', $news_foo_bar_baz->id());
     $I->checkOption('Event Types');
     $I->fillField('node[stanford_event][su_event_type]', $event_foo_bar_baz->id());
     $I->fillField('node[stanford_event][su_event_date_time][0][time_wrapper][value][date]', date('Y-m-d'));
@@ -83,7 +83,7 @@ class ViewsBulkEditCest {
           break;
 
         case 'stanford_news':
-          // $I->canSeeOptionIsSelected('News Types', $news_foo_bar_baz->label());
+          $I->canSeeInField('News Types', $news_foo_bar_baz->id());
           break;
 
         case 'stanford_publication':

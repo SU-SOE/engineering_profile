@@ -76,7 +76,7 @@ class CoursesCest {
     $node = $this->createCourseNode($I, $tags);
     $path = $node->toUrl()->toString();
     $I->amOnPage($path);
-    //$I->canSee('This page will redirect');
+    $I->canSee('This page will redirect');
   }
 
 
@@ -100,8 +100,8 @@ class CoursesCest {
         'summary' => '',
       ],
       'su_course_link' => [
-        'uri' => '',
-        'title' => '',
+        'uri' => 'https://google.com/',
+        'title' => 'T',
       ],
       'su_course_academic_year' => '2021-2022',
       'su_course_code' => '101',

@@ -5,15 +5,6 @@
  */
 class XmlsitemapCest {
 
-  public function _before(AcceptanceTester $I){
-    $drush_response = $I->runDrush('pm-list --filter=name=stanford_ssp --format=json');
-    $drush_response = json_decode($drush_response, TRUE);
-    $saml_enabled = $drush_response['stanford_ssp']['status'] == 'Enabled';
-    if ($saml_enabled) {
-      $I->runDrush('pm-uninstall simplesamlphp_auth -y');
-    }
-  }
-
   /**
    * Test that xmlsitemap is having 403 and 404 pages removed.
    */

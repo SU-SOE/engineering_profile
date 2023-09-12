@@ -41,11 +41,14 @@ class NewsCest {
     $I->see("Sample: Smith Conference");
     $I->see("Sample: For Runners, Is 15 Feet the New 6 Feet for Social Distancing?");
     $I->see("Sample: Stanford researchers find that misfiring from jittery neurons");
-    $I->amOnPage("/magazine/sample-smith-conference");
+
+    $I->amOnPage("/news/sample-smith-conference");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/magazine/sample-runners-15-feet-new-6-feet-social-distancing");
+
+    $I->amOnPage("/news/sample-runners-15-feet-new-6-feet-social-distancing");
     $I->see("This page is currently unpublished and not visible to the public.");
-    $I->amOnPage("/magazine/sample-stanford-researchers-find-misfiring-jittery-neurons");
+
+    $I->amOnPage("/news/sample-stanford-researchers-find-misfiring-jittery-neurons");
     $I->see("This page is currently unpublished and not visible to the public.");
 
     $I->see("News", ".su-multi-menu");
@@ -62,17 +65,14 @@ class NewsCest {
 
   /**
    * Test that the view pages exist.
-   *
-   * Engineering -- we don't use the regular news page.
    */
-#  public function testViewPagesExist(AcceptanceTester $I) {
-#    $I->amOnPage("/news");
-#    $I->canSeeResponseCodeIs(200);
-#    $I->seeLink('Faculty');
-#    $I->click("a[href='/news/staff']");
-#    $I->canSeeResponseCodeIs(200);
-#    $I->see("Topics Menu");
-#  }
+  public function testViewPagesExist(AcceptanceTester $I) {
+    $I->amOnPage("/news");
+    $I->seeLink('Announcement');
+    $I->click("a[href='/news/announcement']");
+    $I->canSeeResponseCodeIs(200);
+    $I->see("News Topics");
+  }
 
   /**
    * Validate external content redirect.
@@ -104,18 +104,15 @@ class NewsCest {
 
     $first_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Test News 1',
-      'su_magazine_story' => false,
+      'title' => $this->faker->words(3, TRUE),
     ]);
     $second_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Test News 2',
-      'su_magazine_story' => false,
+      'title' => $this->faker->words(3, TRUE),
     ]);
     $third_news = $I->createEntity([
       'type' => 'stanford_news',
-      'title' => 'Test News 3',
-      'su_magazine_story' => false,
+      'title' => $this->faker->words(3, TRUE),
     ]);
 
     $I->amOnPage($second_news->toUrl()->toString());
@@ -192,20 +189,26 @@ class NewsCest {
       ],
     ], 'media');
 
+    $time = \Drupal::time()->getCurrentTime();
+    $date_string = \Drupal::service('date.formatter')
+      ->format($time, 'custom', 'Y-m-d');
+    $metadata_date = \Drupal::service('date.formatter')
+      ->format($time, 'custom', 'D, m/d/Y - 12:00');
+
     /** @var \Drupal\node\NodeInterface $node */
     $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
-      'su_news_publishing_date' => date('Y-m-d', time()),
+      'su_news_publishing_date' => $date_string,
     ]);
+
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
 
-    $I->assertEquals($node->label() , $I->grabAttributeFrom('meta[property="og:title"]', 'content'), 'Metadata "og:title" should match.');
-    $I->assertEquals($node->label() . ' | University', $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
-    $I->assertEquals('website', $I->grabAttributeFrom('meta[property="og:type"]', 'content'), 'Metadata "og:type" should match.');
-
-    //$I->assertEquals(date('D, m/d/Y - 12:00', time()), $I->grabAttributeFrom('meta[property="article:published_time"]', 'content'), 'Metadata "article:published_time" should match.');
+    $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[property="og:title"]', 'content'), 'Metadata "og:title" should match.');
+    $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
+    $I->assertEquals('article', $I->grabAttributeFrom('meta[property="og:type"]', 'content'), 'Metadata "og:type" should match.');
+    $I->assertEquals($metadata_date, $I->grabAttributeFrom('meta[property="article:published_time"]', 'content'), 'Metadata "article:published_time" should match.');
 
     $I->cantSeeElement('meta', ['name' => 'description']);
     $I->cantSeeElement('meta', ['property' => 'og:image']);
@@ -218,36 +221,34 @@ class NewsCest {
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_banner' => $banner_media->id(),
-      'su_news_publishing_date' => date('Y-m-d', time()),
+      'su_news_publishing_date' => $date_string,
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
 
-    $I->assertEquals($node->label() . ' | University', $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
-    // We do images in metadata differently in news for SOE, so drop these checks.
-
-    // $I->assertStringContainsString(basename($banner_image_path), $I->grabAttributeFrom('meta[property="og:image"]', 'content'), 'Metadata "og:image" should match.');
-    // $I->assertStringContainsString(basename($banner_image_path), $I->grabAttributeFrom('meta[property="og:image:url"]', 'content'), 'Metadata "og:image:url" should match.');
-    // $I->assertStringContainsString(basename($banner_image_path), $I->grabAttributeFrom('meta[name="twitter:image"]', 'content'), 'Metadata "twitter:image" should match.');
-    // $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
-    // $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
+    $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
+    $I->assertStringContainsString(basename($banner_image_path), $I->grabAttributeFrom('meta[property="og:image"]', 'content'), 'Metadata "og:image" should match.');
+    $I->assertStringContainsString(basename($banner_image_path), $I->grabAttributeFrom('meta[property="og:image:url"]', 'content'), 'Metadata "og:image:url" should match.');
+    $I->assertStringContainsString(basename($banner_image_path), $I->grabAttributeFrom('meta[name="twitter:image"]', 'content'), 'Metadata "twitter:image" should match.');
+    $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
+    $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
     $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_banner' => $banner_media->id(),
       'su_news_featured_media' => $featured_media,
-      'su_news_publishing_date' => date('Y-m-d', time()),
+      'su_news_publishing_date' => $date_string,
     ]);
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
 
-    $I->assertEquals($node->label() . ' | University', $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
-    // $I->assertStringContainsString(basename($featured_image_path), $I->grabAttributeFrom('meta[property="og:image"]', 'content'), 'Metadata "og:image" should match.');
-    // $I->assertStringContainsString(basename($featured_image_path), $I->grabAttributeFrom('meta[property="og:image:url"]', 'content'), 'Metadata "og:image:url" should match.');
-    // $I->assertStringContainsString(basename($featured_image_path), $I->grabAttributeFrom('meta[name="twitter:image"]', 'content'), 'Metadata "twitter:image" should match.');
-    // $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
-    // $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
+    $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
+    $I->assertStringContainsString(basename($featured_image_path), $I->grabAttributeFrom('meta[property="og:image"]', 'content'), 'Metadata "og:image" should match.');
+    $I->assertStringContainsString(basename($featured_image_path), $I->grabAttributeFrom('meta[property="og:image:url"]', 'content'), 'Metadata "og:image:url" should match.');
+    $I->assertStringContainsString(basename($featured_image_path), $I->grabAttributeFrom('meta[name="twitter:image"]', 'content'), 'Metadata "twitter:image" should match.');
+    $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
+    $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
   }
 
 

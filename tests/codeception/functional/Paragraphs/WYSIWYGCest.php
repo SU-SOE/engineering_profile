@@ -125,10 +125,13 @@ class WYSIWYGCest {
   public function testEmbeddedImage(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
+    $I->resizeWindow(1700, 1000);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->cantSeeElement('.su-wysiwyg-text img');
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
-    $I->waitForElementVisible('.cke_inner');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -151,7 +154,7 @@ class WYSIWYGCest {
   /**
    * Test media category taxonomy field.
    */
-  private function testImageCategory(FunctionalTester $I){
+  public function testImageCategory(FunctionalTester $I){
     $node = $this->getNodeWithParagraph($I);
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
@@ -182,15 +185,16 @@ class WYSIWYGCest {
     ], 'media');
 
     $I->logInWithRole('site_manager');
+    $I->resizeWindow(1700, 1000);
     $I->amOnPage($node->toUrl('edit-form')->toString());
 
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
-    $I->waitForElementVisible('.cke_inner');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
-    $I->click('Insert from Media Library');
+    $I->click('[data-cke-tooltip-text="Insert Media"]');
     $I->waitForElementVisible('.dropzone');
 
     $I->selectOption('Category', $unrelated_term->label());
@@ -220,10 +224,13 @@ class WYSIWYGCest {
   public function testEmbeddedVideo(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
+    $I->resizeWindow(1700, 1000);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->cantSeeElement('iframe');
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
-    $I->waitForElementVisible('.cke_inner');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
@@ -253,10 +260,13 @@ class WYSIWYGCest {
   public function testEmbeddedDocument(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
     $I->logInWithRole('administrator');
+    $I->resizeWindow(1700, 1000);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->cantSeeElement('.su-wysiwyg-text a');
     $I->amOnPage($node->toUrl('edit-form')->toString());
-    $I->waitForElementVisible('#row-0');
-    $I->click('Edit', '.inner-row-wrapper');
-    $I->waitForElementVisible('.cke_inner');
+    $I->moveMouseOver('.js-lpb-component', 10, 10);
+    $I->click('Edit', '.lpb-controls');
+    $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
     $I->wait(1);
