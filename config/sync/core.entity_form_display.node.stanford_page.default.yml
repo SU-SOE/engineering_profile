@@ -21,6 +21,7 @@ dependencies:
     - field_group
     - layout_paragraphs
     - media_library
+    - menu_link
     - metatag
     - paragraphs
     - path
@@ -38,7 +39,7 @@ third_party_settings:
       label: 'Page Metadata'
       region: content
       parent_name: ''
-      weight: 13
+      weight: 10
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -89,7 +90,7 @@ content:
     third_party_settings: {  }
   stanford_intranet__access:
     type: entity_access
-    weight: 12
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -118,7 +119,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 31
+    weight: 11
     region: content
     settings:
       sidebar: true
@@ -148,22 +149,11 @@ content:
     weight: 7
     region: content
     settings:
-      resizable: false
-      sizes:
-        stanford_card: 3
-        stanford_entity: 1
-        stanford_lists: 1
-        stanford_gallery: 12
-        stanford_banner: 12
-        stanford_wysiwyg: 3
-        stanford_media_caption: 3
-        stanford_spacer: 1
-        stanford_cta_list: 12
-        stanford_image_cta: 1
-        stanford_stories: 3
-    third_party_settings:
-      change_labels:
-        add_another: ''
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
   su_page_description:
     type: string_textfield
     weight: 1

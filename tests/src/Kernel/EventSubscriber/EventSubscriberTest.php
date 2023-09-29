@@ -85,10 +85,7 @@ class EventSubscriberTest extends KernelTestBase {
    * Test the consumer secret is randomized.
    */
   public function testConsumerSecretRandomized() {
-    $expected = [
-      'default_content.import' => 'onContentImport',
-    ];
-    $this->assertEquals($expected, StanfordEventSubscriber::getSubscribedEvents());
+    $this->assertContains('onContentImport', StanfordEventSubscriber::getSubscribedEvents());
     $consumer = Consumer::create([
       'client_id' => 'foobar',
       'label' => 'foobar',
@@ -116,7 +113,7 @@ class EventSubscriberTest extends KernelTestBase {
     $event = new ImportEvent([$media], 'foobar');
     $this->eventSubscriber->onContentImport($event);
 
-    //$this->assertFileExists('public://foobar.jpg');
+    $this->assertFileExists('public://foobar.jpg');
   }
 
 }

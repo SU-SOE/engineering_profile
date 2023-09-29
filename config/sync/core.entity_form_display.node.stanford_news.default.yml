@@ -32,7 +32,7 @@ dependencies:
     - link
     - media_library
     - metatag
-    - paragraphs
+    - path
     - scheduler
     - shs
     - stanford_intranet
@@ -200,7 +200,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   su_news_components:
-    type: entity_reference_paragraphs
+    type: layout_paragraphs
     weight: 4
     region: content
     settings:
