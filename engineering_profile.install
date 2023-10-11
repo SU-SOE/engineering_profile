@@ -21,6 +21,7 @@ function engineering_profile_update_8002() {
   }
 }
 
+
 /**
  * Create the new layout paragraph type.
  */
@@ -445,7 +446,7 @@ function engineering_profile_update_9103(&$sandbox) {
     $paragraph_type->save();
     $field->delete();
   }
-return;
+  return;
   $ns = \Drupal::entityTypeManager()->getStorage('node');
   $ps = \Drupal::entityTypeManager()->getStorage('paragraph');
   $ids = $ns->getQuery()

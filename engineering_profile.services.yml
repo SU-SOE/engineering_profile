@@ -4,11 +4,11 @@ services:
     parent: default_plugin_manager
   engineering_profile.event_subscriber:
     class: '\Drupal\engineering_profile\EventSubscriber\EventSubscriber'
-    arguments: ['@file_system', '@logger.factory']
+    arguments: ["@file_system", "@logger.factory"]
     tags:
-      - { name: 'event_subscriber' }
+      - { name: "event_subscriber" }
   engineering_profile.config_overrider:
     class: Drupal\engineering_profile\Config\ConfigOverrides
-    arguments: ['@state', '@config.factory']
+    arguments: ["@state", "@config.factory"]
     tags:
-      - {name: config.factory.override, priority: -5}
+      - { name: config.factory.override, priority: -5 }

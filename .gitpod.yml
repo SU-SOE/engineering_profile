@@ -18,7 +18,7 @@ ports:
     onOpen: ignore
     visibility: public
 image: pookmish/drupal8ci:gitpod
-checkoutLocation: soe_profile
+checkoutLocation: engineering_profile
 workspaceLocation: /workspace/stack
 tasks:
   - before: >
@@ -46,20 +46,20 @@ tasks:
       echo $PROFILE_BRANCH &&
       cd /workspace/stack &&
       composer remove su-sws/stanford_profile --no-update &&
-      composer require su-soe/soe_profile:"dev-$PROFILE_BRANCH || $PROFILE_BRANCH-dev" --no-update &&
+      composer require su-soe/engineering_profile:"dev-$PROFILE_BRANCH || $PROFILE_BRANCH-dev" --no-update &&
       composer update --no-interaction &&
       rm -rf docroot/*/custom/* &&
       composer install --prefer-source --no-interaction &&
-      rm -rf docroot/profiles/custom/soe_profile &&
-      ln -s $GITPOD_REPO_ROOT docroot/profiles/custom/soe_profile &&
+      rm -rf docroot/profiles/custom/engineering_profile &&
+      ln -s $GITPOD_REPO_ROOT docroot/profiles/custom/engineering_profile &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
       cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
-      sed -i 's/stanford_profile/soe_profile/' docroot/sites/settings/global.settings.php &&
+      sed -i 's/stanford_profile/engineering_profile/' docroot/sites/settings/global.settings.php &&
       find docroot/sites/ -name 'local*' | xargs rm &&
       blt blt:telemetry:disable --no-interaction &&
       blt settings &&
-      drush si soe_profile -v -y &&
+      drush si engineering_profile -v -y &&
       drush cim -y &&
       ls -a | grep .git | grep -v '.gitpod*' | xargs rm -rf
     command: |
@@ -74,4 +74,4 @@ tasks:
       drush uli | xargs gp preview --external
       git config core.fileMode false
       blt blt:telemetry:disable --no-interaction
-      cd docroot/profiles/custom/soe_profile && git remote set-url origin git@github.com:SU-SOE/soe_profile.git && cd $GITPOD_REPO_ROOT
+      cd docroot/profiles/custom/engineering_profile && git remote set-url origin git@github.com:SU-SOE/engineering_profile.git && cd $GITPOD_REPO_ROOT

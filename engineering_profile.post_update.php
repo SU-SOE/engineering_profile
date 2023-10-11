@@ -23,7 +23,7 @@ function engineering_profile_removed_post_updates() {
 /**
  * Disable the core search module.
  */
-function engineering_profile_post_update_8201_search(){
+function engineering_profile_post_update_8201_search() {
   \Drupal::service('module_installer')->uninstall(['search']);
 }
 
@@ -63,7 +63,7 @@ function engineering_profile_post_update_8202() {
 /**
  * Update field storage definitions.
  */
-function soe_profile_post_update_update_field_defs() {
+function engineering_profile_post_update_update_field_defs() {
   $um = \Drupal::entityDefinitionUpdateManager();
   foreach ($um->getChangeList() as $entity_type => $changes) {
     if (isset($changes['field_storage_definitions'])) {
@@ -72,4 +72,19 @@ function soe_profile_post_update_update_field_defs() {
       }
     }
   }
+}
+
+/**
+ * Enable samlauth.
+ */
+function engineering_profile_post_update_samlauth() {
+  if (\Drupal::moduleHandler()->moduleExists('stanford_samlauth')) {
+    return;
+  }
+  $ignore_settings = \Drupal::configFactory()
+    ->getEditable('config_ignore.settings');
+  $ignored = $ignore_settings->get('ignored_config_entities');
+  $ignored[] = 'samlauth.authentication:map_users_roles';
+  $ignore_settings->set('ignored_config_entities', $ignored)->save();
+  \Drupal::service('module_installer')->install(['stanford_samlauth']);
 }

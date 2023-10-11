@@ -1,138 +1,21 @@
-# Engineering Profile
+# SOE Profile
 
-9.1.0 Engineering Release
---------------------------------------------------------------------------------
-_Release Date:_
+10.1.2
+-------------------------------------------------------------------------------
+- Update samlauth settings when a role is created or deleted
 
+10.1.1
+-------------------------------------------------------------------------------
+- Fixed uuid of role.
 
-9.0.0 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2022-09-07_
-
-- Brought up to date with the 9.x monorepo branch of `soe_profile`.
-- SOED9-216: Spotlight filter fix for selecting the featured spotlight when using both filters at once.
-- SOED9-214: Use featured media for article collection cards on landing page
-- Removed magazine curtain
-- dependency updates.
-- drupal core update
-- field_encrypt 3.0 update
-- SSO updates for acquia cloud next
-
-8.5.3 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2022-08-02_
-
-- Updated to upstream versions to correspond with the cardinalsites 8.4.7
-- PHP 8.1 compatible
-- SOED9-210: fixed problem with manual redirects for person/people
-- SOED9-218: twitter card update
-- SOED9-209: added taxonomy to news teaser cards
-
-8.4.7
---------------------------------------------------------------------------------
-_Release Date: 2022-07-12_
-
-- D8CORE-1835: Added abbr buttons to ckeditor (#550)
-- D8CORE-4780 Changed search page button text to "Search"
-- D8CORE-5862: Removed obsolete checkbox from theme settings (#575)
-- D8CORE-6000: Added additional html elements to embeddables allow list (#584)
-- Adjusted merge upstream task
-
-8.x-4.6
---------------------------------------------------------------------------------
-_Release Date: 2022-07-08_
-
-- Updated config from search_api module
-- D8CORE-5128 Enable embed code validators (#579)
-- D8CORE-6005 Allow Span tags in the wysiwyg
-- fixed composer namespace to lowercase
-- fixed composer namespace to lowercase
-- Removed fzaninotto/faker workaround in CI tests
-- Updates from stanford_profile (#271)
-- Adjusted functional tests (#577)
-- Drupal 9.4 support (#576)
-- Move some CircleCi to GH Actions (#568)
-- D8CORE-5886 Enable ajax on people lists
-- Added and configured ckeditor_blockimagepaste to prevent inline base64 images
-- D8CORe-5871 Change order of filter processing to fix <picture><source> tags
-- D8CORE-5773: Added edit buttons on courses list page (#555)
-
-
-8.x-3.2
---------------------------------------------------------------------------------
-_Release Date: 2022-05-22_
-
-- DO not require lockup option select, prevent requiring lockup fields
-- D8CORE-5172: Updated references to localist and events-legacy urls
-
-
-8.x-4.5
---------------------------------------------------------------------------------
-_Release Date: 2022-05-12_
-
-9.1.3
---------------------------------------------------------------------------------
-_Release Date: 2022-08-22_
-
-- Fixed courses field widget with view query parameter.
-
-9.2.0
---------------------------------------------------------------------------------
-_Release Date: 2022-10-25_
-
-- D8CORE-6347 Show body summary and add help text
-- D8CORE-6346 Reorder form fields and add help text
-- Added and adjusted printable view mode for policies
-- Prepend "Canceled" to canceled events
-- D8CORE-6237: Corrected courses migration (#638)
-- D8CORE-6330: moved the back and forward button for mobile (#636)
-- Moved modules into consolidated repo location for stanford_profile_helper (#637)
-- Added update hook to make deployment smoother
-- D8CORE-6329: unique ids for prev/next buttons (#635)
-- D8CORE-6327: fix to the policy related cards for mobile (#634)
-- D8CORE-6323: adding styling for change log block anywhere (#633)
-- D8CORE-6325 Set the active item on book side navigation (#632)
-- D8CORE-3498: Added additional contact information field for events (#631)
-- D8CORE-6304: layout and style set up for Policy (#628)
-- D8CORE-6251: Added a toggle in the theme to turn off the external links (#623)
-- D8CORE-6304: adding the logo for the print function on policy (#625)
-- Added Fast 404 module (#630)
-- D8CORE-6315 Remove duplicate "All" publication menu link
-- Apply chosen to related policy field
-- D8CORE-6312 Fix node title not reflecting the changes (#629)
-- D8CORE-5250 Add "Last Updated" to search results items (#619)
-- Modify directory permissions when copying the file during install (#626)
-- Added view to display policy child pages (#624)
-- D8CORE-6288 Policy content type (#617)
-- D8CORE-6247 Add "Code" to WYSIWYG Style dropdown
-- D8CORE-6242 D8CORE-4977 D8CORE-6055 Improve people lists and add pronoun field (#615)
-- Disable confirm-leave js on CI environments
-- D8CORE-6244: fixing float with a  clear (#614)
-- D8CORE-4363: Sjpw images in cards at all breakpoint (#610)
-- D8CORE-6235 Fix "Save and Import" on importer forms. (#613)
-- D8CORE-6058 Adjust, improve, and add metatags for content (#608)
-- D8CORE-6217 Allow configuring maximum main menu depth (#611)
-- D8CORE-5825 Add taxonomy field to media types for categorization (#609)
-- D8CORE-6245: fix to the transparent localist event link (#612)
-- D8CORE-6224 Added localist bookmark url for importer (#607)
-- D8CORE-5955: Added journal publisher field, updated publisher label. (#602)
-- D8CORE-5656 D8CORE-6215 D8CORE-6048 Adjustments to people node form and views (#606)
-
-9.1.3
---------------------------------------------------------------------------------
-_Release Date: 2022-08-22_
-
-- Fixed courses field widget with view query parameter.
-
-<<<<<<< HEAD
 10.0.4
 -------------------------------------------------------------------------------
 - Update hook to update field storage definitions.
 
 10.0.3
-=======
+-------------------------------------------------------------------------------
+
 10.0.2
->>>>>>> 10.0.2
 -------------------------------------------------------------------------------
 - Update decoupled menu to recognize "Expanded" menu setting
 - D8CORE-6816 Restored permissions to run importers for site managers
@@ -429,6 +312,12 @@ _Release Date: 2022-05-02_
 - DO not require lockup option select, prevent requiring lockup fields
 
 
+8.x-3.2
+--------------------------------------------------------------------------------
+_Release Date: 2022-03-22_
+
+- DO not require lockup option select, prevent requiring lockup fields
+- D8CORE-5172: Updated references to localist and events-legacy urls
 
 8.x-3.1
 --------------------------------------------------------------------------------
@@ -503,63 +392,6 @@ _Release Date: 2022-03-23_
 - Adjust circleci jobs
 - 8.3.0
 - 8.2.20
-
-8.x-2.21
---------------------------------------------------------------------------------
-_Release Date: 2022-03-17_
-
-- Fix yaml configs
-- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- Configure layout builder restrictions consistently (#509)
-- Enable minimally branded theme for easier switching (#508)
-- Updates from stanford_profile 2022-03-16
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- adjusted VBO dependency to inherit from stanford_actions
-- Updated google analytics to latest 4.0 version
-- D8CORE-3345 Updated path auto pattern for events, news, and people (#505)
-- Added jsonapi_extras and disable write access
-- D8CORE-4704 Fix person list to show nested content (#506)
-- D8CORE-4526 Adjust full width layout for page title position (#497)
-- D8CORE-5583 enabled views_custom_cache_tag module
-- Process Localist html to fix <img> tag styles to attributes (#504)
-- Updates from stanford_profile 2022-03-15
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- Removed scheduler from media and taxonomy terms
-- Updates from stanford_profile 2022-03-11
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- conditional fields (#503)
-- Updates from stanford_profile 2022-03-09
-- Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 2022-03-09
-- Added and enabled webp for performance improvement
-- 8.2.19
-- 8.2.19
-- Modified the revision test to have a dynamic page title.
-- Updates from stanford_profile (#226)
-- Enabled pdb_react module.
-- D8CORE-2893: Added minimally branded subtheme (#492)
-- Updates from stanford_profile 2022-03-02
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- D8CORE-5180 D8CORE-5227 Remove alt text on people images (#498)
-- D8CORE-4713 Added id attribute for several wysiwyg tags (#496)
-- D8CORE-4974 Added a third content block for the local footer (#491)
-- Updates from stanford_profile 2022-02-25
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- BOT-8: Adjusted file upload access test for Intranet and allow_file_uploads. (#493)
-- Updates from stanford_profile 2022-02-23
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- Updated config and tests for smartdate module update (#494)
-- Updates from stanford_profile (#221)
-- D8CORE-5278 Added scheduler module and configured for all content types (#486)
-- preg_replace of null is deprecated in php 8, use strings (#490)
-- Fix pathauto parent path generation (#489)
-- Merge branch 'master' into 8.x-2.x
-- Updates from stanford_profile 2022-02-04
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- Merge branch 'master' into 8.x-2.x
-- Updates from stanford_profile 2022-02-02
-- Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
-- D8CORE-5236: Updated text on "Load More" buttons to be more descriptive (#483)
-- Merge branch 'master' into 8.x-2.x
 
 
 8.x-2.21
@@ -656,46 +488,6 @@ _Release Date: 2022-01-20_
 
 - D8CORE-5266 Update events-legacy importer.
 
-8.2.6 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2022-01-07_
-
-- updated dependencies
-- Drupal 9.3 update
-- Localist URL updates
-- Fixed postdoc vocabulary issue
-
-
-8.2.5 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2021-12-02_
-
-- updated dependencies
-- fixed simplecast bug
-- added memcache for ace environments.
-
-
-8.2.4 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2021-10-27_
-
-- Hotfix -- corrected dependencies
-
-8.2.3 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2021-10-27_
-
-- Hotfix -- corrected css aggregation bug
-- removed unnecessary dependency from theme info.yml
-
-
---------------------------------------------------------------------------------
-_Release Date: 2021-10-27_
-
-- Removed migrations that will no longer be used
-- updated system.performance to cache correctly
-
-
 
 8.x-2.15
 --------------------------------------------------------------------------------
@@ -787,18 +579,6 @@ _Release Date: 2021-10-08_
 - D8CORE-4534: adding a skip anchor block to the filtered pub page (#437)
 - Updates from stanford_profile (#187)
 - D8CORE-4749 Add and configure views bulk edit (#449)
-
-8.2.1 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2021-10-14_
-
-- Fixup for robots metatags
-
-8.2.0 Engineering Release
---------------------------------------------------------------------------------
-_Release Date: 2021-10-12_
-
-- Initial production release for School of Engineering.
 
 8.x-2.14
 --------------------------------------------------------------------------------

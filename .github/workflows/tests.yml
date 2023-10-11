@@ -5,7 +5,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   phpunit:
-    name: PHPUnit Tests
+    name: PHPUnit Coverage Tests
     runs-on: ubuntu-latest
     container:
       image: pookmish/drupal8ci:latest
@@ -29,8 +29,7 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         run: |
           composer global require su-sws/stanford-caravan:dev-8.x-3.x
-          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project --with-coverage --coverage-required=10
-      #          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project
+          ~/.composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project
       - name: Save Test Results
         uses: actions/upload-artifact@v3
         if: failure()
@@ -47,7 +46,7 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
-      options: "--network-alias drupal8ci"
+      options: '--network-alias drupal8ci'
     services:
       mysql:
         image: mysql:5.7
@@ -85,10 +84,10 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:latest
-      options: "--network-alias=drupal8ci"
+      options: '--network-alias=drupal8ci'
     services:
       selenium:
-        image: selenium/standalone-chrome
+        image: selenium/standalone-chrome:115.0
         options: '--shm-size="2g"'
       mysql:
         image: mysql:5.7

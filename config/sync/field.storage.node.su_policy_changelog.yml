@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - node
+    - stanford_policy
 id: node.su_policy_changelog
 field_name: su_policy_changelog
 entity_type: node

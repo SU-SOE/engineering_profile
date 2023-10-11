@@ -42,8 +42,8 @@ dependencies:
     - layout_paragraphs
     - link
     - media_library
+    - menu_link
     - metatag
-    - paragraphs
     - scheduler
     - shs
     - stanford_intranet

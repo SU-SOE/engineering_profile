@@ -18,8 +18,9 @@ dependencies:
   module:
     - change_labels
     - field_group
+    - layout_paragraphs
+    - menu_link
     - metatag
-    - paragraphs
     - scheduler
     - shs
     - stanford_intranet

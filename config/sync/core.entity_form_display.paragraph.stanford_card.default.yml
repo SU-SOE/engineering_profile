@@ -67,5 +67,4 @@ content:
 hidden:
   created: true
   publish_on: true
-  status: true
   unpublish_on: true
