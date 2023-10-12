@@ -4,7 +4,9 @@ namespace Drupal\engineering_profile\EventSubscriber;
 
 use Acquia\DrupalEnvironmentDetector\AcquiaDrupalEnvironmentDetector;
 use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Installer\InstallerKernel;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
 use Drupal\core_event_dispatcher\EntityHookEvents;
 use Drupal\core_event_dispatcher\Event\Entity\EntityDeleteEvent;
@@ -14,6 +16,9 @@ use Drupal\default_content\Event\ImportEvent;
 use Drupal\file\FileInterface;
 use Drupal\user\RoleInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Class EventSubscriber.
@@ -60,6 +65,8 @@ class EventSubscriber implements EventSubscriberInterface {
    *   File system service.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
    *   Logger factory service.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   Messenger service.
    */
   public function __construct(FileSystemInterface $file_system, LoggerChannelFactoryInterface $logger_factory) {
     $this->fileSystem = $file_system;
