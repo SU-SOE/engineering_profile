@@ -27,7 +27,6 @@ install:
   - "drupal:block"
   - "drupal:block_content"
   - "drupal:breakpoint"
-  - "drupal:color"
   - "drupal:config"
   - "drupal:contextual"
   - "drupal:datetime"
