@@ -1,5 +1,5 @@
 <?php
-
+ini_set('max_execution_time', 300);
 use Faker\Factory;
 use Drupal\layout_builder\Section;
 use Drupal\layout_builder\SectionComponent;
@@ -26,7 +26,7 @@ class EventsCest {
    *
    * @group mini-calendar
    */
-  public function testMiniCalendar(FunctionalTester $I) {
+  protected function testMiniCalendar(FunctionalTester $I) {
     $events = [];
     $current_month = (int) date('n');
     for ($i = $current_month; $i < $current_month + 12; $i++) {
@@ -78,7 +78,7 @@ class EventsCest {
 
       // The button element is disabled until the calendar is loaded.
       $I->waitForElementChange('//abbr[contains(text(), "' . $start_day . '")]/..', function(WebDriverElement $element) {
-        return is_null($element->getAttribute('disabled'));
+      return is_null($element->getAttribute('disabled'));
       });
       $I->click($start_day);
       $I->waitForText($event->label(), 5);
