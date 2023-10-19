@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const autoprefixer = require('autoprefixer')({ grid: true });
 
 const config = {
   isProd: process.env.NODE_ENV === "production",
@@ -15,12 +16,12 @@ const config = {
 
 var webpackConfig = {
   entry: {
-    'base': path.resolve('src/scss/base/index.scss'),
-    'components': path.resolve('src/scss/components/index.scss'),
-    'layout': path.resolve('src/scss/layout/index.scss'),
-    'print': path.resolve('src/scss/print/index.scss'),
-    'state': path.resolve('src/scss/state/index.scss'),
-    'theme': path.resolve('src/scss/theme/index.scss'),
+    "base":          path.resolve("src/scss/base/index.scss"),
+    "components":    path.resolve("src/scss/components/index.scss"),
+    "layout":        path.resolve("src/scss/layout/index.scss"),
+    "print":         path.resolve("src/scss/print/index.scss"),
+    "state":         path.resolve("src/scss/state/index.scss"),
+    "theme":         path.resolve("src/scss/theme/index.scss"),
   },
   output: {
     path: config.distFolder,
@@ -61,7 +62,15 @@ var webpackConfig = {
         use: [
           config.isProd ? { loader: MiniCssExtractPlugin.loader } : 'style-loader',
           {loader:'css-loader', options: {}},
-          {loader:'postcss-loader', options: {}},
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                sourceMap: true,
+                plugins: [autoprefixer],
+              },
+            }
+          },
           {loader:'sass-loader', options: {}}
         ]
       },
@@ -82,7 +91,14 @@ var webpackConfig = {
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    })
+    }),
+    new FileManagerPlugin({
+      events: {
+        onStart: {
+          delete: ["dist"]
+        }
+      }
+    }),
   ],
   optimization: {
     minimizer: [
