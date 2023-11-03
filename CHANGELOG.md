@@ -1,6 +1,39 @@
 # SOE Profile
 
-10.1.2
+11.0.8
+-------------------------------------------------------------------------------
+- D8CORE-7066 Adjust site contact fields & language (#741)
+- Update contact field labels
+- Adjusted access denied message
+- Added the anchor for contact details on site settings
+
+11.0.7
+-------------------------------------------------------------------------------
+- Invalidate cache tag when saving site contact details
+- Allow figure and figcaption in embeddables
+
+11.0.6
+-------------------------------------------------------------------------------
+- Fixed event day display with timezones.
+
+11.0.4
+-------------------------------------------------------------------------------
+- D8CORE-7051 Use display field copy instead of token fields
+
+11.0.3
+-------------------------------------------------------------------------------
+- Next site settings and config ignores (#735)
+- D8CORE-7040 Fix source ending tags
+
+11.0.2
+-------------------------------------------------------------------------------
+- Fix acceptance tests.
+
+11.0.1
+-------------------------------------------------------------------------------
+- Fix site setting redirect logic
+
+11.0.0
 -------------------------------------------------------------------------------
 - Update samlauth settings when a role is created or deleted
 
