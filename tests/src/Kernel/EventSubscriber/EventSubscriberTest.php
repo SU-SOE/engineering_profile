@@ -11,6 +11,9 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
+use Drupal\user\Entity\Role;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Drupal\engineering_profile\EventSubscriber\EventSubscriber as StanfordEventSubscriber;
 
 /**
