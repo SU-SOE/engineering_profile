@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * Class EventSubscriberTest.
  *
- * @group stanford_profile
+ * @group engineering_profile
  * @coversDefaultClass \Drupal\engineering_profile\EventSubscriber\EventSubscriber
  */
 class EventSubscriberTest extends KernelTestBase {
