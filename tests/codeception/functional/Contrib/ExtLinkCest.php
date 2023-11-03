@@ -17,13 +17,19 @@ class ExtLinkCest {
 
   /**
    * Start with a clean config page.
-  * Modify the extlink settings first.
    *
    * @param \AcceptanceTester $I
    *   Tester.
    */
   public function _before(FunctionalTester $I) {
     $this->_after($I);
+  }
+
+  /**
+   * Test Constructor.
+   */
+  public function __construct() {
+    $this->faker = Factory::create();
   }
 
   /**
