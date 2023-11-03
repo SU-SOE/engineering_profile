@@ -117,9 +117,9 @@ class EventSubscriber implements EventSubscriberInterface {
    */
   public function onKernelRequest(RequestEvent $event) {
     $current_uri = $event->getRequest()->getRequestUri();
-
     if (
       $event->getRequestType() == HttpKernelInterface::MAIN_REQUEST &&
+      !getenv('LANDO') &&
       !str_starts_with($current_uri, '/admin/config/system/basic-site-settings') &&
       self::redirectUser()
     ) {
