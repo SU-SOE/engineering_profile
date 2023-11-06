@@ -80,7 +80,6 @@ class NewsCest {
    * Validate external content redirect.
    */
   public function testExternalSourceArticle(AcceptanceTester $I) {
-
     $node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->words(3, TRUE),
@@ -137,7 +136,7 @@ class NewsCest {
     $I->amOnPage("/admin/config/search/xmlsitemap/settings");
     $I->see("News");
     $I->amOnPage("/admin/config/search/xmlsitemap/settings/node/stanford_news");
-    $I->selectOption("#edit-xmlsitemap-status", 1);
+    $I->selectOption("#edit-xmlsitemap-status", '1');
 
     // Metatags.
     $I->amOnPage("/admin/config/search/metatag/node__stanford_news");
@@ -252,6 +251,5 @@ class NewsCest {
     $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['featured_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
   }
-
 
 }

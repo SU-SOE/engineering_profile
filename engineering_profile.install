@@ -521,7 +521,7 @@ function _engineering_profile_fix_menu(array $menu_items = [], string $parent = 
         }
 
         // Update layout builder settings before deleting the link.
-        _stanford_profile_update_menu_block($link->getPluginId(), $new_parent);
+        _engineering_profile_update_menu_block($link->getPluginId(), $new_parent);
         $link->deleteLink();
         continue;
       }
@@ -556,7 +556,7 @@ function _engineering_profile_fix_menu(array $menu_items = [], string $parent = 
  * @param string $new_id
  *   New menu link id.
  */
-function _stanford_profile_update_menu_block(string $old_id, string $new_id): void {
+function _engineering_profile_update_menu_block(string $old_id, string $new_id): void {
   $node_storage = \Drupal::entityTypeManager()->getStorage('node');
   $nids = $node_storage->getQuery()
     ->accessCheck(FALSE)
@@ -581,7 +581,7 @@ function _stanford_profile_update_menu_block(string $old_id, string $new_id): vo
     }
     if ($save_node) {
       $node->save();
-      _stanford_profile_reset_node_changed_time($node, $changed_time);
+      _engineering_profile_reset_node_changed_time($node, $changed_time);
     }
   }
 }

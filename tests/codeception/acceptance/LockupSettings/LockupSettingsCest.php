@@ -64,6 +64,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Last line full width option");
@@ -85,6 +87,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Secondary title line");
@@ -106,6 +110,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Tertiary title line");
@@ -127,6 +133,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Secondary title line");
@@ -149,6 +157,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Organization name");
@@ -171,13 +181,15 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Organization name");
     $I->canSee("Tertiary title line");
   }
 
-   /**
+  /**
    * Test the lockup settings overrides.
    */
   protected function testLockupSettingsM(AcceptanceTester $I) {
@@ -193,6 +205,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Secondary title line");
@@ -214,6 +228,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Organization name");
   }
@@ -234,6 +250,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Organization name");
@@ -255,6 +273,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Last line full width option");
   }
@@ -275,6 +295,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Secondary title line");
@@ -297,6 +319,8 @@ class LockupSettingsCest {
     $I->fillField('Line 4', 'Organization name');
     $I->fillField('Line 5', 'Last line full width option');
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->canSee("Site title line");
     $I->canSee("Secondary title line");
@@ -331,6 +355,8 @@ class LockupSettingsCest {
     $I->click('Upload');
 
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->seeElement(".su-lockup__custom-logo");
     $I->assertNotEmpty($I->grabAttributeFrom('.su-lockup__custom-logo', 'alt'));
@@ -365,6 +391,8 @@ class LockupSettingsCest {
     $I->click('Upload');
 
     $I->click('Save');
+    $I->see('Lockup Settings has been', '.messages-list');
+
     $I->amOnPage('/');
     $I->seeElement(".su-lockup__custom-logo");
     $I->assertNotEmpty($I->grabAttributeFrom('.su-lockup__custom-logo', 'alt'));

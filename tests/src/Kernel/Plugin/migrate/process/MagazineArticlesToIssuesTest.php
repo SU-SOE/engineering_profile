@@ -56,7 +56,7 @@ class MagazineArticlesToIssuesTest extends KernelTestBase {
   /**
    *
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('node');
@@ -100,7 +100,7 @@ class MagazineArticlesToIssuesTest extends KernelTestBase {
    * @covers \Drupal\engineering_profile_helper\Plugin\migrate\process\MagazineArticlesToIssues
    * @covers ::transform
    */
-  public function testTransform() {
+  public function testTransform(): void {
     $definition = $this->getDefinition();
     $migration = \Drupal::service('plugin.manager.migration')->createStubMigration($definition);
 

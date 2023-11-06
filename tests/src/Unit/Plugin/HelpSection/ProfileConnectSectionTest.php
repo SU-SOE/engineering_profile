@@ -18,13 +18,12 @@ class ProfileConnectSectionTest extends UnitTestCase {
   /**
    * {@inheritDoc}
    */
-  protected function setUp() {
+  public function setup(): void {
     parent::setUp();
     $container = new ContainerBuilder();
     $container->set('string_translation', $this->getStringTranslationStub());
 
-    $container->set('link_generator', $this->createMock(LinkGeneratorInterface::class));
-    ;
+    $container->set('link_generator', $this->createMock(LinkGeneratorInterface::class));;
     \Drupal::setContainer($container);
   }
 

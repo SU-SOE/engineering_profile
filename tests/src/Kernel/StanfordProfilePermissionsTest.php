@@ -32,9 +32,9 @@ class StanfordProfilePermissionsTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  public function setup(): void {
     parent::setUp();
-    $this->installSchema('system', ['key_value_expire']);
+
     $this->installEntitySchema('user');
     $this->installEntitySchema('node');
     $this->installEntitySchema('entity_view_display');
@@ -56,7 +56,7 @@ class StanfordProfilePermissionsTest extends KernelTestBase {
   /**
    * Test permissions are returned.
    */
-  public function testPermissions() {
+  public function testPermissions(): void {
     $permission_class = StanfordProfilePermissions::create(\Drupal::getContainer());
     $permissions = $permission_class->permissions();
     $this->assertCount(1, $permissions);

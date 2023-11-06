@@ -11,8 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function engineering_preprocess_html(array &$variables) {
-  $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
-  $variables['soe_basic_path'] = drupal_get_path('theme', 'soe_basic');
+  $variables['stanford_basic_path'] = $soe_basic_path = \Drupal::service('extension.list.theme')->getPath('stanford_basic');
+  $variables['soe_basic_path'] = $soe_basic_path = \Drupal::service('extension.list.theme')->getPath('soe_basic');
 }
 
 /**
@@ -57,7 +57,7 @@ function engineering_form_views_exposed_form_alter(&$form, FormStateInterface $f
  */
 function engineer_preprocess_pattern_localfooter(&$variables){
   $med = theme_get_setting('show_su_med_logo');
-  $soe_basic_path = base_path() . drupal_get_path('theme', 'soe_basic');
+  $soe_basic_path = \Drupal::service('extension.list.theme')->getPath('soe_basic');
 
   // Default to Engineering.
   if (
