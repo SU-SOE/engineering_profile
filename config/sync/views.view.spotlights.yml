@@ -362,7 +362,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'Read {{ title }}''s story'
+            text: "Read {{ title }}'s story"
             make_link: false
             path: ''
             absolute: false
@@ -1195,7 +1195,7 @@ display:
           exclude: false
           alter:
             alter_text: false
-            text: 'Read {{ title }}''s story '
+            text: "Read {{ title }}'s story "
             make_link: false
             path: ''
             absolute: false
@@ -1247,7 +1247,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: 'Read {{ title }}''s story'
+            text: "Read {{ title }}'s story"
             make_link: false
             path: ''
             absolute: false

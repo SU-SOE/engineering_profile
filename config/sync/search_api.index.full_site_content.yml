@@ -213,8 +213,8 @@ processor_settings:
       'entity:node':
         datasource_boost: 1.0
         bundle_boosts:
-          stanford_page: !!float 3
-          stanford_person: !!float 5
+          stanford_page: 3.0
+          stanford_person: 5.0
 tracker_settings:
   default:
     indexing_order: fifo
