@@ -2,6 +2,7 @@
 
   Drupal.behaviors.engineeringNewsSocialMedia = {
       attach(context, settings) {
+        $('.news-social-media', context).empty();
         $('.news-social-media', context).prepend('<div class="widget-wrapper-print"><a href="/' + settings.path.currentPath + '/printable/print" class="share-print su-news-header__social-print"><i class="fas fa-printer" aria-hidden="true"></i><span>' + Drupal.t('Print Article') + '</span></a></div>');
         $('.news-social-media', context).prepend('<div class="widget-wrapper-forward"><a href="" class="share-forward su-news-header__social-forward"><i class="fas fa-envelope" aria-hidden="true"></i><span>' + Drupal.t('Forward Email') + '</span></a></div>');
         $('.news-social-media', context).prepend('<div class="widget-wrapper-linkedin"><a href="" class="share-linkedin su-news-header__social-linkedin"><i aria-hidden="true"></i><span>' + Drupal.t('Stanford LinkedIn') + '</span></a></div>');
