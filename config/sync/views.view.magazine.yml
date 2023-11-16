@@ -431,7 +431,7 @@ display:
       pager:
         type: infinite_scroll
         options:
-          offset: 0
+          offset: 6
           items_per_page: 24
           total_pages: null
           id: 0
@@ -642,6 +642,41 @@ display:
         header: false
       use_ajax: true
       display_description: ''
+      header: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.su_magazine_issue'
+        - 'config:field.storage.node.su_news_banner'
+        - 'config:field.storage.node.su_news_publishing_date'
+        - 'config:field.storage.node.su_soe_mag_topics'
+  block_2:
+    id: block_2
+    display_title: 'Landing Page Card Grid - Top'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: 'Landing Page Card Grid'
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 6
+      defaults:
+        title: false
+        use_ajax: false
+        pager: false
+        fields: true
+        header: false
+      use_ajax: true
+      display_description: ''
       header:
         area:
           id: area
@@ -662,7 +697,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
