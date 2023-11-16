@@ -715,6 +715,41 @@ input#edit-submit-spotlights {
   .stanford-news.su-soe-department a:hover {
     text-decoration: underline; }
 
+.spotlights-block-4 .contextual-region .soe-spotlight--cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 45%;
+            flex: 1 1 45%;
+    border: black solid 1px; }
+    .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row .soe-spotlight-mag-card__title a {
+      font-size: 1em;
+      color: #2e2d29; }
+      .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row .soe-spotlight-mag-card__title a:hover {
+        text-decoration: underline;
+        -webkit-text-decoration-color: #333333;
+                text-decoration-color: #333333; }
+    .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row .spotlight__quote {
+      font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      line-height: 1.1;
+      font-size: 24px; }
+  .spotlights-block-4 .contextual-region .soe-spotlight--cards footer {
+    -ms-flex-preferred-size: 2;
+        flex-basis: 2;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2em;
+    font-size: 1.5em; }
+
 .view.magazine-issues h3 {
   font-size: 2.44140625em;
   letter-spacing: -0.016em;

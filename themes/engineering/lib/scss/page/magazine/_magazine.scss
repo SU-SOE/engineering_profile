@@ -5,6 +5,8 @@
 // Magazine Issues, Magazine Topic pages,
 // and Article collections.
 
+$soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+
 .soe-mag-landing__heading_1 {
   text-align: center;
   margin: auto;
@@ -40,11 +42,9 @@
     margin-left: auto;
     margin-right: auto;
 
-
     .su-card {
       margin: 1em;
       width: fit-content;
-
 
       h2 {
         a {
@@ -117,7 +117,7 @@
 }
 
 .soe-load-more {
-  @include responsive-spacing('margin', 5);
+  @include responsive-spacing("margin", 5);
 }
 
 .view.magazine {
@@ -135,8 +135,8 @@
 }
 
 .article-collection__link {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .su-mag--mag_topics {
@@ -162,6 +162,49 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+.spotlights-block-4 {
+  .contextual-region {
+    .soe-spotlight--cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: space-between;
+
+      .views-row {
+        flex: 1 1 45%;
+        border: black solid 1px;
+
+        .soe-spotlight-mag-card__title {
+          a {
+            @include modular-typography(0);
+            color: $soe-black;
+
+            &:hover {
+              text-decoration: underline;
+              text-decoration-color: #333333;
+            }
+          }
+        }
+
+        .spotlight__quote {
+          font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-weight: $su-font-black;
+          line-height: 1.1;
+          font-size: 24px;
+        }
+      }
+
+      footer {
+        flex-basis: 2;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 2em;
+        font-size: 1.5em;
       }
     }
   }
