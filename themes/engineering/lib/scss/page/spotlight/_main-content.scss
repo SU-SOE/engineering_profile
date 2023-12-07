@@ -13,3 +13,16 @@
     }
   }
 }
+
+.soe-spotlight--cards.block-1,
+.soe-spotlight--cards.block-2 {
+  .su-card__contents{
+    time {
+      font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 26.6px;
+      color: rgb(46, 45, 41);
+    }
+  }
+}
