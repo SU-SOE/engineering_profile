@@ -715,7 +715,7 @@ input#edit-submit-spotlights {
   .stanford-news.su-soe-department a:hover {
     text-decoration: underline; }
 
-.spotlights-block-4 .contextual-region .soe-spotlight--cards {
+.spotlights-block-4 .soe-spotlight--cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -725,24 +725,56 @@ input#edit-submit-spotlights {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row {
+  .spotlights-block-4 .soe-spotlight--cards .views-row {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 45%;
             flex: 1 1 45%;
-    border: black solid 1px; }
-    .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row .soe-spotlight-mag-card__title a {
-      font-size: 1em;
-      color: #2e2d29; }
-      .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row .soe-spotlight-mag-card__title a:hover {
-        text-decoration: underline;
-        -webkit-text-decoration-color: #333333;
-                text-decoration-color: #333333; }
-    .spotlights-block-4 .contextual-region .soe-spotlight--cards .views-row .spotlight__quote {
-      font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-weight: 900;
-      line-height: 1.1;
-      font-size: 24px; }
-  .spotlights-block-4 .contextual-region .soe-spotlight--cards footer {
+    border: 1px solid #e3e3e3;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.1); }
+    .spotlights-block-4 .soe-spotlight--cards .views-row .su-card {
+      padding: 1em; }
+      .spotlights-block-4 .soe-spotlight--cards .views-row .su-card .su-card__contents {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: left;
+            -ms-flex-pack: left;
+                justify-content: left; }
+        .spotlights-block-4 .soe-spotlight--cards .views-row .su-card .su-card__contents .image {
+          height: 125px;
+          width: 125px;
+          -webkit-box-flex: 0;
+              -ms-flex-positive: 0;
+                  flex-grow: 0;
+          display: block;
+          float: left;
+          margin-right: 1em; }
+        .spotlights-block-4 .soe-spotlight--cards .views-row .su-card .su-card__contents .soe-spotlight-mag-card__title {
+          display: block;
+          float: left; }
+          .spotlights-block-4 .soe-spotlight--cards .views-row .su-card .su-card__contents .soe-spotlight-mag-card__title a {
+            font-size: 1em;
+            color: #2e2d29; }
+            .spotlights-block-4 .soe-spotlight--cards .views-row .su-card .su-card__contents .soe-spotlight-mag-card__title a:hover {
+              text-decoration: underline;
+              -webkit-text-decoration-color: #333333;
+                      text-decoration-color: #333333; }
+        .spotlights-block-4 .soe-spotlight--cards .views-row .su-card .su-card__contents .spotlight__quote {
+          -ms-flex-preferred-size: 100%;
+              flex-basis: 100%;
+          font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-weight: 900;
+          line-height: 1.1;
+          font-size: 24px;
+          padding-top: 1em; }
+  .spotlights-block-4 .soe-spotlight--cards footer {
     -ms-flex-preferred-size: 2;
         flex-basis: 2;
     text-align: center;

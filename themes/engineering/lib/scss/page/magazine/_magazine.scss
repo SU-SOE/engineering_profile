@@ -5,7 +5,8 @@
 // Magazine Issues, Magazine Topic pages,
 // and Article collections.
 
-$soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
+$soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
+  Arial, sans-serif;
 
 .soe-mag-landing__heading_1 {
   text-align: center;
@@ -168,44 +169,68 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Ar
 }
 
 .spotlights-block-4 {
-  .contextual-region {
-    .soe-spotlight--cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      justify-content: space-between;
+  .soe-spotlight--cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
 
-      .views-row {
-        flex: 1 1 45%;
-        border: black solid 1px;
+    .views-row {
+      flex: 1 1 45%;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.1);
 
-        .soe-spotlight-mag-card__title {
-          a {
-            @include modular-typography(0);
-            color: $soe-black;
+      .su-card {
+        padding: 1em;
 
-            &:hover {
-              text-decoration: underline;
-              text-decoration-color: #333333;
+        .su-card__contents {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: left;
+
+          .image {
+            height: 125px;
+            width: 125px;
+            flex-grow: 0;
+            display: block;
+            float: left;
+            margin-right: 1em;
+          }
+
+          .soe-spotlight-mag-card__title {
+            display: block;
+            float: left;
+            a {
+              @include modular-typography(0);
+              color: $soe-black;
+
+              &:hover {
+                text-decoration: underline;
+                text-decoration-color: #333333;
+              }
             }
           }
-        }
 
-        .spotlight__quote {
-          font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
-          font-weight: $su-font-black;
-          line-height: 1.1;
-          font-size: 24px;
+          .spotlight__quote {
+            flex-basis: 100%;
+            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
+              Helvetica, Arial, sans-serif;
+            font-weight: $su-font-black;
+            line-height: 1.1;
+            font-size: 24px;
+            padding-top: 1em;
+          }
         }
       }
+    }
 
-      footer {
-        flex-basis: 2;
-        text-align: center;
-        margin: auto;
-        margin-bottom: 2em;
-        font-size: 1.5em;
-      }
+    footer {
+      flex-basis: 2;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 2em;
+      font-size: 1.5em;
     }
   }
 }

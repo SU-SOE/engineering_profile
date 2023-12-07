@@ -57,6 +57,13 @@ function engineering_profile_helper_preprocess_views_view_field(&$vars){
         $html->getElementsByTagName('div')->item(0)->nodeValue = $new_output;
         $vars['output'] = Markup::create($html->saveHTML($html->getElementsByTagName('div')->item(0)));
       }
+
+      // Modify the field for the inclusion on the Magazine page.
+      if ($vars['view']->current_display == 'block_4') {
+        $original_content = $vars['output'];
+        $new_string = _engineering_profile_helper_modify_spotlight_quote_for_magazine($original_content);
+        $vars['output'] = Markup::create($new_string);
+      }
     }
   }
 }
@@ -74,6 +81,15 @@ function _engineering_profile_helper_trim_spotlight_quote(string $quote) {
   $trimmed_punct = trim($string_array[0], '?!.');
   // Add an ellipsis and return.
   return $trimmed_punct . ' &hellip;';
+}
+
+function _engineering_profile_helper_modify_spotlight_quote_for_magazine(string $quote):string {
+      // Remove the trailing period if it exists
+      if (substr($quote, -1) === '.') {
+        $quote = rtrim($quote, '.');
+    }
+    // Add an HTML ellipsis and wrap in HTML quotes
+    return '&ldquo;' . $quote . '&hellip;&rdquo;';
 }
 
 /**
