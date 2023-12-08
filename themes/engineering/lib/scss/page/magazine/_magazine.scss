@@ -176,12 +176,13 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
     justify-content: space-between;
 
     .views-row {
-      flex: 1 1 45%;
+      flex: 1 0 45%;
       border: 1px solid #e3e3e3;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.1);
+      @include margin(null 1em null 1em);
 
       .su-card {
-        padding: 1em;
+        padding: .5em;
 
         .su-card__contents {
           display: flex;
@@ -192,15 +193,13 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           .image {
             height: 125px;
             width: 125px;
-            flex-grow: 0;
-            display: block;
-            float: left;
-            margin-right: 1em;
+          }
+
+          .su-spotlight--superhead {
+            flex: 1 1 60%;
           }
 
           .soe-spotlight-mag-card__title {
-            display: block;
-            float: left;
             a {
               @include modular-typography(0);
               color: $soe-black;
@@ -210,7 +209,52 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
                 text-decoration-color: #333333;
               }
             }
+
+            @include grid-media('xl'){
+
+            }
           }
+
+          @include grid-media('xs'){
+            flex-direction: column;
+            justify-content: center;
+
+            .image {
+              height: 225px;
+              width: 225px;
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+
+          @include grid-media('md'){
+            display: flex;
+            flex-direction: row;
+            flex-wrap:nowrap;
+            justify-content: left;
+
+            .image{
+              height: 125px;
+              width: 125px;
+              flex-grow: 0;
+              display: block;
+              float: left;
+              margin-right: 1em;
+              @include margin(25px 25px null auto);
+            }
+          }
+
+          @include grid-media('lg'){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding: 0;
+          }
+
+
+
+
 
           .spotlight__quote {
             flex-basis: 100%;
@@ -220,13 +264,17 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             line-height: 1.1;
             font-size: 24px;
             padding-top: 1em;
+
+            @include grid-media('lg'){
+              @include margin(null null null 20px);
+            }
           }
         }
       }
     }
 
     footer {
-      flex-basis: 2;
+      flex-basis: 100%;
       text-align: center;
       margin: auto;
       margin-bottom: 2em;
