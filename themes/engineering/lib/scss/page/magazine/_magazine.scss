@@ -230,12 +230,12 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           @include grid-media('md'){
             display: flex;
             flex-direction: row;
-            flex-wrap:nowrap;
+            flex-wrap:wrap;
             justify-content: left;
 
             .image{
-              height: 125px;
-              width: 125px;
+              height: 135px;
+              width: 135px;
               flex-grow: 0;
               display: block;
               float: left;
@@ -245,6 +245,13 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           }
 
           @include grid-media('lg'){
+            .image{
+              height: 150px;
+              width: 150px;
+            }
+          }
+
+          @include grid-media('xl'){
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
