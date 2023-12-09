@@ -184,24 +184,31 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
       .su-card {
         padding: .5em;
 
+        div{
+          border: 1px thin red;
+        }
+
         .su-card__contents {
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: left;
+          padding-top: 0;
 
           .image {
             height: 125px;
             width: 125px;
+            @include margin(null null null 1em);
           }
 
           .su-spotlight--superhead {
             flex: 1 1 60%;
+            @include margin(3em null null null);
           }
 
           .soe-spotlight-mag-card__title {
             a {
-              @include modular-typography(0);
+              @include type-d;
               color: $soe-black;
 
               &:hover {
@@ -224,6 +231,11 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
               width: 225px;
               margin-left: auto;
               margin-right: auto;
+              @include margin(.5em auto .5em auto);
+            }
+
+            .su-spotlight--superhead {
+              @include margin(1.5em null null null);
             }
           }
 
@@ -234,8 +246,8 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             justify-content: left;
 
             .image{
-              height: 135px;
-              width: 135px;
+              height: 125px;
+              width: 125px;
               flex-grow: 0;
               display: block;
               float: left;
@@ -246,8 +258,8 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           @include grid-media('lg'){
             .image{
-              height: 150px;
-              width: 150px;
+              height: 145px;
+              width: 145px;
             }
           }
 
@@ -259,19 +271,15 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             padding: 0;
           }
 
-
-
-
-
           .spotlight__quote {
             flex-basis: 100%;
             font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
               Helvetica, Arial, sans-serif;
             font-weight: $su-font-black;
             line-height: 1.1;
-            font-size: 24px;
+            //font-size: 24px;
             padding-top: 1em;
-
+            @include type-c;
             @include grid-media('lg'){
               @include margin(null null null 20px);
             }
