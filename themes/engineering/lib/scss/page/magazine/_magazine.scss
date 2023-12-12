@@ -184,10 +184,6 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
       .su-card {
         padding: .5em;
 
-        div{
-          border: 1px thin red;
-        }
-
         .su-card__contents {
           display: flex;
           flex-direction: row;
@@ -279,8 +275,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           .spotlight__quote {
             flex-basis: 100%;
-            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
-              Helvetica, Arial, sans-serif;
+            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial,sans-serif;
             font-weight: $su-font-black;
             //line-height: 1.1;
             //font-size: 24px;
