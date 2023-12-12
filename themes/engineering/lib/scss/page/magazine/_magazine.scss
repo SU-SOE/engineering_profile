@@ -207,8 +207,10 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           }
 
           .soe-spotlight-mag-card__title {
+            margin-bottom: 0px !important;
+
             a {
-              @include type-d;
+              font-size: .85em;
               color: $soe-black;
 
               &:hover {
@@ -220,6 +222,10 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             @include grid-media('xl'){
 
             }
+          }
+
+          .field-content.soe--person-title{
+            font-size: 1.10em;
           }
 
           @include grid-media('xs'){
@@ -276,10 +282,10 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
               Helvetica, Arial, sans-serif;
             font-weight: $su-font-black;
-            line-height: 1.1;
+            //line-height: 1.1;
             //font-size: 24px;
-            padding-top: 1em;
-            @include type-c;
+            //padding-top: 1em;
+            @include type-d;
             @include grid-media('lg'){
               @include margin(null null null 20px);
             }
