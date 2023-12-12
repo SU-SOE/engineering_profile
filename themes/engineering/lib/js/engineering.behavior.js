@@ -14,7 +14,7 @@
 
       function getAccentColor() {
         const accentColors = [
-          "#00ece9", "#ff525c", "#ffbd54"
+          "#00ece9", "#ff7077", "#ffbd54"
         ];
         return accentColors[(Math.random() * accentColors.length) | 0];
       }
