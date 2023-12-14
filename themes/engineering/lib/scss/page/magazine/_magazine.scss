@@ -182,7 +182,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
       @include margin(null 1em null 1em);
 
       .su-card {
-        padding: .5em;
+        padding: 0.5em;
 
         .su-card__contents {
           display: flex;
@@ -199,14 +199,18 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           .su-spotlight--superhead {
             flex: 1 1 60%;
-            @include margin(3em null null null);
+            @include margin(3em nul null null);
+
+            @include grid-media-only("xs") {
+              @include margin(1.5em null null null);
+            }
           }
 
           .soe-spotlight-mag-card__title {
             margin-bottom: 0px !important;
 
             a {
-              font-size: .85em;
+              font-size: 0.85em;
               color: $soe-black;
 
               &:hover {
@@ -214,17 +218,14 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
                 text-decoration-color: #333333;
               }
             }
-
-            @include grid-media('xl'){
-
-            }
           }
 
-          .field-content.soe--person-title{
-            font-size: 1.10em;
+          .field-content.soe--person-title {
+            font-size: 1.1em;
+            margin-top: .5em;
           }
 
-          @include grid-media('xs'){
+          @include grid-media("xs") {
             flex-direction: column;
             justify-content: center;
 
@@ -233,21 +234,17 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
               width: 225px;
               margin-left: auto;
               margin-right: auto;
-              @include margin(.5em auto .5em auto);
-            }
-
-            .su-spotlight--superhead {
-              @include margin(1.5em null null null);
+              @include margin(0.5em auto 0.5em auto);
             }
           }
 
-          @include grid-media('md'){
+          @include grid-media("md") {
             display: flex;
             flex-direction: row;
-            flex-wrap:wrap;
+            flex-wrap: wrap;
             justify-content: left;
 
-            .image{
+            .image {
               height: 125px;
               width: 125px;
               flex-grow: 0;
@@ -258,14 +255,14 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             }
           }
 
-          @include grid-media('lg'){
-            .image{
+          @include grid-media("lg") {
+            .image {
               height: 145px;
               width: 145px;
             }
           }
 
-          @include grid-media('xl'){
+          @include grid-media("xl") {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -275,14 +272,15 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           .spotlight__quote {
             flex-basis: 100%;
-            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica, Arial,sans-serif;
+            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
+              Helvetica, Arial, sans-serif;
             font-weight: $su-font-black;
-            //line-height: 1.1;
-            //font-size: 24px;
-            //padding-top: 1em;
             @include type-d;
-            @include grid-media('lg'){
-              @include margin(null null null 20px);
+            @include grid-media("xs") {
+              @include margin(1.5em null null 20px);
+            }
+            @include grid-media("lg") {
+              @include margin(1em null null 20px);
             }
           }
         }

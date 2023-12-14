@@ -19,6 +19,7 @@
         return accentColors[(Math.random() * accentColors.length) | 0];
       }
 
+
       $(".engineering-accent-color__link a").each(function () {
         $(this).css('text-decoration', 'underline');
         $(this).css('text-decoration-color', getAccentColor());
@@ -26,10 +27,13 @@
         $(this).mouseover(function () {
           originalColor = $(this).css('text-decoration-color');
           $(this).css('text-decoration-color', '#000');
+          $(this).css('text-underline-position', 'under');
         }).mouseleave(function () {
           $(this).css('text-decoration-color', originalColor);
+          $(this).css('text-underline-position', 'auto');
         });
       });
+
 
       //Adds different highlight color to spotlight headshot images.
       $(".engineering-accent-color__image img").each(function () {
