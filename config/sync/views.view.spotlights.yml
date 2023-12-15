@@ -2839,8 +2839,8 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: soe--person-department
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -3184,7 +3184,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<a href="/spotlight">See all spotlights</a>'
+            value: ''
             format: stanford_html
           tokenize: false
       display_extenders: {  }

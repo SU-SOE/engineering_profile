@@ -225,6 +225,10 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             margin-top: .5em;
           }
 
+          .field-content.soe--person-department {
+            font-size: 1.1em;
+          }
+
           @include grid-media("xs") {
             flex-direction: column;
             justify-content: center;
@@ -291,7 +295,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
       flex-basis: 100%;
       text-align: center;
       margin: auto;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       font-size: 1.5em;
     }
   }
