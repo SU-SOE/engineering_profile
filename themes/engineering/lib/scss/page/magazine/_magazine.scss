@@ -85,10 +85,10 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           color: $magazine-topics-color;
           font-size: 18px;
           font-weight: 400;
-          text-decoration: none;
+          text-decoration: underline;
 
           &:hover {
-            text-decoration: underline;
+            text-decoration: none;
             text-decoration-color: #333333;
           }
         }
