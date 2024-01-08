@@ -1,0 +1,17 @@
+uuid: a75d2215-5d3b-4cc5-8b9d-f0e965952c19
+langcode: en
+status: true
+dependencies:
+  module:
+    - stanford_profile_helper
+title: 'Default cron handler'
+id: stanford_profile_helper_cron
+weight: 0
+module: stanford_profile_helper
+callback: stanford_profile_helper_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database
