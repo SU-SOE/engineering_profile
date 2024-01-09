@@ -35,7 +35,6 @@ module:
   core_event_dispatcher: 0
   crop: 0
   cshs: 0
-  csv_serialization: 0
   ctools: 0
   ctools_views: 0
   datetime: 0
@@ -222,7 +221,6 @@ module:
   token_or: 0
   toolbar: 0
   typed_data: 0
-  typogrify: 0
   ui_patterns: 0
   ui_patterns_ds: 0
   ui_patterns_layouts: 0
@@ -240,7 +238,6 @@ module:
   views_bulk_operations: 0
   views_contextual_filters_or: 0
   views_custom_cache_tag: 0
-  views_data_export: 0
   views_event_dispatcher: 0
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
