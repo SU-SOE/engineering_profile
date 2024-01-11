@@ -35,7 +35,6 @@ module:
   core_event_dispatcher: 0
   crop: 0
   cshs: 0
-  csv_serialization: 0
   ctools: 0
   ctools_views: 0
   datetime: 0
@@ -78,6 +77,13 @@ module:
   fontawesome: 0
   google_analytics: 0
   google_tag: 0
+  graphql: 0
+  graphql_compose: 0
+  graphql_compose_layout_paragraphs: 0
+  graphql_compose_layouts: 0
+  graphql_compose_menus: 0
+  graphql_compose_routes: 0
+  graphql_compose_views: 0
   help: 0
   hook_event_dispatcher: 0
   image: 0
@@ -182,6 +188,7 @@ module:
   stanford_basic_page_types: 0
   stanford_courses: 0
   stanford_courses_importer: 0
+  stanford_decoupled: 0
   stanford_events: 0
   stanford_events_importer: 0
   stanford_events_series: 0
@@ -213,8 +220,7 @@ module:
   token: 0
   token_or: 0
   toolbar: 0
-  transliterate_filenames: 0
-  typogrify: 0
+  typed_data: 0
   ui_patterns: 0
   ui_patterns_ds: 0
   ui_patterns_layouts: 0
@@ -232,7 +238,6 @@ module:
   views_bulk_operations: 0
   views_contextual_filters_or: 0
   views_custom_cache_tag: 0
-  views_data_export: 0
   views_event_dispatcher: 0
   views_infinite_scroll: 0
   views_taxonomy_term_name_depth: 0
@@ -258,5 +263,5 @@ theme:
   soe_basic: 2
   engineering: 3
   minimally_branded_subtheme: 0
-  stanford_profile_admin: 0
+  stanford_profile_admin_theme: 4
 profile: engineering_profile

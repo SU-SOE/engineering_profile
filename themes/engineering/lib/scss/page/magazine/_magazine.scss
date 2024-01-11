@@ -5,6 +5,9 @@
 // Magazine Issues, Magazine Topic pages,
 // and Article collections.
 
+$soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
+  Arial, sans-serif;
+
 .soe-mag-landing__heading_1 {
   text-align: center;
   margin: auto;
@@ -40,11 +43,9 @@
     margin-left: auto;
     margin-right: auto;
 
-
     .su-card {
       margin: 1em;
       width: fit-content;
-
 
       h2 {
         a {
@@ -84,10 +85,10 @@
           color: $magazine-topics-color;
           font-size: 18px;
           font-weight: 400;
-          text-decoration: none;
+          text-decoration: underline;
 
           &:hover {
-            text-decoration: underline;
+            text-decoration: none;
             text-decoration-color: #333333;
           }
         }
@@ -117,7 +118,7 @@
 }
 
 .soe-load-more {
-  @include responsive-spacing('margin', 5);
+  @include responsive-spacing("margin", 5);
 }
 
 .view.magazine {
@@ -135,8 +136,8 @@
 }
 
 .article-collection__link {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .su-mag--mag_topics {
@@ -163,6 +164,139 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+.spotlights-block-4 {
+  .soe-spotlight--cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+
+    .views-row {
+      flex: 1 0 45%;
+      border: 1px solid #e3e3e3;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.1);
+      @include margin(null 1em null 1em);
+
+      .su-card {
+        padding: 0.5em;
+
+        .su-card__contents {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: left;
+          padding-top: 0;
+
+          .image {
+            height: 125px;
+            width: 125px;
+            @include margin(null null null 1em);
+          }
+
+          .su-spotlight--superhead {
+            flex: 1 1 60%;
+            @include margin(3em nul null null);
+
+            @include grid-media-only("xs") {
+              @include margin(1.5em null null null);
+            }
+          }
+
+          .soe-spotlight-mag-card__title {
+            margin-bottom: 0px !important;
+
+            a {
+              font-size: 0.85em;
+              color: $soe-black;
+
+              &:hover {
+                text-decoration: underline;
+                text-decoration-color: #333333;
+              }
+            }
+          }
+
+          .field-content.soe--person-title {
+            font-size: 1.1em;
+            margin-top: .5em;
+          }
+
+          .field-content.soe--person-department {
+            font-size: 1.1em;
+          }
+
+          @include grid-media("xs") {
+            flex-direction: column;
+            justify-content: center;
+
+            .image {
+              height: 225px;
+              width: 225px;
+              margin-left: auto;
+              margin-right: auto;
+              @include margin(0.5em auto 0.5em auto);
+            }
+          }
+
+          @include grid-media("md") {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+
+            .image {
+              height: 125px;
+              width: 125px;
+              flex-grow: 0;
+              display: block;
+              float: left;
+              margin-right: 1em;
+              @include margin(25px 25px null auto);
+            }
+          }
+
+          @include grid-media("lg") {
+            .image {
+              height: 145px;
+              width: 145px;
+            }
+          }
+
+          @include grid-media("xl") {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding: 0;
+          }
+
+          .spotlight__quote {
+            flex-basis: 100%;
+            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
+              Helvetica, Arial, sans-serif;
+            font-weight: $su-font-black;
+            @include type-d;
+            @include grid-media("xs") {
+              @include margin(1.5em null null 20px);
+            }
+            @include grid-media("lg") {
+              @include margin(1em null null 20px);
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      flex-basis: 100%;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 1em;
+      font-size: 1.5em;
     }
   }
 }
