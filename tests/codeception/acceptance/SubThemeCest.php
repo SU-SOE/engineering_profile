@@ -7,6 +7,7 @@ use Faker\Factory;
  * Class SubThemeCest.
  *
  * @group no-parallel
+ * @group subthemes
  */
 class SubThemeCest {
 
@@ -25,12 +26,25 @@ class SubThemeCest {
   protected $themePath;
 
   /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  /**
+   * @var string
+   */
+  protected $originalTheme = 'stanford_basic';
+
+  /**
    * SubThemeCest constructor.
    */
   public function __construct() {
     $this->themeName = Factory::create()->firstName;
     $path = \Drupal::service('extension.list.theme')->getPath('stanford_basic');
     $this->themePath = realpath(dirname($path)) . '/' . strtolower($this->themeName);
+    $this->faker = Factory::create();
   }
 
   /**
@@ -40,6 +54,7 @@ class SubThemeCest {
    *   Tester.
    */
   public function _before(AcceptanceTester $I) {
+    $this->originalTheme = \Drupal::config('system.theme')->get('default');
     $this->createTheme();
   }
 
@@ -50,7 +65,13 @@ class SubThemeCest {
    *   Tester.
    */
   public function _after(AcceptanceTester $I) {
-    $this->runConfigImport($I, TRUE);
+    $I->runDrush('config:set system.theme default ' . $this->originalTheme . ' -y');
+    try {
+      $I->runDrush('theme:uninstall ' . strtolower($this->themeName));
+    }
+    catch (\Throwable $e) {
+      // Nothing to do if the theme wasn't enabled to begin.
+    }
     $info_path = $this->themePath . '/' . strtolower($this->themeName) . '.info.yml';
     if (file_exists($info_path)) {
       unlink($info_path);
@@ -64,28 +85,54 @@ class SubThemeCest {
    * @group minimal-subtheme-test2
    */
   public function testSubTheme(AcceptanceTester $I) {
+    $paragraph_text = $this->faker->paragraph;
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_wysiwyg',
+      'su_wysiwyg_text' => [
+        'value' => $paragraph_text,
+        'format' => 'stanford_html',
+      ],
+    ], 'paragraph');
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->words(3, TRUE),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+
+    $I->canSee($paragraph_text);
+
     $I->runDrush('theme:enable -y ' . strtolower($this->themeName));
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/appearance');
     $I->click('Set as default', sprintf('a[title="Set %s as default theme"]', $this->themeName));
-    $I->amOnPage('/');
-    $I->canSeeResponseCodeIs(200);
+    $I->canSee("{$this->themeName} 1.0.0 (default theme)");
+    $I->runDrush('cache:rebuild');
 
-    $this->runConfigImport($I);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($paragraph_text);
+
+    $I->runDrush('config-import -y');
     $result = $I->runDrush('config-get system.theme default --format=json');
     $result = json_decode($result, TRUE);
     $I->assertEquals(strtolower($this->themeName), $result['system.theme:default']);
 
     $I->amOnPage('/admin/appearance');
     $I->click('Set as default', sprintf('a[title="Set %s as default theme"]', 'Stanford Basic'));
-    $this->runConfigImport($I);
+    $I->runDrush('config-import -y');
 
     $result = $I->runDrush('config-get system.theme default --format=json');
     $result = json_decode($result, TRUE);
     $I->assertEquals('stanford_basic', $result['system.theme:default']);
 
-    $I->amOnPage('/');
-    $I->canSeeResponseCodeIs(200);
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($paragraph_text);
   }
 
   /**
@@ -95,6 +142,11 @@ class SubThemeCest {
    * @group minimal-subtheme-test
    */
   public function testMinimalSubtheme(AcceptanceTester $I) {
+    $I->amOnPage('/');
+    $I->seeElement('.su-brand-bar__logo');
+    $I->seeElement('.su-global-footer__container');
+    $I->seeElement('.su-brand-bar--default');
+
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/appearance');
     $I->click('Set as default', 'a[title="Set Stanford Minimally Branded Subtheme as default theme"]');

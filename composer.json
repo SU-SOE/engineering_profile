@@ -204,5 +204,9 @@
         "https://www.drupal.org/project/menu_link_weight/issues/2875984": "https://git.drupalcode.org/project/menu_link_weight/-/merge_requests/2.diff"
       }
     }
+  },
+  "conflict": {
+    "drupal/dropzonejs": ">2.8.0"
   }
+
 }
