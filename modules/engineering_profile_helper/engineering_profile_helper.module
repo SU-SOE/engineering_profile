@@ -139,10 +139,10 @@ function engineering_profile_helper_preprocess_spotlight_header_layout(&$vars) {
 
     if (!empty($degrees) && !empty($department)) {
       // We need to concat the values.
-      $degrees_text = $degrees['content'][0]['#context']['value'];
-      $department_text = $department['content'][0]['#plain_text'];
+      $degrees_text = $degrees['content'][0][0]['#context']['value'];
+      $department_text = $department['content'][0][0]['#plain_text'];
       $final_value = $degrees_text . ', ' . $department_text;
-      $degrees['content'][0]['#context']['value'] = $final_value;
+      $degrees['content'][0][0]['#context']['value'] = $final_value;
       // Get rid of the department field, since we now have this data in
       // the Degrees field.
       unset($spotlight_hero_text[$department_key]);
