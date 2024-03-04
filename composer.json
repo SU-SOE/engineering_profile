@@ -206,7 +206,7 @@
     }
   },
   "conflict": {
-    "drupal/dropzonejs": ">2.8.0"
+    "drupal/dropzonejs": ">2.7"
   }
 
 }
