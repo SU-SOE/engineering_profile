@@ -82,7 +82,7 @@ class SubThemeCest {
   /**
    * Enable the subtheme and the config should reflect the changes done.
    *
-   * @group minimal-subtheme-test2
+   * @group subtheme
    */
   public function testSubTheme(AcceptanceTester $I) {
     $paragraph_text = $this->faker->paragraph;
@@ -139,7 +139,7 @@ class SubThemeCest {
    * Enable the minimally branded subtheme and the config should reflect the
    * changes done. Test the changes are there.
    *
-   * @group minimal-subtheme-test
+   * @group minimal-theme
    */
   public function testMinimalSubtheme(AcceptanceTester $I) {
     $I->amOnPage('/');
@@ -159,21 +159,6 @@ class SubThemeCest {
   }
 
   /**
-   * Run config import and adjust saml module if necessary.
-   *
-   * @param \AcceptanceTester $I
-   *   Tester.
-   * @param bool $disable_config_ignore
-   *   If config ignore module should be disabled first.
-   */
-  protected function runConfigImport(AcceptanceTester $I, $disable_config_ignore = FALSE) {
-    if ($disable_config_ignore) {
-      $I->runDrush('pmu config_ignore');
-    }
-    $I->runDrush('config-import -y');
-  }
-
-  /**
    * Create a stub of a subtheme based on stanford_basic.
    */
   protected function createTheme() {
@@ -181,10 +166,17 @@ class SubThemeCest {
       mkdir($this->themePath, 0777, TRUE);
       $info = file_get_contents(\Drupal::service('extension.list.theme')
           ->getPath('stanford_basic') . '/stanford_basic.info.yml');
-      $info = Yaml::decode($info);
-      $info['name'] = $this->themeName;
-      $info['base theme'] = 'stanford_basic';
-      unset($info['component-libraries']);
+      $stanford_basic_info = Yaml::decode($info);
+      $info = [
+        'name' => $this->themeName,
+        'type' => 'theme',
+        'description' => $this->themeName,
+        'package' => 'testing',
+        'version' => '1.0.0',
+        'core_version_requirement' => '^10',
+        'base theme' => 'stanford_basic',
+        'regions' => $stanford_basic_info['regions'],
+      ];
 
       $info_path = $this->themePath . '/' . strtolower($this->themeName) . '.info.yml';
       file_put_contents($info_path, Yaml::encode($info));
