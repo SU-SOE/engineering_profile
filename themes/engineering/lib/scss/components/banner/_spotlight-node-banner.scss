@@ -46,6 +46,7 @@
 
       font-weight: $su-font-regular;
       max-width: 40ch;
+      color: #43423E;
     }
 
     h1 {
@@ -54,6 +55,9 @@
 
       margin-bottom: 0;
     }
+  }
+  .su-spotlight-person-title {
+    margin-bottom: 0;
   }
 }
 
@@ -64,9 +68,10 @@
 //Date on Spotlight
 .spotlight.spotlight-header__date {
   @include type-d;
-
   text-align: right;
   font-style: italic;
   width: 100%;
   font-weight: $su-font-regular;
+  font-size: 30px;
+  margin-bottom: 5px;
 }

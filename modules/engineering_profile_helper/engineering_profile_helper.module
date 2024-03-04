@@ -127,11 +127,11 @@ function engineering_profile_helper_preprocess_spotlight_header_layout(&$vars) {
     $spotlight_hero_text = &$vars['content']['spotlight_hero_text'];
 
     foreach ($spotlight_hero_text as $key => $field) {
-      if (!empty($field['content']) && $field['content']['#field_name'] == 'su_spotlight_degrees') {
+      if (!empty($field['content'][0]) && $field['content'][0]['#field_name'] == 'su_spotlight_degrees') {
         $degrees = &$spotlight_hero_text[$key];
 
       }
-      if (!empty($field['content']) && $field['content']['#field_name'] == 'su_soe_department') {
+      if (!empty($field['content'][0]) && $field['content'][0]['#field_name'] == 'su_soe_department') {
         $department = &$spotlight_hero_text[$key];
         $department_key = $key;
       }
