@@ -140,7 +140,8 @@ function engineering_profile_update_9005(&$sandbox) {
         ->getString());
 
       $delete_entities[] = $row_entity;
-      $number_of_items = min($row_entity->get('su_page_components')->count(), 3);
+      $number_of_items = min($row_entity->get('su_page_components')
+        ->count(), 3);
       $layout_id = "layout_paragraphs_{$number_of_items}_column";
 
       $new_row_entity = $paragraph_storage->create(['type' => 'stanford_layout']);
@@ -441,7 +442,7 @@ function engineering_profile_update_9103(&$sandbox) {
       ->getStorage('paragraphs_type')
       ->load('stanford_card');
     $behaviors = $paragraph_type->get('behavior_plugins');
-    $behaviors['su_card_styles'] = ['enabeld' => true];
+    $behaviors['su_card_styles'] = ['enabeld' => TRUE];
     $paragraph_type->set('behavior_plugins', $behaviors);
     $paragraph_type->save();
     $field->delete();

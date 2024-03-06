@@ -45,7 +45,7 @@ class LocalFooterCest {
 
     $I->selectOption('State', 'New York');
     $fields = [
-      'Company' => 'Drupal',
+      // 'Company' => 'Drupal',
       'Street address' => '123 Drupal Dr',
       'City' => 'New York',
       'Zip code' => 12345,

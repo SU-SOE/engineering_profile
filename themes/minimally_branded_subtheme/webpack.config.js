@@ -41,7 +41,6 @@ var webpackConfig = {
         options: {
           enableHmr: false
         },
-        loader: 'drupal-behaviors-loader'
       },
       {
         test: /\.m?js$/,

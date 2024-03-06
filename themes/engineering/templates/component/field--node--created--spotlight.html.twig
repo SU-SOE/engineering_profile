@@ -38,5 +38,5 @@
 #}
 
 {% for item in items %}
-  <div{{ attributes.addClass('spotlight-header__date')}}>Story originally published on {{ item.content }}</div>
+  <div{{ attributes.addClass('spotlight-header__date')}}>{{ item.content }}</div>
 {% endfor %}

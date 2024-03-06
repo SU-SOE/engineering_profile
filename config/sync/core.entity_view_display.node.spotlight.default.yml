@@ -57,48 +57,6 @@ third_party_settings:
                     class: ''
             weight: 0
             additional: {  }
-          90087c67-5f11-44a2-a588-839d2e2973fe:
-            uuid: 90087c67-5f11-44a2-a588-839d2e2973fe
-            region: spotlight_hero_text
-            configuration:
-              id: 'field_block:node:spotlight:type'
-              label: 'Content type'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: spotlight-banner-text__header
-            weight: -10
-            additional: {  }
-          63d93c8e-eb7c-44f1-9bed-188a48aabf70:
-            uuid: 63d93c8e-eb7c-44f1-9bed-188a48aabf70
-            region: spotlight_hero_text
-            configuration:
-              id: 'field_block:node:spotlight:title'
-              label: Name
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_title_heading
-                label: hidden
-                settings:
-                  tag: h1
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: -9
-            additional: {  }
           3f3c9a5f-b8bc-4ce5-930e-4c8942b34819:
             uuid: 3f3c9a5f-b8bc-4ce5-930e-4c8942b34819
             region: spotlight_hero_text
@@ -162,6 +120,48 @@ third_party_settings:
                     class: su-spotlight-degrees
             weight: -8
             additional: {  }
+          63d93c8e-eb7c-44f1-9bed-188a48aabf70:
+            uuid: 63d93c8e-eb7c-44f1-9bed-188a48aabf70
+            region: spotlight_hero_text
+            configuration:
+              id: 'field_block:node:spotlight:title'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: hidden
+                settings:
+                  tag: h1
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: -9
+            additional: {  }
+          90087c67-5f11-44a2-a588-839d2e2973fe:
+            uuid: 90087c67-5f11-44a2-a588-839d2e2973fe
+            region: spotlight_hero_text
+            configuration:
+              id: 'field_block:node:spotlight:type'
+              label: 'Content type'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: spotlight-banner-text__header
+            weight: -10
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: defaults
@@ -172,26 +172,6 @@ third_party_settings:
           centered: centered-container
           columns: flex-8-of-12
         components:
-          54aa6b91-104e-446c-9493-838e3d7d722b:
-            uuid: 54aa6b91-104e-446c-9493-838e3d7d722b
-            region: main
-            configuration:
-              id: 'field_block:node:spotlight:su_people_spotlight_quote'
-              label: 'People Spotlight Quote'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: basic_string
-                label: hidden
-                settings: {  }
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: -9
-            additional: {  }
           4b652f44-9246-4499-affb-8e0d9cba4535:
             uuid: 4b652f44-9246-4499-affb-8e0d9cba4535
             region: main
@@ -210,7 +190,65 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: -8
+            weight: -4
+            additional: {  }
+          54aa6b91-104e-446c-9493-838e3d7d722b:
+            uuid: 54aa6b91-104e-446c-9493-838e3d7d722b
+            region: main
+            configuration:
+              id: 'field_block:node:spotlight:su_people_spotlight_quote'
+              label: 'People Spotlight Quote'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  field_formatter_class:
+                    class: ''
+            weight: -5
+            additional: {  }
+          6a3b1b07-4925-458d-916c-d1c86531661f:
+            uuid: 6a3b1b07-4925-458d-916c-d1c86531661f
+            region: main
+            configuration:
+              id: 'field_block:node:spotlight:created'
+              label: 'Authored on'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: timestamp
+                label: hidden
+                settings:
+                  date_format: custom
+                  custom_date_format: 'F j, Y'
+                  timezone: ''
+                  tooltip:
+                    date_format: long
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
+                    description: ''
+                third_party_settings:
+                  empty_fields:
+                    handler: nbsp
+                  field_formatter_class:
+                    class: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: span
+            weight: -6
             additional: {  }
         third_party_settings: {  }
       -
