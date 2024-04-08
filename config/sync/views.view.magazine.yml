@@ -2034,7 +2034,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<div class="magazine-topics__term-name"><h2 class="title" id="page-title">{{ name }}</h2>'
+            value: "{% if name %}\r\n<div class=\"magazine-topics__term-name\"><h2 class=\"title\" id=\"page-title\">{{ name }}</h2>\r\n{% endif %}"
             format: stanford_html
           tokenize: true
       display_extenders: {  }
