@@ -5,7 +5,7 @@
  * engineering_profile.profile
  */
 
-use Drupal\config_pages\ConfigPagesInterface;
+use Drupal\config_pages\Entity\ConfigPages;
 use Drupal\Core\Installer\InstallerKernel;
 
 /**
