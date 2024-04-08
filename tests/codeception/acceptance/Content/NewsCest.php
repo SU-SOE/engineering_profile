@@ -162,6 +162,17 @@ class NewsCest {
    * @group metadata
    */
   public function testMetaData(AcceptanceTester $I) {
+    $time = \Drupal::time()->getCurrentTime();
+    $now = DateTime::createFromFormat('U', $time);
+    $now->setTime(12, 0, 0);
+    $now = $now->getTimestamp();
+
+    /** @var \Drupal\Core\Datetime\DateFormatterInterface $date_time_formatter */
+    $date_time_formatter = \Drupal::service('date.formatter');
+
+    $date_string = $date_time_formatter->format($now, 'custom', 'Y-m-d');
+    $metadata_date = $date_time_formatter->format($now, 'custom', 'c', 'America/Los_Angeles');
+
     $values = [
       'featured_image_alt' => $this->faker->words(3, TRUE),
       'banner_image_alt' => $this->faker->words(3, TRUE),

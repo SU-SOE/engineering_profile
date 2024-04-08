@@ -69,7 +69,7 @@
   label {
     padding: 0 10px;
     margin: 0;
-    color: #ffffff;
+    color: #fff;
   }
 
   input {
@@ -123,7 +123,7 @@
     box-shadow: none;
     border-bottom: 1px solid #b1040e;
     background: #f4f4f4;
-    color: #000000;
+    color: #000;
   }
 
   @media (min-width: 992px) {
@@ -160,8 +160,8 @@
 
   &:hover, &:focus {
     text-decoration: underline;
-    color: #ffffff;
-    border-left: 6px solid #ffffff;
+    color: #fff;
+    border-left: 6px solid #fff;
   }
 
   @media (min-width: 992px) {
@@ -199,7 +199,7 @@
     box-shadow: ${e=>0===e.level?"0 10px 20px rgba(0,0,0,.15),0 6px 6px rgba(0,0,0,.2)":""};
     position: ${e=>0===e.level?"absolute":"relative"};
     top: 100%;
-    background: #ffffff;
+    background: #fff;
     border-top: 1px solid #d9d9d9;
     right: 0;
   }

@@ -221,6 +221,8 @@ class WYSIWYGCest {
 
   /**
    * Videos in the WYSIWYG should display correctly.
+   *
+   * @group lazyload
    */
   public function testEmbeddedVideo(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
@@ -256,6 +258,7 @@ class WYSIWYGCest {
     $I->scrollTo('.oembed-lazyload', 0, 100);
     $I->waitForElementVisible('iframe');
     $I->canSeeNumberOfElements('iframe', 1);
+    $I->canSeeNumberOfElements('iframe[loading="lazy"]', 1);
   }
 
   /**
