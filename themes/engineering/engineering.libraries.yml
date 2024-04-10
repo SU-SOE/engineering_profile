@@ -6,7 +6,7 @@ engineering-styling:
     component:
       dist/css/engineering.components.css : {}
   js:
-    dist/js/engineering.script.js : {
+    dist/css/engineering.script.js : {
       scope: footer,
       attributes: { type: module }
     }

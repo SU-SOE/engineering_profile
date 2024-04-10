@@ -88,8 +88,9 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           text-decoration: underline;
 
           &:hover {
-            text-decoration: none;
-            text-decoration-color: #333333;
+            color: #2e2d29;
+            text-decoration-color: #2e2d29;
+            text-underline-position: under;
           }
         }
       }
