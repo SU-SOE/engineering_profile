@@ -168,7 +168,6 @@
     "su-sws/stanford_fields": "^8.2",
     "su-sws/stanford_media": "^11.0",
     "su-sws/stanford_migrate": "^8.3",
-    "su-sws/stanford_profile": "^11.0",
     "su-sws/stanford_profile_helper": "^9.0",
     "su-sws/stanford_samlauth": "^1.0",
     "su-sws/stanford_syndication": "^1.0"
@@ -185,6 +184,9 @@
     "psr-4": {
       "Drupal\\Tests\\engineering_profile\\": "tests/src"
     }
+  },
+  "conflict": {
+    "drupal/diff": ">1.1"
   },
   "extra": {
     "drush": {
