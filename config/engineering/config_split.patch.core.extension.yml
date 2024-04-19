@@ -8,15 +8,11 @@ adding:
     oembed_lazyload: 0
     stanford_syndication: 0
     views_autosubmit: 0
-    engineering_profile: 1000
   theme:
     engineering: 0
-  profile: engineering_profile
 removing:
   module:
     graphql_compose_blocks: 0
     graphql_compose_edges: 0
     graphql_compose_image_style: 0
     graphql_compose_metatags: 0
-    soe_profile: 1000
-  profile: soe_profile
