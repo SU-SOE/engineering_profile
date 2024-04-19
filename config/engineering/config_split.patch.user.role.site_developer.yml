@@ -1,0 +1,44 @@
+adding:
+  dependencies:
+    config:
+      - core.entity_view_display.node.stanford_news.default
+      - core.entity_view_display.node.stanford_page.default
+      - node.type.spotlight
+      - taxonomy.vocabulary.affiliation
+      - taxonomy.vocabulary.article_collection
+      - taxonomy.vocabulary.department
+      - taxonomy.vocabulary.magazine_issues
+      - taxonomy.vocabulary.magazine_topics
+    module:
+      - engineering_profile
+  permissions:
+    - 'configure all stanford_page node layout overrides'
+    - 'configure editable stanford_news node layout overrides'
+    - 'configure editable stanford_page node layout overrides'
+    - 'create spotlight content'
+    - 'create terms in affiliation'
+    - 'create terms in article_collection'
+    - 'create terms in department'
+    - 'create terms in magazine_issues'
+    - 'create terms in magazine_topics'
+    - 'delete any spotlight content'
+    - 'delete own spotlight content'
+    - 'delete spotlight revisions'
+    - 'delete terms in affiliation'
+    - 'delete terms in article_collection'
+    - 'delete terms in department'
+    - 'delete terms in magazine_issues'
+    - 'delete terms in magazine_topics'
+    - 'edit any spotlight content'
+    - 'edit own spotlight content'
+    - 'edit terms in affiliation'
+    - 'edit terms in article_collection'
+    - 'edit terms in department'
+    - 'edit terms in magazine_issues'
+    - 'edit terms in magazine_topics'
+    - 'revert spotlight revisions'
+    - 'view spotlight revisions'
+removing:
+  dependencies:
+    module:
+      - soe_profile

@@ -1,0 +1,30 @@
+adding:
+  field_settings:
+    rendered_item:
+      configuration:
+        view_mode:
+          'entity:node':
+            spotlight: search_indexing
+  datasource_settings:
+    'entity:node':
+      bundles:
+        default: false
+        selected:
+          - spotlight
+          - stanford_event
+          - stanford_event_series
+          - stanford_news
+          - stanford_page
+          - stanford_person
+          - stanford_publication
+  processor_settings:
+    type_boost:
+      boosts:
+        'entity:node':
+          bundle_boosts:
+            stanford_person: 5.0
+removing:
+  datasource_settings:
+    'entity:node':
+      bundles:
+        default: true

@@ -1,0 +1,12 @@
+adding: {  }
+removing:
+  dependencies:
+    module:
+      - graphql
+  permissions:
+    - 'execute graphql_compose_server arbitrary graphql requests'
+    - 'execute graphql_compose_server persisted graphql requests'
+    - 'view own su_site_algolia_ui'
+    - 'view printer friendly versions'
+    - 'view su_event_ext_image'
+    - 'view su_site_algolia_ui'

@@ -14,6 +14,3 @@ description: 'Banner Paragraph Type'
 behavior_plugins:
   hero_pattern:
     enabled: false
-    overlay_position: left
-    heading: h2
-    hide_heading: false

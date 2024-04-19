@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
     - field.field.node.stanford_page.su_metatags
-    - field.field.node.stanford_page.su_department
     - field.field.node.stanford_page.su_page_banner
     - field.field.node.stanford_page.su_page_components
     - field.field.node.stanford_page.su_page_description
@@ -107,7 +106,6 @@ hidden:
   search_api_excerpt: true
   stanford_intranet__access: true
   su_basic_page_type: true
-  su_department: true
   su_metatags: true
   su_page_components: true
   su_shared_tags: true

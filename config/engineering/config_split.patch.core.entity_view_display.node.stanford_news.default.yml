@@ -1,0 +1,116 @@
+adding:
+  dependencies:
+    config:
+      config_split_sequence_6oihh1h3jlvdvc15: field.field.node.stanford_news.su_mag_featured
+      config_split_sequence_kv0iolifas5av17: field.field.node.stanford_news.su_magazine_issue
+      config_split_sequence_5ufaqs10ossaa61u: field.field.node.stanford_news.su_magazine_story
+      config_split_sequence_1_5c3svi5csfl61hvj: field.field.node.stanford_news.su_news_banner_media_caption
+      config_split_sequence_haca2fjp2adakpfs: field.field.node.stanford_news.su_soe_department
+      config_split_sequence_5f4nji8go9gb1a2s: field.field.node.stanford_news.su_soe_mag_collection
+      config_split_sequence_pj2nk2kkdnjqc0fs: field.field.node.stanford_news.su_soe_mag_topics
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            c0dbde1e-4df6-4c6a-acee-dd08e52a013a:
+              uuid: c0dbde1e-4df6-4c6a-acee-dd08e52a013a
+              region: su_news_publishing_date
+              configuration:
+                id: 'field_block:node:stanford_news:su_soe_mag_collection'
+                label: 'Article Collection'
+                label_display: '0'
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: entity_reference_label
+                  label: hidden
+                  settings:
+                    link: true
+                  third_party_settings:
+                    field_formatter_class:
+                      class: su-mag--article_collection
+              weight: 1
+              additional: {  }
+        -
+          components:
+            6efc6f03-d761-4069-b688-d97558a82093:
+              uuid: 6efc6f03-d761-4069-b688-d97558a82093
+              region: main
+              configuration:
+                id: 'field_block:node:stanford_news:su_soe_department'
+                label: 'Related Departments'
+                label_display: visible
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: entity_reference_label
+                  label: hidden
+                  settings:
+                    link: true
+                  third_party_settings:
+                    field_formatter_class:
+                      class: ''
+              weight: 1
+              additional: {  }
+  content:
+    su_mag_featured:
+      type: boolean
+      label: above
+      settings:
+        format: default
+        format_custom_false: ''
+        format_custom_true: ''
+      third_party_settings: {  }
+      weight: 13
+      region: main
+    su_magazine_issue:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      third_party_settings: {  }
+      weight: 14
+      region: main
+    su_magazine_story:
+      type: boolean
+      label: above
+      settings:
+        format: default
+        format_custom_false: ''
+        format_custom_true: ''
+      third_party_settings: {  }
+      weight: 15
+      region: main
+    su_soe_department:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      third_party_settings: {  }
+      weight: 10
+      region: main
+    su_soe_mag_collection:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      third_party_settings: {  }
+      weight: 12
+      region: main
+    su_soe_mag_topics:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      third_party_settings: {  }
+      weight: 11
+      region: main
+removing:
+  dependencies:
+    config:
+      config_split_sequence_g728n94sbjj81e1t: field.field.node.stanford_news.su_news_hide_social

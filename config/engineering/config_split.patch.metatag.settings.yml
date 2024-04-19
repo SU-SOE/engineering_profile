@@ -1,0 +1,32 @@
+adding:
+  entity_type_groups:
+    node:
+      spotlight:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+      stanford_event:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+      stanford_event_series:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+      stanford_news:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+      stanford_page:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+      stanford_person:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+      stanford_publication:
+        basic: basic
+        open_graph: open_graph
+        twitter_cards: twitter_cards
+removing: {  }

@@ -106,6 +106,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  syndication:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0

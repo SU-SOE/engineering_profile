@@ -1,0 +1,35 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.su_department
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            8a9f4eb1-1cbc-4bcf-b658-a07356752dfe:
+              uuid: 8a9f4eb1-1cbc-4bcf-b658-a07356752dfe
+              region: main
+              configuration:
+                id: 'field_block:node:stanford_page:su_department'
+                label_display: '0'
+                context_mapping:
+                  entity: layout_builder.entity
+                formatter:
+                  type: entity_reference_label
+                  label: above
+                  settings:
+                    link: true
+                  third_party_settings: {  }
+              weight: 1
+              additional: {  }
+  content:
+    su_department:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      third_party_settings: {  }
+      weight: 8
+      region: main
+removing: {  }

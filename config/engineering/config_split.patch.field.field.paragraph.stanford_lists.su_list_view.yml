@@ -1,0 +1,12 @@
+adding:
+  settings:
+    allowed_views:
+      spotlights: spotlights
+      department_terms: '0'
+      magazine: '0'
+      magazine_article_collection: '0'
+      magazine_issues: '0'
+      post_migration_qa_spreadsheet: '0'
+    allowed_display_types:
+      data_export: '0'
+removing: {  }

@@ -1,4 +1,4 @@
-uuid: 8f463d7f-9afb-478d-96b6-f69784a80877
+uuid: 25048f47-8a6b-4b7a-8c97-8426ab033007
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 name: graphql_compose_server
 label: 'GraphQL Compose - Server'
 endpoint: /graphql
-debug_flag: 0
+debug_flag: 1
 schema: graphql_compose
 caching: true
 batching: true
@@ -15,4 +15,6 @@ disable_introspection: false
 query_depth: null
 query_complexity: null
 schema_configuration: {  }
-persisted_queries_settings: {  }
+persisted_queries_settings:
+  automatic_persisted_query:
+    weight: 0

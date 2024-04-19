@@ -1,0 +1,9 @@
+adding:
+  hidden:
+    su_mag_featured: true
+    su_magazine_issue: true
+    su_magazine_story: true
+    su_soe_department: true
+    su_soe_mag_collection: true
+    su_soe_mag_topics: true
+removing: {  }

@@ -1,0 +1,102 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.su_mag_featured
+      - field.field.node.stanford_news.su_magazine_issue
+      - field.field.node.stanford_news.su_magazine_story
+      - field.field.node.stanford_news.su_soe_department
+      - field.field.node.stanford_news.su_soe_mag_collection
+      - field.field.node.stanford_news.su_soe_mag_topics
+  third_party_settings:
+    field_group:
+      group_magazine_fields:
+        children:
+          - su_magazine_story
+          - su_magazine_issue
+          - su_soe_mag_topics
+          - su_soe_mag_collection
+          - su_mag_featured
+        label: 'Magazine Fields'
+        region: content
+        parent_name: ''
+        weight: 8
+        format_type: fieldset
+        format_settings:
+          classes: ''
+          id: ''
+          description: ''
+          required_fields: false
+      group_news_additional_fields:
+        children:
+          - su_accent_color
+          - su_soe_department
+        label: 'Additional Fields'
+        region: content
+        parent_name: ''
+        weight: 6
+        format_type: fieldset
+        format_settings:
+          classes: ''
+          id: ''
+          description: ''
+          required_fields: true
+  content:
+    stanford_intranet__access:
+      weight: 10
+    status:
+      weight: 9
+    su_mag_featured:
+      type: boolean_checkbox
+      weight: 30
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
+    su_magazine_issue:
+      type: options_select
+      weight: 27
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    su_magazine_story:
+      type: boolean_checkbox
+      weight: 26
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
+    su_metatags:
+      weight: 32
+    su_soe_department:
+      type: options_buttons
+      weight: 6
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    su_soe_mag_collection:
+      type: options_select
+      weight: 29
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    su_soe_mag_topics:
+      type: options_buttons
+      weight: 28
+      region: content
+      settings: {  }
+      third_party_settings: {  }
+    syndication:
+      type: boolean_checkbox
+      weight: 53
+      region: content
+      settings:
+        display_label: true
+      third_party_settings: {  }
+removing:
+  content:
+    stanford_intranet__access:
+      weight: 6
+    status:
+      weight: 5
+    su_metatags:
+      weight: 10

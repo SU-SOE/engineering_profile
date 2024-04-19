@@ -37,7 +37,6 @@ field_settings:
         - administrator
       view_mode:
         'entity:node':
-          spotlight: search_indexing
           stanford_course: search_indexing
           stanford_event: search_indexing
           stanford_event_series: search_indexing
@@ -85,15 +84,8 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: false
-      selected:
-        - spotlight
-        - stanford_event
-        - stanford_event_series
-        - stanford_news
-        - stanford_page
-        - stanford_person
-        - stanford_publication
+      default: true
+      selected: {  }
     languages:
       default: true
       selected: {  }
@@ -217,7 +209,6 @@ processor_settings:
         datasource_boost: 1.0
         bundle_boosts:
           stanford_page: 3.0
-          stanford_person: 5.0
 tracker_settings:
   default:
     indexing_order: fifo

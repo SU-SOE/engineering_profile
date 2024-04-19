@@ -1,0 +1,44 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.su_mag_featured
+      - field.field.node.stanford_news.su_magazine_issue
+      - field.field.node.stanford_news.su_magazine_story
+      - field.field.node.stanford_news.su_soe_department
+      - field.field.node.stanford_news.su_soe_mag_collection
+      - field.field.node.stanford_news.su_soe_mag_topics
+  third_party_settings:
+    ds:
+      regions:
+        news_topics:
+          - su_soe_mag_topics
+  content:
+    su_news_topics:
+      weight: 3
+    su_soe_mag_topics:
+      type: entity_reference_list_label_class
+      label: hidden
+      settings:
+        link: true
+        class: su-list-unstyled
+        list_type: ul
+      third_party_settings:
+        field_formatter_class:
+          class: ''
+        ds:
+          ds_limit: ''
+      weight: 2
+      region: news_topics
+  hidden:
+    su_mag_featured: true
+    su_magazine_issue: true
+    su_magazine_story: true
+    su_soe_department: true
+    su_soe_mag_collection: true
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.su_metatags
+  content:
+    su_news_topics:
+      weight: 2

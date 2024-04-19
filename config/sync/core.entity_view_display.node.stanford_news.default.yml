@@ -7,11 +7,7 @@ dependencies:
     - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
     - field.field.node.stanford_news.su_metatags
-    - field.field.node.stanford_news.su_mag_featured
-    - field.field.node.stanford_news.su_magazine_issue
-    - field.field.node.stanford_news.su_magazine_story
     - field.field.node.stanford_news.su_news_banner
-    - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
@@ -21,9 +17,6 @@ dependencies:
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics
     - field.field.node.stanford_news.su_shared_tags
-    - field.field.node.stanford_news.su_soe_department
-    - field.field.node.stanford_news.su_soe_mag_collection
-    - field.field.node.stanford_news.su_soe_mag_topics
     - node.type.stanford_news
     - views.view.stanford_news
   module:
@@ -167,27 +160,6 @@ third_party_settings:
                     class: su-news-byline
             weight: 0
             additional: {  }
-          c0dbde1e-4df6-4c6a-acee-dd08e52a013a:
-            uuid: c0dbde1e-4df6-4c6a-acee-dd08e52a013a
-            region: su_news_publishing_date
-            configuration:
-              id: 'field_block:node:stanford_news:su_soe_mag_collection'
-              label: 'Article Collection'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings:
-                  field_formatter_class:
-                    class: su-mag--article_collection
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -198,6 +170,27 @@ third_party_settings:
           centered: centered-container
           columns: default
         components:
+          05c3062a-6e09-4b3b-b8f9-fa797362fb67:
+            uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_news:su_news_banner_media_caption'
+              label: 'Banner Media Caption'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: su-news-banner-media-caption
+            weight: -8
+            additional: {  }
           c67c266b-204c-4ca8-aff9-715a5cdf2ff8:
             uuid: c67c266b-204c-4ca8-aff9-715a5cdf2ff8
             region: main
@@ -229,27 +222,6 @@ third_party_settings:
                   field_formatter_class:
                     class: su-news-banner
             weight: -9
-            additional: {  }
-          05c3062a-6e09-4b3b-b8f9-fa797362fb67:
-            uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_news:su_news_banner_media_caption'
-              label: 'Banner Media Caption'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: su-news-banner-media-caption
-            weight: -8
             additional: {  }
         third_party_settings: {  }
       -
@@ -336,27 +308,6 @@ third_party_settings:
                   ds:
                     ds_limit: ''
             weight: 0
-            additional: {  }
-          6efc6f03-d761-4069-b688-d97558a82093:
-            uuid: 6efc6f03-d761-4069-b688-d97558a82093
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_news:su_soe_department'
-              label: 'Related Departments'
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -488,34 +439,6 @@ targetEntityType: node
 bundle: stanford_news
 mode: default
 content:
-  su_mag_featured:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 13
-    region: main
-  su_magazine_issue:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 14
-    region: main
-  su_magazine_story:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 15
-    region: main
   su_news_banner:
     type: entity_reference_entity_view
     label: above
@@ -586,30 +509,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  su_soe_department:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: main
-  su_soe_mag_collection:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
-    region: main
-  su_soe_mag_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 11
-    region: main
 hidden:
   layout_builder__layout: true
   layout_selection: true

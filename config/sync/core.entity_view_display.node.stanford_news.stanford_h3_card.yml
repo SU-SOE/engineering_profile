@@ -129,9 +129,6 @@ hidden:
   links: true
   search_api_excerpt: true
   stanford_intranet__access: true
-  su_mag_featured: true
-  su_magazine_issue: true
-  su_magazine_story: true
   su_metatags: true
   su_news_banner: true
   su_news_banner_media_caption: true
@@ -141,6 +138,3 @@ hidden:
   su_news_hide_social: true
   su_news_publishing_date: true
   su_shared_tags: true
-  su_soe_department: true
-  su_soe_mag_collection: true
-  su_soe_mag_topics: true

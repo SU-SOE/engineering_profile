@@ -5,6 +5,7 @@ dependencies:
   module:
     - field_permissions
     - file
+    - graphql
     - media
     - printable
     - shortcut
@@ -21,6 +22,8 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'delete own files'
+  - 'execute graphql_compose_server arbitrary graphql requests'
+  - 'execute graphql_compose_server persisted graphql requests'
   - 'issue subrequests'
   - 'view field_media_embeddable_code'
   - 'view media'
@@ -36,9 +39,12 @@ permissions:
   - 'view own su_site_algolia_id'
   - 'view own su_site_algolia_index'
   - 'view own su_site_algolia_search'
+  - 'view own su_site_algolia_ui'
   - 'view own su_site_home'
   - 'view own su_site_url'
   - 'view policy log'
+  - 'view printer friendly versions'
+  - 'view su_event_ext_image'
   - 'view su_metatags'
   - 'view su_policy_auto_prefix'
   - 'view su_policy_chapter'
@@ -50,5 +56,6 @@ permissions:
   - 'view su_site_algolia_id'
   - 'view su_site_algolia_index'
   - 'view su_site_algolia_search'
+  - 'view su_site_algolia_ui'
   - 'view su_site_home'
   - 'view su_site_url'

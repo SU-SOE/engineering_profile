@@ -1,0 +1,12 @@
+adding:
+  settings:
+    plugins:
+      ckeditor5_sourceEditing:
+        allowed_tags:
+          - '<i class title aria-*>'
+removing:
+  settings:
+    plugins:
+      ckeditor5_sourceEditing:
+        allowed_tags:
+          - '<i class>'

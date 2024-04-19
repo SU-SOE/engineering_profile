@@ -1,0 +1,11 @@
+adding:
+  dependencies:
+    config:
+      - node.type.spotlight
+  permissions:
+    - 'create spotlight content'
+    - 'delete own spotlight content'
+    - 'edit any spotlight content'
+    - 'edit own spotlight content'
+    - 'view spotlight revisions'
+removing: {  }

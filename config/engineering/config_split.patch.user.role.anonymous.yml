@@ -1,0 +1,7 @@
+adding:
+  permissions:
+    - 'access patterns page'
+removing:
+  permissions:
+    - 'view own su_site_algolia_ui'
+    - 'view su_site_algolia_ui'

@@ -26,8 +26,15 @@ content:
       responsive_image_style: full_responsive
       image_link: ''
       image_loading:
-        attribute: eager
-    third_party_settings: {  }
+        attribute: lazy
+    third_party_settings:
+      empty_fields:
+        handler: ''
+      field_formatter_class:
+        class: ''
+      field_label:
+        label_value: ''
+        label_tag: ''
     weight: 0
     region: content
 hidden:

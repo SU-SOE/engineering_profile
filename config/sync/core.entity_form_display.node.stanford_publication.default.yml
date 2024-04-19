@@ -22,7 +22,6 @@ dependencies:
     - link
     - media_library
     - metatag
-    - react_paragraphs
     - scheduler
     - stanford_intranet
 id: node.stanford_publication.default
