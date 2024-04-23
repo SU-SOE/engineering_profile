@@ -41,7 +41,6 @@ removing:
             validate:
               type: none
               fail: 'not found'
-            validate_options: {  }
             break_phrase: true
             depth: '1'
             use_taxonomy_term_path: false
@@ -84,7 +83,6 @@ removing:
             validate:
               type: none
               fail: 'not found'
-            validate_options: {  }
             break_phrase: true
             depth: '1'
             use_taxonomy_term_path: false

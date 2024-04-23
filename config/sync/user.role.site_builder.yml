@@ -68,7 +68,7 @@ dependencies:
     - role_delegation
     - scheduler
     - shortcut
-    - soe_profile
+    - engineering_profile
     - stanford_media
     - stanford_policy
     - stanford_publication
