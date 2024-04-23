@@ -5,8 +5,6 @@ adding:
     devel_php: 0
     engineering_magazine: 0
     engineering_profile_helper: 0
-    oembed_lazyload: 0
-    stanford_syndication: 0
     views_autosubmit: 0
   theme:
     engineering: 0

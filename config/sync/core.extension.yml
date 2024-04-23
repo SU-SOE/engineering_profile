@@ -142,6 +142,7 @@ module:
   node: 0
   node_revision_delete: 0
   oembed_providers: 0
+  oembed_lazyload: 0
   options: 0
   page_cache: 0
   page_manager: 0
@@ -212,6 +213,7 @@ module:
   stanford_profile_styles: 0
   stanford_publication: 0
   stanford_samlauth: 0
+  stanford_syndication: 0
   subrequests: 0
   syslog: 0
   system: 0
