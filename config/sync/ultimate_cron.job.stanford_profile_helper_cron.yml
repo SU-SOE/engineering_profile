@@ -1,10 +1,10 @@
-uuid: a2d4e858-7448-4cdf-8376-05920d3f48a0
+uuid: a75d2215-5d3b-4cc5-8b9d-f0e965952c19
 langcode: en
 status: true
 dependencies:
   module:
     - stanford_profile_helper
-title: null
+title: 'Default cron handler'
 id: stanford_profile_helper_cron
 weight: 0
 module: stanford_profile_helper

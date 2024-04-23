@@ -56,6 +56,13 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          8a9f4eb1-1cbc-4bcf-b658-a07356752dfe:
+            configuration:
+              context_mapping: {  }
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -156,7 +163,6 @@ third_party_settings:
       - 'Content fields'
       - 'Custom block types'
       - 'Custom blocks'
-      - Editoria11y
       - 'Events Lists (Views)'
       - Forms
       - Help
@@ -277,6 +283,9 @@ content:
     third_party_settings: {  }
     weight: 7
     region: main
+  su_department:
+    settings: {  }
+    third_party_settings: {  }
   su_page_banner:
     type: entity_reference_revisions_entity_view
     label: above

@@ -1,0 +1,107 @@
+uuid: 2db7c3a1-1194-42b7-b013-7b35cae34a8c
+langcode: en
+status: true
+dependencies: {  }
+id: engineering
+label: Engineering
+description: 'Configs for customizations to the Engineering site.'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: profiles/custom/engineering_profile/config/engineering
+module: {  }
+theme: {  }
+complete_list:
+  - core.base_field_override.node.spotlight.title
+  - core.entity_form_display.node.spotlight.default
+  - core.entity_form_display.taxonomy_term.article_collection.default
+  - core.entity_form_display.taxonomy_term.magazine_issues.default
+  - core.entity_view_display.media.image.person_spotlight_circle
+  - core.entity_view_display.taxonomy_term.article_collection.default
+  - core.entity_view_display.taxonomy_term.department.default
+  - core.entity_view_display.taxonomy_term.magazine_issues.default
+  - core.entity_view_display.taxonomy_term.magazine_topics.default
+  - core.entity_view_mode.block_content.spotlight_hero
+  - core.entity_view_mode.media.person_spotlight_circle
+  - core.entity_view_mode.node.spotlights_hero
+  - engineering.settings
+  - field.field.node.stanford_news.su_magazine_issue
+  - field.field.node.stanford_news.su_magazine_story
+  - field.field.node.stanford_news.su_mag_featured
+  - field.field.node.stanford_news.su_soe_department
+  - field.field.node.stanford_news.su_soe_mag_collection
+  - field.field.node.stanford_news.su_soe_mag_topics
+  - field.field.node.stanford_page.su_department
+  - field.field.taxonomy_term.magazine_issues.su_issue_number
+  - field.storage.node.su_department
+  - field.storage.node.su_magazine_issue
+  - field.storage.node.su_magazine_story
+  - field.storage.node.su_mag_featured
+  - field.storage.node.su_people_spotlight_quote
+  - field.storage.node.su_soe_department
+  - field.storage.node.su_soe_mag_collection
+  - field.storage.node.su_soe_mag_topics
+  - field.storage.node.su_spotlight_affiliation
+  - field.storage.node.su_spotlight_degrees
+  - field.storage.node.su_spotlight_feature_image
+  - field.storage.node.su_spotlight_person_title
+  - field.storage.taxonomy_term.su_collect_subtitle
+  - field.storage.taxonomy_term.su_continue_label
+  - field.storage.taxonomy_term.su_issue_number
+  - field.storage.taxonomy_term.su_term_components
+  - image.style.large_headshot_circle
+  - jsonapi_extras.jsonapi_resource_config.node--spotlight
+  - node.type.spotlight
+  - page_manager.page.magazine_issue_list_page
+  - page_manager.page.magazine_landing_page
+  - page_manager.page.spotlights
+  - page_manager.page_variant.magazine_issue_list_page-layout_builder-0
+  - page_manager.page_variant.magazine_landing_page-layout_builder-0
+  - page_manager.page_variant.spotlights-layout_builder-0
+  - pathauto.pattern.article_collections
+  - pathauto.pattern.department_terms
+  - pathauto.pattern.magazine_issues
+  - pathauto.pattern.spotlight_story
+  - rabbit_hole.behavior_settings.node_type_spotlight
+  - taxonomy.vocabulary.affiliation
+  - taxonomy.vocabulary.article_collection
+  - taxonomy.vocabulary.department
+  - taxonomy.vocabulary.magazine_issues
+  - taxonomy.vocabulary.magazine_topics
+  - views.view.department_terms
+  - views.view.magazine
+  - views.view.magazine_article_collection
+  - views.view.magazine_issues
+  - views.view.spotlights
+  - xmlsitemap.settings.node.spotlight
+  - xmlsitemap.settings.node.stanford_course
+  - xmlsitemap.settings.taxonomy_term.article_collection
+  - xmlsitemap.settings.taxonomy_term.department
+  - xmlsitemap.settings.taxonomy_term.magazine_topics
+  - xmlsitemap.settings.taxonomy_term.stanford_event_subject
+  - xmlsitemap.settings.taxonomy_term.su_shared_tags
+  - 'block.block.engineering_*'
+  - 'core.entity_view_display.node.spotlight.*'
+  - 'field.field.node.spotlight.*'
+  - 'field.field.taxonomy_term.article_collection.*'
+partial_list:
+  - block.block.soe_basic_pagetitle
+  - core.entity_form_display.node.stanford_news.default
+  - core.entity_form_display.node.stanford_page.default
+  - core.extension
+  - editor.editor.stanford_html
+  - field.field.paragraph.stanford_lists.su_list_view
+  - field.storage.node.su_news_banner_media_caption
+  - field.storage.node.su_news_dek
+  - filter.format.stanford_html
+  - metatag.settings
+  - search_api.index.full_site_content
+  - soe_basic.settings
+  - system.theme
+  - views.view.stanford_basic_pages
+  - views.view.stanford_news
+  - 'user.role.*'
+  - block_block
+  - 'core.entity_view_display.node.stanford_news.*'
+  - 'core.entity_view_dispaly.node.stanford_page.*'

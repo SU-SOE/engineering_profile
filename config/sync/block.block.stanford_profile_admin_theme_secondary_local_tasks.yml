@@ -1,11 +1,11 @@
-uuid: d19c638e-eb07-4ef3-b739-f5cedd448076
+uuid: 5d7b851a-00c9-461c-b2f6-d26169de9b0c
 langcode: en
 status: true
 dependencies:
   theme:
     - stanford_profile_admin_theme
 _core:
-  default_config_hash: MhIh9_GCAHvUrlRADpeNHS8gDK2DQGFbuAWmw_xUfrY
+  default_config_hash: 1gpfvD_mk2h11QZ-lr95waAR-2ON3AsVb8vXLc7GP2s
 id: stanford_profile_admin_theme_secondary_local_tasks
 theme: stanford_profile_admin_theme
 region: pre_content

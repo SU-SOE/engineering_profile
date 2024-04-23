@@ -1,0 +1,23 @@
+uuid: a8ace60f-de33-4de3-93ef-77f72bb6a96b
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: magazine_topics
+label: 'Magazine Topics'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'magazine/[term:name]'
+selection_criteria:
+  67e2137a-20a8-4abd-a5d4-7ddad9bbe8b8:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 67e2137a-20a8-4abd-a5d4-7ddad9bbe8b8
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      magazine_topics: magazine_topics
+selection_logic: and
+weight: 0
+relationships: {  }
