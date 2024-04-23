@@ -163,8 +163,15 @@ export const MainMenu = ({}) => {
   if (existingMenu.length > 0) existingMenu[0].remove();
 
   return (
-    <OutsideClickHandler component="nav" style={{position: "relative"}} onOutsideFocus={() => setMenuOpen(false)}>
-      <MobileMenuButton ref={buttonRef} onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen}>
+    <nav
+      ref={navRef}
+      style={{position: "relative"}}
+    >
+      <MobileMenuButton
+        ref={buttonRef}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-expanded={menuOpen}
+      >
         {menuOpen ? <Close/> : <Hamburger/>}
         {menuOpen ? "Close" : "Menu"}
       </MobileMenuButton>
@@ -192,7 +199,7 @@ export const MainMenu = ({}) => {
           {menuTree.items.sort((a, b) => a.weight < b.weight ? -1 : 1).map(item => <MenuItem key={item.id} {...item}/>)}
         </TopList>
       </MenuWrapper>
-    </OutsideClickHandler>
+    </nav>
   )
 }
 
@@ -333,8 +340,14 @@ const MenuItemDivider = styled.div`
   }
 `
 
-const MenuItem = ({title, url, items, expanded, level = 0}: { title: string, url: string, items?: MenuContentItem[], expanded: boolean, level?: number }) => {
-  const buttonRef = useRef(null)
+const MenuItem = ({id, title, url, items, expanded, level = 0}: {
+  title: string,
+  url: string,
+  items?: MenuContentItem[],
+  expanded: boolean,
+  level?: number
+}) => {
+  const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [submenuOpen, setSubmenuOpen] = useState(false)
   const menuItemRef = useRef<HTMLLIElement | null>(null);
   useOutsideClick(menuItemRef, () => setSubmenuOpen(false));

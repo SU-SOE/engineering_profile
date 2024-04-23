@@ -525,7 +525,7 @@ function _stanford_basic_algolia_settings(): array|bool {
   /** @var \Drupal\config_pages\ConfigPagesLoaderServiceInterface $config_page */
   $config_page = \Drupal::service('config_pages.loader');
 
-  $use_algolia = (bool) $config_page->getValue('stanford_basic_site_settings', 'su_site_algolia', 0, 'value');
+  $use_algolia = (bool) $config_page->getValue('stanford_basic_site_settings', 'su_site_algolia_ui', 0, 'value');
   if (!$use_algolia) {
     return $settings = FALSE;
   }
@@ -613,7 +613,9 @@ function stanford_basic_preprocess_paragraph(&$variables) {
  */
 function stanford_basic_preprocess_paragraph__stanford_spacer(&$variables) {
   $paragraph = $variables['elements']['#paragraph'];
-  if ($paragraph->hasField('su_spacer_size') && !$paragraph->get('su_spacer_size')->isEmpty()) {
-    $variables['attributes']['class'][] = $paragraph->get('su_spacer_size')->getString();
+  if ($paragraph->hasField('su_spacer_size') && !$paragraph->get('su_spacer_size')
+      ->isEmpty()) {
+    $variables['attributes']['class'][] = $paragraph->get('su_spacer_size')
+      ->getString();
   }
 }
