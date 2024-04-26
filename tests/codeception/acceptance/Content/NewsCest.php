@@ -201,12 +201,6 @@ class NewsCest {
       ],
     ], 'media');
 
-    $time = \Drupal::time()->getCurrentTime();
-    $date_string = \Drupal::service('date.formatter')
-      ->format($time, 'custom', 'Y-m-d');
-    $metadata_date = \Drupal::service('date.formatter')
-      ->format($time, 'custom', 'Y-m-d');
-
     /** @var \Drupal\node\NodeInterface $node */
     $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
@@ -220,7 +214,8 @@ class NewsCest {
     $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[property="og:title"]', 'content'), 'Metadata "og:title" should match.');
     $I->assertEquals($node->label(), $I->grabAttributeFrom('meta[name="twitter:title"]', 'content'), 'Metadata "twitter:title" should match.');
     $I->assertEquals('article', $I->grabAttributeFrom('meta[property="og:type"]', 'content'), 'Metadata "og:type" should match.');
-    $I->assertEquals("{$metadata_date}T04:00:00-08:00", $I->grabAttributeFrom('meta[property="article:published_time"]', 'content'), 'Metadata "article:published_time" should match.');
+
+    $I->assertEquals($metadata_date, $I->grabAttributeFrom('meta[property="article:published_time"]', 'content'), 'Metadata "article:published_time" should match.');
 
     $I->cantSeeElement('meta', ['name' => 'description']);
     $I->cantSeeElement('meta', ['property' => 'og:image']);

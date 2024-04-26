@@ -179,7 +179,6 @@ class AuthenticatedPermissionsCest {
     Role::load('site_manager')
       ->grantPermission('create terms in ' . $vocab->id())
       ->save();
-    $I->logInWithRole('administrator');
     $I->amOnPage('/admin/structure/taxonomy');
     $I->canSee($vocab->label());
   }

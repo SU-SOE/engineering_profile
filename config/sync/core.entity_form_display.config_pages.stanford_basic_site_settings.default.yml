@@ -327,4 +327,5 @@ content:
     third_party_settings: {  }
 hidden:
   label: true
+  su_site_algolia_ui: true
   su_site_renewal_due: true

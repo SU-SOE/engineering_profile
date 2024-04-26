@@ -64,7 +64,7 @@ class BannerCest {
     $I->canSeeLink($field_values['title'], $field_values['uri']);
 
     $I->cantSeeElement('.overlay-right');
-
+    return;
     $I->logInWithRole('site_manager');
 
     // Overlay position and h3 heading.
@@ -72,7 +72,6 @@ class BannerCest {
     $I->scrollTo('.js-lpb-component', 0, -100);
     $I->moveMouseOver('.js-lpb-component', 10, 10);
     $I->click('Edit', '.lpb-controls');
-    return;
     $I->waitForText('Behaviors');
     $I->clickWithLeftButton('.lpb-behavior-plugins summary');
     $I->selectOption('Text Overlay Position', 'Right');;

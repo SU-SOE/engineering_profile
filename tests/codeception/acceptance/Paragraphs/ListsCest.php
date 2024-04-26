@@ -152,7 +152,7 @@ class ListsCest {
     $I->canSee('Headliner', 'h2');
     $I->canSee('Lorem Ipsum');
     $I->canSeeLink('Google', 'http://google.com');
-    $I->canSee($title);
+    $I->canSee($title, 'h3');
 
     $I->amOnPage('/jsonapi/views/stanford_news/block_1?page[limit]=99');
     $json_data = json_decode($I->grabPageSource(), TRUE, 512, JSON_THROW_ON_ERROR);

@@ -36,13 +36,6 @@ var webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.behavior.js$/,
-        exclude: /node_modules/,
-        options: {
-          enableHmr: false
-        },
-      },
-      {
         test: /\.m?js$/,
         exclude: /(node_modules)/,
         use: {
