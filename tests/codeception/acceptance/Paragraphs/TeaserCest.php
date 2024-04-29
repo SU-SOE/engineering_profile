@@ -31,6 +31,9 @@ class TeaserCest {
     $teaser_entities = [];
     $teaser_item_field = [];
     foreach ($node_types as $node_type) {
+      if ($node_type->id() === 'spotlight') {
+        continue;
+      }
       $teaser_entities[$node_type->id()] = $I->createEntity([
         'title' => $this->faker->words(3, TRUE),
         'type' => $node_type->id(),

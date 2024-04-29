@@ -34,7 +34,7 @@ class MediaPermissionsCest {
    * Test site embedder perms
    */
   public function testSiteEmbedderPerms(AcceptanceTester $I) {
-    $user = $I->createUserWithRoles(['soe_site_embedder','site_manager']);
+    $user = $I->createUserWithRoles(['site_embedder','site_manager']);
     $I->logInAs($user->getAccountName());
     $I->amOnPage('/media/add/embeddable');
     $I->canSeeResponseCodeIs(200);
