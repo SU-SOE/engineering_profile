@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: 8iF-34nKZQFwSfwNJfb7kvOtyDU9uTto7JerS1dYpVw
+enabled: true
+debug: false
+syndicators:
+  stanford_enterprise:
+    id: stanford_enterprise
+    node_types:
+      - spotlight
+      - stanford_news
+    webhook: ''

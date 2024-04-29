@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.stanford_event.su_event_date_time
     - field.field.node.stanford_event.su_event_dek
     - field.field.node.stanford_event.su_event_email
+    - field.field.node.stanford_event.su_event_ext_image
     - field.field.node.stanford_event.su_event_groups
     - field.field.node.stanford_event.su_event_keywords
     - field.field.node.stanford_event.su_event_location
@@ -368,6 +369,13 @@ content:
       hierarchy_depth: 0
       required_depth: 0
       none_label: '- Please select -'
+    third_party_settings: {  }
+  syndication:
+    type: boolean_checkbox
+    weight: 53
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

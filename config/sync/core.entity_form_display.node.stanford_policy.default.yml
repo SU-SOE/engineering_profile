@@ -286,6 +286,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  syndication:
+    type: boolean_checkbox
+    weight: 30
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
