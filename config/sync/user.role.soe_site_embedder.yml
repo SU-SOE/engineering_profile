@@ -5,9 +5,9 @@ dependencies:
   module:
     - field_permissions
 id: soe_site_embedder
-label: 'Site Embedder'
+label: 'SOE Site Embedder'
 weight: 1
-is_admin: null
+is_admin: false
 permissions:
   - 'create field_media_embeddable_code'
   - 'edit field_media_embeddable_code'

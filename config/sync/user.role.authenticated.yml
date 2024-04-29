@@ -6,7 +6,6 @@ dependencies:
     - field_permissions
     - file
     - media
-    - printable
     - shortcut
     - stanford_policy
     - subrequests

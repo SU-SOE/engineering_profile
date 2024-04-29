@@ -11,6 +11,7 @@ dependencies:
     - stanford_policy
     - subrequests
     - system
+    - ui_patterns_library
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
