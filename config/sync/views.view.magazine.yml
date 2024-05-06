@@ -1483,7 +1483,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<H2 class=\"soe-mag-landing__heading_1\">Latest News</H2>\r\n<h3 class=\"soe-mag-landing__heading_2\">What are we working on? What are we thinking about?</h3>"
+            value: '<H2 class="soe-mag-landing__heading_1">Latest News</H2>'
             format: stanford_html
           tokenize: false
       display_extenders: {  }

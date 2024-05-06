@@ -59,7 +59,7 @@
     // Attach Drupal Behavior.
     attach: function attach(context, settings) {
       // Variables
-      var firstPath = window.location.pathname.split('/')[1];
+      var firstPath = window.location.pathname.split("/")[1];
 
       // Color map for highlights
       ///  #00ece9 - teal
@@ -67,44 +67,37 @@
       ///  #ffbd54 - yellow
 
       function getAccentColor() {
-        var accentColors = ["#00ece9", "#ff7077", "#ffbd54"];
+        var accentColors = ["teal", "orange", "yellow"];
         return accentColors[Math.random() * accentColors.length | 0];
       }
       $(".engineering-accent-color__link a").each(function () {
-        $(this).css('text-decoration', 'underline');
-        $(this).css('text-decoration-color', getAccentColor());
-        var originalColor;
-        $(this).mouseover(function () {
-          originalColor = $(this).css('text-decoration-color');
-          $(this).css('text-decoration-color', '#000');
-          $(this).css('text-underline-position', 'under');
-        }).mouseleave(function () {
-          $(this).css('text-decoration-color', originalColor);
-          $(this).css('text-underline-position', 'auto');
-        });
+        var variantColor = "engineering-accent-color__link-accent__" + getAccentColor();
+        $(this).addClass(variantColor);
       });
 
       //Adds different highlight color to spotlight headshot images.
       $(".engineering-accent-color__image img").each(function () {
-        $(this).css('border-color', getAccentColor());
+        var variantColor = "engineering-accent-color__border-accent__" + getAccentColor();
+        $(this).addClass(variantColor);
       });
       $(".soe-spotlight--cards .su-link").each(function () {
-        $(this).removeClass('su-card__link su-link--action');
-        $(this).addClass('su-link--external');
+        $(this).removeClass("su-card__link su-link--action");
+        $(this).addClass("su-link--external");
         $(this).hover(function () {
           var element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this;
-          $(element).css('text-decoration-color', 'black');
+          $(element).css("text-decoration-color", "black");
         });
       });
       $(".engineering-accent-color__background").each(function () {
-        $(this).css('background-color', getAccentColor());
+        var variantColor = "engineering-accent-color__background-accent__" + getAccentColor();
+        $(this).addClass(variantColor);
       });
 
       // Adds comma and space to individual spotlight pages where both
       if (firstPath === "spotlight") {
-        if (document.getElementsByClassName('node-spotlight-su-spotlight-degrees').length > 0 && document.getElementsByClassName('node-spotlight-su-soe-department').length > 0) {
-          var divSpotlightDegree = document.getElementsByClassName('su-spotlight-degrees');
-          divSpotlightDegree[0].innerHTML += ',&nbsp;';
+        if (document.getElementsByClassName("node-spotlight-su-spotlight-degrees").length > 0 && document.getElementsByClassName("node-spotlight-su-soe-department").length > 0) {
+          var divSpotlightDegree = document.getElementsByClassName("su-spotlight-degrees");
+          divSpotlightDegree[0].innerHTML += ",&nbsp;";
         }
       }
 
@@ -115,7 +108,7 @@
         var oldApplyButton = $("#edit-submit-spotlights").attr("hidden", true);
         var newApplyButton = $(oldApplyButton).clone().attr("hidden", false);
         $(oldApplyButton).prop("id", "edit-submit-spotlights-hidden");
-        $(newApplyButton).appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden", false).addClass('show-spotlight-apply__button');
+        $(newApplyButton).appendTo("#views-exposed-form-spotlights-block-1 .form-actions").attr("hidden", false).addClass("show-spotlight-apply__button");
       }
     },
     // Detach Example.

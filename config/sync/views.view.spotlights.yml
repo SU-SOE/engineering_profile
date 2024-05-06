@@ -1472,7 +1472,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -2520,7 +2519,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: span
-          element_class: ''
+          element_class: soe-mag-card__date-published
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false

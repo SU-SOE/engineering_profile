@@ -92,7 +92,7 @@ third_party_settings:
       label: 'Magazine Fields'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 6
       format_type: fieldset
       format_settings:
         classes: ''
@@ -101,12 +101,11 @@ third_party_settings:
         required_fields: false
     group_news_additional_fields:
       children:
-        - su_accent_color
         - su_soe_department
       label: 'Additional Fields'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 5
       format_type: fieldset
       format_settings:
         classes: ''
@@ -120,30 +119,30 @@ mode: default
 content:
   path:
     type: path
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 52
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 50
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   stanford_intranet__access:
     type: entity_access
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -170,7 +169,7 @@ content:
     third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
-    weight: 32
+    weight: 11
     region: content
     settings:
       sidebar: true
@@ -226,13 +225,6 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  su_news_hide_social:
-    type: boolean_checkbox
-    weight: 11
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   su_news_publishing_date:
     type: datetime_default
     weight: 3
@@ -262,7 +254,7 @@ content:
     third_party_settings: {  }
   su_shared_tags:
     type: cshs
-    weight: 9
+    weight: 8
     region: content
     settings:
       save_lineage: false
@@ -293,7 +285,7 @@ content:
     third_party_settings: {  }
   syndication:
     type: boolean_checkbox
-    weight: 53
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -312,6 +304,7 @@ hidden:
   layout_selection: true
   promote: true
   sticky: true
+  su_news_hide_social: true
   uid: true
   unpublish_on: true
   url_redirects: true

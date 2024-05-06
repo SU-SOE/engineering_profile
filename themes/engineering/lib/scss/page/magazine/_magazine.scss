@@ -74,7 +74,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           &:hover {
             text-decoration: underline;
-            text-decoration-color: #333333;
+            text-decoration-color: #000;
           }
         }
       }
@@ -101,11 +101,10 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
         padding: 0.5em;
         text-align: center;
         width: fit-content;
-        background-color: #8c1515;
         color: #ffffff;
 
         a {
-          color: #333333;
+          color: #000;
           text-decoration: none;
 
           &:hover {
@@ -151,7 +150,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
     &:hover {
       text-decoration: underline;
-      text-decoration-color: #333333;
+      text-decoration-color: #000;
     }
   }
 }
@@ -191,6 +190,13 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           flex-wrap: wrap;
           justify-content: left;
           padding-top: 0;
+
+          .soe-mag-card__date-published {
+            color: $su-color-black-80;
+            font-size: 1em;
+            font-weight: $su-font-regular;
+            margin-bottom: 10px;
+          }
 
           .image {
             height: 125px;
