@@ -243,7 +243,7 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
       rel: ''
@@ -253,3 +253,4 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
+  su_site_algolia_ui: true

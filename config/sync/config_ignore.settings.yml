@@ -9,6 +9,7 @@ ignored_config_entities:
   - 'next.next_entity_type_config.*'
   - 'next.next_site.*'
   - 'samlauth.authentication:map_users_roles'
+  - stanford_syndication.settings
   - 'system.action.user_add_role_action.custm_*'
   - 'system.action.user_remove_role_action.custm_*'
   - 'system.theme:default'
@@ -16,6 +17,7 @@ ignored_config_entities:
   - 'user.role.custm_*'
   - '~block.block.claro_*'
   - '~block.block.claro_*'
+  - '~block.block.engineering_*'
   - '~block.block.minimally_branded_subtheme_*'
   - '~block.block.minimally_branded_subtheme_*'
   - '~block.block.soe_basic_*'

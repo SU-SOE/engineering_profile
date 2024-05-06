@@ -4,6 +4,7 @@ use Faker\Factory;
 
 /**
  * Tests for various media access functionality.
+ * @group media
  */
 class MediaPermissionsCest {
 
@@ -40,6 +41,10 @@ class MediaPermissionsCest {
     $I->canSeeResponseCodeIs(200);
     $I->canSee('oEmbed URL');
     $I->canSee('Embed Code');
+    $I->fillField('Name', $this->faker->words(3, TRUE));
+    $I->fillField('Embed Code', '<script>console.log("test")</script>');
+    $I->click('Save');
+    $I->canSee('has been created');
   }
 
   /**

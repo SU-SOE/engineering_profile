@@ -194,7 +194,7 @@ class WYSIWYGCest {
     $I->waitForElementVisible('.ck-toolbar');
 
     // Wait a second for any click events to be applied.
-    $I->wait(1);
+    $I->wait(2);
     $I->click('[data-cke-tooltip-text="Insert Media"]');
     $I->waitForElementVisible('.dropzone');
 
@@ -221,6 +221,8 @@ class WYSIWYGCest {
 
   /**
    * Videos in the WYSIWYG should display correctly.
+   *
+   * @group lazyload
    */
   public function testEmbeddedVideo(FunctionalTester $I) {
     $node = $this->getNodeWithParagraph($I, 'Lorem Ipsum');
@@ -253,9 +255,10 @@ class WYSIWYGCest {
     $I->click('Save', '.ui-dialog-buttonpane');
     $I->waitForElementNotVisible('.ui-dialog');
     $I->click('Save');
-    $I->scrollTo('.oembed-lazyload', 0, 100);
+    $I->scrollTo('.field-media-oembed-video', 0, 100);
     $I->waitForElementVisible('iframe');
     $I->canSeeNumberOfElements('iframe', 1);
+    $I->canSeeNumberOfElements('iframe[loading="lazy"]', 1);
   }
 
   /**

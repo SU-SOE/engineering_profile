@@ -8,6 +8,9 @@ dependencies:
     - field.storage.node.su_news_publishing_date
     - field.storage.node.su_soe_mag_topics
     - node.type.stanford_news
+    - taxonomy.vocabulary.stanford_news_topics
+  content:
+    - 'taxonomy_term:stanford_news_topics:3dcab896-995e-4719-b2f0-c10ee42f1917'
   module:
     - datetime
     - node
@@ -1033,10 +1036,126 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            stanford_news: stanford_news
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        su_magazine_story_value:
+          id: su_magazine_story_value
+          table: node__su_magazine_story
+          field: su_magazine_story_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        su_news_topics_target_id:
+          id: su_news_topics_target_id
+          table: node__su_news_topics
+          field: su_news_topics_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            - 10866
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: stanford_news_topics
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
         title: false
         use_ajax: false
         fields: false
+        filters: false
+        filter_groups: false
         header: false
       use_ajax: true
       display_description: ''
@@ -1464,11 +1583,127 @@ display:
         options:
           offset: 0
           items_per_page: 6
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            stanford_news: stanford_news
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        su_magazine_story_value:
+          id: su_magazine_story_value
+          table: node__su_magazine_story
+          field: su_magazine_story_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        su_news_topics_target_id:
+          id: su_news_topics_target_id
+          table: node__su_news_topics
+          field: su_news_topics_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            - 10866
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: stanford_news_topics
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
         title: false
         use_ajax: false
         pager: false
         fields: false
+        filters: false
+        filter_groups: false
         header: false
       use_ajax: true
       display_description: ''
@@ -1483,7 +1718,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<H2 class=\"soe-mag-landing__heading_1\">Latest News</H2>\r\n<h3 class=\"soe-mag-landing__heading_2\">What are we working on? What are we thinking about?</h3>"
+            value: '<H2 class="soe-mag-landing__heading_1">Latest News</H2>'
             format: stanford_html
           tokenize: false
       display_extenders: {  }
@@ -2034,7 +2269,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<div class="magazine-topics__term-name"><h2 class="title" id="page-title">{{ name }}</h2>'
+            value: "{% if name %}\r\n<div class=\"magazine-topics__term-name\"><h2 class=\"title\" id=\"page-title\">{{ name }}</h2>\r\n{% endif %}"
             format: stanford_html
           tokenize: true
       display_extenders: {  }

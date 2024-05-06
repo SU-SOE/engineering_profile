@@ -588,6 +588,44 @@ function _engineering_profile_update_menu_block(string $old_id, string $new_id):
 }
 
 /**
+ * If the old menu link id is configured for menu block parent, update it.
+ *
+ * @param string $old_id
+ *   Old menu link id.
+ * @param string $new_id
+ *   New menu link id.
+ */
+function _stanford_profile_update_menu_block(string $old_id, string $new_id): void {
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = $node_storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('layout_builder__layout', "%main:$old_id%", 'LIKE')
+    ->execute();
+  /** @var \Drupal\node\NodeInterface $node */
+  foreach ($node_storage->loadMultiple($nids) as $node) {
+    $save_node = FALSE;
+    $changed_time = $node->getChangedTime();
+
+    /** @var \Drupal\layout_builder\Field\LayoutSectionItemList $layout */
+    $layout = $node->get('layout_builder__layout');
+    foreach ($layout->getSections() as $section) {
+      foreach ($section->getComponents() as $component) {
+        $config = $component->get('configuration');
+        if ($config['provider'] == 'menu_block' && $config['parent'] == "main:$old_id") {
+          $config['parent'] = "main:$new_id";
+          $component->setConfiguration($config);
+          $save_node = TRUE;
+        }
+      }
+    }
+    if ($save_node) {
+      $node->save();
+      _stanford_profile_reset_node_changed_time($node, $changed_time);
+    }
+  }
+}
+
+/**
  * Update the node tables to reset the changed time.
  *
  * @param \Drupal\node\NodeInterface $node
@@ -639,5 +677,24 @@ function engineering_profile_update_9104() {
   $system_theme = $config_factory->getEditable('system.theme');
   if ($system_theme->get('admin') == 'stanford_profile_admin') {
     $system_theme->set('admin', 'stanford_profile_admin_theme')->save();
+  }
+}
+
+/**
+ * Remove data for paragraph rows.
+ */
+function engineering_profile_update_9105() {
+  $tables = [
+    'paragraph_row__su_page_components',
+    'paragraph_row__su_pubs_components',
+    'paragraph_row_revision__su_page_components',
+    'paragraph_row_revision__su_pubs_components',
+    'paragraph_rows_field_revision',
+    'paragraph_rows_item',
+    'paragraph_rows_item_field_data',
+    'paragraph_rows_revision',
+  ];
+  foreach ($tables as $table) {
+    \Drupal::database()->truncate($table)->execute();
   }
 }

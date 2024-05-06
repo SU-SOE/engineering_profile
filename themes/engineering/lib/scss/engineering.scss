@@ -144,4 +144,65 @@ a.su-link--external {
     }
 }
 
+.engineering-accent-color {
+
+  &__border-accent {
+    &__teal {
+      border-color: #00ece9;
+    }
+    &__orange {
+      border-color: #ff525c;
+    }
+    &__yellow {
+      border-color: #ffbd54;
+    }
+  }
+
+  &__link-accent {
+    &__teal {
+      text-decoration: underline;
+      text-decoration-color: #00ece9;
+      &:hover {
+        text-decoration-color: #000;
+        text-underline-position: under;
+      }
+    }
+    &__orange {
+      text-decoration: underline;
+      text-decoration-color: #ff525c;
+      &:hover {
+        text-decoration-color: #000;
+        text-underline-position: under;
+      }
+    }
+    &__yellow {
+      text-decoration: underline;
+      text-decoration-color: #ffbd54;
+      &:hover {
+        text-decoration-color: #000;
+        text-underline-position: under;
+      }
+    }
+  }
+
+  &__background-accent {
+    &__teal {
+      background-color: #00ece9;
+    }
+    &__orange {
+      background-color: #ff525c;
+    }
+    &__yellow {
+      background-color: #ffbd54;
+    }
+  }
+
+}
+
+.su-local-footer a.su-button {
+  color: #fff;
+  :hover {
+    color: #aaa;
+  }
+}
 

@@ -6,6 +6,7 @@ use Faker\Factory;
  * Class PublicationsCest.
  *
  * @group content
+ * @group publications
  */
 class PublicationsCest {
 
@@ -34,13 +35,13 @@ class PublicationsCest {
    * Create a book citation
    */
   public function testBookCitation(AcceptanceTester $I) {
-    $this->values['term_name'] = $this->faker->words(3, TRUE);
-    $this->values['node_title'] = $this->faker->words(3, TRUE);
+    $this->values['term_name'] = $this->faker->words(2, TRUE);
+    $this->values['node_title'] = $this->faker->words(2, TRUE);
     $term = $I->createEntity([
       'vid' => 'stanford_publication_topics',
       'name' => $this->values['term_name'],
     ], 'taxonomy_term');
-
+    $I->runDrush('cache:rebuild');
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_publication');
     $I->fillField('Title', $this->values['node_title']);
@@ -79,7 +80,7 @@ class PublicationsCest {
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->click('Save');
-
+    $I->runDrush('cache:rebuild');
     $I->amOnPage('/publications');
     $I->canSeeLink($term->label());
   }

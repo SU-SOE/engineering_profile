@@ -22,7 +22,6 @@ dependencies:
     - link
     - media_library
     - metatag
-    - react_paragraphs
     - scheduler
     - stanford_intranet
 id: node.stanford_publication.default
@@ -141,6 +140,13 @@ content:
       hierarchy_depth: 0
       required_depth: 0
       none_label: '- Please select -'
+    third_party_settings: {  }
+  syndication:
+    type: boolean_checkbox
+    weight: 53
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

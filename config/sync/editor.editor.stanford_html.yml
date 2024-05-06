@@ -111,7 +111,7 @@ settings:
         - '<dl class>'
         - '<dd class>'
         - '<div id class>'
-        - '<i class>'
+        - '<i class title aria-*>'
         - '<aside class>'
         - '<img src alt title class>'
         - '<abbr id title>'
