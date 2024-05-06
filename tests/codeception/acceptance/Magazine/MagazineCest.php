@@ -25,10 +25,12 @@ class MagazineCest {
     $I->amOnPage('/magazine');
     $I->canSee('Research & Ideas');
     $I->canSee('Topics');
+    // This was removed from the layout.
     //$I->canSee('Issues');
     $I->canSee('Test Magazine Topic');
     $I->canSee('Latest News');
-    $I->canSee('What are we working on?');
+    // This was removed from the layout.
+    //$I->canSee('What are we working on?');
     $I->canSee($magazineStory->getTitle());
 
     /**
