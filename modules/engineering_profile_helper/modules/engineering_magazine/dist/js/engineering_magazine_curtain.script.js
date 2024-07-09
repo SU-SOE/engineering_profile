@@ -1,2 +1,79 @@
-!function(r){var t={};function n(e){if(t[e])return t[e].exports;var o=t[e]={i:e,l:!1,exports:{}};return r[e].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=r,n.c=t,n.d=function(e,o,r){n.o(e,o)||Object.defineProperty(e,o,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(o,e){if(1&e&&(o=n(o)),8&e)return o;if(4&e&&"object"==typeof o&&o&&o.__esModule)return o;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:o}),2&e&&"string"!=typeof o)for(var t in o)n.d(r,t,function(e){return o[e]}.bind(null,t));return r},n.n=function(e){var o=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(o,"a",o),o},n.o=function(e,o){return Object.prototype.hasOwnProperty.call(e,o)},n.p="",n(n.s=1)}([,function(e,o){var a,n;a=jQuery,(n=Drupal).behaviors.engineeringMagazineCurtain={attach:function(o,e){var t=["hero-curtain","hero-static"];function r(){var r=a(window).height();a.each(t,function(e,o){a(".hero-curtain").height(r).css("overflow","hidden")}),a(".hero-curtain").css("margin-bottom",r)}a(window).scroll(function(){var e=a(".hero-curtain");0-a(e).height()+a(window).scrollTop()<0?(a(".hero-curtain-reveal").removeClass("below-hero"),a(e).removeClass("below-hero")):(a(".hero-curtain-reveal").addClass("below-hero"),a(e).addClass("below-hero"),a(e).css("padding-bottom",0))}),a.each(t,function(e,i){a("."+i,o).each(function(e,o,r){var t=a(this).detach().prependTo("body"),n=a("<div>",{class:i+"-reveal"});a(t).siblings().wrapAll(n)})}),a(window).on("load",function(){void 0!==a.imagesLoaded?a(".hero-curtain").imagesLoaded(r):r(),a.each(t,function(e,o){var r=a("."+o);a(r).find("a").last().focusout(function(e){var o;a(this).is(":visible")&&(o=a(r).height(),a("body").scrollTop(o))})}),a(window).resize(r),r(),a(".curtain-content__scroll-text").append(a("<a>",{class:"scroll-down",href:"#",title:n.t("Scroll Down"),"aria-label":n.t("Scroll Down"),html:'<div class="scroll-text">'+n.t("Click to scroll")+'</div><i class="fas fa-angle-down"></i>'}).click(function(e){e.preventDefault(),a("html, body").animate({scrollTop:a(".hero-scroll").height()},800)}))})}}}]);
-//# sourceMappingURL=engineering_magazine_curtain.script.js.map
+/******/ (function() { // webpackBootstrap
+var __webpack_exports__ = {};
+(function ($, Drupal) {
+  Drupal.behaviors.engineeringMagazineCurtain = {
+    attach: function attach(context, settings) {
+      var classes = ['hero-curtain', 'hero-static'];
+      function setFocusOut() {
+        $.each(classes, function (i, heroClass) {
+          var hero = $('.' + heroClass);
+          // If focus is moved away from the hero, scroll to the top of the normal page.
+          $(hero).find('a').last().focusout(function (e) {
+            if ($(this).is(':visible')) {
+              var topPage = $(hero).height();
+              $('body').scrollTop(topPage);
+            }
+          });
+        });
+      }
+      function heroSetSize() {
+        var winHeight = $(window).height();
+        $.each(classes, function (i, heroClass) {
+          $('.hero-curtain').height(winHeight).css('overflow', 'hidden');
+        });
+        $('.hero-curtain').css('margin-bottom', winHeight);
+      }
+      function heroScroller(classes) {
+        $('.curtain-content__scroll-text').append($('<a>', {
+          class: 'scroll-down',
+          href: '#',
+          title: Drupal.t('Scroll Down'),
+          'aria-label': Drupal.t('Scroll Down'),
+          html: '<div class="scroll-text">' + Drupal.t('Click to scroll') + '</div><i class="fas fa-angle-down"></i>'
+        }).click(function (e) {
+          e.preventDefault();
+          $("html, body").animate({
+            scrollTop: $('.hero-scroll').height()
+          }, 800);
+        }));
+      }
+      $(window).scroll(function () {
+        var curtain = $('.hero-curtain');
+        var curtainHeight = $(curtain).height();
+        var scrollPos = 0 - curtainHeight + $(window).scrollTop();
+        if (scrollPos < 0) {
+          $('.hero-curtain-reveal').removeClass('below-hero');
+          $(curtain).removeClass('below-hero');
+        } else {
+          $('.hero-curtain-reveal').addClass('below-hero');
+          $(curtain).addClass('below-hero');
+          $(curtain).css('padding-bottom', 0);
+        }
+      });
+      $.each(classes, function (i, heroClass) {
+        // Move the hero to the top of the body tag.
+        $('.' + heroClass, context).each(function (i, a, b) {
+          var clonedBlock = $(this).detach().prependTo('body');
+          var wrapper = $('<div>', {
+            class: heroClass + '-reveal'
+          });
+          $(clonedBlock).siblings().wrapAll(wrapper);
+        });
+      });
+      $(window).on("load", function () {
+        var classes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : classes;
+        if (typeof $.imagesLoaded !== 'undefined') {
+          $('.hero-curtain').imagesLoaded(heroSetSize);
+        } else {
+          heroSetSize(classes);
+        }
+        setFocusOut(classes);
+        $(window).resize(heroSetSize);
+        heroSetSize();
+        heroScroller();
+      });
+    }
+  };
+})(jQuery, Drupal);
+/******/ })()
+;

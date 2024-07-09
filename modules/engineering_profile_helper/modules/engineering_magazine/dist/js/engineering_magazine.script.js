@@ -1,2 +1,23 @@
-!function(t){var a={};function r(e){if(a[e])return a[e].exports;var n=a[e]={i:e,l:!1,exports:{}};return t[e].call(n.exports,n,n.exports,r),n.l=!0,n.exports}r.m=t,r.c=a,r.d=function(e,n,t){r.o(e,n)||Object.defineProperty(e,n,{enumerable:!0,get:t})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(n,e){if(1&e&&(n=r(n)),8&e)return n;if(4&e&&"object"==typeof n&&n&&n.__esModule)return n;var t=Object.create(null);if(r.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:n}),2&e&&"string"!=typeof n)for(var a in n)r.d(t,a,function(e){return n[e]}.bind(null,a));return t},r.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(n,"a",n),n},r.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},r.p="",r(r.s=0)}([function(e,n){var a;a=jQuery,Drupal.behaviors.engineeringMagazine={attach:function(e,n){var t=a("#magazine-landing-nav__topics-toggle");t.click(function(){a(".magazine-landing-nav__topics-panel").slideToggle(),"false"==t.attr("aria-expanded")?(t.attr("aria-expanded","true"),t.removeClass("soe-magazine__navigation-rotate-down"),t.addClass("soe-magazine__navigation-rotate-up")):(t.attr("aria-expanded","false"),t.removeClass("soe-magazine__navigation-rotate-up"),t.addClass("soe-magazine__navigation-rotate-down"))})}}}]);
-//# sourceMappingURL=engineering_magazine.script.js.map
+/******/ (function() { // webpackBootstrap
+var __webpack_exports__ = {};
+(function ($, Drupal) {
+  Drupal.behaviors.engineeringMagazine = {
+    attach: function attach(context, settings) {
+      var toggleButton = $('#magazine-landing-nav__topics-toggle');
+      toggleButton.click(function () {
+        $('.magazine-landing-nav__topics-panel').slideToggle();
+        if (toggleButton.attr('aria-expanded') == 'false') {
+          toggleButton.attr('aria-expanded', 'true');
+          toggleButton.removeClass('soe-magazine__navigation-rotate-down');
+          toggleButton.addClass('soe-magazine__navigation-rotate-up');
+        } else {
+          toggleButton.attr('aria-expanded', 'false');
+          toggleButton.removeClass('soe-magazine__navigation-rotate-up');
+          toggleButton.addClass('soe-magazine__navigation-rotate-down');
+        }
+      });
+    }
+  };
+})(jQuery, Drupal);
+/******/ })()
+;

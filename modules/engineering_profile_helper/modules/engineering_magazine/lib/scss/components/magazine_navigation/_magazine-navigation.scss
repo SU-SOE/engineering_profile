@@ -19,12 +19,12 @@
   }
 
   .magazine-landing-nav {
-    justify-content: center;
+    //justify-content: center;
     width: 100vw;
     display: flex;
     align-content: center;
-    flex-flow: row;
-    background-color: $soe-magazine-nav-color;
+    flex-flow: column;
+    // background-color: $soe-magazine-nav-color;
     padding: 20px;
 
     a {
@@ -41,9 +41,10 @@
     h2 {
       margin-bottom: 0;
       margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
 
       ::after {
-        content: "|";
         font-size: 1.3125em;
         font-weight: $su-font-semi-bold;
         padding: 0 30px;
@@ -51,12 +52,18 @@
       }
     }
 
+    h3 {
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+
     .magazine-landing-nav__item {
       font-size: 2em;
       font-weight: $su-font-semi-bold;
       line-height: 1.55em;
       color: $soe-magazine-nav-item-color;
-      margin-right: 1em;
+      //margin-right: 1em;
 
         a {
           &:hover,
@@ -73,7 +80,7 @@
         height: 25px;
         cursor:pointer;
         background-color: transparent;
-        background-image: url('/profiles/custom/engineering_profile/themes/engineering/dist/img/caret-down-black.svg');
+        background-image: url('~../../../engineering_magazine//lib/img/caret-down-black.svg');
         background-position: center;
         background-repeat: no-repeat;
         vertical-align: middle;
@@ -150,7 +157,7 @@
         a {
           font-size: 1em;
           font-weight: $su-font-regular;
-          color: $su-color-white;
+          color: $soe-magazine-nav-item-color;
           text-decoration: none;
 
           &:hover {
