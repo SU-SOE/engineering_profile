@@ -4,9 +4,9 @@ status: true
 dependencies: {  }
 id: magazine_landing_page
 label: 'Magazine Landing Page'
-description: 'The main magazine landing page'
+description: 'The main Stanford Engineering News landing page'
 use_admin_theme: false
-path: /magazine
+path: /news
 access_logic: and
 access_conditions: {  }
 parameters: {  }
