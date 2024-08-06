@@ -43,7 +43,8 @@
     "drupal/views_autosubmit": "^1.4",
     "drupal/views_data_export": "^1.0",
     "su-sws/stanford_profile": "11.x-dev",
-    "su-sws/stanford_syndication": "^1.0"
+    "su-sws/stanford_syndication": "^1.0",
+    "drupal/colorbox": "2.0.2"
   },
   "config": {
     "sort-packages": true
