@@ -6,3 +6,4 @@ name: 'Magazine Issues'
 vid: magazine_issues
 description: 'Terms used to group magazine content into issues'
 weight: 0
+new_revision: false
