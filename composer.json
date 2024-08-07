@@ -48,6 +48,9 @@
     "drupal/config_filter": "^2.6",
     "drush/drush": "^12"
   },
+  "conflict": {
+    "drush/drush": "<=13.0.0"
+  },
   "config": {
     "sort-packages": true
   },
