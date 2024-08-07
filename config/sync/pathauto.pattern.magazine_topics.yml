@@ -3,17 +3,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - taxonomy
 id: magazine_topics
 label: 'Magazine Topics'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'magazine/[term:name]'
+pattern: 'news/topic/[term:name]'
 selection_criteria:
-  67e2137a-20a8-4abd-a5d4-7ddad9bbe8b8:
+  7795d170-5302-4434-b51c-25349293c6f6:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 67e2137a-20a8-4abd-a5d4-7ddad9bbe8b8
+    uuid: 7795d170-5302-4434-b51c-25349293c6f6
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
