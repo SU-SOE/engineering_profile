@@ -45,7 +45,8 @@
     "su-sws/stanford_profile": "11.x-dev",
     "su-sws/stanford_syndication": "^1.0",
     "drupal/oembed_lazyload": "^2.0",
-    "drupal/config_filter": "^2.6"
+    "drupal/config_filter": "^2.6",
+    "drush/drush": "^12"
   },
   "config": {
     "sort-packages": true
