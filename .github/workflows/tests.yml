@@ -67,6 +67,7 @@ jobs:
           STANFORD_ENCRYPT: ${{ secrets.STANFORD_ENCRYPT }}
         run: |
           composer global require su-sws/stanford-caravan:dev-drupal-10.3.1
+          
           ~/.config/composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=$GITHUB_WORKSPACE/project --suites=acceptance
       - name: Save Test Results
         uses: actions/upload-artifact@v4

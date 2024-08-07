@@ -49,7 +49,7 @@
     "drush/drush": "12.5.3"
   },
   "conflict": {
-    "drush/drush": "<=13.0.0"
+    "drush/drush": ">=13.0.0"
   },
   "config": {
     "sort-packages": true
