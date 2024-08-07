@@ -3,17 +3,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - taxonomy
 id: article_collections
 label: 'Article Collections'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'magazine/collection/[term:name]'
+pattern: 'news/collection/[term:name]'
 selection_criteria:
-  ed46d998-7ddb-4233-ae65-deb38e868849:
+  ba7a28f2-c739-4900-8fd7-861b0ce3b24b:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: ed46d998-7ddb-4233-ae65-deb38e868849
+    uuid: ba7a28f2-c739-4900-8fd7-861b0ce3b24b
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
