@@ -44,9 +44,6 @@
     "drupal/views_data_export": "^1.0",
     "su-sws/stanford_profile": "11.x-dev",
     "su-sws/stanford_syndication": "^1.0",
-    "drupal/colorbox": "2.0.2",
-    "drupal/subrequests": "3.0.11",
-    "drupal/field_group": "3.4",
     "drupal/oembed_lazyload": "^2.0"
   },
   "config": {
