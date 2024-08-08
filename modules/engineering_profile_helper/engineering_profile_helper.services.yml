@@ -1,9 +1,1 @@
 services:
-  engineering_profile_helper.pathauto_regenerate_service:
-    class: 'Drupal\engineering_profile_helper\PathautoRegenerateService'
-    arguments: ['@path_alias.manager', '@entity_type.manager']
-  engineering_profile_helper.commands:
-    class: Drupal\engineering_profile_helper\Commands\PathautoRegenerateCommands
-    arguments: ['@engineering_profile_helper.pathauto_regenerate_service']
-    tags:
-      - { name: drush.command }
