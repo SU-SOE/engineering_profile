@@ -22,7 +22,7 @@ class MagazineCest {
     /**
      * Test the landing page exists.
      */
-    $I->amOnPage('/magazine');
+    $I->amOnPage('/news');
     $I->canSee('Research & Ideas');
     $I->canSee('Topics');
     // This was removed from the layout.
@@ -41,7 +41,7 @@ class MagazineCest {
     /**
      * Test the pathauto generation
      */
-    $I->seeCurrentUrlEquals('/magazine/magazine-test');
+    $I->seeCurrentUrlEquals('/news/magazine-test');
     /**
      * Test to make sure there's a related departments field.
      */
@@ -63,7 +63,7 @@ class MagazineCest {
     /**
      * Test to ensure the topic landing page exists.
      */
-    $I->seeCurrentUrlEquals('/magazine/test-magazine-topic');
+    $I->seeCurrentUrlEquals('/news/test-magazine-topic');
     $I->canSee('Test Magazine Topic');
     // $I->canSee($magazineStory->getTitle());
     /**
