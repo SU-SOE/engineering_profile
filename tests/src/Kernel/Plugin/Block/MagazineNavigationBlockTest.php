@@ -59,9 +59,19 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
           0 => 'engineering_magazine/engineering_magazine',
         ],
       ],
+      '#cache' => [
+        'contexts' => [
+          0 => 'url',
+          0 => 'layout_builder',
+        ],
+        'tags' => [
+          0 => 'taxonomy_term_list',
+        ],
+      ],
       '#topics' => [],
     ], $build);
   }
+
 
   /**
    *
