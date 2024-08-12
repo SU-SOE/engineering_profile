@@ -46,7 +46,8 @@
     "su-sws/stanford_syndication": "^1.0",
     "drupal/oembed_lazyload": "^2.0",
     "drupal/config_filter": "^2.6",
-    "drush/drush": "12.5.3"
+    "drush/drush": "12.5.3",
+    "drupal/redirect": "1.9"
   },
   "conflict": {
     "drush/drush": ">=13.0.0"
