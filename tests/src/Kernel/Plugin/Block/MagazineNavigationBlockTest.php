@@ -62,7 +62,7 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
       '#cache' => [
         'contexts' => [
           0 => 'url',
-          0 => 'layout_builder',
+          1 => 'layout_builder',
         ],
         'tags' => [
           0 => 'taxonomy_term_list',
