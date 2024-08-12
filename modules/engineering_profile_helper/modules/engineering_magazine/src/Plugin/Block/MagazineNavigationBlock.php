@@ -99,9 +99,7 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
     ];
 
     $build['#cache']['tags'] = ['taxonomy_term_list'];
-    $build['#cache']['contexts'] = ['layout_builder'];
     $build['#cache']['contexts'] = ['url']; // Ensure cache is per-page.
-
     return $build;
   }
 
