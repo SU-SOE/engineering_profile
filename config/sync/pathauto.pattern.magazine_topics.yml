@@ -9,10 +9,10 @@ label: 'Magazine Topics'
 type: 'canonical_entities:taxonomy_term'
 pattern: 'news/topic/[term:name]'
 selection_criteria:
-  7795d170-5302-4434-b51c-25349293c6f6:
+  ef8acea3-afe7-410c-912c-f94b998e7166:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 7795d170-5302-4434-b51c-25349293c6f6
+    uuid: ef8acea3-afe7-410c-912c-f94b998e7166
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

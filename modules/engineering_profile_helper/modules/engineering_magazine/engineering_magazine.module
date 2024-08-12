@@ -6,7 +6,6 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\pathauto\Entity\PathautoPattern;
 
 /**
  * Implements hook_help().
@@ -42,4 +41,11 @@ function engineering_magazine_theme($existing, $type, $theme, $path) {
       ],
     ],
   ];
+}
+
+
+function engineering_magazine_page_attachments(array &$attachments) {
+  if (\Drupal::service('plugin.manager.block')->getDefinition('magazine_navigation_block', FALSE)) {
+    $attachments['#attached']['library'][] = 'engineering_magazine/engineering_magazine';
+  }
 }

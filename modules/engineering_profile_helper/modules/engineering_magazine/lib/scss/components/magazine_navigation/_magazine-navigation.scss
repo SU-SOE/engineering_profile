@@ -2,10 +2,16 @@
   display: none;
 }
 
-.section-bgcolor--title.section-editorial-content {
+.page-news {
+  .section-bgcolor--title {
+    background: none;
+    color: $su-color-black;
+  }
+}
+
+.magazine-navigation-block {
   background: initial;
   background-color: $soe-magazine-nav-color;
-
   height: initial;
   padding: initial;
   margin-left: calc(50% - 50vw);
@@ -13,33 +19,41 @@
 
   width: 100vw;
 
-  .magazine-landing-navbar{
-    display: flex;
-    align-items: center;
+  .news-navigation-bar {
+    width: 100vw;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    .news-navigation-bar__container {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .magazine-landing-nav {
-    //justify-content: center;
-    width: 100vw;
     display: flex;
-    align-content: center;
+    align-items: center;
     flex-flow: column;
-    // background-color: $soe-magazine-nav-color;
+    justify-content: space-between;
     padding: 20px;
 
     a {
-      color:  $su-color-black;
+      color: $su-color-black;
       text-decoration: none;
 
       &:hover {
         font-weight: $su-font-semi-bold;
-        color:  $su-color-black;
-
+        color: $su-color-black;
       }
     }
 
     h2 {
-      margin-bottom: 0;
+      margin-bottom: 1em;
       margin-top: 0;
       margin-left: auto;
       margin-right: auto;
@@ -55,32 +69,32 @@
     h3 {
       margin-left: auto;
       margin-right: auto;
-      
     }
 
-    .magazine-landing-nav__item {
-      font-size: 2em;
+    .news-navigation-nav__item {
+      flex: 1;
+      text-align: center;
+      font-size: 1.1em;
       font-weight: $su-font-semi-bold;
-      line-height: 1.55em;
       color: $soe-magazine-nav-item-color;
       //margin-right: 1em;
 
-        a {
-          &:hover,
-          &:active,
-          &:focus {
-            text-decoration: underline;
-          }
+      a {
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: underline;
         }
+      }
 
       #magazine-landing-nav__topics-toggle {
-        display:inline-block;
+        display: inline-block;
         position: relative;
-        width: 25px;
-        height: 25px;
-        cursor:pointer;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
         background-color: transparent;
-        background-image: url('~../../../engineering_magazine//lib/img/caret-down-black.svg');
+        background-image: url("~../../../engineering_magazine//lib/img/caret-down-black.svg");
         background-position: center;
         background-repeat: no-repeat;
         vertical-align: middle;
@@ -102,29 +116,27 @@
             box-shadow: none;
           }
         }
-
       }
 
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         font-size: 1.5em;
 
         #magazine-landing-nav__topics-toggle {
-          width: .5em;
-          height: .5em;
-          background-size:1em;
+          width: 0.5em;
+          height: 0.5em;
+          background-size: 1em;
         }
       }
 
-      @include grid-media-max('sm') {
+      @include grid-media-max("sm") {
         font-size: 1em;
 
         #magazine-landing-nav__topics-toggle {
-          width: .25em;
-          height: .25em;
-          background-size:.75em;
+          width: 0.25em;
+          height: 0.25em;
+          background-size: 0.75em;
         }
       }
-
     }
   }
 
@@ -137,20 +149,31 @@
     width: 100vw;
     background-color: $soe-magazine-topics-panel;
     padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 6px 0px;
+
+    .topics-panel__header {
+      font-family: "Roboto Slab", serif;
+      font-size: 1.2em;
+      font-weight: 600;
+      width: 100%;
+      margin-bottom: 0.5em;
+      text-decoration-color: rgb(255, 82, 92);
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+    }
 
     .magazine-terms-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-
       width: 75%;
       margin-left: auto;
       margin-right: auto;
 
       .magazine-term {
         flex: 1 1 25%;
-        display: inline-block;
-        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: left;
         margin-top: 0.75em;
         margin-bottom: 0.75em;
 
@@ -162,15 +185,13 @@
 
           &:hover {
             text-decoration: underline;
+            font-weight: bold;
           }
         }
-
       }
     }
   }
 }
-
-
 
 .magazine-topics__term-name {
   width: 100%;
@@ -181,5 +202,33 @@
     font-weight: $su-font-semi-bold;
     letter-spacing: 0;
     margin: -9px 0 10px;
+  }
+}
+
+.section-bgcolor--title {
+  .news-navigation-block {
+    h2 {
+      a {
+        color: $su-color-black;
+        text-decoration: none;
+        font-size: 1.2em;
+        margin: 0;
+        margin-block-end:0;
+
+        &:hover {
+          font-weight: $su-font-semi-bold;
+          color: $su-color-black;
+        }
+      }
+    }
+
+    .news-navigation-nav__title {
+      display: block;
+      background-image: none;
+      margin-top: .5em;
+      text-align: center;
+      font-family: "Roboto Slab", serif;
+      box-sizing: border-box;
+    }
   }
 }

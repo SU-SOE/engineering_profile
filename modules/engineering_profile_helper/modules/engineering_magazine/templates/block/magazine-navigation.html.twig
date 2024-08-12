@@ -11,28 +11,30 @@ Profile magazine_navigation_block
 <div{{attributes.addClass(classes)}}>
 
 	<div class="flex-12-of-12 magazine-landing-nav">
-
-		<h2 class="magazine-landing-nav__item" >
-			<a href="/magazine">Latest News</a>
-		</h2>
-    <h3>What are we working on? What are we thinking about?</h3>
-
-    <div class="magazine-landing-nav__item">Topics
-
-			<button aria-label="Open the Topics menu" id="magazine-landing-nav__topics-toggle" aria-expanded="false"></button>
-
-		</div>
+    <div class="news-navigation-bar">
+      <div class="news-navigation-bar__container">
+        <div class="news-navigation-nav__item topics_item">Topics
+          <button aria-label="Open the Topics menu" id="magazine-landing-nav__topics-toggle" aria-expanded="false"></button>
+        </div>
+        <div class="news-navigation-nav__item foe_item"><a href="/news/collection/future-everything-podcast" alt="Future of Everything podcast">Future of Everything</a></div>
+        <div class="news-navigation-nav__item spotlight_item"><a href="/spotlight">Spotlights</a></div>
+        <!-- <div class="news-navigation-nav__item mediammentions_item">Media Mentions</div> -->
+      </div>
+    </div>
 
 	</div>
 
 </div>
 
 <div class="magazine-landing-nav__topics-panel" aria-labelledby="magazine-landing-nav__topics-toggle">
+
 	<div class="magazine-terms-list">
+  <div class="topics-panel__header">Browse News by Topic</div>
 		{% for term in topics%}
 			<div class='magazine-term'>
 				<a href="{{ term['path'] }}">{{ term['name'] }}</a>
 			</div>
 		{% endfor %}
+    <div class='magazine-term'>&nbsp;</div>
 	</div>
 </div>
