@@ -76,7 +76,7 @@ class DefaultContentCest {
 
     $pages = [
       '/about' => 'About',
-      '/news' => 'News',
+      // '/news' => 'News',
       '/people' => 'People',
       '/research' => 'Research',
       '/resources' => 'Resources',

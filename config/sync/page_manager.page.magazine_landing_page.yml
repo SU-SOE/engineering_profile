@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: magazine_landing_page
-label: 'Magazine Landing Page'
+label: 'Latest News'
 description: 'The main Stanford Engineering News landing page'
 use_admin_theme: false
 path: /news
