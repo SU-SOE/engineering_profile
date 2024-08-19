@@ -44,6 +44,7 @@ var __webpack_exports__ = {};
         } else {
           // Reorder back for larger viewports
           $(".magazine-landing-nav__topics-panel").insertAfter(".news-navigation-bar");
+          // Make sure we show the navigation bar if it was hidden.
           $(".news-navigation-bar__container").show();
         }
       }

@@ -74,11 +74,14 @@
           height: 0.25em;
           background-size: 0.75em;
           float: right;
+          background-image: url("~../../../engineering_magazine//lib/img/plus-black.svg");
       }
     }
 
     #mobile-magazine-landing-nav__toggle {
-      background-image: url("~../../../engineering_magazine//lib/img/plus-black.svg");
+      @include grid-media-max("sm") {
+        background-image: url("~../../../engineering_magazine//lib/img/caret-down-black.svg");
+      }
     }
 
     #mobile_news_menu__toggle {
