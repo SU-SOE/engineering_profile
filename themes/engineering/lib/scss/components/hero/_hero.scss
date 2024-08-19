@@ -55,19 +55,19 @@ $_su-hero-height: (
 
   @include grid-media('xs') {
     @include margin(20px null);
-    left: 20px;
+    // left: 20px;
 
   }
 
   @include grid-media('sm') {
     @include margin(20px null);
-    left: 20px;
+    // left: 20px;
 
   }
 
   @include grid-media('md') {
     @include margin(45px null);
-    left: 45px;
+    // left: 45px;
 
   }
 
@@ -76,7 +76,7 @@ $_su-hero-height: (
   @include grid-media('xl') {
     @include margin(96px null 0 null);
     bottom: 48px;
-    left: 48px;
+    // left: 48px;
 
     top: auto;
   }
