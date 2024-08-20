@@ -7,13 +7,19 @@
     background: none;
     color: $su-color-black;
   }
+
+  @media only screen and (min-width: 768px) {
+    .section-bgcolor--title, .section-editorial-content {
+      @include modular-spacing('margin-bottom', 3);
+    }
+  }
 }
 
 .magazine-navigation-block {
   background: initial;
   background-color: $soe-magazine-nav-color;
   height: initial;
-  padding: initial;
+  padding: 0;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   width: 100vw;
@@ -115,7 +121,7 @@
     align-items: center;
     flex-flow: column;
     justify-content: space-between;
-    padding: 20px;
+    padding: 0px;
 
     @include grid-media-max("sm") {
       align-items: left;
@@ -294,10 +300,15 @@
     .news-navigation-nav__title {
       display: block;
       background-image: none;
-      margin-top: .5em;
+      //margin-top: .5em;
       text-align: center;
       font-family: "Roboto Slab", serif;
       box-sizing: border-box;
+
+      @media only screen and (min-width: 768px) {
+        @include modular-spacing('margin-bottom', 2);
+        @include modular-spacing('margin-top', 2);
+      }
     }
   }
 }
