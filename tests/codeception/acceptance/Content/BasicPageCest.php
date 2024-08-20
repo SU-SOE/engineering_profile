@@ -93,6 +93,7 @@ class BasicPageCest {
     $I->amOnPage($node->toUrl('delete-form')->toString());
     $I->click('Delete');
     $I->runDrush('cr');
+    $I->wait(5);
     $I->amOnPage('/');
     $I->cantSeeLink($node_title);
   }

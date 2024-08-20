@@ -23,7 +23,8 @@ class MagazineCest {
      * Test the landing page exists.
      */
     $I->amOnPage('/news');
-    $I->canSee('Research & Ideas');
+    // This was removed.
+    //$I->canSee('Research & Ideas');
     $I->canSee('Topics');
     // This was removed from the layout.
     //$I->canSee('Issues');
@@ -63,7 +64,7 @@ class MagazineCest {
     /**
      * Test to ensure the topic landing page exists.
      */
-    $I->seeCurrentUrlEquals('/news/test-magazine-topic');
+    $I->seeCurrentUrlEquals('/news/topic/test-magazine-topic');
     $I->canSee('Test Magazine Topic');
     // $I->canSee($magazineStory->getTitle());
     /**
