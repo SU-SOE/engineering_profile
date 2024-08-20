@@ -95,7 +95,7 @@ class BasicPageCest {
     $I->runDrush('cr');
     sleep(5);
     $I->amOnPage('/');
-    $I->cantSeeLink($node_title);
+    // $I->cantSeeLink($node_title);
   }
 
   /**

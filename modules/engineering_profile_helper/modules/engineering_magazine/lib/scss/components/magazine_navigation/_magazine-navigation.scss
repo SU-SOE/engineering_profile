@@ -10,8 +10,9 @@
   }
 
   @media only screen and (min-width: 768px) {
-    .section-bgcolor--title, .section-editorial-content {
-      @include modular-spacing('margin-bottom', 3);
+    .section-bgcolor--title,
+    .section-editorial-content {
+      @include modular-spacing("margin-bottom", 3);
     }
   }
 }
@@ -43,20 +44,21 @@
     #mobile-magazine-landing-nav__toggle {
       display: inline-block;
       position: relative;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: auto;
       cursor: pointer;
       background-color: transparent;
       background-image: url("~../../../engineering_magazine//lib/img/caret-down-black.svg");
       background-position: center;
       background-repeat: no-repeat;
+      background-size: 16px;
       vertical-align: middle;
 
       &[aria-expanded="true"] {
         &:hover,
         &:active,
         &:focus {
-          border-top: solid 1px $su-color-black;
+         // border-top: solid 1px $su-color-black;
           box-shadow: none;
         }
       }
@@ -65,23 +67,18 @@
         &:hover,
         &:active,
         &:focus {
-          border-bottom: solid 1px $su-color-black;
+          // border-bottom: solid 1px $su-color-black;
           box-shadow: none;
         }
       }
 
       @include grid-media-max("md") {
-          width: 0.5em;
-          height: 0.5em;
-          background-size: 1em;
+
       }
 
       @include grid-media-max("sm") {
-          width: 0.25em;
-          height: 0.25em;
-          background-size: 0.75em;
-          float: right;
-          background-image: url("~../../../engineering_magazine//lib/img/plus-black.svg");
+        float: right;
+        background-image: url("~../../../engineering_magazine//lib/img/plus-black.svg");
       }
     }
 
@@ -111,7 +108,7 @@
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        padding:0;
+        padding: 0;
         margin: 0;
       }
     }
@@ -204,8 +201,6 @@
     }
   }
 
-
-
   .magazine-landing-nav__topics-panel {
     display: none;
     clear: both;
@@ -219,8 +214,8 @@
 
     @include grid-media-max("sm") {
       box-shadow: unset;
-      padding: .25em;
-      padding-left: .33em;
+      padding: 0.25em;
+      padding-left: 0.33em;
       width: 100%;
       margin: 0;
       border-left: 1px solid #ccc;
@@ -302,7 +297,7 @@
         text-decoration: none;
         font-size: 1.2em;
         margin: 0;
-        margin-block-end:0;
+        margin-block-end: 0;
 
         &:hover {
           font-weight: $su-font-semi-bold;
@@ -320,8 +315,8 @@
       box-sizing: border-box;
 
       @media only screen and (min-width: 768px) {
-        @include modular-spacing('margin-bottom', 2);
-        @include modular-spacing('margin-top', 2);
+        @include modular-spacing("margin-bottom", 2);
+        @include modular-spacing("margin-top", 2);
       }
     }
   }
