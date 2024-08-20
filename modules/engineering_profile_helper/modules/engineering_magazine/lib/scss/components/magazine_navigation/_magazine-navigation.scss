@@ -2,7 +2,8 @@
   display: none;
 }
 
-.page-news {
+.page-news,
+.section-news {
   .section-bgcolor--title {
     background: none;
     color: $su-color-black;
@@ -28,8 +29,8 @@
     width: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    //padding-top: 1em;
+    //padding-bottom: 1em;
 
     @include grid-media-max("sm") {
       width: 90%;
@@ -163,7 +164,9 @@
       font-size: 1.1em;
       font-weight: $su-font-semi-bold;
       color: $soe-magazine-nav-item-color;
-      //margin-right: 1em;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid transparent;
 
       a {
         &:hover,
@@ -171,6 +174,12 @@
         &:focus {
           text-decoration: underline;
         }
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-bottom: 2px solid $su-color-black;
       }
 
       @include grid-media-max("sm") {
@@ -181,6 +190,11 @@
         border-left: 1px solid #ccc;
         border-right: 1px solid #ccc;
       }
+    }
+
+    .news-navigation-nav__item.active {
+      height: 100%;
+      border-bottom: 2px solid $su-color-black;
     }
 
     .topics-panel__header {

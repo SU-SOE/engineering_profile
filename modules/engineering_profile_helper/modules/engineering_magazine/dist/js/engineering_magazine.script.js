@@ -11,12 +11,10 @@ var __webpack_exports__ = {};
           toggleButton.attr('aria-expanded', 'true');
           toggleButton.removeClass('soe-magazine__navigation-rotate-down');
           toggleButton.addClass('soe-magazine__navigation-rotate-up');
-          topicsItem.addClass('active');
         } else {
           toggleButton.attr('aria-expanded', 'false');
           toggleButton.removeClass('soe-magazine__navigation-rotate-up');
           toggleButton.addClass('soe-magazine__navigation-rotate-down');
-          topicsItem.removeClass('active');
         }
       });
       var mobileToggle = $('#mobile-magazine-landing-nav__toggle');
@@ -55,14 +53,32 @@ var __webpack_exports__ = {};
           $('a.su-multi-menu__link[href="/news"]').closest('li').addClass('su-multi-menu__item--active-trail');
         }
       }
+      function fixNewsSubnavActivePath() {
+        var path = window.location.pathname;
+        var windowWidth = $(window).width();
+        if (windowWidth >= 768) {
+          if (path.indexOf('/future-everything-podcast') !== -1) {
+            $('.foe_item').addClass('active');
+          } else {
+            $('.foe_item').removeClass('active');
+          }
+          if (path.indexOf('/news/topic/') !== -1) {
+            $('.topics_item').addClass('active');
+          } else {
+            $('.topics_item').removeClass('active');
+          }
+        }
+      }
 
       // Run on document ready
       reorderElements();
       fixNewsActivePath();
+      fixNewsSubnavActivePath();
 
       // Run on window resize
       $(window).resize(function () {
         reorderElements();
+        fixNewsSubnavActivePath();
       });
     }
   };
