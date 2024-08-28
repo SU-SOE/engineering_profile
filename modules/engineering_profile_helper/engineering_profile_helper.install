@@ -36,7 +36,7 @@ function engineering_profile_helper_update_9001() {
 
 /**
  * Update hook to set nodes to automatically generate URL aliases.
- */
+
 function engineering_profile_helper_update_9002() {
 
   $entity_type = 'node';
@@ -62,3 +62,4 @@ function engineering_profile_helper_update_9002() {
 
   \Drupal::logger('mymodule')->info('Updated URL alias settings for stanford_page, spotlight, and stanford_news nodes that were not set to generate automatically.');
 }
+ */
