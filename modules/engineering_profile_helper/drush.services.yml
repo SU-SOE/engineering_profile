@@ -1,0 +1,5 @@
+services:
+  my_module.commands:
+    class: Drupal\engineering_profile_helper\Commands\EngineeringProfileHelperCommands
+    tags:
+      - { name: drush.command }
