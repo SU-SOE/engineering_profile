@@ -3,17 +3,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - taxonomy
 id: magazine_issues
 label: 'Magazine Issues'
 type: 'canonical_entities:taxonomy_term'
-pattern: '/magazine/issue/[term:su_issue_number:value]'
+pattern: '/news/issue/[term:su_issue_number:value]'
 selection_criteria:
-  2c2f4430-539e-412c-a961-84a096193409:
+  8ec75fea-0334-4131-98b7-2260e3d4069d:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 2c2f4430-539e-412c-a961-84a096193409
+    uuid: 8ec75fea-0334-4131-98b7-2260e3d4069d
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

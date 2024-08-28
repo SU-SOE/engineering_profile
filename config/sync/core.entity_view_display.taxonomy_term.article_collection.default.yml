@@ -10,8 +10,10 @@ dependencies:
     - taxonomy.vocabulary.article_collection
     - views.view.magazine_article_collection
   module:
+    - engineering_magazine
     - jumpstart_ui
     - layout_builder
+    - layout_builder_restrictions
     - layout_discovery
     - layout_library
     - text
@@ -21,6 +23,24 @@ third_party_settings:
     enabled: true
     allow_custom: false
     sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          cee77444-0c4b-49f2-b00e-47ab47e094bb:
+            uuid: cee77444-0c4b-49f2-b00e-47ab47e094bb
+            region: content
+            configuration:
+              id: magazine_navigation_block
+              label: 'Magazine Navigation'
+              label_display: '0'
+              provider: engineering_magazine
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
       -
         layout_id: defaults
         layout_settings:
@@ -48,7 +68,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: soe-article-collection__description
-            weight: 1
+            weight: 2
             additional: {  }
           58192dcf-53c4-4c4a-bc95-405316b82870:
             uuid: 58192dcf-53c4-4c4a-bc95-405316b82870
@@ -69,7 +89,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 0
+            weight: 1
             additional: {  }
           6c711023-7e35-4849-92a4-76901df9a78c:
             uuid: 6c711023-7e35-4849-92a4-76901df9a78c
@@ -90,7 +110,7 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: ''
-            weight: 2
+            weight: 3
             additional: {  }
         third_party_settings: {  }
       -
@@ -114,6 +134,13 @@ third_party_settings:
         third_party_settings: {  }
   layout_library:
     enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
 id: taxonomy_term.article_collection.default
 targetEntityType: taxonomy_term
 bundle: article_collection

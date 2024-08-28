@@ -1718,7 +1718,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<H2 class="soe-mag-landing__heading_1">Latest News</H2>'
+            value: ''
             format: stanford_html
           tokenize: false
       display_extenders: {  }
@@ -2211,7 +2211,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: default
           exception:
             value: all
@@ -2242,6 +2242,7 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
       defaults:
         relationships: false
         fields: false

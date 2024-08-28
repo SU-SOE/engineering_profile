@@ -7,6 +7,7 @@ libraries:
   - soe_basic/allpages
   - engineering/engineering-styling
   - engineering/engineering-news-override
+  - engineering_magazine/engineering_magazine
 
 base theme: soe_basic
 

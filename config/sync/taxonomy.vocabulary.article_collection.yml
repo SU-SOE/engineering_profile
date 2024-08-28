@@ -6,3 +6,4 @@ name: 'Article Collection'
 vid: article_collection
 description: 'Terms used to group magazine articles into a collection or series'
 weight: 0
+new_revision: false

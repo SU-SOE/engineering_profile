@@ -6,17 +6,17 @@ dependencies:
     - core.base_field_override.node.stanford_news.title
     - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
-    - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_mag_featured
     - field.field.node.stanford_news.su_magazine_issue
     - field.field.node.stanford_news.su_magazine_story
+    - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
     - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
-    - field.field.node.stanford_news.su_news_banner_media_caption
+    - field.field.node.stanford_news.su_news_hide_social
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics
@@ -28,6 +28,7 @@ dependencies:
     - views.view.stanford_news
   module:
     - datetime
+    - engineering_magazine
     - entity_reference_revisions
     - field_formatter_class
     - jumpstart_ui
@@ -42,6 +43,27 @@ third_party_settings:
     enabled: true
     allow_custom: true
     sections:
+      -
+        layout_id: jumpstart_ui_one_column
+        layout_settings:
+          label: 'News - extra navigation'
+          context_mapping: {  }
+          extra_classes: ''
+          centered: centered-container
+          columns: default
+        components:
+          bccee9cd-7740-4050-9652-ef35d2a40aaa:
+            uuid: bccee9cd-7740-4050-9652-ef35d2a40aaa
+            region: main
+            configuration:
+              id: magazine_navigation_block
+              label: 'Magazine Navigation'
+              label_display: '0'
+              provider: engineering_magazine
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
@@ -385,11 +407,16 @@ third_party_settings:
   layout_builder_restrictions:
     allowed_block_categories:
       - 'Basic Page Type Lists (Views)'
+      - Book
+      - 'Changelog (Views)'
       - 'Chaos Tools'
       - 'Config Pages'
       - 'Content fields'
       - 'Custom block types'
       - 'Custom blocks'
+      - Devel
+      - 'Devel PHP'
+      - Editoria11y
       - 'Events Lists (Views)'
       - Forms
       - Help
@@ -400,13 +427,17 @@ third_party_settings:
       - 'News Lists (Views)'
       - 'PDB React'
       - 'People Lists (Views)'
+      - 'Policy (Views)'
+      - Printable
       - 'Publication (Views)'
       - React
-      - 'SimpleSAMLphp Authentication'
+      - 'SoE Magazine'
       - 'Stanford News'
       - 'Stanford Profile Helper'
-      - 'Stanford SimpleSAML PHP'
+      - 'Stanford SAML Authentication'
       - System
+      - 'Taxonomy Terms (Views)'
+      - User
       - Views
       - core
     entity_view_mode_restriction:
@@ -440,46 +471,38 @@ third_party_settings:
           - 'extra_field_block:node:stanford_news:search_api_excerpt'
           - 'field_block:node:stanford_news:sticky'
           - 'field_block:node:stanford_news:unpublish_on'
-          - 'field_block:user:user:changed'
-          - 'field_block:user:user:created'
-          - 'field_block:user:user:default_langcode'
-          - 'field_block:user:user:su_display_name'
-          - 'field_block:user:user:mail'
-          - 'field_block:user:user:init'
-          - 'field_block:user:user:langcode'
-          - 'field_block:user:user:access'
-          - 'field_block:user:user:login'
-          - 'extra_field_block:user:user:member_for'
-          - 'field_block:user:user:name'
-          - 'field_block:user:user:preferred_admin_langcode'
-          - 'field_block:user:user:preferred_langcode'
-          - 'field_block:user:user:role_change'
-          - 'field_block:user:user:roles'
-          - 'extra_field_block:user:user:search_api_excerpt'
-          - 'field_block:user:user:timezone'
-          - 'field_block:user:user:uid'
-          - 'field_block:user:user:status'
       allowlisted_blocks:
+        'Custom blocks': {  }
         Menus:
           - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
           - 'system_menu_block:stanford-person-type'
           - 'system_menu_block:stanford-publication-topics'
           - 'system_menu_block:news-topics'
+        'SoE Magazine':
+          - magazine_navigation_block
         System:
           - system_breadcrumb_block
         core:
           - page_title_block
       restricted_categories:
+        - Book
+        - 'Changelog (Views)'
         - 'Chaos Tools'
         - 'Config Pages'
+        - Devel
+        - 'Devel PHP'
+        - Editoria11y
         - Forms
         - Help
         - 'Lists (Views)'
+        - 'Policy (Views)'
+        - Printable
         - React
-        - 'SimpleSAMLphp Authentication'
         - 'Stanford Profile Helper'
-        - 'Stanford SimpleSAML PHP'
+        - 'Stanford SAML Authentication'
+        - 'Taxonomy Terms (Views)'
+        - User
         - Views
   layout_library:
     enable: false

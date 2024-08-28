@@ -38,7 +38,18 @@ variant_settings:
             label_display: '0'
             provider: engineering_magazine
             context_mapping: {  }
-          weight: 6
+          weight: 9
+          additional: {  }
+        877ce8ae-4fcc-4104-8e73-ca0a261d1d1f:
+          uuid: 877ce8ae-4fcc-4104-8e73-ca0a261d1d1f
+          region: main
+          configuration:
+            id: news_navigation_block
+            label: 'News Navigation'
+            label_display: '0'
+            provider: engineering_magazine
+            context_mapping: {  }
+          weight: 8
           additional: {  }
       third_party_settings: {  }
     -

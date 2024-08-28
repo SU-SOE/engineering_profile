@@ -67,8 +67,9 @@ class NewsCest {
 
   /**
    * Test that the view pages exist.
+   * We have removed the news view, and replaced it with what used to be magazine.
    */
-  public function testViewPagesExist(AcceptanceTester $I) {
+  private function testViewPagesExist(AcceptanceTester $I) {
     $I->amOnPage("/news");
     $I->seeLink('Announcement');
     $I->click("a[href='/news/announcement']");
