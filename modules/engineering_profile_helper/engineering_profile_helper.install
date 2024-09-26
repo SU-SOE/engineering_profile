@@ -33,33 +33,3 @@ function engineering_profile_helper_update_9001() {
   }
 
 }
-
-/**
- * Update hook to set nodes to automatically generate URL aliases.
-
-function engineering_profile_helper_update_9002() {
-
-  $entity_type = 'node';
-  $entity_storage = \Drupal::entityTypeManager()->getStorage($entity_type);
-  $nodes = $entity_storage->loadMultiple();
-  foreach($nodes as $node) {
-    $bundles = ['stanford_page', 'stanford_news', 'spotlight'];
-    if (in_array($node->bundle(), $bundles) && !$node->path->pathauto) {
-      $node->path->pathauto = PathautoState::CREATE;
-      $node->save();
-    }
-  }
-
-  $entity_type = 'taxonomy_term';
-  $entity_storage = \Drupal::entityTypeManager()->getStorage($entity_type);
-  $terms = $entity_storage->loadMultiple();
-  foreach($terms as $term) {
-    if (!$term->path->pathauto) {
-      $term->path->pathauto = PathautoState::CREATE;
-      $term->save();
-    }
-  }
-
-  \Drupal::logger('mymodule')->info('Updated URL alias settings for stanford_page, spotlight, and stanford_news nodes that were not set to generate automatically.');
-}
- */
