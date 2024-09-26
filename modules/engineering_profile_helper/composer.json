@@ -3,5 +3,12 @@
     "type": "drupal-module",
     "description": "Engineering Profile Helper module",
     "keywords": [],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
+    }
 }
