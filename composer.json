@@ -37,6 +37,7 @@
   ],
   "require": {
     "acquia/memcache-settings": "^1.2",
+    "drupal/block_content_permissions": "^1.0",
     "drupal/csv_serialization": "^2.1 || ^3.0",
     "drupal/dropzonejs": "2.8",
     "drupal/typogrify": "^1.1",
