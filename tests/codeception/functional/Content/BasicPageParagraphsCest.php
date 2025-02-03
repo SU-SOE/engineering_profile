@@ -4,6 +4,8 @@ use Faker\Factory;
 
 /**
  * Test for the basic page content type.
+ *
+ * @group basic-page
  */
 class BasicPageParagraphsCest {
 
@@ -63,6 +65,8 @@ class BasicPageParagraphsCest {
 
   /**
    * The user should be able to see all revisions of a node.
+   *
+   * @group revisions
    */
   public function testViewRevisions(FunctionalTester $I) {
     $paragraph = $I->createEntity([

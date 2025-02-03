@@ -32,6 +32,7 @@ dependencies:
   module:
     - datetime
     - link
+    - options
     - text
 id: config_pages.stanford_basic_site_settings.default
 targetEntityType: config_pages

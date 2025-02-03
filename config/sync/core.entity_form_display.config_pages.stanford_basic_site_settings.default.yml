@@ -36,6 +36,7 @@ dependencies:
     - field_group
     - file
     - link
+    - readonly_field_widget
     - text
 third_party_settings:
   field_group:
