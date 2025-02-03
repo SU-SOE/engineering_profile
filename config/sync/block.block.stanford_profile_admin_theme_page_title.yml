@@ -1,30 +1,3 @@
-uuid: c67faba5-06c3-4276-ad97-d452eb5cb58d
-langcode: en
-status: true
-dependencies:
-  module:
-    - system
-  theme:
-    - stanford_profile_admin_theme
-_core:
-  default_config_hash: xBKaUbnpqEWngIpbY4vXj2bi_de2EnrGK-X76Kb1A-E
-id: stanford_profile_admin_theme_page_title
-theme: stanford_profile_admin_theme
-region: header
-weight: -30
-provider: null
-plugin: page_title_block
-settings:
-  id: page_title_block
-  label: 'Page title'
-  label_display: '0'
-  provider: core
-visibility:
-  request_path:
-    id: request_path
-    negate: true
-    pages: /user/login
-
 uuid: bcb0e656-856b-452d-9fb0-bf54090db73c
 langcode: en
 status: true
