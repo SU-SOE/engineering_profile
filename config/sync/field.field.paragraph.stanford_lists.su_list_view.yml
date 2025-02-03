@@ -20,7 +20,6 @@ default_value_callback: ''
 settings:
   force_default: false
   allowed_views:
-    stanford_shared_tags: stanford_shared_tags
     stanford_basic_pages: stanford_basic_pages
     stanford_courses: stanford_courses
     stanford_events: stanford_events
