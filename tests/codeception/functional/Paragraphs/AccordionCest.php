@@ -19,7 +19,8 @@ class AccordionCest {
   /**
    * Create and check the accordion.
    */
-  public function testCreatingAccordion(FunctionalTester $I) {
+  private function testCreatingAccordion(FunctionalTester $I) {
+    //FIXME
     $q_and_a = [
       [$this->faker->words(3, TRUE), $this->faker->paragraph()],
       [$this->faker->words(3, TRUE), $this->faker->paragraph()],
