@@ -6,7 +6,6 @@ use Faker\Factory;
  * Class PublicationsCest.
  *
  * @group content
- * @group publications
  */
 class PublicationsCest {
 
@@ -35,8 +34,8 @@ class PublicationsCest {
    * Create a book citation
    */
   public function testBookCitation(AcceptanceTester $I) {
-    $this->values['term_name'] = $this->faker->words(2, TRUE);
-    $this->values['node_title'] = $this->faker->words(2, TRUE);
+    $this->values['term_name'] = $this->faker->words(3, TRUE);
+    $this->values['node_title'] = $this->faker->words(3, TRUE);
     $term = $I->createEntity([
       'vid' => 'stanford_publication_topics',
       'name' => $this->values['term_name'],
@@ -47,7 +46,7 @@ class PublicationsCest {
     $I->fillField('Title', $this->values['node_title']);
     $I->selectOption('Publication Types (value 1)', $term->id());
     $I->selectOption('su_publication_citation[actions][bundle]', 'Book');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('First Name', $this->faker->firstName);
     $I->fillField('Last Name/Company', $this->faker->lastName);
     $I->fillField('Subtitle', $this->faker->text);
@@ -107,7 +106,7 @@ class PublicationsCest {
     $I->amOnPage('/node/add/stanford_publication');
     $I->fillField('Title', $this->values['node_title']);
     $I->selectOption('su_publication_citation[actions][bundle]', 'Other');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('First Name', $this->faker->firstName);
     $I->fillField('Last Name/Company', $this->faker->lastName);
     $I->fillField('Subtitle', $this->faker->text);
@@ -133,7 +132,7 @@ class PublicationsCest {
     $I->amOnPage('/node/add/stanford_publication');
     $I->fillField('Title', $this->values['a_node_title']);
     $I->selectOption('su_publication_citation[actions][bundle]', 'Other');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('Year', 2020);
     $I->fillField('Month', 6);
     $I->fillField('Day', 1);
@@ -143,7 +142,7 @@ class PublicationsCest {
     $I->amOnPage('/node/add/stanford_publication');
     $I->fillField('Title', $this->values['b_node_title']);
     $I->selectOption('su_publication_citation[actions][bundle]', 'Other');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('Year', 2020);
     $I->fillField('Month', 6);
     $I->fillField('Day', 15);
@@ -153,7 +152,7 @@ class PublicationsCest {
     $I->amOnPage('/node/add/stanford_publication');
     $I->fillField('Title', $this->values['c_node_title']);
     $I->selectOption('su_publication_citation[actions][bundle]', 'Other');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('Year', 2020);
     $I->fillField('Month', 1);
     $I->fillField('Day', 15);
@@ -204,7 +203,7 @@ class PublicationsCest {
     $I->logInWithRole('contributor');
     $I->amOnPage($publication->toUrl('edit-form')->toString());
     $I->selectOption('su_publication_citation[actions][bundle]', 'Book');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('First Name', $first_name);
     $I->fillField('Last Name/Company', $last_name);
     $I->fillField('Subtitle', $this->faker->words(2, TRUE));
@@ -232,7 +231,7 @@ class PublicationsCest {
     $I->fillField('Title', $this->values['node_title']);
     $I->selectOption('Publication Types (value 1)', $term->id());
     $I->selectOption('su_publication_citation[actions][bundle]', 'Journal Article');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->fillField('First Name', $this->faker->firstName);
     $I->fillField('Last Name/Company', $this->faker->lastName);
     $I->fillField('Volume', "1");

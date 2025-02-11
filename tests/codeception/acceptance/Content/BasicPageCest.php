@@ -91,11 +91,11 @@ class BasicPageCest {
     $I->canSeeLink($node_title, $node->toUrl()->toString());
 
     $I->amOnPage($node->toUrl('delete-form')->toString());
-    $I->click('Delete');
-    $I->runDrush('cr');
-    sleep(5);
+    $I->click('Delete', 'form');
+    $I->canSee('has been deleted');
+
     $I->amOnPage('/');
-    // $I->cantSeeLink($node_title);
+    $I->cantSeeLink($node_title);
   }
 
   /**
@@ -109,7 +109,7 @@ class BasicPageCest {
     $I->amOnPage('/search?keys=stuff&search=');
     $I->canSeeResponseCodeIs(200);
     $I->canSeeNumberOfElements('h1', 1);
-    //$I->canSeeNumberOfElements('#main-content', 1);
+    $I->canSeeNumberOfElements('#main-content', 1);
   }
 
   /**

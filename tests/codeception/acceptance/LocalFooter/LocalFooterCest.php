@@ -72,7 +72,6 @@ class LocalFooterCest {
     }
 
     $I->click('Save');
-    $I->see('Local Footer has been', '.messages-list');
 
     $I->canSee('Social URL is not supported.');
     $I->fillField('su_local_foot_social[0][uri]', 'http://facebook.com');

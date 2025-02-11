@@ -787,6 +787,13 @@ class ListsCest {
 
     $I->amOnPage($node->toUrl()->toString());
     $I->canSee($basic_page_entity->label(), 'h3');
+    $I->canSee($second_basic_page_entity->label(), 'h3');
+
+    $headings = $I->grabMultiple('.ptype-stanford-lists h3');
+    $headings = array_map('trim', $headings);
+    $I->assertEquals($basic_page_entity->label(), $headings[0], $basic_page_entity->label()  . ' should be first.');
+    $I->assertEquals($second_basic_page_entity->label(), $headings[1], $second_basic_page_entity->label()  . ' should be second.');
+
     $I->cantSee($type_term->label());
 
     $layout_changed_page = $I->createEntity([

@@ -315,7 +315,6 @@ class MediaCest {
 
     $I->selectOption('Category', $parent_term->label());
     $I->click('Filter');
-    sleep(3);
     $I->canSee($media->label());
 
     $I->selectOption('Category', $unrelated_term->label());

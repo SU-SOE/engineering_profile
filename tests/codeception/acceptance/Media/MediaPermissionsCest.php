@@ -4,7 +4,6 @@ use Faker\Factory;
 
 /**
  * Tests for various media access functionality.
- * @group media
  */
 class MediaPermissionsCest {
 

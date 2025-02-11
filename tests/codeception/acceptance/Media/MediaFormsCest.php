@@ -45,9 +45,9 @@ class MediaFormsCest {
     $I->seeLink('request support.', $support_url);
     $I->click('Delete');
     $I->seeInCurrentUrl('delete');
-    $I->click('Delete');
+    $I->click('Delete', 'form');
+    $I->seeInCurrentUrl('/admin/content/media');
     $I->dontSeeLink($name);
-    // $I->seeInCurrentUrl('/admin/content/media');
   }
 
 }

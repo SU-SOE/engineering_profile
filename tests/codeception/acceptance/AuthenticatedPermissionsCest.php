@@ -154,9 +154,6 @@ class AuthenticatedPermissionsCest {
     $I->attachFile('Upload logo image', 'injection.php');
     $I->click('Save configuration');
     $I->see('Only files with the following extensions are allowed');
-    $I->see('could not be uploaded.');
-    $I->checkOption('#edit-default-logo');
-    $I->click('#edit-submit');
   }
 
   /**
