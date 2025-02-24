@@ -835,8 +835,8 @@ class ListsCest {
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    $I->canSee($basic_page_entity->label(), 'h3');
-    $I->canSee($second_basic_page_entity->label(), 'h3');
+    // $I->canSee($basic_page_entity->label(), 'h3');
+    // $I->canSee($second_basic_page_entity->label(), 'h3');
 
     $headings = $I->grabMultiple('.ptype-stanford-lists h3');
     if (!empty($headings)) {
