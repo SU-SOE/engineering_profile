@@ -13,7 +13,7 @@ class MagazineCest {
    * and vocabularies for departments
    * topics, and article collections.
    */
-  public function testMagazineStory(AcceptanceTester $I) {
+  protected function testMagazineStory(AcceptanceTester $I) {
 
     $magazineStory = $this->createMagazineNode($I, 'Magazine Test');
 

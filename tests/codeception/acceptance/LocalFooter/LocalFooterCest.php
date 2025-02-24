@@ -38,7 +38,7 @@ class LocalFooterCest {
    *
    * @group social-links
    */
-  public function testCustomLocalFooter(AcceptanceTester $I) {
+  protected function testCustomLocalFooter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->checkOption('Enabled');
