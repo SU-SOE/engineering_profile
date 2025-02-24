@@ -29,7 +29,7 @@ class CustomBlockCest {
     ], 'block_content');
     $I->logInWithRole('site_manager');
     $I->amOnPage($block->toUrl()->toString());
-    $I->fillField('Block description', 'Foo Bar');
+    $I->fillField('edit-info-0-value', 'Foo Bar');
     $I->click('Save');
     $I->canSee('has been updated');
   }

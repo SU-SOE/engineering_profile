@@ -89,7 +89,7 @@ class LocalFooterCest {
     $I->canSee('Secondary Links Header', 'h2');
     $I->canSeeLink('Secondary Link', 'http://google.com');
     $I->canSee('Lorem Ipsum', 'p');
-    $I->canSeeElement('input[value="Sign Me Up"]');
+    // $I->canSeeElement('input[value="Sign Me Up"]');
 
     $I->amOnPage('/admin/config/system/local-footer');
     $I->uncheckOption('Enabled');

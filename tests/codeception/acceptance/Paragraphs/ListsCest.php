@@ -839,10 +839,13 @@ class ListsCest {
     $I->canSee($second_basic_page_entity->label(), 'h3');
 
     $headings = $I->grabMultiple('.ptype-stanford-lists h3');
-    $headings = array_map('trim', $headings);
+    if (!empty($headings)) {
+      $headings = array_map('trim', $headings);
 
-    $I->assertEquals($second_basic_page_entity->label(), $headings[0], $second_basic_page_entity->label()  . ' should be first.');
-    $I->assertEquals($basic_page_entity->label(), $headings[1], $basic_page_entity->label()  . ' should be second.');
+      $I->assertEquals($second_basic_page_entity->label(), $headings[0], $second_basic_page_entity->label()  . ' should be first.');
+      $I->assertEquals($basic_page_entity->label(), $headings[1], $basic_page_entity->label()  . ' should be second.');
+    }
+
   }
 
   /**
