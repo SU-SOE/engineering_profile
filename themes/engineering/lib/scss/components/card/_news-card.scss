@@ -3,11 +3,21 @@
 @import "../../utilities/variables/colors";
 @import "../../utilities/mixins";
 
+.su-news-vertical-teaser {
+  h2 {
+    @include responsive-spacing("margin-bottom", 0);
+  }
+}
+
 .news-card__external-source-text {
   background-color: $su-color-black;
   color: $su-color-white;
-  padding: .75em;
-  margin-top: 1em;
+  padding: 6px 10px 8px;
   max-width: fit-content;
-  font-size: .8em;
+  font-size: 16px;
+  @include responsive-spacing("margin-top", 2);
+
+  @include grid-media-max("sm") {
+    font-size: 15px;
+  }
 }
