@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@import "../../utilities/variables/colors";
+@import "../../utilities/mixins";
+
+.news-card__external-source-text {
+  background-color: $su-color-black;
+  color: $su-color-white;
+  padding: .75em;
+  margin-top: 1em;
+  max-width: fit-content;
+  font-size: .8em;
+}
