@@ -313,6 +313,9 @@
       text-align: center;
       font-family: "Roboto Slab", serif;
       box-sizing: border-box;
+      a {
+        color: $su-color-black;
+      }
 
       @media only screen and (min-width: 768px) {
         @include modular-spacing("margin-bottom", 2);

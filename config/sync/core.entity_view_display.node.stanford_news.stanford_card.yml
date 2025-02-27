@@ -153,7 +153,7 @@ content:
     region: news_topics
   su_soe_mag_topics:
     type: entity_reference_list_label_class
-    label: hidden
+    label: above
     settings:
       link: true
       class: su-list-unstyled
