@@ -199,6 +199,9 @@
             },
             "drupal/menu_link_weight": {
                 "https://www.drupal.org/project/menu_link_weight/issues/2875984": "https://git.drupalcode.org/project/menu_link_weight/-/merge_requests/2.diff"
+            },
+            "drupal/field_formatter_class": {
+                "https://www.drupal.org/project/field_formatter_class/issues/3473891": "https://git.drupalcode.org/project/field_formatter_class/-/commit/e17b4c2553dec42e5f344036e1e5f2f45b51287f.patch"
             }
         }
     }
