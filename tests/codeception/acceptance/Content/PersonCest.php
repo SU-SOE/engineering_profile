@@ -99,6 +99,7 @@ class PersonCest {
       'su_person_last_name' => $last_name,
       'su_person_type_group' => $term,
     ]);
+    $I->runDrush('cr');
     $I->amOnPage($node->toUrl()->toString());
     $I->see("$first_name $last_name", 'h1');
     $I->amOnPage('/people');
