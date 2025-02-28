@@ -135,7 +135,7 @@ content:
     type: wrapper_class
     label: hidden
     settings:
-      class: 'news-card__external-source-text'
+      class: news-card__external-source-text
       tag: div
       link: false
       link_class: ''
