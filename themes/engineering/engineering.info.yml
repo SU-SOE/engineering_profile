@@ -3,11 +3,10 @@ type: theme
 description: 'Engineering theme based on SOE Basic.'
 package: Engineer
 core_version_requirement: ^8 || ^9 || ^10
-libraries:
-  - soe_basic/allpages
-  - engineering/engineering-styling
-  - engineering/engineering-news-override
-  - engineering_magazine/engineering_magazine
+libraries-extend:
+  soe_basic/allpages:
+    - engineering/engineering-styling
+    - engineering_magazine/engineering_magazine
 
 base theme: soe_basic
 
