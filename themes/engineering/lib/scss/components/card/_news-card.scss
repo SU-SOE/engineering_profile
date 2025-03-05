@@ -3,6 +3,25 @@
 @import "../../utilities/variables/colors";
 @import "../../utilities/mixins";
 
+// We are overriding this from the soe_basic theme to get rid of the `border-bottom` in favor of text-decoration underline
+
+.ds-entity--node.ds-entity--stanford-news {
+  .su-card.su-news-vertical-teaser {
+    .su-news-header {
+      .su-card__link.su-link--action,
+      .su-link.su-card__link.su-link--external {
+        border-bottom: 0;
+        text-decoration: underline;
+        text-decoration-color: #00ece9;
+
+        &:hover {
+          text-decoration-color: $su-color-black;
+        }
+      }
+    }
+  }
+}
+
 .su-card.su-news-vertical-teaser {
   a {
     .su-news-header {
@@ -14,7 +33,7 @@
 .news-card__external-source-text {
   background-color: $su-color-black;
   color: $su-color-white;
-  padding: 6px 13px 7px 7px;
+  padding: 6px 13px 7px 13px;
   max-width: fit-content;
   font-size: 16px;
   @include responsive-spacing("margin-top", 2);
