@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.large_modal
+    - core.entity_view_mode.media.medium_modal
+    - core.entity_view_mode.media.small_modal
     - core.entity_view_mode.media.stanford_image_large
     - core.entity_view_mode.media.stanford_image_large_square
     - core.entity_view_mode.media.stanford_image_medium
@@ -91,7 +94,7 @@ filters:
     weight: -42
     settings:
       tablesaw_type: stack
-      tablesaw_persist: '1'
+      tablesaw_persist: true
   filter_url:
     id: filter_url
     provider: filter

@@ -20,7 +20,7 @@ class NewsNavigationBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#markup' => $this->t('<h2 class="news-navigation-nav__title"><a href="/news">Latest News</a></h2>'),
+      '#markup' => $this->t('<h1 class="news-navigation-nav__title"><a href="/news">Latest News</a></h1>'),
       '#cache' => [
         'contexts' => ['url'],
       ],

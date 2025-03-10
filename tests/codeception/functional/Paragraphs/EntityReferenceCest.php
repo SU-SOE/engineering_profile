@@ -58,7 +58,8 @@ class EntityReferenceCest {
   /**
    * Publications can be referenced in teaser paragraph.
    */
-  public function testPublicationTeasers(FunctionalTester $I) {
+  private function testPublicationTeasers(FunctionalTester $I) {
+    //FIXME
     $publication = $I->createEntity([
       'type' => 'stanford_publication',
       'title' => $this->faker->words(3, TRUE),

@@ -6,6 +6,7 @@
  */
 
 use Drupal\redirect\Entity\Redirect;
+use Drupal\pathauto\PathautoState;
 
 /**
  * Fix broken manual redirect loops.

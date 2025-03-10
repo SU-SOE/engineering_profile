@@ -99,12 +99,12 @@ class PersonCest {
       'su_person_last_name' => $last_name,
       'su_person_type_group' => $term,
     ]);
+    $I->runDrush('cr');
     $I->amOnPage($node->toUrl()->toString());
     $I->see("$first_name $last_name", 'h1');
     $I->amOnPage('/people');
-    // Why this doesn't work in tests, when it works in actual use?
-    // $I->see("$first_name $last_name", 'h2');
-    // $I->seeLink("$first_name $last_name");
+    $I->see("$first_name $last_name", 'h3');
+    $I->seeLink("$first_name $last_name");
 
     $I->amOnPage($term->toUrl()->toString());
     $I->canSee($term->label(), 'h1');
@@ -120,9 +120,8 @@ class PersonCest {
 
     // Revision Delete is enabled.
     $I->amOnPage('/admin/structure/types/manage/stanford_person');
-    $I->seeCheckboxIsChecked('#edit-node-revision-delete-track');
-    $I->seeCheckboxIsChecked('#edit-options-revision');
-    $I->seeInField('#edit-minimum-revisions-to-keep', 5);
+    $I->seeCheckboxIsChecked("#edit-amount-status");
+    $I->seeInField("Minimum number of revisions to keep (per language)", 5);
 
     // XML Sitemap.
     $I->amOnPage('/admin/config/search/xmlsitemap/settings');

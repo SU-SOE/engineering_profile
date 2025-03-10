@@ -29,6 +29,7 @@ settings:
       - '|'
       - blockQuote
       - drupalMedia
+      - icon
       - '|'
       - superscript
       - subscript
@@ -37,6 +38,7 @@ settings:
       - '|'
       - codeBlock
       - code
+      - textPartLanguage
       - undo
       - redo
   plugins:
@@ -156,7 +158,7 @@ settings:
           label: 'Splash Font'
           element: '<p class="su-font-splash">'
         -
-          label: 'Quote Text'
+          label: Quote
           element: '<p class="su-quote-text">'
         -
           label: 'Drop Cap First Letter'

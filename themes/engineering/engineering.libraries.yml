@@ -2,9 +2,9 @@ engineering-styling:
   version: 1.0
   css:
     theme:
-      dist/css/engineering.styles.css : {weight: 100}
+      dist/css/engineering.styles.css : {weight: 999}
     component:
-      dist/css/engineering.components.css : {}
+      dist/css/engineering.components.css : {weight: 998}
   js:
     dist/css/engineering.script.js : {
       scope: footer,

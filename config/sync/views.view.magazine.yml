@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.su_magazine_issue
     - field.storage.node.su_news_banner
     - field.storage.node.su_news_publishing_date
+    - field.storage.node.su_soe_external_source_text
     - field.storage.node.su_soe_mag_topics
     - node.type.stanford_news
     - taxonomy.vocabulary.stanford_news_topics
@@ -13,6 +14,7 @@ dependencies:
     - 'taxonomy_term:stanford_news_topics:3dcab896-995e-4719-b2f0-c10ee42f1917'
   module:
     - datetime
+    - element_class_formatter
     - node
     - stanford_media
     - taxonomy
@@ -572,8 +574,8 @@ display:
             title: 0
             su_soe_mag_topics: 0
             su_news_publishing_date: 0
-            name: 0
             su_magazine_issue: 0
+            su_soe_external_source_text: 0
           separator: ''
           hide_empty: 1
           pattern: card
@@ -598,9 +600,14 @@ display:
               weight: 3
               plugin: views_row
               source: su_soe_mag_topics
-            'views_row:su_magazine_issue':
+            'views_row:su_soe_external_source_text':
               destination: card_body
               weight: 4
+              plugin: views_row
+              source: su_soe_external_source_text
+            'views_row:su_magazine_issue':
+              destination: card_body
+              weight: 5
               plugin: views_row
               source: su_magazine_issue
           pattern_variant: default
@@ -1036,6 +1043,74 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        su_soe_external_source_text:
+          id: su_soe_external_source_text
+          table: node__su_soe_external_source_text
+          field: su_soe_external_source_text
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: wrapper_class
+          settings:
+            class: 'news-card__external-source-text '
+            tag: div
+            link: false
+            link_class: ''
+            summary: false
+            trim: 200
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       filters:
         status:
           id: status
@@ -1173,6 +1248,7 @@ display:
         - 'config:field.storage.node.su_magazine_issue'
         - 'config:field.storage.node.su_news_banner'
         - 'config:field.storage.node.su_news_publishing_date'
+        - 'config:field.storage.node.su_soe_external_source_text'
         - 'config:field.storage.node.su_soe_mag_topics'
   block_2:
     id: block_2
@@ -1578,6 +1654,74 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        su_soe_external_source_text:
+          id: su_soe_external_source_text
+          table: node__su_soe_external_source_text
+          field: su_soe_external_source_text
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: wrapper_class
+          settings:
+            class: 'news-card__external-source-text '
+            tag: div
+            link: false
+            link_class: ''
+            summary: false
+            trim: 200
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: some
         options:
@@ -1733,6 +1877,7 @@ display:
         - 'config:field.storage.node.su_magazine_issue'
         - 'config:field.storage.node.su_news_banner'
         - 'config:field.storage.node.su_news_publishing_date'
+        - 'config:field.storage.node.su_soe_external_source_text'
         - 'config:field.storage.node.su_soe_mag_topics'
   block_3:
     id: block_3

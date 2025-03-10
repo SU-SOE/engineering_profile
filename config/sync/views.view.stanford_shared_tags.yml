@@ -108,8 +108,8 @@ display:
           plugin_id: date
           order: DESC
           expose:
-            label: ''
-            field_identifier: ''
+            label: Changed
+            field_identifier: changed
           exposed: false
           granularity: second
       arguments:

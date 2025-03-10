@@ -51,6 +51,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
         a {
           @include modular-typography(0);
           color: $soe-black;
+          @include responsive-spacing("margin-bottom", 0);
 
           &:hover {
             text-decoration: underline;
@@ -80,7 +81,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
       }
 
       .soe-mag-card__topics {
-        margin-top: 30px;
+        margin-top: 0;
         a {
           color: $magazine-topics-color;
           font-size: 18px;

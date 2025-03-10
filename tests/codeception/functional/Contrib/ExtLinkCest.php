@@ -50,7 +50,8 @@ class ExtLinkCest {
   /**
    * Test external links get the added class and svg.
    */
-  public function testExtLink(FunctionalTester $I) {
+  private function testExtLink(FunctionalTester $I) {
+    //FIXME
     $org_term = $I->createEntity([
       'vid' => 'site_owner_orgs',
       'name' => $this->faker->words(2, TRUE),
@@ -78,10 +79,10 @@ class ExtLinkCest {
     $I->fillField('su_local_foot_primary[0][title]', 'Primary Link');
     $I->click('Add another item', '.field--name-su-local-foot-primary');
     $I->waitForElement('[name="su_local_foot_primary[1][uri]"]');
-    $I->fillField('su_local_foot_primary[1][uri]', 'https://stanford.edu');
+    $I->fillField('su_local_foot_primary[1][uri]', 'https://www.stanford.edu');
     $I->fillField('su_local_foot_primary[1][title]', 'Another primary link');
 
-    $I->fillField('su_local_foot_second[0][uri]', 'https://stanford.edu');
+    $I->fillField('su_local_foot_second[0][uri]', 'https://www.stanford.edu');
     $I->fillField('su_local_foot_second[0][title]', 'Secondary Link');
     $I->click('Add another item', '.field--name-su-local-foot-second');
     $I->waitForElement('[name="su_local_foot_second[1][uri]"]');

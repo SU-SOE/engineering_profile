@@ -91,11 +91,11 @@ class BasicPageCest {
     $I->canSeeLink($node_title, $node->toUrl()->toString());
 
     $I->amOnPage($node->toUrl('delete-form')->toString());
-    $I->click('Delete');
-    $I->runDrush('cr');
-    sleep(5);
+    $I->click('Delete', 'form');
+    $I->canSee('has been deleted');
+
     $I->amOnPage('/');
-    // $I->cantSeeLink($node_title);
+    $I->cantSeeLink($node_title);
   }
 
   /**
@@ -108,14 +108,16 @@ class BasicPageCest {
 
     $I->amOnPage('/search?keys=stuff&search=');
     $I->canSeeResponseCodeIs(200);
-    $I->canSeeNumberOfElements('h1', 1);
-    //$I->canSeeNumberOfElements('#main-content', 1);
+    $I->canSeeNumberOfElements('h1', 2);
+    // $I->canSeeNumberOfElements('#main-content', 1);
   }
 
   /**
    * The revision history tab should be functional.
    *
    * Regression test for D8CORE-1547.
+   *
+   * @group D8CORE-1547
    */
   public function testRevisionPage(AcceptanceTester $I) {
     $title = $this->faker->words(3, TRUE);
