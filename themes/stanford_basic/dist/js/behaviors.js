@@ -51,11 +51,28 @@ window.Drupal.behaviors.stanford_basic = {
   // Attach Drupal Behavior.
   attach: function attach(context, settings) {
     (function ($, once) {
+      // If some embed code contains a caption, make sure the figure respects
+      // the iframe width of 100%.
+      $('figure', context).each(function () {
+        var $iframeWithin = $('iframe', this);
+        var iframeWidth = $iframeWithin.attr('width');
+        if ($iframeWithin.length && (!iframeWidth || iframeWidth === '100%')) {
+          $(this).css('width', '100%');
+        }
+      });
+
       // Validate there is a skip link anchor for the main content. If not,
       // default to #page-content.
-      var $mc = $('#main-content', context).length;
-      if (!$mc) {
-        $('.su-skipnav--content', context).attr('href', '#page-content');
+      var $title = $('h1', context);
+      if ($title.length) {
+        if (!$title.attr('id')) {
+          $title.attr('id', 'page-title');
+        }
+        $('.su-masthead .su-skipnav--content', context).attr('href', '#' + $title.attr('id'));
+      } else {
+        if (!$('#main-content', context).length) {
+          $('.su-skipnav--content', context).attr('href', '#page-content');
+        }
       }
 
       // Validate there is a skip link for the secondary navigation. If not,
@@ -122,6 +139,25 @@ window.Drupal.behaviors.stanford_basic = {
           $(this).attr('aria-expanded', 'true');
         } else {
           $(this).attr('aria-expanded', 'false');
+        }
+      });
+      $(once('faq-expand-all', '.ptype-stanford-faq', context)).each(function (index, faq) {
+        var $accordionButtons = $('.accordion__title', faq);
+        if ($accordionButtons.length < 2 || $('.ptype-stanford-faq', faq).length) {
+          return;
+        }
+        var $button = $('<button class="expand-collapse-button expand-all su-button--secondary">' + '<span class="expand-collapse">Expand</span> All' + '<span class="visually-hidden"> Items below.</span>' + '</button>');
+        $button.click(function () {
+          $button.toggleClass('expand-all').toggleClass('collapse-all');
+          var expanded = !$button.hasClass('expand-all');
+          $('span', $button).text(expanded ? 'Collapse' : 'Expand');
+          $accordionButtons.click();
+        });
+        var $headline = $('.su-faq-headline', faq);
+        if ($headline.length) {
+          $headline.append($('<div class="button-wrapper">').append($button));
+        } else {
+          $(faq).prepend($('<div class="button-wrapper clearfix">').append($button));
         }
       });
     })(jQuery, once);
