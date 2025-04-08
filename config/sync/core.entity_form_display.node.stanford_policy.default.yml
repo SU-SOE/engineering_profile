@@ -63,7 +63,7 @@ content:
     third_party_settings: {  }
   field_menulink:
     type: menu_link_default
-    weight: 13
+    weight: 53
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -75,18 +75,18 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 52
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 11
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -108,7 +108,7 @@ content:
     third_party_settings: {  }
   su_policy_changelog:
     type: inline_entity_form_complex
-    weight: 10
+    weight: 11
     region: content
     settings:
       form_mode: default
@@ -122,15 +122,6 @@ content:
       collapsible: false
       collapsed: false
       revision: false
-      removed_reference: optional
-      auto_open: true
-      allow_edit: true
-      hide_fieldset: false
-      hide_title: false
-      config_labels_button: _none
-      labels: {  }
-      add_existing_widget: autocomplete
-      auto_open_edit_form: false
     third_party_settings: {  }
   su_policy_chapter:
     type: string_textfield
@@ -223,7 +214,7 @@ content:
             selector: ''
   su_policy_related:
     type: options_select
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -281,13 +272,6 @@ content:
     weight: 3
     region: content
     settings: {  }
-    third_party_settings: {  }
-  syndication:
-    type: boolean_checkbox
-    weight: 30
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

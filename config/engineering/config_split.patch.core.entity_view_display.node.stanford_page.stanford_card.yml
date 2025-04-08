@@ -1,0 +1,7 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.su_department
+  hidden:
+    su_department: true
+removing: {  }

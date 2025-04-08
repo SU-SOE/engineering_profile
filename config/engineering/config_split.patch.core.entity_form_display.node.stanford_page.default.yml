@@ -1,0 +1,10 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_page.su_department
+  content:
+    su_department:
+      type: options_buttons
+      weight: 11
+      region: content
+removing: {  }

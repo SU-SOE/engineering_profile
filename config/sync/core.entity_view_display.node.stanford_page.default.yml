@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
-    - field.field.node.stanford_page.su_department
     - field.field.node.stanford_page.su_metatags
     - field.field.node.stanford_page.su_page_banner
     - field.field.node.stanford_page.su_page_components
@@ -56,22 +55,6 @@ third_party_settings:
                   tag: h1
                 third_party_settings: {  }
             weight: 0
-            additional: {  }
-          8a9f4eb1-1cbc-4bcf-b658-a07356752dfe:
-            uuid: 8a9f4eb1-1cbc-4bcf-b658-a07356752dfe
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_page:su_department'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -173,6 +156,7 @@ third_party_settings:
       - 'Content fields'
       - 'Custom block types'
       - 'Custom blocks'
+      - Editoria11y
       - 'Events Lists (Views)'
       - Forms
       - Help
@@ -292,14 +276,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 7
-    region: main
-  su_department:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
     region: main
   su_page_banner:
     type: entity_reference_revisions_entity_view
