@@ -1,13 +1,14 @@
 @charset "UTF-8";
 
-.spotlight-main-content{
-  .main-region{
+.spotlight-main-content {
+  .main-region {
     margin-bottom: 83px;
   }
 }
 
 .spotlights-block-1 {
-  .form-item-tid, .form-item-tid-1 {
+  .form-item-tid,
+  .form-item-tid-1 {
     label {
       @include hide-visually;
     }
@@ -16,15 +17,14 @@
 
 .soe-spotlight--cards.block-1,
 .soe-spotlight--cards.block-2 {
-  .su-card__contents{
+  .su-card__contents {
     time {
-      font-family: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-      font-size: 19px;
+      @include type-e;
+      font-family: 'Source Sans 3', 'Source Sans Pro', 'Helvetica Neue',
+        'Helvetica', 'Arial', 'sans-serif';
       font-weight: 400;
       line-height: 26.6px;
       color: rgb(46, 45, 41);
     }
   }
 }
-
-
