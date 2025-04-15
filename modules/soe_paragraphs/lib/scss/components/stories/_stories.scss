@@ -92,13 +92,13 @@
   }
 
   .su-stories-paragraph__quote {
-    @include type-a;
+    @include type-b;
     font-weight: 800;
-    @include modular-spacing('margin-bottom', 3);
+    @include modular-spacing('margin-bottom', 1);
   }
 
   .su-stories-paragraph__node-link {
-    @include modular-spacing('margin-bottom', 1);
+    margin-bottom: 0;
 
     a {
       text-decoration: none;
@@ -120,10 +120,11 @@
   }
 
   .su-stories-paragraph__cta-region {
-    @include modular-spacing('padding-bottom', 5);
+    @include modular-spacing('padding-bottom', 4);
 
     display: flex;
     justify-content: center;
+    padding-top: 0;
 
     a {
       @include button-primary();
