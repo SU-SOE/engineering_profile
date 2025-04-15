@@ -58,6 +58,7 @@
     .su-card__contents {
       padding-left: 0;
       padding-right: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -84,10 +85,20 @@
     }
 
     .su-link {
-      @include responsive-spacing('padding-top', 2);
-      @include type-d;
+      @include responsive-spacing('padding-top', 1);
 
+      font-size: 1.6rem;
       font-weight: $su-font-semi-bold;
+      position: relative;
+
+      @include grid-media-min('lg') {
+        font-size: 1.9rem;
+      }
+
+      &::after {
+        bottom: 15%;
+        position: absolute;
+      }
     }
   }
 }
