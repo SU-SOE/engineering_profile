@@ -5,7 +5,7 @@
 // Magazine Issues, Magazine Topic pages,
 // and Article collections.
 
-$soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
+$soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
   Arial, sans-serif;
 
 .soe-mag-landing__heading_1 {
@@ -51,7 +51,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
         a {
           @include modular-typography(0);
           color: $soe-black;
-          @include responsive-spacing("margin-bottom", 0);
+          @include responsive-spacing('margin-bottom', 0);
 
           &:hover {
             text-decoration: underline;
@@ -118,7 +118,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 }
 
 .soe-load-more {
-  @include responsive-spacing("margin", 5);
+  @include responsive-spacing('margin', 5);
 }
 
 .view.magazine {
@@ -201,14 +201,14 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
           .image {
             height: 125px;
             width: 125px;
-            @include margin(null null null 1em);
+            @include margin(0.5em auto 0.5em auto);
           }
 
           .su-spotlight--superhead {
             flex: 1 1 60%;
-            @include margin(3em nul null null);
+            @include margin(1em nul null null);
 
-            @include grid-media-only("xs") {
+            @include grid-media-only('xs') {
               @include margin(1.5em null null null);
             }
           }
@@ -217,7 +217,7 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
             margin-bottom: 0px !important;
 
             a {
-              font-size: 0.85em;
+              @include modular-typography(0);
               color: $soe-black;
 
               &:hover {
@@ -229,14 +229,14 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           .field-content.soe--person-title {
             font-size: 1.1em;
-            margin-top: .5em;
+            margin-top: 0.5em;
           }
 
           .field-content.soe--person-department {
             font-size: 1.1em;
           }
 
-          @include grid-media("xs") {
+          @include grid-media('xs') {
             flex-direction: column;
             justify-content: center;
 
@@ -245,35 +245,33 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
               width: 225px;
               margin-left: auto;
               margin-right: auto;
-              @include margin(0.5em auto 0.5em auto);
             }
           }
 
-          @include grid-media("md") {
+          @include grid-media('md') {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: left;
 
             .image {
+              @include responsive-spacing('margin-right', 2);
               height: 125px;
               width: 125px;
               flex-grow: 0;
               display: block;
               float: left;
-              margin-right: 1em;
-              @include margin(25px 25px null auto);
             }
           }
 
-          @include grid-media("lg") {
+          @include grid-media('lg') {
             .image {
-              height: 145px;
-              width: 145px;
+              height: 200px;
+              width: 200px;
             }
           }
 
-          @include grid-media("xl") {
+          @include grid-media('xl') {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -283,14 +281,13 @@ $soe-font--sans: "Source Sans 3", Source Sans Pro, Helvetica Neue, Helvetica,
 
           .spotlight__quote {
             flex-basis: 100%;
-            font-family: "Source Sans 3", Source Sans Pro, Helvetica Neue,
-              Helvetica, Arial, sans-serif;
+            font-family: 'Roboto Slab', serif;
             font-weight: $su-font-black;
             @include type-d;
-            @include grid-media("xs") {
+            @include grid-media('xs') {
               @include margin(1.5em null null 20px);
             }
-            @include grid-media("lg") {
+            @include grid-media('lg') {
               @include margin(1em null null 20px);
             }
           }
