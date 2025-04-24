@@ -51,8 +51,6 @@ module:
   element_class_formatter: 0
   empty_fields: 0
   encrypt: 0
-  engineering_magazine: 0
-  engineering_profile_helper: 0
   entity_reference_revisions: 0
   entity_usage: 0
   environment_indicator: 0
