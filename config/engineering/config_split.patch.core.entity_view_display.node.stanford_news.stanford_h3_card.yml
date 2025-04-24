@@ -8,7 +8,23 @@ adding:
       - field.field.node.stanford_news.su_soe_external_source_text
       - field.field.node.stanford_news.su_soe_mag_collection
       - field.field.node.stanford_news.su_soe_mag_topics
+  third_party_settings:
+    ds:
+      regions:
+        news_topics:
+          - su_soe_external_source_text
+      fields:
+        'dynamic_token_field:node-news_content_url':
+          weight: 5
   content:
+    su_news_dek:
+      region: content
+    su_news_publishing_date:
+      region: content
+    su_news_source:
+      weight: 4
+    su_news_topics:
+      weight: 2
     su_soe_external_source_text:
       type: wrapper_class
       label: above
@@ -33,7 +49,50 @@ adding:
     su_mag_featured: true
     su_magazine_issue: true
     su_magazine_story: true
+    su_news_dek: true
+    su_news_publishing_date: true
     su_soe_department: true
     su_soe_mag_collection: true
     su_soe_mag_topics: true
-removing: {  }
+removing:
+  dependencies:
+    module:
+      - datetime
+  third_party_settings:
+    ds:
+      regions:
+        date:
+          - su_news_publishing_date
+        dek:
+          - su_news_dek
+      fields:
+        'dynamic_token_field:node-news_content_url':
+          weight: 6
+  content:
+    su_news_dek:
+      settings:
+        link_to_entity: false
+      region: dek
+      type: string
+      label: hidden
+      weight: 3
+    su_news_publishing_date:
+      settings:
+        timezone_override: ''
+        format_type: stanford_month_date_year
+      third_party_settings:
+        empty_fields:
+          handler: ''
+        field_formatter_class:
+          class: ''
+        field_label:
+          label_value: ''
+          label_tag: ''
+      region: date
+      type: datetime_default
+      label: hidden
+      weight: 2
+    su_news_source:
+      weight: 5
+    su_news_topics:
+      weight: 4

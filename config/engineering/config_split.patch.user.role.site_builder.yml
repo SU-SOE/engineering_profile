@@ -9,6 +9,8 @@ adding:
       - taxonomy.vocabulary.department
       - taxonomy.vocabulary.magazine_issues
       - taxonomy.vocabulary.magazine_topics
+    module:
+      - engineering_profile
   permissions:
     - 'configure all stanford_page node layout overrides'
     - 'configure editable stanford_news node layout overrides'
@@ -36,4 +38,9 @@ adding:
     - 'edit terms in magazine_topics'
     - 'revert spotlight revisions'
     - 'view spotlight revisions'
-removing: {  }
+removing:
+  permissions:
+    - 'add any content to books'
+    - 'create stanford_course content'
+    - 'delete own stanford_course content'
+    - 'reorder book pages'

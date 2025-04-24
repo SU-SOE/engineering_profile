@@ -8,7 +8,17 @@ adding:
       - field.field.node.stanford_news.su_soe_external_source_text
       - field.field.node.stanford_news.su_soe_mag_collection
       - field.field.node.stanford_news.su_soe_mag_topics
+  third_party_settings:
+    ds:
+      regions:
+        news_topics:
+          - su_soe_mag_topics
+          - su_soe_external_source_text
   content:
+    su_news_dek:
+      region: content
+    su_news_topics:
+      weight: 2
     su_soe_external_source_text:
       type: wrapper_class
       label: hidden
@@ -52,6 +62,30 @@ adding:
     su_mag_featured: true
     su_magazine_issue: true
     su_magazine_story: true
+    su_news_dek: true
     su_soe_department: true
     su_soe_mag_collection: true
-removing: {  }
+removing:
+  third_party_settings:
+    ds:
+      regions:
+        date:
+          - node_post_date
+        dek:
+          - su_news_dek
+      fields:
+        node_post_date:
+          plugin_id: node_post_date
+          weight: 2
+          label: hidden
+          formatter: ds_post_date_stanford_month_date_year
+  content:
+    su_news_dek:
+      settings:
+        link_to_entity: false
+      region: dek
+      type: string
+      label: hidden
+      weight: 3
+    su_news_topics:
+      weight: 4

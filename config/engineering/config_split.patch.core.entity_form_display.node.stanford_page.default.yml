@@ -7,4 +7,6 @@ adding:
       type: options_buttons
       weight: 11
       region: content
+  hidden:
+    syndication: true
 removing: {  }

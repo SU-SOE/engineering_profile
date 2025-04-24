@@ -8,6 +8,9 @@ adding:
       - field.field.node.stanford_news.su_soe_external_source_text
       - field.field.node.stanford_news.su_soe_mag_collection
       - field.field.node.stanford_news.su_soe_mag_topics
+      - views.view.stanford_news
+    module:
+      - views
   content:
     su_mag_featured:
       type: boolean

@@ -1455,12 +1455,13 @@ display:
         css_class: false
         pager: false
         exposed_form: false
-        group_by: true
+        group_by: false
         fields: false
         arguments: false
         filters: false
         filter_groups: false
       css_class: 'soe-spotlight--cards soe-link__button'
+      group_by: true
       display_description: ''
       exposed_block: false
       display_extenders: {  }
@@ -2001,7 +2002,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: All
@@ -2030,7 +2031,6 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: taxonomy_term
         su_spotlight_affiliation_target_id:
           id: su_spotlight_affiliation_target_id
           table: node__su_spotlight_affiliation
@@ -2038,7 +2038,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: All
@@ -2067,7 +2067,6 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: taxonomy_term
       filters:
         status:
           id: status
@@ -2466,13 +2465,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_class: su-link--external
+          element_label_type: div
+          element_label_class: spotlight__link
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: 'No results.'
           hide_empty: false
           empty_zero: false
@@ -2599,7 +2598,7 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: div
+          element_wrapper_type: span
           element_wrapper_class: engineering-accent-color__image
           element_default_classes: true
           empty: ''
@@ -2698,7 +2697,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<h2 class="soe-spotlight-mag-card__title engineering-accent-color__link"><a href="{{ view_node }}">Spotlight: {{ title }}</a></h2>'
+            text: '<h2 class="soe-spotlight-mag-card__title engineering-accent-color__link"><a href="{{ view_node }}" alt="Read {{ title }}''s story">Spotlight: {{ title }}</a></h2>'
             make_link: false
             path: ''
             absolute: false
@@ -2894,9 +2893,9 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: true
+            strip_tags: false
             trim: false
-            preserve_tags: '<div>'
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -3005,7 +3004,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: All
@@ -3034,7 +3033,6 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: taxonomy_term
         su_spotlight_affiliation_target_id:
           id: su_spotlight_affiliation_target_id
           table: node__su_spotlight_affiliation
@@ -3042,7 +3040,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: All
@@ -3071,7 +3069,6 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: taxonomy_term
       filters:
         status:
           id: status

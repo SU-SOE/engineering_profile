@@ -20,13 +20,20 @@ adding:
                   label: above
                   settings:
                     link: true
+                  third_party_settings: {  }
               weight: 1
+              additional: {  }
   content:
     su_department:
       type: entity_reference_label
       label: above
       settings:
         link: true
+      third_party_settings: {  }
       weight: 8
       region: main
-removing: {  }
+removing:
+  third_party_settings:
+    layout_builder_restrictions:
+      allowed_block_categories:
+        - Editoria11y

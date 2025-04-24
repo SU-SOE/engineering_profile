@@ -31,4 +31,7 @@ adding:
     - 'edit terms in magazine_topics'
     - 'revert spotlight revisions'
     - 'view spotlight revisions'
-removing: {  }
+removing:
+  permissions:
+    - 'add any content to books'
+    - 'reorder book pages'

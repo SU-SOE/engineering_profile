@@ -70,6 +70,7 @@ complete_list:
   - views.view.magazine_article_collection
   - views.view.magazine_issues
   - views.view.spotlights
+  - views.view.stanford_news
   - xmlsitemap.settings.node.spotlight
   - xmlsitemap.settings.node.stanford_course
   - xmlsitemap.settings.taxonomy_term.article_collection
@@ -109,7 +110,6 @@ partial_list:
   - user.role.site_editor
   - user.role.site_manager
   - user.role.soe_site_embedder
-  - views.view.stanford_news
   - 'core.entity_form_display.taxonomy_term.*'
   - 'core.entity_view_display.node.stanford_news.*'
   - 'core.entity_view_display.node.stanford_page.*'

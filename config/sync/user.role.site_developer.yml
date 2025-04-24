@@ -75,7 +75,6 @@ dependencies:
     - scheduler
     - seckit
     - shortcut
-    - soe_profile
     - stanford_media
     - stanford_policy
     - stanford_publication

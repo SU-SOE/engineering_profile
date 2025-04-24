@@ -1,0 +1,6 @@
+adding:
+  settings:
+    max_length: 620
+removing:
+  settings:
+    max_length: 180
