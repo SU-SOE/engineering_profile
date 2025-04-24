@@ -38,6 +38,9 @@ adding:
     - 'view own unpublished media'
     - 'view spotlight revisions'
 removing:
+  dependencies:
+    module:
+      - soe_profile
   permissions:
     - 'add any content to books'
     - 'assign site_reviewer role'

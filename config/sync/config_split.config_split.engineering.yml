@@ -19,6 +19,7 @@ complete_list:
   - core.entity_form_display.taxonomy_term.magazine_issues.default
   - core.entity_form_display.taxonomy_term.magazine_topics.default
   - core.entity_view_display.media.image.person_spotlight_circle
+  - core.entity_view_display.node.stanford_news.default
   - core.entity_view_display.taxonomy_term.article_collection.default
   - core.entity_view_display.taxonomy_term.department.default
   - core.entity_view_display.taxonomy_term.magazine_issues.default

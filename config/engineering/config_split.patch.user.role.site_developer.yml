@@ -39,6 +39,9 @@ adding:
     - 'revert spotlight revisions'
     - 'view spotlight revisions'
 removing:
+  dependencies:
+    module:
+      - soe_profile
   permissions:
     - 'add any content to books'
     - 'reorder book pages'
