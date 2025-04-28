@@ -15,19 +15,6 @@ module:
   engineering_profile_helper: 0
 theme: {  }
 complete_list:
-  - core.entity_form_display.taxonomy_term.article_collection.default
-  - core.entity_form_display.taxonomy_term.magazine_issues.default
-  - core.entity_form_display.taxonomy_term.magazine_topics.default
-  - core.entity_view_display.taxonomy_term.article_collection.default
-  - core.entity_view_display.taxonomy_term.department.default
-  - core.entity_view_display.taxonomy_term.magazine_issues.default
-  - core.entity_view_display.taxonomy_term.magazine_topics.default
-  - engineering.settings
-  - image.style.large_headshot_circle
-  - page_manager.page.magazine_issue_list_page
-  - page_manager.page.magazine_landing_page
-  - page_manager.page_variant.magazine_issue_list_page-layout_builder-0
-  - page_manager.page_variant.magazine_landing_page-layout_builder-0
   - pathauto.pattern.article_collections
   - pathauto.pattern.department_terms
   - pathauto.pattern.magazine_issues
