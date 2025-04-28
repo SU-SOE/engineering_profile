@@ -6,6 +6,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
+  auto_entitylabel: 0
   autologout: 0
   basic_auth: 0
   block: 0
@@ -51,6 +52,8 @@ module:
   element_class_formatter: 0
   empty_fields: 0
   encrypt: 0
+  engineering_magazine: 0
+  engineering_profile_helper: 0
   entity_reference_revisions: 0
   entity_usage: 0
   environment_indicator: 0
@@ -267,8 +270,9 @@ module:
 theme:
   stable9: 0
   claro: 0
-  stanford_basic: 0
-  soe_basic: 0
+  stanford_basic: 1
+  soe_basic: 2
+  engineering: 3
   minimally_branded_subtheme: 0
-  stanford_profile_admin_theme: 0
+  stanford_profile_admin_theme: 4
 profile: engineering_profile
