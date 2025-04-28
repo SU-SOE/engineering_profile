@@ -62,16 +62,15 @@ complete_list:
   - xmlsitemap.settings.taxonomy_term.magazine_topics
   - xmlsitemap.settings.taxonomy_term.stanford_event_subject
   - xmlsitemap.settings.taxonomy_term.su_shared_tags
-  - 'block.block.engineering*'
   - '*spotlight*'
   - 'field.field.taxonomy_term.article_collection.*'
   - 'field.storage.node.su_soe_*'
   - 'page_manager.page_variant.magazine_*'
   - 'user_role.soe_*'
 partial_list:
-  - block.block.soe_basic_pagetitle
   - field.field.paragraph.stanford_lists.su_list_view
   - field.storage.node.su_news_banner
+  - field.storage.node.su_news_banner_media_caption
   - field.storage.node.su_news_dek
   - layout_paragraphs.settings
   - paragraphs.paragraphs_type.stanford_banner
@@ -81,13 +80,13 @@ partial_list:
   - scheduler.settings
   - search_api.index.full_site_content
   - system.theme
+  - views.view.stanford_news
   - '*su_*'
   - '*stanford_*'
   - '*magazine*'
   - 'core.entity_form_display.taxonomy_term.*'
   - 'core.entity_view_display.taxonomy_term.*'
   - 'core.entity_form_display.node.*'
-  - 'core.entity_view_display.node.*'
   - 'user.role.*'
   - 'jsonapi_extras.jsonapi_resource_config.*'
   - 'metatag.*'

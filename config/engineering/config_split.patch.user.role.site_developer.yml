@@ -2,7 +2,6 @@ adding:
   dependencies:
     config:
       - core.entity_view_display.node.stanford_news.default
-      - core.entity_view_display.node.stanford_page.default
       - node.type.spotlight
       - taxonomy.vocabulary.affiliation
       - taxonomy.vocabulary.article_collection
@@ -12,9 +11,7 @@ adding:
     module:
       - engineering_profile
   permissions:
-    - 'configure all stanford_page node layout overrides'
     - 'configure editable stanford_news node layout overrides'
-    - 'configure editable stanford_page node layout overrides'
     - 'create spotlight content'
     - 'create terms in affiliation'
     - 'create terms in article_collection'

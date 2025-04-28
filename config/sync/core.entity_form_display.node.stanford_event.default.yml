@@ -384,7 +384,6 @@ hidden:
   promote: true
   sticky: true
   su_event_ext_image: true
-  syndication: true
   uid: true
   unpublish_on: true
   url_redirects: true
