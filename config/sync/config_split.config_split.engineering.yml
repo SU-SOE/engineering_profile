@@ -10,9 +10,7 @@ stackable: false
 no_patching: false
 storage: folder
 folder: profiles/custom/engineering_profile/config/engineering
-module:
-  engineering_magazine: 0
-  engineering_profile_helper: 0
+module: {  }
 theme: {  }
 complete_list:
   - pathauto.pattern.article_collections
@@ -22,10 +20,6 @@ complete_list:
   - rabbit_hole.behavior_settings.taxonomy_vocabulary_magazine_topics
   - soe_basic.settings
   - stanford_syndication.settings
-  - views.view.department_terms
-  - views.view.magazine
-  - views.view.magazine_article_collection
-  - views.view.magazine_issues
   - xmlsitemap.settings.node.stanford_course
   - xmlsitemap.settings.taxonomy_term.article_collection
   - xmlsitemap.settings.taxonomy_term.basic_page_types
@@ -46,11 +40,8 @@ partial_list:
   - scheduler.settings
   - search_api.index.full_site_content
   - system.theme
-  - views.view.stanford_news
+  - 'core.entity_form_display.*'
   - '*magazine*'
-  - 'core.entity_form_display.taxonomy_term.*'
-  - 'core.entity_view_display.taxonomy_term.*'
-  - 'core.entity_form_display.node.*'
   - 'user.role.*'
   - 'jsonapi_extras.jsonapi_resource_config.*'
   - 'metatag.*'
