@@ -1,7 +1,6 @@
 adding:
   dependencies:
     config:
-      - core.entity_view_display.node.stanford_news.default
       - node.type.spotlight
       - taxonomy.vocabulary.affiliation
       - taxonomy.vocabulary.article_collection
@@ -9,7 +8,6 @@ adding:
       - taxonomy.vocabulary.magazine_issues
       - taxonomy.vocabulary.magazine_topics
   permissions:
-    - 'configure editable stanford_news node layout overrides'
     - 'create spotlight content'
     - 'create terms in affiliation'
     - 'create terms in article_collection'

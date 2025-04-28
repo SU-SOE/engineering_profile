@@ -1,9 +1,4 @@
 adding:
-  dependencies:
-    config:
-      - core.entity_view_display.node.stanford_news.default
   is_admin: false
-  permissions:
-    - 'configure editable stanford_news node layout overrides'
 removing:
   is_admin: null

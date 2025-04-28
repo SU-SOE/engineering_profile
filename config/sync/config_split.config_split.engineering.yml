@@ -51,9 +51,6 @@ complete_list:
   - 'user_role.soe_*'
 partial_list:
   - field.field.paragraph.stanford_lists.su_list_view
-  - field.storage.node.su_news_banner
-  - field.storage.node.su_news_banner_media_caption
-  - field.storage.node.su_news_dek
   - layout_paragraphs.settings
   - paragraphs.paragraphs_type.stanford_banner
   - paragraphs.paragraphs_type.stanford_page_title_banner

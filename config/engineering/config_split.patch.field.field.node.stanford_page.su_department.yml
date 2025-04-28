@@ -1,9 +1,0 @@
-adding:
-  dependencies:
-    config:
-      - taxonomy.vocabulary.department
-  settings:
-    handler_settings:
-      target_bundles:
-        department: department
-removing: {  }
