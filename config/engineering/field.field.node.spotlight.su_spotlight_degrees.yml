@@ -1,0 +1,19 @@
+uuid: 78744e11-f557-4a91-8d83-b3c024107f33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_spotlight_degrees
+    - node.type.spotlight
+id: node.spotlight.su_spotlight_degrees
+field_name: su_spotlight_degrees
+entity_type: node
+bundle: spotlight
+label: Degrees
+description: 'This text field displays education information (e.g. "B.A., Stanford University, 1972").'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 0c990db0-8f3d-4c4e-ac77-6b1df474eadd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_mag_featured
+    - node.type.stanford_news
+id: node.stanford_news.su_mag_featured
+field_name: su_mag_featured
+entity_type: node
+bundle: stanford_news
+label: Featured
+description: 'This indicates if this article will be featured on the homepage or other places.  If setting this to "Featured," please verify that no other magazine articles are also set to "Featured".'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Featured
+  off_label: 'Not Featured'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: 4b692bb1-88bf-46bc-aea8-3a9e0cc0bbde
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - taxonomy
+id: taxonomy_term.su_term_components
+field_name: su_term_components
+entity_type: taxonomy_term
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

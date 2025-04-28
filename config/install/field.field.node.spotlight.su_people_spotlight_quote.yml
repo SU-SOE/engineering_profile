@@ -1,0 +1,19 @@
+uuid: 6feb47a5-c162-46f3-9811-26bf662f5d98
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_people_spotlight_quote
+    - node.type.spotlight
+id: node.spotlight.su_people_spotlight_quote
+field_name: su_people_spotlight_quote
+entity_type: node
+bundle: spotlight
+label: 'People Spotlight Quote'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

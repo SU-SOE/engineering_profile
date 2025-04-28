@@ -1,0 +1,29 @@
+uuid: 4f07369e-82a3-4799-a3fe-b1a3fbf8ce56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_magazine_issue
+    - node.type.stanford_news
+    - taxonomy.vocabulary.magazine_issues
+id: node.stanford_news.su_magazine_issue
+field_name: su_magazine_issue
+entity_type: node
+bundle: stanford_news
+label: 'Magazine Issue'
+description: 'If this news article <i>is</i> part of a magazine issue, pick the correct issue here.  If this article is <i>not</i> a magazine story, leave this blank.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      magazine_issues: magazine_issues
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
