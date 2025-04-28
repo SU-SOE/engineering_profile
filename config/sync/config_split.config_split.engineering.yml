@@ -15,19 +15,13 @@ module:
   engineering_profile_helper: 0
 theme: {  }
 complete_list:
-  - core.base_field_override.node.spotlight.title
-  - core.entity_form_display.node.spotlight.default
   - core.entity_form_display.taxonomy_term.article_collection.default
   - core.entity_form_display.taxonomy_term.magazine_issues.default
   - core.entity_form_display.taxonomy_term.magazine_topics.default
-  - core.entity_view_display.media.image.person_spotlight_circle
   - core.entity_view_display.taxonomy_term.article_collection.default
   - core.entity_view_display.taxonomy_term.department.default
   - core.entity_view_display.taxonomy_term.magazine_issues.default
   - core.entity_view_display.taxonomy_term.magazine_topics.default
-  - core.entity_view_mode.block_content.spotlight_hero
-  - core.entity_view_mode.media.person_spotlight_circle
-  - core.entity_view_mode.node.spotlights_hero
   - engineering.settings
   - field.field.node.stanford_page.su_department
   - field.field.taxonomy_term.magazine_issues.su_issue_number
@@ -35,27 +29,20 @@ complete_list:
   - field.storage.node.su_magazine_issue
   - field.storage.node.su_magazine_story
   - field.storage.node.su_mag_featured
-  - field.storage.node.su_people_spotlight_quote
   - field.storage.taxonomy_term.su_collect_subtitle
   - field.storage.taxonomy_term.su_continue_label
   - field.storage.taxonomy_term.su_intro_label
   - field.storage.taxonomy_term.su_issue_number
   - field.storage.taxonomy_term.su_term_components
   - image.style.large_headshot_circle
-  - jsonapi_extras.jsonapi_resource_config.node--spotlight
-  - node.type.spotlight
   - page_manager.page.magazine_issue_list_page
   - page_manager.page.magazine_landing_page
-  - page_manager.page.spotlights
   - page_manager.page_variant.magazine_issue_list_page-layout_builder-0
   - page_manager.page_variant.magazine_landing_page-layout_builder-0
-  - page_manager.page_variant.spotlights-layout_builder-0
   - pathauto.pattern.article_collections
   - pathauto.pattern.department_terms
   - pathauto.pattern.magazine_issues
   - pathauto.pattern.magazine_topics
-  - pathauto.pattern.spotlight_story
-  - rabbit_hole.behavior_settings.node_type_spotlight
   - rabbit_hole.behavior_settings.taxonomy_vocabulary_magazine_topics
   - soe_basic.settings
   - stanford_syndication.settings
@@ -68,8 +55,6 @@ complete_list:
   - views.view.magazine
   - views.view.magazine_article_collection
   - views.view.magazine_issues
-  - views.view.spotlights
-  - xmlsitemap.settings.node.spotlight
   - xmlsitemap.settings.node.stanford_course
   - xmlsitemap.settings.taxonomy_term.article_collection
   - xmlsitemap.settings.taxonomy_term.basic_page_types
@@ -78,11 +63,9 @@ complete_list:
   - xmlsitemap.settings.taxonomy_term.stanford_event_subject
   - xmlsitemap.settings.taxonomy_term.su_shared_tags
   - 'block.block.engineering*'
-  - 'core.entity_view_display.node.spotlight.*'
-  - 'field.field.node.spotlight.*'
+  - '*spotlight*'
   - 'field.field.taxonomy_term.article_collection.*'
   - 'field.storage.node.su_soe_*'
-  - 'field.storage.node.su_spotlight_*'
   - 'page_manager.page_variant.magazine_*'
   - 'user_role.soe_*'
 partial_list:
