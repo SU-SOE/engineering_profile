@@ -1,0 +1,9 @@
+adding:
+  dependencies:
+    config:
+      - taxonomy.vocabulary.magazine_topics
+  settings:
+    handler_settings:
+      target_bundles:
+        magazine_topics: magazine_topics
+removing: {  }

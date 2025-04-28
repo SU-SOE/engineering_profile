@@ -81,11 +81,11 @@ removing:
           formatter: ds_post_date_stanford_month_date_year
   content:
     su_news_dek:
-      settings:
-        link_to_entity: false
-      region: dek
       type: string
       label: hidden
+      settings:
+        link_to_entity: false
       weight: 3
+      region: dek
     su_news_topics:
       weight: 4

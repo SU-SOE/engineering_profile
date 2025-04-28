@@ -23,17 +23,6 @@ complete_list:
   - core.entity_view_display.taxonomy_term.magazine_issues.default
   - core.entity_view_display.taxonomy_term.magazine_topics.default
   - engineering.settings
-  - field.field.node.stanford_page.su_department
-  - field.field.taxonomy_term.magazine_issues.su_issue_number
-  - field.storage.node.su_department
-  - field.storage.node.su_magazine_issue
-  - field.storage.node.su_magazine_story
-  - field.storage.node.su_mag_featured
-  - field.storage.taxonomy_term.su_collect_subtitle
-  - field.storage.taxonomy_term.su_continue_label
-  - field.storage.taxonomy_term.su_intro_label
-  - field.storage.taxonomy_term.su_issue_number
-  - field.storage.taxonomy_term.su_term_components
   - image.style.large_headshot_circle
   - page_manager.page.magazine_issue_list_page
   - page_manager.page.magazine_landing_page
@@ -63,8 +52,6 @@ complete_list:
   - xmlsitemap.settings.taxonomy_term.stanford_event_subject
   - xmlsitemap.settings.taxonomy_term.su_shared_tags
   - '*spotlight*'
-  - 'field.field.taxonomy_term.article_collection.*'
-  - 'field.storage.node.su_soe_*'
   - 'page_manager.page_variant.magazine_*'
   - 'user_role.soe_*'
 partial_list:

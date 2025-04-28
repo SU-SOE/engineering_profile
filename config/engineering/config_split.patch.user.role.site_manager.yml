@@ -10,7 +10,6 @@ adding:
       - taxonomy.vocabulary.magazine_topics
     module:
       - block_content
-      - engineering_profile
   permissions:
     - 'create spotlight content'
     - 'create terms in affiliation'
@@ -38,9 +37,6 @@ adding:
     - 'view own unpublished media'
     - 'view spotlight revisions'
 removing:
-  dependencies:
-    module:
-      - soe_profile
   permissions:
     - 'add any content to books'
     - 'assign site_reviewer role'

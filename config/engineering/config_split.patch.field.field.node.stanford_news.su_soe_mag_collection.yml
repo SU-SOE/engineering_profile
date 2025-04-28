@@ -1,0 +1,9 @@
+adding:
+  dependencies:
+    config:
+      - taxonomy.vocabulary.article_collection
+  settings:
+    handler_settings:
+      target_bundles:
+        article_collection: article_collection
+removing: {  }

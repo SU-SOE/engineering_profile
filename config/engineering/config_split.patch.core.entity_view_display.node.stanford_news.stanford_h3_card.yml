@@ -70,13 +70,15 @@ removing:
           weight: 6
   content:
     su_news_dek:
-      settings:
-        link_to_entity: false
-      region: dek
       type: string
       label: hidden
+      settings:
+        link_to_entity: false
       weight: 3
+      region: dek
     su_news_publishing_date:
+      type: datetime_default
+      label: hidden
       settings:
         timezone_override: ''
         format_type: stanford_month_date_year
@@ -88,10 +90,8 @@ removing:
         field_label:
           label_value: ''
           label_tag: ''
-      region: date
-      type: datetime_default
-      label: hidden
       weight: 2
+      region: date
     su_news_source:
       weight: 5
     su_news_topics:
