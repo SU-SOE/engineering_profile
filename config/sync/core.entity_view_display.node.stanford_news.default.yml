@@ -29,7 +29,6 @@ dependencies:
     - views.view.stanford_news
   module:
     - datetime
-    - engineering_magazine
     - entity_reference_revisions
     - field_formatter_class
     - jumpstart_ui
@@ -54,15 +53,8 @@ third_party_settings:
           columns: default
         components:
           bccee9cd-7740-4050-9652-ef35d2a40aaa:
-            uuid: bccee9cd-7740-4050-9652-ef35d2a40aaa
-            region: main
             configuration:
-              id: magazine_navigation_block
-              label: 'Magazine Navigation'
-              label_display: '0'
-              provider: engineering_magazine
               context_mapping: {  }
-            weight: 0
             additional: {  }
         third_party_settings: {  }
       -

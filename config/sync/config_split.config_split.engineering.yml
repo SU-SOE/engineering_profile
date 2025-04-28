@@ -47,8 +47,6 @@ partial_list:
   - search_api.index.full_site_content
   - system.theme
   - views.view.stanford_news
-  - '*su_*'
-  - '*stanford_*'
   - '*magazine*'
   - 'core.entity_form_display.taxonomy_term.*'
   - 'core.entity_view_display.taxonomy_term.*'
