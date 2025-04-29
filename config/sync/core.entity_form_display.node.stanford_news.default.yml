@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.field.node.stanford_news.layout_builder__layout
     - field.field.node.stanford_news.stanford_intranet__access
+    - field.field.node.stanford_news.su_mag_featured
+    - field.field.node.stanford_news.su_magazine_issue
+    - field.field.node.stanford_news.su_magazine_story
     - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
     - field.field.node.stanford_news.su_news_banner_media_caption
@@ -17,6 +20,10 @@ dependencies:
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_topics
     - field.field.node.stanford_news.su_shared_tags
+    - field.field.node.stanford_news.su_soe_department
+    - field.field.node.stanford_news.su_soe_external_source_text
+    - field.field.node.stanford_news.su_soe_mag_collection
+    - field.field.node.stanford_news.su_soe_mag_topics
     - node.type.stanford_news
   module:
     - change_labels
@@ -111,6 +118,22 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  su_mag_featured:
+    type: boolean_checkbox
+    weight: 36
+    region: content
+    settings:
+      display_label: true
+  su_magazine_issue:
+    type: options_select
+    weight: 33
+    region: content
+  su_magazine_story:
+    type: boolean_checkbox
+    weight: 32
+    region: content
+    settings:
+      display_label: true
   su_metatags:
     type: metatag_firehose
     weight: 10
@@ -216,6 +239,34 @@ content:
       required_depth: 0
       none_label: '- Please select -'
     third_party_settings: {  }
+  su_soe_department:
+    type: options_buttons
+    weight: 6
+    region: content
+  su_soe_external_source_text:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+      change_labels:
+        field_label_overwrite: ''
+  su_soe_mag_collection:
+    type: options_select
+    weight: 35
+    region: content
+  su_soe_mag_topics:
+    type: options_buttons
+    weight: 34
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -230,6 +281,7 @@ hidden:
   layout_selection: true
   promote: true
   sticky: true
+  syndication: true
   uid: true
   unpublish_on: true
   url_redirects: true

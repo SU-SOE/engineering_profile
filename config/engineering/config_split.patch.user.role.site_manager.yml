@@ -1,15 +1,12 @@
 adding:
   dependencies:
     config:
-      - block_content.type.stanford_component_block
       - node.type.spotlight
       - taxonomy.vocabulary.affiliation
       - taxonomy.vocabulary.article_collection
       - taxonomy.vocabulary.department
       - taxonomy.vocabulary.magazine_issues
       - taxonomy.vocabulary.magazine_topics
-    module:
-      - block_content
   permissions:
     - 'create spotlight content'
     - 'create terms in affiliation'

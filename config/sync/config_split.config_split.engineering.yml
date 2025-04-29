@@ -27,7 +27,6 @@ complete_list:
   - xmlsitemap.settings.taxonomy_term.magazine_topics
   - xmlsitemap.settings.taxonomy_term.stanford_event_subject
   - xmlsitemap.settings.taxonomy_term.su_shared_tags
-  - '*spotlight*'
   - 'page_manager.page_variant.magazine_*'
   - 'user_role.soe_*'
 partial_list:
@@ -40,7 +39,6 @@ partial_list:
   - scheduler.settings
   - search_api.index.full_site_content
   - system.theme
-  - 'core.entity_form_display.*'
   - '*magazine*'
   - 'user.role.*'
   - 'jsonapi_extras.jsonapi_resource_config.*'

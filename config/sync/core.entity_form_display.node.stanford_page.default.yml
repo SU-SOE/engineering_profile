@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.stanford_page.layout_selection
     - field.field.node.stanford_page.stanford_intranet__access
     - field.field.node.stanford_page.su_basic_page_type
+    - field.field.node.stanford_page.su_department
     - field.field.node.stanford_page.su_metatags
     - field.field.node.stanford_page.su_page_banner
     - field.field.node.stanford_page.su_page_components
@@ -113,6 +114,10 @@ content:
       required_depth: 0
       none_label: '- Please select -'
     third_party_settings: {  }
+  su_department:
+    type: options_buttons
+    weight: 11
+    region: content
   su_metatags:
     type: metatag_firehose
     weight: 11
@@ -208,4 +213,5 @@ hidden:
   layout_builder__layout: true
   promote: true
   sticky: true
+  syndication: true
   unpublish_on: true
