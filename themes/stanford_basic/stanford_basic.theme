@@ -442,12 +442,8 @@ function _stanford_basic_menu_process_submenu(&$submenu, $current_path) {
   $is_front = \Drupal::service('path.matcher')->isFrontPage();
 
   foreach ($submenu as &$item) {
-    $item_path = (is_string($item['url'])) ? $item['url'] : $item['url']->toString(TRUE)->getGeneratedUrl();
-    $is_front = \Drupal::service('path.matcher')->isFrontPage();
-    if (
-      $item_path == $current_path ||
-      (_stanford_basic_path_is_home($item_path) && $is_front)
-    ) {
+    $item_path = is_string($item['url']) ? $item['url'] : $item['url']->toString(TRUE)->getGeneratedUrl();
+    if ($item_path == $current_path || (_stanford_basic_path_is_home($item_path) && $is_front)) {
       $item['is_active'] = TRUE;
     }
 
