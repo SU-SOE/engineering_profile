@@ -149,6 +149,13 @@ content:
       required_depth: 0
       none_label: '- Please select -'
     third_party_settings: {  }
+  syndication:
+    type: boolean_checkbox
+    weight: 33
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -177,5 +184,4 @@ hidden:
   publish_on: true
   sticky: true
   su_course_id: true
-  syndication: true
   unpublish_on: true
