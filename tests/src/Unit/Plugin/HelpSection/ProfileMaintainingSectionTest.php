@@ -4,14 +4,15 @@ namespace Drupal\Tests\engineering_profile\Unit\Plugin\HelpSection;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Utility\LinkGeneratorInterface;
-use Drupal\engineering_profile\Plugin\HelpSection\ProfileConnectSection;
+// use Drupal\engineering_profile\Plugin\HelpSection\ProfileConnectSection;
+use Drupal\engineering_profile\Plugin\HelpSection\ProfileHelpMaintainingSection;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class ProfileMaintainingSectionTest
  *
  * @group engineering_profile
- * @coversDefaultClass \Drupal\engineering_profile\Plugin\HelpSection\ProfileConnectSection
+ * @coversDefaultClass \Drupal\engineering_profile\Plugin\HelpSection\ProfileHelpMaintainingSection
  */
 class ProfileMaintainingSectionTest extends UnitTestCase {
 
