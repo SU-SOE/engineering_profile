@@ -2,9 +2,25 @@
 
 class SpotlightCest
 {
-  /*    public function _before(AcceptanceTester $I)
-      {
-      }*/
+   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+    $trashDir = codecept_root_dir() . 'web/sites/default/files/php/trash';
+    if (is_dir($trashDir)) {
+        $files = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($trashDir, RecursiveDirectoryIterator::SKIP_DOTS),
+            RecursiveIteratorIterator::CHILD_FIRST
+        );
+        foreach ($files as $fileinfo) {
+            $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
+            $todo($fileinfo->getRealPath());
+        }
+    }
+  }
 
   /**
    * Test that the view pages elements exists.
