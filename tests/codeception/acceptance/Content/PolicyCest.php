@@ -57,7 +57,6 @@ class PolicyCest {
     $I->canSee('Access Denied');
     $book = $I->createEntity([
       'type' => 'stanford_policy',
-      'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(2, TRUE) . '-baz-foo',
       'su_policy_auto_prefix' => 1,
     ]);
@@ -134,7 +133,6 @@ class PolicyCest {
 
     $book = $I->createEntity([
       'type' => 'stanford_policy',
-      'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(2, TRUE) . '-baz-foo',
       'su_policy_auto_prefix' => 1,
     ]);
@@ -182,7 +180,6 @@ class PolicyCest {
     $I->logInWithRole('administrator');
     $book = $I->createEntity([
       'type' => 'stanford_policy',
-      'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(2, TRUE),
       'su_policy_auto_prefix' => 1,
     ]);
@@ -194,7 +191,6 @@ class PolicyCest {
 
     $chapter_one = $I->createEntity([
       'type' => 'stanford_policy',
-      'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(2, TRUE),
       'su_policy_auto_prefix' => 1,
     ]);
@@ -209,7 +205,6 @@ class PolicyCest {
 
     $chapter_two = $I->createEntity([
       'type' => 'stanford_policy',
-      'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(2, TRUE),
       'su_policy_auto_prefix' => 1,
     ]);
@@ -226,7 +221,6 @@ class PolicyCest {
 
     $article_one = $I->createEntity([
       'type' => 'stanford_policy',
-      'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(2, TRUE),
       'su_policy_auto_prefix' => 1,
     ]);

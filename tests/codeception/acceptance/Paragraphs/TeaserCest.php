@@ -34,8 +34,9 @@ class TeaserCest {
       if ($node_type->id() === 'spotlight') {
         continue;
       }
+      $title_key = $node_type->id() == 'stanford_policy' ? 'su_policy_title' : 'title';
       $teaser_entities[$node_type->id()] = $I->createEntity([
-        'title' => $this->faker->words(3, TRUE),
+        $title_key => $this->faker->words(3, TRUE),
         'type' => $node_type->id(),
       ]);
       $teaser_item_field[]['target_id'] = $teaser_entities[$node_type->id()]->id();
