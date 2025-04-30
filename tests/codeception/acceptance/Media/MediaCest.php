@@ -72,7 +72,7 @@ class MediaCest {
     ], 'paragraph');
     $node = $I->createEntity([
       'type' => 'stanford_page',
-      'title' => $this->faker->words(3, true),
+      'title' => $this->faker->words(3, TRUE),
       'su_page_components' => [
         [
           'target_id' => $wysiwyg->id(),

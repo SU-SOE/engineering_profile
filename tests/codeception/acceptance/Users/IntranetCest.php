@@ -27,6 +27,17 @@ class IntranetCest {
   protected $fileUploadsWasEnabled = FALSE;
 
   /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * Save the original state.
    */
   public function _before(AcceptanceTester $I) {
