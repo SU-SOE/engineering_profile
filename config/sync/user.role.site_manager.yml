@@ -12,6 +12,7 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
+    - node.type.spotlight
     - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
@@ -20,8 +21,13 @@ dependencies:
     - node.type.stanford_person
     - node.type.stanford_policy
     - node.type.stanford_publication
+    - taxonomy.vocabulary.affiliation
+    - taxonomy.vocabulary.article_collection
     - taxonomy.vocabulary.basic_page_types
+    - taxonomy.vocabulary.department
     - taxonomy.vocabulary.event_audience
+    - taxonomy.vocabulary.magazine_issues
+    - taxonomy.vocabulary.magazine_topics
     - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.stanford_event_types
     - taxonomy.vocabulary.stanford_news_topics
@@ -36,6 +42,7 @@ dependencies:
     - contextual
     - dropzonejs
     - editoria11y
+    - engineering_profile
     - field_permissions
     - file
     - filter
@@ -50,7 +57,6 @@ dependencies:
     - redirect
     - role_delegation
     - scheduler
-    - engineering_profile
     - stanford_migrate
     - stanford_policy
     - stanford_publication
@@ -74,7 +80,6 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
-  - 'add any content to books'
   - 'add citation entities'
   - 'add content to books'
   - 'administer book outlines'
@@ -91,7 +96,6 @@ permissions:
   - 'assign layout_builder_user role'
   - 'assign site_editor role'
   - 'assign site_manager role'
-  - 'assign site_reviewer role'
   - 'assign stanford_faculty role'
   - 'assign stanford_staff role'
   - 'assign stanford_student role'
@@ -106,6 +110,7 @@ permissions:
   - 'create media'
   - 'create new books'
   - 'create policy log'
+  - 'create spotlight content'
   - 'create stanford_course content'
   - 'create stanford_event content'
   - 'create stanford_event_series content'
@@ -115,8 +120,13 @@ permissions:
   - 'create stanford_person content'
   - 'create stanford_policy content'
   - 'create stanford_publication content'
+  - 'create terms in affiliation'
+  - 'create terms in article_collection'
   - 'create terms in basic_page_types'
+  - 'create terms in department'
   - 'create terms in event_audience'
+  - 'create terms in magazine_issues'
+  - 'create terms in magazine_topics'
   - 'create terms in media_tags'
   - 'create terms in stanford_event_types'
   - 'create terms in stanford_news_topics'
@@ -130,6 +140,7 @@ permissions:
   - 'delete any google_form media'
   - 'delete any image media'
   - 'delete any media'
+  - 'delete any spotlight content'
   - 'delete any stanford_course content'
   - 'delete any stanford_event content'
   - 'delete any stanford_event_series content'
@@ -147,6 +158,7 @@ permissions:
   - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
+  - 'delete own spotlight content'
   - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
@@ -158,6 +170,7 @@ permissions:
   - 'delete own stanford_publication content'
   - 'delete own video media'
   - 'delete policy log'
+  - 'delete spotlight revisions'
   - 'delete stanford_course revisions'
   - 'delete stanford_event revisions'
   - 'delete stanford_event_series revisions'
@@ -166,8 +179,13 @@ permissions:
   - 'delete stanford_person revisions'
   - 'delete stanford_policy revisions'
   - 'delete stanford_publication revisions'
+  - 'delete terms in affiliation'
+  - 'delete terms in article_collection'
   - 'delete terms in basic_page_types'
+  - 'delete terms in department'
   - 'delete terms in event_audience'
+  - 'delete terms in magazine_issues'
+  - 'delete terms in magazine_topics'
   - 'delete terms in media_tags'
   - 'delete terms in stanford_event_types'
   - 'delete terms in stanford_news_topics'
@@ -179,7 +197,7 @@ permissions:
   - 'edit any file media'
   - 'edit any google_form media'
   - 'edit any image media'
-  - 'edit any stanford_component_block block content'
+  - 'edit any spotlight content'
   - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
@@ -199,6 +217,7 @@ permissions:
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
+  - 'edit own spotlight content'
   - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
@@ -218,8 +237,13 @@ permissions:
   - 'edit stanford_person_importer config page entity'
   - 'edit stanford_saml config page entity'
   - 'edit stanford_super_footer config page entity'
+  - 'edit terms in affiliation'
+  - 'edit terms in article_collection'
   - 'edit terms in basic_page_types'
+  - 'edit terms in department'
   - 'edit terms in event_audience'
+  - 'edit terms in magazine_issues'
+  - 'edit terms in magazine_topics'
   - 'edit terms in media_tags'
   - 'edit terms in stanford_event_types'
   - 'edit terms in stanford_news_topics'
@@ -234,7 +258,7 @@ permissions:
   - 'mark as ok in editoria11y'
   - 'notify of path changes'
   - 'rabbit hole bypass node'
-  - 'reorder book pages'
+  - 'revert spotlight revisions'
   - 'revert stanford_course revisions'
   - 'revert stanford_event revisions'
   - 'revert stanford_event_series revisions'
@@ -261,7 +285,10 @@ permissions:
   - 'view any unpublished stanford_policy content'
   - 'view any unpublished stanford_publication content'
   - 'view editoria11y checker'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
   - 'view scheduled content'
+  - 'view spotlight revisions'
   - 'view stanford_policy revisions'
   - 'view stanford_publication revisions'
   - 'view the administration theme'

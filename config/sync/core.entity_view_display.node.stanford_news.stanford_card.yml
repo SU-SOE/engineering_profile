@@ -79,10 +79,6 @@ targetEntityType: node
 bundle: stanford_news
 mode: stanford_card
 content:
-  su_news_dek:
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   su_news_featured_media:
     type: media_responsive_image_formatter
     label: hidden

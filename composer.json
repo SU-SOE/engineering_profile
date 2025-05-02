@@ -215,6 +215,9 @@
             "drupal/menu_link_weight": {
                 "https://www.drupal.org/project/menu_link_weight/issues/2875984": "https://git.drupalcode.org/project/menu_link_weight/-/merge_requests/2.diff"
             },
+            "drupal/field_formatter_class": {
+                "Fixes for non-entity widgets": "https://www.drupal.org/files/issues/2025-03-11/field_formatter_class-3473891-mr-10.patch"
+            },
             "drupal/trash": {
                 "Trash module delete condition group": "https://sws-devguide.stanford.edu/sites/g/files/sbiybj17516/files/trash-delete_condition.patch"
             }
