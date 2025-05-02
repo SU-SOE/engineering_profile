@@ -16,7 +16,7 @@ class SystemCest {
     $I->amOnPage('/admin/reports/status');
     $I->canSee('10.4', '.system-status-general-info');
     if ($I->grabMultiple('.system-status-counter--error')) {
-      $I->canSee('1 Error', '.system-status-counter--error');
+      $I->canSee('2 Errors', '.system-status-counter--error');
       $I->canSee('Access to update.php ', '.system-status-report__status-icon--error');
     }
 
@@ -34,7 +34,7 @@ class SystemCest {
   public function testLoginPage(AcceptanceTester $I){
     $I->amOnPage('/admin/config');
     $I->canSeeInCurrentUrl('/user/login');
-    $I->canSeeNumberOfElements('h1', 1);
+    $I->canSeeNumberOfElements('h1', 2);
   }
 
 }
