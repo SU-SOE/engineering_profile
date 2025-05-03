@@ -184,6 +184,7 @@ class ListsCest {
     $I->logInWithRole('contributor');
 
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
 
     $news = $I->createEntity([
       'type' => 'stanford_news',
