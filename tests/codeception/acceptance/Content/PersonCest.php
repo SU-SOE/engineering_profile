@@ -41,7 +41,8 @@ class PersonCest {
    * Sidebar "Contact" header should only appear once.
    */
   public function testDoubleHeader(AcceptanceTester $I){
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_person',
       'title' => 'Foo Bar',
       'su_person_first_name' => 'Foo',
@@ -107,7 +108,9 @@ class PersonCest {
     // Use 1s in the name to be at the top of the lists.
     $first_name = '111' . $this->faker->firstName;
     $last_name = '111' . $this->faker->lastName;
-    $node = $I->createEntity([
+
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $first_name,
       'su_person_last_name' => $last_name,
@@ -259,7 +262,8 @@ class PersonCest {
       'parent' => $another_parent->id(),
     ], 'taxonomy_term');
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $this->faker->firstName,
       'su_person_last_name' => $this->faker->lastName,
@@ -302,7 +306,8 @@ class PersonCest {
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     /** @var \Drupal\node\NodeInterface $node */
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_short_title' => $this->faker->title,
       'su_person_first_name' => $this->faker->firstName,
@@ -350,7 +355,8 @@ class PersonCest {
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'su_person_first_name' => $values['first_name'],
       'su_person_last_name' => $values['last_name'],
@@ -389,7 +395,8 @@ class PersonCest {
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     /** @var \Drupal\node\NodeInterface $node */
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_short_title' => $this->faker->title,
       'su_person_first_name' => $this->faker->firstName,

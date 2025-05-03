@@ -37,7 +37,8 @@ class MediaWithCaptionCest {
       ],
     ], 'paragraph');
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [

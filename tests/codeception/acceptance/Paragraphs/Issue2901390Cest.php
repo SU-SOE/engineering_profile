@@ -30,7 +30,8 @@ class Issue2901390Cest {
   public function testLayoutBuilderParagraph(AcceptanceTester $I) {
     $user = $I->createUserWithRoles(['site_manager', 'layout_builder_user']);
     $I->logInAs($user->id());
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(20),
     ]);

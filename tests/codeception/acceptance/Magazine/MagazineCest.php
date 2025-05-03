@@ -95,7 +95,8 @@ class MagazineCest {
     $mag_issue = $this->createMagazineIssue($I);
     $article_collection = $this->createArticleCollection($I);
     $department = $this->createDepartment($I);
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $name,
       'su_magazine_story' => TRUE,

@@ -299,7 +299,8 @@ class ListsCest {
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -331,7 +332,8 @@ class ListsCest {
     $paragraph->setBehaviorSettings('list_paragraph', ['empty_message' => $message]);
     $paragraph->save();
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -366,7 +368,8 @@ class ListsCest {
     ]);
     $paragraph->save();
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -881,7 +884,8 @@ class ListsCest {
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [

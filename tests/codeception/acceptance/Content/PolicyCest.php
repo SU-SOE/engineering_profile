@@ -132,7 +132,8 @@ class PolicyCest {
     $I->click('Save');
     $I->canSee($book->label(), 'h1');
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_policy',
       'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(4, TRUE) . '-foo-bar',

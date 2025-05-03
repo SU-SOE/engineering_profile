@@ -57,7 +57,8 @@ class TeaserCest {
       'type' => 'stanford_entity',
       'su_entity_item' => $teaser_item_field,
     ], 'paragraph');
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [
@@ -77,7 +78,8 @@ class TeaserCest {
       'su_entity_item' => $teaser_item_field,
       'su_entity_headline' => $header_text,
     ], 'paragraph');
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [

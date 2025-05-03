@@ -65,7 +65,8 @@ class IntranetCest {
       $I->runDrush('cache-rebuild');
     }
 
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
     ]);
@@ -149,7 +150,8 @@ class IntranetCest {
         ],
       ],
     ], 'paragraph');
-    $node = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$node = $I->createEntity([
       'title' => 'Forest Gump',
       'type' => 'stanford_page',
       'su_page_components' => [
