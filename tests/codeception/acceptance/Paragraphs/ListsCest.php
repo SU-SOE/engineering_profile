@@ -40,22 +40,25 @@ class ListsCest {
    * @group jsonapi
    */
   public function testSharedTags(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $shared_tag = $I->createEntity([
       'name' => $this->faker->jobTitle,
       'vid' => 'su_shared_tags',
     ], 'taxonomy_term');
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $basic_page = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_page',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $news = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_news',
       'su_shared_tags' => $shared_tag->id(),
     ]);
     \Drupal::service('file_system')->deleteRecursive('public://php/trash');
-$event = $I->createEntity([
+    $event = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_event',
       'su_shared_tags' => $shared_tag->id(),
