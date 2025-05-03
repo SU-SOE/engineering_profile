@@ -228,41 +228,41 @@ class PersonCest {
     $I->amOnPage('/people');
     $I->cantSeeLink($term3->label());
 
-    $faker = Factory::create();
+    //$faker = Factory::create();
     $parent = $I->createEntity([
-      'name' => 'Parent: ' . $faker->text(10),
+      'name' => 'Parent: ' . $this->faker->text(10),
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     $child = $I->createEntity([
-      'name' => 'Child: ' . $faker->text(10),
+      'name' => 'Child: ' . $this->faker->text(10),
       'vid' => 'stanford_person_types',
       'parent' => $parent->id(),
     ], 'taxonomy_term');
     $grandchild = $I->createEntity([
-      'name' => 'GrandChild: ' . $faker->text(10),
+      'name' => 'GrandChild: ' . $this->faker->text(10),
       'vid' => 'stanford_person_types',
       'parent' => $child->id(),
     ], 'taxonomy_term');
     $great_grandchild = $I->createEntity([
-      'name' => 'Great GrandChild: ' . $faker->text(10),
+      'name' => 'Great GrandChild: ' . $this->faker->text(10),
       'vid' => 'stanford_person_types',
       'parent' => $grandchild->id(),
     ], 'taxonomy_term');
 
     $another_parent = $I->createEntity([
-      'name' => 'Parent: ' . $faker->words(2, TRUE),
+      'name' => 'Parent: ' . $this->faker->words(2, TRUE),
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     $another_child = $I->createEntity([
-      'name' => 'Child: ' . $faker->words(2, TRUE),
+      'name' => 'Child: ' . $this->faker->words(2, TRUE),
       'vid' => 'stanford_person_types',
       'parent' => $another_parent->id(),
     ], 'taxonomy_term');
 
     $node = $I->createEntity([
       'type' => 'stanford_person',
-      'su_person_first_name' => $faker->firstName,
-      'su_person_last_name' => $faker->lastName,
+      'su_person_first_name' => $this->faker->firstName,
+      'su_person_last_name' => $this->faker->lastName,
       'su_person_type_group' => [
         ['target_id' => $great_grandchild->id()],
         ['target_id' => $another_child->id()],
