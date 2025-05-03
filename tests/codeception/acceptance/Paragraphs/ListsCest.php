@@ -63,12 +63,14 @@ class ListsCest {
       'type' => 'stanford_event',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $person = $I->createEntity([
       'su_person_first_name' => $this->faker->firstName,
       'su_person_last_name' => $this->faker->lastName,
       'type' => 'stanford_person',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $publication = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_publication',
