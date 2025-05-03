@@ -45,6 +45,7 @@ class PolicyCest {
     $I->cantSee('Create a new book');
     // D8CORE-4551 - removed create policy permission for contributors
     $I->canSee('Access Denied');
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE) . '-baz-foo',
@@ -109,7 +110,7 @@ class PolicyCest {
 
     $current_url = $I->grabFromCurrentUrl();
     $I->assertStringContainsString('-foo-bar', $current_url);
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $parent_page = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(2, TRUE) . '-bar-baz',
@@ -120,7 +121,7 @@ class PolicyCest {
     $I->fillField('Menu link title', $parent_page->label());
     $I->click('Save');
     $I->canSeeLink($parent_page->label());
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE) . '-baz-foo',
@@ -169,6 +170,7 @@ $node = $I->createEntity([
    */
   public function testPolicyHeirarcy(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE),
@@ -179,7 +181,7 @@ $node = $I->createEntity([
     $I->click('Change book (update list of parents)');
     $I->click('Save');
     $I->canSee($book->label(), 'h1');
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $chapter_one = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE),
@@ -193,7 +195,7 @@ $node = $I->createEntity([
     $I->canSee('Home', '.breadcrumb');
     $I->canSee($book->label(), '.breadcrumb');
     $I->canSee($chapter_one->label(), '.breadcrumb');
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $chapter_two = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE),
@@ -209,7 +211,7 @@ $node = $I->createEntity([
     $I->canSee($chapter_two->label(), '.breadcrumb');
 
     $authority = substr($this->faker->sentence, 0, 255);
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $article_one = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE),
