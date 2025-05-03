@@ -525,8 +525,6 @@ $event = $I->createEntity([
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-
-    $I->runDrushCommand('cache:rebuild');
     $event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
