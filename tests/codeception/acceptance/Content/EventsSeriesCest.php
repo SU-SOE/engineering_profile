@@ -180,7 +180,7 @@ class EventsSeriesCest {
   protected function createEventNode(AcceptanceTester $I) {
     $start = time() - (60 * 60 * 24);
     $end = time() + (60 * 60 * 24);
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     return $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->word(4, TRUE),
