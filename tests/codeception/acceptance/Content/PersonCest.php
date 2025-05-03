@@ -33,6 +33,10 @@ class PersonCest {
     \Drupal::service('file_system')->deleteRecursive('public://php/trash');
   }
 
+  public function _after(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+  }
+
   /**
    * Sidebar "Contact" header should only appear once.
    */
