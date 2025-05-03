@@ -186,7 +186,6 @@ $event = $I->createEntity([
 
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
     \Drupal::service('file_system')->deleteRecursive('public://php/trash');
-
     $news = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->text(15),
@@ -521,7 +520,8 @@ $event = $I->createEntity([
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
     \Drupal::service('file_system')->deleteRecursive('public://php/trash');
-$event = $I->createEntity([
+    $I->runDrushCommand('cache:rebuild');
+    $event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -531,6 +531,7 @@ $event = $I->createEntity([
         'end_value' => time() + 240,
       ],
     ]);
+
     $I->amOnPage("/node/{$event->id()}/edit");
     $I->click('Save');
     $I->canSee('has been updated');
