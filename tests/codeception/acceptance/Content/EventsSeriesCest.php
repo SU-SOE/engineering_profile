@@ -162,7 +162,7 @@ class EventsSeriesCest {
       $node = $this->createEventNode($I);
       $event_nodes[] = ['target_id' => $node->id()];
     }
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     return $I->createEntity([
       'type' => 'stanford_event_series',
       'title' => $this->faker->words(4, TRUE),
