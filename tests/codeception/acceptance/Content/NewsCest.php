@@ -30,7 +30,7 @@ class NewsCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**
@@ -91,7 +91,7 @@ class NewsCest {
    * Validate external content redirect.
    */
   public function testExternalSourceArticle(AcceptanceTester $I) {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->words(3, TRUE),
@@ -213,7 +213,7 @@ $node = $I->createEntity([
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
@@ -236,7 +236,7 @@ $node = $I->createEntity([
     $I->cantSeeElement('meta', ['name' => 'twitter:image:alt']);
     $I->cantSeeElement('meta', ['name' => 'twitter:description']);
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
@@ -253,7 +253,7 @@ $node = $I->createEntity([
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',

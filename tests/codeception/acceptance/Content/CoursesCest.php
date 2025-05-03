@@ -28,7 +28,7 @@ class CoursesCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**

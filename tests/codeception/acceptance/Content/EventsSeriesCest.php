@@ -30,7 +30,7 @@ class EventsSeriesCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**
@@ -162,7 +162,7 @@ class EventsSeriesCest {
       $node = $this->createEventNode($I);
       $event_nodes[] = ['target_id' => $node->id()];
     }
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
     return $I->createEntity([
       'type' => 'stanford_event_series',
       'title' => $this->faker->words(4, TRUE),
@@ -180,7 +180,7 @@ class EventsSeriesCest {
   protected function createEventNode(AcceptanceTester $I) {
     $start = time() - (60 * 60 * 24);
     $end = time() + (60 * 60 * 24);
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
     return $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->word(4, TRUE),

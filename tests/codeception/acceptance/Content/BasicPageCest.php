@@ -30,7 +30,7 @@ class BasicPageCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**
@@ -41,7 +41,7 @@ class BasicPageCest {
    */
   public function testCreatingPage(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,
@@ -85,7 +85,7 @@ $node = $I->createEntity([
    */
   public function testDeletedMenuItems(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,
@@ -134,7 +134,7 @@ $node = $I->createEntity([
   public function testRevisionPage(AcceptanceTester $I) {
     $title = $this->faker->words(3, TRUE);
     $I->logInWithRole('site_manager');
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $I->amOnPage($node->toUrl()->toString());
     $I->click('Version History');
@@ -252,7 +252,7 @@ $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $timezone_resolver->setDefaultTimeZone();
 
     $I->logInWithRole('site_manager');
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
@@ -324,7 +324,7 @@ $node = $I->createEntity([
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
@@ -342,7 +342,7 @@ $node = $I->createEntity([
     $I->cantSeeElement('meta', ['name' => 'twitter:image:alt']);
     $I->cantSeeElement('meta', ['name' => 'twitter:description']);
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
@@ -359,7 +359,7 @@ $node = $I->createEntity([
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
@@ -390,7 +390,7 @@ $node = $I->createEntity([
       'type' => 'stanford_wysiwyg',
       'su_wysiwyg_text' => ['value' => $text, 'format' => 'stanford_html'],
     ], 'paragraph');
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',

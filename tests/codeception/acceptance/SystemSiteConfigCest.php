@@ -90,7 +90,7 @@ class SystemSiteConfigCest {
       ],
     ], 'paragraph');
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(4, TRUE),

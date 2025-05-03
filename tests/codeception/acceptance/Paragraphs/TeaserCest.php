@@ -28,14 +28,14 @@ class TeaserCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**
    * @group teaser-headers
    */
   public function testTeaserParagraphHeaders(AcceptanceTester $I) {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')
       ->loadMultiple();
@@ -57,7 +57,7 @@ class TeaserCest {
       'type' => 'stanford_entity',
       'su_entity_item' => $teaser_item_field,
     ], 'paragraph');
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
@@ -78,7 +78,7 @@ $node = $I->createEntity([
       'su_entity_item' => $teaser_item_field,
       'su_entity_headline' => $header_text,
     ], 'paragraph');
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',

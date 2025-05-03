@@ -30,18 +30,18 @@ class PersonCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   public function _after(AcceptanceTester $I) {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**
    * Sidebar "Contact" header should only appear once.
    */
   public function testDoubleHeader(AcceptanceTester $I){
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_person',
       'title' => 'Foo Bar',
@@ -109,7 +109,7 @@ $node = $I->createEntity([
     $first_name = '111' . $this->faker->firstName;
     $last_name = '111' . $this->faker->lastName;
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $first_name,
@@ -262,7 +262,7 @@ $node = $I->createEntity([
       'parent' => $another_parent->id(),
     ], 'taxonomy_term');
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $this->faker->firstName,
@@ -306,7 +306,7 @@ $node = $I->createEntity([
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     /** @var \Drupal\node\NodeInterface $node */
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_short_title' => $this->faker->title,
@@ -355,7 +355,7 @@ $node = $I->createEntity([
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'su_person_first_name' => $values['first_name'],
@@ -395,7 +395,7 @@ $node = $I->createEntity([
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     /** @var \Drupal\node\NodeInterface $node */
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_short_title' => $this->faker->title,

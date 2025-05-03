@@ -28,7 +28,7 @@ class StanfordCTAListCest {
    */
   public function _before(AcceptanceTester $I)
   {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
   }
 
   /**
@@ -67,7 +67,7 @@ class StanfordCTAListCest {
   protected function createNodeWithParagraph(AcceptanceTester $I) {
     $paragraph = $this->createParagraph($I);
 
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),

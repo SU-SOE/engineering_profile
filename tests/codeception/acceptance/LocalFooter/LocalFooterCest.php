@@ -123,7 +123,7 @@ class LocalFooterCest {
    * Route urls and no link urls should function correctly in the footer.
    */
   protected function testNodeRoutesAndNoLink(AcceptanceTester $I) {
-    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+
 $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'Test Page',
