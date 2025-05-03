@@ -220,6 +220,7 @@ class ListsCest {
     $random_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
 
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $news = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->text(15),
@@ -251,7 +252,7 @@ class ListsCest {
     // Use a child term but the argument is the parent term to verify children
     // are included in the results.
     $child_term = $this->createTaxonomyTerm($I, 'stanford_news_topics', NULL, $topic_term->id());
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $news = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->text(15),
@@ -694,7 +695,7 @@ $event = $I->createEntity([
     $I->logInWithRole('site_manager');
 
     $type_term = $this->createTaxonomyTerm($I, 'stanford_person_types');
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $news = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $this->faker->text(15),
@@ -723,7 +724,7 @@ $event = $I->createEntity([
 
     $random_term = $this->createTaxonomyTerm($I, 'stanford_person_types');
     $type_term = $this->createTaxonomyTerm($I, 'stanford_person_types');
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $news = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $this->faker->text(15),
@@ -755,7 +756,7 @@ $event = $I->createEntity([
     // Use a child term but the argument is the parent term to verify children
     // are included in the results.
     $child_type = $this->createTaxonomyTerm($I, 'stanford_person_types', NULL, $type_term->id());
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $news = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $this->faker->text(15),
@@ -786,14 +787,14 @@ $event = $I->createEntity([
     $I->logInWithRole('site_manager');
 
     $type_term = $this->createTaxonomyTerm($I, 'basic_page_types', 'Basic Page Test Term');
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $basic_page_entity = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'B' . $this->faker->text(15),
       'su_basic_page_type' => $type_term->id(),
       'created' => time(),
     ]);
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $second_basic_page_entity = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'A' . $this->faker->text(15),
@@ -821,7 +822,7 @@ $event = $I->createEntity([
     $I->assertEquals($second_basic_page_entity->label(), $headings[1], $second_basic_page_entity->label()  . ' should be second.');
 
     $I->cantSee($type_term->label());
-
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $layout_changed_page = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'Z' . $this->faker->text(15),
