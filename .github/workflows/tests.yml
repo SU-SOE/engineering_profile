@@ -72,7 +72,7 @@ jobs:
           STANFORD_ENCRYPT: ${{ secrets.STANFORD_ENCRYPT }}
         run: |
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
-          composer global require su-sws/stanford-caravan:10.x-dev &&
+          composer global require su-sws/stanford-caravan:10.x-dev && drush pm:disable -y trash &&
           ~/.config/composer/vendor/bin/sws-caravan codeception /var/www/html --extension-dir=$GITHUB_WORKSPACE/project --suites=acceptance &&
           if [ ! -f /var/www/html/artifacts/acceptance/results.html ]; then
               exit 1
