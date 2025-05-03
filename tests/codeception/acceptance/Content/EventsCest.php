@@ -322,6 +322,7 @@ class EventsCest {
    * Clone events get incremented date.
    */
   public function testClone(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     $user = $I->createUserWithRoles(['contributor']);
     /** @var \Drupal\node\NodeInterface $node */
     $node = $this->createEventNode($I);
