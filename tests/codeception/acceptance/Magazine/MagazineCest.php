@@ -112,6 +112,7 @@ $node = $I->createEntity([
   }
 
   public function createMagazineTopic(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     return $I->createEntity([
         'vid' => 'magazine_topics',
         'name' => 'Test Magazine Topic',
@@ -119,6 +120,7 @@ $node = $I->createEntity([
   }
 
   public function createMagazineIssue(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     return $I->createEntity([
         'vid' => 'magazine_issues',
         'name' => 'Issue #9999',
@@ -127,6 +129,7 @@ $node = $I->createEntity([
   }
 
   public function createArticleCollection(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     return $I->createEntity([
         'vid' => 'article_collection',
         'name' => 'Test Article Collection',
@@ -134,6 +137,7 @@ $node = $I->createEntity([
   }
 
   public function createDepartment(AcceptanceTester $I) {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
     return $I->createEntity([
         'vid' => 'department',
         'name' => 'Test Department',
