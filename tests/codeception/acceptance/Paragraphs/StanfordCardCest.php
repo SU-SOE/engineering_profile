@@ -21,6 +21,16 @@ class StanfordCardCest {
     $this->faker = Factory::create();
   }
 
+   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+  }
+
   /**
    * Test a card with a button link.
    */

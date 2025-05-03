@@ -29,17 +29,7 @@ class PolicyCest {
     if ($config_page = ConfigPages::load('policy_settings')) {
       $config_page->delete();
     }
-    $trashDir = codecept_root_dir() . 'web/sites/default/files/php/trash';
-    if (is_dir($trashDir)) {
-        $files = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($trashDir, RecursiveDirectoryIterator::SKIP_DOTS),
-            RecursiveIteratorIterator::CHILD_FIRST
-        );
-        foreach ($files as $fileinfo) {
-            $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
-            $todo($fileinfo->getRealPath());
-        }
-    }
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
   }
 
   public function _after(AcceptanceTester $I) {

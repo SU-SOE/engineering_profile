@@ -25,6 +25,16 @@ class ListsCest {
   }
 
   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+  }
+
+  /**
    * Shared tags on each content type are identical.
    *
    * @group jsonapi
