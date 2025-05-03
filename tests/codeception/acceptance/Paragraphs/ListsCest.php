@@ -54,7 +54,8 @@ class ListsCest {
       'type' => 'stanford_news',
       'su_shared_tags' => $shared_tag->id(),
     ]);
-    $event = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$event = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_event',
       'su_shared_tags' => $shared_tag->id(),
@@ -412,7 +413,8 @@ $node = $I->createEntity([
       'vid' => 'stanford_event_keywords',
     ], 'taxonomy_term');
 
-    $event = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->words(3, TRUE),
       'su_event_date_time' => [
@@ -518,7 +520,8 @@ $node = $I->createEntity([
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-    $event = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -552,7 +555,8 @@ $node = $I->createEntity([
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-    $event = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -589,7 +593,8 @@ $node = $I->createEntity([
     $child_type = $this->createTaxonomyTerm($I, 'stanford_event_types', NULL, $event_type->id());
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-    $event = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -626,7 +631,8 @@ $node = $I->createEntity([
     // are included in the results.
     $child_audience = $this->createTaxonomyTerm($I, 'event_audience', NULL, $event_audience->id());
 
-    $event = $I->createEntity([
+    \Drupal::service('file_system')->deleteRecursive('public://php/trash');
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $child_audience->id(),
