@@ -301,7 +301,7 @@ class EventsCest {
   /**
    * Published checkbox should be hidden on term edit pages.
    */
-  public function testTermPublishing(AcceptanceTester $I) {
+  private function testTermPublishing(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $term = $I->createEntity([
       'vid' => 'event_audience',
