@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@import "../../utilities/variables/colors";
-@import "../../utilities/mixins";
+@import '../../utilities/variables/colors';
+@import '../../utilities/mixins';
 
 .soe-spotlight--cards {
   img {
@@ -13,12 +13,9 @@
   }
 
   .views-row {
-
     @include grid-media-min('xl') {
       @include responsive-spacing('margin-bottom', 7);
     }
-
-
 
     display: flex;
 
@@ -26,7 +23,7 @@
       &.flex-container {
         display: block;
 
-        >div {
+        > div {
           max-width: 100%;
         }
       }
@@ -39,7 +36,6 @@
       @include grid-media-max('lg') {
         @include responsive-spacing('margin-bottom', 3);
       }
-
     }
 
     .su-card .image {
@@ -62,12 +58,12 @@
     .su-card__contents {
       padding-left: 0;
       padding-right: 0;
+      padding-bottom: 0;
     }
   }
 
   // Styles for the grid of cards.
   .su-card__contents {
-
     h2 {
       @include type-d;
       @include responsive-spacing('margin-bottom', -1);
@@ -76,22 +72,33 @@
     }
 
     .soe--person-title {
-      @include type-d;
+      @include type-e;
 
       font-weight: $su-font-regular;
     }
 
     .soe-quote {
-      @include type-c;
+      @include type-d;
+      @include responsive-spacing('margin-top', 0);
 
       font-weight: $su-font-bold;
     }
 
     .su-link {
-      @include responsive-spacing('padding-top', 2);
-      @include type-d;
+      @include responsive-spacing('padding-top', 1);
 
+      font-size: 1.6rem;
       font-weight: $su-font-semi-bold;
+      position: relative;
+
+      @include grid-media-min('lg') {
+        font-size: 1.9rem;
+      }
+
+      &::after {
+        bottom: 15%;
+        position: absolute;
+      }
     }
   }
 }
@@ -116,8 +123,6 @@
         @include type-c;
         @include responsive-spacing('margin-bottom', -1);
         font-weight: $su-font-black;
-
-
       }
 
       .soe--person-title {
@@ -131,7 +136,6 @@
 
         font-weight: $su-font-black;
       }
-
     }
 
     .su-link {
@@ -148,11 +152,9 @@
 .viewfield-block__cardgrid {
   .soe-spotlight--cards {
     .views-row {
-
       @include grid-media-min('xl') {
         @include responsive-spacing('margin-bottom', 1);
       }
-
     }
   }
 }
@@ -160,7 +162,6 @@
 // For teasers, we use the Card display mode, with some additional adjustments.
 .ds-entity--spotlight {
   .su-card {
-
     .engineering-accent-color__image {
       @include responsive-spacing('margin-top', 1);
     }
@@ -190,7 +191,6 @@
       @include type-c;
       font-size: 1em;
       font-weight: $su-font-bold;
-
     }
 
     .node-link {
@@ -198,7 +198,6 @@
     }
 
     .su-link {
-
       @include type-d;
       font-weight: $su-font-semi-bold;
       color: $soe-link-color;
