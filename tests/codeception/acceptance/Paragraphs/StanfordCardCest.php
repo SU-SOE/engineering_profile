@@ -21,15 +21,7 @@ class StanfordCardCest {
     $this->faker = Factory::create();
   }
 
-   /**
-   * clear the trash directory before each test.
-   * @param AcceptanceTester $I
-   * @return void
-   */
-  public function _before(AcceptanceTester $I)
-  {
 
-  }
 
   /**
    * Test a card with a button link.

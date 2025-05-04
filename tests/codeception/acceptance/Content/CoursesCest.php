@@ -21,15 +21,7 @@ class CoursesCest {
     $this->faker = Factory::create();
   }
 
-    /**
-   * clear the trash directory before each test.
-   * @param AcceptanceTester $I
-   * @return void
-   */
-  public function _before(AcceptanceTester $I)
-  {
 
-  }
 
   /**
    * Test for view pages and taxonomy functionality
