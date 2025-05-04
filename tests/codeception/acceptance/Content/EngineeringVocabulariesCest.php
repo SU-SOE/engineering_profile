@@ -7,6 +7,16 @@
  */
 class EngineeringVocabulariesCest {
 
+  /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
     public function testVocabulariesExist(AcceptanceTester $I) {
         $I->logInWithRole('administrator');
         $I->amOnPage('/admin/structure/taxonomy');

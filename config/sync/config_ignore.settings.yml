@@ -4,7 +4,6 @@ mode: simple
 ignored_config_entities:
   - 'block.block.*'
   - 'core.extension:theme'
-  - 'core.extension:theme'
   - 'google_tag.container.*'
   - 'next.next_entity_type_config.*'
   - 'next.next_site.*'

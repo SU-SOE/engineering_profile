@@ -31,6 +31,16 @@ class PublicationsCest {
   }
 
   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
+  /**
    * Create a book citation
    */
   public function testBookCitation(AcceptanceTester $I) {
@@ -94,7 +104,7 @@ class PublicationsCest {
       'name' => $this->faker->words(2, TRUE),
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
-    $I->cantSee('Published');
+    $I->canSeeCheckboxIsChecked('Published');
   }
 
   /**

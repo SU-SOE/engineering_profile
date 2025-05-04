@@ -95,7 +95,8 @@ class MagazineCest {
     $mag_issue = $this->createMagazineIssue($I);
     $article_collection = $this->createArticleCollection($I);
     $department = $this->createDepartment($I);
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $name,
       'su_magazine_story' => TRUE,
@@ -111,6 +112,7 @@ class MagazineCest {
   }
 
   public function createMagazineTopic(AcceptanceTester $I) {
+
     return $I->createEntity([
         'vid' => 'magazine_topics',
         'name' => 'Test Magazine Topic',
@@ -118,6 +120,7 @@ class MagazineCest {
   }
 
   public function createMagazineIssue(AcceptanceTester $I) {
+
     return $I->createEntity([
         'vid' => 'magazine_issues',
         'name' => 'Issue #9999',
@@ -126,6 +129,7 @@ class MagazineCest {
   }
 
   public function createArticleCollection(AcceptanceTester $I) {
+
     return $I->createEntity([
         'vid' => 'article_collection',
         'name' => 'Test Article Collection',
@@ -133,6 +137,7 @@ class MagazineCest {
   }
 
   public function createDepartment(AcceptanceTester $I) {
+
     return $I->createEntity([
         'vid' => 'department',
         'name' => 'Test Department',

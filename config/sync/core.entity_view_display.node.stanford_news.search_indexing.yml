@@ -30,7 +30,6 @@ dependencies:
     - datetime
     - field_formatter_class
     - layout_paragraphs
-    - link
     - stanford_media
     - user
 id: node.stanford_news.search_indexing
@@ -49,7 +48,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    weight: 8
+    weight: 7
     region: content
   su_news_banner_media_caption:
     type: string
@@ -104,18 +103,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  su_news_source:
-    type: link
-    label: hidden
-    settings:
-      trim_length: null
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 7
-    region: content
   su_news_topics:
     type: entity_reference_label
     label: hidden
@@ -135,6 +122,7 @@ hidden:
   su_magazine_story: true
   su_metatags: true
   su_news_hide_social: true
+  su_news_source: true
   su_shared_tags: true
   su_soe_department: true
   su_soe_external_source_text: true

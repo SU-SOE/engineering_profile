@@ -29,6 +29,16 @@ class ViewsBulkEditCest {
     $this->faker = Factory::create();
   }
 
+   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
   /**
    * Bulk editing content changes the field values.
    */
@@ -100,7 +110,7 @@ class ViewsBulkEditCest {
    *   Tester.
    */
   protected function createEvents(AcceptanceTester $I) {
-    $faker = Factory::create();
+    // $faker = Factory::create();
     $node_types = [
       'stanford_event',
       'stanford_news',
@@ -110,7 +120,7 @@ class ViewsBulkEditCest {
       for ($j = 0; $j <= 5; $j++) {
         $this->nodes[] = $I->createEntity([
           'type' => $node_type,
-          'title' => $faker->text(30),
+          'title' => $this->faker->text(30),
         ]);
       }
     }

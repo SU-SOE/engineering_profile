@@ -22,9 +22,20 @@ class TeaserCest {
   }
 
   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
+  /**
    * @group teaser-headers
    */
   public function testTeaserParagraphHeaders(AcceptanceTester $I) {
+
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')
       ->loadMultiple();
@@ -34,8 +45,9 @@ class TeaserCest {
       if ($node_type->id() === 'spotlight') {
         continue;
       }
+      $title_key = $node_type->id() == 'stanford_policy' ? 'su_policy_title' : 'title';
       $teaser_entities[$node_type->id()] = $I->createEntity([
-        'title' => $this->faker->words(3, TRUE),
+        $title_key => $this->faker->words(3, TRUE),
         'type' => $node_type->id(),
       ]);
       $teaser_item_field[]['target_id'] = $teaser_entities[$node_type->id()]->id();
@@ -45,7 +57,8 @@ class TeaserCest {
       'type' => 'stanford_entity',
       'su_entity_item' => $teaser_item_field,
     ], 'paragraph');
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [
@@ -65,7 +78,8 @@ class TeaserCest {
       'su_entity_item' => $teaser_item_field,
       'su_entity_headline' => $header_text,
     ], 'paragraph');
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [

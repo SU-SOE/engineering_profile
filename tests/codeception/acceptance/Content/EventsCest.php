@@ -25,6 +25,17 @@ class EventsCest {
     $this->faker = Factory::create();
   }
 
+
+ /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
   public function _after(AcceptanceTester $I) {
     if ($config_page = ConfigPages::load('stanford_events_importer')) {
       $config_page->delete();
@@ -304,13 +315,14 @@ class EventsCest {
       'name' => $this->faker->word,
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
-    $I->cantSee('Published');
+    $I->canSeeCheckboxIsChecked('Published');
   }
 
   /**
    * Clone events get incremented date.
    */
   public function testClone(AcceptanceTester $I) {
+
     $user = $I->createUserWithRoles(['contributor']);
     /** @var \Drupal\node\NodeInterface $node */
     $node = $this->createEventNode($I);

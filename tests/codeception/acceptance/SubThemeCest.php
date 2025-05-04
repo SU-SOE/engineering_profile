@@ -93,7 +93,8 @@ class SubThemeCest {
         'format' => 'stanford_html',
       ],
     ], 'paragraph');
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
       'su_page_components' => [
@@ -148,6 +149,11 @@ class SubThemeCest {
     $I->seeElement('.su-brand-bar--default');
 
     $I->logInWithRole('administrator');
+    $I->amOnPage('/');
+    $I->seeElement('.su-brand-bar__logo');
+    $I->seeElement('.su-global-footer__container');
+    $I->seeElement('.su-brand-bar--default');
+
     $I->amOnPage('/admin/appearance');
     $I->click('Set as default', 'a[title="Set Stanford Minimally Branded Subtheme as default theme"]');
     $I->amOnPage('/');

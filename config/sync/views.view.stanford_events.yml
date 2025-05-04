@@ -4095,6 +4095,17 @@ display:
             offset: true
             offset_label: offset
           quantity: 9
+      exposed_form:
+        options: {  }
+      sorts:
+        su_event_date_time_value:
+          expose: {  }
+        created:
+          expose: {  }
+        title:
+          expose: {  }
+        changed:
+          expose: {  }
       arguments:
         term_node_taxonomy_name_depth:
           id: term_node_taxonomy_name_depth
@@ -7134,6 +7145,8 @@ display:
         options:
           offset: 0
           items_per_page: 20
+          tags: {  }
+          expose: {  }
       empty:
         area:
           id: area
@@ -7179,6 +7192,10 @@ display:
             field_identifier: created
           exposed: false
           granularity: second
+        changed:
+          expose: {  }
+        title:
+          expose: {  }
       arguments:
         term_node_taxonomy_name_depth:
           id: term_node_taxonomy_name_depth

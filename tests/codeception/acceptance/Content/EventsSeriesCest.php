@@ -24,6 +24,16 @@ class EventsSeriesCest {
   }
 
   /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
+  /**
    * Ensure events are in the sitemap.
    */
   public function testXMLSiteMap(AcceptanceTester $I) {

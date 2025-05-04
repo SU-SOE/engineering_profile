@@ -30,7 +30,8 @@ class Issue2901390Cest {
   public function testLayoutBuilderParagraph(AcceptanceTester $I) {
     $user = $I->createUserWithRoles(['site_manager', 'layout_builder_user']);
     $I->logInAs($user->id());
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(20),
     ]);

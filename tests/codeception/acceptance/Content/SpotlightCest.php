@@ -2,9 +2,15 @@
 
 class SpotlightCest
 {
-  /*    public function _before(AcceptanceTester $I)
-      {
-      }*/
+  /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
 
   /**
    * Test that the view pages elements exists.

@@ -23,6 +23,16 @@ class NewsCest {
     $this->faker = Factory::create();
   }
 
+    /**
+   * clear the trash directory before each test.
+   * @param AcceptanceTester $I
+   * @return void
+   */
+  public function _before(AcceptanceTester $I)
+  {
+
+  }
+
   /**
    * News list intro block is at the top of the page.
    */
@@ -81,7 +91,8 @@ class NewsCest {
    * Validate external content redirect.
    */
   public function testExternalSourceArticle(AcceptanceTester $I) {
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->words(3, TRUE),
       'su_news_source' => "http://google.com/",
@@ -153,7 +164,7 @@ class NewsCest {
       'name' => $this->faker->word,
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
-    $I->cantSee('Published');
+    $I->canSeeCheckboxIsChecked('Published');
   }
 
   /**
@@ -202,7 +213,8 @@ class NewsCest {
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_publishing_date' => $date_string,
@@ -224,7 +236,8 @@ class NewsCest {
     $I->cantSeeElement('meta', ['name' => 'twitter:image:alt']);
     $I->cantSeeElement('meta', ['name' => 'twitter:description']);
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_banner' => $banner_media->id(),
@@ -240,7 +253,8 @@ class NewsCest {
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_banner' => $banner_media->id(),
