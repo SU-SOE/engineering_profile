@@ -1,0 +1,22 @@
+uuid: 7f4cafe5-b8e4-4337-bd97-eb3933ce9af8
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: department_terms
+label: 'Department terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'news/department/[term:name]'
+selection_criteria:
+  e470a4b4-9097-47ec-8489-49e5aa1c078d:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: e470a4b4-9097-47ec-8489-49e5aa1c078d
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      department: department
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -29,7 +29,8 @@ class NodeRevisionDeleteCest {
   public function testNodeRevisionDelete(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     /** @var \Drupal\node\NodeInterface $node */
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
       'revision' => TRUE,

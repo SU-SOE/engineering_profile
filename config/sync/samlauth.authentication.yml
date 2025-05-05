@@ -14,6 +14,7 @@ drupal_login_roles:
   stanford_faculty: '0'
   stanford_staff: '0'
   stanford_student: '0'
+  site_reviewer: '0'
   contributor: '0'
   site_manager: '0'
   site_editor: '0'
@@ -40,21 +41,25 @@ map_users_name: true
 map_users_mail: true
 map_users_roles:
   administrator: administrator
+  anonymous: anonymous
+  contributor: contributor
+  site_reviewer: site_reviewer
+  decoupled_site_users: decoupled_site_users
+  layout_builder_user: layout_builder_user
+  opportunity_editor: opportunity_editor
+  site_builder: site_builder
+  site_developer: site_developer
+  site_editor: site_editor
+  site_manager: site_manager
   stanford_faculty: stanford_faculty
   stanford_staff: stanford_staff
   stanford_student: stanford_student
-  contributor: contributor
-  site_manager: site_manager
-  site_editor: site_editor
-  site_builder: site_builder
-  site_developer: site_developer
-  layout_builder_user: layout_builder_user
-  decoupled_site_users: decoupled_site_users
+  su_site_embedder: su_site_embedder
 create_users: true
-sync_name: false
-sync_mail: false
+sync_name: true
+sync_mail: true
 user_name_attribute: ''
-user_mail_attribute: mail
+user_mail_attribute: eduPersonPrincipalName
 request_set_name_id_policy: true
 strict: true
 security_metadata_sign: false

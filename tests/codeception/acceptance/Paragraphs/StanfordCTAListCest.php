@@ -21,6 +21,8 @@ class StanfordCTAListCest {
     $this->faker = Factory::create();
   }
 
+
+
   /**
    * Create a CTA List paragraph to test.
    */
@@ -57,7 +59,8 @@ class StanfordCTAListCest {
   protected function createNodeWithParagraph(AcceptanceTester $I) {
     $paragraph = $this->createParagraph($I);
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
       'su_page_components' => [

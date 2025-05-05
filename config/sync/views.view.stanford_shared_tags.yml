@@ -321,6 +321,32 @@ display:
             offset: true
             offset_label: offset
           quantity: 9
+      exposed_form:
+        options: {  }
+      sorts:
+        changed:
+          expose: {  }
+        created:
+          expose: {  }
+        title:
+          expose: {  }
+      arguments:
+        term_node_taxonomy_name_depth:
+          exception: {  }
+          default_argument_options: {  }
+          summary_options: {  }
+          summary: {  }
+          validate: {  }
+          validate_options: {  }
+          vocabularies: {  }
+        type:
+          exception: {  }
+          default_argument_options: {  }
+          summary_options: {  }
+          summary: {  }
+          validate: {  }
+          validate_options: {  }
+      defaults: {  }
       display_description: ''
       display_extenders: {  }
       graphql_query_name: stanfordSharedTags

@@ -23,6 +23,8 @@ class EventsSeriesCest {
     $this->faker = Factory::create();
   }
 
+
+
   /**
    * Ensure events are in the sitemap.
    */

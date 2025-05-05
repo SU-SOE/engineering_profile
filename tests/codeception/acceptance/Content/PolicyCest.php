@@ -29,6 +29,7 @@ class PolicyCest {
     if ($config_page = ConfigPages::load('policy_settings')) {
       $config_page->delete();
     }
+
   }
 
   public function _after(AcceptanceTester $I) {
@@ -44,6 +45,7 @@ class PolicyCest {
     $I->cantSee('Create a new book');
     // D8CORE-4551 - removed create policy permission for contributors
     $I->canSee('Access Denied');
+
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE) . '-baz-foo',
@@ -131,7 +133,8 @@ class PolicyCest {
     $I->click('Save');
     $I->canSee($book->label(), 'h1');
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_policy',
       'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(4, TRUE) . '-foo-bar',
@@ -167,6 +170,7 @@ class PolicyCest {
    */
   public function testPolicyHeirarcy(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
+
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE),

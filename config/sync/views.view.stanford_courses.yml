@@ -1939,6 +1939,15 @@ display:
             offset: true
             offset_label: offset
           quantity: 9
+      exposed_form:
+        options: {  }
+      sorts:
+        title:
+          expose: {  }
+        created:
+          expose: {  }
+        changed:
+          expose: {  }
       arguments:
         term_node_taxonomy_name_depth:
           id: term_node_taxonomy_name_depth
