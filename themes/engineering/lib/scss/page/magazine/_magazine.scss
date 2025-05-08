@@ -187,9 +187,8 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
         .su-card__contents {
           display: flex;
           flex-direction: row;
-          flex-wrap: wrap;
           justify-content: left;
-          padding-top: 0;
+          padding: 0;
 
           .soe-mag-card__date-published {
             color: $su-color-black-80;
@@ -205,7 +204,7 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
           }
 
           .su-spotlight--superhead {
-            flex: 1 1 60%;
+            font-size: 0.9em;
             @include margin(1em nul null null);
 
             @include grid-media-only('xs') {
@@ -214,10 +213,10 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
           }
 
           .soe-spotlight-mag-card__title {
+            @include modular-typography(2);
             margin-bottom: 0px !important;
 
             a {
-              @include modular-typography(0);
               color: $soe-black;
 
               &:hover {
@@ -251,7 +250,6 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
           @include grid-media('md') {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
             justify-content: left;
 
             .image {
@@ -271,25 +269,11 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
             }
           }
 
-          @include grid-media('xl') {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: left;
-            padding: 0;
-          }
-
           .spotlight__quote {
             flex-basis: 100%;
-            font-family: 'Roboto Slab', serif;
             font-weight: $su-font-black;
             @include type-d;
-            @include grid-media('xs') {
-              @include margin(1.5em null null 20px);
-            }
-            @include grid-media('lg') {
-              @include margin(1em null null 20px);
-            }
+            margin-top: 1em;
           }
         }
       }
