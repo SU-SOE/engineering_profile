@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-@import "../../utilities/mixins";
+@import '../../utilities/mixins';
 
 #views-exposed-form-spotlights-block-1 {
   & {
     @include responsive-spacing('padding-top', 1);
-    @include responsive-spacing('margin', null 3 null 0);
-    
+    @include responsive-spacing('margin', null 3 1 0);
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -22,10 +22,6 @@
     }
   }
 
-  input, select, textarea {
-    max-width: 70rem;
-  }
-
   .form-item-tid,
   .form-item-tid-1 {
     max-width: 280px;
@@ -38,8 +34,18 @@
     }
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     @include font-size(21px, 400, 32px, null);
+    font-family: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    height: unset;
+    max-width: 70rem;
+  }
+
+  select {
+    border-color: $su-color-black-20;
   }
 
   .form-actions {

@@ -14,7 +14,7 @@
 
   .views-row {
     @include grid-media-min('xl') {
-      @include responsive-spacing('margin-bottom', 7);
+      @include responsive-spacing('margin-bottom', 3);
     }
 
     display: flex;
@@ -121,7 +121,9 @@
 
       h2 {
         @include type-c;
-        @include responsive-spacing('margin-bottom', -1);
+
+        margin-top: 10px;
+        margin-bottom: 0;
         font-weight: $su-font-black;
       }
 
@@ -133,17 +135,20 @@
 
       .spotlight__quote {
         @include type-b;
+        @include responsive-spacing('margin-top', 1);
 
         font-weight: $su-font-black;
       }
     }
+    
+    .su-card__contents {
+      .su-link {
+        @include responsive-spacing('padding-top', 2);
+        @include type-d;
 
-    .su-link {
-      @include responsive-spacing('padding-top', 2);
-      @include type-d;
-
-      font-weight: $su-font-semi-bold;
-      margin-top: 0;
+        font-weight: $su-font-semi-bold;
+        margin-top: 0;
+      }
     }
   }
 }
