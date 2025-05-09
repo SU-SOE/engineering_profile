@@ -29,7 +29,7 @@ dependencies:
     - views_infinite_scroll
     - views_taxonomy_term_name_depth
 id: spotlights
-label: spotlights
+label: Spotlights
 module: views
 description: ''
 tag: ''
