@@ -1,0 +1,9 @@
+adding:
+  dependencies:
+    module:
+      - stanford_media
+  label: 'SOE Site Embedder'
+  is_admin: false
+removing:
+  label: 'Site Embedder'
+  is_admin: null

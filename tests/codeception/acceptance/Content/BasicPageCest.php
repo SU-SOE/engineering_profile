@@ -23,6 +23,8 @@ class BasicPageCest {
     $this->faker = Factory::create();
   }
 
+
+
   /**
    * Test placing a basic page in the menu with a child menu item.
    *
@@ -31,7 +33,8 @@ class BasicPageCest {
    */
   public function testCreatingPage(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,
     ]);
@@ -74,7 +77,8 @@ class BasicPageCest {
    */
   public function testDeletedMenuItems(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,
     ]);
@@ -122,7 +126,8 @@ class BasicPageCest {
   public function testRevisionPage(AcceptanceTester $I) {
     $title = $this->faker->words(3, TRUE);
     $I->logInWithRole('site_manager');
-    $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
+
+$node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $I->amOnPage($node->toUrl()->toString());
     $I->click('Version History');
     $I->canSeeResponseCodeIs(200);
@@ -239,7 +244,8 @@ class BasicPageCest {
     $timezone_resolver->setDefaultTimeZone();
 
     $I->logInWithRole('site_manager');
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
     ]);
@@ -310,7 +316,8 @@ class BasicPageCest {
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
     ]);
@@ -327,7 +334,8 @@ class BasicPageCest {
     $I->cantSeeElement('meta', ['name' => 'twitter:image:alt']);
     $I->cantSeeElement('meta', ['name' => 'twitter:description']);
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_banner' => ['entity' => $banner_paragraph],
@@ -343,7 +351,8 @@ class BasicPageCest {
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_banner' => ['entity' => $banner_paragraph],
@@ -368,26 +377,23 @@ class BasicPageCest {
    * @group search-results
    */
   public function testSearchResult(AcceptanceTester $I) {
-    $text = $this->faker->paragraphs(2, TRUE);
+    $text = 'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.';
     $wysiwyg = $I->createEntity([
       'type' => 'stanford_wysiwyg',
       'su_wysiwyg_text' => ['value' => $text, 'format' => 'stanford_html'],
     ], 'paragraph');
-    $row = $I->createEntity([
-      'type' => 'node_stanford_page_row',
-      'su_page_components' => $wysiwyg,
-    ], 'paragraph_row');
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
-      'su_page_components' => $row,
+      'su_page_components' => $wysiwyg,
     ]);
     $I->logInWithRole('contributor');
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->click('Save');
     $I->canSee($node->label(), 'h1');
 
-    $I->fillField('Search this site', $node->label());
+    $I->fillField('Search this site', 'human stupidity');
     $I->click('Submit Search');
     // $I->canSee($node->label(), 'h2');
 

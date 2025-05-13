@@ -3,7 +3,7 @@
 /**
  * Class LocalFooterCest.
  *
- * @group local_footer
+ * @group local-footer
  */
 class LocalFooterCest {
 
@@ -123,7 +123,8 @@ class LocalFooterCest {
    * Route urls and no link urls should function correctly in the footer.
    */
   protected function testNodeRoutesAndNoLink(AcceptanceTester $I) {
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'Test Page',
     ]);

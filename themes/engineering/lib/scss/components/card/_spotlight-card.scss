@@ -58,6 +58,7 @@
     .su-card__contents {
       padding-left: 0;
       padding-right: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -71,22 +72,33 @@
     }
 
     .soe--person-title {
-      @include type-d;
+      @include type-e;
 
       font-weight: $su-font-regular;
     }
 
     .soe-quote {
-      @include type-c;
+      @include type-d;
+      @include responsive-spacing('margin-top', 0);
 
       font-weight: $su-font-bold;
     }
 
     .su-link {
-      @include responsive-spacing('padding-top', 2);
-      @include type-d;
+      @include responsive-spacing('padding-top', 1);
 
+      font-size: 1.6rem;
       font-weight: $su-font-semi-bold;
+      position: relative;
+
+      @include grid-media-min('lg') {
+        font-size: 1.9rem;
+      }
+
+      &::after {
+        bottom: 15%;
+        position: absolute;
+      }
     }
   }
 }

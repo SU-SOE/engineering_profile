@@ -6,7 +6,7 @@ use Faker\Factory;
 /**
  * Class SystemSiteConfigCest.
  *
- * @group system_site_config
+ * @group system-site-config
  */
 class SystemSiteConfigCest {
 
@@ -90,7 +90,8 @@ class SystemSiteConfigCest {
       ],
     ], 'paragraph');
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(4, TRUE),
       'su_page_components' => [

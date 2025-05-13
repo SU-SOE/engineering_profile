@@ -1,12 +1,13 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  auto_entitylabel: -100
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
-  auto_entitylabel: 0
   autologout: 0
+  basic_auth: 0
   block: 0
   block_content: 0
   book: 0
@@ -66,6 +67,7 @@ module:
   field_permissions: 0
   field_ui: 0
   field_validation: 0
+  field_validation_legacy: 0
   file: 0
   file_mdm: 0
   file_mdm_exif: 0
@@ -78,9 +80,13 @@ module:
   google_tag: 0
   graphql: 0
   graphql_compose: 0
+  graphql_compose_blocks: 0
+  graphql_compose_edges: 0
+  graphql_compose_image_style: 0
   graphql_compose_layout_paragraphs: 0
   graphql_compose_layouts: 0
   graphql_compose_menus: 0
+  graphql_compose_metatags: 0
   graphql_compose_routes: 0
   graphql_compose_views: 0
   help: 0
@@ -223,6 +229,7 @@ module:
   token: 0
   token_or: 0
   toolbar: 0
+  trash: 0
   typed_data: 0
   ui_patterns: 0
   ui_patterns_ds: 0

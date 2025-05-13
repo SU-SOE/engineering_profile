@@ -21,6 +21,8 @@ class CoursesCest {
     $this->faker = Factory::create();
   }
 
+
+
   /**
    * Test for view pages and taxonomy functionality
    */

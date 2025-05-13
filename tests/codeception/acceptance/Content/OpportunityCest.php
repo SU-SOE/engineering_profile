@@ -23,6 +23,8 @@ class OpportunityCest {
     $this->faker = Factory::create();
   }
 
+
+
   public function testContentAccess(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add');

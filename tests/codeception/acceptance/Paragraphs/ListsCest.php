@@ -24,37 +24,45 @@ class ListsCest {
     $this->faker = Factory::create();
   }
 
+
+
   /**
    * Shared tags on each content type are identical.
    *
    * @group jsonapi
    */
   public function testSharedTags(AcceptanceTester $I) {
+
     $shared_tag = $I->createEntity([
       'name' => $this->faker->jobTitle,
       'vid' => 'su_shared_tags',
     ], 'taxonomy_term');
+
     $basic_page = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_page',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+
     $news = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_news',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+
     $event = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_event',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+
     $person = $I->createEntity([
       'su_person_first_name' => $this->faker->firstName,
       'su_person_last_name' => $this->faker->lastName,
       'type' => 'stanford_person',
       'su_shared_tags' => $shared_tag->id(),
     ]);
+
     $publication = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_publication',
@@ -204,6 +212,7 @@ class ListsCest {
     $random_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
 
+
     $news = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->text(15),
@@ -288,7 +297,8 @@ class ListsCest {
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -320,7 +330,8 @@ class ListsCest {
     $paragraph->setBehaviorSettings('list_paragraph', ['empty_message' => $message]);
     $paragraph->save();
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -355,7 +366,8 @@ class ListsCest {
     ]);
     $paragraph->save();
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -398,7 +410,8 @@ class ListsCest {
       'vid' => 'stanford_event_keywords',
     ], 'taxonomy_term');
 
-    $event = $I->createEntity([
+
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->words(3, TRUE),
       'su_event_date_time' => [
@@ -514,6 +527,7 @@ class ListsCest {
         'end_value' => time() + 240,
       ],
     ]);
+
     $I->amOnPage("/node/{$event->id()}/edit");
     $I->click('Save');
     $I->canSee('has been updated');
@@ -538,7 +552,8 @@ class ListsCest {
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-    $event = $I->createEntity([
+
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -575,7 +590,8 @@ class ListsCest {
     $child_type = $this->createTaxonomyTerm($I, 'stanford_event_types', NULL, $event_type->id());
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-    $event = $I->createEntity([
+
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -612,7 +628,8 @@ class ListsCest {
     // are included in the results.
     $child_audience = $this->createTaxonomyTerm($I, 'event_audience', NULL, $event_audience->id());
 
-    $event = $I->createEntity([
+
+$event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $child_audience->id(),
@@ -870,7 +887,8 @@ class ListsCest {
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
 
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [

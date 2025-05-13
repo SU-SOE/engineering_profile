@@ -2,9 +2,7 @@
 
 class SpotlightCest
 {
-  /*    public function _before(AcceptanceTester $I)
-      {
-      }*/
+
 
   /**
    * Test that the view pages elements exists.

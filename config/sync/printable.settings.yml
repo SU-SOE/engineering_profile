@@ -27,6 +27,18 @@ printable_entities:
   menu_link_content: '0'
   paragraph: '0'
 printable_entities_bundles:
+  node:
+    stanford_news: true
+    _all: false
+    spotlight: false
+    stanford_course: false
+    stanford_event: false
+    stanford_event_series: false
+    stanford_opportunity: false
+    stanford_page: false
+    stanford_person: false
+    stanford_policy: false
+    stanford_publication: false
   block:
     _all: true
     block: false
@@ -35,9 +47,9 @@ printable_entities_bundles:
     stanford_component_block: false
   config_pages:
     _all: true
+    stanford_basic_site_settings: false
     lockup_settings: false
     policy_settings: false
-    stanford_basic_site_settings: false
     stanford_courses_importer: false
     stanford_events_importer: false
     stanford_global_message: false
@@ -65,17 +77,6 @@ printable_entities_bundles:
     image: false
     stanford_gallery_images: false
     video: false
-  node:
-    _all: true
-    spotlight: false
-    stanford_course: false
-    stanford_event: false
-    stanford_event_series: false
-    stanford_news: false
-    stanford_page: false
-    stanford_person: false
-    stanford_policy: false
-    stanford_publication: false
   page_variant:
     _all: true
     page_variant: false
@@ -128,6 +129,9 @@ printable_entities_bundles:
     magazine_issues: false
     magazine_topics: false
     media_tags: false
+    opportunity_sponsor: false
+    opportunity_tag_filters: false
+    opportunity_type: false
     site_owner_orgs: false
     stanford_event_groups: false
     stanford_event_keywords: false
@@ -153,6 +157,7 @@ printable_entities_bundles:
     stanford_card: false
     stanford_cta_list: false
     stanford_entity: false
+    stanford_faq: false
     stanford_gallery: false
     stanford_image_cta: false
     stanford_layout: false

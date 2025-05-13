@@ -7,6 +7,8 @@
  */
 class EngineeringVocabulariesCest {
 
+
+
     public function testVocabulariesExist(AcceptanceTester $I) {
         $I->logInWithRole('administrator');
         $I->amOnPage('/admin/structure/taxonomy');

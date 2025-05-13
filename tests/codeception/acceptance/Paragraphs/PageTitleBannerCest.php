@@ -30,7 +30,8 @@ class PageTitleBannerCest {
    */
   public function testAutoTitle(AcceptanceTester $I) {
     $this->prepareImage();
-    $node = $I->createEntity([
+
+$node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
     ]);

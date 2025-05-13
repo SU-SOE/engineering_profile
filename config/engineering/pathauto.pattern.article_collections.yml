@@ -1,0 +1,22 @@
+uuid: e8af6516-745f-4ade-8f48-cb0694a2e220
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: article_collections
+label: 'Article Collections'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'news/collection/[term:name]'
+selection_criteria:
+  ba7a28f2-c739-4900-8fd7-861b0ce3b24b:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: ba7a28f2-c739-4900-8fd7-861b0ce3b24b
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      article_collection: article_collection
+selection_logic: and
+weight: -5
+relationships: {  }
