@@ -1,12 +1,3 @@
-github:
-  prebuilds:
-    master: true
-    branches: false
-    pullRequests: true
-    pullRequestsFromForks: false
-    addCheck: false
-    addComment: false
-    addBadge: false
 ports:
   - port: 3306
     onOpen: ignore
@@ -15,63 +6,48 @@ ports:
     onOpen: ignore
     visibility: private
   - port: 8001
-    onOpen: ignore
+    onOpen: open-preview
     visibility: public
 image: pookmish/drupal8ci:gitpod
-checkoutLocation: engineering_profile
-workspaceLocation: /workspace/stack
 tasks:
-  - before: >
-      rm -rf ~/.ssh/id_rsa &&
-      rm -rf ~/.ssh/id_rsa.pub &&
-      eval $(command gp env -e) &&
-      mkdir -p ~/.ssh &&
-      [[ ! -z $SSH_PUBLIC_KEY  ]] &&
-      echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub &&
-      chmod 644 ~/.ssh/id_rsa.pub &&
-      [[ ! -z $SSH_PRIVATE_KEY  ]] &&
-      echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa &&
-      chmod 600 ~/.ssh/id_rsa &&
-      [[ ! -z $GITCONFIG  ]] &&
-      echo $GITCONFIG | base64 -d > ~/.gitconfig &&
-      chmod 644 ~/.gitconfig
+  - before: |
+      mkdir -p ~/.ssh
+      if [[ ! -z $SSH_PUBLIC_KEY  ]]; then
+          echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub && chmod 644 ~/.ssh/id_rsa.pub
+      fi
+      if [[ ! -z $SSH_PRIVATE_KEY ]]; then
+          echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+      fi
+      if [[ ! -z $GITCONFIG ]]; then
+          echo $GITCONFIG | base64 -d > ~/.gitconfig && chmod 644 ~/.gitconfig
+      fi
     init: >
+      cd /workspace &&
+      mv $GITPOD_REPO_ROOT profile &&
+      git clone git@github.com:SU-SWS/ace-soegryphon.git $GITPOD_REPO_ROOT &&
+      cd $GITPOD_REPO_ROOT &&
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
-      cd /workspace &&
-      git clone https://github.com/SU-SWS/acsf-cardinalsites-public.git stack &&
-      cd /workspace/stack &&
-      cd $GITPOD_REPO_ROOT &&
-      export PROFILE_BRANCH=`git rev-parse --abbrev-ref HEAD` &&
-      echo $PROFILE_BRANCH &&
-      cd /workspace/stack &&
-      composer remove su-sws/stanford_profile --no-update &&
+      export PROFILE_BRANCH=`cd ../profile && git rev-parse --abbrev-ref HEAD` &&
+      composer install -n &&
       composer require su-soe/engineering_profile:"dev-$PROFILE_BRANCH || $PROFILE_BRANCH-dev" --no-update &&
-      composer update --no-interaction &&
+      composer update su-soe/* &&
       rm -rf docroot/*/custom/* &&
       composer install --prefer-source --no-interaction &&
-      rm -rf docroot/profiles/custom/engineering_profile &&
-      ln -s $GITPOD_REPO_ROOT docroot/profiles/custom/engineering_profile &&
+      cd $GITPOD_REPO_ROOT/docroot/profiles/custom/engineering_profile &&
+      git remote set-url origin git@github.com:SU-SWS/engineering_profile.git &&
+      cd $GITPOD_REPO_ROOT &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
-      cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
-      sed -i 's/stanford_profile/engineering_profile/' docroot/sites/settings/global.settings.php &&
       find docroot/sites/ -name 'local*' | xargs rm &&
-      blt blt:telemetry:disable --no-interaction &&
+      cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
+      cp .gitpod/default.local.services.yml docroot/sites/local.services.yml &&
       blt settings &&
       drush si engineering_profile -v -y &&
-      drush cim -y &&
-      ls -a | grep .git | grep -v '.gitpod*' | xargs rm -rf
+      drush cr &&
+      drush cim -y
     command: |
-      export GITPOD_REPO_ROOT=/workspace/stack
-      apache2ctl restart
-      gp await-port 8001
-      find docroot -name 'local.drush.yml' | xargs rm &&
-      export PREVIEW_FULL_URL=`gp url 8001` &&
-      export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
-      blt settings
-      drush uli
-      drush uli | xargs gp preview --external
+      apache2ctl restart &&
+      drush uli --uri=`gp url 8001` &&
+      drush uli  --uri=`gp url 8001` | xargs gp preview --external &&
       git config core.fileMode false
-      blt blt:telemetry:disable --no-interaction
-      cd docroot/profiles/custom/engineering_profile && git remote set-url origin git@github.com:SU-SOE/engineering_profile.git && cd $GITPOD_REPO_ROOT
