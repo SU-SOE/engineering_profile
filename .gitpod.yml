@@ -32,12 +32,10 @@ tasks:
       rm -rf docroot/*/custom/* &&
       composer install --prefer-source --no-interaction &&
       cd $GITPOD_REPO_ROOT/docroot/profiles/custom/engineering_profile &&
-      git remote set-url origin git@github.com:SU-SWS/engineering_profile.git &&
+      git remote set-url origin git@github.com:SU-SOE/engineering_profile.git &&
       cd $GITPOD_REPO_ROOT &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
-      cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
-      cp .gitpod/default.local.services.yml docroot/sites/local.services.yml &&
       blt settings &&
       drush si engineering_profile -v -y &&
       drush cr &&
