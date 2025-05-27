@@ -12,9 +12,6 @@ image: pookmish/drupal8ci:gitpod
 tasks:
   - before: |
       mkdir -p ~/.ssh
-      if [[ ! -z $SSH_PUBLIC_KEY  ]]; then
-          echo $SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub && chmod 644 ~/.ssh/id_rsa.pub
-      fi
       if [[ ! -z $SSH_PRIVATE_KEY ]]; then
           echo $SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
       fi
@@ -39,7 +36,6 @@ tasks:
       cd $GITPOD_REPO_ROOT &&
       cp .gitpod/blt.yml blt/local.blt.yml &&
       mkdir -p docroot/sites/settings &&
-      find docroot/sites/ -name 'local*' | xargs rm &&
       cp .gitpod/global.settings.php docroot/sites/settings/global.settings.php &&
       cp .gitpod/default.local.services.yml docroot/sites/local.services.yml &&
       blt settings &&
