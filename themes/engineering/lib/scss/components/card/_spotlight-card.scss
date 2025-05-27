@@ -120,6 +120,7 @@
       }
 
       h2 {
+        @include responsive-spacing('margin-bottom', -1);
         @include type-c;
 
         margin-top: 10px;
@@ -140,7 +141,7 @@
         font-weight: $su-font-black;
       }
     }
-    
+
     .su-card__contents {
       .su-link {
         @include responsive-spacing('padding-top', 2);
