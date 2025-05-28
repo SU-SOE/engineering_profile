@@ -38,6 +38,10 @@ Steps to build a new release:
 - When the PR is merged to `main`, a new tag will be created automatically, bumping the version by the semver label.
 - The github action is built from: [semver-release-action](https://github.com/K-Phoen/semver-release-action), and further documentation is available there.
 
+## Auto-building for Acquia Dev Environment
+
+- We are experimenting with autobuilding changes to the base branch to deploy to Acquia automatically.  More documentation on this as we complete it.
+
 ## Troubleshooting
 
 If you are experiencing issues with this try posting an issue on the [GitHub issues page](https://github.com/SU-SWS/stanford_profile/issues).
