@@ -1,0 +1,18 @@
+name: Notify Stack Repo
+
+on:
+  push:
+    branches:
+      - 11.x
+
+jobs:
+  notify-stack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch to ace-soegryphon
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.ACE_STACK_DISPATCH_TOKEN }}
+          repository: su-sws/ace-soegryphon
+          event-type: profile-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
