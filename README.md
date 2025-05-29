@@ -40,7 +40,7 @@ Steps to build a new release:
 
 ## Auto-building for Acquia Dev Environment
 
-- We are experimenting with autobuilding changes to the base branch to deploy to Acquia automatically.  More documentation on this as we complete it.
+- We are experimenting with autobuilding changes to the base branch to deploy to Acquia automatically.
 
 ## Troubleshooting
 
