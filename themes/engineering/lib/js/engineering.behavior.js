@@ -29,8 +29,8 @@
       });
 
       $(".soe-spotlight--cards .su-link").each(function () {
-        $(this).removeClass("su-card__link su-link--action");
-        $(this).addClass("su-link--external");
+        $(this).removeClass("su-card__link");
+        $(this).addClass("su-link--action");
 
         $(this).hover(function (element = this) {
           $(element).css("text-decoration-color", "black");

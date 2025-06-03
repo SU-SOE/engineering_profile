@@ -1079,12 +1079,12 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: su-link--external
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: div
-          element_wrapper_class: su-link--external
+          element_wrapper_class: su-link--action
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -1131,7 +1131,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: su-link--external
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false

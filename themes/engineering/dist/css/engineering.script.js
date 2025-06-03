@@ -81,8 +81,8 @@
         $(this).addClass(variantColor);
       });
       $(".soe-spotlight--cards .su-link").each(function () {
-        $(this).removeClass("su-card__link su-link--action");
-        $(this).addClass("su-link--external");
+        $(this).removeClass("su-card__link");
+        $(this).addClass("su-link--action");
         $(this).hover(function () {
           var element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this;
           $(element).css("text-decoration-color", "black");
