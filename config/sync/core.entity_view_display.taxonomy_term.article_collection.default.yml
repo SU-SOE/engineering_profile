@@ -38,7 +38,33 @@ third_party_settings:
               label_display: '0'
               provider: engineering_magazine
               context_mapping: {  }
-            weight: 0
+            weight: 2
+            additional: {  }
+          1822977b-cd49-42b0-a623-d4f9238817fa:
+            uuid: 1822977b-cd49-42b0-a623-d4f9238817fa
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:article_collection:name'
+              label: 'Taxonomy Name'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: hidden
+                settings:
+                  tag: h1
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: magazine-topics__term-name
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -

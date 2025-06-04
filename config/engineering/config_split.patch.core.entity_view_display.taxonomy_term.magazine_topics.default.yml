@@ -1,0 +1,42 @@
+adding:
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            624f69de-e990-4632-a66e-76495fc29988:
+              weight: 4
+            1a33ec3b-a4db-4c29-9606-981a1a26b38e:
+              uuid: 1a33ec3b-a4db-4c29-9606-981a1a26b38e
+              region: main
+              configuration:
+                id: 'field_block:taxonomy_term:magazine_topics:name'
+                label: 'Taxonomy Name'
+                label_display: '0'
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: entity_title_heading
+                  label: hidden
+                  settings:
+                    tag: h1
+                  third_party_settings:
+                    empty_fields:
+                      handler: ''
+                    field_formatter_class:
+                      class: magazine-topics__term-name
+                    field_label:
+                      label_value: ''
+                      label_tag: ''
+              weight: 3
+              additional: {  }
+removing:
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            624f69de-e990-4632-a66e-76495fc29988:
+              weight: 1
