@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - page_manager.page.spotlights
+  module:
+    - engineering_magazine
+    - jumpstart_ui
 id: spotlights-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -35,6 +38,17 @@ variant_settings:
             heading_text: Spotlights
             wrapper: h1
           weight: 0
+          additional: {  }
+        94af9932-6939-433f-8ed6-f16fdf964c87:
+          uuid: 94af9932-6939-433f-8ed6-f16fdf964c87
+          region: main
+          configuration:
+            id: magazine_navigation_block
+            label: 'Magazine Navigation'
+            label_display: '0'
+            provider: engineering_magazine
+            context_mapping: {  }
+          weight: 1
           additional: {  }
       third_party_settings: {  }
     -
