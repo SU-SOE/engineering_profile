@@ -39,8 +39,8 @@
 
             function reorderElements() {
               var windowWidth = $(window).width();
-              if (windowWidth < 768) {
-                // Reorder for mobile view (less than 768px)
+              if (windowWidth < 992) {
+                // Reorder for mobile view (less than 992px)
                 $(".magazine-landing-nav__topics-panel").insertAfter(".topics_item");
               } else {
                 // Reorder back for larger viewports
@@ -61,7 +61,7 @@
             function fixNewsSubnavActivePath() {
               let path = window.location.pathname;
               var windowWidth = $(window).width();
-              if (windowWidth >= 768) {
+              if (windowWidth >= 992) {
                 if (path.indexOf('/future-everything-podcast') !== -1) {
                   $('.foe_item').addClass('active');
                 } else {
