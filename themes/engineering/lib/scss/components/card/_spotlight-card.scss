@@ -12,6 +12,14 @@
     margin: auto;
   }
 
+  .su-link--action {
+    color: $soe-link-color;
+
+    &:after {
+      background-color: $soe-link-color;
+    }
+  }
+
   .views-row {
     @include grid-media-min('xl') {
       @include responsive-spacing('margin-bottom', 3);
