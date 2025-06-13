@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@import "../../utilities/mixins";
-@import "../../utilities/variables";
+@import '../../utilities/mixins';
+@import '../../utilities/variables';
 
 // Main purpose: style entire node of individual Spotlight pages.
 .spotlight-banner {
@@ -39,14 +39,13 @@
 
     font-weight: $su-font-black;
 
-
     &.su-spotlight-degrees,
     &.su-soe-department {
       @include type-c;
 
       font-weight: $su-font-regular;
       max-width: 40ch;
-      color: #43423E;
+      color: #43423e;
     }
 
     h1 {
@@ -65,13 +64,20 @@
   max-width: 100%;
 }
 
+// Quote on Spotlight
+.node.spotlight.su-people-spotlight-quote {
+  @include big-paragraph;
+  font-family: $su-font-sans;
+  font-weight: $su-font-regular;
+  line-height: normal;
+}
+
 //Date on Spotlight
 .spotlight.spotlight-header__date {
-  @include type-d;
+  @include big-paragraph;
+  @include responsive-spacing('margin-bottom', 0);
   text-align: right;
   font-style: italic;
   width: 100%;
   font-weight: $su-font-regular;
-  font-size: 30px;
-  margin-bottom: 5px;
 }
