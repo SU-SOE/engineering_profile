@@ -10,7 +10,7 @@ field_name: su_people_spotlight_quote
 entity_type: node
 bundle: spotlight
 label: 'People Spotlight Quote'
-description: ''
+description: "This quote will be displayed only on this individual's spotlight cards across the site and will not appear on their full spotlight page."
 required: false
 translatable: false
 default_value: {  }
