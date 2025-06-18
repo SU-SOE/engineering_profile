@@ -1,0 +1,100 @@
+uuid: f1c535e4-ebea-4a9d-a348-455fd004ea01
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.stanford_component_block
+    - page_manager.page.media_coverage
+    - views.view.stanford_news
+  module:
+    - engineering_magazine
+    - jumpstart_ui
+    - layout_builder
+    - views
+id: media_coverage-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 4227719b-1a3b-405d-a671-fa2f78a025d4
+  sections:
+    -
+      layout_id: defaults
+      layout_settings:
+        label: Header
+        context_mapping: {  }
+        extra_classes: magazine-topics__term-name
+        centered: centered-container
+        columns: default
+      components:
+        6d86291a-09a8-4413-ab5e-ddc6f80fa71c:
+          uuid: 6d86291a-09a8-4413-ab5e-ddc6f80fa71c
+          region: main
+          configuration:
+            id: jumpstart_ui_page_heading
+            label: 'Heading Block'
+            label_display: '0'
+            provider: jumpstart_ui
+            context_mapping: {  }
+            heading_text: 'Media Coverage'
+            wrapper: h1
+            hide_heading: 0
+          weight: 0
+          additional: {  }
+        f9d03eb7-35ab-4507-a73d-91137d8de811:
+          uuid: f9d03eb7-35ab-4507-a73d-91137d8de811
+          region: main
+          configuration:
+            id: magazine_navigation_block
+            label: 'Magazine Navigation'
+            label_display: '0'
+            provider: engineering_magazine
+            context_mapping: {  }
+          weight: 1
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: jumpstart_ui_two_column
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+        extra_classes: layout-paragraphs-two-column--67-33
+        centered: null
+        orientation: left
+      components:
+        7769a295-3dbb-4d9b-a87e-fad20f8e7fb6:
+          uuid: 7769a295-3dbb-4d9b-a87e-fad20f8e7fb6
+          region: left
+          configuration:
+            id: 'views_block:stanford_news-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+        a81d472d-036a-45e2-8262-cefc8135be15:
+          uuid: a81d472d-036a-45e2-8262-cefc8135be15
+          region: main
+          configuration:
+            id: 'inline_block:stanford_component_block'
+            label: Sidebar
+            label_display: '0'
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_id: 12
+            block_revision_id: 12
+            block_serialized: null
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: media_coverage
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
