@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - page_manager.page.spotlights
+    - views.view.spotlights
+  module:
+    - engineering_magazine
+    - jumpstart_ui
+    - views
 id: spotlights-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -19,10 +24,21 @@ variant_settings:
       layout_settings:
         label: Header
         context_mapping: {  }
-        extra_classes: bare-header
+        extra_classes: magazine-topics__term-name
         centered: centered-container
         columns: default
       components:
+        351f7a6b-160e-4ca9-b365-433ff281b269:
+          uuid: 351f7a6b-160e-4ca9-b365-433ff281b269
+          region: main
+          configuration:
+            id: magazine_navigation_block
+            label: 'Magazine Navigation'
+            label_display: '0'
+            provider: engineering_magazine
+            context_mapping: {  }
+          weight: 1
+          additional: {  }
         faa1e13d-7962-4129-be52-9595ef96d268:
           uuid: faa1e13d-7962-4129-be52-9595ef96d268
           region: main
@@ -34,6 +50,7 @@ variant_settings:
             context_mapping: {  }
             heading_text: Spotlights
             wrapper: h1
+            hide_heading: 0
           weight: 0
           additional: {  }
       third_party_settings: {  }
