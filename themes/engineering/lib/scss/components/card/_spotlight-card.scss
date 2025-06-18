@@ -128,11 +128,9 @@
       }
 
       h2 {
-        @include responsive-spacing('margin-bottom', -1);
         @include type-c;
 
-        margin-top: 10px;
-        margin-bottom: 0;
+        margin-bottom: 0.5rem;
         font-weight: $su-font-black;
       }
 
