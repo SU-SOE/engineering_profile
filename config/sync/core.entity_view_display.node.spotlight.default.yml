@@ -269,6 +269,7 @@ hidden:
   body: true
   links: true
   search_api_excerpt: true
+  su_metatags: true
   su_people_spotlight_quote: true
   su_soe_department: true
   su_spotlight_affiliation: true
