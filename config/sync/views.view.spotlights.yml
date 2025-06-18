@@ -2467,7 +2467,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: su-link--action
+          element_class: ''
           element_label_type: div
           element_label_class: spotlight__link
           element_label_colon: false
@@ -2725,12 +2725,12 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: su-link--action
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: div
-          element_wrapper_class: su-link--action
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
