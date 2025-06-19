@@ -34,7 +34,7 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
           9be3cd57-4a98-4d1a-b05a-b5f35d054ed8:
             uuid: 9be3cd57-4a98-4d1a-b05a-b5f35d054ed8
@@ -47,7 +47,33 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 1
+            weight: 2
+            additional: {  }
+          97e44b7e-2eea-4900-8942-29bf33bc7632:
+            uuid: 97e44b7e-2eea-4900-8942-29bf33bc7632
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:department:name'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_title_heading
+                label: hidden
+                settings:
+                  tag: h1
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: visually-hidden
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 0
             additional: {  }
         third_party_settings: {  }
   layout_library:
