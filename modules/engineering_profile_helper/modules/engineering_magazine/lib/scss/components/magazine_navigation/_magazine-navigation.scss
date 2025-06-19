@@ -12,7 +12,7 @@
   @media only screen and (min-width: 768px) {
     .section-bgcolor--title,
     .section-editorial-content {
-      @include modular-spacing('margin-bottom', 3);
+      @include modular-spacing("margin-bottom", 3);
     }
   }
 }
@@ -31,7 +31,7 @@
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 
-    @include grid-media-max('md') {
+    @include grid-media-max("md") {
       width: 90%;
       border-bottom: 0;
       border-top: 0;
@@ -45,13 +45,13 @@
       height: auto;
       cursor: pointer;
       background-color: transparent;
-      background-image: url('~../../../engineering_magazine//lib/img/caret-down-black.svg');
+      background-image: url("~../../../engineering_magazine//lib/img/caret-down-black.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: 16px;
       vertical-align: middle;
 
-      &[aria-expanded='true'] {
+      &[aria-expanded="true"] {
         &:hover,
         &:active,
         &:focus {
@@ -59,7 +59,7 @@
         }
       }
 
-      &[aria-expanded='false'] {
+      &[aria-expanded="false"] {
         &:hover,
         &:active,
         &:focus {
@@ -67,21 +67,21 @@
         }
       }
 
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         float: right;
-        background-image: url('~../../../engineering_magazine//lib/img/plus-black.svg');
+        background-image: url("~../../../engineering_magazine//lib/img/plus-black.svg");
       }
     }
 
     #mobile-magazine-landing-nav__toggle {
-      @include grid-media-max('md') {
-        background-image: url('~../../../engineering_magazine//lib/img/caret-down-black.svg');
+      @include grid-media-max("md") {
+        background-image: url("~../../../engineering_magazine//lib/img/caret-down-black.svg");
       }
     }
 
     #mobile_news_menu__toggle {
       display: none;
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         display: block;
         border-top: 3px solid red;
       }
@@ -96,7 +96,7 @@
       max-width: 890px;
       width: 100%;
 
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         display: none;
         flex-direction: column;
         align-items: flex-start;
@@ -114,7 +114,7 @@
     justify-content: space-between;
     padding: 0px;
 
-    @include grid-media-max('md') {
+    @include grid-media-max("md") {
       align-items: left;
       padding: 0px;
     }
@@ -165,7 +165,7 @@
         border-bottom: 2px solid $su-color-black;
       }
 
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         text-align: left;
         padding: 0.5em;
         width: 100%;
@@ -181,7 +181,7 @@
     }
 
     .topics-panel__header {
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         display: none;
       }
     }
@@ -198,7 +198,7 @@
     padding: 2em;
     box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 6px 0px;
 
-    @include grid-media-max('md') {
+    @include grid-media-max("md") {
       box-shadow: unset;
       padding: 0.25em;
       padding-left: 0.33em;
@@ -210,7 +210,7 @@
     }
 
     .topics-panel__header {
-      font-family: 'Roboto Slab', serif;
+      font-family: "Roboto Slab", serif;
       font-size: 1.2em;
       font-weight: 600;
       width: 100%;
@@ -227,7 +227,7 @@
       margin-left: auto;
       margin-right: auto;
 
-      @include grid-media-max('md') {
+      @include grid-media-max("md") {
         flex-direction: column;
         margin: 0;
       }
@@ -240,7 +240,7 @@
         margin-top: 0.75em;
         margin-bottom: 0.75em;
 
-        @include grid-media-max('md') {
+        @include grid-media-max("md") {
           flex: 1;
           padding: 0.75em;
           margin: 0;
@@ -270,7 +270,7 @@
 .section-bgcolor--title {
   .magazine-topics__term-name {
     h1 {
-      @include responsive-spacing('margin-bottom', 2);
+      @include responsive-spacing("margin-bottom", 2);
 
       color: $su-color-black;
       font-size: 3.2em;
@@ -295,11 +295,11 @@
   h1 {
     margin-top: 0.5em;
     text-align: center;
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
 
     @media only screen and (min-width: 768px) {
-      @include modular-spacing('margin-bottom', 2);
-      @include modular-spacing('margin-top', 2);
+      @include modular-spacing("margin-bottom", 2);
+      @include modular-spacing("margin-top", 2);
     }
   }
 }
@@ -326,15 +326,15 @@
       background-image: none;
       //margin-top: .5em;
       text-align: center;
-      font-family: 'Roboto Slab', serif;
+      font-family: "Roboto Slab", serif;
       box-sizing: border-box;
       a {
         color: $su-color-black;
       }
 
       @media only screen and (min-width: 768px) {
-        @include modular-spacing('margin-bottom', 2);
-        @include modular-spacing('margin-top', 2);
+        @include modular-spacing("margin-bottom", 2);
+        @include modular-spacing("margin-top", 2);
       }
     }
   }
