@@ -1,11 +1,18 @@
 adding:
+  dependencies:
+    module:
+      - jumpstart_ui
   third_party_settings:
     layout_builder:
       sections:
         -
+          layout_id: defaults
+          layout_settings:
+            label: Header
+            extra_classes: 'magazine-header magazine-topics__term-name'
+            centered: centered-container
+            columns: default
           components:
-            624f69de-e990-4632-a66e-76495fc29988:
-              weight: 4
             1a33ec3b-a4db-4c29-9606-981a1a26b38e:
               uuid: 1a33ec3b-a4db-4c29-9606-981a1a26b38e
               region: main
@@ -30,13 +37,16 @@ adding:
                     field_label:
                       label_value: ''
                       label_tag: ''
-              weight: 3
+              weight: 0
               additional: {  }
 removing:
+  dependencies:
+    theme:
+      - soe_basic
   third_party_settings:
     layout_builder:
       sections:
         -
-          components:
-            624f69de-e990-4632-a66e-76495fc29988:
-              weight: 1
+          layout_id: soe_basic_full_width_header
+          layout_settings:
+            label: 'Magazine Navigation'

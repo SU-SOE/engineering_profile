@@ -263,6 +263,10 @@
   }
 }
 
+.node-stanford-page-title:has(.magazine-topics__term-name) {
+  margin-top: 0;
+}
+
 .section-bgcolor--title {
   .magazine-topics__term-name {
     h1 {
@@ -284,6 +288,19 @@
     font-weight: $su-font-semi-bold;
     letter-spacing: 0;
     margin: -9px 0 10px;
+  }
+}
+
+.magazine-header.magazine-topics__term-name {
+  h1 {
+    margin-top: 0.5em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+
+    @media only screen and (min-width: 768px) {
+      @include modular-spacing('margin-bottom', 2);
+      @include modular-spacing('margin-top', 2);
+    }
   }
 }
 
