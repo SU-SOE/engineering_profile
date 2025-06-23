@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.spotlight.body
+    - field.field.node.spotlight.su_metatags
     - field.field.node.spotlight.su_people_spotlight_quote
     - field.field.node.spotlight.su_soe_department
     - field.field.node.spotlight.su_spotlight_affiliation
@@ -13,6 +14,7 @@ dependencies:
     - node.type.spotlight
   module:
     - media_library
+    - metatag
     - path
     - text
 id: node.spotlight.default
@@ -38,30 +40,38 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  su_metatags:
+    type: metatag_firehose
+    weight: 10
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   su_people_spotlight_quote:
     type: string_textarea
@@ -108,7 +118,7 @@ content:
     third_party_settings: {  }
   syndication:
     type: boolean_checkbox
-    weight: 26
+    weight: 16
     region: content
     settings:
       display_label: true
@@ -132,7 +142,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

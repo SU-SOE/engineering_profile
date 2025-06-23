@@ -1,0 +1,21 @@
+uuid: 97c559c0-3c02-4bf8-b454-fbb3cc4038f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.su_metatags
+    - node.type.spotlight
+  module:
+    - metatag
+id: node.spotlight.su_metatags
+field_name: su_metatags
+entity_type: node
+bundle: spotlight
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

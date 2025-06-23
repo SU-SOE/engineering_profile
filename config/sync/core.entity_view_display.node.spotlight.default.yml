@@ -192,26 +192,6 @@ third_party_settings:
                     class: ''
             weight: -4
             additional: {  }
-          54aa6b91-104e-446c-9493-838e3d7d722b:
-            uuid: 54aa6b91-104e-446c-9493-838e3d7d722b
-            region: main
-            configuration:
-              id: 'field_block:node:spotlight:su_people_spotlight_quote'
-              label: 'People Spotlight Quote'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: basic_string
-                label: hidden
-                settings: {  }
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: -5
-            additional: {  }
           6a3b1b07-4925-458d-916c-d1c86531661f:
             uuid: 6a3b1b07-4925-458d-916c-d1c86531661f
             region: main
@@ -289,6 +269,7 @@ hidden:
   body: true
   links: true
   search_api_excerpt: true
+  su_metatags: true
   su_people_spotlight_quote: true
   su_soe_department: true
   su_spotlight_affiliation: true

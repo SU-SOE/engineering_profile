@@ -138,4 +138,5 @@ hidden:
   body: true
   links: true
   search_api_excerpt: true
+  su_metatags: true
   su_spotlight_affiliation: true
