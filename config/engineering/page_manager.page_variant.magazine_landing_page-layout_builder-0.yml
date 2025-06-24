@@ -11,6 +11,8 @@ dependencies:
     - jumpstart_ui
     - layout_discovery
     - views
+  theme:
+    - soe_basic
 id: magazine_landing_page-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -22,28 +24,11 @@ variant_settings:
   uuid: 12067df9-ee35-4adf-b2b6-9ea276e9c98f
   sections:
     -
-      layout_id: defaults
+      layout_id: soe_basic_full_width_header
       layout_settings:
-        label: Header
+        label: 'Section - Header'
         context_mapping: {  }
-        extra_classes: 'magazine-header magazine-topics__term-name'
-        centered: centered-container
-        columns: default
       components:
-        891310d3-fb2f-485d-9585-f07bfa6918d5:
-          uuid: 891310d3-fb2f-485d-9585-f07bfa6918d5
-          region: main
-          configuration:
-            id: jumpstart_ui_page_heading
-            label: 'Heading Block'
-            label_display: '0'
-            provider: jumpstart_ui
-            context_mapping: {  }
-            heading_text: 'Latest News'
-            wrapper: h1
-            hide_heading: 0
-          weight: 0
-          additional: {  }
         bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8:
           uuid: bb21fc1d-02c1-4751-aee1-4ce0ec8b34f8
           region: main
@@ -53,7 +38,18 @@ variant_settings:
             label_display: '0'
             provider: engineering_magazine
             context_mapping: {  }
-          weight: 1
+          weight: 9
+          additional: {  }
+        877ce8ae-4fcc-4104-8e73-ca0a261d1d1f:
+          uuid: 877ce8ae-4fcc-4104-8e73-ca0a261d1d1f
+          region: main
+          configuration:
+            id: news_navigation_block
+            label: 'News Navigation'
+            label_display: '0'
+            provider: engineering_magazine
+            context_mapping: {  }
+          weight: 8
           additional: {  }
       third_party_settings: {  }
     -
