@@ -30,12 +30,9 @@
     width: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    //padding-top: 1em;
-    //padding-bottom: 1em;
 
-    @include grid-media-max("sm") {
+    @include grid-media-max("md") {
       width: 90%;
-      //border-top: 3px solid red;
       border-bottom: 0;
       border-top: 0;
     }
@@ -58,7 +55,6 @@
         &:hover,
         &:active,
         &:focus {
-         // border-top: solid 1px $su-color-black;
           box-shadow: none;
         }
       }
@@ -67,43 +63,40 @@
         &:hover,
         &:active,
         &:focus {
-          // border-bottom: solid 1px $su-color-black;
           box-shadow: none;
         }
       }
 
       @include grid-media-max("md") {
-
-      }
-
-      @include grid-media-max("sm") {
         float: right;
         background-image: url("~../../../engineering_magazine//lib/img/plus-black.svg");
       }
     }
 
     #mobile-magazine-landing-nav__toggle {
-      @include grid-media-max("sm") {
+      @include grid-media-max("md") {
         background-image: url("~../../../engineering_magazine//lib/img/caret-down-black.svg");
       }
     }
 
     #mobile_news_menu__toggle {
       display: none;
-      @include grid-media-max("sm") {
+      @include grid-media-max("md") {
         display: block;
         border-top: 3px solid red;
       }
     }
 
     .news-navigation-bar__container {
-      display: flex;
       align-items: center;
-      width: 50%;
+      display: flex;
+      flex-direction: row;
       margin-left: auto;
       margin-right: auto;
+      max-width: 890px;
+      width: 100%;
 
-      @include grid-media-max("sm") {
+      @include grid-media-max("md") {
         display: none;
         flex-direction: column;
         align-items: flex-start;
@@ -121,7 +114,7 @@
     justify-content: space-between;
     padding: 0px;
 
-    @include grid-media-max("sm") {
+    @include grid-media-max("md") {
       align-items: left;
       padding: 0px;
     }
@@ -133,6 +126,7 @@
       &:hover {
         font-weight: $su-font-semi-bold;
         color: $su-color-black;
+        text-decoration: none;
       }
     }
 
@@ -165,21 +159,13 @@
       padding-bottom: 15px;
       border-bottom: 2px solid transparent;
 
-      a {
-        &:hover,
-        &:active,
-        &:focus {
-          text-decoration: underline;
-        }
-      }
-
       &:hover,
       &:active,
       &:focus {
         border-bottom: 2px solid $su-color-black;
       }
 
-      @include grid-media-max("sm") {
+      @include grid-media-max("md") {
         text-align: left;
         padding: 0.5em;
         width: 100%;
@@ -195,7 +181,7 @@
     }
 
     .topics-panel__header {
-      @include grid-media-max("sm") {
+      @include grid-media-max("md") {
         display: none;
       }
     }
@@ -212,7 +198,7 @@
     padding: 2em;
     box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 6px 0px;
 
-    @include grid-media-max("sm") {
+    @include grid-media-max("md") {
       box-shadow: unset;
       padding: 0.25em;
       padding-left: 0.33em;
@@ -241,7 +227,7 @@
       margin-left: auto;
       margin-right: auto;
 
-      @include grid-media-max("sm") {
+      @include grid-media-max("md") {
         flex-direction: column;
         margin: 0;
       }
@@ -254,7 +240,7 @@
         margin-top: 0.75em;
         margin-bottom: 0.75em;
 
-        @include grid-media-max("sm") {
+        @include grid-media-max("md") {
           flex: 1;
           padding: 0.75em;
           margin: 0;
@@ -277,6 +263,22 @@
   }
 }
 
+.node-stanford-page-title:has(.magazine-topics__term-name) {
+  margin-top: 0;
+}
+
+.section-bgcolor--title {
+  .magazine-topics__term-name {
+    h1 {
+      @include responsive-spacing("margin-bottom", 2);
+
+      color: $su-color-black;
+      font-size: 3.2em;
+      font-weight: $su-font-bold;
+    }
+  }
+}
+
 .magazine-topics__term-name {
   width: 100%;
   text-align: center;
@@ -286,6 +288,19 @@
     font-weight: $su-font-semi-bold;
     letter-spacing: 0;
     margin: -9px 0 10px;
+  }
+}
+
+.magazine-header.magazine-topics__term-name {
+  h1 {
+    margin-top: 0.5em;
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+
+    @media only screen and (min-width: 768px) {
+      @include modular-spacing("margin-bottom", 2);
+      @include modular-spacing("margin-top", 2);
+    }
   }
 }
 

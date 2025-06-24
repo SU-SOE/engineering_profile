@@ -109,6 +109,7 @@ third_party_settings:
           extra_classes: ''
           centered: centered-container
           orientation: right
+          force_regions: false
         components:
           582a6898-7096-40c2-bb65-99a556ada919:
             uuid: 582a6898-7096-40c2-bb65-99a556ada919
@@ -187,6 +188,7 @@ third_party_settings:
       - Printable
       - 'Publication (Views)'
       - React
+      - 'SoE Magazine'
       - 'Stanford News'
       - 'Stanford Profile Helper'
       - 'Stanford SAML Authentication'
