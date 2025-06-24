@@ -1,5 +1,17 @@
 _core:
   default_config_hash: AXUBMTvVtpcNp0jKjDaWjSHqMy6HjuUf7j4yVbXgazI
+track_enabled_target_entity_types:
+  - node
+  - media
+  - taxonomy_term
+  - paragraph
+  - block_content
+track_enabled_source_entity_types:
+  - node
+  - media
+  - taxonomy_term
+  - paragraph
+  - block_content
 local_task_enabled_entity_types: {  }
 track_enabled_base_fields: false
 usage_controller_items_per_page: 25
