@@ -26,7 +26,7 @@ variant_settings:
       layout_settings:
         label: Header
         context_mapping: {  }
-        extra_classes: 'magazine-header magazine-topics__term-name'
+        extra_classes: 'magazine-header magazine-topics__term-name magazine-news'
         centered: centered-container
         columns: default
       components:
