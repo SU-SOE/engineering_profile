@@ -11,39 +11,39 @@ Profile magazine_navigation_block
 <div{{attributes.addClass(classes)}}>
 	<div class="flex-12-of-12 magazine-landing-nav">
 
-    <div class="news-navigation-bar">
+    <nav class="news-navigation-bar">
 
       <div id="mobile_news_menu__toggle" class="news-navigation-nav__item">
         Browse News By
         <button aria-label="Open the browse menu" id="mobile-magazine-landing-nav__toggle" aria-expanded="false"></button>
       </div>
 
-      <div class="news-navigation-bar__container">
+      <ul class="news-navigation-bar__container">
 
-        <div class="news-navigation-nav__item topics_item">Topics
+        <li class="news-navigation-nav__item topics_item">Topics
           <button aria-label="Open the Topics menu" id="magazine-landing-nav__topics-toggle" aria-expanded="false"></button>
-        </div>
+        </li>
 
-        <div class="news-navigation-nav__item foe_item"><a href="/news/collection/future-everything-podcast" aria-label="The Future of Everything podcast">The Future of Everything</a></div>
+        <li class="news-navigation-nav__item foe_item"><a href="/news/collection/future-everything-podcast" aria-label="The Future of Everything podcast">The Future of Everything</a></li>
 
-        <div class="news-navigation-nav__item spotlight_item"><a href="/spotlight" aria-label="Spotlights">Spotlights</a></div>
+        <li class="news-navigation-nav__item spotlight_item"><a href="/spotlight" aria-label="Spotlights">Spotlights</a></li>
 
-        <div class="news-navigation-nav__item mediacoverage_item"><a href="/news/media-coverage" aria-label="Media Coverage">Media Coverage</a></div>
-      </div>
+        <li class="news-navigation-nav__item mediacoverage_item"><a href="/news/media-coverage" aria-label="Media Coverage">Media Coverage</a></li>
+      </ul>
 
-    </div>
+    </nav>
 
     <div class="magazine-landing-nav__topics-panel" aria-labelledby="magazine-landing-nav__topics-toggle">
 
-      <div class="magazine-terms-list">
-        <div class="topics-panel__header">Browse News by Topic</div>
+      <ul class="magazine-terms-list">
+        <li class="topics-panel__header">Browse News by Topic</li>
           {% for term in topics%}
-            <div class='magazine-term'>
+            <li class='magazine-term'>
               <a href="{{ term['path'] }}">{{ term['name'] }}</a>
-            </div>
+            </li>
           {% endfor %}
-          <div class='magazine-term'>&nbsp;</div>
-      </div>
+          <li class='magazine-term'>&nbsp;</li>
+      </ul>
 
     </div>
 
