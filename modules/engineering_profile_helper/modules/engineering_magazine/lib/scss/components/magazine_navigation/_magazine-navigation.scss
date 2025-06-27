@@ -305,7 +305,7 @@
     }
   }
 
-  &.magazine-news {
+  &.magazine-news__heading {
     .magazine-navigation-block {
       @media only screen and (min-width: 768px) {
         @include modular-spacing('margin-bottom', 3);

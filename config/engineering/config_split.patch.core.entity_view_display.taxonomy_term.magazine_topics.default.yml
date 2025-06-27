@@ -5,11 +5,10 @@ adding:
   third_party_settings:
     layout_builder:
       sections:
-        -
-          layout_id: defaults
+        - layout_id: defaults
           layout_settings:
             label: Header
-            extra_classes: 'magazine-header magazine-topics__term-name'
+            extra_classes: 'magazine-header magazine-topics__term-name magazine-news__heading'
             centered: centered-container
             columns: default
           components:
@@ -38,7 +37,7 @@ adding:
                       label_value: ''
                       label_tag: ''
               weight: 0
-              additional: {  }
+              additional: {}
 removing:
   dependencies:
     theme:
@@ -46,7 +45,6 @@ removing:
   third_party_settings:
     layout_builder:
       sections:
-        -
-          layout_id: soe_basic_full_width_header
+        - layout_id: soe_basic_full_width_header
           layout_settings:
             label: 'Magazine Navigation'
