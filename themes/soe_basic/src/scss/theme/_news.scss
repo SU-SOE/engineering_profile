@@ -2,13 +2,11 @@
 
 // News List
 .su-news-list {
-
   h2 {
     line-height: 1.5;
   }
 
   .su-news-article {
-
     a {
       h2 {
         font-weight: $su-font-black;
@@ -32,7 +30,6 @@
         h2 {
           @include soe--link-hover;
         }
-
       }
 
       &::after {
@@ -73,7 +70,6 @@
 .stanford-news--cards,
 .stanford-news-vertical-teaser-term,
 .ds-entity--stanford-news {
-
   h2 {
     line-height: 1.5;
   }
@@ -84,6 +80,13 @@
   }
 
   .su-news-vertical-teaser {
+    // Limit external links style to header only.
+    .su-news-vertical-teaser__link.ext.su-link--external:has(.su-news-header) {
+      &:after {
+        display: none;
+      }
+    }
+
     .su-news-header {
       @include modular-spacing('margin', null 2 2 2);
       display: block;
@@ -143,6 +146,4 @@
       }
     }
   }
-
-
 }
