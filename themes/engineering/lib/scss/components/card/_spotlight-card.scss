@@ -27,7 +27,7 @@
 
     display: flex;
 
-    @include grid-media-max('lg') {
+    @include grid-media-max('md') {
       &.flex-container {
         display: block;
 
@@ -41,7 +41,7 @@
       @include responsive-spacing('margin', 0);
       @include responsive-spacing('padding', 2);
 
-      @include grid-media-max('lg') {
+      @include grid-media-max('md') {
         @include responsive-spacing('margin-bottom', 3);
       }
     }

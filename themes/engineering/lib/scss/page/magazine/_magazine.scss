@@ -23,16 +23,21 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
 
 .card-grid__row {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
-  @include magazine-grid-rows(1);
+  @include grid-media-min('sm') {
+    flex-direction: row;
+    flex-wrap: wrap;
 
-  &:nth-of-type(2n) {
-    @include magazine-grid-rows(2);
-  }
+    @include magazine-grid-rows(1);
 
-  &:nth-of-type(3n) {
-    @include magazine-grid-rows(3);
+    &:nth-of-type(2n) {
+      @include magazine-grid-rows(2);
+    }
+
+    &:nth-of-type(3n) {
+      @include magazine-grid-rows(3);
+    }
   }
 
   .card-grid__column {
