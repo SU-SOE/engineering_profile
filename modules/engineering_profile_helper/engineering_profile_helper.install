@@ -33,3 +33,21 @@ function engineering_profile_helper_update_9001() {
   }
 
 }
+
+/**
+ * Fix Layout Builder entity type alterations during deployment.
+ */
+function engineering_profile_helper_update_9002() {
+  // Force rebuild of entity type definitions to ensure Layout Builder's
+  // alterations are applied before config import.
+  if (\Drupal::moduleHandler()->moduleExists('layout_builder')) {
+    // Rebuild the entity type manager's definitions to ensure alterations are applied.
+    \Drupal::entityTypeManager()->clearCachedDefinitions();
+    
+    // Clear all caches to ensure the entity type alterations are fully applied.
+    drupal_flush_all_caches();
+    
+    // Log that we've rebuilt entity definitions.
+    \Drupal::logger('engineering_profile_helper')->notice('Rebuilt entity type definitions to ensure Layout Builder alterations are applied.');
+  }
+}

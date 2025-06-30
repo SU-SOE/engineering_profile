@@ -8,6 +8,8 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\engineering_profile_helper\LayoutBuilderCompatibility;
 
 /**
  * Implements hook_help().
@@ -174,7 +176,8 @@ function engineering_profile_helper_local_tasks_alter(&$local_tasks) {
     
     $layout_builder_enabled = FALSE;
     foreach ($user_displays as $display) {
-      if ($display->isLayoutBuilderEnabled()) {
+      // Check if the display implements LayoutEntityDisplayInterface before calling isLayoutBuilderEnabled().
+      if ($display instanceof \Drupal\layout_builder\Entity\LayoutEntityDisplayInterface && $display->isLayoutBuilderEnabled()) {
         $layout_builder_enabled = TRUE;
         break;
       }
@@ -184,5 +187,18 @@ function engineering_profile_helper_local_tasks_alter(&$local_tasks) {
     if (!$layout_builder_enabled) {
       unset($local_tasks['layout_builder_ui:layout_builder.overrides.user.view']);
     }
+  }
+}
+
+/**
+ * Implements hook_entity_view_display_presave().
+ *
+ * This runs before other modules' entity_view_display hooks.
+ */
+function engineering_profile_helper_entity_view_display_presave(EntityViewDisplayInterface $display) {
+  // During config sync, ensure Layout Builder entity type alterations are applied.
+  if (\Drupal::isConfigSyncing() && \Drupal::moduleHandler()->moduleExists('layout_builder')) {
+    // Clear cached entity type definitions to ensure Layout Builder's alterations are applied.
+    \Drupal::entityTypeManager()->clearCachedDefinitions();
   }
 }
