@@ -81,7 +81,7 @@
 
   .su-news-vertical-teaser {
     // Limit external links style to header only.
-    .su-news-vertical-teaser__link.ext.su-link--external:has(.su-news-header) {
+    .su-news-vertical-teaser__link.su-link--external:has(.su-news-header) {
       &:after {
         display: none;
       }
