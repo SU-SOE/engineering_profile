@@ -174,7 +174,8 @@ function engineering_profile_helper_local_tasks_alter(&$local_tasks) {
     
     $layout_builder_enabled = FALSE;
     foreach ($user_displays as $display) {
-      if ($display->isLayoutBuilderEnabled()) {
+      // Check if the display implements LayoutEntityDisplayInterface before calling isLayoutBuilderEnabled().
+      if ($display instanceof \Drupal\layout_builder\Entity\LayoutEntityDisplayInterface && $display->isLayoutBuilderEnabled()) {
         $layout_builder_enabled = TRUE;
         break;
       }
