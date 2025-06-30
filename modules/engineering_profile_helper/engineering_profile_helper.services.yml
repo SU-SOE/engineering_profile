@@ -1,1 +1,6 @@
 services:
+  engineering_profile_helper.route_subscriber:
+    class: Drupal\engineering_profile_helper\EventSubscriber\LayoutBuilderRouteSubscriber
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: event_subscriber }

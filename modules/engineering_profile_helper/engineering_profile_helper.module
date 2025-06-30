@@ -162,3 +162,27 @@ function engineering_profile_helper_update_8201(&$sandbox) {
     ->condition('name', $modules, 'IN')
     ->execute();
 }
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function engineering_profile_helper_local_tasks_alter(&$local_tasks) {
+  // Remove Layout Builder local task for user entities if Layout Builder is not enabled.
+  if (isset($local_tasks['layout_builder_ui:layout_builder.overrides.user.view'])) {
+    $entity_view_display_storage = \Drupal::entityTypeManager()->getStorage('entity_view_display');
+    $user_displays = $entity_view_display_storage->loadByProperties(['targetEntityType' => 'user']);
+    
+    $layout_builder_enabled = FALSE;
+    foreach ($user_displays as $display) {
+      if ($display->isLayoutBuilderEnabled()) {
+        $layout_builder_enabled = TRUE;
+        break;
+      }
+    }
+    
+    // Remove the local task if Layout Builder is not enabled for any user display.
+    if (!$layout_builder_enabled) {
+      unset($local_tasks['layout_builder_ui:layout_builder.overrides.user.view']);
+    }
+  }
+}
