@@ -11,9 +11,11 @@ tags:
   og_image: '[node:su_spotlight_feature_image:entity:field_media_image:card_1192x596]'
   og_image_alt: '[node:su_spotlight_feature_image:entity:field_media_image:alt|node:title]'
   og_image_url: '[node:su_spotlight_feature_image:entity:field_media_image:card_1192x596]'
+  og_title: 'Spotlight: [node:title] | [site:name]'
   profile_first_name: '[node:su_spotlight_person_title]'
   title: 'Spotlight: [node:title] | [site:name]'
   twitter_cards_description: '[node:su_people_spotlight_quote]'
   twitter_cards_image: '[node:su_spotlight_feature_image:entity:field_media_image:card_1192x596]'
   twitter_cards_image_alt: '[node:su_spotlight_feature_image:entity:field_media_image:alt|node:title]'
+  twitter_cards_title: 'Spotlight: [node:title] | [site:name]'
   twitter_cards_type: summary_large_image
