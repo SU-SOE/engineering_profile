@@ -9,6 +9,10 @@
   p.su-callout-text {
     @include soe-type-sans-base;
   }
+
+  .su-link {
+    color: $su-color-digital-red;
+  }
 }
 
 h1,
