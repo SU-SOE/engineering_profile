@@ -266,6 +266,7 @@
         @include box-shadow('shallow');
 
         background-color: $soe-color-turquoise;
+        border: 0;
         color: $soe-color-black;
 
         &:hover {
