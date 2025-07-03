@@ -72,17 +72,28 @@
 
   // Styles for the grid of cards.
   .su-card__contents {
+    .su-card__superhead {
+      display: flex;
+      flex-direction: column;
+
+      time {
+        order: 1;
+      }
+    }
+
     h2 {
       @include type-d;
       @include responsive-spacing('margin-bottom', -1);
 
       font-weight: $su-font-black;
+      order: 2;
     }
 
     .soe--person-title {
       @include type-e;
 
       font-weight: $su-font-regular;
+      order: 3;
     }
 
     .soe-quote {
