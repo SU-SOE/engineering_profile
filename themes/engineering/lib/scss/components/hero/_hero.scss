@@ -49,7 +49,7 @@ $_su-hero-height: (
 
 // The content
 .su-hero__card {
-  max-width: 85rem;
+  max-width: 120rem;
   width: 100%;
 
   @include grid-media('xs') {
