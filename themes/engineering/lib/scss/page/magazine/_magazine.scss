@@ -70,6 +70,7 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
         font-size: 1em;
         font-weight: $su-font-regular;
         margin-bottom: 10px;
+        order: 1;
       }
 
       .soe-mag-card__title {
@@ -200,6 +201,7 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
             font-size: 1em;
             font-weight: $su-font-regular;
             margin-bottom: 10px;
+            order: 1;
           }
 
           .image {
@@ -209,12 +211,19 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
           }
 
           .su-spotlight--superhead {
+            display: flex;
+            flex-direction: column;
             font-size: 0.9em;
+
             @include margin(1em nul null null);
 
             @include grid-media-only('xs') {
               @include margin(1.5em null null null);
             }
+          }
+
+          .views-field:has(.soe-spotlight-mag-card__title) {
+            order: 2;
           }
 
           .soe-spotlight-mag-card__title {
@@ -234,10 +243,12 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
           .field-content.soe--person-title {
             font-size: 1.1em;
             margin-top: 0.5em;
+            order: 3;
           }
 
           .field-content.soe--person-department {
             font-size: 1.1em;
+            order: 4;
           }
 
           @include grid-media('xs') {
@@ -279,6 +290,7 @@ $soe-font--sans: 'Source Sans 3', Source Sans Pro, Helvetica Neue, Helvetica,
             font-weight: $su-font-black;
             @include type-d;
             margin-top: 1em;
+            order: 5;
           }
         }
       }
