@@ -33,6 +33,25 @@
 .spotlight-banner__text {
   @include responsive-spacing('margin', 4 null);
 
+  display: flex;
+  flex-direction: column;
+
+  .node-spotlight-type {
+    order: 1;
+  }
+
+  .node-spotlight-title {
+    order: 2;
+  }
+
+  .node-spotlight-su-spotlight-person-title {
+    order: 3;
+  }
+
+  .node-spotlight-su-soe-department {
+    order: 4;
+  }
+
   .spotlight {
     @include type-c;
     @include responsive-spacing('margin', null null 1 null);
