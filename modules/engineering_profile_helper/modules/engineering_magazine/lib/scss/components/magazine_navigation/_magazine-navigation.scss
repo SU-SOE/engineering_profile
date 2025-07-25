@@ -239,14 +239,18 @@
         box-sizing: border-box;
         padding: 10px;
         text-align: left;
-        margin: 0.75em 0;
-        padding: 0;
+        margin: 0 5em 0 0;
+        padding: 0.75em 0;
 
         @include grid-media-max('md') {
           flex: 1;
           padding: 0.75em;
           margin: 0;
           justify-content: left;
+        }
+
+        &:has(.active) {
+          border-bottom: 2px $su-color-black solid;
         }
 
         a {
@@ -258,6 +262,10 @@
           &:hover {
             text-decoration: underline;
             font-weight: bold;
+          }
+
+          &.active {
+            font-weight: $su-font-semi-bold;
           }
         }
       }
