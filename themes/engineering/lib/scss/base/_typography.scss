@@ -1,0 +1,23 @@
+.su-news-list {
+  .su-news-article {
+    .su-news-list__topics {
+      a {
+        color: $su-color-digital-red;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.su-wysiwyg-text {
+  a:not(.su-button),
+  .su-link,
+  su-link--external,
+  su-link--action {
+    color: $su-color-digital-red;
+
+    &:after {
+      background-color: $su-color-digital-red;
+    }
+  }
+}
