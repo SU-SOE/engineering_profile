@@ -1,0 +1,14 @@
+image_banner_variant_info:
+  id: image_banner_variant_info
+  label: 'Image Banner Paragraph Type'
+  bundles:
+    - paragraphs_type|stanford_banner
+  config:
+    banner_style:
+      type: select
+      title: 'Banner style'
+      description: Select the transparent overlay styles for the image banner.
+      empty_option: Default
+      options:
+        soe-gradient--transparent-purple-green-banner: Purple Green Gradient
+        soe-gradient--transparent-purple-lagunita-banner: Purple Lagunita Gradient

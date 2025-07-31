@@ -100,7 +100,6 @@
   }
 }
 
-
 .section-bgcolor--title {
   &.section-stanford-news-views-header {
     left: 50%;
@@ -137,7 +136,6 @@
 .page-people,
 .page-events,
 .page-publications {
-
   .jumpstart-ui--one-column {
     &.centered-container {
       @include modular-spacing('padding', 6 null 6 null);
@@ -165,5 +163,45 @@
 .su-event-series-title {
   h1 {
     @include modular-spacing('padding-top', 6);
+  }
+}
+
+//  Basic Page — Image Banner
+//  Transparent Gradient Overlapy
+
+.soe-gradient--transparent-purple-green-banner,
+.soe-gradient--transparent-purple-lagunita-banner,
+.soe-gradient--transparent-blue-purple-banner,
+.soe-gradient--transparent-purple-red-banner,
+.soe-gradient--transparent-blue-green-banner {
+}
+
+.soe-gradient--transparent-purple-lagunita-banner {
+  .su-hero__media {
+    @include gradient--transparent-purple-lagunita;
+  }
+}
+
+.soe-gradient--transparent-purple-green-banner {
+  .su-hero__media {
+    @include gradient--transparent-purple-green;
+  }
+}
+
+.soe-gradient--transparent-blue-purple-banner {
+  .su-hero__media {
+    @include gradient--transparent-blue-purple;
+  }
+}
+
+.soe-gradient--transparent-purple-red-banner {
+  .su-hero__media {
+    @include gradient--transparent-purple-red;
+  }
+}
+
+.soe-gradient--transparent-blue-green-banner {
+  .su-hero__media {
+    @include gradient--transparent-blue-green;
   }
 }
