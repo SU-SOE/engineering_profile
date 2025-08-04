@@ -100,6 +100,7 @@ var __webpack_exports__ = {};
                   e.preventDefault();
                   setTimeout(function () {
                     closeTopicsDropdown();
+                    toggleButton.focus();
                   }, 0);
                 } else if (!e.shiftKey && index === topicLinks.length - 1) {
                   e.preventDefault();

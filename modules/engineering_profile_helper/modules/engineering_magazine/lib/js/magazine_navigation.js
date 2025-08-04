@@ -109,7 +109,8 @@
                 if (e.shiftKey && index === 0) {
                   e.preventDefault();
                   setTimeout(() => {
-                  closeTopicsDropdown();
+                    closeTopicsDropdown();
+                    toggleButton.focus()
                   }, 0);
                 } else if (!e.shiftKey && index === topicLinks.length - 1) {
                   e.preventDefault();
