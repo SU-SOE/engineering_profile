@@ -215,10 +215,7 @@
       font-size: 1.2em;
       font-weight: 600;
       width: 100%;
-      margin-bottom: 0.5em;
-      text-decoration-color: rgb(255, 82, 92);
-      text-decoration-line: underline;
-      text-decoration-style: solid;
+      text-align: left;
     }
 
     .magazine-terms-list {
@@ -249,6 +246,15 @@
           justify-content: left;
         }
 
+        &:has(.active) a {
+          font-weight: 600;
+          margin-bottom: 0.5em;
+          text-decoration-color: rgb(255, 82, 92);
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-thickness: 2px;
+        }
+
         a {
           font-size: 1em;
           font-weight: $su-font-regular;
@@ -258,6 +264,10 @@
           &:hover {
             text-decoration: underline;
             font-weight: bold;
+          }
+
+          &.active {
+            font-weight: $su-font-semi-bold;
           }
         }
       }
@@ -277,6 +287,7 @@
       color: $su-color-black;
       font-size: 3.2em;
       font-weight: $su-font-bold;
+      background-color: white;
     }
   }
 }
