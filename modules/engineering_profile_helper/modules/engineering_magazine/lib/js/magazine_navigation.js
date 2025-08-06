@@ -110,7 +110,7 @@
                   e.preventDefault();
                   setTimeout(() => {
                     closeTopicsDropdown();
-                    toggleButton.focus()
+                    toggleButton.focus();
                   }, 0);
                 } else if (!e.shiftKey && index === topicLinks.length - 1) {
                   e.preventDefault();
