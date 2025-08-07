@@ -53,7 +53,7 @@
       $(document).on('keydown', function (e) {
         if (e.key === 'Escape' && isDropdownOpen) {
           closeTopicsDropdown();
-          toggleButton.focus();
+          focusOutsideDropdown();
         }
       });
 
@@ -66,6 +66,23 @@
         toggleButton.attr('aria-expanded', 'false');
         toggleButton.removeClass('soe-magazine__navigation-rotate-up');
         toggleButton.addClass('soe-magazine__navigation-rotate-down');
+      }
+
+      function focusOutsideDropdown() {
+        const mainNavItems = $('.news-navigation-bar a');
+        let topicsIndex = -1;
+        mainNavItems.each(function(index) {
+          if ($(this).closest('.topics_item').length || $(this).is('#magazine-landing-nav__topics-toggle')) {
+            topicsIndex = index;
+            return false;
+          }
+        });
+
+        if (topicsIndex !== -1 && topicsIndex < mainNavItems.length - 1) {
+          mainNavItems.eq(topicsIndex + 1).focus();
+        } else if (mainNavItems.length > 0) {
+          mainNavItems.first().focus();
+        }
       }
 
       // Enhanced keyboard navigation for topics dropdown
@@ -90,13 +107,16 @@
               case 'Tab':
                 // Handle tabbing out of dropdown
                 if (e.shiftKey && index === 0) {
+                  e.preventDefault();
                   setTimeout(() => {
                     closeTopicsDropdown();
                     toggleButton.focus();
                   }, 0);
                 } else if (!e.shiftKey && index === topicLinks.length - 1) {
+                  e.preventDefault();
                   setTimeout(() => {
                     closeTopicsDropdown();
+                    focusOutsideDropdown();
                   }, 0);
                 }
                 break;
