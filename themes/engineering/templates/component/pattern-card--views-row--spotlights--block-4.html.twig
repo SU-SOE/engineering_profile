@@ -101,15 +101,7 @@
     {%- block block_card_cta %}
       {# Card CTA Link #}
       {%- if card_cta_label is not empty and allow_links %}
-        {%- include template_path_link with
-          {
-            "link_href": card_link,
-            "link_content": card_cta_label,
-            "attributes": card_cta_attributes,
-            "modifier_class": "su-card__link su-link--action"
-          }
-          only
-        -%}
+        <a {{ card_cta_attributes }} href="{{ card_link }}" class="su-link su-card__link su-link--action">{{ card_cta_label|raw }}</a>
       {% endif -%}
 
       {# Big ol link button. Adds a BEM class for targeting. #}
