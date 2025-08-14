@@ -5,7 +5,8 @@ $_su-hero-height: (
   'md': 320px,
   'lg': 409px,
   'xl': 520px,
-  '2xl': 520px) !default;
+  '2xl': 520px,
+) !default;
 
 //
 // Hero
@@ -51,6 +52,16 @@ $_su-hero-height: (
 .su-hero__card {
   max-width: 120rem;
   width: 100%;
+
+  .su-card__superhead {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
   @include grid-media('xs') {
     @include margin(20px null);
