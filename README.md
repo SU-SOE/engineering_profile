@@ -1,6 +1,6 @@
 # [SOE Profile](https://github.com/SU-SOE/engineering_profile)
 
-##### 8.x
+##### 12.x
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)
 
@@ -27,7 +27,7 @@ Nothing special needed.
 
 Steps to build a new release:
 
-- Checkout the latest commit from the `8.x-1.x` branch.
+- Checkout the latest commit from the `12.x` branch.
 - Create a new branch for the release.
 - Commit any necessary changes to the release branch.
   - These may include, but are not necessarily limited to:
