@@ -30,7 +30,7 @@ jobs:
         run: |
           mysql -h mysql -P 3306 -u root -pdrupal -e 'SET GLOBAL max_allowed_packet=67108864;' &&
           composer global require su-sws/stanford-caravan:11.x-dev &&
-          ~/.config/composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project --with-coverage
+          ~/.config/composer/vendor/bin/sws-caravan phpunit /var/www/html --extension-dir=$GITHUB_WORKSPACE/project
       - name: Save Test Results
         uses: actions/upload-artifact@v4
         if: failure()
@@ -47,7 +47,7 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:php8.3
-      options: '--network-alias drupal8ci'
+      options: "--network-alias drupal8ci"
     services:
       mysql:
         image: mysql:8.0
@@ -89,7 +89,7 @@ jobs:
       DRUPAL_DATABASE_HOST: mysql
     container:
       image: pookmish/drupal8ci:php8.3
-      options: '--network-alias=drupal8ci'
+      options: "--network-alias=drupal8ci"
     services:
       selenium:
         image: selenium/standalone-chrome:130.0
