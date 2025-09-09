@@ -1,12 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Test the news functionality.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 class PersonCest {
 
   /**
@@ -23,18 +23,11 @@ class PersonCest {
     $this->faker = Factory::create();
   }
 
-
-
-  public function _after(AcceptanceTester $I) {
-
-  }
-
   /**
    * Sidebar "Contact" header should only appear once.
    */
   public function testDoubleHeader(AcceptanceTester $I){
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_person',
       'title' => 'Foo Bar',
       'su_person_first_name' => 'Foo',
@@ -94,21 +87,18 @@ $node = $I->createEntity([
   public function testCreatePerson(AcceptanceTester $I) {
     $term = $I->createEntity([
       'vid' => 'stanford_person_types',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
 
     // Use 1s in the name to be at the top of the lists.
-    $first_name = '111' . $this->faker->firstName;
-    $last_name = '111' . $this->faker->lastName;
-
-
-$node = $I->createEntity([
+    $first_name = '111' . $this->faker->firstName();
+    $last_name = '111' . $this->faker->lastName();
+    $node = $I->createEntity([
       'type' => 'stanford_person',
       'su_person_first_name' => $first_name,
       'su_person_last_name' => $last_name,
       'su_person_type_group' => $term,
     ]);
-    $I->runDrush('cr');
     $I->amOnPage($node->toUrl()->toString());
     $I->see("$first_name $last_name", 'h1');
     $I->amOnPage('/people');
@@ -164,24 +154,23 @@ $node = $I->createEntity([
    * Special characters should stay.
    */
   public function testSpecialCharacters(AcceptanceTester $I) {
-    $first_name = $this->faker->firstName;
-    $middle_name = $this->faker->firstName;
-    $last_name = $this->faker->lastName;
+    $first_name = $this->faker->firstName();
+    $middle_name = $this->faker->firstName();
+    $last_name = $this->faker->lastName();
 
     $I->logInWithRole('contributor');
     $I->amOnPage('/node/add/stanford_person');
     $I->fillField('First Name', $first_name);
     $I->fillField('Last Name', "$middle_name & $last_name");
-    $I->fillField('Short Title', $this->faker->text);
+    $I->fillField('Short Title', $this->faker->text());
     $I->click('Save');
     $I->canSee("$first_name $middle_name & $last_name", 'h1');
   }
 
   /**
    * D8CORE-2613: Taxonomy menu items don't respect the UI.
-   *
-   * @group 4704
    */
+  #[CodeceptionAttribute\Group('4704')]
   public function testD8Core2613Terms(AcceptanceTester $I) {
     $term1 = $I->createEntity([
       'name' => $this->faker->words(2, TRUE),
@@ -223,42 +212,41 @@ $node = $I->createEntity([
     $I->amOnPage('/people');
     $I->cantSeeLink($term3->label());
 
-    //$faker = Factory::create();
+    $faker = Factory::create();
     $parent = $I->createEntity([
-      'name' => 'Parent: ' . $this->faker->text(10),
+      'name' => 'Parent: ' . $faker->text(10),
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     $child = $I->createEntity([
-      'name' => 'Child: ' . $this->faker->text(10),
+      'name' => 'Child: ' . $faker->text(10),
       'vid' => 'stanford_person_types',
       'parent' => $parent->id(),
     ], 'taxonomy_term');
     $grandchild = $I->createEntity([
-      'name' => 'GrandChild: ' . $this->faker->text(10),
+      'name' => 'GrandChild: ' . $faker->text(10),
       'vid' => 'stanford_person_types',
       'parent' => $child->id(),
     ], 'taxonomy_term');
     $great_grandchild = $I->createEntity([
-      'name' => 'Great GrandChild: ' . $this->faker->text(10),
+      'name' => 'Great GrandChild: ' . $faker->text(10),
       'vid' => 'stanford_person_types',
       'parent' => $grandchild->id(),
     ], 'taxonomy_term');
 
     $another_parent = $I->createEntity([
-      'name' => 'Parent: ' . $this->faker->words(2, TRUE),
+      'name' => 'Parent: ' . $faker->words(2, TRUE),
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     $another_child = $I->createEntity([
-      'name' => 'Child: ' . $this->faker->words(2, TRUE),
+      'name' => 'Child: ' . $faker->words(2, TRUE),
       'vid' => 'stanford_person_types',
       'parent' => $another_parent->id(),
     ], 'taxonomy_term');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_person',
-      'su_person_first_name' => $this->faker->firstName,
-      'su_person_last_name' => $this->faker->lastName,
+      'su_person_first_name' => $faker->firstName(),
+      'su_person_last_name' => $faker->lastName(),
       'su_person_type_group' => [
         ['target_id' => $great_grandchild->id()],
         ['target_id' => $another_child->id()],
@@ -283,7 +271,7 @@ $node = $I->createEntity([
     $I->logInWithRole('site_manager');
     $term = $I->createEntity([
       'vid' => 'stanford_person_types',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->canSeeCheckboxIsChecked('Published');
@@ -298,12 +286,11 @@ $node = $I->createEntity([
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     /** @var \Drupal\node\NodeInterface $node */
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_person',
-      'su_person_short_title' => $this->faker->title,
-      'su_person_first_name' => $this->faker->firstName,
-      'su_person_last_name' => $this->faker->lastName,
+      'su_person_short_title' => $this->faker->title(),
+      'su_person_first_name' => $this->faker->firstName(),
+      'su_person_last_name' => $this->faker->lastName(),
       'su_person_type_group' => $term->id(),
     ]);
     $I->logInWithRole('administrator');
@@ -321,21 +308,20 @@ $node = $I->createEntity([
 
   /**
    * Validate metadata information.
-   *
-   * @group metadata
    */
+  #[CodeceptionAttribute\Group('metadata')]
   public function testMetaData(AcceptanceTester $I) {
     $values = [
       'image_alt' => $this->faker->words(3, TRUE),
-      'body' => $this->faker->paragraph,
-      'first_name' => $this->faker->firstName,
-      'last_name' => $this->faker->lastName,
-      'profile_link' => $this->faker->url,
+      'body' => $this->faker->paragraph(),
+      'first_name' => $this->faker->firstName(),
+      'last_name' => $this->faker->lastName(),
+      'profile_link' => $this->faker->url(),
     ];
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
     $file_system = \Drupal::service('file_system');
-    $image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
+    $image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word() . '.jpg');
 
     $file = $I->createEntity(['uri' => $image_path], 'file');
     $media = $I->createEntity([
@@ -347,8 +333,7 @@ $node = $I->createEntity([
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'su_person_first_name' => $values['first_name'],
       'su_person_last_name' => $values['last_name'],
@@ -387,12 +372,11 @@ $node = $I->createEntity([
       'vid' => 'stanford_person_types',
     ], 'taxonomy_term');
     /** @var \Drupal\node\NodeInterface $node */
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_person',
-      'su_person_short_title' => $this->faker->title,
-      'su_person_first_name' => $this->faker->firstName,
-      'su_person_last_name' => $this->faker->lastName,
+      'su_person_short_title' => $this->faker->title(),
+      'su_person_first_name' => $this->faker->firstName(),
+      'su_person_last_name' => $this->faker->lastName(),
       'su_person_type_group' => $term->id(),
     ]);
     $term->delete();
@@ -403,6 +387,26 @@ $node = $I->createEntity([
 
     $I->canSeeInCurrentUrl($node->toUrl()->toString());
     $I->canSee($node->label(), 'h1');
+  }
+
+  /**
+   * Validate external content redirect.
+   */
+  public function testExternalSourcePerson(AcceptanceTester $I) {
+    $node = $I->createEntity([
+      'type' => 'stanford_person',
+      'title' => $this->faker->words(3, TRUE),
+      'su_person_source' => "http://google.com/",
+    ]);
+
+    // Redirect as anon.
+    $I->amOnPage($node->toUrl()->toString());
+    $I->seeCurrentUrlEquals('/');
+
+    // See content as admin.
+    $I->logInWithRole('administrator');
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSeeInCurrentUrl($node->toUrl()->toString());
   }
 
 }

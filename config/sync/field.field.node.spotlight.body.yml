@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.body
     - node.type.spotlight
   module:
-    - allowed_formats
     - text
 third_party_settings:
   allowed_formats:

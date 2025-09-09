@@ -1,14 +1,14 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Drupal\config_pages\Entity\ConfigPages;
 use Faker\Factory;
 use Drupal\Core\Cache\Cache;
 
 /**
  * Test the events + importer functionality.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 class EventsCest {
 
   /**
@@ -25,9 +25,6 @@ class EventsCest {
     $this->faker = Factory::create();
   }
 
-
-
-
   public function _after(AcceptanceTester $I) {
     if ($config_page = ConfigPages::load('stanford_events_importer')) {
       $config_page->delete();
@@ -36,9 +33,8 @@ class EventsCest {
 
   /**
    * Events list intro block is at the top of the page.
-   *
-   * @group D8CORE-4858
    */
+  #[CodeceptionAttribute\Group('D8CORE-4858')]
   public function testListIntro(AcceptanceTester $I) {
     // Start with no events.
     $nodes = \Drupal::entityTypeManager()
@@ -77,7 +73,7 @@ class EventsCest {
     $I->canSee($event->label());
     $I->cantSee('No events at this time');
 
-    $message = $this->faker->sentence;
+    $message = $this->faker->sentence();
     // Set the cache to avoid any unwanted API issues.
     \Drupal::cache()->set('localist_api:https://events.stanford.edu', [
       'data' => [],
@@ -133,7 +129,7 @@ class EventsCest {
     $I->canSee('su_event_contact_info');
 
     $term = $I->createEntity([
-      'name' => $this->faker->firstName,
+      'name' => $this->faker->firstName(),
       'vid' => 'stanford_event_types',
     ], 'taxonomy_term');
     $event_node = $this->createEventNode($I);
@@ -236,8 +232,6 @@ class EventsCest {
 
   /**
    * Test thing.
-   *
-   * @group foobar
    */
   public function testSiteManagerPerms(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
@@ -293,29 +287,27 @@ class EventsCest {
   /**
    * Published checkbox should be hidden on term edit pages.
    */
-  private function testTermPublishing(AcceptanceTester $I) {
+  public function testTermPublishing(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $term = $I->createEntity([
       'vid' => 'event_audience',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
-    // $I->cantSee('Published');
+    $I->cantSee('Published');
 
     $term = $I->createEntity([
       'vid' => 'stanford_event_types',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
-    // I don't know why this fails, when I manually check it, works as expected.
-    //$I->canSeeCheckboxIsChecked('Published');
+    $I->canSeeCheckboxIsChecked('Published');
   }
 
   /**
    * Clone events get incremented date.
    */
   public function testClone(AcceptanceTester $I) {
-
     $user = $I->createUserWithRoles(['contributor']);
     /** @var \Drupal\node\NodeInterface $node */
     $node = $this->createEventNode($I);
@@ -351,14 +343,14 @@ class EventsCest {
 
   /**
    * Test event card markup.
-   *
-   * @group eventcard
    */
+  #[CodeceptionAttribute\Group('eventcard')]
   public function testEventCard(AcceptanceTester $I) {
     $event = $this->createEventNode($I);
     $view_builder = \Drupal::entityTypeManager()->getViewBuilder('node');
     $pre_render = $view_builder->view($event, 'stanford_card');
-    $render_output = \Drupal::service('renderer')->renderInIsolation($pre_render);
+    $render_output = \Drupal::service('renderer')
+      ->renderInIsolation($pre_render);
 
     libxml_use_internal_errors(TRUE);
     $dom = new DOMDocument();

@@ -79,4 +79,4 @@ form_op_lock:
   paragraph:
     mode: 0
     values: {  }
-types_js_lock: {  }
+timeout: 900

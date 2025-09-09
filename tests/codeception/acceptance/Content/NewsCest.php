@@ -1,12 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Test the news functionality.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 class NewsCest {
 
   /**
@@ -23,8 +23,6 @@ class NewsCest {
     $this->faker = Factory::create();
   }
 
-
-
   /**
    * News list intro block is at the top of the page.
    */
@@ -36,10 +34,8 @@ class NewsCest {
 
   /**
    * Test that the default content has installed and is unpublished.
-   *
-   * Engineering-- we have no default content for this profile, disabling this test.
    */
-  protected function testDefaultContentExists(AcceptanceTester $I) {
+  public function testDefaultContentExists(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage("/admin/content");
     $I->see("Sample: Smith Conference");
@@ -69,9 +65,8 @@ class NewsCest {
 
   /**
    * Test that the view pages exist.
-   * We have removed the news view, and replaced it with what used to be magazine.
    */
-  private function testViewPagesExist(AcceptanceTester $I) {
+  public function testViewPagesExist(AcceptanceTester $I) {
     $I->amOnPage("/news");
     $I->seeLink('Announcement');
     $I->click("a[href='/news/announcement']");
@@ -83,8 +78,7 @@ class NewsCest {
    * Validate external content redirect.
    */
   public function testExternalSourceArticle(AcceptanceTester $I) {
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_news',
       'title' => $this->faker->words(3, TRUE),
       'su_news_source' => "http://google.com/",
@@ -153,7 +147,7 @@ $node = $I->createEntity([
     $I->logInWithRole('site_manager');
     $term = $I->createEntity([
       'vid' => 'stanford_news_topics',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $I->amOnPage($term->toUrl('edit-form')->toString());
     $I->canSeeCheckboxIsChecked('Published');
@@ -161,9 +155,8 @@ $node = $I->createEntity([
 
   /**
    * Validate metadata information.
-   *
-   * @group metadata
    */
+  #[CodeceptionAttribute\Group('metadata')]
   public function testMetaData(AcceptanceTester $I) {
     $time = \Drupal::time()->getCurrentTime();
     $now = DateTime::createFromFormat('U', $time);
@@ -183,8 +176,8 @@ $node = $I->createEntity([
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
     $file_system = \Drupal::service('file_system');
-    $banner_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
-    $featured_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
+    $banner_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word() . '.jpg');
+    $featured_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word() . '.jpg');
 
     $file = $I->createEntity(['uri' => $banner_image_path], 'file');
     $banner_media = $I->createEntity([
@@ -205,8 +198,7 @@ $node = $I->createEntity([
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_publishing_date' => $date_string,
@@ -228,8 +220,7 @@ $node = $I->createEntity([
     $I->cantSeeElement('meta', ['name' => 'twitter:image:alt']);
     $I->cantSeeElement('meta', ['name' => 'twitter:description']);
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_banner' => $banner_media->id(),
@@ -245,8 +236,7 @@ $node = $I->createEntity([
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_news',
       'su_news_banner' => $banner_media->id(),

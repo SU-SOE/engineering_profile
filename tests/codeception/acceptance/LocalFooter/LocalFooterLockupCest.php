@@ -1,17 +1,15 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Drupal\config_pages\Entity\ConfigPages;
 
 require_once __DIR__ . '/../TestFilesTrait.php';
 
 /**
  * Test for the local lockup settings.
- *
- * Note - the Engineering theme doesn't use lockups in favor of a custom footer
- * So these tests will always fail.
- *
- * @group local_footer
  */
+#[CodeceptionAttribute\Group('local-footer')]
+#[CodeceptionAttribute\Group('local-footer-lockup')]
 class LocalFooterLockupCest {
 
   use TestFilesTrait;
@@ -32,7 +30,7 @@ class LocalFooterLockupCest {
    * @param \AcceptanceTester $I
    *   Tester.
    */
-  protected function _after(AcceptanceTester $I) {
+  public function _after(AcceptanceTester $I) {
     if ($config_page = ConfigPages::load('stanford_local_footer')) {
       $config_page->delete();
     }
@@ -42,7 +40,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsA(AcceptanceTester $I) {
+  public function testLockupSettingsA(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -65,7 +63,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsB(AcceptanceTester $I) {
+  public function testLockupSettingsB(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -88,7 +86,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsD(AcceptanceTester $I) {
+  public function testLockupSettingsD(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -111,7 +109,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsE(AcceptanceTester $I) {
+  public function testLockupSettingsE(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -135,7 +133,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsH(AcceptanceTester $I) {
+  public function testLockupSettingsH(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -159,7 +157,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsI(AcceptanceTester $I) {
+  public function testLockupSettingsI(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -183,7 +181,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsM(AcceptanceTester $I) {
+  public function testLockupSettingsM(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -206,7 +204,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsO(AcceptanceTester $I) {
+  public function testLockupSettingsO(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -228,7 +226,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsP(AcceptanceTester $I) {
+  public function testLockupSettingsP(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -251,7 +249,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsR(AcceptanceTester $I) {
+  public function testLockupSettingsR(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -273,7 +271,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsS(AcceptanceTester $I) {
+  public function testLockupSettingsS(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -297,7 +295,7 @@ class LocalFooterLockupCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsT(AcceptanceTester $I) {
+  public function testLockupSettingsT(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -322,7 +320,7 @@ class LocalFooterLockupCest {
   /**
    * Test the logo image settings overrides.
    */
-  protected function testLogoWithLockup(AcceptanceTester $I) {
+  public function testLogoWithLockup(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);
@@ -357,7 +355,7 @@ class LocalFooterLockupCest {
   /**
    * Test for the logo without the lockup text.
    */
-  protected function testLogoWithOutLockup(AcceptanceTester $I) {
+  public function testLogoWithOutLockup(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->canSeeResponseCodeIs(200);

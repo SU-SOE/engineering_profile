@@ -1,10 +1,11 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
+
 /**
  * Class DefaultContentCest.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 class DefaultContentCest {
 
   /**
@@ -59,7 +60,6 @@ class DefaultContentCest {
    * XML Sitemap should exist after cron.
    */
   public function testXmlSitemap(AcceptanceTester $I) {
-    $I->runDrush('xmlsitemap-regenerate');
     $I->runDrush('cron');
     $I->amOnPage('/sitemap.xml');
     $I->canSeeResponseCodeIs(200);
@@ -67,16 +67,15 @@ class DefaultContentCest {
 
   /**
    * Test the default menu items exist with proper destinations.
-   *
-   * @group menu_link_weight
    */
+  #[CodeceptionAttribute\Group('menu_link_weight')]
   public function testMenuItems(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/structure/menu/manage/main');
 
     $pages = [
       '/about' => 'About',
-      // '/news' => 'News',
+      '/news' => 'News',
       '/people' => 'People',
       '/research' => 'Research',
       '/resources' => 'Resources',

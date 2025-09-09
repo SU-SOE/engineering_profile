@@ -1,10 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class EntityReferenceCest.
  */
+#[CodeceptionAttribute\Group('paragraphs')]
+#[CodeceptionAttribute\Group('teaser')]
 class EntityReferenceCest {
 
   /**
@@ -58,8 +61,7 @@ class EntityReferenceCest {
   /**
    * Publications can be referenced in teaser paragraph.
    */
-  private function testPublicationTeasers(FunctionalTester $I) {
-    //FIXME
+  public function testPublicationTeasers(FunctionalTester $I) {
     $publication = $I->createEntity([
       'type' => 'stanford_publication',
       'title' => $this->faker->words(3, TRUE),
@@ -68,7 +70,7 @@ class EntityReferenceCest {
     $I->amOnPage($publication->toUrl('edit-form')->toString());
 
     $I->selectOption('su_publication_citation[actions][bundle]', 'Journal Article');
-    $I->click('Add new Citation');
+    $I->click('Add Citation');
     $I->waitForText('First Name');
     $I->click('Save');
     $I->canSee($publication->label(), 'h1');
@@ -107,7 +109,7 @@ class EntityReferenceCest {
     $this->fieldValues = [
       'headliner' => $this->faker->words(3, TRUE),
       'description' => $this->faker->words(3, TRUE),
-      'uri' => $this->faker->url,
+      'uri' => $this->faker->url(),
       'title' => $this->faker->words(3, TRUE),
     ];
 

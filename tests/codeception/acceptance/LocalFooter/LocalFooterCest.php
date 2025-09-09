@@ -1,10 +1,11 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
+
 /**
  * Class LocalFooterCest.
- *
- * @group local-footer
  */
+#[CodeceptionAttribute\Group('local-footer')]
 class LocalFooterCest {
 
   /**
@@ -35,10 +36,9 @@ class LocalFooterCest {
 
   /**
    * Changes to the local footer should display correctly.
-   *
-   * @group social-links
    */
-  protected function testCustomLocalFooter(AcceptanceTester $I) {
+  #[CodeceptionAttribute\Group('social-links')]
+  public function testCustomLocalFooter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->checkOption('Enabled');
@@ -87,9 +87,9 @@ class LocalFooterCest {
     $I->canSee('Primary links header', 'h2');
     $I->canSeeLink('Primary Link', 'http://google.com');
     $I->canSee('Secondary Links Header', 'h2');
-    // $I->canSeeLink('Secondary Link', 'http://google.com');
-    // $I->canSee('Lorem Ipsum', 'p');
-    // $I->canSeeElement('input[value="Sign Me Up"]');
+    $I->canSeeLink('Secondary Link', 'http://google.com');
+    $I->canSee('Lorem Ipsum', 'p');
+    $I->canSeeElement('input[value="Sign Me Up"]');
 
     $I->amOnPage('/admin/config/system/local-footer');
     $I->uncheckOption('Enabled');
@@ -122,9 +122,8 @@ class LocalFooterCest {
   /**
    * Route urls and no link urls should function correctly in the footer.
    */
-  protected function testNodeRoutesAndNoLink(AcceptanceTester $I) {
-
-$node = $I->createEntity([
+  public function testNodeRoutesAndNoLink(AcceptanceTester $I) {
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'Test Page',
     ]);
@@ -147,7 +146,7 @@ $node = $I->createEntity([
     $I->see('Local Footer has been', '.messages-list');
 
     $I->amOnPage('/');
-    // $I->canSee('NO LINK', 'li span');
+    $I->canSee('NO LINK', 'li span');
   }
 
 }

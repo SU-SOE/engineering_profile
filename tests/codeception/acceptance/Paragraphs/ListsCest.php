@@ -1,13 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class ListsCest.
- *
- * @group paragraphs
- * @group lists
  */
+#[CodeceptionAttribute\Group('paragraphs')]
+#[CodeceptionAttribute\Group('lists')]
 class ListsCest {
 
   /**
@@ -24,45 +24,88 @@ class ListsCest {
     $this->faker = Factory::create();
   }
 
+  /**
+   * Test "items to display" field numeric value.
+   */
+  #[CodeceptionAttribute\Group('D8CORE-8000')]
+  public function testItemsToDisplayNumeric(AcceptanceTester $I) {
+    /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_lists',
+      'su_list_headline' => $this->faker->words(3, TRUE),
+      'su_list_view' => [
+        'target_id' => 'stanford_news',
+        'display_id' => 'block_1',
+        'arguments' => '',
+        'items_to_display' => NULL,
+      ],
+    ], 'paragraph');
+    $node = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->text(30),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+    $paragraph->setParentEntity($node, 'su_page_components');
+    $paragraph->save();
 
+    $I->logInWithRole('administrator');
+    $I->amOnPage("/paragraphs_edit/node/{$node->id()}/paragraphs/{$paragraph->id()}/edit");
+    $I->canSeeInField('View', 'News');
+    $I->fillField('Items to display', $this->faker->word());
+    $I->click('Save');
+    $I->canSee('Items to display must be numeric');
+
+    $I->fillField('Items to display', $this->faker->numberBetween(1, 100) . $this->faker->word());
+    $I->click('Save');
+    $I->canSee('Items to display must be numeric');
+
+    $I->fillField('Items to display', $this->faker->word() . $this->faker->numberBetween(1, 100));
+    $I->click('Save');
+    $I->canSee('Items to display must be numeric');
+
+    $I->fillField('Items to display', $this->faker->numberBetween(1, 100) . $this->faker->word() . $this->faker->numberBetween(1, 100));
+    $I->click('Save');
+    $I->canSee('Items to display must be numeric');
+
+    $I->fillField('Items to display', $this->faker->numberBetween(1, 100));
+    $I->click('Save');
+    $I->cantSee('Items to display must be numeric');
+    $I->cantSee('error has been found');
+  }
 
   /**
    * Shared tags on each content type are identical.
-   *
-   * @group jsonapi
    */
+  #[CodeceptionAttribute\Group('jsonapi')]
   public function testSharedTags(AcceptanceTester $I) {
-
     $shared_tag = $I->createEntity([
-      'name' => $this->faker->jobTitle,
+      'name' => $this->faker->jobTitle(),
       'vid' => 'su_shared_tags',
     ], 'taxonomy_term');
-
     $basic_page = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_page',
       'su_shared_tags' => $shared_tag->id(),
     ]);
-
     $news = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_news',
       'su_shared_tags' => $shared_tag->id(),
     ]);
-
     $event = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_event',
       'su_shared_tags' => $shared_tag->id(),
     ]);
-
     $person = $I->createEntity([
-      'su_person_first_name' => $this->faker->firstName,
-      'su_person_last_name' => $this->faker->lastName,
+      'su_person_first_name' => $this->faker->firstName(),
+      'su_person_last_name' => $this->faker->lastName(),
       'type' => 'stanford_person',
       'su_shared_tags' => $shared_tag->id(),
     ]);
-
     $publication = $I->createEntity([
       'title' => $this->faker->text(20),
       'type' => 'stanford_publication',
@@ -140,9 +183,8 @@ class ListsCest {
 
   /**
    * News items should display in the list paragraph.
-   *
-   * @group jsonapi
    */
+  #[CodeceptionAttribute\Group('jsonapi')]
   public function testListParagraphNews(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
     $I->amOnPage('/node/add/stanford_news');
@@ -175,9 +217,8 @@ class ListsCest {
 
   /**
    * When using the list paragraph and view arguments, it should filter results.
-   *
-   * @group jsonapi
    */
+  #[CodeceptionAttribute\Group('jsonapi')]
   public function testListParagraphNewsFiltersNoFilter(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
 
@@ -211,7 +252,6 @@ class ListsCest {
 
     $random_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
     $topic_term = $this->createTaxonomyTerm($I, 'stanford_news_topics');
-
 
     $news = $I->createEntity([
       'type' => 'stanford_news',
@@ -268,9 +308,8 @@ class ListsCest {
 
   /**
    * No results message and hiding should work.
-   *
-   * @group D8CORE-4858
    */
+  #[CodeceptionAttribute\Group('D8CORE-4858')]
   public function testEmptyResultsListEvents(AcceptanceTester $I) {
     // Start with no events.
     $nodes = \Drupal::entityTypeManager()
@@ -279,7 +318,7 @@ class ListsCest {
     foreach ($nodes as $node) {
       $node->delete();
     }
-    $message = $this->faker->sentence;
+    $message = $this->faker->sentence();
     $headline_text = $this->faker->words(3, TRUE);
     /** @var \Drupal\paragraphs\ParagraphInterface $paragraph */
     $paragraph = $I->createEntity([
@@ -297,8 +336,7 @@ class ListsCest {
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -330,8 +368,7 @@ $node = $I->createEntity([
     $paragraph->setBehaviorSettings('list_paragraph', ['empty_message' => $message]);
     $paragraph->save();
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -366,8 +403,7 @@ $node = $I->createEntity([
     ]);
     $paragraph->save();
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [
@@ -383,9 +419,8 @@ $node = $I->createEntity([
 
   /**
    * Event items should display in the list paragraph.
-   *
-   * @group jsonapi
    */
+  #[CodeceptionAttribute\Group('jsonapi')]
   public function testListParagraphEvents(AcceptanceTester $I) {
     $I->logInWithRole('contributor');
 
@@ -410,8 +445,7 @@ $node = $I->createEntity([
       'vid' => 'stanford_event_keywords',
     ], 'taxonomy_term');
 
-
-$event = $I->createEntity([
+    $event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->words(3, TRUE),
       'su_event_date_time' => [
@@ -527,7 +561,6 @@ $event = $I->createEntity([
         'end_value' => time() + 240,
       ],
     ]);
-
     $I->amOnPage("/node/{$event->id()}/edit");
     $I->click('Save');
     $I->canSee('has been updated');
@@ -552,10 +585,9 @@ $event = $I->createEntity([
     $event_type = $this->createTaxonomyTerm($I, 'stanford_event_types');
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-
-$event = $I->createEntity([
+    $event = $I->createEntity([
       'type' => 'stanford_event',
-      'title' => $this->faker->text(15),
+      'title' => $this->faker->words(3, TRUE),
       'su_event_audience' => $event_audience->id(),
       'su_event_type' => $event_type->id(),
       'su_event_date_time' => [
@@ -590,8 +622,7 @@ $event = $I->createEntity([
     $child_type = $this->createTaxonomyTerm($I, 'stanford_event_types', NULL, $event_type->id());
     $event_audience = $this->createTaxonomyTerm($I, 'event_audience');
 
-
-$event = $I->createEntity([
+    $event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $event_audience->id(),
@@ -628,8 +659,7 @@ $event = $I->createEntity([
     // are included in the results.
     $child_audience = $this->createTaxonomyTerm($I, 'event_audience', NULL, $event_audience->id());
 
-
-$event = $I->createEntity([
+    $event = $I->createEntity([
       'type' => 'stanford_event',
       'title' => $this->faker->text(15),
       'su_event_audience' => $child_audience->id(),
@@ -770,9 +800,8 @@ $event = $I->createEntity([
 
   /**
    * Test basic page types list view.
-   *
-   * @group D8CORE-7422
    */
+  #[CodeceptionAttribute\Group('D8CORE-7422')]
   public function testListParagraphBasicPageTypesFilter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
 
@@ -808,8 +837,8 @@ $event = $I->createEntity([
 
     $headings = $I->grabMultiple('.ptype-stanford-lists h3');
     $headings = array_map('trim', $headings);
-    $I->assertEquals($basic_page_entity->label(), $headings[0], $basic_page_entity->label()  . ' should be first.');
-    $I->assertEquals($second_basic_page_entity->label(), $headings[1], $second_basic_page_entity->label()  . ' should be second.');
+    $I->assertEquals($basic_page_entity->label(), $headings[0], $basic_page_entity->label() . ' should be first.');
+    $I->assertEquals($second_basic_page_entity->label(), $headings[1], $second_basic_page_entity->label() . ' should be second.');
 
     $I->cantSee($type_term->label());
 
@@ -817,7 +846,7 @@ $event = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'Z' . $this->faker->text(15),
       'su_basic_page_type' => $type_term->id(),
-      'su_page_description' => $this->faker->text,
+      'su_page_description' => $this->faker->text(),
       'layout_selection' => 'stanford_basic_page_full',
       'created' => time() - 100000,
     ]);
@@ -841,8 +870,8 @@ $event = $I->createEntity([
     $headings = $I->grabMultiple('.ptype-stanford-lists h3');
     $headings = array_map('trim', $headings);
 
-    $I->assertEquals($basic_page_entity->label(), $headings[0], $basic_page_entity->label()  . ' should be first.');
-    $I->assertEquals($second_basic_page_entity->label(), $headings[1], $second_basic_page_entity->label()  . ' should be second.');
+    $I->assertEquals($basic_page_entity->label(), $headings[0], $basic_page_entity->label() . ' should be first.');
+    $I->assertEquals($second_basic_page_entity->label(), $headings[1], $second_basic_page_entity->label() . ' should be second.');
 
     $node = $this->getNodeWithList($I, [
       'target_id' => 'stanford_basic_pages',
@@ -852,17 +881,14 @@ $event = $I->createEntity([
     ]);
 
     $I->amOnPage($node->toUrl()->toString());
-    // $I->canSee($basic_page_entity->label(), 'h3');
-    // $I->canSee($second_basic_page_entity->label(), 'h3');
+    $I->canSee($basic_page_entity->label(), 'h3');
+    $I->canSee($second_basic_page_entity->label(), 'h3');
 
     $headings = $I->grabMultiple('.ptype-stanford-lists h3');
-    if (!empty($headings)) {
-      $headings = array_map('trim', $headings);
+    $headings = array_map('trim', $headings);
 
-      $I->assertEquals($second_basic_page_entity->label(), $headings[0], $second_basic_page_entity->label()  . ' should be first.');
-      $I->assertEquals($basic_page_entity->label(), $headings[1], $basic_page_entity->label()  . ' should be second.');
-    }
-
+    $I->assertEquals($second_basic_page_entity->label(), $headings[0], $second_basic_page_entity->label() . ' should be first.');
+    $I->assertEquals($basic_page_entity->label(), $headings[1], $basic_page_entity->label() . ' should be second.');
   }
 
   /**
@@ -887,8 +913,7 @@ $event = $I->createEntity([
       'su_list_button' => ['uri' => 'http://google.com', 'title' => 'Google'],
     ], 'paragraph');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [

@@ -61,6 +61,7 @@ third_party_settings:
           extra_classes: ''
           centered: null
           orientation: right
+          force_regions: false
         components:
           d4e19ce3-4069-4f08-9d3c-b48df1dfc4fa:
             uuid: d4e19ce3-4069-4f08-9d3c-b48df1dfc4fa
@@ -86,7 +87,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 1
             additional: {  }
           00d6e3fa-7393-4fef-a92d-da1ecbeb1af0:
@@ -99,7 +100,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 4
             additional: {  }
           4e464987-c068-4266-8ac3-2feed5dc1b08:

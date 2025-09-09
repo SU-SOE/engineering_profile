@@ -1,15 +1,15 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class Issue2901390Cest.
  *
- * @group paragraphs
- * @group bug_fix
- *
  * @link https://www.drupal.org/node/2901390
  */
+#[CodeceptionAttribute\Group('bug_fix')]
+#[CodeceptionAttribute\Group('paragraphs')]
 class Issue2901390Cest {
 
   /**
@@ -30,8 +30,7 @@ class Issue2901390Cest {
   public function testLayoutBuilderParagraph(AcceptanceTester $I) {
     $user = $I->createUserWithRoles(['site_manager', 'layout_builder_user']);
     $I->logInAs($user->id());
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(20),
     ]);

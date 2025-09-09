@@ -1,13 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class MediaWithCaptionCest.
- *
- * @group paragraphs
- * @group media_caption
  */
+#[CodeceptionAttribute\Group('paragraphs')]
+#[CodeceptionAttribute\Group('media_caption')]
 class MediaWithCaptionCest {
 
   /**
@@ -37,8 +37,7 @@ class MediaWithCaptionCest {
       ],
     ], 'paragraph');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->text(30),
       'su_page_components' => [

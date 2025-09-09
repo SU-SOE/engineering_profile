@@ -1,3 +1,4 @@
+config/install
 content/**/*.jpg
 content/**/*.png
 content/**/*.gif

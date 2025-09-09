@@ -1,6 +1,6 @@
-# [SOE Profile](https://github.com/SU-SOE/engineering_profile)
+# [SOE Profile](https://github.com/SU-SOE/soe_profile)
 
-##### 12.x
+##### 8.x
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)
 
@@ -37,10 +37,6 @@ Steps to build a new release:
 - Give the PR a semver-compliant label, e.g., (`patch`, `minor`, `major`). This may happen automatically via Github actions (if a labeler action is configured).
 - When the PR is merged to `main`, a new tag will be created automatically, bumping the version by the semver label.
 - The github action is built from: [semver-release-action](https://github.com/K-Phoen/semver-release-action), and further documentation is available there.
-
-## Auto-building for Acquia Dev Environment
-
-- We are experimenting with autobuilding changes to the base branch to deploy to Acquia automatically.
 
 ## Troubleshooting
 

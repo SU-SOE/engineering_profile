@@ -1,10 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
+use Faker\Factory;
+
 /**
  * Test for custom block types.
- *
- * @group block
  */
+#[CodeceptionAttribute\Group('block')]
 class CustomBlockCest {
 
   /**
@@ -16,20 +18,20 @@ class CustomBlockCest {
    * Test Constructor
    */
   public function __construct() {
-    $this->faker = \Faker\Factory::create();
+    $this->faker = Factory::create();
   }
 
   /**
    * Site managers should be able to edit custom blocks.
    */
-  protected function testCustomBlockAccess(AcceptanceTester $I) {
+  public function testCustomBlockAccess(AcceptanceTester $I) {
     $block = $I->createEntity([
       'type' => 'stanford_component_block',
-      'info' => $this->faker->word(3, TRUE),
+      'info' => $this->faker->words(3, TRUE),
     ], 'block_content');
     $I->logInWithRole('site_manager');
     $I->amOnPage($block->toUrl()->toString());
-    $I->fillField('edit-info-0-value', 'Foo Bar');
+    $I->fillField('Block description', 'Foo Bar');
     $I->click('Save');
     $I->canSee('has been updated');
   }

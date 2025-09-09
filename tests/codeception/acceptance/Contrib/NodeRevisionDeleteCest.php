@@ -1,12 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Test the node revision delete module functionality.
- *
- * @group node_revision_delete
  */
+#[CodeceptionAttribute\Group('node_revision_delete')]
 class NodeRevisionDeleteCest {
 
   /**
@@ -29,8 +29,7 @@ class NodeRevisionDeleteCest {
   public function testNodeRevisionDelete(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     /** @var \Drupal\node\NodeInterface $node */
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
       'revision' => TRUE,

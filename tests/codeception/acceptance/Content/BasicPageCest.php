@@ -1,14 +1,14 @@
 <?php
 
-use Drupal\Component\Utility\Unicode;
+use Codeception\Attribute as CodeceptionAttribute;
+use Codeception\Example;
 use Faker\Factory;
 
 /**
  * Class BasicPageCest.
- *
- * @group content
- * @group basic_page
  */
+#[CodeceptionAttribute\Group('content')]
+#[CodeceptionAttribute\Group('basic_page')]
 class BasicPageCest {
 
   /**
@@ -23,18 +23,14 @@ class BasicPageCest {
     $this->faker = Factory::create();
   }
 
-
-
   /**
    * Test placing a basic page in the menu with a child menu item.
-   *
-   * @group pathauto
-   * @group menu_link_weight
    */
+  #[CodeceptionAttribute\Group('pathauto')]
+  #[CodeceptionAttribute\Group('menu_link_weight')]
   public function testCreatingPage(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,
     ]);
@@ -77,8 +73,7 @@ $node = $I->createEntity([
    */
   public function testDeletedMenuItems(AcceptanceTester $I) {
     $node_title = $this->faker->text(20);
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $node_title,
     ]);
@@ -106,28 +101,26 @@ $node = $I->createEntity([
    * Number of h1 tags should always be 1.
    */
   public function testH1Tags(AcceptanceTester $I) {
-    $I->amOnPage('/' . $this->faker->text);
+    $I->amOnPage('/' . $this->faker->text());
     $I->canSeeResponseCodeIs(404);
     $I->canSeeNumberOfElements('h1', 1);
 
     $I->amOnPage('/search?keys=stuff&search=');
     $I->canSeeResponseCodeIs(200);
-    $I->canSeeNumberOfElements('h1', 2);
-    // $I->canSeeNumberOfElements('#main-content', 1);
+    $I->canSeeNumberOfElements('h1', 1);
+    $I->canSeeNumberOfElements('#main-content', 1);
   }
 
   /**
    * The revision history tab should be functional.
    *
    * Regression test for D8CORE-1547.
-   *
-   * @group D8CORE-1547
    */
+  #[CodeceptionAttribute\Group('D8CORE-1547')]
   public function testRevisionPage(AcceptanceTester $I) {
     $title = $this->faker->words(3, TRUE);
     $I->logInWithRole('site_manager');
-
-$node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
+    $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $I->amOnPage($node->toUrl()->toString());
     $I->click('Version History');
     $I->canSeeResponseCodeIs(200);
@@ -141,7 +134,7 @@ $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $description = $this->faker->words(10, TRUE);
     $type_term = $I->createEntity([
       'vid' => 'basic_page_types',
-      'name' => $this->faker->word,
+      'name' => $this->faker->word(),
     ], 'taxonomy_term');
     $I->logInWithRole('site_manager');
     $I->amOnPage('/node/add/stanford_page');
@@ -172,9 +165,8 @@ $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
 
   /**
    * A site manager should be able to place a page under an unpublished page.
-   *
-   * @group menu_link_weight
    */
+  #[CodeceptionAttribute\Group('menu_link_weight')]
   public function testUnpublishedMenuItems(AcceptanceTester $I) {
     $unpublished_title = $this->faker->words(5, TRUE);
     $unpublished_node = $I->createEntity([
@@ -233,9 +225,8 @@ $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
 
   /**
    * Test the basic page scheduled publishing.
-   *
-   * @group scheduler
    */
+  #[CodeceptionAttribute\Group('scheduler')]
   public function testScheduler(AcceptanceTester $I) {
     $time = \Drupal::time();
 
@@ -244,8 +235,7 @@ $node = $I->createEntity(['title' => $title, 'type' => 'stanford_page']);
     $timezone_resolver->setDefaultTimeZone();
 
     $I->logInWithRole('site_manager');
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
     ]);
@@ -275,9 +265,8 @@ $node = $I->createEntity([
 
   /**
    * Validate metadata information.
-   *
-   * @group metadata
    */
+  #[CodeceptionAttribute\Group('metadata')]
   public function testMetaData(AcceptanceTester $I) {
     $values = [
       'banner_image_alt' => $this->faker->words(3, TRUE),
@@ -288,8 +277,8 @@ $node = $I->createEntity([
 
     /** @var \Drupal\Core\File\FileSystemInterface $file_system */
     $file_system = \Drupal::service('file_system');
-    $banner_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
-    $meta_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word . '.jpg');
+    $banner_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word() . '.jpg');
+    $meta_image_path = $file_system->copy(__DIR__ . '/../assets/logo.jpg', 'public://' . $this->faker->word() . '.jpg');
 
     $file = $I->createEntity(['uri' => $banner_image_path], 'file');
     $banner_media = $I->createEntity([
@@ -316,8 +305,7 @@ $node = $I->createEntity([
     ], 'media');
 
     /** @var \Drupal\node\NodeInterface $node */
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
     ]);
@@ -334,8 +322,7 @@ $node = $I->createEntity([
     $I->cantSeeElement('meta', ['name' => 'twitter:image:alt']);
     $I->cantSeeElement('meta', ['name' => 'twitter:description']);
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_banner' => ['entity' => $banner_paragraph],
@@ -351,8 +338,7 @@ $node = $I->createEntity([
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[property="og:image:alt"]', 'content'), 'Metadata "og:image:alt" should match.');
     $I->assertEquals($values['banner_image_alt'], $I->grabAttributeFrom('meta[name="twitter:image:alt"]', 'content'), 'Metadata "twitter:image:alt" should match.');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_banner' => ['entity' => $banner_paragraph],
@@ -373,17 +359,14 @@ $node = $I->createEntity([
     $I->assertEquals($values['page_description'], $I->grabAttributeFrom('meta[name="description"]', 'content'), 'Metadata "description" should match.');
   }
 
-  /**
-   * @group search-results
-   */
+  #[CodeceptionAttribute\Group('search-results')]
   public function testSearchResult(AcceptanceTester $I) {
     $text = 'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.';
     $wysiwyg = $I->createEntity([
       'type' => 'stanford_wysiwyg',
       'su_wysiwyg_text' => ['value' => $text, 'format' => 'stanford_html'],
     ], 'paragraph');
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => $wysiwyg,
@@ -395,7 +378,7 @@ $node = $I->createEntity([
 
     $I->fillField('Search this site', 'human stupidity');
     $I->click('Submit Search');
-    // $I->canSee($node->label(), 'h2');
+    $I->canSee($node->label(), 'h2');
 
     $time = \Drupal::time()->getCurrentTime();
     $date_string = \Drupal::service('date.formatter')
@@ -406,6 +389,71 @@ $node = $I->createEntity([
   protected static function getTimezone() {
     return \Drupal::config('system.date')
       ->get('timezone.default') ?: @date_default_timezone_get();
+  }
+
+  #[CodeceptionAttribute\Examples('f7ecde', NULL, NULL, NULL)]
+  #[CodeceptionAttribute\Examples('dad7cb', NULL, 'none', 'none')]
+  #[CodeceptionAttribute\Examples('f0e5ef', 'none', NULL, 'more')]
+  #[CodeceptionAttribute\Group('layout-backgrounds')]
+  public function testLayoutBackgrounds(AcceptanceTester $I, Example $example) {
+    /** @var \Drupal\paragraphs\ParagraphInterface $layout */
+    $layout = $I->createEntity(['type' => 'stanford_layout'], 'paragraph');
+    $layout->setBehaviorSettings('layout_paragraphs', [
+      'layout' => 'layout_paragraphs_1_column',
+      'config' => [
+        'bg_color' => $example[0],
+        'bottom_margin' => $example[1],
+        'bottom_padding' => $example[2],
+        'top_padding' => $example[3],
+      ],
+    ]);
+    $layout->save();
+    $text = $this->faker->paragraph();
+    /** @var \Drupal\paragraphs\ParagraphInterface $wysiwyg */
+    $wysiwyg = $I->createEntity([
+      'type' => 'stanford_wysiwyg',
+      'su_wysiwyg_text' => ['value' => $text, 'format' => 'stanford_html'],
+    ], 'paragraph');
+    $wysiwyg->setBehaviorSettings('layout_paragraphs', [
+      'parent_uuid' => $layout->uuid(),
+      'region' => 'main',
+    ]);
+    $wysiwyg->save();
+
+    $node = $I->createEntity([
+      'title' => $this->faker->words(3, TRUE),
+      'type' => 'stanford_page',
+      'su_page_components' => [
+        ['target_id' => $layout->id(), 'entity' => $layout],
+        ['target_id' => $wysiwyg->id(), 'entity' => $wysiwyg],
+      ],
+    ]);
+
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSee($node->label(), 'h1');
+    $I->canSee($text);
+    $I->canSeeElement('.bg-' . $example[0] . ' .layout--layout-paragraphs-one-column');
+
+    if ($example[1]) {
+      $I->canSeeNumberOfElements('.bottom-margin-none .layout--layout-paragraphs-one-column', 1);
+    }
+    else {
+      $I->canSeeNumberOfElements('.bottom-margin-none', 0);
+    }
+
+    if ($example[2]) {
+      $I->canSeeNumberOfElements('.bottom-padding-none .layout--layout-paragraphs-one-column', 1);
+    }
+    else {
+      $I->canSeeNumberOfElements('.bottom-padding-none', 0);
+    }
+
+    if ($example[3]) {
+      $I->canSeeNumberOfElements(".top-padding-{$example[3]} .layout--layout-paragraphs-one-column", 1);
+    }
+    else {
+      $I->canSeeNumberOfElements(".top-padding-{$example[3]}", 0);
+    }
   }
 
 }

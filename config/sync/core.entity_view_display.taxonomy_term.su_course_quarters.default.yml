@@ -57,6 +57,7 @@ third_party_settings:
           extra_classes: ''
           centered: null
           orientation: right
+          force_regions: false
         components:
           9c3dccb9-3eb3-4a3e-82ba-2b3a8b706511:
             uuid: 9c3dccb9-3eb3-4a3e-82ba-2b3a8b706511
@@ -82,7 +83,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 0
             additional: {  }
           6a791e83-4a87-44b8-9ba9-6b492109b866:
@@ -95,7 +96,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 3
             additional: {  }
           12eb9655-d749-407c-90ba-0ca685c1c048:

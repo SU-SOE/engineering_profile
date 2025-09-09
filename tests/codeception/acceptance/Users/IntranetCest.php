@@ -1,14 +1,14 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Class IntranetCest.
- *
- * @group users
- * @group no-parallel
- * @group intranet
  */
+#[CodeceptionAttribute\Group('users')]
+#[CodeceptionAttribute\Group('no-parallel')]
+#[CodeceptionAttribute\Group('intranet')]
 class IntranetCest {
 
   /**
@@ -65,8 +65,7 @@ class IntranetCest {
       $I->runDrush('cache-rebuild');
     }
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
     ]);
@@ -150,8 +149,7 @@ $node = $I->createEntity([
         ],
       ],
     ], 'paragraph');
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => 'Forest Gump',
       'type' => 'stanford_page',
       'su_page_components' => [

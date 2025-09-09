@@ -1,14 +1,14 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 use Drupal\config_pages\Entity\ConfigPages;
 
 /**
  * Test policy content type.
- *
- * @group content
- * @group policy
  */
+#[CodeceptionAttribute\Group('content')]
+#[CodeceptionAttribute\Group('policy')]
 class PolicyCest {
 
   /**
@@ -29,7 +29,6 @@ class PolicyCest {
     if ($config_page = ConfigPages::load('policy_settings')) {
       $config_page->delete();
     }
-
   }
 
   public function _after(AcceptanceTester $I) {
@@ -45,7 +44,6 @@ class PolicyCest {
     $I->cantSee('Create a new book');
     // D8CORE-4551 - removed create policy permission for contributors
     $I->canSee('Access Denied');
-
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE) . '-baz-foo',
@@ -75,6 +73,7 @@ class PolicyCest {
   /**
    * Test book title changes.
    */
+  #[CodeceptionAttribute\Group('policy-title')]
   public function testPolicyTitle(AcceptanceTester $I) {
     $title = $this->faker->words(4, TRUE) . ' foo bar';
     $I->logInWithRole('administrator');
@@ -93,9 +92,8 @@ class PolicyCest {
 
   /**
    * Test the path auto settings.
-   *
-   * @group menu_link_weight
    */
+  #[CodeceptionAttribute\Group('menu_link_weight')]
   public function testPolicyPathAuto(AcceptanceTester $I) {
     $title = $this->faker->words(4, TRUE) . ' foo bar';
     $I->logInWithRole('administrator');
@@ -133,8 +131,7 @@ class PolicyCest {
     $I->click('Save');
     $I->canSee($book->label(), 'h1');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_policy',
       'title' => $this->faker->words(3, TRUE),
       'su_policy_title' => $this->faker->words(4, TRUE) . '-foo-bar',
@@ -164,13 +161,31 @@ $node = $I->createEntity([
   }
 
   /**
-   * Test the hierarchy of the book.
-   *
-   * @group menu_link_weight
+   * Validate external content redirect.
    */
+  public function testExternalSourcePolicy(AcceptanceTester $I) {
+    $node = $I->createEntity([
+      'type' => 'stanford_policy',
+      'su_policy_title' => $this->faker->words(3, TRUE),
+      'su_policy_source' => "http://google.com/",
+    ]);
+
+    // Redirect as anon.
+    $I->amOnPage($node->toUrl()->toString());
+    $I->seeCurrentUrlEquals('/');
+
+    // See content as admin.
+    $I->logInWithRole('administrator');
+    $I->amOnPage($node->toUrl()->toString());
+    $I->canSeeInCurrentUrl($node->toUrl()->toString());
+  }
+
+  /**
+   * Test the hierarchy of the book.
+   */
+  #[CodeceptionAttribute\Group('menu_link_weight')]
   public function testPolicyHeirarcy(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
-
     $book = $I->createEntity([
       'type' => 'stanford_policy',
       'su_policy_title' => $this->faker->words(2, TRUE),
@@ -210,7 +225,7 @@ $node = $I->createEntity([
     $I->canSee($book->label(), '.breadcrumb');
     $I->canSee($chapter_two->label(), '.breadcrumb');
 
-    $authority = substr($this->faker->sentence, 0, 255);
+    $authority = substr($this->faker->sentence(), 0, 255);
 
     $article_one = $I->createEntity([
       'type' => 'stanford_policy',
@@ -262,7 +277,7 @@ $node = $I->createEntity([
     $I->amOnPage($article_one->toUrl()->toString());
     $I->canSee('II.A ' . $article_one->get('su_policy_title')->getString());
 
-    $new_prefix = $this->faker->randomLetter;
+    $new_prefix = $this->faker->randomLetter();
     $I->amOnPage($chapter_two->toUrl('edit-form')->toString());
     $I->uncheckOption('Automatic Prefix');
     $I->fillField('Chapter Number', $new_prefix);
