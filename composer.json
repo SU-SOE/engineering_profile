@@ -164,7 +164,7 @@
         "drupal/ultimate_cron": "^2.0@beta",
         "drupal/view_unpublished": "^1.0",
         "drupal/viewfield": "^3.0@beta",
-        "drupal/autosubmit": "^1.7",
+        "drupal/views_autosubmit": "^1.7",
         "drupal/views_block_filter_block": "^2.0@beta",
         "drupal/views_bulk_edit": "^3.0",
         "drupal/views_contextual_filters_or": "^1.3",
