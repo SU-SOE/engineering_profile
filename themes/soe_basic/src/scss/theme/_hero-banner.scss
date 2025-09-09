@@ -14,14 +14,22 @@
     left: auto;
     top: auto;
     text-align: center;
-    max-width: unset;
-    width: 75%;
+    max-width: 120rem;
+
+    .su-card__superhead {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
     @include grid-media-max('sm') {
       text-align: left;
       width: unset;
     }
-
 
     .su-card__contents {
       color: $su-color-white;

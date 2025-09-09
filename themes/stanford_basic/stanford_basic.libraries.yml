@@ -90,7 +90,7 @@ admin:
 
 decoupled_menu:
   js:
-    decoupled-menu/dist/islands/main-menu.island.umd.js: { minified: true }
+    decoupled-menu/dist/islands/main-menu.island.js: { minified: true }
 
 basic:
   css:
@@ -141,6 +141,9 @@ content.stanford_policy:
       dist/css/content/policy.css: { }
 
 algolia-search:
+  css:
+    theme:
+      dist/css/search-page.css: { }
   js:
     algolia-search/dist/islands/algolia-search.island.js: { minified: true }
   dependencies:

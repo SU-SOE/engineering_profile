@@ -5,7 +5,8 @@ adding:
   third_party_settings:
     layout_builder:
       sections:
-        - layout_id: defaults
+        -
+          layout_id: defaults
           layout_settings:
             label: Header
             extra_classes: 'magazine-header magazine-topics__term-name magazine-news__heading'
@@ -37,7 +38,12 @@ adding:
                       label_value: ''
                       label_tag: ''
               weight: 0
-              additional: {}
+              additional: {  }
+        -
+          components:
+            83a74267-7bcd-4b9f-b31f-8da1a7a8a40e:
+              configuration:
+                items_per_page: 0
 removing:
   dependencies:
     theme:
@@ -45,6 +51,12 @@ removing:
   third_party_settings:
     layout_builder:
       sections:
-        - layout_id: soe_basic_full_width_header
+        -
+          layout_id: soe_basic_full_width_header
           layout_settings:
             label: 'Magazine Navigation'
+        -
+          components:
+            83a74267-7bcd-4b9f-b31f-8da1a7a8a40e:
+              configuration:
+                items_per_page: none

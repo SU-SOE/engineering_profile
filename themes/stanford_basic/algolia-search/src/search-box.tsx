@@ -1,69 +1,78 @@
-import {useInstantSearch, useSearchBox} from "react-instantsearch";
+import {
+  useSearchBox
+} from "react-instantsearch";
 import {useRef} from "preact/compat";
+import {SearchForm, SearchInput} from "./styled-components";
+import RefinementSidebar from "./federated-search-facets";
 
-const SearchBox = (props) => {
-  const {query, refine} = useSearchBox(props);
-  const {status} = useInstantSearch();
+const SearchBox = ({federatedSearch}: { federatedSearch?: boolean }) => {
+  const {query, refine} = useSearchBox();
   const inputRef = useRef<HTMLInputElement>(null);
-
   return (
-    <form
+    <SearchForm
+      className={federatedSearch ? "federated-search" : ""}
       action=""
       role="search"
       noValidate
       onSubmit={e => {
         e.preventDefault();
         e.stopPropagation();
-        refine(inputRef.current?.value);
+        refine(inputRef.current?.value || "");
         window.history.replaceState(null, '', `?key=${inputRef.current?.value}`)
       }}
       onReset={e => {
         e.preventDefault();
         e.stopPropagation();
         refine('');
-        inputRef.current.value = '';
-        inputRef.current?.focus();
+
+        if (inputRef.current) {
+          inputRef.current.value = '';
+          inputRef.current.focus();
+        }
       }}
-      style={{marginBottom: "20px"}}
     >
-      <div>
-        <label htmlFor="keyword-search-algolia">
-          Keywords<span className="visually-hidden">&nbsp;Search</span>
-        </label>
-        <input
-          id="keyword-search-algolia"
-          ref={inputRef}
-          autoComplete="on"
-          autoCorrect="on"
-          autoCapitalize="off"
-          spellCheck={true}
-          maxLength={128}
-          type="search"
-          defaultValue={query}
-          autoFocus
-        />
+      <div className="search-input">
+        <SearchInput>
+          <label htmlFor="keyword-search-algolia" className="visually-hidden">
+            Keywords Search
+          </label>
+          <input
+            id="keyword-search-algolia"
+            ref={inputRef}
+            autoComplete="on"
+            autoCorrect="on"
+            autoCapitalize="off"
+            maxLength={128}
+            type="search"
+            defaultValue={query}
+            autoFocus
+          />
+          <div class="search-buttons">
+
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span className="visually-hidden">Submit search</span>
+            </button>
+            <span className="divider"/>
+            <button
+              type="reset"
+              hidden={query.length === 0}
+            >
+              <i class="fa-solid fa-close"></i>
+              <span className="visually-hidden">Clear search</span>
+            </button>
+          </div>
+        </SearchInput>
+
       </div>
-      <div style={{display: "flex", gap: "1rem", marginTop: "1rem"}}>
-        <button type="submit">Submit</button>
-        <button
-          type="reset"
-          hidden={query.length === 0}
-        >
-          Reset
-        </button>
-      </div>
-      <StatusMessage status={status} query={query}/>
-    </form>
+
+      {federatedSearch &&
+        <RefinementSidebar/>
+      }
+    </SearchForm>
   );
 }
 
-const StatusMessage = ({status, query}) => {
-  let message = status === 'loading' ? 'Loading' : null;
-  if (status != 'loading' && query) {
-    message = `Showing results for "${query}"`
-  }
-  return (
-    <div className="visually-hidden" aria-live="polite" aria-atomic>{message}</div>
-  )
-}
+<RefinementSidebar/>
+
 export default SearchBox;
