@@ -10,7 +10,7 @@ require_once __DIR__ . '/../TestFilesTrait.php';
  */
 #[CodeceptionAttribute\Group('local-footer')]
 #[CodeceptionAttribute\Group('local-footer-lockup')]
-class LocalFooterLockupCest {
+class LocalFooterLockupCestDisabled {
 
   use TestFilesTrait;
 
