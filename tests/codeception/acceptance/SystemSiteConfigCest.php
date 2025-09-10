@@ -71,8 +71,11 @@ class SystemSiteConfigCest {
     $I->cantSee('Foo Bar Site');
   }
 
+  /**
+   * We use a custom header on Engineering
+   */
   #[CodeceptionAttribute\Group('header-links')]
-  public function testHeaderLinks(AcceptanceTester $I) {
+  private function testHeaderLinks(AcceptanceTester $I) {
     $org_term = $I->createEntity([
       'vid' => 'site_owner_orgs',
       'name' => $this->faker->words(2, TRUE),

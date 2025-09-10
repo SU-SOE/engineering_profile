@@ -41,15 +41,6 @@ adding:
               additional: {  }
         -
           components:
-            '':
-              uuid: null
-              region: null
-              configuration:
-                items_per_page: 0
-              weight: null
-              additional: {  }
-        -
-          components:
             83a74267-7bcd-4b9f-b31f-8da1a7a8a40e:
               configuration:
                 items_per_page: 0
