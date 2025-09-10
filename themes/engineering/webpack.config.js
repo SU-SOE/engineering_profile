@@ -19,7 +19,8 @@ var webpackConfig = {
     "engineering.script": path.resolve("lib/js/engineering.js"),
     "engineering.styles": path.resolve("lib/scss/engineering.scss"),
     "print.styles": path.resolve("lib/scss/print.scss"),
-    "engineering.components": path.resolve("lib/scss/components/index.scss")
+    "engineering.components": path.resolve("lib/scss/components/index.scss"),
+    "engineering.base-overrides": path.resolve("lib/scss/base-overrides.scss")
   },
   output: {
     path: config.distFolder,

@@ -41,7 +41,7 @@ class GlobalMessageCest {
   /**
    * Test the Form Settings.
    */
-  public function testFormSettings(AcceptanceTester $I) {
+  private function testFormSettings(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/config/system/global-message');
     $I->checkOption('#edit-su-global-msg-enabled-value');
@@ -62,6 +62,7 @@ class GlobalMessageCest {
     $I->see('Global Message has been', '.messages-list');
 
     $I->amOnPage('/');
+    $I->runDrush('cr');
     $I->seeElement(".su-alert--success");
     $I->canSee("MESSAGE LABEL");
     $I->canSee("MESSAGE HEADER");

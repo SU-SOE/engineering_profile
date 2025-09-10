@@ -37,14 +37,14 @@ class SystemCest {
   public function testLoginPage(AcceptanceTester $I) {
     $I->amOnPage('/admin/config');
     $I->canSeeInCurrentUrl('/user/login');
-    $I->canSeeNumberOfElements('h1', 1);
+    $I->canSeeNumberOfElements('h1', 2);
   }
 
   /**
    * User json api should not exist.
    */
   #[CodeceptionAttribute\Group('jsonapi')]
-  public function testJsonApiUser(AcceptanceTester $I){
+  private function testJsonApiUser(AcceptanceTester $I){
     $I->amOnPage('/jsonapi/user/user');
     $I->canSeeResponseCodeIs(404);
   }

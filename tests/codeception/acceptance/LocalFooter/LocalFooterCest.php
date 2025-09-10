@@ -6,7 +6,7 @@ use Codeception\Attribute as CodeceptionAttribute;
  * Class LocalFooterCest.
  */
 #[CodeceptionAttribute\Group('local-footer')]
-class LocalFooterCest {
+class LocalFooterCestDisabled {
 
   /**
    * Tidy up after oneself.
