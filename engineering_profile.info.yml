@@ -62,6 +62,7 @@ install:
   - 'drupal:views_ui'
   - 'ds:ds'
   - 'ds:ds_extras'
+  - 'engineering_magazine:engineering_magazine'
   - 'entity_reference_revisions:entity_reference_revisions'
   - 'entity_usage:entity_usage'
   - 'environment_indicator:environment_indicator'
