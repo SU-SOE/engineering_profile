@@ -12,7 +12,7 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\engineering_profile\EventSubscriber\EngineeringProfileEventSubscriber as StanfordEventSubscriber;
+use Drupal\engineering_profile\EventSubscriber\EngineeringProfileEventSubscriber;
 use Drupal\user\Entity\Role;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
