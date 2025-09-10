@@ -49,6 +49,7 @@ install:
   - 'drupal:options'
   - 'drupal:page_cache'
   - 'drupal:path'
+  - 'page_manager_ui:page_manager_ui'
   - 'drupal:responsive_image'
   - 'drupal:search'
   - 'drupal:serialization'
