@@ -29,7 +29,7 @@ class TeaserCest {
     $teaser_item_field = [];
     foreach ($node_types as $node_type) {
       // Exclude spotlight node type.
-      if ($node_type != 'spotlight'){
+      if ($node_type->id() != 'spotlight'){
         $title_key = $node_type->id() == 'stanford_policy' ? 'su_policy_title' : 'title';
         $teaser_entities[$node_type->id()] = $I->createEntity([
           $title_key => $this->faker->words(3, TRUE),
