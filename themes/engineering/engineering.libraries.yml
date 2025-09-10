@@ -1,6 +1,8 @@
 engineering-styling:
   version: 1.0
   css:
+    base:
+      dist/css/engineering.base-overrides.css : {weight: 250}
     theme:
       dist/css/engineering.styles.css : {weight: 999}
     component:
