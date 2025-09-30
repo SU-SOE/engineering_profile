@@ -3,7 +3,7 @@ name: Notify Stack Repo
 on:
   push:
     branches:
-      - 11.x
+      - 12.x
 
 jobs:
   notify-stack:
