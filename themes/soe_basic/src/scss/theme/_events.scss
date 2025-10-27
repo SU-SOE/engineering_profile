@@ -51,14 +51,18 @@
   }
 
   .su-events-details {
-    .su-event-cta {
-      a {
+    .su-event-cta,
+    .su-button {
         color: $soe-color-black;
         &:hover,
         &:focus {
           color: $su-color-white;
+          background-color: $su-color-black;
+
+          a {
+            color: $su-color-white;
+          }
         }
-      }
     }
   }
 }
