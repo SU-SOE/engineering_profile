@@ -3,6 +3,7 @@
 .ptype-stanford-entity {
   .su-entity-item {
     a {
+      text-decoration: none;
 
       &:hover {
         text-decoration: none;
@@ -11,7 +12,6 @@
   }
 
   .stanford-event-series {
-
     a {
       @include soe--link;
       @include soe-link-icon(soe_arrow, 1.8rem, 0);
