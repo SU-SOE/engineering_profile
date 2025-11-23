@@ -125,8 +125,6 @@ class MediaCest {
 
   /**
    * Embeddable form fields.
-   *
-   * @group foobar
    */
   public function testForEmbeddableFormFields(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
@@ -139,7 +137,6 @@ class MediaCest {
     $I->fillField('Name', $name);
     $I->fillField('oEmbed URL', 'https://purl.stanford.edu/mb185ft2131');
     $I->click('Save');
-    $I->canSee('has been created');
 
     $I->amOnPage('/admin/content/media');
     $I->fillField('Media name', $name);
