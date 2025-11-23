@@ -84,29 +84,20 @@ display:
               action_id: node_clone_action
               preconfiguration:
                 add_confirmation: false
+                confirm_help_text: ''
                 message_override: ''
             -
               action_id: views_bulk_edit
               preconfiguration:
                 add_confirmation: false
+                confirm_help_text: ''
                 message_override: ''
                 get_bundles_from_results: true
             -
               action_id: views_bulk_operations_delete_entity
               preconfiguration:
                 add_confirmation: true
-                message_override: ''
-            -
-              action_id: 'entity:unpublish_action:node'
-              preconfiguration:
-                add_confirmation: false
-                label_override: Unpublish
-                message_override: ''
-            -
-              action_id: 'entity:publish_action:node'
-              preconfiguration:
-                add_confirmation: false
-                label_override: Publish
+                confirm_help_text: ''
                 message_override: ''
         title:
           id: title
@@ -380,8 +371,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -422,8 +411,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -513,8 +500,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -637,6 +622,7 @@ display:
           empty_table: true
           caption: ''
           description: ''
+          class: ''
       row:
         type: fields
       query:

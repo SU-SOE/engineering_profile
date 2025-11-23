@@ -28,6 +28,7 @@ complete_list:
   - xmlsitemap.settings.taxonomy_term.stanford_event_subject
   - xmlsitemap.settings.taxonomy_term.su_shared_tags
   - 'page_manager.page_variant.magazine_*'
+  - 'page_manager.page_variant.spotlights-layout_builder*'
   - 'user_role.soe_*'
 partial_list:
   - field.field.paragraph.stanford_lists.su_list_view

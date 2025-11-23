@@ -1,12 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Test the event series functionality.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 class EventsSeriesCest {
 
   /**
@@ -22,8 +22,6 @@ class EventsSeriesCest {
   public function __construct() {
     $this->faker = Factory::create();
   }
-
-
 
   /**
    * Ensure events are in the sitemap.
@@ -145,9 +143,8 @@ class EventsSeriesCest {
 
   /**
    * Creates an event series node.
-   *
-   * @depends EnableModule
    */
+  #[CodeceptionAttribute\Depends('EnableModule')]
   protected function createEventSeriesNode(AcceptanceTester $I) {
     $event_nodes = [];
     for ($i = 0; $i <= 5; $i++) {

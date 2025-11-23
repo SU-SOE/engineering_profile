@@ -1,12 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Test the Course functionality.
- *
- * @group content
  */
+#[CodeceptionAttribute\Group('content')]
 class CoursesCest {
 
   /**
@@ -20,8 +20,6 @@ class CoursesCest {
   public function __construct() {
     $this->faker = Factory::create();
   }
-
-
 
   /**
    * Test for view pages and taxonomy functionality
@@ -47,10 +45,10 @@ class CoursesCest {
     $I->canSee('Shared Tags');
     $I->amOnPage('/courses');
     $I->canSeeResponseCodeIs(200);
-    // $I->canSee($node->label());
-    // $I->canSee('Doe, J., Doe, M.');
-    // $I->canSee('2021-2022');
-    // $I->canSee('Courses Menu');
+    $I->canSee($node->label());
+    $I->canSee('Doe, J., Doe, M.');
+    $I->canSee('2021-2022');
+    $I->canSee('Courses Menu');
     $I->amOnPage($quarters_term->toUrl()->toString());
     $I->canSeeResponseCodeIs(200);
     $I->seeLink($node->label());
@@ -160,7 +158,7 @@ class CoursesCest {
    */
   protected function createCourseTagsTerm(AcceptanceTester $I) {
     return $I->createEntity([
-      'name' => $this->faker->word . '::' . $this->faker->word,
+      'name' => $this->faker->word() . '::' . $this->faker->word(),
       'vid' => 'su_course_tags',
     ], 'taxonomy_term');
   }

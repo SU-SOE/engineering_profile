@@ -1,10 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Codeception tests on card paragraph type.
  */
+#[CodeceptionAttribute\Group('paragraphs')]
+#[CodeceptionAttribute\Group('card')]
 class StanfordCardCest {
 
   /**
@@ -20,8 +23,6 @@ class StanfordCardCest {
   public function __construct() {
     $this->faker = Factory::create();
   }
-
-
 
   /**
    * Test a card with a button link.
@@ -55,8 +56,7 @@ class StanfordCardCest {
       'su_card_link_display' => $link_type,
     ], 'paragraph');
 
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
       'su_page_components' => [

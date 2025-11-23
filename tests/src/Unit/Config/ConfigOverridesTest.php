@@ -31,17 +31,17 @@ class ConfigOverridesTest extends UnitTestCase {
     parent::setUp();
     $state = $this->createMock(StateInterface::class);
     $state->method('get')
-      ->will($this->returnCallback([$this, 'getStateCallback']));
+      ->willReturnCallback([$this, 'getStateCallback']);
 
     $config_factory = $this->createMock(ConfigFactoryInterface::class);
     $config_factory->method('getEditable')
-      ->will($this->returnCallback([$this, 'getConfigCallback']));
+      ->willReturnCallback([$this, 'getConfigCallback']);
 
     $this->overrideService = new ConfigOverrides($state, $config_factory);
 
     $config_page_loader = $this->createMock(ConfigPagesLoaderServiceInterface::class);
     $config_page_loader->method('getValue')
-      ->will($this->returnCallback([$this, 'getConfigPageValue']));
+      ->willReturnCallback([$this, 'getConfigPageValue']);
 
     $container = new ContainerBuilder();
     $container->set('config_pages.loader', $config_page_loader);
@@ -145,7 +145,7 @@ class ConfigOverridesTest extends UnitTestCase {
   /**
    * During installation, the config ignore settings shouldn't contain anything.
    */
-  public function testConfigOverridesDuringInstall() {
+  public function testConfigOverridesDuringInstall(){
     $GLOBALS['install_state'] = true;
 
     $overrides = $this->overrideService->loadOverrides(['config_ignore.settings']);

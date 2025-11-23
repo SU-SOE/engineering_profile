@@ -1,5 +1,11 @@
 @charset 'UTF-8';
 
+// Event & News Taxonomy Filter
+.stanford-event-types,
+.news-topics {
+  @include modular-spacing('margin-bottom', 6);
+}
+
 // News List
 .su-news-list {
   h2 {
@@ -57,7 +63,6 @@
       @include box-shadow('shallow');
 
       background-color: $soe-color-turquoise;
-      border: 0;
       color: $soe-color-black;
 
       &:hover {
@@ -75,17 +80,18 @@
     line-height: 1.5;
   }
 
-  .su-list-unstyled a {
-    color: $su-color-black;
-    text-decoration: none;
+  .su-list-unstyled {
+    @include modular-spacing('margin-bottom', 6);
+
+    a {
+      color: $su-color-black;
+      text-decoration: none;
+    }
   }
 
   .su-news-vertical-teaser {
-    // Limit external links style to header only.
-    .su-news-vertical-teaser__link.su-link--external:has(.su-news-header) {
-      &:after {
-        display: none;
-      }
+    &.su-card {
+      margin-bottom: 0;
     }
 
     .su-news-header {

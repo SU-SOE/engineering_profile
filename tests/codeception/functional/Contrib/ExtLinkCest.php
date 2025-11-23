@@ -1,13 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 use Drupal\config_pages\Entity\ConfigPages;
 
 /**
  * Test the external link module functionality.
- *
- * @group ext_links
  */
+#[CodeceptionAttribute\Group('ext_links')]
 class ExtLinkCest {
 
   /**
@@ -51,7 +51,6 @@ class ExtLinkCest {
    * Test external links get the added class and svg.
    */
   private function testExtLink(FunctionalTester $I) {
-    //FIXME
     $org_term = $I->createEntity([
       'vid' => 'site_owner_orgs',
       'name' => $this->faker->words(2, TRUE),
@@ -63,12 +62,14 @@ class ExtLinkCest {
 
     $I->click('Site Contacts');
     $I->waitForText('Site Owner Contact Email');
-    $I->fillField('Site Owner Contact Email (value 1)', $this->faker->email);
-    $I->fillField('Primary Site Manager Email (value 1)', $this->faker->email);
-    $I->fillField('Accessibility Contact Email (value 1)', $this->faker->email);
+    $I->fillField('Site Owner Contact Email (value 1)', $this->faker->email());
+    $I->fillField('Primary Site Manager Email (value 1)', $this->faker->email());
+    $I->fillField('Accessibility Contact Email (value 1)', $this->faker->email());
     $I->selectOption('.js-form-item-su-site-org-0-target-id select.simpler-select', $org_term->id());
     $I->click('Save');
     $I->canSee('Site Settings has been', '.messages-list');
+
+    $I->runDrush('config:pages-set-field-value stanford_basic_site_settings su_site_type academic');
 
     $I->amOnPage('/admin/config/system/local-footer');
     $I->checkOption('#edit-su-footer-enabled-value');
@@ -92,13 +93,30 @@ class ExtLinkCest {
     $I->click('Save');
     $I->see('Local Footer has been', '.messages-list');
 
-    // Validate email links.
-    $I->amOnPage('/');
-    $I->waitForElementVisible('a.mailto svg.mailto');
-    $I->canSeeNumberOfElements('a.mailto svg.mailto', 3);
+    $text = $this->faker->paragraph();
+    $paragraph = $I->createEntity([
+      'type' => 'stanford_wysiwyg',
+      'su_wysiwyg_text' => [
+        'format' => 'stanford_html',
+        'value' => $text . '<a href="mailto:foo@bar.com">email link</a> <a href="/foobar">local link</a> <a href="https://stanford.edu">external link</a>',
+      ],
+    ], 'paragraph');
+
+    $page = $I->createEntity([
+      'type' => 'stanford_page',
+      'title' => $this->faker->words(4, TRUE),
+      'su_page_components' => [
+        'target_id' => $paragraph->id(),
+        'entity' => $paragraph,
+      ],
+    ]);
+
+    $I->amOnPage($page->toUrl()->toString());
+    $I->waitForElementVisible('#page-content a.su-link--external');
 
     // External Links in the page-content region.
-    $I->canSeeNumberOfElements('#page-content a.su-link--external svg.su-link--external', 1);
+    $I->canSeeNumberOfElements('#page-content a.su-link--external', 2);
+    $I->canSeeNumberOfElements('#page-content a.mailto.su-link--external', 1);
     // External links in the local footer.
     $I->canSeeNumberOfElements('.su-local-footer__cell2 a.su-link--external', 4);
   }

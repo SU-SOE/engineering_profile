@@ -1,10 +1,11 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
+
 /**
  * Test for the Super Footer.
- *
- * @group super-footer
  */
+#[CodeceptionAttribute\Group('super-footer')]
 class SuperFooterCest {
 
   public function _after(AcceptanceTester $I) {
@@ -51,7 +52,7 @@ class SuperFooterCest {
     $I->click('Save');
     $I->see('Super Footer has been', '.messages-list');
 
-    $I->amOnPage("/");
+    $I->amOnPage('/');
     $I->seeElement(".block-config-pages-super-footer");
     $I->canSee("Super Footer Title");
     $I->canSee("Super footers are super.");

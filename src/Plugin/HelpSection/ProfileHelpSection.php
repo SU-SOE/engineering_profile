@@ -2,18 +2,19 @@
 
 namespace Drupal\engineering_profile\Plugin\HelpSection;
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\help\Attribute\HelpSection;
 use Drupal\help\Plugin\HelpSection\HelpSectionPluginBase;
 
 /**
  * Provides the module topics list section for the help page.
- *
- * @HelpSection(
- *   id = "profile_help",
- *   title = @Translation("Getting Started"),
- *   description = @Translation("What do you need help with today?"),
- *   weight = -999
- * )
  */
+#[HelpSection(
+  id: 'profile_help',
+  title: new TranslatableMarkup('Getting Started'),
+  description: new TranslatableMarkup('What do you need help with today?'),
+  weight: -999
+)]
 class ProfileHelpSection extends HelpSectionPluginBase {
 
   use ProfileHelpTrait;
@@ -40,7 +41,6 @@ class ProfileHelpSection extends HelpSectionPluginBase {
   protected function getUserGuide() {
     $help = '<h3>' . self::getLinkString($this->t('Stanford Sites User Guide'), 'https://sitesuserguide.stanford.edu') . '</h3>';
     $help .= '<p>' . $this->t('Everything you need to know about how to use, maintain, and launch your Website.') . '</p>';
-    $help .= self::getLinkString($this->t('User Guide'), 'https://sitesuserguide.stanford.edu', TRUE);
     return ['#markup' => $help];
   }
 
@@ -55,6 +55,7 @@ class ProfileHelpSection extends HelpSectionPluginBase {
     // @TODO: Update link when launch process guide is available.
     $help .= '<p>' . $this->t('Learn about the launch process, review the final checklist, and submit a request to launch.') . '</p>';
     $help .= self::getLinkString($this->t('Website launch process'), 'https://sitesuserguide.stanford.edu/support/site-launch-checklist', TRUE);
+
     return ['#markup' => $help];
   }
 

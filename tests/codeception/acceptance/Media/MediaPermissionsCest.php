@@ -1,10 +1,12 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Tests for various media access functionality.
  */
+#[CodeceptionAttribute\Group('media')]
 class MediaPermissionsCest {
 
   /**
@@ -34,7 +36,7 @@ class MediaPermissionsCest {
    * Test site embedder perms
    */
   public function testSiteEmbedderPerms(AcceptanceTester $I) {
-    $user = $I->createUserWithRoles(['soe_site_embedder','site_manager']);
+    $user = $I->createUserWithRoles(['su_site_embedder', 'site_manager']);
     $I->logInAs($user->getAccountName());
     $I->amOnPage('/media/add/embeddable');
     $I->canSeeResponseCodeIs(200);

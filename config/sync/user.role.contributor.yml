@@ -11,11 +11,11 @@ dependencies:
     - media.type.image
     - media.type.stanford_gallery_images
     - media.type.video
-    - node.type.spotlight
     - node.type.stanford_course
     - node.type.stanford_event
     - node.type.stanford_event_series
     - node.type.stanford_news
+    - node.type.stanford_opportunity
     - node.type.stanford_page
     - node.type.stanford_person
     - node.type.stanford_policy
@@ -25,6 +25,7 @@ dependencies:
     - content_lock
     - dropzonejs
     - editoria11y
+    - field_permissions
     - file
     - filter
     - help
@@ -59,10 +60,10 @@ permissions:
   - 'create image media'
   - 'create media'
   - 'create policy log'
-  - 'create spotlight content'
   - 'create stanford_event content'
   - 'create stanford_gallery_images media'
   - 'create stanford_news content'
+  - 'create stanford_opportunity content'
   - 'create stanford_page content'
   - 'create stanford_person content'
   - 'create stanford_publication content'
@@ -73,12 +74,12 @@ permissions:
   - 'delete own files'
   - 'delete own google_form media'
   - 'delete own image media'
-  - 'delete own spotlight content'
   - 'delete own stanford_course content'
   - 'delete own stanford_event content'
   - 'delete own stanford_event_series content'
   - 'delete own stanford_gallery_images media'
   - 'delete own stanford_news content'
+  - 'delete own stanford_opportunity content'
   - 'delete own stanford_page content'
   - 'delete own stanford_person content'
   - 'delete own stanford_policy content'
@@ -89,12 +90,12 @@ permissions:
   - 'edit any file media'
   - 'edit any google_form media'
   - 'edit any image media'
-  - 'edit any spotlight content'
   - 'edit any stanford_course content'
   - 'edit any stanford_event content'
   - 'edit any stanford_event_series content'
   - 'edit any stanford_gallery_images media'
   - 'edit any stanford_news content'
+  - 'edit any stanford_opportunity content'
   - 'edit any stanford_page content'
   - 'edit any stanford_person content'
   - 'edit any stanford_policy content'
@@ -106,12 +107,12 @@ permissions:
   - 'edit own file media'
   - 'edit own google_form media'
   - 'edit own image media'
-  - 'edit own spotlight content'
   - 'edit own stanford_course content'
   - 'edit own stanford_event content'
   - 'edit own stanford_event_series content'
   - 'edit own stanford_gallery_images media'
   - 'edit own stanford_news content'
+  - 'edit own stanford_opportunity content'
   - 'edit own stanford_page content'
   - 'edit own stanford_person content'
   - 'edit own stanford_policy content'
@@ -131,22 +132,25 @@ permissions:
   - 'view any unpublished stanford_event content'
   - 'view any unpublished stanford_event_series content'
   - 'view any unpublished stanford_news content'
+  - 'view any unpublished stanford_opportunity content'
   - 'view any unpublished stanford_page content'
   - 'view any unpublished stanford_person content'
   - 'view any unpublished stanford_policy content'
   - 'view any unpublished stanford_publication content'
   - 'view editoria11y checker'
+  - 'view own su_imported'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view policy log'
   - 'view scheduled content'
-  - 'view spotlight revisions'
   - 'view stanford_course revisions'
   - 'view stanford_event revisions'
   - 'view stanford_event_series revisions'
   - 'view stanford_news revisions'
+  - 'view stanford_opportunity revisions'
   - 'view stanford_page revisions'
   - 'view stanford_person revisions'
   - 'view stanford_policy revisions'
   - 'view stanford_publication revisions'
+  - 'view su_imported'
   - 'view the administration theme'

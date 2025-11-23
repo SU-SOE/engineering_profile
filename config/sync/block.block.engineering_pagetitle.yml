@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - response_code_condition
     - system
   theme:
     - engineering

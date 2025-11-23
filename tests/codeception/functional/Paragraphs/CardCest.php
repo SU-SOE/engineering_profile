@@ -1,10 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Card paragraph tests.
  */
+#[CodeceptionAttribute\Group('paragraphs')]
+#[CodeceptionAttribute\Group('card')]
 class CardCest {
 
   /**
@@ -23,15 +26,13 @@ class CardCest {
 
   /**
    * The banner paragraph should display its fields.
-   *
-   * @group foobar
    */
   public function testCardBehaviors(FunctionalTester $I) {
     $field_values = [
       'sup_header' => $this->faker->words(3, TRUE),
       'header' => $this->faker->words(3, TRUE),
       'body' => $this->faker->words(3, TRUE),
-      'uri' => $this->faker->url,
+      'uri' => $this->faker->url(),
       'title' => $this->faker->words(3, TRUE),
     ];
 

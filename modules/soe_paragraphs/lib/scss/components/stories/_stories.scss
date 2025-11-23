@@ -9,11 +9,14 @@
     @include grid-media-between('xs', 'sm') {
       display: block;
       @include modular-spacing('padding-top', 0);
-    };
+    }
+  }
+
+  .su-heading-lvl {
+    display: none;
   }
 
   .su-stories-paragraph__photo {
-
     .stanford-stories-photo-border {
       display: none;
     }
@@ -57,7 +60,7 @@
         height: 255px;
         min-width: 255px;
         min-height: 255px;
-      };
+      }
 
       @include grid-media-between('xs', 'sm') {
         display: block;
@@ -70,20 +73,25 @@
         height: 220px;
         min-width: 220px;
         min-height: 220px;
-      };
+      }
+    }
   }
-}
 
   .su-stories__details {
     @include grid-media-between('xs', 'sm') {
       display: block;
-    };
+    }
   }
 
   .su-stories-paragraph__name {
-    @include type-d;
-    font-weight: 800;
-    @include modular-spacing('margin-top', 0);
+    h2,
+    h3,
+    h4 {
+      @include type-d;
+      @include modular-spacing('margin-top', 0);
+      font-weight: 800;
+      margin-bottom: 0;
+    }
   }
 
   .su-stories-paragraph__title {
@@ -93,8 +101,12 @@
 
   .su-stories-paragraph__quote {
     @include type-b;
-    font-weight: 800;
     @include modular-spacing('margin-bottom', 1);
+    font-weight: 800;
+
+    p {
+      margin: 0;
+    }
   }
 
   .su-stories-paragraph__node-link {
@@ -113,12 +125,6 @@
     }
   }
 
-  .su-stories-paragraph__content {
-    &+ .su-stories-paragraph__cta-region {
-      @include modular-spacing('padding-top', 3);
-    }
-  }
-
   .su-stories-paragraph__cta-region {
     @include modular-spacing('padding-bottom', 4);
 
@@ -130,6 +136,5 @@
       @include button-primary();
       color: #fff;
     }
-
   }
 }

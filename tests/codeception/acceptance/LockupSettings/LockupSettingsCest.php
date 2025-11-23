@@ -1,15 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
+
 require_once __DIR__ . '/../TestFilesTrait.php';
 
 /**
  * Test for the lockup settings.
- *
- * Note, the Engineering site doesn't use the lockups in favor of a custom footer
- * so these tests will always fail.
- *
- * @group lockup
  */
+#[CodeceptionAttribute\Group('lockup')]
 class LockupSettingsCest {
 
   use TestFilesTrait;
@@ -43,7 +41,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup exists.
    */
-  protected function testLockupSettings(AcceptanceTester $I) {
+  public function testLockupSettings(AcceptanceTester $I) {
     $I->amOnPage('/');
     $I->seeElement('.su-lockup');
   }
@@ -51,7 +49,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsA(AcceptanceTester $I) {
+  public function testLockupSettingsA(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -74,7 +72,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsB(AcceptanceTester $I) {
+  public function testLockupSettingsB(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -97,7 +95,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsD(AcceptanceTester $I) {
+  public function testLockupSettingsD(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -120,7 +118,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsE(AcceptanceTester $I) {
+  public function testLockupSettingsE(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -144,7 +142,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsH(AcceptanceTester $I) {
+  public function testLockupSettingsH(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -168,7 +166,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsI(AcceptanceTester $I) {
+  public function testLockupSettingsI(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -192,7 +190,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsM(AcceptanceTester $I) {
+  public function testLockupSettingsM(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -215,7 +213,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsO(AcceptanceTester $I) {
+  public function testLockupSettingsO(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -237,7 +235,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsP(AcceptanceTester $I) {
+  public function testLockupSettingsP(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -260,7 +258,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsR(AcceptanceTester $I) {
+  public function testLockupSettingsR(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -282,7 +280,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsS(AcceptanceTester $I) {
+  public function testLockupSettingsS(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -306,7 +304,7 @@ class LockupSettingsCest {
   /**
    * Test the lockup settings overrides.
    */
-  protected function testLockupSettingsT(AcceptanceTester $I) {
+  public function testLockupSettingsT(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -331,7 +329,7 @@ class LockupSettingsCest {
   /**
    * Test the logo image settings overrides.
    */
-  protected function testLogoWithLockup(AcceptanceTester $I) {
+  public function testLogoWithLockup(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);
@@ -366,7 +364,7 @@ class LockupSettingsCest {
   /**
    * Test for the logo without the lockup text.
    */
-  protected function testLogoWithOutLockup(AcceptanceTester $I) {
+  public function testLogoWithOutLockup(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/config/system/lockup-settings');
     $I->canSeeResponseCodeIs(200);

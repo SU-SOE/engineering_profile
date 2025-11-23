@@ -8,13 +8,6 @@
   p.su-font-splash,
   p.su-callout-text {
     @include soe-type-sans-base;
-
-    .su-link--action {
-      &::after {
-        height: 20px;
-        width: 20px;
-      }
-    }
   }
 }
 
@@ -79,3 +72,4 @@ h5 {
     @include soe-type-sans-base;
   }
 }
+

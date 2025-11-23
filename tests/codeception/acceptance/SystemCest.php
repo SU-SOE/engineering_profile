@@ -1,10 +1,11 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
+
 /**
  * System tests.
- *
- * @group system
  */
+#[CodeceptionAttribute\Group('system')]
 class SystemCest {
 
   /**
@@ -14,28 +15,38 @@ class SystemCest {
     $I->runDrush('xmlsitemap:rebuild');
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/reports/status');
-    $I->canSee('10.4', '.system-status-general-info');
+    $I->canSee('11.2', '.system-status-general-info');
     if ($I->grabMultiple('.system-status-counter--error')) {
-      $I->canSee('2 Errors', '.system-status-counter--error');
+      $error_count = \Drupal::moduleHandler()
+        ->moduleExists('config_inspector') ? '2 Errors' : '1 Error';
+
+      $I->canSee($error_count, '.system-status-counter--error');
       $I->canSee('Access to update.php ', '.system-status-report__status-icon--error');
     }
 
     if (\Drupal::moduleHandler()->moduleExists('chosen')) {
       $I->canSee('Chosen Javascript file');
-      // we install chosen via composer, so it should be there.
-      // $I->cantSee('Chosen JavaScript file', '.system-status-report__status-icon--error');
+      $I->cantSee('Chosen JavaScript file', '.system-status-report__status-icon--error');
     }
   }
 
   /**
    * Test the login page.
-   *
-   * @group 403-redirect
    */
-  public function testLoginPage(AcceptanceTester $I){
+  #[CodeceptionAttribute\Group('403-redirect')]
+  public function testLoginPage(AcceptanceTester $I) {
     $I->amOnPage('/admin/config');
     $I->canSeeInCurrentUrl('/user/login');
     $I->canSeeNumberOfElements('h1', 2);
+  }
+
+  /**
+   * User json api should not exist.
+   */
+  #[CodeceptionAttribute\Group('jsonapi')]
+  private function testJsonApiUser(AcceptanceTester $I){
+    $I->amOnPage('/jsonapi/user/user');
+    $I->canSeeResponseCodeIs(404);
   }
 
 }

@@ -12,13 +12,20 @@ dependencies:
     - field.field.config_pages.stanford_basic_site_settings.su_site_a11y_contact
     - field.field.config_pages.stanford_basic_site_settings.su_site_admin_notes
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_fed
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_fed_name
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_file
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_id
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_index
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_key
     - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_search
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_terms
+    - field.field.config_pages.stanford_basic_site_settings.su_site_algolia_ui
+    - field.field.config_pages.stanford_basic_site_settings.su_site_created
     - field.field.config_pages.stanford_basic_site_settings.su_site_dropdowns
     - field.field.config_pages.stanford_basic_site_settings.su_site_email
+    - field.field.config_pages.stanford_basic_site_settings.su_site_header_button
+    - field.field.config_pages.stanford_basic_site_settings.su_site_header_links
     - field.field.config_pages.stanford_basic_site_settings.su_site_home
     - field.field.config_pages.stanford_basic_site_settings.su_site_menu_levels
     - field.field.config_pages.stanford_basic_site_settings.su_site_name
@@ -27,10 +34,13 @@ dependencies:
     - field.field.config_pages.stanford_basic_site_settings.su_site_org
     - field.field.config_pages.stanford_basic_site_settings.su_site_owner_contact
     - field.field.config_pages.stanford_basic_site_settings.su_site_renewal_due
+    - field.field.config_pages.stanford_basic_site_settings.su_site_sunetid
     - field.field.config_pages.stanford_basic_site_settings.su_site_tech_contact
+    - field.field.config_pages.stanford_basic_site_settings.su_site_type
     - field.field.config_pages.stanford_basic_site_settings.su_site_url
   module:
     - datetime
+    - file
     - link
     - options
     - text
@@ -107,6 +117,24 @@ content:
     third_party_settings: {  }
     weight: 19
     region: content
+  su_site_algolia_fed:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  su_site_algolia_fed_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 32
+    region: content
   su_site_algolia_file:
     type: file_default
     label: above
@@ -147,6 +175,35 @@ content:
     third_party_settings: {  }
     weight: 23
     region: content
+  su_site_algolia_terms:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  su_site_created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 26
+    region: content
   su_site_dropdowns:
     type: boolean
     label: above
@@ -163,6 +220,30 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  su_site_header_button:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  su_site_header_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 30
     region: content
   su_site_home:
     type: entity_reference_label
@@ -233,12 +314,27 @@ content:
     third_party_settings: {  }
     weight: 15
     region: content
+  su_site_sunetid:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 28
+    region: content
   su_site_tech_contact:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
     weight: 16
+    region: content
+  su_site_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
     region: content
   su_site_url:
     type: link
@@ -254,7 +350,4 @@ content:
     region: content
 hidden:
   search_api_excerpt: true
-  su_site_algolia_terms: true
   su_site_algolia_ui: true
-  su_site_created: true
-  su_site_type: true

@@ -1,3 +1,4 @@
+config/install
 content/**/*.jpg
 content/**/*.png
 content/**/*.gif
@@ -115,3 +116,5 @@ npm-debug.log
 
 # Deprecation detector rules
 .rules
+
+logs/

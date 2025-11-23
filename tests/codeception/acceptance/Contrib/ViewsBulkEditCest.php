@@ -1,13 +1,13 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
 /**
  * Test out the views bulk edit module.
- *
- * @group contrib
- * @group bulk_edit
  */
+#[CodeceptionAttribute\Group('contrib')]
+#[CodeceptionAttribute\Group('bulk_edit')]
 class ViewsBulkEditCest {
 
   /**
@@ -28,8 +28,6 @@ class ViewsBulkEditCest {
   public function __construct() {
     $this->faker = Factory::create();
   }
-
-
 
   /**
    * Bulk editing content changes the field values.
@@ -102,7 +100,7 @@ class ViewsBulkEditCest {
    *   Tester.
    */
   protected function createEvents(AcceptanceTester $I) {
-    // $faker = Factory::create();
+    $faker = Factory::create();
     $node_types = [
       'stanford_event',
       'stanford_news',
@@ -112,7 +110,7 @@ class ViewsBulkEditCest {
       for ($j = 0; $j <= 5; $j++) {
         $this->nodes[] = $I->createEntity([
           'type' => $node_type,
-          'title' => $this->faker->text(30),
+          'title' => $faker->text(30),
         ]);
       }
     }

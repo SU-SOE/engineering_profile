@@ -4,7 +4,6 @@ namespace Drupal\Tests\engineering_profile\Unit\Plugin\HelpSection;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Utility\LinkGeneratorInterface;
-use Drupal\engineering_profile\Plugin\HelpSection\ProfileConnectSection;
 use Drupal\engineering_profile\Plugin\HelpSection\ProfileHelpSection;
 use Drupal\Tests\UnitTestCase;
 
@@ -12,14 +11,14 @@ use Drupal\Tests\UnitTestCase;
  * Class ProfileConnectSectionTest
  *
  * @group engineering_profile
- * @coversDefaultClass \Drupal\engineering_profile\Plugin\HelpSection\ProfileHelpSection
+ * @coversDefaultClass \Drupal\engineering_profile\Plugin\HelpSection\ProfileHelpMaintainingSection
  */
 class ProfileHelpSectionTest extends UnitTestCase {
 
   /**
    * {@inheritDoc}
    */
-  public function setUp(): void {
+  public function setup(): void {
     parent::setUp();
     $container = new ContainerBuilder();
     $container->set('string_translation', $this->getStringTranslationStub());

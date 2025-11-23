@@ -1,10 +1,9 @@
 <?php
 
+use Codeception\Attribute as CodeceptionAttribute;
 use Faker\Factory;
 
-/**
- *
- */
+#[CodeceptionAttribute\Group('paragraphs')]
 class TeaserCest {
 
   /**
@@ -21,36 +20,30 @@ class TeaserCest {
     $this->faker = Factory::create();
   }
 
-
-
-  /**
-   * @group teaser-headers
-   */
+  #[CodeceptionAttribute\Group('teaser-headers')]
   public function testTeaserParagraphHeaders(AcceptanceTester $I) {
-
     $node_types = \Drupal::entityTypeManager()
       ->getStorage('node_type')
       ->loadMultiple();
     $teaser_entities = [];
     $teaser_item_field = [];
     foreach ($node_types as $node_type) {
-      if ($node_type->id() === 'spotlight') {
-        continue;
+      // Exclude spotlight node type.
+      if ($node_type->id() != 'spotlight'){
+        $title_key = $node_type->id() == 'stanford_policy' ? 'su_policy_title' : 'title';
+        $teaser_entities[$node_type->id()] = $I->createEntity([
+          $title_key => $this->faker->words(3, TRUE),
+          'type' => $node_type->id(),
+        ]);
+        $teaser_item_field[]['target_id'] = $teaser_entities[$node_type->id()]->id();
       }
-      $title_key = $node_type->id() == 'stanford_policy' ? 'su_policy_title' : 'title';
-      $teaser_entities[$node_type->id()] = $I->createEntity([
-        $title_key => $this->faker->words(3, TRUE),
-        'type' => $node_type->id(),
-      ]);
-      $teaser_item_field[]['target_id'] = $teaser_entities[$node_type->id()]->id();
     }
 
     $paragraph = $I->createEntity([
       'type' => 'stanford_entity',
       'su_entity_item' => $teaser_item_field,
     ], 'paragraph');
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [
@@ -70,8 +63,7 @@ $node = $I->createEntity([
       'su_entity_item' => $teaser_item_field,
       'su_entity_headline' => $header_text,
     ], 'paragraph');
-
-$node = $I->createEntity([
+    $node = $I->createEntity([
       'title' => $this->faker->words(3, TRUE),
       'type' => 'stanford_page',
       'su_page_components' => [
