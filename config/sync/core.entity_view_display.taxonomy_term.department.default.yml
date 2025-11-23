@@ -46,7 +46,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 2
             additional: {  }
           97e44b7e-2eea-4900-8942-29bf33bc7632:
@@ -69,7 +69,7 @@ third_party_settings:
                   empty_fields:
                     handler: ''
                   field_formatter_class:
-                    class: visually-hidden
+                    class: 'magazine-header magazine-topics__term-name'
                   field_label:
                     label_value: ''
                     label_tag: ''
