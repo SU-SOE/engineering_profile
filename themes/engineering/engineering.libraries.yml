@@ -2,15 +2,13 @@ engineering-styling:
   version: 1.0
   css:
     base:
-      dist/css/engineering.base-overrides.css : {weight: 250}
+      dist/css/engineering.base-overrides.css: { weight: 250 }
     theme:
-      dist/css/engineering.styles.css : {weight: 999}
+      dist/css/engineering.styles.css: { weight: 999 }
     component:
-      dist/css/engineering.components.css : {weight: 998}
+      dist/css/engineering.components.css: { weight: 998 }
   js:
-    dist/css/engineering.script.js : {
-      scope: footer,
-      attributes: { type: module }
-    }
+    dist/js/engineering.script.js:
+      { scope: footer, attributes: { type: module } }
   dependencies:
     - core/jquery
