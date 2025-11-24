@@ -12,3 +12,15 @@ h5 {
     font-family: $roboto-slab;
   }
 }
+
+.ptype-stanford-entity {
+  .su-entity-item {
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
