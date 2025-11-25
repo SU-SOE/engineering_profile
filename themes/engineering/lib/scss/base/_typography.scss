@@ -10,7 +10,7 @@
 }
 
 .su-wysiwyg-text {
-  a:not(.su-button),
+  a:not([class*='su-button']),
   .su-link,
   su-link--external,
   su-link--action {
