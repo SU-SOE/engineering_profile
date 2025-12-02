@@ -14,13 +14,6 @@ var __webpack_exports__ = {};
           // Update dropdown state after animation completes
           isDropdownOpen = topicsPanel.is(':visible');
           if (isDropdownOpen) {
-            // Focus first link when dropdown opens for immediate keyboard access
-            setTimeout(function () {
-              var firstLink = topicsPanel.find('a').first();
-              if (firstLink.length) {
-                firstLink.focus();
-              }
-            }, 50);
             topicsPanel.attr('aria-hidden', 'false');
           } else {
             topicsPanel.attr('aria-hidden', 'true');
@@ -48,7 +41,7 @@ var __webpack_exports__ = {};
       $(document).on('keydown', function (e) {
         if (e.key === 'Escape' && isDropdownOpen) {
           closeTopicsDropdown();
-          focusOutsideDropdown();
+          toggleButton.focus();
         }
       });
 
