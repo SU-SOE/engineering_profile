@@ -1,0 +1,14 @@
+uuid: 515ce8d3-1502-419c-a4fb-dbb65de16ce3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.magazine_issues
+id: taxonomy_vocabulary_magazine_issues
+entity_type_id: taxonomy_vocabulary
+entity_id: magazine_issues
+action: page_redirect
+allow_override: 0
+redirect: /news
+redirect_code: 301
+redirect_fallback_action: access_denied
