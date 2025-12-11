@@ -54,4 +54,11 @@ adding:
     su_magazine_story: true
     su_soe_department: true
     su_soe_mag_collection: true
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.body
+      - field.field.node.stanford_news.layout_selection
+      - field.field.node.stanford_news.su_news_person
+      - field.field.node.stanford_news.su_news_quote
+      - field.field.node.stanford_news.su_news_spotlight_filters

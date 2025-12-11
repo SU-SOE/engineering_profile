@@ -2,25 +2,13 @@ adding:
   dependencies:
     config:
       - node.type.spotlight
-      - taxonomy.vocabulary.affiliation
-      - taxonomy.vocabulary.article_collection
-      - taxonomy.vocabulary.department
   permissions:
     - 'create spotlight content'
-    - 'create terms in affiliation'
-    - 'create terms in article_collection'
-    - 'create terms in department'
     - 'delete any spotlight content'
     - 'delete own spotlight content'
     - 'delete spotlight revisions'
-    - 'delete terms in affiliation'
-    - 'delete terms in article_collection'
-    - 'delete terms in department'
     - 'edit any spotlight content'
     - 'edit own spotlight content'
-    - 'edit terms in affiliation'
-    - 'edit terms in article_collection'
-    - 'edit terms in department'
     - 'revert spotlight revisions'
     - 'view spotlight revisions'
 removing: {  }

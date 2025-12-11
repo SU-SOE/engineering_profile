@@ -1,0 +1,99 @@
+uuid: 871a1774-32fb-4df2-8122-adcdb860a8df
+langcode: en
+status: true
+dependencies: {  }
+id: engineering
+label: Engineering
+description: 'The customizations for the Engineering Profile'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: profiles/custom/engineering_profile/config/engineering
+module: {  }
+theme: {  }
+complete_list:
+  - core.base_field_override.node.spotlight.title
+  - core.entity_form_display.node.spotlight.default
+  - core.entity_form_display.taxonomy_term.article_collection.default
+  - core.entity_form_display.taxonomy_term.magazine_issues.default
+  - core.entity_form_display.taxonomy_term.magazine_topics.default
+  - core.entity_view_display.media.image.person_spotlight_circle
+  - core.entity_view_display.taxonomy_term.article_collection.default
+  - core.entity_view_display.taxonomy_term.department.default
+  - core.entity_view_display.taxonomy_term.magazine_issues.default
+  - core.entity_view_display.taxonomy_term.magazine_topics.default
+  - core.entity_view_mode.block_content.spotlight_hero
+  - core.entity_view_mode.media.person_spotlight_circle
+  - core.entity_view_mode.node.spotlights_hero
+  - engineering.settings
+  - field.field.node.stanford_news.su_magazine_issue
+  - field.field.node.stanford_news.su_magazine_story
+  - field.field.node.stanford_news.su_mag_featured
+  - field.field.node.stanford_news.su_soe_external_source_text
+  - field.field.node.stanford_news.su_soe_mag_collection
+  - field.field.node.stanford_news.su_soe_mag_topics
+  - field.field.node.stanford_page.su_department
+  - field.field.taxonomy_term.magazine_issues.su_issue_number
+  - field.storage.node.su_department
+  - field.storage.node.su_magazine_issue
+  - field.storage.node.su_magazine_story
+  - field.storage.node.su_mag_featured
+  - field.storage.node.su_people_spotlight_quote
+  - image.style.large_headshot_circle
+  - jsonapi_extras.jsonapi_resource_config.node--spotlight
+  - node.type.spotlight
+  - page_manager.page.magazine_issue_list_page
+  - page_manager.page.magazine_landing_page
+  - page_manager.page.spotlights
+  - rabbit_hole.behavior_settings.node_type_spotlight
+  - rabbit_hole.behavior_settings.taxonomy_vocabulary_magazine_topics
+  - soe_basic.settings
+  - stanford_syndication.settings
+  - views.view.department_terms
+  - views.view.magazine
+  - views.view.magazine_article_collection
+  - views.view.magazine_issues
+  - views.view.spotlights
+  - xmlsitemap.settings.node.spotlight
+  - xmlsitemap.settings.node.stanford_course
+  - xmlsitemap.settings.taxonomy_term.article_collection
+  - xmlsitemap.settings.taxonomy_term.basic_page_types
+  - xmlsitemap.settings.taxonomy_term.department
+  - xmlsitemap.settings.taxonomy_term.magazine_topics
+  - xmlsitemap.settings.taxonomy_term.stanford_event_subject
+  - xmlsitemap.settings.taxonomy_term.su_shared_tags
+  - 'page_manager.page_variant.magazine_*'
+  - 'page_manager.page_variant.spotlights-layout_builder*'
+  - 'user_role.soe_*'
+  - 'block.block.engineering_*'
+  - 'core.entity_view_display.node.spotlight*'
+  - 'field.field.spotlight.*'
+  - 'field.storage.node.su_soe_*'
+  - 'field.storage.node.su_spotlight_*'
+partial_list:
+  - block.block.soe_basic_pagetitle
+  - config_ignore.settings
+  - core.base_field_override.node.stanford_news.title
+  - core.entity_form_display.config_pages.stanford_basic_site_settings.default
+  - core.entity_form_display.node.stanford_course.default
+  - core.entity_form_display.node.stanford_event.default
+  - core.entity_form_display.node.stanford_event_series.default
+  - core.entity_form_display.node.stanford_media.default
+  - core.entity_form_display.node.stanford_opportunity.default
+  - core.entity_form_display.node.stanford_page.default
+  - core.entity_form_display.node.stanford_person.default
+  - core.entity_form_display.node.stanford_policy.default
+  - core.entity_form_display.node.stanford_publication.default
+  - field.field.paragraph.stanford_lists.su_list_view
+  - graphql_compose.settings
+  - layout_paragraphs.settings
+  - paragraphs.paragraphs_type.stanford_banner
+  - paragraphs.paragraphs_type.stanford_page_title_banner
+  - printable.settings
+  - rest.resource.entity.node
+  - scheduler.settings
+  - search_api.index.full_site_content
+  - system.theme
+  - 'jsonapi_extras.jsonapi_resource_config.*'
+  - 'metatag.*'

@@ -25,9 +25,11 @@ class StanfordNewsCest {
 
   /**
    * Taxonomy terms in SHS should save in the order they were chosen.
+   *
+   * Engineering uses a different news functionality, so disabling.
    */
   #[CodeceptionAttribute\Group('D8CORE-6003')]
-  public function testTermOrder(FunctionalTester $I) {
+  private function testTermOrder(FunctionalTester $I) {
     $first_term = $I->createEntity([
       'name' => 'c-' . $this->faker->word(),
       'vid' => 'stanford_news_topics',
@@ -49,6 +51,7 @@ class StanfordNewsCest {
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
     $I->canSeeInField('Headline', $node->label());
+    $I->click('#edit-group-taxonomy summary');
 
     $I->waitForElementVisible('.form-item--su-news-topics-0-target-id select.simpler-select');
     $I->selectOption('.form-item--su-news-topics-0-target-id select.simpler-select', $first_term->id());
@@ -64,6 +67,7 @@ class StanfordNewsCest {
     $I->canSee($first_term->label() . ', ' . $second_term->label() . ', ' . $third_term->label());
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->click('#edit-group-taxonomy summary');
     $I->waitForElementVisible('.form-item--su-news-topics-2-target-id select.simpler-select');
     $I->selectOption('.form-item--su-news-topics-0-target-id select.simpler-select', $second_term->id());
     $I->selectOption('.form-item--su-news-topics-1-target-id select.simpler-select', $first_term->id());
@@ -74,6 +78,7 @@ class StanfordNewsCest {
     $I->canSee($second_term->label() . ', ' . $first_term->label() . ', ' . $third_term->label());
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->click('#edit-group-taxonomy summary');
     $I->waitForElementVisible('.form-item--su-news-topics-2-target-id select.simpler-select');
     $I->selectOption('.form-item--su-news-topics-0-target-id select.simpler-select', $third_term->id());
     $I->selectOption('.form-item--su-news-topics-1-target-id select.simpler-select', $second_term->id());
@@ -84,6 +89,7 @@ class StanfordNewsCest {
     $I->canSee($third_term->label() . ', ' . $second_term->label() . ', ' . $first_term->label());
 
     $I->amOnPage($node->toUrl('edit-form')->toString());
+    $I->click('#edit-group-taxonomy summary');
     $I->waitForElementVisible('.form-item--su-news-topics-2-target-id select.simpler-select');
     $I->selectOption('.form-item--su-news-topics-0-target-id select.simpler-select', $third_term->id());
     $I->selectOption('.form-item--su-news-topics-1-target-id select.simpler-select', $first_term->id());

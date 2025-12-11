@@ -36,7 +36,6 @@ dependencies:
     - pathauto
     - scheduler
     - stanford_policy
-    - soe_profile
     - stanford_publication
     - system
     - toolbar
@@ -57,7 +56,6 @@ permissions:
   - 'add citation entities'
   - 'add content to books'
   - 'break content lock'
-  - 'choose layout for node stanford_news'
   - 'create file media'
   - 'create google_form media'
   - 'create image media'
