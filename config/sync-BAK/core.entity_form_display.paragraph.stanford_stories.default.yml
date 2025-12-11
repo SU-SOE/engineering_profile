@@ -1,0 +1,106 @@
+uuid: 282a2820-7328-4692-a61d-b70e2f1d993d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stanford_stories.stanford_stories_border
+    - field.field.paragraph.stanford_stories.stanford_stories_cta_link
+    - field.field.paragraph.stanford_stories.stanford_stories_name
+    - field.field.paragraph.stanford_stories.stanford_stories_node_link
+    - field.field.paragraph.stanford_stories.stanford_stories_photo
+    - field.field.paragraph.stanford_stories.stanford_stories_quote
+    - field.field.paragraph.stanford_stories.stanford_stories_title
+    - field.field.paragraph.stanford_stories.su_heading_lvl
+    - paragraphs.paragraphs_type.stanford_stories
+  module:
+    - field_group
+    - link
+    - media_library
+    - text
+third_party_settings:
+  field_group:
+    group_styles_behaviors:
+      children:
+        - su_heading_lvl
+      label: Styles/Behaviors
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: '--S9HShOJu52GqNrdV6ztXkBcZybZO0a7QGqUbG7QHI'
+id: paragraph.stanford_stories.default
+targetEntityType: paragraph
+bundle: stanford_stories
+mode: default
+content:
+  stanford_stories_border:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  stanford_stories_cta_link:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  stanford_stories_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  stanford_stories_node_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  stanford_stories_photo:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  stanford_stories_quote:
+    type: text_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  stanford_stories_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  su_heading_lvl:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,91 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.su_mag_featured
+      - field.field.node.stanford_news.su_magazine_issue
+      - field.field.node.stanford_news.su_magazine_story
+      - field.field.node.stanford_news.su_soe_department
+      - field.field.node.stanford_news.su_soe_external_source_text
+      - field.field.node.stanford_news.su_soe_mag_collection
+      - field.field.node.stanford_news.su_soe_mag_topics
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            03aed37a-e4ab-4ee4-b996-0523074be664:
+              configuration:
+                items_per_page: none
+        -
+          components:
+            d43e60bd-c832-439e-8151-1b2fd851b98e:
+              configuration:
+                items_per_page: none
+  content:
+    su_mag_featured:
+      type: boolean
+      label: above
+      settings:
+        format: default
+        format_custom_false: ''
+        format_custom_true: ''
+      weight: 13
+      region: main
+    su_magazine_issue:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      weight: 14
+      region: main
+    su_magazine_story:
+      type: boolean
+      label: above
+      settings:
+        format: default
+        format_custom_false: ''
+        format_custom_true: ''
+      weight: 15
+      region: main
+    su_soe_department:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      weight: 10
+      region: main
+    su_soe_external_source_text:
+      type: string
+      label: above
+      settings:
+        link_to_entity: false
+      weight: 16
+      region: main
+    su_soe_mag_collection:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      weight: 12
+      region: main
+    su_soe_mag_topics:
+      type: entity_reference_label
+      label: above
+      settings:
+        link: true
+      weight: 11
+      region: main
+removing:
+  third_party_settings:
+    layout_builder:
+      sections:
+        -
+          components:
+            03aed37a-e4ab-4ee4-b996-0523074be664:
+              configuration:
+                items_per_page: 0
+        -
+          components:
+            d43e60bd-c832-439e-8151-1b2fd851b98e:
+              configuration:
+                items_per_page: 0

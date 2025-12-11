@@ -1,8 +1,8 @@
 adding:
   printable_entities_bundles:
     node:
-      spotlight: true
       stanford_news: true
+      spotlight: true
       stanford_opportunity: false
     taxonomy_term:
       affiliation: false

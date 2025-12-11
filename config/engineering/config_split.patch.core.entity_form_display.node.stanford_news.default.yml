@@ -1,0 +1,56 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.su_mag_featured
+      - field.field.node.stanford_news.su_magazine_issue
+      - field.field.node.stanford_news.su_magazine_story
+      - field.field.node.stanford_news.su_soe_department
+      - field.field.node.stanford_news.su_soe_external_source_text
+      - field.field.node.stanford_news.su_soe_mag_collection
+      - field.field.node.stanford_news.su_soe_mag_topics
+  content:
+    su_mag_featured:
+      type: boolean_checkbox
+      weight: 36
+      region: content
+      settings:
+        display_label: true
+    su_magazine_issue:
+      type: options_select
+      weight: 33
+      region: content
+    su_magazine_story:
+      type: boolean_checkbox
+      weight: 32
+      region: content
+      settings:
+        display_label: true
+    su_soe_department:
+      type: options_buttons
+      weight: 6
+      region: content
+    su_soe_external_source_text:
+      type: string_textfield
+      weight: 6
+      region: content
+      settings:
+        size: 60
+        placeholder: ''
+      third_party_settings:
+        field_formatter_class:
+          class: ''
+        maxlength:
+          maxlength_js: null
+          maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+          maxlength_js_enforce: false
+        change_labels:
+          field_label_overwrite: ''
+    su_soe_mag_collection:
+      type: options_select
+      weight: 35
+      region: content
+    su_soe_mag_topics:
+      type: options_buttons
+      weight: 34
+      region: content
+removing: {  }

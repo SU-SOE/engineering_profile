@@ -1,0 +1,57 @@
+adding:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.su_mag_featured
+      - field.field.node.stanford_news.su_magazine_issue
+      - field.field.node.stanford_news.su_magazine_story
+      - field.field.node.stanford_news.su_soe_department
+      - field.field.node.stanford_news.su_soe_external_source_text
+      - field.field.node.stanford_news.su_soe_mag_collection
+      - field.field.node.stanford_news.su_soe_mag_topics
+  content:
+    su_soe_external_source_text:
+      type: wrapper_class
+      label: above
+      settings:
+        class: news-card__external-source-text
+        tag: div
+        link: false
+        link_class: ''
+        summary: false
+        trim: 200
+      third_party_settings:
+        empty_fields:
+          handler: ''
+        field_formatter_class:
+          class: ''
+        field_label:
+          label_value: ''
+          label_tag: ''
+      weight: 4
+      region: news_topics
+    su_soe_mag_topics:
+      type: entity_reference_list_label_class
+      label: hidden
+      settings:
+        link: true
+        class: su-list-unstyled
+        list_type: ul
+      third_party_settings:
+        empty_fields:
+          handler: ''
+        field_formatter_class:
+          class: ''
+        field_label:
+          label_value: ''
+          label_tag: ''
+        ds:
+          ds_limit: ''
+      weight: 3
+      region: news_topics
+  hidden:
+    su_mag_featured: true
+    su_magazine_issue: true
+    su_magazine_story: true
+    su_soe_department: true
+    su_soe_mag_collection: true
+removing: {  }

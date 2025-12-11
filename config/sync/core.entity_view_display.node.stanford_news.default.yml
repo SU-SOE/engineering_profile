@@ -4,32 +4,27 @@ status: true
 dependencies:
   config:
     - core.base_field_override.node.stanford_news.title
+    - field.field.node.stanford_news.body
     - field.field.node.stanford_news.layout_builder__layout
+    - field.field.node.stanford_news.layout_selection
     - field.field.node.stanford_news.stanford_intranet__access
-    - field.field.node.stanford_news.su_mag_featured
-    - field.field.node.stanford_news.su_magazine_issue
-    - field.field.node.stanford_news.su_magazine_story
     - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
-    - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
-    - field.field.node.stanford_news.su_news_hide_social
+    - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_publishing_date
+    - field.field.node.stanford_news.su_news_quote
     - field.field.node.stanford_news.su_news_source
+    - field.field.node.stanford_news.su_news_spotlight_filters
     - field.field.node.stanford_news.su_news_topics
     - field.field.node.stanford_news.su_shared_tags
-    - field.field.node.stanford_news.su_soe_department
-    - field.field.node.stanford_news.su_soe_external_source_text
-    - field.field.node.stanford_news.su_soe_mag_collection
-    - field.field.node.stanford_news.su_soe_mag_topics
     - node.type.stanford_news
     - views.view.stanford_news
   module:
     - datetime
-    - engineering_magazine
     - entity_reference_revisions
     - field_formatter_class
     - jumpstart_ui
@@ -44,27 +39,6 @@ third_party_settings:
     enabled: true
     allow_custom: true
     sections:
-      -
-        layout_id: jumpstart_ui_one_column
-        layout_settings:
-          label: 'News - extra navigation'
-          context_mapping: {  }
-          extra_classes: ''
-          centered: centered-container
-          columns: default
-        components:
-          bccee9cd-7740-4050-9652-ef35d2a40aaa:
-            uuid: bccee9cd-7740-4050-9652-ef35d2a40aaa
-            region: main
-            configuration:
-              id: magazine_navigation_block
-              label: 'Magazine Navigation'
-              label_display: '0'
-              provider: engineering_magazine
-              context_mapping: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
@@ -116,8 +90,8 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
-            weight: 2
+              items_per_page: 0
+            weight: 3
             additional: {  }
           93729581-66b7-4de2-8d6c-2e4163693189:
             uuid: 93729581-66b7-4de2-8d6c-2e4163693189
@@ -190,58 +164,6 @@ third_party_settings:
                     class: su-news-byline
             weight: 0
             additional: {  }
-          c0dbde1e-4df6-4c6a-acee-dd08e52a013a:
-            uuid: c0dbde1e-4df6-4c6a-acee-dd08e52a013a
-            region: su_news_publishing_date
-            configuration:
-              id: 'field_block:node:stanford_news:su_soe_mag_collection'
-              label: 'Article Collection'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings:
-                  field_formatter_class:
-                    class: su-mag--article_collection
-            weight: 1
-            additional: {  }
-          aae38658-5a6e-4011-a793-aca036babb54:
-            uuid: aae38658-5a6e-4011-a793-aca036babb54
-            region: su_news_byline
-            configuration:
-              id: 'field_block:node:stanford_news:su_soe_external_source_text'
-              label: 'External Source Display Text'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: wrapper_class
-                label: hidden
-                settings:
-                  class: 'news-card__external-source-text '
-                  tag: div
-                  link: false
-                  link_class: ''
-                  summary: false
-                  trim: 200
-                third_party_settings:
-                  empty_fields:
-                    handler: nbsp
-                  field_formatter_class:
-                    class: ''
-                  field_label:
-                    label_value: ''
-                    label_tag: ''
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -252,6 +174,27 @@ third_party_settings:
           centered: centered-container
           columns: default
         components:
+          05c3062a-6e09-4b3b-b8f9-fa797362fb67:
+            uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_news:su_news_banner_media_caption'
+              label: 'Banner Media Caption'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: su-news-banner-media-caption
+            weight: -8
+            additional: {  }
           c67c266b-204c-4ca8-aff9-715a5cdf2ff8:
             uuid: c67c266b-204c-4ca8-aff9-715a5cdf2ff8
             region: main
@@ -284,27 +227,6 @@ third_party_settings:
                     class: su-news-banner
             weight: -9
             additional: {  }
-          05c3062a-6e09-4b3b-b8f9-fa797362fb67:
-            uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_news:su_news_banner_media_caption'
-              label: 'Banner Media Caption'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: su-news-banner-media-caption
-            weight: -8
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -334,6 +256,31 @@ third_party_settings:
                 third_party_settings:
                   field_formatter_class:
                     class: su-news-components
+            weight: 1
+            additional: {  }
+          61eb67ef-873e-4577-96c4-0ffef8a5d648:
+            uuid: 61eb67ef-873e-4577-96c4-0ffef8a5d648
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_news:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: layout-background
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
             weight: 0
             additional: {  }
         third_party_settings: {  }
@@ -391,27 +338,6 @@ third_party_settings:
                     ds_limit: ''
             weight: 0
             additional: {  }
-          6efc6f03-d761-4069-b688-d97558a82093:
-            uuid: 6efc6f03-d761-4069-b688-d97558a82093
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_news:su_soe_department'
-              label: 'Related Departments'
-              label_display: visible
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: entity_reference_label
-                label: hidden
-                settings:
-                  link: true
-                third_party_settings:
-                  field_formatter_class:
-                    class: ''
-            weight: 1
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -432,7 +358,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: 'More News'
-              items_per_page: none
+              items_per_page: 0
             weight: 0
             additional: {  }
         third_party_settings: {  }
@@ -457,13 +383,13 @@ third_party_settings:
       - 'Lists (Views)'
       - Menus
       - 'News Lists (Views)'
-      - 'PDB React'
+      - 'Opportunities (Views)'
+      - 'PDB Components'
       - 'People Lists (Views)'
       - 'Policy (Views)'
       - Printable
       - 'Publication (Views)'
-      - React
-      - 'SoE Magazine'
+      - 'Simple block'
       - 'Stanford News'
       - 'Stanford Profile Helper'
       - 'Stanford SAML Authentication'
@@ -504,15 +430,8 @@ third_party_settings:
           - 'field_block:node:stanford_news:sticky'
           - 'field_block:node:stanford_news:unpublish_on'
       allowlisted_blocks:
-        'Custom blocks': {  }
         Menus:
-          - 'system_menu_block:stanford-event-types'
           - 'menu_block:main'
-          - 'system_menu_block:stanford-person-type'
-          - 'system_menu_block:stanford-publication-topics'
-          - 'system_menu_block:news-topics'
-        'SoE Magazine':
-          - magazine_navigation_block
         System:
           - system_breadcrumb_block
         core:
@@ -528,49 +447,23 @@ third_party_settings:
         - Forms
         - Help
         - 'Lists (Views)'
+        - 'Opportunities (Views)'
+        - 'PDB Components'
         - 'Policy (Views)'
         - Printable
-        - React
+        - 'Simple block'
         - 'Stanford Profile Helper'
         - 'Stanford SAML Authentication'
         - 'Taxonomy Terms (Views)'
         - User
         - Views
   layout_library:
-    enable: false
+    enable: true
 id: node.stanford_news.default
 targetEntityType: node
 bundle: stanford_news
 mode: default
 content:
-  su_mag_featured:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 13
-    region: main
-  su_magazine_issue:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 14
-    region: main
-  su_magazine_story:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 15
-    region: main
   su_news_banner:
     type: entity_reference_entity_view
     label: above
@@ -633,6 +526,21 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  su_news_quote:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: main
+  su_news_spotlight_filters:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: main
   su_news_topics:
     type: entity_reference_label
     label: hidden
@@ -641,39 +549,8 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  su_soe_department:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: main
-  su_soe_external_source_text:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 16
-    region: main
-  su_soe_mag_collection:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
-    region: main
-  su_soe_mag_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 11
-    region: main
 hidden:
+  body: true
   layout_builder__layout: true
   layout_selection: true
   links: true
@@ -681,5 +558,6 @@ hidden:
   stanford_intranet__access: true
   su_metatags: true
   su_news_hide_social: true
+  su_news_person: true
   su_news_source: true
   su_shared_tags: true

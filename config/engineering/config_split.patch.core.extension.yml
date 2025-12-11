@@ -1,0 +1,20 @@
+adding:
+  module:
+    config_inspector: 0
+    dblog: 0
+    devel: 0
+    devel_generate: 0
+    devel_php: 0
+    masquerade: 0
+    stage_file_proxy: 0
+  theme:
+    stanford_basic: 0
+    soe_basic: 0
+    engineering: 0
+    stanford_profile_admin_theme: 0
+removing:
+  theme:
+    stanford_basic: 1
+    soe_basic: 2
+    engineering: 3
+    stanford_profile_admin_theme: 4
