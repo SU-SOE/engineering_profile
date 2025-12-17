@@ -6,15 +6,16 @@ dependencies:
     - core.base_field_override.node.stanford_news.title
     - field.field.node.stanford_news.body
     - field.field.node.stanford_news.layout_builder__layout
-    - field.field.node.stanford_news.layout_selection
     - field.field.node.stanford_news.stanford_intranet__access
     - field.field.node.stanford_news.su_metatags
     - field.field.node.stanford_news.su_news_banner
+    - field.field.node.stanford_news.su_news_banner_media_caption
     - field.field.node.stanford_news.su_news_byline
     - field.field.node.stanford_news.su_news_components
     - field.field.node.stanford_news.su_news_dek
     - field.field.node.stanford_news.su_news_featured_media
-    - field.field.node.stanford_news.su_news_banner_media_caption
+    - field.field.node.stanford_news.su_news_hide_social
+    - field.field.node.stanford_news.su_news_person
     - field.field.node.stanford_news.su_news_publishing_date
     - field.field.node.stanford_news.su_news_quote
     - field.field.node.stanford_news.su_news_source
@@ -25,6 +26,7 @@ dependencies:
     - views.view.stanford_news
   module:
     - datetime
+    - engineering_magazine
     - entity_reference_revisions
     - field_formatter_class
     - jumpstart_ui
@@ -39,6 +41,27 @@ third_party_settings:
     enabled: true
     allow_custom: true
     sections:
+      -
+        layout_id: jumpstart_ui_one_column
+        layout_settings:
+          label: 'News - extra navigation'
+          context_mapping: {  }
+          extra_classes: ''
+          centered: centered-container
+          columns: default
+        components:
+          3096b96d-7037-4293-a0ad-ffde2f2b6cb5:
+            uuid: 3096b96d-7037-4293-a0ad-ffde2f2b6cb5
+            region: main
+            configuration:
+              id: magazine_navigation_block
+              label: 'Magazine Navigation'
+              label_display: '0'
+              provider: engineering_magazine
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
         layout_settings:
@@ -163,6 +186,37 @@ third_party_settings:
                   field_formatter_class:
                     class: su-news-byline
             weight: 0
+            additional: {  }
+          93d5129c-8ade-424d-b0e3-1aeb967438ed:
+            uuid: 93d5129c-8ade-424d-b0e3-1aeb967438ed
+            region: su_news_byline
+            configuration:
+              id: 'field_block:node:stanford_news:su_soe_external_source_text'
+              label: 'External Source Display Text'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: wrapper_class
+                label: hidden
+                settings:
+                  class: 'news-card__external-source-text '
+                  tag: div
+                  link: false
+                  link_class: ''
+                  summary: false
+                  trim: 200
+                third_party_settings:
+                  empty_fields:
+                    handler: nbsp
+                  field_formatter_class:
+                    class: ''
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -338,6 +392,36 @@ third_party_settings:
                     ds_limit: ''
             weight: 0
             additional: {  }
+          f063467c-8c86-4044-829e-58474de1796a:
+            uuid: f063467c-8c86-4044-829e-58474de1796a
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_news:su_soe_department'
+              label: 'Related Departments'
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings:
+                  empty_fields:
+                    handler: ''
+                  field_formatter_class:
+                    class: ''
+                  field_formatter_range:
+                    order: 0
+                    limit: 0
+                    offset: 0
+                  field_label:
+                    label_value: ''
+                    label_tag: ''
+            weight: 1
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column
@@ -370,6 +454,7 @@ third_party_settings:
       - 'Chaos Tools'
       - 'Config Pages'
       - 'Content fields'
+      - 'Courses Lists (Views)'
       - 'Custom block types'
       - 'Custom blocks'
       - Devel
@@ -381,6 +466,7 @@ third_party_settings:
       - 'Inline blocks'
       - 'Jumpstart UI'
       - 'Lists (Views)'
+      - 'Media Lists (Views)'
       - Menus
       - 'News Lists (Views)'
       - 'Opportunities (Views)'
@@ -390,6 +476,7 @@ third_party_settings:
       - Printable
       - 'Publication (Views)'
       - 'Simple block'
+      - 'SoE Magazine'
       - 'Stanford News'
       - 'Stanford Profile Helper'
       - 'Stanford SAML Authentication'
@@ -432,6 +519,8 @@ third_party_settings:
       allowlisted_blocks:
         Menus:
           - 'menu_block:main'
+        'SoE Magazine':
+          - magazine_navigation_block
         System:
           - system_breadcrumb_block
         core:
@@ -441,12 +530,14 @@ third_party_settings:
         - 'Changelog (Views)'
         - 'Chaos Tools'
         - 'Config Pages'
+        - 'Courses Lists (Views)'
         - Devel
         - 'Devel PHP'
         - Editoria11y
         - Forms
         - Help
         - 'Lists (Views)'
+        - 'Media Lists (Views)'
         - 'Opportunities (Views)'
         - 'PDB Components'
         - 'Policy (Views)'
@@ -458,7 +549,7 @@ third_party_settings:
         - User
         - Views
   layout_library:
-    enable: true
+    enable: false
 id: node.stanford_news.default
 targetEntityType: node
 bundle: stanford_news
@@ -556,15 +647,8 @@ hidden:
   links: true
   search_api_excerpt: true
   stanford_intranet__access: true
-  su_mag_featured: true
-  su_magazine_issue: true
-  su_magazine_story: true
   su_metatags: true
   su_news_hide_social: true
   su_news_person: true
   su_news_source: true
   su_shared_tags: true
-  su_soe_department: true
-  su_soe_external_source_text: true
-  su_soe_mag_collection: true
-  su_soe_mag_topics: true

@@ -1,6 +1,6 @@
 uuid: 7a223042-8728-4b6a-a0fa-dcb7bb050ae3
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.stanford_card
@@ -4919,6 +4919,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        su_soe_mag_topics:
+          alter: {  }
+          settings: {  }
+          group_columns: {  }
       pager:
         type: some
         options:
@@ -4999,6 +5003,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.su_news_topics'
+        - 'config:field.storage.node.su_soe_mag_topics'
   vertical_cards:
     id: vertical_cards
     display_title: 'News Card Grid'

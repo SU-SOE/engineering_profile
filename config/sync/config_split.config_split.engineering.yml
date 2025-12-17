@@ -47,6 +47,7 @@ complete_list:
   - page_manager.page.magazine_landing_page
   - page_manager.page.spotlights
   - rabbit_hole.behavior_settings.node_type_spotlight
+  - rabbit_hole.behavior_settings.taxonomy_vocabulary_magazine_issues
   - rabbit_hole.behavior_settings.taxonomy_vocabulary_magazine_topics
   - soe_basic.settings
   - stanford_syndication.settings
