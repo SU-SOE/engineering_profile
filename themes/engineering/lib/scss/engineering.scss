@@ -1,10 +1,7 @@
 @charset "UTF-8";
 
-@import "./config",
-"utilities/variables/index",
-"components/index",
-"base/index",
-"page/index";
+@import "./config", "utilities/variables/index", "components/index",
+  "base/index", "page/index";
 
 h1,
 h2,
@@ -26,7 +23,7 @@ h5 {
 
 // Various Roboto applications
 .soe-quote,
-.spotlight__quote ,
+.spotlight__quote,
 .su-people-spotlight-quote,
 .su-intro-text {
   font-family: $roboto-slab;
@@ -60,16 +57,13 @@ a.su-link--external {
   display: flex;
   flex-wrap: wrap;
 
-
   .card-grid__column {
-
     padding-bottom: 2em;
     max-width: 1192px; // TODO: This needs to be replaced with a relative value
     margin-left: auto;
     margin-right: auto;
 
     .su-card {
-
       .views-field-title {
         a {
           color: black;
@@ -80,8 +74,8 @@ a.su-link--external {
         }
       }
 
-      .views-field-su-news-publishing-date{
-        color:#606060;
+      .views-field-su-news-publishing-date {
+        color: #606060;
         font-size: 1em;
         font-weight: 100;
         margin-bottom: 10px;
@@ -104,11 +98,11 @@ a.su-link--external {
       .views-field-su-magazine-issue {
         display: block;
         margin-top: 2em;
-        padding: .5em;
+        padding: 0.5em;
         text-align: center;
         width: fit-content;
         background-color: #8c1515;
-        color:white;
+        color: white;
 
         a {
           color: #333333;
@@ -118,9 +112,7 @@ a.su-link--external {
             text-decoration: underline;
           }
         }
-
       }
-
     }
   }
 
@@ -133,19 +125,17 @@ a.su-link--external {
   &:nth-of-type(3n) {
     @include magazine-grid-rows(3);
   }
-
 }
 
 // Fix for stanford people grid
 .stanford-people-grid {
-    .flex-container {
-      justify-content: space-between;
-      margin-top: 1em;
-    }
+  .flex-container {
+    justify-content: space-between;
+    margin-top: 1em;
+  }
 }
 
 .engineering-accent-color {
-
   &__border-accent {
     &__teal {
       border-color: #00ece9;
@@ -193,7 +183,6 @@ a.su-link--external {
       background-color: #ffbd54;
     }
   }
-
 }
 
 .su-local-footer a.su-button {
@@ -212,6 +201,18 @@ a.su-link--external {
 .stanford-news.su-soe-department.entity-reference {
   div {
     font-size: 25px;
-    padding: .25em;
+    padding: 0.25em;
   }
- }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

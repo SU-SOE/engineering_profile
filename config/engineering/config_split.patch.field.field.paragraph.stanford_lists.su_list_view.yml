@@ -1,0 +1,11 @@
+adding: {  }
+removing:
+  settings:
+    allowed_views:
+      media_content: media_content
+      cap_orgs: '0'
+      stanford_news_filtered: '0'
+      stanford_opportunities_filtered: '0'
+    allowed_display_types:
+      entity_reference: '0'
+      feed: '0'

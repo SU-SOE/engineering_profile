@@ -1,0 +1,160 @@
+adding:
+  entity_config:
+    taxonomy_term:
+      basic_page_types:
+        routes_enabled: true
+      opportunity_sponsor:
+        edges_enabled: true
+      opportunity_type:
+        edges_enabled: true
+      opportunity_units:
+        edges_enabled: true
+      stanford_event_types:
+        routes_enabled: true
+      stanford_news_topics:
+        routes_enabled: true
+      stanford_person_types:
+        routes_enabled: true
+      stanford_publication_topics:
+        routes_enabled: true
+      su_course_subjects:
+        routes_enabled: true
+      su_shared_tags:
+        enabled: true
+  field_config:
+    node:
+      stanford_opportunity:
+        su_opp_learn_more:
+          enabled: true
+        su_opp_open_date:
+          enabled: true
+        su_opp_start_date:
+          enabled: true
+        su_opp_status:
+          enabled: true
+removing:
+  entity_config:
+    layout:
+      news_spotlight:
+        enabled: true
+    node:
+      stanford_media:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+        routes_enabled: true
+    taxonomy_term:
+      course_filters:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+      event_filters:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+      media_content_filters:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+      media_content_types:
+        enabled: true
+        query_load_enabled: true
+      opportunity_sponsor:
+        query_load_enabled: true
+      opportunity_tag_filters:
+        query_load_enabled: true
+      opportunity_type:
+        query_load_enabled: true
+      opportunity_units:
+        query_load_enabled: true
+      person_filters:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+      publication_filters:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+      stanford_news_spotlight_filters:
+        enabled: true
+        query_load_enabled: true
+        edges_enabled: true
+      stanford_person_types:
+        query_load_enabled: true
+      su_course_tags:
+        query_load_enabled: true
+      su_shared_tags:
+        enabled: false
+  field_config:
+    config_pages:
+      stanford_basic_site_settings:
+        su_site_algolia_fed:
+          enabled: true
+    media:
+      video:
+        su_media_description:
+          enabled: true
+        su_video_duration:
+          enabled: true
+        su_video_subtitles:
+          enabled: true
+    node:
+      stanford_course:
+        su_course_filters:
+          enabled: true
+      stanford_event:
+        su_event_localist_id:
+          enabled: true
+      stanford_media:
+        body:
+          enabled: true
+        su_media_audio_video:
+          enabled: true
+        su_media_date:
+          enabled: true
+        su_media_dek:
+          enabled: true
+        su_media_duration:
+          enabled: true
+        su_media_episode:
+          enabled: true
+        su_media_filters:
+          enabled: true
+        su_media_image:
+          enabled: true
+        su_media_person:
+          enabled: true
+        su_media_season:
+          enabled: true
+        su_media_series:
+          enabled: true
+        su_media_source:
+          enabled: true
+        su_media_transcript:
+          enabled: true
+        su_media_types:
+          enabled: true
+      stanford_news:
+        body:
+          enabled: true
+        layout_selection:
+          enabled: true
+        su_news_person:
+          enabled: true
+        su_news_quote:
+          enabled: true
+        su_news_spotlight_filters:
+          enabled: true
+      stanford_page:
+        body:
+          enabled: true
+      stanford_person:
+        su_person_source:
+          enabled: true
+      stanford_policy:
+        su_policy_source:
+          enabled: true
+    taxonomy_term:
+      su_course_subjects:
+        su_courses_dept_long:
+          enabled: true

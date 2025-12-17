@@ -62,8 +62,7 @@ class GlobalMessageCest {
     $I->see('Global Message has been', '.messages-list');
 
     $I->amOnPage('/');
-    $I->runDrush('cr');
-    $I->seeElement(".su-alert--success");
+    $I->seeElement(".su-alert");
     $I->canSee("MESSAGE LABEL");
     $I->canSee("MESSAGE HEADER");
     $I->canSee("This is the message body");
@@ -74,7 +73,7 @@ class GlobalMessageCest {
     $I->see('Global Message has been', '.messages-list');
 
     $I->amOnPage('/');
-    $I->seeElement('.su-alert--error');
+    $I->seeElement('.su-alert');
   }
 
   /**

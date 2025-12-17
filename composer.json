@@ -206,6 +206,9 @@
         "su-sws/stanford_samlauth": "^2.0",
         "su-sws/stanford_syndication": "^1.0"
     },
+    "conflict": {
+        "drupal/core": ">=11.3.0"
+    },
     "config": {
         "sort-packages": true
     },

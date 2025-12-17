@@ -125,6 +125,8 @@ class MediaCest {
 
   /**
    * Embeddable form fields.
+   *
+   * @group foobar
    */
   public function testForEmbeddableFormFields(AcceptanceTester $I) {
     $I->logInWithRole('administrator');
@@ -137,6 +139,7 @@ class MediaCest {
     $I->fillField('Name', $name);
     $I->fillField('oEmbed URL', 'https://purl.stanford.edu/mb185ft2131');
     $I->click('Save');
+    $I->canSee('has been created');
 
     $I->amOnPage('/admin/content/media');
     $I->fillField('Media name', $name);
@@ -198,6 +201,7 @@ class MediaCest {
   /**
    * Administrative file listing can delete files.
    */
+  #[CodeceptionAttribute\Group('vbo')]
   public function testDeleteFiles(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/content/files');
@@ -244,7 +248,7 @@ class MediaCest {
     $I->canSee('Are you sure you wish to perform');
     $I->canSee($this->filePath);
     $I->click('Execute action');
-    // $I->canSee('Delete entities');
+    $I->canSee('Delete file entities (1)');
     $I->amOnPage('/admin/content/files');
     $I->cantSee($this->filePath);
 

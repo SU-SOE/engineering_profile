@@ -1,12 +1,24 @@
 <?php
 
 use Codeception\Attribute as CodeceptionAttribute;
+use Faker\Factory;
 
 /**
  * Class LocalFooterCest.
  */
 #[CodeceptionAttribute\Group('local-footer')]
-class LocalFooterCestDisabled {
+class LocalFooterCest {
+
+  /**
+   * Faker service.
+   *
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
 
   /**
    * Tidy up after oneself.
@@ -17,6 +29,36 @@ class LocalFooterCestDisabled {
       ->load('stanford_local_footer');
     if ($config_page) {
       $config_page->delete();
+    }
+  }
+
+  #[CodeceptionAttribute\Group('login-link')]
+  public function testLoginLinkDestination(AcceptanceTester $I) {
+    $link_text = $this->faker->word();
+    $I->runDrush('config:pages-set-field-value stanford_local_footer su_footer_enabled 1');
+    $I->runDrush("config:pages-set-field-value stanford_local_footer su_local_foot_sunet_t $link_text");
+    $I->runDrush('cr');
+
+    for ($i = 0; $i < 5; $i++) {
+      $page = $I->createEntity([
+        'type' => 'stanford_page',
+        'title' => $this->faker->slug(),
+      ]);
+      $destination = $page->toUrl()->toString();
+      $query = $this->faker->slug();
+      $key = strtolower($this->faker->word());
+
+      $I->amOnPage("$destination?$key=/$query");
+      $I->canSeeLink($link_text, "/saml/login?destination=$destination");
+    }
+    for ($i = 0; $i < 5; $i++) {
+      $destination = $this->faker->slug();
+      $query = $this->faker->slug();
+      $key = strtolower($this->faker->word());
+
+      $I->amOnPage("$destination?$key=/$query");
+      $I->canSeeResponseCodeIs(404);
+      $I->canSeeLink($link_text, '/saml/login?destination=/');
     }
   }
 
@@ -36,9 +78,11 @@ class LocalFooterCestDisabled {
 
   /**
    * Changes to the local footer should display correctly.
+   *
+   * Engineering uses a different footer, so disabling.
    */
   #[CodeceptionAttribute\Group('social-links')]
-  public function testCustomLocalFooter(AcceptanceTester $I) {
+  private function testCustomLocalFooter(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
     $I->amOnPage('/admin/config/system/local-footer');
     $I->checkOption('Enabled');
@@ -121,8 +165,10 @@ class LocalFooterCestDisabled {
 
   /**
    * Route urls and no link urls should function correctly in the footer.
+   *
+   * Engineering uses a different footer, so disabling.
    */
-  public function testNodeRoutesAndNoLink(AcceptanceTester $I) {
+  private function testNodeRoutesAndNoLink(AcceptanceTester $I) {
     $node = $I->createEntity([
       'type' => 'stanford_page',
       'title' => 'Test Page',

@@ -1,0 +1,10 @@
+adding:
+  ignored_config_entities:
+    config_split_sequence_prc9vijnikisglfb: stanford_syndication.settings
+    config_split_sequence_1_84app3fkp0hnaqh: 'system.theme:default'
+    config_split_sequence_1_t5nicpsfmjgfjjs0: '~block.block.claro_*'
+    config_split_sequence_qc79dchr6kncf4e: '~block.block.engineering_*'
+    config_split_sequence_1_lsb2kt3hu228s8d2: '~block.block.minimally_branded_subtheme_*'
+    config_split_sequence_1_jko2j5jutj75dcoe: '~block.block.stanford_basic_*'
+    config_split_sequence_1_rjdpomlahqcreai0: '~block.block.stanford_profile_admin_*'
+removing: {  }

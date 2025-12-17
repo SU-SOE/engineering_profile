@@ -71,3 +71,23 @@ function engineer_preprocess_pattern_localfooter(&$variables){
   }
 
 }
+
+/**
+ * Implements hook_preprocess_pattern_card().
+ */
+function engineering_preprocess_pattern_card(&$variables) {
+  // Check if this is from a views pattern and get the created date.
+  // The created field value comes through in card_super_headline as a render array.
+  if (isset($variables['card_super_headline'])) {
+    $superhead = $variables['card_super_headline'];
+
+    // Render the superhead to get the full text content.
+    $rendered = \Drupal::service('renderer')->renderPlain($superhead);
+    $text = strip_tags($rendered);
+
+    // Use regex to extract a date pattern (Month DD, YYYY).
+    if (preg_match('/(\w+ \d{1,2}, \d{4})/', $text, $matches)) {
+      $variables['created'] = $matches[1];
+    }
+  }
+}

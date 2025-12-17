@@ -381,6 +381,7 @@ export const CheckboxLabel = styled.label`
   }
 
   .checkbox {
+    flex-shrink: 0;
     border: 2px solid #979694;
     border-radius: 3px;
     display: block;
@@ -424,7 +425,7 @@ export const HitContainer = styled.article`
 
   img {
     max-width: 300px;
-    max-height: 300px;
+    aspect-ratio: 2/1;
     object-fit: cover;
   }
 
@@ -450,7 +451,6 @@ export const HitContainer = styled.article`
 export const DetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `
 export const ReverseVerticalDisplay = styled.div`
   display: flex;
