@@ -5,6 +5,9 @@ use Faker\Factory;
 
 /**
  * Test the filtered lists paragraph with news spotlights functionality.
+ *
+ * Engineering note: We don't use the spotlights work from Core, so
+ * this test isn't applicable.
  */
 #[CodeceptionAttribute\Group('paragraphs')]
 #[CodeceptionAttribute\Group('news-variant')]
@@ -28,7 +31,7 @@ class FilteredListsSpotlightsCest {
   /**
    * Test that stanford_news_filtered view is available in filtered lists paragraph.
    */
-  public function testNewsFilteredViewAvailable(AcceptanceTester $I) {
+  private function testNewsFilteredViewAvailable(AcceptanceTester $I) {
     $I->logInWithRole('site_manager');
 
     // Create a filtered list paragraph.
@@ -54,7 +57,7 @@ class FilteredListsSpotlightsCest {
   /**
    * Test news spotlights filtered view displays spotlight news items.
    */
-  public function testNewsSpotlightsFilteredViewDisplaysSpotlightNews(AcceptanceTester $I) {
+  private function testNewsSpotlightsFilteredViewDisplaysSpotlightNews(AcceptanceTester $I) {
     // Create spotlight filter terms.
     $filter_term = $I->createEntity([
       'vid' => 'stanford_news_spotlight_filters',
@@ -101,7 +104,7 @@ class FilteredListsSpotlightsCest {
   /**
    * Test filtering spotlight news by taxonomy term.
    */
-  public function testSpotlightNewsFilteringByTerm(AcceptanceTester $I) {
+  private function testSpotlightNewsFilteringByTerm(AcceptanceTester $I) {
     // Create multiple spotlight filter terms.
     $filter_term_1 = $I->createEntity([
       'vid' => 'stanford_news_spotlight_filters',
@@ -157,7 +160,7 @@ class FilteredListsSpotlightsCest {
   /**
    * Test spotlight news with hierarchical filter terms.
    */
-  public function testSpotlightNewsHierarchicalFiltering(AcceptanceTester $I) {
+  private function testSpotlightNewsHierarchicalFiltering(AcceptanceTester $I) {
     // Create parent and child filter terms.
     $parent_term = $I->createEntity([
       'vid' => 'stanford_news_spotlight_filters',
@@ -205,7 +208,7 @@ class FilteredListsSpotlightsCest {
   /**
    * Test exposed filter functionality in card grid display.
    */
-  public function testExposedFilterFunctionality(AcceptanceTester $I) {
+  private function testExposedFilterFunctionality(AcceptanceTester $I) {
     // Create filter terms.
     $filter_term_1 = $I->createEntity([
       'vid' => 'stanford_news_spotlight_filters',
@@ -263,7 +266,7 @@ class FilteredListsSpotlightsCest {
   /**
    * Test that only news with spotlight layout are shown.
    */
-  public function testOnlySpotlightLayoutNewsDisplayed(AcceptanceTester $I) {
+  private function testOnlySpotlightLayoutNewsDisplayed(AcceptanceTester $I) {
     $filter_term = $I->createEntity([
       'vid' => 'stanford_news_spotlight_filters',
       'name' => $this->faker->words(2, TRUE),
