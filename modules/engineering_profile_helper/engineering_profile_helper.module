@@ -86,6 +86,11 @@ function _engineering_profile_helper_trim_spotlight_quote(string $quote) {
 }
 
 function _engineering_profile_helper_modify_spotlight_quote_for_magazine(string $html): string {
+  // Return early if the HTML is empty to avoid DOMDocument ValueError in PHP 8.1+.
+  if (empty(trim($html))) {
+    return '';
+  }
+
   $doc = new DOMDocument();
 
   // Load the HTML fragment without adding <html> and <body>
