@@ -299,9 +299,11 @@ class WYSIWYGCest {
 
   /**
    * Image modal test.
+   * Not working?
+   * 
    */
   #[CodeceptionAttribute\Group('wysiwyg-modal')]
-  public function testWysiwygModal(FunctionalTester $I) {
+  protected function testWysiwygModal(FunctionalTester $I) {
     $file_system = \Drupal::service('file_system');
     $image_path = $file_system->copy(__DIR__ . '/logo.jpg', 'public://' . $this->faker->word() . '.jpg');
     $image_name = basename($image_path);

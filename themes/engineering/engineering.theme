@@ -81,9 +81,15 @@ function engineering_preprocess_pattern_card(&$variables) {
   if (isset($variables['card_super_headline'])) {
     $superhead = $variables['card_super_headline'];
 
-    // Render the superhead to get the full text content.
-    $rendered = \Drupal::service('renderer')->renderPlain($superhead);
-    $text = strip_tags($rendered);
+    // Get the text content - handle both render arrays and already-rendered Markup.
+    if (is_array($superhead)) {
+      $rendered = \Drupal::service('renderer')->renderPlain($superhead);
+      $text = strip_tags($rendered);
+    }
+    else {
+      // Already rendered (Markup object or string).
+      $text = strip_tags((string) $superhead);
+    }
 
     // Use regex to extract a date pattern (Month DD, YYYY).
     if (preg_match('/(\w+ \d{1,2}, \d{4})/', $text, $matches)) {
