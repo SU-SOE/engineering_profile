@@ -71,7 +71,7 @@ class OpportunityCest {
   }
 
   #[CodeceptionAttribute\Group('opportunity-filters')]
-  public function testFilteringOpportunities(FunctionalTester $I) {
+  protected function testFilteringOpportunities(FunctionalTester $I) {
     [
       $parent_1,
       $parent_2,
