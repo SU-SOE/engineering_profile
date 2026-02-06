@@ -79,6 +79,69 @@ adding:
               additional: {  }
         -
           components:
+            93d5129c-8ade-424d-b0e3-1aeb967438ed:
+              uuid: 93d5129c-8ade-424d-b0e3-1aeb967438ed
+              region: su_news_byline
+              configuration:
+                id: 'field_block:node:stanford_news:su_soe_external_source_text'
+                label: 'External Source Display Text'
+                label_display: '0'
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: wrapper_class
+                  label: hidden
+                  settings:
+                    class: 'news-card__external-source-text '
+                    tag: div
+                    link: false
+                    link_class: ''
+                    summary: false
+                    trim: 200
+                  third_party_settings:
+                    empty_fields:
+                      handler: nbsp
+                    field_formatter_class:
+                      class: ''
+                    field_label:
+                      label_value: ''
+                      label_tag: ''
+              weight: 1
+              additional: {  }
+            f063467c-8c86-4044-829e-58474de1796a:
+              uuid: f063467c-8c86-4044-829e-58474de1796a
+              region: main
+              configuration:
+                id: 'field_block:node:stanford_news:su_soe_department'
+                label: 'Related Departments'
+                label_display: visible
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: entity_reference_label
+                  label: hidden
+                  settings:
+                    link: true
+                  third_party_settings:
+                    empty_fields:
+                      handler: ''
+                    field_formatter_class:
+                      class: ''
+                    field_formatter_range:
+                      order: 0
+                      limit: 0
+                      offset: 0
+                    field_label:
+                      label_value: ''
+                      label_tag: ''
+              weight: 1
+              additional: {  }
+        -
+          components:
             f063467c-8c86-4044-829e-58474de1796a:
               uuid: f063467c-8c86-4044-829e-58474de1796a
               region: main
