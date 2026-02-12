@@ -1,0 +1,10 @@
+dropzone-upload-guard:
+  version: 1.0
+  js:
+    js/dropzone-upload-guard.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+    - dropzonejs/integration
