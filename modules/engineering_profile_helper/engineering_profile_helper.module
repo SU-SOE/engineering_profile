@@ -9,6 +9,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Render\Markup;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\engineering_profile_helper\LayoutBuilderCompatibility;
 
 /**
@@ -193,6 +194,19 @@ function engineering_profile_helper_local_tasks_alter(&$local_tasks) {
       unset($local_tasks['layout_builder_ui:layout_builder.overrides.user.view']);
     }
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for media_library_add_form_upload.
+ *
+ * Attaches JS that disables the "Upload and Continue" button while the
+ * dropzone async upload is still in progress, preventing a race condition
+ * where the form submits before the uploaded file is ready.
+ *
+ * @see \Drupal\stanford_media\Form\MediaLibraryFileUploadForm
+ */
+function engineering_profile_helper_form_media_library_add_form_upload_alter(array &$form, FormStateInterface $form_state) {
+  $form['#attached']['library'][] = 'engineering_profile_helper/dropzone-upload-guard';
 }
 
 /**

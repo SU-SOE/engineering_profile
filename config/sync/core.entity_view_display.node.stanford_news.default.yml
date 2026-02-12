@@ -144,6 +144,13 @@ third_party_settings:
                     class: su-news-title
             weight: 4
             additional: {  }
+          93d5129c-8ade-424d-b0e3-1aeb967438ed:
+            configuration:
+              context_mapping: {  }
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: stanford_news_byline
@@ -195,35 +202,18 @@ third_party_settings:
             weight: 0
             additional: {  }
           93d5129c-8ade-424d-b0e3-1aeb967438ed:
-            uuid: 93d5129c-8ade-424d-b0e3-1aeb967438ed
-            region: su_news_byline
             configuration:
-              id: 'field_block:node:stanford_news:su_soe_external_source_text'
-              label: 'External Source Display Text'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
+              context_mapping: {  }
               formatter:
-                type: wrapper_class
-                label: hidden
-                settings:
-                  class: 'news-card__external-source-text '
-                  tag: div
-                  link: false
-                  link_class: ''
-                  summary: false
-                  trim: 200
-                third_party_settings:
-                  empty_fields:
-                    handler: nbsp
-                  field_formatter_class:
-                    class: ''
-                  field_label:
-                    label_value: ''
-                    label_tag: ''
-            weight: 1
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+          f063467c-8c86-4044-829e-58474de1796a:
+            configuration:
+              context_mapping: {  }
+              formatter:
+                settings: {  }
+                third_party_settings: {  }
             additional: {  }
         third_party_settings: {  }
       -
@@ -235,27 +225,6 @@ third_party_settings:
           centered: centered-container
           columns: default
         components:
-          05c3062a-6e09-4b3b-b8f9-fa797362fb67:
-            uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
-            region: main
-            configuration:
-              id: 'field_block:node:stanford_news:su_news_banner_media_caption'
-              label: 'Banner Media Caption'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings:
-                  field_formatter_class:
-                    class: su-news-banner-media-caption
-            weight: -8
-            additional: {  }
           c67c266b-204c-4ca8-aff9-715a5cdf2ff8:
             uuid: c67c266b-204c-4ca8-aff9-715a5cdf2ff8
             region: main
@@ -287,6 +256,27 @@ third_party_settings:
                   field_formatter_class:
                     class: su-news-banner
             weight: -9
+            additional: {  }
+          05c3062a-6e09-4b3b-b8f9-fa797362fb67:
+            uuid: 05c3062a-6e09-4b3b-b8f9-fa797362fb67
+            region: main
+            configuration:
+              id: 'field_block:node:stanford_news:su_news_banner_media_caption'
+              label: 'Banner Media Caption'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings:
+                  field_formatter_class:
+                    class: su-news-banner-media-caption
+            weight: -8
             additional: {  }
         third_party_settings: {  }
       -
