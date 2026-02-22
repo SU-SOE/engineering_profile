@@ -454,15 +454,15 @@
 - D8CORE-6457 D8CORE-6476 D8CORE-6477 Tweaks to policy content fields
 - Added undo and redo buttons to ckeditor
 - Move help section to be below brand bar in header (#674)
-- Revert "D8CORE-4495: changing past events text (#669)" (#673)
-- D8CORE-4495: changing past events text (#669)
+- Revert "changing past events text (#669)" (#673)
+- changing past events text (#669)
 - D8CORE-5407 | @jdwjdwjdw | A11y: Update lockup cell2 max-width, line3 line-height (#672)
 - Provide a new replacement menu with a decoupled main menu (#663)
 - D8CORE-6416 Update google analytics tracking for stanford_basic theme
 - D8CORE-2622, D8CORE-4494 | Move brand bar and skip-links into header landmark banner (#665)
 - D8CORE-6654 | Update stanford_basic package-lock (#667)
 - Added tiny base64 blur image to json api data
-- D8CORE-6336: changing hover on print icon for policy CT (#661)
+- changing hover on print icon for policy CT (#661)
 - Updated jsonapi endpoints (#664)
 - Migrate everything to layout paragraphs and upgrade all modules/themes (#654)
 
@@ -483,7 +483,7 @@
 - Fix policy typo (#662)
 - D8CORE-2622, D8CORE-4494 Move brand bar and skip-links into header landmark banner (#665)
 - D8CORE-6654 Update stanford_basic package-lock (#667)
-- D8CORE-6336: changing hover on print icon for policy CT (#661)
+- changing hover on print icon for policy CT (#661)
 - Updated permissions to allow site managers create media taxonomy
 
 9.2.5
@@ -514,13 +514,13 @@ _Release Date: 2022-11-30_
 - D8CORE-6424 Hide legacy importer fields on importer form
 - D8CORE-6338 updated help text on policy changelog fields
 - D8CORE-6422 Allow news to hide social share icons
-- D8CORE-6370: Moved the authority field. (#647)
+- Moved the authority field. (#647)
 - Improved tests for configuration ignore
 - Fix preprocess_breadcrumbs to prevent failure with drush
 - Add and enable memcache for dev, stage, and prod (#645) (remove?)
-- D8CORE-2932 and D8CORE-6357: Fixed extra spacing on people list items. (#641)
-- D8CORE-6348: adding summary into the related policy cards (#640)
-- D8CORE-6345: Display policy change log title in the lists (#642)
+- D8CORE-2932 and Fixed extra spacing on people list items. (#641)
+- adding summary into the related policy cards (#640)
+- Display policy change log title in the lists (#642)
 - Added and configured "Page Cache Query Ignore" module
 
 9.2.0
@@ -531,18 +531,18 @@ _Release Date: 2022-10-25_
 - D8CORE-6346 Reorder form fields and add help text
 - Added and adjusted printable view mode for policies
 - Prepend "Canceled" to canceled events
-- D8CORE-6237: Corrected courses migration (#638)
-- D8CORE-6330: moved the back and forward button for mobile (#636)
+- Corrected courses migration (#638)
+- moved the back and forward button for mobile (#636)
 - Moved modules into consolidated repo location for stanford_profile_helper (#637)
 - Added update hook to make deployment smoother
-- D8CORE-6329: unique ids for prev/next buttons (#635)
-- D8CORE-6327: fix to the policy related cards for mobile (#634)
-- D8CORE-6323: adding styling for change log block anywhere (#633)
+- unique ids for prev/next buttons (#635)
+- fix to the policy related cards for mobile (#634)
+- adding styling for change log block anywhere (#633)
 - D8CORE-6325 Set the active item on book side navigation (#632)
-- D8CORE-3498: Added additional contact information field for events (#631)
-- D8CORE-6304: layout and style set up for Policy (#628)
-- D8CORE-6251: Added a toggle in the theme to turn off the external links (#623)
-- D8CORE-6304: adding the logo for the print function on policy (#625)
+- Added additional contact information field for events (#631)
+- layout and style set up for Policy (#628)
+- Added a toggle in the theme to turn off the external links (#623)
+- adding the logo for the print function on policy (#625)
 - Added Fast 404 module (#630)
 - D8CORE-6315 Remove duplicate "All" publication menu link
 - Apply chosen to related policy field
@@ -554,15 +554,15 @@ _Release Date: 2022-10-25_
 - D8CORE-6247 Add "Code" to WYSIWYG Style dropdown
 - D8CORE-6242 D8CORE-4977 D8CORE-6055 Improve people lists and add pronoun field (#615)
 - Disable confirm-leave js on CI environments
-- D8CORE-6244: fixing float with a  clear (#614)
-- D8CORE-4363: Sjpw images in cards at all breakpoint (#610)
+- fixing float with a  clear (#614)
+- Sjpw images in cards at all breakpoint (#610)
 - D8CORE-6235 Fix "Save and Import" on importer forms. (#613)
 - D8CORE-6058 Adjust, improve, and add metatags for content (#608)
 - D8CORE-6217 Allow configuring maximum main menu depth (#611)
 - D8CORE-5825 Add taxonomy field to media types for categorization (#609)
-- D8CORE-6245: fix to the transparent localist event link (#612)
+- fix to the transparent localist event link (#612)
 - D8CORE-6224 Added localist bookmark url for importer (#607)
-- D8CORE-5955: Added journal publisher field, updated publisher label. (#602)
+- Added journal publisher field, updated publisher label. (#602)
 - D8CORE-5656 D8CORE-6215 D8CORE-6048 Adjustments to people node form and views (#606)
 
 9.1.3
@@ -603,18 +603,18 @@ _Release Date: 2022-08-08_
 - D8CORE-6035 Show image title field when uploading in media library.
 - Ensure events importer widget works when the API is empty
 - Removed entity_print from composer.json (#589)
-- D8CORE-5684: Underline buttons on the events mini calendar. (#586)
+- Underline buttons on the events mini calendar. (#586)
 - Updated config from search_api module
-- D8CORE-6000: Added additional html elements to embeddables allow list (#584)
-- D8CORE-4183: fix up to alignment. (#569)
+- Added additional html elements to embeddables allow list (#584)
+- fix up to alignment. (#569)
 - D8CORE-6003 Save terms in the order they were chosen (#583)
 - D8CORE-6005 Allow Span tags in the wysiwyg
 - D8CORE-5128 Enable embed code validators (#579)
 - Refactored and improved codeception tests.
 - fixed composer namespace to lowercase
 - Removed fzaninotto/faker workaround in CI tests
-- D8CORE-5948: removing the li from the ch line limit (#578)
-- D8CORE-5862: Removed obsolete checkbox from theme settings (#575)
+- removing the li from the ch line limit (#578)
+- Removed obsolete checkbox from theme settings (#575)
 - D8CORE-4972 Provide aria-label input for links on paragraphs (#573)
 - removed unwanted composer files
 - Updated drupal core 9.4
@@ -623,14 +623,14 @@ _Release Date: 2022-08-08_
 - Move some CircleCi to GH Actions (#568)
 - D8CORE-5860 Fix intranet icons for paragraphs and media
 - D8CORE-4780 Changed search page button text to "Search"
-- D8CORE-2274: Updated event sponsor field "Add More" button label (#570)
-- D8CORE-4489: fixing font sizes within tables (#564)
-- D8CORE-5598 D8CORE-5592: making margins even on OL and UL (#565)
+- Updated event sponsor field "Add More" button label (#570)
+- fixing font sizes within tables (#564)
+- D8CORE-5598 making margins even on OL and UL (#565)
 - D8CORE-5886 Enable ajax on people lists
 - Added and configured ckeditor_blockimagepaste to prevent inline base64 images
 - D8CORE-4858 Allow hiding paragraph and custom empty results message (#563)
-- D8CORE-5864: fixing the news alignment. (#559)
-- D8CORE-5859: changes to the font sizes in courses (#562)
+- fixing the news alignment. (#559)
+- changes to the font sizes in courses (#562)
 - Adjusted VBO form for event date fields that are required
 - D8CORE-4867 Publication lists on people pages (#561)
 - D8CORe-5871 Change order of filter processing to fix <picture><source> tags
@@ -638,12 +638,12 @@ _Release Date: 2022-08-08_
 - Locked citeprocphp to version 2.4.1, pre ext-intl requirement. (#560)
 - D8CORE-5763 Updated default content (#558)
 - D8CORE-5680 Switch list landing pages to nodes with layout builder settings (#552)
-- D8CORE-5773: Added edit buttons on courses list page (#555)
+- Added edit buttons on courses list page (#555)
 - Updated some codeception tests (#554)
-- D8CORE-1835: Added abbr buttons to ckeditor (#550)
+- Added abbr buttons to ckeditor (#550)
 - Disabled courses department importer
-- D8CORE-2215: Let editors sort content by author (#551)
-- D8CORE-5824: Added a second provider for Stanford University Library oEmbeds (#548)
+- Let editors sort content by author (#551)
+- Added a second provider for Stanford University Library oEmbeds (#548)
 
 
 
@@ -682,9 +682,9 @@ _Release Date: 2022-05-10_
 --------------------------------------------------------------------------------
 _Release Date: 2022-05-10_
 
-- D8CORE-2331: Updated help on media caption field text (#542)
+- Updated help on media caption field text (#542)
 - Allow admins to change the home page via site settings (#540)
-- D8CORE-5833: Fix for courses view to respect chosen limit in card grid list paragraph (#539)
+- Fix for courses view to respect chosen limit in card grid list paragraph (#539)
 
 8.x-4.0
 --------------------------------------------------------------------------------
@@ -693,10 +693,10 @@ _Release Date: 2022-05-02_
 - Added twitter card metadata for person content
 - Several tweaks to the taxonomy display and fields. (#532)
 - Update block.block.minimally_branded_subtheme_pagetitle.yml (#535)
-- D8CORE-5772: Added custom block and edit link on `/courses` page (#534)
-- D8CORE-5748: Adding a listy style to the taxonomy terms (#533)
-- D8CORE-5778: adding the grid col 3 for three across (#530)
-- D8CORE-5627: added <object> and <param> to allowed tags in embeddables (#529)
+- Added custom block and edit link on `/courses` page (#534)
+- Adding a listy style to the taxonomy terms (#533)
+- adding the grid col 3 for three across (#530)
+- added <object> and <param> to allowed tags in embeddables (#529)
 - D8CORE-5729 People term pages: display only child terms groupings (#526)
 - D8CORE-5187 Courses and Importer(#500)
 - D8CORE-5611 Allow multiple basic page types and change widget
@@ -710,7 +710,7 @@ _Release Date: 2022-05-02_
 - Dont trim the url on even cards
 - Updated link_title_formatter module
 - Updated domain_301_redirect version
-- D8CORE-5172: Updated references to localist and events-legacy urls
+- Updated references to localist and events-legacy urls
 - DO not require lockup option select, prevent requiring lockup fields
 
 
@@ -719,7 +719,7 @@ _Release Date: 2022-05-02_
 _Release Date: 2022-03-22_
 
 - DO not require lockup option select, prevent requiring lockup fields
-- D8CORE-5172: Updated references to localist and events-legacy urls
+- Updated references to localist and events-legacy urls
 
 8.x-3.1
 --------------------------------------------------------------------------------
@@ -903,8 +903,8 @@ _Release Date: 2021-11-19_
 - D8CORE-4246 Add fontawesome module for wysiwyg icon support (#464)
 - D8CORE-4876 Enable ajax on publication list view
 - D8CORE-4824 Disable accordion on event series
-- D8CORE-4878: Added configs for oEmbed Providers module (#462)
-- D8CORE-4871: adding a class to the table element and the aside element (#460)
+- Added configs for oEmbed Providers module (#462)
+- adding a class to the table element and the aside element (#460)
 - Merge branch 'master' into 8.x-2.x
 - D8CORE-4816 Add configurable allowed tags for unstructured embed (#461)
 
@@ -1074,11 +1074,11 @@ _Release Date: 2021-05-18_
 --------------------------------------------------------------------------------
 _Release Date: 2021-05-07_
 
-- D8CORE-4145: adding the margin bottom to the intro for events. (#410) (e07a55a)
-- D8CORE-3523: Added User Search form (#412) (3167707)
-- D8CORE-4093: removing the margin top from the button on lists (#405) (d8d588e)
-- D8CORE-3951: fixing the pagination to the infinite scroll and a Load More button (#411) (751a62b)
-- D8CORE-3970: removed the extra h2 (#409) (a964622)
+- adding the margin bottom to the intro for events. (#410) (e07a55a)
+- Added User Search form (#412) (3167707)
+- removing the margin top from the button on lists (#405) (d8d588e)
+- fixing the pagination to the infinite scroll and a Load More button (#411) (751a62b)
+- removed the extra h2 (#409) (a964622)
 - Adjusted citation author fields to prevent only first name data entry (911a7ef)
 - D8CORE-3104 D8CORE-3455 D8CORE-3456 D8CORE-3981 Help text and form tweaks (#408) (97b2d2e)
 - D8CORE-2729 enable the hero banner behavior (#407) (1a9da8b)
@@ -1108,20 +1108,20 @@ _Release Date: 2021-04-19_
 --------------------------------------------------------------------------------
 _Release Date: 2021-04-12_
 
-- D8CORE-3254: Basic Page+ with views and teaser display (#388)
+- Basic Page+ with views and teaser display (#388)
 - Allow users to change the taxonomy term description text
 - D8CORE-2572 Added and configured content_lock to prevent simultaneous edits (#395)
-- D8CORE-2766: Don't require the field on the global message form. (#357)
-- D8CORE-4033: updated view config to allow filtering past events lists (#397)
+- Don't require the field on the global message form. (#357)
+- updated view config to allow filtering past events lists (#397)
 - D8CORE-3953 Replace "whitelist" with "allowed" for stanford_ssp (#394)
-- D8CORE-4020: fix double h2 tags (#396)
+- fix double h2 tags (#396)
 - D8CORE-2853 test for unpublishing the home page (#392)
 - D8CORE-3538 Add "Other" citation type (#390)
 - D8CORE-3458 Dont display unpublished profiles in the lists (#389)
 - D8CORE-3945 Changed the news card image style for better resolution
 - Corrected dependency in composer.json
 - D8CORE-3536 Display publications as a teaser in the paragraph (#387)
-- D8CORE-3947: adding classes to the filtered by for publications in order to style them (#386)
+- adding classes to the filtered by for publications in order to style them (#386)
 - D8CORE-3126 Intranet Configs (#379)
 
 8.x-2.3
@@ -1179,11 +1179,11 @@ _Release Date: 2021-02-10_
 - D8CORE-2968 Change the events schedule view (#354) (567973f)
 - Several configuration tweaks. (#352) (11728b4)
 - D8CORE-2585 Publications content type (#350) (326e730)
-- D8CORE-1123: added tests for dropdown menu (#349) (153da4e)
+- added tests for dropdown menu (#349) (153da4e)
 - Disable orphan actions on person importer (1bcd31c)
 - D8CORE-3263 Create gallery paragraph type with colorbox actions (#347) (4815971)
 - Exported configs after D9.1 database updates (#340) (9c84759)
-- D8CORE-3142: adding a class to the intro block (#345) (6187724)
+- adding a class to the intro block (#345) (6187724)
 
 8.x-1.22
 --------------------------------------------------------------------------------
@@ -1195,9 +1195,9 @@ _Release Date: 2020-12-08_
 --------------------------------------------------------------------------------
 _Release Date: 2020-12-07_
 
-- D8CORE-2431: configs (#333) (2e35846)
+- configs (#333) (2e35846)
 - D8CORE-2867 Update image metadata tags (#339) (c755c6f)
-- D8CORE-2325: fixed separator between event dates (#338) (66d5989)
+- fixed separator between event dates (#338) (66d5989)
 - D8CORE-000 Patch simplesamlphp auth module to prevent unwanted redirect (#337) (592cac5)
 - D8CORE-3051 Allow paragraph views to display nested taxonomy content (#335) (0f4c59c)
 - Updated default content module (#336) (b5de66f)
@@ -1238,9 +1238,9 @@ _Release Date: 2020-11-09_
 - D8CORE-2875 Allow all paragraph types in tests (#312) (2a1d924)
 - corrected composer.json (2780d18)
 - D8CORE-2856 Add list and entity reference paragraph types (#310) (2b9f721)
-- D8CORE-2002: config adjustment to hide required asterisk for field group (#311) (f72a420)
+- config adjustment to hide required asterisk for field group (#311) (f72a420)
 - Adjusted the person importer to update the media item correctly (#309) (967b16d)
-- D8CORE-2470: Add process plugin to check image dimensions (#308) (6b9b7eb)
+- Add process plugin to check image dimensions (#308) (6b9b7eb)
 
 8.x-1.18
 --------------------------------------------------------------------------------
@@ -1249,11 +1249,11 @@ _Release Date: 2020-10-05_
 - enabled syslog as per recommendation from Acquia (5e8eb57)
 - updated config after database updates (735e7c8)
 - D8CORE-2685 Enable react behaviors module (#304) (4c2a1aa)
-- D8CORE-2613: Tests for manipulating taxonomy terms and the menu (#305) (0d08442)
-- D8CORE-2644: Tests for embeddable media form alters (#299) (a59d9b5)
-- D8CORE-2548: change the pagination counts (#297) (abd31cb)
-- D8CORE-2185: matching the person edit to the news edit (#301) (038a332)
-- D8CORE-2531: adding a Contact header to appear when there is any cont… (#302) (28d325f)
+- Tests for manipulating taxonomy terms and the menu (#305) (0d08442)
+- Tests for embeddable media form alters (#299) (a59d9b5)
+- change the pagination counts (#297) (abd31cb)
+- matching the person edit to the news edit (#301) (038a332)
+- adding a Contact header to appear when there is any cont… (#302) (28d325f)
 - Merge pull request #303 from SU-SWS/D8CORE-2538 (811e3a7)
 - D8CORE-2538 Removed permissions for anonymous and a couple roles (c5edb6a)
 - D8CORE-2538 Staff, Faculty, and Students shouldnt see the admin toolbar (5df751b)
@@ -1286,15 +1286,15 @@ _Release Date: 2020-09-15_
 --------------------------------------------------------------------------------
 _Release Date: 2020-09-14_
 
-- D8CORE-2521: Configs for embeddable media. (#273) (737163c)
+- Configs for embeddable media. (#273) (737163c)
 - Settings for the maximum columns required (#284) (27d2037)
-- D8CORE-1609: Super Footer & D8CORE-2490: Global Messages (#270) (0192522)
-- D8CORE-2535: Changed sort fields on people term pages (#282) (196675c)
-- D8CORE-2040: Updated configs for react paragraphs V2 (#275) (928ad75)
-- D8CORE-2591: Allow lockup option M (#278) (d243456)
+- Super Footer & Global Messages (#270) (0192522)
+- Changed sort fields on people term pages (#282) (196675c)
+- Updated configs for react paragraphs V2 (#275) (928ad75)
+- Allow lockup option M (#278) (d243456)
 - D8CORE-2499 Updated composer license (#274) (eb4b434)
 - DEVGUIDE-000 Added html pre tag to allowed html tags. (#272) (798ef8b)
-- D8CORE-2201: Added extlink dependency (#261) (5e5579c)
+- Added extlink dependency (#261) (5e5579c)
 - Update composer.json (#271) (9907620)
 
 8.x-1.15
@@ -1302,13 +1302,13 @@ _Release Date: 2020-09-14_
 _Release Date: 2020-08-07_
 
 - fixed the codeception tests for the stack level
-- D8CORE-1472: Config Page for Lockup Configuration. (#220)
+- Config Page for Lockup Configuration. (#220)
 - D8CORE-2478 Updated html filter to allow colspan and rowspan. (#265)
 - CSD-258: Reset selection when filtered. (#259)
 - DEVOPS-000: Remove field formatter patch
-- D8CORE-2155: Added configs for responsive 1:1 image styles (#260)
+- Added configs for responsive 1:1 image styles (#260)
 - Removed views_taxonomy_term_name_depth not in use.
-- D8CORE-1241: Added self-escalation test.
+- Added self-escalation test.
 - enabled diff module and clean up dependencies
 
 8.x-1.14
@@ -1316,66 +1316,66 @@ _Release Date: 2020-08-07_
 _Release Date: 2020-07-13_
 
 - DEVOPS-000: Regenerated and cleaned up migration cron jobs
-- D8CORE-2205: Configure config ignore to allow for custom theme enabling
+- Configure config ignore to allow for custom theme enabling
 - DEVOPS-000: Allow the currently active theme settings to change
 - DEVOPS-000: Added to config ignore to ignore the theme settings
-- D8CORE-1930: Changing the multirow gutters and removing the fixed widths
+- Changing the multirow gutters and removing the fixed widths
 - DEVOPS-000: added subtheme test
 - DEVOPS-000: use null value for update
-- D8CORE-2292: Added in the More news button
+- Added in the More news button
 - DEVOPS-000: Merge pull request #239 from SU-SWS/D8CORE-2292
 - DEVOPS-000: Merge pull request #236 from SU-SWS/cron-job-clean
 - D8CORE-1538 Converting behat tests to codeception tests (#228)
-- D8CORE-2049: change telephone to contact
-- D8CORE-1930: Changing the multirow gutters and removing the fixed widths
-- D8CORE-2205: Configure config ignore to allow for custom theme enabling
-- D8CORE-2049: change telephone to contact.
-- D8CORE-2099: Added required fields and default image for profile. (#242)
-- D8CORE-1722: Remove everything code related from this profile into an
+- change telephone to contact
+- Changing the multirow gutters and removing the fixed widths
+- Configure config ignore to allow for custom theme enabling
+- change telephone to contact.
+- Added required fields and default image for profile. (#242)
+- Remove everything code related from this profile into an
 - D8CORE-2282 D8CORE-2293 Tests for admin toolbar links
 - D8CORE-2282 D8CORE-2293 Fix the menu links access
-- D8CORE-2290: moved the cta into details area (#247)
-- D8CORE-2178, D8CORE-2180, D8CORE-2181: Adjust news node displays, field
-- D8CORE-2318: removing the action arrow on list items (#245)
+- moved the cta into details area (#247)
+- D8CORE-2178, D8CORE-2180, Adjust news node displays, field
+- removing the action arrow on list items (#245)
 - DEVOPS-000: Lock view unpublished to avoid the error in issue #3097251 (#250)
 - DEVOPS-000: Update help text for Site URL (#252)
-- D8CORE-2007: removing the span as a wrapper (#249)
+- removing the span as a wrapper (#249)
 - DEVOPS-000: Merge pull request #246 from SU-SWS/D8CORE-2282
 - D8CORE-2229 Update help section texts (#253)
-- D8CORE-2317: location changes to events (#251)
+- location changes to events (#251)
 
 8.x-1.13
 --------------------------------------------------------------------------------
 _Release Date: 2020-06-17_
 
-- D8CORE-000: Fix missing event title in views and re-ordered event node fields (#233)
+- Fix missing event title in views and re-ordered event node fields (#233)
 - Removed a block on event display (#232)
 - removed webform module since its not in use.
-- D8CORE-000: Added notifications about events and person importer (#227)
-- D8CORE-000: Removes labels from events views(#230)
+- Added notifications about events and person importer (#227)
+- Removes labels from events views(#230)
 - Use process plugin for the timezone field (#229)
 - increased wait time for behat tests
-- D8CORE-000: Adjusted Event Importer IDs. (#225)
-- D8CORE-000: Require Drupal Core 8.9 & Contrib Updates (#224)
+- Adjusted Event Importer IDs. (#225)
+- Require Drupal Core 8.9 & Contrib Updates (#224)
 - Update to target IDs in default content and use the auto tagger. (#226)
-- D8CORE-1623: Event, Event Importer, Event Series (#212)
-- D8CORE-2220: Site managers can edit custom blocks (#223)
-- D8CORE-933: screen reader only text for describing WYSIWYG paragraphs (#198)
-- D8CORE-1736: Stanford person importer. (#217)
-- D8CORE-1431: Additional Validation for canonical url field. (#218)
-- D8CORE-2196: Button stacking fix for horizontal alignment. (#216)
-- D8CORE-2074: Fixing the line height in the tables to em (#210)
-- D8CORE-2153: Removed 403 and 404 from xmlsitemap (#214)
-- D8CORE-2038: Changed label from body to description on card (#211)
+- Event, Event Importer, Event Series (#212)
+- Site managers can edit custom blocks (#223)
+- screen reader only text for describing WYSIWYG paragraphs (#198)
+- Stanford person importer. (#217)
+- Additional Validation for canonical url field. (#218)
+- Button stacking fix for horizontal alignment. (#216)
+- Fixing the line height in the tables to em (#210)
+- Removed 403 and 404 from xmlsitemap (#214)
+- Changed label from body to description on card (#211)
 
 8.x-1.12
 --------------------------------------------------------------------------------
 _Release Date: 2020-05-20_
 
-- D8CORE-000: Set media with caption and wysiwyg to 3 in a row. (#208) (5878f09)
-- D8CORE-000: Set cards to 3 in a row. (#206) (e6934b0)
-- D8CORE-000: Changed headline on news to 180 max from 70. (#207) (a74ce2c)
-- D8CORE-2110: Remove news views paragraph type. (#205) (916fafb)
+- Set media with caption and wysiwyg to 3 in a row. (#208) (5878f09)
+- Set cards to 3 in a row. (#206) (e6934b0)
+- Changed headline on news to 180 max from 70. (#207) (a74ce2c)
+- Remove news views paragraph type. (#205) (916fafb)
 
 8.x-1.11
 --------------------------------------------------------------------------------
@@ -1394,24 +1394,24 @@ _Release Date: 2020-05-18_
 --------------------------------------------------------------------------------
 _Release Date: 2020-05-15_
 
-- D8CORE-2017: Integrate stanford_news and stanford_person modules (#194) (ae4b392)
-- D8CORE-1929: Added stanford notifications module (#199) (014ed34)
-- D8CORE-1697: Getting buttons to stack (#174) (9dda5ce)
-- D8CORE-1952: fixing card image width for a single one on a no layout page (#197) (3fc7bda)
+- Integrate stanford_news and stanford_person modules (#194) (ae4b392)
+- Added stanford notifications module (#199) (014ed34)
+- Getting buttons to stack (#174) (9dda5ce)
+- fixing card image width for a single one on a no layout page (#197) (3fc7bda)
 - D8CORE-1870 Change field labels on the card and banner paragraphs (#193) (0ad3673)
-- D8CORE-1933: removed bottom margin from last intro style (#190) (ffbb937)
+- removed bottom margin from last intro style (#190) (ffbb937)
 - Fixed revision tab link test now that the name has changed (#192) (152d5e5)
-- D8CORE-1943: Tests for Fix links in the react widget (#189) (3f9f873)
+- Tests for Fix links in the react widget (#189) (3f9f873)
 - Fix misspelled eduPersonEntitlement (#188) (876ade6)
 - D8CORE-1852 Setup node revision delete on stanford_page (#185) (ab7d7ac)
-- D8CORE-1458: Add media to linkit suggestions for inline links (#186) (4cec4e0)
+- Add media to linkit suggestions for inline links (#186) (4cec4e0)
 - Use the stable version of layout_builder_modal module (#184) (614863e)
 
 8.x-1.8
 --------------------------------------------------------------------------------
 _Release Date: 2020-04-17_
 
-- D8CORE-1873: Fixed Wrapping bug for the multi-row with 4 items.
+- Fixed Wrapping bug for the multi-row with 4 items.
 
 8.x-1.7
 --------------------------------------------------------------------------------
@@ -1424,19 +1424,19 @@ _Release Date: 2020-04-17_
 _Release Date: 2020-04-17_
 
 - Make edit link clicking more specific (#157)
-- D8CORE-1452: update line lengths (#158)
+- update line lengths (#158)
 - fixed seckit split (#161)
 - D8CORE-1789 Fix xmlsitemap 404 response (#162)
-- D8CORE-1708 D8CORE-1707: Disable menu items in toolbar. (#165)
+- D8CORE-1708 Disable menu items in toolbar. (#165)
 - Set up codeception tests framework (#153)
-- D8CORE-1792: Enabled a11y_checker for text editor. (#166)
+- Enabled a11y_checker for text editor. (#166)
 - D8CORE-1664 Move to a release branch workflow with dev versions (#167)
 - D8CORE-1816 wysiwyg tweaks (#175)
 - D8CORE-1501 Added drush command to generate stress test node (#173)
 - Dependency config update (#170)
 - D8CORE-1197 Added google form media type (#169)
 - D8CORE-1497 D8CORE-1681 Added spacer paragraph type and enabled multiple per row (#159)
-- D8CORE-1499: Multiple Per Row (#176)
+- Multiple Per Row (#176)
 
 8.x-1.5
 --------------------------------------------------------------------------------
@@ -1449,18 +1449,18 @@ _Release Date: 2020-03-20_
 _Release Date: 2020-03-20_
 
 - Bumped version of `views_bulk_operations` to 3.6 (#137)
-- D8CORE-1471: Allow site_manager to assign the site_manager role. (#138)
+- Allow site_manager to assign the site_manager role. (#138)
 - Changed default workgroup for saml role mapping to uit:sws so Marco doesn't get admin. (#140)
-- D8CORE-1405: Added alt text to default content. (#141)
+- Added alt text to default content. (#141)
 - Created a config split for acsf modules. (#131)
-- D8CORE-1547: Check for node instance. (#145)
-- D8CORE-1351: Add Paranoia module. (#143)
+- Check for node instance. (#145)
+- Add Paranoia module. (#143)
 - Updated behat test to use existing step definition "Then I click" (fixes bug in tests)
-- D8CORE-1401: wysiwyg tweaks. (#144)
-- D8CORE-943: Added more image styles for wysiwyg. (#146)
-- D8CORE-1689: Allow custom blocks in layout builder. (#149)
-- D8CORE-1659: Set image metatags to use an image style. (#148)
-- D8CORE-1514: Add administer media permission to site managers. (#150)
+- wysiwyg tweaks. (#144)
+- Added more image styles for wysiwyg. (#146)
+- Allow custom blocks in layout builder. (#149)
+- Set image metatags to use an image style. (#148)
+- Add administer media permission to site managers. (#150)
 - Changed stanford_page_layout_full layout option to only be on stanford pages. (#151)
 
 
@@ -1468,19 +1468,19 @@ _Release Date: 2020-03-20_
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_
 
-- D8CORE-1307: Full width page only stylesheet. (#118)
-- D8CORE-1357: Adds validation to config form uri. (#112)
-- D8CORE-1282: Invalidate node page cache when new menu items are added as children. (#119)
+- Full width page only stylesheet. (#118)
+- Adds validation to config form uri. (#112)
+- Invalidate node page cache when new menu items are added as children. (#119)
 - D8CORE-1340 Use core link in wysiwyg for now (#120)
-- D8CORE-1451: Do not limit url characters in local footer (#121)
-- D8CORE-1370: Alter menu form and status messages for config_readonly users (#114)
-- D8CORE-1327: Change filter-format to allow for html entities. (#123)
+- Do not limit url characters in local footer (#121)
+- Alter menu form and status messages for config_readonly users (#114)
+- Change filter-format to allow for html entities. (#123)
 - Fixed drupal/paragraphs version (#117)
 - Set home link to the home node for default content (#124)
-- D8CORE-1409: Enable new filter in the full html format. (#125)
-- D8CORE-1279: Fix for subtitle/subhead styles (#110)
+- Enable new filter in the full html format. (#125)
+- Fix for subtitle/subhead styles (#110)
 - Disable nobots via state on site install (#128)
-- D8CORE-1464: Kill margin-bottom on <p> tag (#130)
+- Kill margin-bottom on <p> tag (#130)
 
 8.x-1.2
 --------------------------------------------------------------------------------
@@ -1488,14 +1488,14 @@ _Release Date: 2020-02-21_
 
 - Resynced the media library view with the drupaDl core version (#105)
 - D8CORE-1393 Dont display page title block on 404 and 403 pages (#106)
-- D8CORE-106: Add Media with Caption paragraph. (#59)
-- D8CORE-1363: Dont show contextual links to users. (#108)
-- D8CORE-1262: Change "Related Text" to "Card Text". (#108)
-- D8CORE-1365: Moved banner to top banner field. (#108)
-- D8CORE-1394: Allow <br> tags. (#108)
-- D8CORE-1224: Add help text to layout selection field. (#108)
-- D8CORE-1326: Allow sitemanagers to view all unpublished content. (#108)
-- D8CORE-1313: Moving the ol and ul styles to the wysiwyg (#111)
+- Add Media with Caption paragraph. (#59)
+- Dont show contextual links to users. (#108)
+- Change "Related Text" to "Card Text". (#108)
+- Moved banner to top banner field. (#108)
+- Allow <br> tags. (#108)
+- Add help text to layout selection field. (#108)
+- Allow sitemanagers to view all unpublished content. (#108)
+- Moving the ol and ul styles to the wysiwyg (#111)
 - Added stanford media library to node form since react doesnt add it (#113)
 
 
@@ -1504,23 +1504,23 @@ _Release Date: 2020-02-21_
 _Release Date: 2020-02-14_
 
 - Happy Valentines Day!
-- D8CORE-1177: WYSIWYG heading text alignment (#87)
-- D8CORE-1234: Add missing breakpoint for 2:1 card responsive image style
-- D8CORE-1261: Adjust content/nav gap. (#89)
+- WYSIWYG heading text alignment (#87)
+- Add missing breakpoint for 2:1 card responsive image style
+- Adjust content/nav gap. (#89)
 - Added page title for non-node pages (#92)
-- D8CORE-1254: Text alignment for lists (#95)
+- Text alignment for lists (#95)
 - Added field_formatter_class module (#93)
-- D8CORE-1289: Update homepage banner default content (#96)
-- D8CORE-369: Enable metatags and XMLSitemap on prod (#88)
-- D8CORE-1114: Alter Node Edit Form for react_paragraphs (#97)
+- Update homepage banner default content (#96)
+- Enable metatags and XMLSitemap on prod (#88)
+- Alter Node Edit Form for react_paragraphs (#97)
 - D8CORE-1201 use confirm_leave module (#99)
 - D8CORE-1007 Add image for default content (#100)
 - Added github template files.
 - Uninstall better_normalizers module
 - Uninstall config_distro module
 - Updated default content and media library images.
-- D8CORE-1007: Add image for default content (#100)
-- D8CORE-1019: Modified the full width layout (#102)
+- Add image for default content (#100)
+- Modified the full width layout (#102)
 
 8.x-1.0
 --------------------------------------------------------------------------------
@@ -1530,34 +1530,34 @@ _Release Date: 2020-02-05_
 - Many configuration updates
 - Many style updates
 - Many new tests, both unit and behat.
-- D8CORE-938: Menu tweaks for primary and seconday navigation
-- D8CORE-1153: Removed H6 from stanford_text formats
-- D8CORE-1112: Page Authoring: style banner top
-- D8CORE-971: fix home and no 2nd menu
-- D8CORE-941: WYSIWYG Typography update and CKEditor styles
-- D8CORE-1175: Provide additional help information
-- D8CORE-931: Add anchor location for skip links to content layouts
-- D8CORE-1117: Switch ot React Paragraphs
-- D8CORE-1177: Override WYSIWYG text paragraph styles
-- D8CORE-1221: Dark paragraph type icons
-- D8CORE-1018: Adjust content and media menu item titles
-- D8CORE-1243: SAML role mapping config page
-- D8CORE-1028: line length fix
+- Menu tweaks for primary and seconday navigation
+- Removed H6 from stanford_text formats
+- Page Authoring: style banner top
+- fix home and no 2nd menu
+- WYSIWYG Typography update and CKEditor styles
+- Provide additional help information
+- Add anchor location for skip links to content layouts
+- Switch ot React Paragraphs
+- Override WYSIWYG text paragraph styles
+- Dark paragraph type icons
+- Adjust content and media menu item titles
+- SAML role mapping config page
+- line length fix
 - Removed stanford_profile_install from being installed as it has nothing to do.
 
 8.x-1.0-alpha5
 --------------------------------------------------------------------------------
 _Release Date: 2020-01-23_
 
-- D8CORE-1200: Prevent home page from being deleted (#68)
-- D8CORE-1013: Allow classes on header elements (#67)
+- Prevent home page from being deleted (#68)
+- Allow classes on header elements (#67)
 - Fix for focal point config mis-match and failed circle ci behat tests.
 
 8.x-1.0-alpha4
 --------------------------------------------------------------------------------
 _Release Date: 2020-01-22_
 
-- D8CORE-970: adding wysiwyg scss file (#60)
+- adding wysiwyg scss file (#60)
 - D8CORE-850 Added Ckeditor Sticky Toolbar (#51)
 - Changed the widget for the media library form mode on images (#56)
 - Adjusted some wysiwyg styles.

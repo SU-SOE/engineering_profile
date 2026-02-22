@@ -207,7 +207,8 @@
         "su-sws/stanford_syndication": "^1.0"
     },
     "conflict": {
-        "drupal/core": ">=11.3.0"
+        "drupal/core": ">=11.3.0",
+        "drupal/colorbox": ">=2.2.0"
     },
     "config": {
         "sort-packages": true

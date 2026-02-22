@@ -26,7 +26,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * @group engineering_profile
  * @coversDefaultClass \Drupal\engineering_profile\EventSubscriber\EngineeringProfileEventSubscriber
  */
-class EventSubscriberTest extends KernelTestBase {
+class EngineeringProfileEventSubscriberTest extends KernelTestBase {
 
   /**
    * {@inheritdoc}
