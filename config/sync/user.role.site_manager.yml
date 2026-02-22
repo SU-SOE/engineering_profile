@@ -62,6 +62,7 @@ dependencies:
     - redirect
     - role_delegation
     - scheduler
+    - soe_profile
     - stanford_migrate
     - stanford_policy
     - stanford_publication
@@ -132,6 +133,8 @@ permissions:
   - 'create terms in course_filters'
   - 'create terms in event_audience'
   - 'create terms in event_filters'
+  - 'create terms in media_content_filters'
+  - 'create terms in media_content_types'
   - 'create terms in media_tags'
   - 'create terms in opportunity_sponsor'
   - 'create terms in opportunity_tag_filters'
@@ -201,6 +204,7 @@ permissions:
   - 'delete terms in opportunity_sponsor'
   - 'delete terms in opportunity_tag_filters'
   - 'delete terms in opportunity_type'
+  - 'delete terms in person_filters'
   - 'delete terms in stanford_event_types'
   - 'delete terms in stanford_news_topics'
   - 'delete terms in stanford_person_types'
@@ -263,6 +267,7 @@ permissions:
   - 'edit terms in opportunity_sponsor'
   - 'edit terms in opportunity_tag_filters'
   - 'edit terms in opportunity_type'
+  - 'edit terms in person_filters'
   - 'edit terms in stanford_event_types'
   - 'edit terms in stanford_news_topics'
   - 'edit terms in stanford_person_types'
