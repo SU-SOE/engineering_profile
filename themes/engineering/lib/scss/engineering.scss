@@ -238,6 +238,8 @@ a.su-link--external {
     svg {
       width: 34px;
       height: 34px;
+      display: block;
+      margin: 0 auto;
 
       @include grid-media('lg') {
         width: 40px;
@@ -248,9 +250,17 @@ a.su-link--external {
 
   .widget-wrapper-copylink,
   .widget-wrapper-print {
+    display: inline-block;
     font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    .copied-url,
+    .copied-url-success,
+    .copied-url-failed,
+    .print-text {
+      color: $su-color-black;
+      margin: 0 auto;
+      margin-top: 10px;
+      position: relative;
+    }
   }
 }
