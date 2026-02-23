@@ -75,7 +75,10 @@ var webpackConfig = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
-        type: "asset"
+        type: "asset",
+        generator: {
+          filename: '../assets/[name][ext][query]'
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/i,
@@ -99,8 +102,8 @@ var webpackConfig = {
         onEnd: {
           copy: [
             {
-              source: "lib/img",
-              destination: path.resolve(config.distFolder, '../img')
+              source: "lib/assets",
+              destination: path.resolve(config.distFolder, 'assets')
             }
           ]
         }

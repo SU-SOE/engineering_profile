@@ -223,3 +223,44 @@ a.su-link--external {
   white-space: nowrap;
   border: 0;
 }
+
+.byline-social-media-wrapper {
+  .flex-10-of-12 {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .news-social-media {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+
+    svg {
+      width: 34px;
+      height: 34px;
+      display: block;
+      margin: 0 auto;
+
+      @include grid-media('lg') {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  .widget-wrapper-copylink,
+  .widget-wrapper-print {
+    display: inline-block;
+    font-size: 14px;
+
+    .copied-url,
+    .copied-url-success,
+    .copied-url-failed,
+    .print-text {
+      color: $su-color-black;
+      margin: 0 auto;
+      margin-top: 10px;
+      position: relative;
+    }
+  }
+}

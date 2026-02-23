@@ -7,24 +7,17 @@
 (function ($, Drupal) {
   Drupal.behaviors.engineeringNewsSocialMedia = {
     attach: function attach(context, settings) {
+      var printIcon = "<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0.5' y='0.5' width='39' height='39' rx='19.5' fill='white'/><rect x='0.5' y='0.5' width='39' height='39' rx='19.5' stroke='#ABABA9'/><rect x='7' y='7' width='26' height='26' rx='13' fill='white'/><path d='M25.4167 25.4167H27.5833C28.78 25.4167 29.75 24.4466 29.75 23.25V18.9167C29.75 17.7201 28.78 16.75 27.5833 16.75H12.4167C11.22 16.75 10.25 17.7201 10.25 18.9167V23.25C10.25 24.4466 11.22 25.4167 12.4167 25.4167H14.5833M16.75 29.75H23.25C24.4466 29.75 25.4167 28.78 25.4167 27.5833V23.25C25.4167 22.0534 24.4466 21.0833 23.25 21.0833H16.75C15.5534 21.0833 14.5833 22.0534 14.5833 23.25V27.5833C14.5833 28.78 15.5534 29.75 16.75 29.75ZM25.4167 16.75V12.4167C25.4167 11.22 24.4466 10.25 23.25 10.25H16.75C15.5534 10.25 14.5833 11.22 14.5833 12.4167V16.75H25.4167Z' stroke='#B1040E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>";
+      var copyLinkIcon = "<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0.5' y='0.5' width='39' height='39' rx='19.5' fill='white'/><rect x='0.5' y='0.5' width='39' height='39' rx='19.5' stroke='#ABABA9'/><path d='M18.9189 16.0644C20.1836 16.0741 21.396 16.5724 22.3018 17.455C22.4701 17.6242 22.6251 17.8061 22.7656 17.999C22.8536 18.1197 22.9171 18.2571 22.9521 18.4023C22.9872 18.5475 22.9939 18.6982 22.9707 18.8457C22.9475 18.9933 22.8953 19.1352 22.8174 19.2627C22.7395 19.3901 22.6364 19.5009 22.5156 19.5888C22.3949 19.6766 22.2584 19.7404 22.1133 19.7754C21.9681 19.8104 21.8174 19.8161 21.6699 19.7929C21.5223 19.7697 21.3804 19.7175 21.2529 19.6396C21.1255 19.5617 21.0147 19.4595 20.9268 19.3388C20.8558 19.2406 20.7771 19.1482 20.6914 19.0625C20.2097 18.6032 19.5708 18.344 18.9053 18.3379C18.24 18.3319 17.5974 18.5791 17.1074 19.0293C17.0091 19.1265 13.3361 22.8001 13.251 22.8857C12.7781 23.3693 12.5158 24.0208 12.5215 24.6972C12.5271 25.3737 12.8003 26.0204 13.2812 26.4961C13.7621 26.9716 14.4116 27.2381 15.0879 27.2363C15.7643 27.2345 16.4132 26.9646 16.8916 26.4863L18.2314 25.1465C18.3368 25.0393 18.4631 24.9548 18.6016 24.8965C18.74 24.8381 18.8888 24.8072 19.0391 24.8066C19.1891 24.8061 19.3378 24.8354 19.4766 24.8925C19.6154 24.9498 19.7415 25.0343 19.8477 25.1406C19.9538 25.247 20.0387 25.3736 20.0957 25.5127C20.1527 25.6516 20.1815 25.8009 20.1807 25.9511C20.1798 26.1013 20.1485 26.2503 20.0898 26.3886C20.0312 26.5267 19.946 26.6518 19.8389 26.7568L18.5 28.0947C17.5951 28.9976 16.3691 29.5052 15.0908 29.5068C13.8126 29.5083 12.5858 29.004 11.6787 28.1035C10.7715 27.2027 10.2575 25.9786 10.25 24.7002C10.2426 23.4218 10.742 22.1925 11.6387 21.2812C11.6858 21.2341 15.457 17.4608 15.5156 17.4033C16.4347 16.5346 17.6544 16.0548 18.9189 16.0644ZM24.6934 10.25C25.9683 10.2554 27.1894 10.7644 28.0908 11.666C28.9984 12.5652 29.5116 13.7878 29.5186 15.0654C29.5243 15.6995 29.4032 16.3285 29.1621 16.915C28.921 17.5014 28.5652 18.0338 28.1152 18.4804L26.665 19.9316C25.5754 21.0213 24.2669 22.3288 24.2373 22.3574C23.3181 23.2254 22.0992 23.7048 20.835 23.6953C19.5705 23.6856 18.3581 23.1878 17.4521 22.3056C17.2818 22.1359 17.1252 21.9518 16.9844 21.7568C16.8964 21.6357 16.8327 21.4981 16.7979 21.3525C16.7631 21.207 16.7576 21.0559 16.7812 20.9082C16.805 20.7603 16.8579 20.6187 16.9365 20.4912C17.0151 20.3637 17.1178 20.2526 17.2393 20.165C17.3608 20.0774 17.4987 20.0147 17.6445 19.9804C17.7904 19.9462 17.942 19.9415 18.0898 19.9658C18.2374 19.9901 18.3789 20.043 18.5059 20.122C18.633 20.2012 18.744 20.3048 18.8311 20.4267C18.9005 20.5226 18.9776 20.6127 19.0615 20.6963C19.5433 21.1554 20.1812 21.4153 20.8467 21.4218C21.5123 21.4283 22.1558 21.1812 22.6465 20.7314C22.7031 20.6753 23.9853 19.3926 25.0557 18.3222C25.8278 17.5506 26.4906 16.8883 26.5117 16.8672C26.7467 16.6333 26.9328 16.3545 27.0586 16.0478C27.1844 15.7412 27.2471 15.4124 27.2441 15.081C27.2392 14.4021 26.9653 13.7526 26.4824 13.2754C25.9951 12.8096 25.3469 12.5499 24.6729 12.5498C23.9989 12.5498 23.3506 12.8088 22.8633 13.2744L21.5215 14.6142C21.4162 14.7212 21.2907 14.806 21.1523 14.8642C21.0139 14.9225 20.8651 14.9535 20.7148 14.9541C20.5648 14.9546 20.4161 14.9253 20.2773 14.8681C20.1386 14.8109 20.0123 14.7263 19.9062 14.6201C19.8001 14.5137 19.7152 14.387 19.6582 14.248C19.6012 14.1091 19.5724 13.9597 19.5732 13.8095C19.5741 13.6594 19.6055 13.5112 19.6641 13.373C19.7227 13.2347 19.8077 13.109 19.915 13.0039L20.4551 12.4638C20.8528 12.0661 21.2747 11.6462 21.2842 11.6367C22.1932 10.743 23.4186 10.2445 24.6934 10.25Z' fill='#B1040E'/></svg>";
+      var copiedUrlText = '<div class="copied-url">Copy Link</div>';
+      var copiedUrlSuccessText = '<div class="copied-url-success">Copied!</div>';
+      var copiedUrlFailedText = '<div class="copied-url-failed">Copy failed</div>';
       $('.news-social-media', context).empty();
-      $('.news-social-media', context).prepend('<div class="widget-wrapper-print"><a href="/' + settings.path.currentPath + '/printable/print" class="share-print su-news-header__social-print"><i class="fas fa-printer" aria-hidden="true"></i><span>' + Drupal.t('Print Article') + '</span></a></div>');
-      $('.news-social-media', context).prepend('<div class="widget-wrapper-forward"><a href="" class="share-forward su-news-header__social-forward"><i class="fas fa-envelope" aria-hidden="true"></i><span>' + Drupal.t('Forward Email') + '</span></a></div>');
-      $('.news-social-media', context).prepend('<div class="widget-wrapper-linkedin"><a href="" class="share-linkedin su-news-header__social-linkedin"><i aria-hidden="true"></i><span>' + Drupal.t('Stanford LinkedIn') + '</span></a></div>');
-      $('.news-social-media', context).prepend('<div class="widget-wrapper-twitter"><a href="" class="share-twitter su-news-header__social-twitter"><i aria-hidden="true"></i><span>' + Drupal.t('Stanford Twitter') + '</span></a></div>');
-      $('.news-social-media', context).prepend('<div class="widget-wrapper-fb"><a href="" class="share-fb su-news-header__social-facebook"><i aria-hidden="true"></i><span>' + Drupal.t('Stanford Facebook') + '</span></a></div>');
+      $('.news-social-media', context).prepend('<div class="widget-wrapper-print"><a href="/' + settings.path.currentPath + '/printable/print" class="share-print su-news-header__social-print">' + printIcon + '<div class="print-text">Print</div></a></div>');
+      $('.news-social-media', context).prepend('<div class="widget-wrapper-copylink"><a href="" class="su-news-header__copylink share-copylink">' + copyLinkIcon + copiedUrlText + '</a></div>');
 
       // Get the current URL.
       var pathname = window.location;
-
-      // Data.
-      var shareTitle = $('div[property="dc:title"] h1', context).text();
-      var shareSubtitle = $('.share-sub', context).text();
-
-      // URL's
-      var twurl = 'https://twitter.com/intent/tweet?url=' + encodeURI(pathname) + '&text=' + shareTitle + ' ' + shareSubtitle;
-      var fburl = 'http://www.facebook.com/sharer.php?u=' + pathname + '&display=popup';
-      var liurl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + pathname + '&title=' + shareTitle + '&summary=' + shareSubtitle;
 
       // Going native rather than using forward module.
       var forurl = "mailto:?subject=" + document.title + "&body=" + encodeURI(document.location);
@@ -32,18 +25,19 @@
       // Going native rather than using print_pdf module.
       var prurl = 'window.print();return false;';
 
-      // Add the URL's to anchors.
-      $('.share-fb', context).attr({
-        href: fburl
-      });
-      $('.share-twitter', context).attr({
-        href: twurl
-      });
-      $('.share-linkedin', context).attr({
-        href: liurl
-      });
-      $('.share-forward', context).attr({
-        href: forurl
+      // Copy url to clipboard.
+      $('.share-copylink', context).click(function (e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(pathname).then(function () {
+          $('.copied-url', context).html(copiedUrlSuccessText);
+          $('.share-copylink path', context).attr('fill', '#6D6C69');
+          setTimeout(function () {
+            $('.copied-url', context).text('Copy Link');
+            $('.share-copylink path', context).attr('fill', '#B1040E');
+          }, 2000);
+        }, function (err) {
+          $('.copied-url', context).html(copiedUrlFailedText);
+        });
       });
     }
   };
