@@ -86,6 +86,7 @@ partial_list:
   - core.entity_form_display.node.stanford_person.default
   - core.entity_form_display.node.stanford_policy.default
   - core.entity_form_display.node.stanford_publication.default
+  - core.entity_view_display.node.stanford_news.default
   - field.field.paragraph.stanford_lists.su_list_view
   - graphql_compose.settings
   - layout_paragraphs.settings
