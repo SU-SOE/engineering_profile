@@ -1,29 +1,31 @@
-# SOE Profile
-
-12.1.4
--------------------------------------------------------------------------------
-- Fix border on non-spotlight news
+# Engineering Profile
 
 12.1.2
--------------------------------------------------------------------------------
-- Apply alternating borders to spotlight filtered list cards
 
-12.1.1
--------------------------------------------------------------------------------
-- adjust quote and headline font styles; add border radius and color pattern to images
+---
 
-12.1.2
--------------------------------------------------------------------------------
 - Updated help text on news dek field
 - Added localist id field for lookup on the external system
+- Apply alternating borders to spotlight filtered list cards
+- adjust quote and headline font styles; add border radius and color pattern to images
+- Fix border on non-spotlight news
+- SOEOPS-798: add empty string check for spotlight quotes (#186)
+- Fix UI patterns bug (#187)
+- SOEOPS-814: Made the external links not bold (#188)
+- SOEOPS-813 (#189)
+- SOEOPS-834: adding new icons and removing social media ones on news page (#190)
 
-12.1.1
--------------------------------------------------------------------------------
+  12.1.1
+
+---
+
 - Add course_filters to site manager role permissions
 - Increase number of admin toolbar entity bundles available
 
-12.1.0
--------------------------------------------------------------------------------
+  12.1.0
+
+---
+
 - D8CORE-5180: Remove alt text for people image cards
 - D8CORE-8393: Add course filtering view (#1028)
 - D8CORE-8461: New People filtered list view and adjustments to edit form and help text (#1025)
@@ -56,29 +58,32 @@
 - D8CORE-8196 | update card structure to match banner and fulfill a11y (#992)
 - D8CORE-8196 | adjust banner overlay card content order for a11y (#990)
 
+  12.0.2
 
-12.0.2
--------------------------------------------------------------------------------
+---
 
 - Updated external link settings
 - Added acceptance test for publication csv importer
 - Prevent federated search checkbox shrinking
 - Added person and policy external source fields to graphql
 
-12.0.2
--------------------------------------------------------------------------------
+  12.0.2
+
+---
+
 - D8CORE-8244: Fix label display when fields are empty (#985)
 - Adjust opportunity form display field order
 
-12.0.1
--------------------------------------------------------------------------------
+  12.0.1
+
+---
 
 - D8CORE-8279: A11y changes for federated search (#982)
 - Set title on profile helper cron job
 
+  12.0.0
 
-12.0.0
--------------------------------------------------------------------------------
+---
 
 - Remove response_code_condition (#978)
 - D8CORE-8098: adding events, person, and publication filter tag fields (#969)
@@ -93,24 +98,32 @@
 - Updated filtered opportunities GQL view settings
 - Fixed typo in site org taxonomy term
 
-11.8.3
--------------------------------------------------------------------------------
+  11.8.3
+
+---
+
 - Fixed minimally branded theme unpublished banner visibility
 - Update book config
 
-11.8.2
--------------------------------------------------------------------------------
+  11.8.2
+
+---
+
 - D8CORE-8052 Style social link for "X.com" to match "twitter.com"
 - Upgrade to drupal 10.5
 
-11.8.1
--------------------------------------------------------------------------------
+  11.8.1
+
+---
+
 - UE-536: adjusting opportunity layout to be in only 2 cols (#956)
 - Wrap page header and page footer in `data-nosnippet` to prevent google snippets from the menus
 - D8CORE-8144: Removed duplication of fields in sidebar on opportunities
 
-11.8.0
--------------------------------------------------------------------------------
+  11.8.0
+
+---
+
 - D8CORE-8019: Move opportunity fields into a view for better styles (#924)
 - D8CORE-8063 Fix html structure on opportunity list items (#952)
 - D8CORE-8071 Added an "Imported" field populated by importers (#951)
@@ -135,9 +148,11 @@
 - D8CORE-8047: Manage Basic Pages content management view (#927)
 - D8CORE-6470: Update Event Importer help text (#929)
 
-11.7.0
--------------------------------------------------------------------------------
-- D8CORE-8031 Force displaying both regions on opportunity  layout
+  11.7.0
+
+---
+
+- D8CORE-8031 Force displaying both regions on opportunity layout
 - D8CORE-8029: made the contact email a link (#921)
 - Add fallback sorting to graphql views
 - Fixed course card grid to display as a grid, instead of list
@@ -155,16 +170,22 @@
 - D8CORE-7654: Fixed full width basic page title position (#891)
 - Update trash module config
 
-11.6.2
--------------------------------------------------------------------------------
+  11.6.2
+
+---
+
 - Fixed logic error in main menu when home page is a node path.
 
-11.6.1
--------------------------------------------------------------------------------
+  11.6.1
+
+---
+
 - Improve reliability of acceptance tests.
 
-11.6.0
--------------------------------------------------------------------------------
+  11.6.0
+
+---
+
 - D8CORE-7292 - Updated the help pages. (#864)
 - Traverse entire main menu to add appropriate unpublished indicators
 - D8CORE-7835 Fix accordion expand/collapse all behavior to not behave like a toggle
@@ -180,16 +201,22 @@
 - D8CORE-7663: reorganized the opportunity node page (#833)
 - D8CORE-7813: fixed the text color in the more publications button (#870)
 
-11.5.3
--------------------------------------------------------------------------------
+  11.5.3
+
+---
+
 - Added site manager permission to grant site reviewer role.
 
-11.5.2
--------------------------------------------------------------------------------
+  11.5.2
+
+---
+
 - Removed non-existent permissions
 
-11.5.1
--------------------------------------------------------------------------------
+  11.5.1
+
+---
+
 - D8CORE 7753 refactor accordion paragraph to use button and div elements (#863)
 - Fix typo in lockup config page settings. (#862)
 - D8CORE-7705: Self-Service Enhanced Search (#861)
@@ -220,8 +247,10 @@
 - Update ultimate cron config after module update (#832)
 - Updated config from db update
 
-11.5.0
--------------------------------------------------------------------------------
+  11.5.0
+
+---
+
 - Updated metatag module config
 - Exposed opportunity in graphql
 - D8CORE-7194 Embed codes with captions respect 100% widths on iframes
@@ -236,31 +265,43 @@
 - Added FAQ Accordion List paragraph type based on CAW (#827)
 - Added modal colorbox image display choices in the wysiwyg (#826)
 
-11.4.5
--------------------------------------------------------------------------------
+  11.4.5
+
+---
+
 - Remove edit links in views (#821)
 - D8CORE-7564: removed decanter link and replaced with identity guide (#822)
 - D8CORE-7517 | update event subtitle heading (#816)
 - D8Core-7515: adding a few additional "Site Type" options
 
-11.4.4
--------------------------------------------------------------------------------
+  11.4.4
+
+---
+
 - Updated image_effects module for compatibility with imagemagic 4.0.0.
 
-11.4.3
--------------------------------------------------------------------------------
+  11.4.3
+
+---
+
 - Fixed basic page cards when the page has a "page title banner" image.
 
-11.4.2
--------------------------------------------------------------------------------
+  11.4.2
+
+---
+
 - Adjusted codeception test for cache issue.
 
-11.4.1
--------------------------------------------------------------------------------
+  11.4.1
+
+---
+
 - Added "Site Type" field to site information config page.
 
-11.4.0
--------------------------------------------------------------------------------
+  11.4.0
+
+---
+
 - Enabled internal link force relative option
 - D8CORE-7424 Added various HTML attributes to the WSYIWYG allowed list (#799)
 - D8CORE-5741: Opportunities Content type with small amount of styles (#801)
@@ -277,48 +318,65 @@
 - D8CORE-7413 Enabled search api processor to add spaces between html tags (#792)
 - D8CORE-7414: Different sorting option for Basic Page lists (#791)
 
-11.3.8
--------------------------------------------------------------------------------
+  11.3.8
+
+---
 
 - Updated stanford_samlauth.settings timeout.
 
-11.3.7
--------------------------------------------------------------------------------
+  11.3.7
+
+---
+
 - Improve decoupled menu by using js data on the page instead of json api
 - D8CORE-7362 Add necessary permission for site embedder role (#786)
 - Fixed publication url rabbit hole
 - D8CORE-6981: Fix lockup on very small screen size (#785)
 - Added noscript on algolia search results page
-- D8CORE-7360 Adjust Person  node detail page heading structure for "Links" field
+- D8CORE-7360 Adjust Person node detail page heading structure for "Links" field
 
-11.3.6
--------------------------------------------------------------------------------
+  11.3.6
+
+---
+
 - D8CORE-000 Update Past Event List
 
-11.3.5
--------------------------------------------------------------------------------
+  11.3.5
+
+---
+
 - Disabled link trimming on content type displays and view settings.
 
-11.3.4
--------------------------------------------------------------------------------
+  11.3.4
+
+---
+
 - Index algolia items only during cron
 - Added event image to algolia index data
 - D8CORE-7295 D8CORE-7301 Enable rabbit hole for publications content type
 
-11.3.3
--------------------------------------------------------------------------------
+  11.3.3
+
+---
+
 - D8CORE-7341 Add h2 headings to courses quarter term pages
 
-11.3.2
--------------------------------------------------------------------------------
+  11.3.2
+
+---
+
 - D8CORE-7341 Add h2 headings to past events and courses term pages
 
-11.3.1
--------------------------------------------------------------------------------
+  11.3.1
+
+---
+
 - Fix images and oembed videos to be lazy loading
 
-11.3.0
--------------------------------------------------------------------------------
+  11.3.0
+
+---
+
 - Add taxonomy terms to algolia search indexing
 - D8CORE-7333 Change paragraph behaviors for teaser and lists (#774)
 - Add role evaluation choice to saml config page
@@ -331,18 +389,24 @@
 - D8CORE-7211 Header behaviors for card and banners (#763)
 - added pager for events and publication graphql views
 
-11.2.1
--------------------------------------------------------------------------------
+  11.2.1
+
+---
+
 - Provide items per page for graphql views
 - Expose event image via graphql
 - Added external image url for events content from Localist
 
-11.2.1
--------------------------------------------------------------------------------
+  11.2.1
+
+---
+
 - Fixed logger syntax during site install.
 
-11.2.0
--------------------------------------------------------------------------------
+  11.2.0
+
+---
+
 - Removed decanter from stanford_basic in favor of jumpstart_ui templates
 - D8CORE-7125 Use field_label module to choose which heading element for field labels (#761)
 - D8CORE-6982 Add validation to publication DOI fields to avoid full urls
@@ -361,64 +425,87 @@
 - Add and configure graphql compose module (#751)
 - Drupal 11.2.0 upgrade (#752)
 
-11.1.0
--------------------------------------------------------------------------------
+  11.1.0
+
+---
+
 - D8CORE-7096 Update algolia search results styles and structure (#747)
 - D8CORE-7074 Implement Search API Algolia (#743)
 - D8CORE-6726: Overrode the colorbox formatter template to remove aria-label (#746)
 - Update alert styles (#744)
 - D8CORE-2761: reduced padding on filterby menu (#728)
 
-11.0.8
--------------------------------------------------------------------------------
+  11.0.8
+
+---
+
 - D8CORE-7066 Adjust site contact fields & language (#741)
 - Update contact field labels
 - Adjusted access denied message
 - Added the anchor for contact details on site settings
 
-11.0.7
--------------------------------------------------------------------------------
+  11.0.7
+
+---
+
 - Invalidate cache tag when saving site contact details
 - Allow figure and figcaption in embeddables
 
-11.0.6
--------------------------------------------------------------------------------
+  11.0.6
+
+---
+
 - Fixed event day display with timezones.
 
-11.0.4
--------------------------------------------------------------------------------
+  11.0.4
+
+---
+
 - D8CORE-7051 Use display field copy instead of token fields
 
-11.0.3
--------------------------------------------------------------------------------
+  11.0.3
+
+---
+
 - Next site settings and config ignores (#735)
 - D8CORE-7040 Fix source ending tags
 
-11.0.2
--------------------------------------------------------------------------------
+  11.0.2
+
+---
+
 - Fix acceptance tests.
 
-11.0.1
--------------------------------------------------------------------------------
+  11.0.1
+
+---
+
 - Fix site setting redirect logic
 
-11.0.0
--------------------------------------------------------------------------------
+  11.0.0
+
+---
+
 - Update samlauth settings when a role is created or deleted
 
-10.1.1
--------------------------------------------------------------------------------
+  10.1.1
+
+---
+
 - Fixed uuid of role.
 
-10.0.4
--------------------------------------------------------------------------------
+  10.0.4
+
+---
+
 - Update hook to update field storage definitions.
 
-10.0.3
--------------------------------------------------------------------------------
+  10.0.3
 
-10.0.2
--------------------------------------------------------------------------------
+---
+
+## 10.0.2
+
 - Update decoupled menu to recognize "Expanded" menu setting
 - D8CORE-6816 Restored permissions to run importers for site managers
 - Add missing chosen library
@@ -426,15 +513,18 @@
 - Added to the update hook to handle layout builder menu blocks when updating menu links.
 - Added user json api endpoint.
 
-10.0.1
---------------------------------------------------------------------------------
+  10.0.1
+
+---
+
 - D8CORE-6792: fix to the CTA image hovers (#298)
 - add ptype classes just in case
 - Remove unwanted paragraph types on publication field
 - Add new layout paragraphs styles class
 
-10.0.0
---------------------------------------------------------------------------------
+  10.0.0
+
+---
 
 - Updating to new decanter version (#682)
 - CAP-67 Import profile phone number to the non-mobile phone field
@@ -466,17 +556,22 @@
 - Updated jsonapi endpoints (#664)
 - Migrate everything to layout paragraphs and upgrade all modules/themes (#654)
 
+  9.2.8
 
-9.2.8
---------------------------------------------------------------------------------
+---
+
 - Don't replace attributes on menu link items.
 
-9.2.7
---------------------------------------------------------------------------------
+  9.2.7
+
+---
+
 - Moved the help region below the brand bar.
 
-9.2.6
---------------------------------------------------------------------------------
+  9.2.6
+
+---
+
 - Exported configs after db updates
 - D8CORE-6416 Update google analytics tracking for stanford_basic theme
 - Added better tag and release action
@@ -486,31 +581,45 @@
 - D8CORE-6336: changing hover on print icon for policy CT (#661)
 - Updated permissions to allow site managers create media taxonomy
 
-9.2.5
---------------------------------------------------------------------------------
+  9.2.5
+
+---
+
 - Replace log entity type and remove ECK (#656)
 - Enabled empty_fields module
 - DEVOPS-000: SMRT quotes R dumb (#655)
 
-9.2.4
---------------------------------------------------------------------------------
+  9.2.4
+
+---
+
 _Release Date: 2022-12-13_
+
 - Added missing drupal/jsonapi_hypermedia module
 - Fixed related policies display
 
-9.2.3
---------------------------------------------------------------------------------
+  9.2.3
+
+---
+
 _Release Date: 2022-12-03_
+
 - Hotfix. Fixup composer.json, preproduction config-splits.
 
-9.2.2
---------------------------------------------------------------------------------
+  9.2.2
+
+---
+
 _Release Date: 2022-12-02_
+
 - Hotfix. Remove memcache
 
-9.2.1
---------------------------------------------------------------------------------
+  9.2.1
+
+---
+
 _Release Date: 2022-11-30_
+
 - D8CORE-6424 Hide legacy importer fields on importer form
 - D8CORE-6338 updated help text on policy changelog fields
 - D8CORE-6422 Allow news to hide social share icons
@@ -523,8 +632,10 @@ _Release Date: 2022-11-30_
 - D8CORE-6345: Display policy change log title in the lists (#642)
 - Added and configured "Page Cache Query Ignore" module
 
-9.2.0
---------------------------------------------------------------------------------
+  9.2.0
+
+---
+
 _Release Date: 2022-10-25_
 
 - D8CORE-6347 Show body summary and add help text
@@ -554,7 +665,7 @@ _Release Date: 2022-10-25_
 - D8CORE-6247 Add "Code" to WYSIWYG Style dropdown
 - D8CORE-6242 D8CORE-4977 D8CORE-6055 Improve people lists and add pronoun field (#615)
 - Disable confirm-leave js on CI environments
-- D8CORE-6244: fixing float with a  clear (#614)
+- D8CORE-6244: fixing float with a clear (#614)
 - D8CORE-4363: Sjpw images in cards at all breakpoint (#610)
 - D8CORE-6235 Fix "Save and Import" on importer forms. (#613)
 - D8CORE-6058 Adjust, improve, and add metatags for content (#608)
@@ -565,28 +676,35 @@ _Release Date: 2022-10-25_
 - D8CORE-5955: Added journal publisher field, updated publisher label. (#602)
 - D8CORE-5656 D8CORE-6215 D8CORE-6048 Adjustments to people node form and views (#606)
 
-9.1.3
---------------------------------------------------------------------------------
+  9.1.3
+
+---
+
 _Release Date: 2022-08-22_
 
 - Fixed courses field widget with view query parameter.
 
-9.1.2
---------------------------------------------------------------------------------
+  9.1.2
+
+---
+
 _Release Date: 2022-08-15_
 
 - D8CORE-6219 Adjust help text and remove aria label help text
 - D8CORE-6168 Default to 12 column widths on paragraph row items
 
-9.1.1
---------------------------------------------------------------------------------
+  9.1.1
+
+---
+
 _Release Date: 2022-08-09_
 
 - Updated field validation for google analytics and allow multiple property ids (#600)
 
+  9.1.0
 
-9.1.0
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2022-08-08_
 
 - D8CORE-6006 Disable link attributes module (#597)
@@ -645,49 +763,60 @@ _Release Date: 2022-08-08_
 - D8CORE-2215: Let editors sort content by author (#551)
 - D8CORE-5824: Added a second provider for Stanford University Library oEmbeds (#548)
 
+  9.0.1
 
+---
 
-9.0.1
---------------------------------------------------------------------------------
 _Release Date: 2022-05-11_
 
 - Updated submodules with their latest code form their repos.
 
-9.0.0
---------------------------------------------------------------------------------
+  9.0.0
+
+---
+
 _Release Date: 2022-05-11_
 
 - Consolidation of all modules into a mono repo.
 
-8.x-4.4
---------------------------------------------------------------------------------
+  8.x-4.4
+
+---
+
 _Release Date: 2022-05-11_
 
 - Fixup for "Results For" on people list pages.
 
-8.x-4.3
---------------------------------------------------------------------------------
+  8.x-4.3
+
+---
+
 _Release Date: 2022-05-10_
 
 - Enabled aggregation for duplicates in course view
 
+  8.x-4.2
 
-8.x-4.2
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2022-05-10_
 
 - Enabled aggregation for duplicates in course view
 
-8.x-4.1
---------------------------------------------------------------------------------
+  8.x-4.1
+
+---
+
 _Release Date: 2022-05-10_
 
 - D8CORE-2331: Updated help on media caption field text (#542)
 - Allow admins to change the home page via site settings (#540)
 - D8CORE-5833: Fix for courses view to respect chosen limit in card grid list paragraph (#539)
 
-8.x-4.0
---------------------------------------------------------------------------------
+  8.x-4.0
+
+---
+
 _Release Date: 2022-05-02_
 
 - Added twitter card metadata for person content
@@ -713,16 +842,19 @@ _Release Date: 2022-05-02_
 - D8CORE-5172: Updated references to localist and events-legacy urls
 - DO not require lockup option select, prevent requiring lockup fields
 
+  8.x-3.2
 
-8.x-3.2
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2022-03-22_
 
 - DO not require lockup option select, prevent requiring lockup fields
 - D8CORE-5172: Updated references to localist and events-legacy urls
 
-8.x-3.1
---------------------------------------------------------------------------------
+  8.x-3.1
+
+---
+
 _Release Date: 2022-05-02_
 
 - updated dependencies
@@ -777,9 +909,10 @@ _Release Date: 2022-05-02_
 - 8.3.0
 - 8.2.20
 
+  8.x-3.1
 
-8.x-3.1
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2022-03-23_
 
 - Merge branch '8.x' of https://github.com/SU-SWS/stanford_profile into 8.x
@@ -795,9 +928,10 @@ _Release Date: 2022-03-23_
 - 8.3.0
 - 8.2.20
 
+  8.x-2.21
 
-8.x-2.21
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2022-03-17_
 
 - Fix yaml configs
@@ -853,20 +987,26 @@ _Release Date: 2022-03-17_
 - D8CORE-5236: Updated text on "Load More" buttons to be more descriptive (#483)
 - Merge branch 'master' into 8.x-2.x
 
-8.x-2.20
---------------------------------------------------------------------------------
+  8.x-2.20
+
+---
+
 _Release Date: 2022-02-04_
 
 - Fixed event series content width.
 
-8.x-2.19
---------------------------------------------------------------------------------
+  8.x-2.19
+
+---
+
 _Release Date: 2022-01-28_
 
 - Fixed search block visibility condition.
 
-8.x-2.18
---------------------------------------------------------------------------------
+  8.x-2.18
+
+---
+
 _Release Date: 2022-01-27_
 
 - Updates from stanford_profile (#214)
@@ -884,15 +1024,18 @@ _Release Date: 2022-01-27_
 - Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into updates
 - Upgrade drupal core to 9.3.0 with config updates (#469)
 
-8.x-2.17
---------------------------------------------------------------------------------
+  8.x-2.17
+
+---
+
 _Release Date: 2022-01-20_
 
 - D8CORE-5266 Update events-legacy importer.
 
+  8.x-2.15
 
-8.x-2.15
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2021-11-19_
 
 - D8CORE-4521 Localist Events Importer (#463)
@@ -908,9 +1051,10 @@ _Release Date: 2021-11-19_
 - Merge branch 'master' into 8.x-2.x
 - D8CORE-4816 Add configurable allowed tags for unstructured embed (#461)
 
+  8.x-2.16
 
-8.x-2.16
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2021-11-19_
 
 - Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
@@ -935,9 +1079,10 @@ _Release Date: 2021-11-19_
 - 8.2.14
 - D8CORE-4816 Add configurable allowed tags for unstructured embed (#461)
 
+  8.x-2.15
 
-8.x-2.15
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2021-10-08_
 
 - Merge branch '8.x-2.x' of https://github.com/SU-SWS/stanford_profile into 8.x-2.x
@@ -982,14 +1127,18 @@ _Release Date: 2021-10-08_
 - Updates from stanford_profile (#187)
 - D8CORE-4749 Add and configure views bulk edit (#449)
 
-8.x-2.14
---------------------------------------------------------------------------------
+  8.x-2.14
+
+---
+
 _Release Date: 2021-09-14_
 
 - D8CORE-4534: adding a skip anchor block to the filtered pub page
 
-8.x-2.13
---------------------------------------------------------------------------------
+  8.x-2.13
+
+---
+
 _Release Date: 2021-09-10_
 
 - Updates from stanford_profile 2021-09-10
@@ -1000,9 +1149,10 @@ _Release Date: 2021-09-10_
 - 8.2.11
 - D8CORE-4643 Swapped out the "menu block" block with a regular "menu" block (#446)
 
+  8.x-2.12
 
-8.x-2.12
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2021-09-03_
 
 - Updates from stanford_profile (#182)
@@ -1020,8 +1170,10 @@ _Release Date: 2021-09-03_
 - Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x
 - D8CORE-4668 Allow new google analytics account id format `G-` (#439)
 
-8.x-2.11
---------------------------------------------------------------------------------
+  8.x-2.11
+
+---
+
 _Release Date: 2021-07-09_
 
 - Updates from stanford_profile (#175) (940a941)
@@ -1044,8 +1196,10 @@ _Release Date: 2021-07-09_
 - Merge branch '8.x-2.x' of ssh://github.com/SU-SWS/stanford_profile into 8.x-2.x (2f9ffbf)
 - Exported configs after Drupal 9.2.0 upgrade (#429) (a81ffde)
 
-8.x-2.10
---------------------------------------------------------------------------------
+  8.x-2.10
+
+---
+
 _Release Date: 2021-06-11_
 
 - Stanford Profile updates 2021-06-09 (01f2213)
@@ -1064,14 +1218,18 @@ _Release Date: 2021-06-11_
 - D8CORE-2898 Removed the headline field in favor of title field (#422) (0fe5ada)
 - Updated stanford_ssp dev version to 2.x (d820722)
 
-8.x-2.9
---------------------------------------------------------------------------------
+  8.x-2.9
+
+---
+
 _Release Date: 2021-05-18_
 
 - Disabled banner paragraph behavior.
 
-8.x-2.8
---------------------------------------------------------------------------------
+  8.x-2.8
+
+---
+
 _Release Date: 2021-05-07_
 
 - D8CORE-4145: adding the margin bottom to the intro for events. (#410) (e07a55a)
@@ -1083,29 +1241,37 @@ _Release Date: 2021-05-07_
 - D8CORE-3104 D8CORE-3455 D8CORE-3456 D8CORE-3981 Help text and form tweaks (#408) (97b2d2e)
 - D8CORE-2729 enable the hero banner behavior (#407) (1a9da8b)
 
-8.x-2.7
---------------------------------------------------------------------------------
+  8.x-2.7
+
+---
+
 _Release Date: 2021-04-21_
 
 - Changed the news card image back to a 2:1 ratio.
 
-8.x-2.6
---------------------------------------------------------------------------------
+  8.x-2.6
+
+---
+
 _Release Date: 2021-04-19_
 
 - Added experimental label to basic page types field and view
 - D8CORE-4068 Allow publication authors to have only one name part (#402)
 
-8.x-2.5
---------------------------------------------------------------------------------
+  8.x-2.5
+
+---
+
 _Release Date: 2021-04-19_
 
 - Hotfix for tweaks to basic page+ functionality
 - disabled "Preview" button on node form
 - D8CORE-3480 Disallow image gallery media in the wysiwyg.
 
-8.x-2.4
---------------------------------------------------------------------------------
+  8.x-2.4
+
+---
+
 _Release Date: 2021-04-12_
 
 - D8CORE-3254: Basic Page+ with views and teaser display (#388)
@@ -1124,22 +1290,27 @@ _Release Date: 2021-04-12_
 - D8CORE-3947: adding classes to the filtered by for publications in order to style them (#386)
 - D8CORE-3126 Intranet Configs (#379)
 
-8.x-2.3
---------------------------------------------------------------------------------
+  8.x-2.3
+
+---
+
 _Release Date: 2021-03-16_
 
 - Added missing "See more publications button"
 
-8.x-2.2
---------------------------------------------------------------------------------
+  8.x-2.2
+
+---
+
 _Release Date: 2021-03-11_
 
 - Tweaked the publication term page heading language.
 - Changed the order of the components on the publications edit page.
 
+  8.x-2.1
 
-8.x-2.1
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2021-03-08_
 
 - Add "include child orgs" checkbox for cap org importer (#381)
@@ -1172,8 +1343,10 @@ _Release Date: 2021-03-08_
 - Updates from stanford_profile 2021-02-18
 - D8CORE-3479: changing spacing on more cards (#356)
 
-8.x-2.0
---------------------------------------------------------------------------------
+  8.x-2.0
+
+---
+
 _Release Date: 2021-02-10_
 
 - D8CORE-2968 Change the events schedule view (#354) (567973f)
@@ -1185,14 +1358,18 @@ _Release Date: 2021-02-10_
 - Exported configs after D9.1 database updates (#340) (9c84759)
 - D8CORE-3142: adding a class to the intro block (#345) (6187724)
 
-8.x-1.22
---------------------------------------------------------------------------------
+  8.x-1.22
+
+---
+
 _Release Date: 2020-12-08_
 
 - Hotfix: Don't escape people names with auto entity label.
 
-8.x-1.21
---------------------------------------------------------------------------------
+  8.x-1.21
+
+---
+
 _Release Date: 2020-12-07_
 
 - D8CORE-2431: configs (#333) (2e35846)
@@ -1207,15 +1384,18 @@ _Release Date: 2020-12-07_
 - D9 Ready (#329) (c69e05b)
 - D8CORE-2495 Changed the link button in minimal html format (#332) (7c9a540)
 
-8.x-1.20
---------------------------------------------------------------------------------
+  8.x-1.20
+
+---
+
 _Release Date: 2020-11-18_
 
 - Updated test to work with drupal/core 8.9.9 (SA-CORE-2020-012)
 
+  8.x-1.19
 
-8.x-1.19
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2020-11-09_
 
 - D8CORE-2957 Updated feedback form link url (#326) (748b713)
@@ -1242,8 +1422,10 @@ _Release Date: 2020-11-09_
 - Adjusted the person importer to update the media item correctly (#309) (967b16d)
 - D8CORE-2470: Add process plugin to check image dimensions (#308) (6b9b7eb)
 
-8.x-1.18
---------------------------------------------------------------------------------
+  8.x-1.18
+
+---
+
 _Release Date: 2020-10-05_
 
 - enabled syslog as per recommendation from Acquia (5e8eb57)
@@ -1276,14 +1458,18 @@ _Release Date: 2020-10-05_
 - changed callback (32fffc9)
 - CAP-52 Add 4 fields to be mapped from CAP data (46b7963)
 
-8.x-1.17
---------------------------------------------------------------------------------
+  8.x-1.17
+
+---
+
 _Release Date: 2020-09-15_
 
 - HOTFIX-000: Fix up unpublished content (#290) (fa3bd0d)
 
-8.x-1.16
---------------------------------------------------------------------------------
+  8.x-1.16
+
+---
+
 _Release Date: 2020-09-14_
 
 - D8CORE-2521: Configs for embeddable media. (#273) (737163c)
@@ -1297,8 +1483,10 @@ _Release Date: 2020-09-14_
 - D8CORE-2201: Added extlink dependency (#261) (5e5579c)
 - Update composer.json (#271) (9907620)
 
-8.x-1.15
---------------------------------------------------------------------------------
+  8.x-1.15
+
+---
+
 _Release Date: 2020-08-07_
 
 - fixed the codeception tests for the stack level
@@ -1311,8 +1499,10 @@ _Release Date: 2020-08-07_
 - D8CORE-1241: Added self-escalation test.
 - enabled diff module and clean up dependencies
 
-8.x-1.14
---------------------------------------------------------------------------------
+  8.x-1.14
+
+---
+
 _Release Date: 2020-07-13_
 
 - DEVOPS-000: Regenerated and cleaned up migration cron jobs
@@ -1344,8 +1534,10 @@ _Release Date: 2020-07-13_
 - D8CORE-2229 Update help section texts (#253)
 - D8CORE-2317: location changes to events (#251)
 
-8.x-1.13
---------------------------------------------------------------------------------
+  8.x-1.13
+
+---
+
 _Release Date: 2020-06-17_
 
 - D8CORE-000: Fix missing event title in views and re-ordered event node fields (#233)
@@ -1368,8 +1560,10 @@ _Release Date: 2020-06-17_
 - D8CORE-2153: Removed 403 and 404 from xmlsitemap (#214)
 - D8CORE-2038: Changed label from body to description on card (#211)
 
-8.x-1.12
---------------------------------------------------------------------------------
+  8.x-1.12
+
+---
+
 _Release Date: 2020-05-20_
 
 - D8CORE-000: Set media with caption and wysiwyg to 3 in a row. (#208) (5878f09)
@@ -1377,21 +1571,27 @@ _Release Date: 2020-05-20_
 - D8CORE-000: Changed headline on news to 180 max from 70. (#207) (a74ce2c)
 - D8CORE-2110: Remove news views paragraph type. (#205) (916fafb)
 
-8.x-1.11
---------------------------------------------------------------------------------
+  8.x-1.11
+
+---
+
 _Release Date: 2020-05-18_
 
 - Fixed the update hook to set the home, 404 and 403 pages.
 
-8.x-1.10
---------------------------------------------------------------------------------
+  8.x-1.10
+
+---
+
 _Release Date: 2020-05-18_
 
 - Added field permissions to restrict access to the site settings url field.
 - Use drupal state & config overrides to set the home, 404, and 403 pages.
 
-8.x-1.9
---------------------------------------------------------------------------------
+  8.x-1.9
+
+---
+
 _Release Date: 2020-05-15_
 
 - D8CORE-2017: Integrate stanford_news and stanford_person modules (#194) (ae4b392)
@@ -1407,20 +1607,26 @@ _Release Date: 2020-05-15_
 - D8CORE-1458: Add media to linkit suggestions for inline links (#186) (4cec4e0)
 - Use the stable version of layout_builder_modal module (#184) (614863e)
 
-8.x-1.8
---------------------------------------------------------------------------------
+  8.x-1.8
+
+---
+
 _Release Date: 2020-04-17_
 
 - D8CORE-1873: Fixed Wrapping bug for the multi-row with 4 items.
 
-8.x-1.7
---------------------------------------------------------------------------------
+  8.x-1.7
+
+---
+
 _Release Date: 2020-04-17_
 
 - D8CORE-1847 fix link text getting encoded (#179)
 
-8.x-1.6
---------------------------------------------------------------------------------
+  8.x-1.6
+
+---
+
 _Release Date: 2020-04-17_
 
 - Make edit link clicking more specific (#157)
@@ -1438,14 +1644,18 @@ _Release Date: 2020-04-17_
 - D8CORE-1497 D8CORE-1681 Added spacer paragraph type and enabled multiple per row (#159)
 - D8CORE-1499: Multiple Per Row (#176)
 
-8.x-1.5
---------------------------------------------------------------------------------
+  8.x-1.5
+
+---
+
 _Release Date: 2020-03-20_
 
 - Added step in behat tests to wait for modal to be gone (#155)
 
-8.x-1.4
---------------------------------------------------------------------------------
+  8.x-1.4
+
+---
+
 _Release Date: 2020-03-20_
 
 - Bumped version of `views_bulk_operations` to 3.6 (#137)
@@ -1463,9 +1673,10 @@ _Release Date: 2020-03-20_
 - D8CORE-1514: Add administer media permission to site managers. (#150)
 - Changed stanford_page_layout_full layout option to only be on stanford pages. (#151)
 
+  8.x-1.3
 
-8.x-1.3
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2020-02-27_
 
 - D8CORE-1307: Full width page only stylesheet. (#118)
@@ -1482,8 +1693,10 @@ _Release Date: 2020-02-27_
 - Disable nobots via state on site install (#128)
 - D8CORE-1464: Kill margin-bottom on <p> tag (#130)
 
-8.x-1.2
---------------------------------------------------------------------------------
+  8.x-1.2
+
+---
+
 _Release Date: 2020-02-21_
 
 - Resynced the media library view with the drupaDl core version (#105)
@@ -1498,9 +1711,10 @@ _Release Date: 2020-02-21_
 - D8CORE-1313: Moving the ol and ul styles to the wysiwyg (#111)
 - Added stanford media library to node form since react doesnt add it (#113)
 
+  8.x-1.1
 
-8.x-1.1
---------------------------------------------------------------------------------
+---
+
 _Release Date: 2020-02-14_
 
 - Happy Valentines Day!
@@ -1522,8 +1736,10 @@ _Release Date: 2020-02-14_
 - D8CORE-1007: Add image for default content (#100)
 - D8CORE-1019: Modified the full width layout (#102)
 
-8.x-1.0
---------------------------------------------------------------------------------
+  8.x-1.0
+
+---
+
 _Release Date: 2020-02-05_
 
 - Stable release!
@@ -1545,16 +1761,20 @@ _Release Date: 2020-02-05_
 - D8CORE-1028: line length fix
 - Removed stanford_profile_install from being installed as it has nothing to do.
 
-8.x-1.0-alpha5
---------------------------------------------------------------------------------
+  8.x-1.0-alpha5
+
+---
+
 _Release Date: 2020-01-23_
 
 - D8CORE-1200: Prevent home page from being deleted (#68)
 - D8CORE-1013: Allow classes on header elements (#67)
 - Fix for focal point config mis-match and failed circle ci behat tests.
 
-8.x-1.0-alpha4
---------------------------------------------------------------------------------
+  8.x-1.0-alpha4
+
+---
+
 _Release Date: 2020-01-22_
 
 - D8CORE-970: adding wysiwyg scss file (#60)
@@ -1562,8 +1782,10 @@ _Release Date: 2020-01-22_
 - Changed the widget for the media library form mode on images (#56)
 - Adjusted some wysiwyg styles.
 
-8.x-1.0-alpha3
---------------------------------------------------------------------------------
+  8.x-1.0-alpha3
+
+---
+
 _Release Date: 2019-12-17_
 
 - Layout library permissions
@@ -1581,8 +1803,10 @@ _Release Date: 2019-12-17_
 - Make card paragraph image 2:1 ratio
 - Remove Environment Indicator permissions from roles
 
-8.x-1.0-alpha2
---------------------------------------------------------------------------------
+  8.x-1.0-alpha2
+
+---
+
 _Release Date: 2019-11-13_
 
 - Require new modules: field_validation, layout_builder_restrictions
@@ -1592,8 +1816,10 @@ _Release Date: 2019-11-13_
 - Enabled modules: field_validation, google_analytics, layout_builder_restrictions, path_alias
 - Updated primary and secondary navigation settings.
 
-8.x-1.0-alpha1
---------------------------------------------------------------------------------
+  8.x-1.0-alpha1
+
+---
+
 _Release Date: 2019-10-30_
 
 - Initial Release for Pilot Projects
