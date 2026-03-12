@@ -29,10 +29,10 @@
       $('.share-copylink', context).click(function (e) {
         e.preventDefault();
         navigator.clipboard.writeText(pathname).then(function () {
-          $('.copied-url', context).html(copiedUrlSuccessText);
+          $('.copied-url', context).replaceWith(copiedUrlSuccessText);
           $('.share-copylink path', context).attr('fill', '#6D6C69');
           setTimeout(function () {
-            $('.copied-url', context).text('Copy Link');
+            $('.copied-url-success', context).text('Copy Link');
             $('.share-copylink path', context).attr('fill', '#B1040E');
           }, 2000);
         }, function (err) {

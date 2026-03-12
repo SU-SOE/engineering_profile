@@ -250,8 +250,14 @@ a.su-link--external {
 
   .widget-wrapper-copylink,
   .widget-wrapper-print {
-    display: inline-block;
     font-size: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: none;
+    width: 85px;
+    top: 0;
 
     .copied-url,
     .copied-url-success,
@@ -261,6 +267,7 @@ a.su-link--external {
       margin: 0 auto;
       margin-top: 10px;
       position: relative;
+      padding: 0;
     }
   }
 }
