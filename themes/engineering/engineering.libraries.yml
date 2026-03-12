@@ -12,3 +12,9 @@ engineering-styling:
       { scope: footer, attributes: { type: module } }
   dependencies:
     - core/jquery
+
+printable-styles:
+  version: 1.0
+  css:
+    theme:
+      dist/css/print.styles.css: { weight: 999 }
