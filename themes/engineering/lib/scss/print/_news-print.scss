@@ -6,8 +6,11 @@
 h2.stanford-news__title,
 h2.block__title,
 .stanford-news--cards,
-.magazine-navigation-block {
-  display: none;
+.magazine-navigation-block,
+.soe-printable__page article ~ hr,
+.soe-printable__page article ~ strong,
+.soe-printable__page article ~ i {
+    display: none;
 }
 
 .soe-print__header {
