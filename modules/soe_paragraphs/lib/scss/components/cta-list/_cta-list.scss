@@ -24,9 +24,6 @@
   }
 
   .su-cta-list__links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
 
     @include grid-media-only('xs') {
@@ -57,12 +54,14 @@
       }
     }
 
-    .col-1 {
-      @include modular-spacing('margin-right', 1);
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-width: 200px;
+    ul {
+      columns: 2;
+      list-style: none;
+      padding: 0;
+
+      @include grid-media-only('xs') {
+        columns: 1;
+      }
 
       a {
         color: $su-color-bright-red;
@@ -88,54 +87,6 @@
             background-color: $su-color-bright-red;
           }
         }
-      }
-
-      @include grid-media-only('xs') {
-        display: block;
-        width: 100%;
-      }
-    }
-
-    .col-2 {
-      @include modular-spacing('margin-right', 7);
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-
-      a {
-        color: $su-color-bright-red;
-
-        &:hover,
-        &:focus {
-          color: $su-color-black;
-          text-decoration: underline;
-        }
-
-        &::after {
-          background-color: $su-color-bright-red;
-
-          &:hover {
-            background-color: $su-color-bright-red;
-          }
-
-          &:focus {
-            background-color: $su-color-bright-red;
-          }
-
-          &:active {
-            background-color: $su-color-bright-red;
-          }
-        }
-      }
-
-      @include grid-media-between('xs', 'lg') {
-        min-width: 150px;
-        @include modular-spacing('margin-right', 1);
-      }
-
-      @include grid-media-only('xs') {
-        display: block;
-        width: 100%;
       }
     }
   }
