@@ -58,6 +58,7 @@
       columns: 2;
       list-style: none;
       padding: 0;
+      column-gap: 50px;
 
       @include grid-media-only('xs') {
         columns: 1;
