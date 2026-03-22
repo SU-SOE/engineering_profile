@@ -67,4 +67,4 @@ Update the `ace-soegryphon` stack repo's `composer.json` to reference your branc
 
 - All custom Engineering functionality works (Spotlights, Magazine features, department taxonomies, etc.)
 - Upstream features still function correctly
-- No regressions in layout or theming (the profile uses `stanford_basic` / `soe_basic` themes)
+- No regressions in layout or theming (the profile uses `engineering` theme, which is based on `soe_basic` theme)
