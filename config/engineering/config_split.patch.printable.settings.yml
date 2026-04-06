@@ -3,33 +3,28 @@ adding:
     page_variant: '0'
   printable_entities_bundles:
     node:
-      stanford_news: true
       spotlight: true
+      stanford_news: true
+      stanford_media: false
     page_variant:
       _all: false
       page_variant: false
     taxonomy_term:
       affiliation: false
       article_collection: false
+      course_filters: false
       department: false
       magazine_issues: false
       magazine_topics: false
+      media_content_filters: false
     paragraph:
       stanford_cta_list: false
       stanford_image_cta: false
       stanford_stories: false
-  css_include: profiles/custom/themes/engineering/dist/css/print.styles.css
+  css_include: profiles/custom/engineering_profile/themes/engineering/dist/css/print.styles.css
 removing:
-  printable_entities:
-    wordpress_migration: '0'
   printable_entities_bundles:
     node:
       stanford_media: true
       stanford_news: false
-    wordpress_migration:
-      _all: true
-      wordpress_migration: false
-    taxonomy_term:
-      media_content_types: false
-      stanford_news_spotlight_filters: false
   css_include: profiles/custom/stanford_profile/themes/stanford_basic/dist/css/print.css
