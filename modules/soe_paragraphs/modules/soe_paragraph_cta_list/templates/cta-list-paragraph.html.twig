@@ -21,47 +21,19 @@
 {%- set link_count = field_items|length -%}
 {%- set formatter_class = field_info['#third_party_settings']['field_formatter_class']['class'] -%}
 
-{# We need to figure out how many links go in each column. #}
-{%- if link_count%2 == 0 -%}
-  {%- set col_1_link_count = link_count/2 -%}
-{%- else -%}
-  {%- set col_1_link_count = link_count//2 + 1 -%}
-{%- endif -%}
-
 <div{{ attributes }}>
 
   {{ paragraph_content }}
 
   <div class="su-cta-list__links">
-    {%- if link_count > 1 -%}
-      <div class="col-1">
-        {%- for current_item in field_items|slice(0, (col_1_link_count)) -%}
-          {% if not formatter_class is empty %}
-            {{ link(current_item.title, current_item.uri, { 'class': [ formatter_class ] }) }}
-          {% else %}
-            {{ link(current_item.title, current_item.uri) }}
-          {% endif %}
-        {% endfor -%}
-      </div>
-      <div class="col-2">
-        {%- for current_item in field_items|slice(col_1_link_count, (link_count - 1)) -%}
-          {% if not formatter_class is empty %}
-            {{ link(current_item.title, current_item.uri, { 'class': [ formatter_class ] }) }}
-          {% else %}
-            {{ link(current_item.title, current_item.uri) }}
-          {% endif %}
-        {% endfor -%}
-      </div>
-    {%- else -%}
-      <div class="col-1">
+      <ul>
         {%- for current_item in field_items -%}
           {% if not formatter_class is empty %}
-            {{ link(current_item.title, current_item.uri, { 'class': [ formatter_class ] }) }}
+            <li>{{ link(current_item.title, current_item.uri, { 'class': [ formatter_class ] }) }}</li>
           {% else %}
-            {{ link(current_item.title, current_item.uri) }}
+            <li>{{ link(current_item.title, current_item.uri) }}</li>
           {% endif %}
         {% endfor -%}
-      </div>
-    {%- endif -%}
+        </ul>
   </div>
 </div>
