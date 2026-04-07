@@ -201,20 +201,6 @@ third_party_settings:
                     class: su-news-byline
             weight: 0
             additional: {  }
-          93d5129c-8ade-424d-b0e3-1aeb967438ed:
-            configuration:
-              context_mapping: {  }
-              formatter:
-                settings: {  }
-                third_party_settings: {  }
-            additional: {  }
-          f063467c-8c86-4044-829e-58474de1796a:
-            configuration:
-              context_mapping: {  }
-              formatter:
-                settings: {  }
-                third_party_settings: {  }
-            additional: {  }
         third_party_settings: {  }
       -
         layout_id: jumpstart_ui_one_column

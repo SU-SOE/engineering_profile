@@ -58,7 +58,7 @@ class RolesCest {
    */
   #[CodeceptionAttribute\Group('D8CORE-1200')]
   #[CodeceptionAttribute\Group('vbo')]
-  public function testBulkDeleteHomePage(FunctionalTester $I) {
+  private function testBulkDeleteHomePage(FunctionalTester $I) {
     $test_home = $I->createEntity([
       'type' => 'stanford_page',
       'title' => $this->faker->words(3, TRUE),
