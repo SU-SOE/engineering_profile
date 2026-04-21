@@ -32,7 +32,8 @@
     border-bottom: 1px solid black;
 
     @include grid-media-max('md') {
-      width: 90%;
+      @include flex-column(11, $gutter: 0, $grid-columns: 12);
+
       border-bottom: 0;
       border-top: 0;
     }
@@ -189,10 +190,10 @@
       @include grid-media-max('md') {
         text-align: left;
         padding: 0.5em;
-        width: 100%;
         border-bottom: 1px solid #ccc;
         border-left: 1px solid #ccc;
         border-right: 1px solid #ccc;
+        width: stretch;
       }
     }
 
@@ -214,7 +215,6 @@
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     width: 100%;
-    //width: 100vw;
     background-color: $soe-magazine-topics-panel;
     padding: 2em;
     box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 6px 0px;
@@ -225,6 +225,7 @@
       padding-left: 0.33em;
       width: 100%;
       margin: 0;
+      padding: 0;
       border-left: 1px solid #ccc;
       border-right: 1px solid #ccc;
       border-bottom: #ccc 1px solid;
