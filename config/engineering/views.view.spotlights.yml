@@ -2499,7 +2499,7 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: span
+          element_wrapper_type: div
           element_wrapper_class: engineering-accent-color__image
           element_default_classes: true
           empty: ''
