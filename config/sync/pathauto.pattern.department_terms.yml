@@ -7,7 +7,7 @@ dependencies:
 id: department_terms
 label: 'Department terms'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'news/department/[term:name]'
+pattern: '/news/department/[term:name]'
 selection_criteria:
   e470a4b4-9097-47ec-8489-49e5aa1c078d:
     id: 'entity_bundle:taxonomy_term'
