@@ -7,7 +7,7 @@ dependencies:
 id: article_collections
 label: 'Article Collections'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'news/collection/[term:name]'
+pattern: '/news/collection/[term:name]'
 selection_criteria:
   ba7a28f2-c739-4900-8fd7-861b0ce3b24b:
     id: 'entity_bundle:taxonomy_term'
