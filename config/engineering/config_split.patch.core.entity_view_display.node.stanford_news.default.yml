@@ -108,6 +108,41 @@ adding:
                       label_tag: ''
               weight: 1
               additional: {  }
+        - {  }
+        - {  }
+        - {  }
+        -
+          components:
+            f063467c-8c86-4044-829e-58474de1796a:
+              uuid: f063467c-8c86-4044-829e-58474de1796a
+              region: main
+              configuration:
+                id: 'field_block:node:stanford_news:su_soe_department'
+                label: 'Related Departments'
+                label_display: visible
+                provider: layout_builder
+                context_mapping:
+                  entity: layout_builder.entity
+                  view_mode: view_mode
+                formatter:
+                  type: entity_reference_label
+                  label: hidden
+                  settings:
+                    link: true
+                  third_party_settings:
+                    empty_fields:
+                      handler: ''
+                    field_formatter_class:
+                      class: ''
+                    field_formatter_range:
+                      order: 0
+                      limit: 0
+                      offset: 0
+                    field_label:
+                      label_value: ''
+                      label_tag: ''
+              weight: 1
+              additional: {  }
   hidden:
     su_mag_featured: true
     su_magazine_issue: true
