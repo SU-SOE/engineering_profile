@@ -41,7 +41,7 @@ field_settings:
           stanford_event: ':default'
           stanford_event_series: ':default'
           stanford_media: ':default'
-          stanford_news: ':default'
+          stanford_news: search_indexing
           stanford_opportunity: ':default'
           stanford_page: ':default'
           stanford_person: ':default'
