@@ -16,16 +16,6 @@ class RolesCest
    */
   protected $faker;
 
-  public function __construct()
-  {
-    $this->faker = Factory::create();
-  }
-
-  /**
-   * @var \Faker\Generator
-   */
-  protected $faker;
-
   public function __construct() {
     $this->faker = Factory::create();
   }
