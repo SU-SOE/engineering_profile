@@ -22,6 +22,15 @@ class RolesCest
   }
 
   /**
+   * @var \Faker\Generator
+   */
+  protected $faker;
+
+  public function __construct() {
+    $this->faker = Factory::create();
+  }
+
+  /**
    * Default roles should exist.
    */
   public function testRolesExist(AcceptanceTester $I)
