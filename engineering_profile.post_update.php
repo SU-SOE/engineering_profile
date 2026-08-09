@@ -20,8 +20,6 @@ function engineering_profile_removed_post_updates() {
     'engineering_profile_post_update_update_field_defs' => '12.0.0',
     'engineering_profile_post_update_samlauth' => '12.0.0',
     'engineering_profile_post_update_site_orgs' => '12.0.0',
-    'engineering_profile_post_update_header_links_block' => '12.0.0',
-    'engineering_profile_post_update_unpublished_site_banner' => '12.0.0',
   ];
 }
 
