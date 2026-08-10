@@ -26,6 +26,8 @@ dependencies:
     - taxonomy.vocabulary.course_filters
     - taxonomy.vocabulary.event_audience
     - taxonomy.vocabulary.event_filters
+    - taxonomy.vocabulary.media_content_filters
+    - taxonomy.vocabulary.media_content_types
     - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.opportunity_sponsor
     - taxonomy.vocabulary.opportunity_tag_filters
@@ -130,6 +132,8 @@ permissions:
   - 'create terms in course_filters'
   - 'create terms in event_audience'
   - 'create terms in event_filters'
+  - 'create terms in media_content_filters'
+  - 'create terms in media_content_types'
   - 'create terms in media_tags'
   - 'create terms in opportunity_sponsor'
   - 'create terms in opportunity_tag_filters'
