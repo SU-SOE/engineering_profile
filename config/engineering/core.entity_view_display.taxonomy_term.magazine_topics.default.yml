@@ -100,26 +100,6 @@ third_party_settings:
             weight: 0
             additional: {  }
         third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: 'Topic Stories'
-          context_mapping: {  }
-        components:
-          83a74267-7bcd-4b9f-b31f-8da1a7a8a40e:
-            uuid: 83a74267-7bcd-4b9f-b31f-8da1a7a8a40e
-            region: content
-            configuration:
-              id: 'views_block:magazine-block_3'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: 0
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
   layout_library:
     enable: false
 id: taxonomy_term.magazine_topics.default

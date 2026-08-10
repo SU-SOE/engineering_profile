@@ -567,50 +567,50 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
+          default_field_elements: false
           inline:
-            su_news_banner: 0
-            created: 0
-            title: 0
-            su_soe_mag_topics: 0
-            su_news_publishing_date: 0
-            su_magazine_issue: 0
-            su_soe_external_source_text: 0
+            su_news_banner: '0'
+            created: '0'
+            title: '0'
+            su_soe_mag_topics: '0'
+            su_news_publishing_date: '0'
+            su_magazine_issue: '0'
+            su_soe_external_source_text: '0'
           separator: ''
-          hide_empty: 1
+          hide_empty: true
           pattern: card
+          pattern_variant: default
           pattern_mapping:
             'views_row:su_news_banner':
-              destination: card_image
-              weight: 0
               plugin: views_row
               source: su_news_banner
+              destination: card_image
+              weight: 0
             'views_row:su_news_publishing_date':
-              destination: card_super_headline
-              weight: 1
               plugin: views_row
               source: su_news_publishing_date
+              destination: card_super_headline
+              weight: 1
             'views_row:title':
-              destination: card_headline
-              weight: 2
               plugin: views_row
               source: title
+              destination: card_headline
+              weight: 2
             'views_row:su_soe_mag_topics':
-              destination: card_body
-              weight: 3
               plugin: views_row
               source: su_soe_mag_topics
-            'views_row:su_soe_external_source_text':
               destination: card_body
-              weight: 4
+              weight: 3
+            'views_row:su_soe_external_source_text':
               plugin: views_row
               source: su_soe_external_source_text
-            'views_row:su_magazine_issue':
               destination: card_body
-              weight: 5
+              weight: 4
+            'views_row:su_magazine_issue':
               plugin: views_row
               source: su_magazine_issue
-          pattern_variant: default
+              destination: card_body
+              weight: 5
       query:
         type: views_query
         options:
@@ -2348,6 +2348,28 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      pager:
+        type: infinite_scroll
+        options:
+          offset: 0
+          items_per_page: 24
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          views_infinite_scroll:
+            button_text: 'Load More'
+            automatically_load_content: false
+            initially_load_all_pages: false
       arguments:
         su_soe_mag_topics_target_id:
           id: su_soe_mag_topics_target_id
@@ -2389,6 +2411,7 @@ display:
           not: false
           target_entity_type_id: taxonomy_term
       defaults:
+        pager: false
         relationships: false
         fields: false
         arguments: false
@@ -2404,9 +2427,7 @@ display:
           plugin_id: standard
           required: true
       display_description: ''
-      header:
-        area:
-          content: {  }
+      header: {  }
       display_extenders: {  }
       block_description: 'Magazine topic page block'
     cache_metadata:
