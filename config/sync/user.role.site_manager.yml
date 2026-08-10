@@ -274,6 +274,7 @@ permissions:
   - 'mark as ok in editoria11y'
   - 'notify of path changes'
   - 'rabbit hole bypass node'
+  - 'rebuild node access permissions'
   - 'reorder book pages'
   - 'revert stanford_course revisions'
   - 'revert stanford_event revisions'
