@@ -64,7 +64,8 @@
         }
     ],
     "conflict": {
-        "drupal/colorbox": ">=2.2.0"
+        "drupal/colorbox": ">=2.2.0",
+        "drupal/readonly_field_widget": ">=2.1.1"
     },
     "require": {
         "ext-imagick": "*",
