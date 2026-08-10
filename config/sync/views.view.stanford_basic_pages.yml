@@ -560,27 +560,6 @@ display:
             events_list: default
             news-list: default
             news-vertical-teaser: default
-          pattern_mapping:
-            'views_row:title':
-              destination: description
-              weight: 0
-              plugin: views_row
-              source: title
-            'views_row:su_page_description':
-              destination: description
-              weight: 1
-              plugin: views_row
-              source: su_page_description
-            'views_row:su_page_image':
-              destination: page_image
-              weight: 2
-              plugin: views_row
-              source: su_page_image
-            'views_row:edit_node':
-              destination: footer
-              weight: 3
-              plugin: views_row
-              source: edit_node
       query:
         type: views_query
         options:
