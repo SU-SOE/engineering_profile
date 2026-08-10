@@ -12,7 +12,7 @@ use Drupal\file\Entity\File;
 use Drupal\KernelTests\KernelTestBase;
 use Drupal\media\Entity\Media;
 use Drupal\media\Entity\MediaType;
-use Drupal\engineering_profile\EventSubscriber\SoeProfileEventSubscriber;
+use Drupal\engineering_profile\EventSubscriber\EngineeringProfileEventSubscriber;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +22,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * Class EventSubscriberTest.
  */
-class SoeProfileEventSubscriberTest extends KernelTestBase {
+class EngineeringProfileEventSubscriberTest extends KernelTestBase {
 
   /**
    * {@inheritdoc}
@@ -47,7 +47,7 @@ class SoeProfileEventSubscriberTest extends KernelTestBase {
   /**
    * Event subscriber object.
    *
-   * @var \Drupal\engineering_profile\EventSubscriber\SoeProfileEventSubscriber
+   * @var \Drupal\engineering_profile\EventSubscriber\EngineeringProfileEventSubscriber
    */
   protected $eventSubscriber;
 
@@ -69,7 +69,7 @@ class SoeProfileEventSubscriberTest extends KernelTestBase {
     $messenger = \Drupal::messenger();
     $client = $this->createMock(ClientInterface::class);
 
-    $this->eventSubscriber = new TestSoeProfileEventSubscriber($file_system, $client, $logger_factory, $messenger);
+    $this->eventSubscriber = new TestEngineeringProfileEventSubscriber($file_system, $client, $logger_factory, $messenger);
 
     /** @var \Drupal\media\MediaTypeInterface $media_type */
     $media_type = MediaType::create([
@@ -92,7 +92,7 @@ class SoeProfileEventSubscriberTest extends KernelTestBase {
    * Test the consumer secret is randomized.
    */
   public function testConsumerSecretRandomized() {
-    $this->assertContains('onContentImport', SoeProfileEventSubscriber::getSubscribedEvents());
+    $this->assertContains('onContentImport', EngineeringProfileEventSubscriber::getSubscribedEvents());
     $consumer = Consumer::create([
       'client_id' => 'foobar',
       'label' => 'foobar',
@@ -160,7 +160,7 @@ class SoeProfileEventSubscriberTest extends KernelTestBase {
 /**
  * {@inheritDoc}
  */
-class TestSoeProfileEventSubscriber extends SoeProfileEventSubscriber {
+class TestEngineeringProfileEventSubscriber extends EngineeringProfileEventSubscriber {
 
   /**
    * {@inheritDoc}
