@@ -17,10 +17,9 @@ class SystemCest {
     $I->amOnPage('/admin/reports/status');
     $I->canSee('11.3', '.system-status-general-info');
     if ($I->grabMultiple('.system-status-counter--error')) {
-      $error_count = \Drupal::moduleHandler()
-        ->moduleExists('config_inspector') ? '2 Errors' : '1 Error';
-
-      $I->canSee($error_count, '.system-status-counter--error');
+      // Assert the specific error we expect rather than the total count. The
+      // count is brittle: unrelated errors from contrib/upstream modules (e.g.
+      // a table missing a primary key) would otherwise break this test.
       $I->canSee('Access to update.php ', '.system-status-report__status-icon--error');
     }
 

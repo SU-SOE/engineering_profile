@@ -285,9 +285,9 @@ class RolesCest
       $I->amOnPage("/admin/structure/taxonomy/manage/$type/overview");
 
       if ($example['access']) {
-        $I->canSeeLink('Add term', '#taxonomy');
+        $I->canSeeLink('Add term', "/admin/structure/taxonomy/manage/$type/add");
       } else {
-        $I->cantSeeLink('Add term', '#taxonomy');
+        $I->cantSeeLink('Add term');
       }
     }
   }
