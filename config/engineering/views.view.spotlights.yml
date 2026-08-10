@@ -611,67 +611,67 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
+          default_field_elements: false
           inline:
-            created: 0
-            title: 0
-            su_spotlight_person_title: 0
-            su_people_spotlight_quote: 0
-            su_spotlight_feature_image: 0
-            view_node: 0
-            nothing: 0
-            su_spotlight_degrees: 0
-            su_soe_department: 0
+            created: '0'
+            title: '0'
+            su_spotlight_person_title: '0'
+            su_people_spotlight_quote: '0'
+            su_spotlight_feature_image: '0'
+            view_node: '0'
+            nothing: '0'
+            su_spotlight_degrees: '0'
+            su_soe_department: '0'
           separator: ''
-          hide_empty: 0
+          hide_empty: false
           pattern: card
+          pattern_variant: default
           pattern_mapping:
             'views_row:title':
-              destination: card_super_headline
-              weight: 0
               plugin: views_row
               source: title
-            'views_row:created':
               destination: card_super_headline
-              weight: 1
+              weight: 0
+            'views_row:created':
               plugin: views_row
               source: created
+              destination: card_super_headline
+              weight: 1
             'views_row:su_spotlight_feature_image':
-              destination: card_image
-              weight: 2
               plugin: views_row
               source: su_spotlight_feature_image
+              destination: card_image
+              weight: 2
             'views_row:su_spotlight_degrees':
-              destination: card_super_headline
-              weight: 3
               plugin: views_row
               source: su_spotlight_degrees
-            'views_row:su_spotlight_person_title':
               destination: card_super_headline
-              weight: 4
+              weight: 3
+            'views_row:su_spotlight_person_title':
               plugin: views_row
               source: su_spotlight_person_title
-            'views_row:su_soe_department':
               destination: card_super_headline
-              weight: 5
+              weight: 4
+            'views_row:su_soe_department':
               plugin: views_row
               source: su_soe_department
+              destination: card_super_headline
+              weight: 5
             'views_row:su_people_spotlight_quote':
-              destination: card_body
-              weight: 6
               plugin: views_row
               source: su_people_spotlight_quote
+              destination: card_body
+              weight: 6
             'views_row:view_node':
-              destination: card_link
-              weight: 7
               plugin: views_row
               source: view_node
+              destination: card_link
+              weight: 7
             'views_row:nothing':
-              destination: card_cta_label
-              weight: 8
               plugin: views_row
               source: nothing
-          pattern_variant: default
+              destination: card_cta_label
+              weight: 8
       query:
         type: views_query
         options:
@@ -2085,56 +2085,56 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
+          default_field_elements: false
           inline:
-            su_spotlight_feature_image: 0
-            created: 0
-            title: 0
-            su_spotlight_person_title: 0
-            su_people_spotlight_quote: 0
-            view_node: 0
-            nothing: 0
-            su_spotlight_degrees: 0
+            su_spotlight_feature_image: '0'
+            created: '0'
+            title: '0'
+            su_spotlight_person_title: '0'
+            su_people_spotlight_quote: '0'
+            view_node: '0'
+            nothing: '0'
+            su_spotlight_degrees: '0'
           separator: ''
-          hide_empty: 0
+          hide_empty: false
           pattern: card
+          pattern_variant: default
           pattern_mapping:
             'views_row:su_spotlight_feature_image':
-              destination: card_image
-              weight: 0
               plugin: views_row
               source: su_spotlight_feature_image
+              destination: card_image
+              weight: 0
             'views_row:created':
-              destination: card_super_headline
-              weight: 1
               plugin: views_row
               source: created
-            'views_row:title':
               destination: card_super_headline
-              weight: 2
+              weight: 1
+            'views_row:title':
               plugin: views_row
               source: title
-            'views_row:su_spotlight_person_title':
               destination: card_super_headline
-              weight: 3
+              weight: 2
+            'views_row:su_spotlight_person_title':
               plugin: views_row
               source: su_spotlight_person_title
+              destination: card_super_headline
+              weight: 3
             'views_row:su_people_spotlight_quote':
-              destination: card_body
-              weight: 4
               plugin: views_row
               source: su_people_spotlight_quote
+              destination: card_body
+              weight: 4
             'views_row:view_node':
-              destination: card_link
-              weight: 5
               plugin: views_row
               source: view_node
+              destination: card_link
+              weight: 5
             'views_row:nothing':
-              destination: card_cta_label
-              weight: 6
               plugin: views_row
               source: nothing
-          pattern_variant: default
+              destination: card_cta_label
+              weight: 6
       defaults:
         title: false
         pager: false
@@ -2301,61 +2301,61 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
+          default_field_elements: false
           inline:
-            title: 0
-            su_spotlight_person_title: 0
-            su_people_spotlight_quote: 0
-            su_spotlight_feature_image: 0
-            view_node: 0
-            nothing: 0
-            su_spotlight_degrees: 0
-            su_soe_department: 0
+            title: '0'
+            su_spotlight_person_title: '0'
+            su_people_spotlight_quote: '0'
+            su_spotlight_feature_image: '0'
+            view_node: '0'
+            nothing: '0'
+            su_spotlight_degrees: '0'
+            su_soe_department: '0'
           separator: ''
-          hide_empty: 0
+          hide_empty: false
           pattern: card
+          pattern_variant: default
           pattern_mapping:
             'views_row:title':
-              destination: card_super_headline
-              weight: 0
               plugin: views_row
               source: title
+              destination: card_super_headline
+              weight: 0
             'views_row:su_spotlight_feature_image':
-              destination: card_image
-              weight: 1
               plugin: views_row
               source: su_spotlight_feature_image
+              destination: card_image
+              weight: 1
             'views_row:su_spotlight_degrees':
-              destination: card_super_headline
-              weight: 2
               plugin: views_row
               source: su_spotlight_degrees
-            'views_row:su_spotlight_person_title':
               destination: card_super_headline
-              weight: 3
+              weight: 2
+            'views_row:su_spotlight_person_title':
               plugin: views_row
               source: su_spotlight_person_title
-            'views_row:su_soe_department':
               destination: card_super_headline
-              weight: 4
+              weight: 3
+            'views_row:su_soe_department':
               plugin: views_row
               source: su_soe_department
+              destination: card_super_headline
+              weight: 4
             'views_row:su_people_spotlight_quote':
-              destination: card_body
-              weight: 5
               plugin: views_row
               source: su_people_spotlight_quote
+              destination: card_body
+              weight: 5
             'views_row:view_node':
-              destination: card_link
-              weight: 6
               plugin: views_row
               source: view_node
+              destination: card_link
+              weight: 6
             'views_row:nothing':
-              destination: card_cta_label
-              weight: 7
               plugin: views_row
               source: nothing
-          pattern_variant: default
+              destination: card_cta_label
+              weight: 7
       defaults:
         title: false
         css_class: false
@@ -3089,52 +3089,52 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
+          default_field_elements: false
           inline:
-            view_node: 0
-            created: 0
-            su_spotlight_feature_image: 0
-            title: 0
-            nothing: 0
-            su_spotlight_person_title: 0
-            su_soe_department: 0
-            su_people_spotlight_quote: 0
-            su_spotlight_degrees: 0
+            view_node: '0'
+            created: '0'
+            su_spotlight_feature_image: '0'
+            title: '0'
+            nothing: '0'
+            su_spotlight_person_title: '0'
+            su_soe_department: '0'
+            su_people_spotlight_quote: '0'
+            su_spotlight_degrees: '0'
           separator: ''
-          hide_empty: 0
+          hide_empty: false
           pattern: card
+          pattern_variant: default
           pattern_mapping:
             'views_row:su_spotlight_feature_image':
-              destination: card_image
-              weight: 0
               plugin: views_row
               source: su_spotlight_feature_image
+              destination: card_image
+              weight: 0
             'views_row:created':
-              destination: card_super_headline
-              weight: 1
               plugin: views_row
               source: created
-            'views_row:nothing':
               destination: card_super_headline
-              weight: 2
+              weight: 1
+            'views_row:nothing':
               plugin: views_row
               source: nothing
-            'views_row:su_spotlight_person_title':
               destination: card_super_headline
-              weight: 3
+              weight: 2
+            'views_row:su_spotlight_person_title':
               plugin: views_row
               source: su_spotlight_person_title
-            'views_row:su_soe_department':
               destination: card_super_headline
-              weight: 4
+              weight: 3
+            'views_row:su_soe_department':
               plugin: views_row
               source: su_soe_department
-            'views_row:su_people_spotlight_quote':
               destination: card_super_headline
-              weight: 5
+              weight: 4
+            'views_row:su_people_spotlight_quote':
               plugin: views_row
               source: su_people_spotlight_quote
-          pattern_variant: default
+              destination: card_super_headline
+              weight: 5
       defaults:
         title: false
         pager: false

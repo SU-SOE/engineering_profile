@@ -476,6 +476,7 @@ display:
           separator: ''
           hide_empty: true
           pattern: events_list
+          pattern_variant: h3_header
           pattern_mapping:
             'views_row:su_event_series_type':
               plugin: views_row
@@ -505,7 +506,6 @@ display:
             'views_row:su_event_series_dek':
               plugin: views_row
               source: su_event_series_dek
-          pattern_variant: h3_header
       query:
         type: views_query
         options:

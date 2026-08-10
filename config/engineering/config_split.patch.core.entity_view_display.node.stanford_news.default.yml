@@ -116,4 +116,7 @@ adding:
     su_soe_external_source_text: true
     su_soe_mag_collection: true
     su_soe_mag_topics: true
-removing: {  }
+removing:
+  dependencies:
+    config:
+      - field.field.node.stanford_news.layout_selection

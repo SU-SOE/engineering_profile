@@ -32,6 +32,11 @@ adding:
           enabled: true
         su_opp_status:
           enabled: true
+      stanford_media:
+        su_media_subtitles:
+          enabled: true
+        su_media_category:
+          enabled: true
 removing:
   entity_config:
     layout:
@@ -136,8 +141,6 @@ removing:
           enabled: true
       stanford_news:
         body:
-          enabled: true
-        layout_selection:
           enabled: true
         su_news_person:
           enabled: true

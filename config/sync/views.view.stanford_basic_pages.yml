@@ -514,12 +514,12 @@ display:
         options:
           default_field_elements: false
           inline:
-            view_node: 0
-            title: 0
-            su_page_description: 0
-            su_banner_image: 0
-            su_page_image: 0
-            edit_node: 0
+            view_node: '0'
+            title: '0'
+            su_page_description: '0'
+            su_banner_image: '0'
+            su_page_image: '0'
+            edit_node: '0'
           separator: ''
           hide_empty: false
           pattern: basic-page-types-list
