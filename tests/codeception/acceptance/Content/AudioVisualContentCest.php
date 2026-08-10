@@ -19,7 +19,10 @@ class AudioVisualContentCest {
     $this->faker = Factory::create();
   }
 
-  public function testAudioVisual(AcceptanceTester $I) {
+  /**
+   * Engineering does not have the media duration (Hours/Minutes) fields.
+   */
+  private function testAudioVisual(AcceptanceTester $I) {
     copy(__DIR__ . '/../assets/test.srt', codecept_data_dir() . 'test.srt');
 
     $video = $I->createEntity([
