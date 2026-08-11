@@ -203,6 +203,7 @@ processor_settings:
       - was
       - will
       - with
+  trash_status: {  }
   type_boost:
     weights:
       preprocess_index: 0

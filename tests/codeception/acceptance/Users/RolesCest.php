@@ -16,8 +16,7 @@ class RolesCest
    */
   protected $faker;
 
-  public function __construct()
-  {
+  public function __construct() {
     $this->faker = Factory::create();
   }
 
@@ -228,8 +227,8 @@ class RolesCest
   }
 
   #[CodeceptionAttribute\Group('media-content')]
-  #[CodeceptionAttribute\Examples(role: 'contributor', access: FALSE)]
-  #[CodeceptionAttribute\Examples(role: 'site_manager', access: FALSE)]
+  #[CodeceptionAttribute\Examples(role: 'contributor', access: TRUE)]
+  #[CodeceptionAttribute\Examples(role: 'site_manager', access: TRUE)]
   #[CodeceptionAttribute\Examples(role: 'administrator', access: TRUE)]
   public function testMediaContentCreateAccess(AcceptanceTester $I, Example $example)
   {
@@ -264,7 +263,7 @@ class RolesCest
 
   #[CodeceptionAttribute\Group('media-content')]
   #[CodeceptionAttribute\Examples(role: 'contributor', access: FALSE)]
-  #[CodeceptionAttribute\Examples(role: 'site_manager', access: FALSE)]
+  #[CodeceptionAttribute\Examples(role: 'site_manager', access: TRUE)]
   public function testMediaTaxonomyAccess(AcceptanceTester $I, Example $example)
   {
     $node = $I->createEntity([
@@ -286,9 +285,9 @@ class RolesCest
       $I->amOnPage("/admin/structure/taxonomy/manage/$type/overview");
 
       if ($example['access']) {
-        $I->canSeeLink('Add term', '#taxonomy');
+        $I->canSeeLink('Add term', "/admin/structure/taxonomy/manage/$type/add");
       } else {
-        $I->cantSeeLink('Add term', '#taxonomy');
+        $I->cantSeeLink('Add term');
       }
     }
   }

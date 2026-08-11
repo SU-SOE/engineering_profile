@@ -96,6 +96,7 @@ module:
   inline_form_errors: 0
   jquery_ui: 0
   jquery_ui_draggable: 0
+  js_cookie: 0
   jsonapi: 0
   jsonapi_defaults: 0
   jsonapi_extras: 0
@@ -156,12 +157,9 @@ module:
   printable: 0
   r4032login: 0
   rabbit_hole: 0
-  react_paragraphs: 0
-  react_paragraphs_behaviors: 0
   readonly_field_widget: 0
   real_aes: 0
   redirect: 0
-  redirect_404: 0
   responsive_image: 0
   responsive_tables_filter: 0
   rest: 0
