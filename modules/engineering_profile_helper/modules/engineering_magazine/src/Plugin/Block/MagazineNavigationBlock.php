@@ -19,6 +19,19 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
+   * UUIDs of magazine_topics terms that should never appear in the menu.
+   *
+   * These terms still exist (and may be published) so their topic pages
+   * work, but they are intentionally hidden from the Topics dropdown.
+   *
+   * @var string[]
+   */
+  const EXCLUDED_TOPIC_UUIDS = [
+    // 2026 Nobel Prize in Physiology or Medicine (SOEOPS-1009).
+    'c3640bb9-3168-4b94-880b-f4a8009df67c',
+  ];
+
+  /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
@@ -72,10 +85,16 @@ class MagazineNavigationBlock extends BlockBase implements ContainerFactoryPlugi
    *   An array of magazine topics.
    */
   public function getMagazineTopics() : array {
-    $terms = $this->entity_type_manager->getStorage('taxonomy_term')->loadByProperties(['vid' => 'magazine_topics']);
+    $terms = $this->entity_type_manager->getStorage('taxonomy_term')->loadByProperties([
+      'vid' => 'magazine_topics',
+      'status' => 1,
+    ]);
     $this->magazine_topics = $terms;
     $topics_array = [];
     foreach ($terms as $term) {
+      if (in_array($term->uuid(), self::EXCLUDED_TOPIC_UUIDS, TRUE)) {
+        continue;
+      }
       $topics_array[] = [
         'name' => $term->getName(),
         'path' => $term->get('path')->alias,

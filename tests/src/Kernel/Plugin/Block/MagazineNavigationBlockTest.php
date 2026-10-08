@@ -73,6 +73,36 @@ class MagazineNavigationBlockTest extends MagazineTestBase {
 
 
   /**
+   * Unpublished and explicitly excluded topics are left out of the menu.
+   *
+   * @covers ::getMagazineTopics
+   */
+  public function testGetMagazineTopics() {
+    $this->enableModules(['path', 'path_alias']);
+    $this->installEntitySchema('path_alias');
+
+    Term::create([
+      'vid' => 'magazine_topics',
+      'name' => 'Published topic',
+      'status' => 1,
+    ])->save();
+    Term::create([
+      'vid' => 'magazine_topics',
+      'name' => 'Unpublished topic',
+      'status' => 0,
+    ])->save();
+    Term::create([
+      'vid' => 'magazine_topics',
+      'name' => 'Excluded topic',
+      'status' => 1,
+      'uuid' => MagazineNavigationBlock::EXCLUDED_TOPIC_UUIDS[0],
+    ])->save();
+
+    $names = array_column($this->blockObject->getMagazineTopics(), 'name');
+    $this->assertEquals(['Published topic'], $names);
+  }
+
+  /**
    *
    */
   public function testAccess() {
