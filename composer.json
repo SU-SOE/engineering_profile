@@ -201,7 +201,7 @@
         "sainsburys/guzzle-oauth2-plugin": "^3.0",
         "seboettg/citeproc-php": "2.4.1",
         "su-sws/ckeditor5_plugins": "^1.0",
-        "su-sws/drupal-patches": "11.1.10",
+        "su-sws/drupal-patches": "11.1.12",
         "su-sws/paranoia": "^1.0@RC",
         "su-sws/react_paragraphs": "^8.2",
         "su-sws/stanford_actions": "^8.2",
@@ -231,6 +231,9 @@
             }
         },
         "patches": {
+            "drupal/jsonapi_views": {
+                "https://www.drupal.org/project/jsonapi_views/issues/3213575": "https://www.drupal.org/files/issues/2023-09-29/3213575-views_json-pagination-10.patch"
+            },
             "drupal/fontawesome": {
                 "https://www.drupal.org/project/fontawesome/issues/3380581": "https://www.drupal.org/files/issues/2025-03-06/iconpicker-does-not-render_3380581_11.patch"
             },
