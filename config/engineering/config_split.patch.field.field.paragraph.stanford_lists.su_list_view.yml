@@ -1,4 +1,7 @@
-adding: {  }
+adding:
+  settings:
+    allowed_views:
+      collection_search: collection_search
 removing:
   settings:
     allowed_views:

@@ -1,4 +1,9 @@
 adding:
+  dependencies:
+    config:
+      - field.storage.node.su_soe_mag_collection
+    module:
+      - trash
   field_settings:
     rendered_item:
       configuration:
@@ -12,21 +17,27 @@ adding:
             stanford_person: search_indexing
             stanford_policy: search_indexing
             stanford_publication: search_indexing
+    su_soe_mag_collection:
+      label: Collection
+      datasource_id: 'entity:node'
+      property_path: su_soe_mag_collection
+      type: integer
+      dependencies:
+        config:
+          - field.storage.node.su_soe_mag_collection
 removing:
   field_settings:
     rendered_item:
       configuration:
         view_mode:
           'entity:node':
-            ':default': search_indexing
             stanford_course: ':default'
             stanford_event: ':default'
             stanford_event_series: ':default'
-            stanford_media: ':default'
             stanford_opportunity: ':default'
             stanford_page: ':default'
             stanford_person: ':default'
             stanford_policy: ':default'
             stanford_publication: ':default'
-  options:
-    delete_on_fail: true
+            ':default': search_indexing
+            stanford_media: ':default'
