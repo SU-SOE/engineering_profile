@@ -51,6 +51,7 @@ complete_list:
   - rabbit_hole.behavior_settings.taxonomy_vocabulary_magazine_topics
   - soe_basic.settings
   - stanford_syndication.settings
+  - views.view.collection_search
   - views.view.department_terms
   - views.view.magazine
   - views.view.magazine_article_collection

@@ -10,6 +10,8 @@ use Drupal\Core\Render\Markup;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\paragraphs\ParagraphInterface;
 use Drupal\engineering_profile_helper\LayoutBuilderCompatibility;
 
 /**
@@ -207,6 +209,39 @@ function engineering_profile_helper_local_tasks_alter(&$local_tasks) {
  */
 function engineering_profile_helper_form_media_library_add_form_upload_alter(array &$form, FormStateInterface $form_state) {
   $form['#attached']['library'][] = 'engineering_profile_helper/dropzone-upload-guard';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter() for paragraph entities.
+ *
+ * The viewfield formatter drops any view with no results, which would also
+ * drop the exposed keyword form of the collection_search view before anyone
+ * has searched. Rebuild that field with always_build_output so the search box
+ * is always shown, without changing the formatter for every list paragraph.
+ *
+ * Skipped when the list paragraph's "Hide if empty" or "Empty list message"
+ * behavior settings are used, since those already decided what to show.
+ *
+ * @see \Drupal\jumpstart_ui\Plugin\paragraphs\Behavior\ListParagraphBehavior
+ */
+function engineering_profile_helper_paragraph_view_alter(array &$build, ParagraphInterface $paragraph, EntityViewDisplayInterface $display) {
+  if ($paragraph->bundle() !== 'stanford_lists' || $paragraph->get('su_list_view')->target_id !== 'collection_search') {
+    return;
+  }
+  // The view already rendered results, so there is nothing to rebuild.
+  if (isset($build['su_list_view']) && Element::children($build['su_list_view'])) {
+    return;
+  }
+  if ($paragraph->getBehaviorSetting('list_paragraph', 'hide_empty') || $paragraph->getBehaviorSetting('list_paragraph', 'empty_message')) {
+    return;
+  }
+  $component = $display->getComponent('su_list_view');
+  if (!$component) {
+    return;
+  }
+  $component['settings']['always_build_output'] = TRUE;
+  $component['settings']['empty_view_title'] = 'hidden';
+  $build['su_list_view'] = $paragraph->get('su_list_view')->view($component);
 }
 
 /**
