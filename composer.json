@@ -170,7 +170,7 @@
         "drupal/search_api_algolia": "^3.0@beta",
         "drupal/search_autocomplete": "^4.0",
         "drupal/seckit": "^2.0",
-        "drupal/shield": "^1.8",
+        "drupal/shield": "~1.8.0",
         "drupal/shs": "^2.0@RC",
         "drupal/simple_block": "^1.7",
         "drupal/simple_oauth": "^6.0",
