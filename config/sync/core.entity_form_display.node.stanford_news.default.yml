@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.stanford_news.su_news_source
     - field.field.node.stanford_news.su_news_spotlight_filters
     - field.field.node.stanford_news.su_news_topics
+    - field.field.node.stanford_news.su_search_exclusion
     - field.field.node.stanford_news.su_shared_tags
     - node.type.stanford_news
   module:
@@ -34,6 +35,7 @@ dependencies:
     - metatag
     - path
     - scheduler
+    - search_api_exclude_entity
     - stanford_intranet
 third_party_settings:
   field_group:
@@ -250,6 +252,14 @@ content:
       none_label: '- Please select -'
       allow_unpublished: false
     third_party_settings: {  }
+  su_search_exclusion:
+    type: search_api_exclude_entity_widget
+    weight: 27
+    region: content
+    settings:
+      field_label: 'Yes, exclude this entity from the search indexes.'
+      use_details_container: true
+    third_party_settings: {  }
   su_shared_tags:
     type: cshs
     weight: 8
@@ -291,6 +301,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   body: true
   created: true
@@ -302,5 +318,4 @@ hidden:
   su_news_quote: true
   su_news_spotlight_filters: true
   uid: true
-  unpublish_on: true
   url_redirects: true

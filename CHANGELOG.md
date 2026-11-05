@@ -1,5 +1,17 @@
 # Engineering Profile
 
+13.0.0
+
+---
+
+- SWSDEVOPS-351: Merged upstream soe_profile 13.0.12 (from 12.2.4)
+- Upgrade drupal core to 11.4 and PHP 8.4
+- Replaced Display Suite / UI Patterns 1.x card displays with upstream view modes, Twig templates and SDC components
+- Uninstalled ds, ds_extras, display_field_copy, ui_patterns_ds, ui_patterns_layouts, ui_patterns_library, soe_paragraph_image_cta and soe_paragraph_stories
+- Added schema_metatag, search_api_exclude_entity and twig_tweak
+- Updated editoria11y settings to the v3 schema
+- Removed stale update hooks (last removed: 11001)
+
 12.1.2
 
 ---

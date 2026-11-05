@@ -53,26 +53,6 @@ function engineering_form_views_exposed_form_alter(&$form, FormStateInterface $f
 }
 
 /**
- * @param $variables
- */
-function engineer_preprocess_pattern_localfooter(&$variables){
-  $med = theme_get_setting('show_su_med_logo');
-  $soe_basic_path = \Drupal::service('extension.list.theme')->getPath('soe_basic');
-
-  // Default to Engineering.
-  if (
-    empty($variables['line1'])
-    && (!isset($variables['custom_lockup']) || !$variables['custom_lockup'])
-  ) {
-    $variables['custom_lockup'] = 1;
-    $variables['lockup_option'] = "su-lockup--option-a";
-    $variables['line1'] = t('ENGINEERING');
-    $variables['link'] = "https://engineering.stanford.edu/";
-  }
-
-}
-
-/**
  * Implements hook_preprocess_pattern_card().
  */
 function engineering_preprocess_pattern_card(&$variables) {

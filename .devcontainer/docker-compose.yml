@@ -1,6 +1,6 @@
 services:
   web:
-    image: "pookmish/drupal8ci:php8.3"
+    image: "pookmish/drupal8ci:php8.4"
   mysql:
     image: "mysql:8.0"
     command: --max_allowed_packet=67108864

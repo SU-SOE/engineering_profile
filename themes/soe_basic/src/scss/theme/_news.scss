@@ -101,7 +101,7 @@
 
   .su-news-vertical-teaser {
     .su-news-header {
-      @include modular-spacing('margin', null 2 2 2);
+      @include modular-spacing('margin', null 2 0 2);
       display: block;
 
       .su-link {

@@ -39,7 +39,7 @@
           color: $soe-color-black;
 
           &::after {
-            color: $soe-color-black;
+            background-color: $soe-color-black;
           }
         }
 
@@ -49,6 +49,10 @@
 
           a {
             color: $su-color-white;
+
+            &::after {
+              background-color: $su-color-white;
+            }
           }
         }
       }
