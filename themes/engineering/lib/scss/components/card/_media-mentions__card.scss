@@ -9,6 +9,13 @@
         &:hover {
           text-decoration-color: #000;
         }
+
+        // jumpstart_ui:news_list puts the link inside the h3 (production had
+        // the h3 inside the link). Let the link use the h3 color and underline.
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
       }
     }
     .su-news-list__topics {

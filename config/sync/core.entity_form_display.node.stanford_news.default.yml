@@ -155,15 +155,6 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  su_mag_featured:
-    settings: {  }
-    third_party_settings: {  }
-  su_magazine_issue:
-    settings: {  }
-    third_party_settings: {  }
-  su_magazine_story:
-    settings: {  }
-    third_party_settings: {  }
   su_metatags:
     type: metatag_firehose
     weight: 11
@@ -273,18 +264,6 @@ content:
       required_depth: 0
       none_label: '- Please select -'
       allow_unpublished: false
-    third_party_settings: {  }
-  su_soe_department:
-    settings: {  }
-    third_party_settings: {  }
-  su_soe_external_source_text:
-    settings: {  }
-    third_party_settings: {  }
-  su_soe_mag_collection:
-    settings: {  }
-    third_party_settings: {  }
-  su_soe_mag_topics:
-    settings: {  }
     third_party_settings: {  }
   syndication:
     type: boolean_checkbox

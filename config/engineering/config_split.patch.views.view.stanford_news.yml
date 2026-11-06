@@ -70,5 +70,8 @@ adding:
             multi_type: separator
             separator: ', '
             field_api_classes: false
+      cache_metadata:
+        tags:
+          - 'config:field.storage.node.su_soe_mag_topics'
 removing:
   status: false

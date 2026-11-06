@@ -19,10 +19,12 @@ dependencies:
     - 'taxonomy_term:affiliation:ea1c87cb-2b74-4b7c-9e8e-8ab065d2fc83'
   module:
     - element_class_formatter
+    - engineering_profile_helper
     - node
     - stanford_fields
     - stanford_media
     - taxonomy
+    - ui_patterns
     - ui_patterns_views
     - user
     - views_autosubmit
@@ -55,8 +57,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<h2>{{ title }}</h2>'
             make_link: false
             path: ''
             absolute: false
@@ -118,8 +120,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="field-content soe--person-title">{{ su_spotlight_person_title }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -181,8 +183,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="soe-quote">{{ su_people_spotlight_quote }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -410,8 +412,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="field-content soe--person-title">{{ su_spotlight_degrees }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -471,7 +473,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -525,6 +527,55 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        soe_department_wrapper:
+          id: soe_department_wrapper
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Departments (wrapper)'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if su_soe_department is not empty %}<div class="field-content soe--person-title">{{ su_soe_department }}</div>{% endif %}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
       pager:
         type: some
         options:
@@ -611,67 +662,69 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: false
-          inline:
-            created: '0'
-            title: '0'
-            su_spotlight_person_title: '0'
-            su_people_spotlight_quote: '0'
-            su_spotlight_feature_image: '0'
-            view_node: '0'
-            nothing: '0'
-            su_spotlight_degrees: '0'
-            su_soe_department: '0'
-          separator: ''
           hide_empty: false
-          pattern: card
-          pattern_variant: default
-          pattern_mapping:
-            'views_row:title':
-              plugin: views_row
-              source: title
-              destination: card_super_headline
-              weight: 0
-            'views_row:created':
-              plugin: views_row
-              source: created
-              destination: card_super_headline
-              weight: 1
-            'views_row:su_spotlight_feature_image':
-              plugin: views_row
-              source: su_spotlight_feature_image
-              destination: card_image
-              weight: 2
-            'views_row:su_spotlight_degrees':
-              plugin: views_row
-              source: su_spotlight_degrees
-              destination: card_super_headline
-              weight: 3
-            'views_row:su_spotlight_person_title':
-              plugin: views_row
-              source: su_spotlight_person_title
-              destination: card_super_headline
-              weight: 4
-            'views_row:su_soe_department':
-              plugin: views_row
-              source: su_soe_department
-              destination: card_super_headline
-              weight: 5
-            'views_row:su_people_spotlight_quote':
-              plugin: views_row
-              source: su_people_spotlight_quote
-              destination: card_body
-              weight: 6
-            'views_row:view_node':
-              plugin: views_row
-              source: view_node
-              destination: card_link
-              weight: 7
-            'views_row:nothing':
-              plugin: views_row
-              source: nothing
-              destination: card_cta_label
-              weight: 8
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              link:
+                source_id: entity_link
+                source:
+                  template: canonical
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_feature_image
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: title
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_person_title
+                    _weight: 1
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_degrees
+                    _weight: 2
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: soe_department_wrapper
+                    _weight: 3
+                    node_id: ''
+              body:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_people_spotlight_quote
+                    _weight: 0
+                    node_id: ''
+              cta_label:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: nothing
+                    _weight: 0
+                    node_id: ''
       query:
         type: views_query
         options:
@@ -721,8 +774,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<h2>{{ title }}</h2>'
             make_link: false
             path: ''
             absolute: false
@@ -861,8 +914,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="field-content soe--person-title">{{ su_spotlight_person_title }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -924,8 +977,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="soe-quote">{{ su_people_spotlight_quote }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -1153,8 +1206,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="field-content soe--person-title">{{ su_spotlight_degrees }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -1214,7 +1267,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1268,6 +1321,55 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        soe_department_wrapper:
+          id: soe_department_wrapper
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Departments (wrapper)'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if su_soe_department is not empty %}<div class="field-content soe--person-title">{{ su_soe_department }}</div>{% endif %}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
       pager:
         type: infinite_scroll
         options:
@@ -1427,11 +1529,104 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: grid
+        options:
+          grouping: {  }
+          columns: 3
+          automatic_width: false
+          alignment: horizontal
+          row_class_custom: flex-container
+          row_class_default: true
+          col_class_custom: flex-4-of-12
+          col_class_default: true
+      row:
+        type: ui_patterns
+        options:
+          hide_empty: false
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: spotlight_main
+            props:
+              link:
+                source_id: entity_link
+                source:
+                  template: canonical
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_feature_image
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: title
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: created
+                    _weight: 1
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_person_title
+                    _weight: 2
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_degrees
+                    _weight: 3
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: soe_department_wrapper
+                    _weight: 4
+                    node_id: ''
+              body:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_people_spotlight_quote
+                    _weight: 0
+                    node_id: ''
+              cta_label:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: nothing
+                    _weight: 0
+                    node_id: ''
+              cta_context:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: created
+                    _weight: 0
+                    node_id: ''
       defaults:
         css_class: false
         pager: false
         exposed_form: false
         group_by: false
+        style: false
+        row: false
         fields: false
         arguments: false
         filters: false
@@ -1540,8 +1735,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<h2 class="field-content">{{ title }}</h2>'
             make_link: false
             path: ''
             absolute: false
@@ -1680,8 +1875,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="field-content soe--person-title">{{ su_spotlight_person_title }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -2085,56 +2280,63 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: false
-          inline:
-            su_spotlight_feature_image: '0'
-            created: '0'
-            title: '0'
-            su_spotlight_person_title: '0'
-            su_people_spotlight_quote: '0'
-            view_node: '0'
-            nothing: '0'
-            su_spotlight_degrees: '0'
-          separator: ''
           hide_empty: false
-          pattern: card
-          pattern_variant: default
-          pattern_mapping:
-            'views_row:su_spotlight_feature_image':
-              plugin: views_row
-              source: su_spotlight_feature_image
-              destination: card_image
-              weight: 0
-            'views_row:created':
-              plugin: views_row
-              source: created
-              destination: card_super_headline
-              weight: 1
-            'views_row:title':
-              plugin: views_row
-              source: title
-              destination: card_super_headline
-              weight: 2
-            'views_row:su_spotlight_person_title':
-              plugin: views_row
-              source: su_spotlight_person_title
-              destination: card_super_headline
-              weight: 3
-            'views_row:su_people_spotlight_quote':
-              plugin: views_row
-              source: su_people_spotlight_quote
-              destination: card_body
-              weight: 4
-            'views_row:view_node':
-              plugin: views_row
-              source: view_node
-              destination: card_link
-              weight: 5
-            'views_row:nothing':
-              plugin: views_row
-              source: nothing
-              destination: card_cta_label
-              weight: 6
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              link:
+                source_id: entity_link
+                source:
+                  template: canonical
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_feature_image
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: title
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: created
+                    _weight: 1
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_person_title
+                    _weight: 2
+                    node_id: ''
+              body:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_people_spotlight_quote
+                    _weight: 0
+                    node_id: ''
+              cta_label:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: nothing
+                    _weight: 0
+                    node_id: ''
       defaults:
         title: false
         pager: false
@@ -2301,61 +2503,69 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: false
-          inline:
-            title: '0'
-            su_spotlight_person_title: '0'
-            su_people_spotlight_quote: '0'
-            su_spotlight_feature_image: '0'
-            view_node: '0'
-            nothing: '0'
-            su_spotlight_degrees: '0'
-            su_soe_department: '0'
-          separator: ''
           hide_empty: false
-          pattern: card
-          pattern_variant: default
-          pattern_mapping:
-            'views_row:title':
-              plugin: views_row
-              source: title
-              destination: card_super_headline
-              weight: 0
-            'views_row:su_spotlight_feature_image':
-              plugin: views_row
-              source: su_spotlight_feature_image
-              destination: card_image
-              weight: 1
-            'views_row:su_spotlight_degrees':
-              plugin: views_row
-              source: su_spotlight_degrees
-              destination: card_super_headline
-              weight: 2
-            'views_row:su_spotlight_person_title':
-              plugin: views_row
-              source: su_spotlight_person_title
-              destination: card_super_headline
-              weight: 3
-            'views_row:su_soe_department':
-              plugin: views_row
-              source: su_soe_department
-              destination: card_super_headline
-              weight: 4
-            'views_row:su_people_spotlight_quote':
-              plugin: views_row
-              source: su_people_spotlight_quote
-              destination: card_body
-              weight: 5
-            'views_row:view_node':
-              plugin: views_row
-              source: view_node
-              destination: card_link
-              weight: 6
-            'views_row:nothing':
-              plugin: views_row
-              source: nothing
-              destination: card_cta_label
-              weight: 7
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              link:
+                source_id: entity_link
+                source:
+                  template: canonical
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_feature_image
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: title
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_person_title
+                    _weight: 1
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_degrees
+                    _weight: 2
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: soe_department_wrapper
+                    _weight: 3
+                    node_id: ''
+              body:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_people_spotlight_quote
+                    _weight: 0
+                    node_id: ''
+              cta_label:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: nothing
+                    _weight: 0
+                    node_id: ''
       defaults:
         title: false
         css_class: false
@@ -2468,8 +2678,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="views-field views-field-su-spotlight-feature-image engineering-accent-color__image">{{ su_spotlight_feature_image }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -2599,8 +2809,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="soe-mag-card__date-published">{{ created }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -2675,7 +2885,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<h2 class="soe-spotlight-mag-card__title engineering-accent-color__link"><a href="{{ view_node }}" alt="Read {{ title }}''s story">Spotlight: {{ title }}</a></h2>'
+            text: '<div class="views-field views-field-nothing"><div class="field-content"><h2 class="soe-spotlight-mag-card__title engineering-accent-color__link"><a href="{{ view_node }}" alt="Read {{ title }}''s story">Spotlight: {{ title }}</a></h2></div></div>'
             make_link: false
             path: ''
             absolute: false
@@ -2723,8 +2933,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<div class="field-content soe--person-title">{{ su_spotlight_person_title }}</div>'
             make_link: false
             path: ''
             absolute: false
@@ -2784,7 +2994,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -2838,6 +3048,55 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        soe_department_wrapper:
+          id: soe_department_wrapper
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Departments (wrapper)'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if su_soe_department is not empty %}<div class="field-content soe--person-department">{{ su_soe_department }}</div>{% endif %}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
         su_people_spotlight_quote:
           id: su_people_spotlight_quote
           table: node__su_people_spotlight_quote
@@ -3089,52 +3348,55 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: false
-          inline:
-            view_node: '0'
-            created: '0'
-            su_spotlight_feature_image: '0'
-            title: '0'
-            nothing: '0'
-            su_spotlight_person_title: '0'
-            su_soe_department: '0'
-            su_people_spotlight_quote: '0'
-            su_spotlight_degrees: '0'
-          separator: ''
           hide_empty: false
-          pattern: card
-          pattern_variant: default
-          pattern_mapping:
-            'views_row:su_spotlight_feature_image':
-              plugin: views_row
-              source: su_spotlight_feature_image
-              destination: card_image
-              weight: 0
-            'views_row:created':
-              plugin: views_row
-              source: created
-              destination: card_super_headline
-              weight: 1
-            'views_row:nothing':
-              plugin: views_row
-              source: nothing
-              destination: card_super_headline
-              weight: 2
-            'views_row:su_spotlight_person_title':
-              plugin: views_row
-              source: su_spotlight_person_title
-              destination: card_super_headline
-              weight: 3
-            'views_row:su_soe_department':
-              plugin: views_row
-              source: su_soe_department
-              destination: card_super_headline
-              weight: 4
-            'views_row:su_people_spotlight_quote':
-              plugin: views_row
-              source: su_people_spotlight_quote
-              destination: card_super_headline
-              weight: 5
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: spotlight_featured
+            props: {  }
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_feature_image
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: created
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: nothing
+                    _weight: 1
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_person_title
+                    _weight: 2
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: soe_department_wrapper
+                    _weight: 3
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_people_spotlight_quote
+                    _weight: 4
+                    node_id: ''
       defaults:
         title: false
         pager: false
@@ -3296,61 +3558,69 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
-          inline:
-            title: 0
-            su_spotlight_person_title: 0
-            su_people_spotlight_quote: 0
-            su_spotlight_feature_image: 0
-            view_node: 0
-            nothing: 0
-            su_spotlight_degrees: 0
-            su_soe_department: 0
-          separator: ''
-          hide_empty: 0
-          pattern: card
-          pattern_mapping:
-            'views_row:title':
-              destination: card_super_headline
-              weight: 0
-              plugin: views_row
-              source: title
-            'views_row:su_spotlight_feature_image':
-              destination: card_image
-              weight: 1
-              plugin: views_row
-              source: su_spotlight_feature_image
-            'views_row:su_spotlight_degrees':
-              destination: card_super_headline
-              weight: 2
-              plugin: views_row
-              source: su_spotlight_degrees
-            'views_row:su_spotlight_person_title':
-              destination: card_super_headline
-              weight: 3
-              plugin: views_row
-              source: su_spotlight_person_title
-            'views_row:su_soe_department':
-              destination: card_super_headline
-              weight: 4
-              plugin: views_row
-              source: su_soe_department
-            'views_row:su_people_spotlight_quote':
-              destination: card_body
-              weight: 5
-              plugin: views_row
-              source: su_people_spotlight_quote
-            'views_row:view_node':
-              destination: card_link
-              weight: 6
-              plugin: views_row
-              source: view_node
-            'views_row:nothing':
-              destination: card_cta_label
-              weight: 7
-              plugin: views_row
-              source: nothing
-          pattern_variant: default
+          hide_empty: false
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              link:
+                source_id: entity_link
+                source:
+                  template: canonical
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_feature_image
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: title
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_person_title
+                    _weight: 1
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_spotlight_degrees
+                    _weight: 2
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: soe_department_wrapper
+                    _weight: 3
+                    node_id: ''
+              body:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_people_spotlight_quote
+                    _weight: 0
+                    node_id: ''
+              cta_label:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: nothing
+                    _weight: 0
+                    node_id: ''
       link_display: custom_url
       link_url: /spotlights
     cache_metadata:

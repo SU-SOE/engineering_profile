@@ -51,29 +51,3 @@ function engineering_preprocess_form(array &$variables) {
 function engineering_form_views_exposed_form_alter(&$form, FormStateInterface $form_state){
   $form["actions"]["submit"]["#value"] = "Apply";
 }
-
-/**
- * Implements hook_preprocess_pattern_card().
- */
-function engineering_preprocess_pattern_card(&$variables) {
-  // Check if this is from a views pattern and get the created date.
-  // The created field value comes through in card_super_headline as a render array.
-  if (isset($variables['card_super_headline'])) {
-    $superhead = $variables['card_super_headline'];
-
-    // Get the text content - handle both render arrays and already-rendered Markup.
-    if (is_array($superhead)) {
-      $rendered = \Drupal::service('renderer')->renderPlain($superhead);
-      $text = strip_tags($rendered);
-    }
-    else {
-      // Already rendered (Markup object or string).
-      $text = strip_tags((string) $superhead);
-    }
-
-    // Use regex to extract a date pattern (Month DD, YYYY).
-    if (preg_match('/(\w+ \d{1,2}, \d{4})/', $text, $matches)) {
-      $variables['created'] = $matches[1];
-    }
-  }
-}

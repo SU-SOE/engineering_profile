@@ -26,8 +26,16 @@
 #}
 
 {# Set some of the default options for the lockup. #}
-{# Keep block classes (e.g. contextual-region) off the lockup wrapper, as the decanter lockup did. #}
+{#
+  Keep the block classes off the lockup wrapper, as the decanter lockup did,
+  but keep contextual-region. Contextual adds that class only for users who
+  can use contextual links, so anonymous markup does not change.
+#}
+{% set has_contextual_region = attributes.hasClass('contextual-region') %}
 {% set attributes = attributes|without('class') %}
+{% if has_contextual_region %}
+  {% set attributes = attributes.addClass('contextual-region') %}
+{% endif %}
 {% set link = url('<front>') %}
 {% if lockup %}
   {% set line3 = lockup.line3 %}

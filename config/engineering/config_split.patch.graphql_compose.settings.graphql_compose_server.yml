@@ -32,11 +32,6 @@ adding:
           enabled: true
         su_opp_status:
           enabled: true
-      stanford_media:
-        su_media_subtitles:
-          enabled: true
-        su_media_category:
-          enabled: true
 removing:
   entity_config:
     layout:
@@ -88,8 +83,6 @@ removing:
         query_load_enabled: true
       su_course_tags:
         query_load_enabled: true
-      su_shared_tags:
-        enabled: false
   field_config:
     config_pages:
       stanford_basic_site_settings:

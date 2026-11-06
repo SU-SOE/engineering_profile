@@ -13,55 +13,12 @@ dependencies:
     - field.field.node.spotlight.su_spotlight_person_title
     - node.type.spotlight
   module:
-    - ds
     - element_class_formatter
     - field_formatter_class
     - layout_builder
     - stanford_media
     - user
 third_party_settings:
-  ds:
-    layout:
-      id: pattern_card
-      library: null
-      disable_css: false
-      entity_classes: no_classes
-      settings:
-        pattern:
-          field_templates: default
-          variant: default
-    regions:
-      card_image:
-        - su_spotlight_feature_image
-      card_super_headline:
-        - node_title
-        - su_spotlight_person_title
-        - su_spotlight_degrees
-        - su_soe_department
-      card_body:
-        - su_people_spotlight_quote
-        - node_link
-    fields:
-      node_link:
-        plugin_id: node_link
-        weight: 6
-        label: hidden
-        formatter: default
-        settings:
-          'link text': 'Read more'
-          'link class': 'su-link su-link--external'
-          wrapper: ''
-          class: ''
-      node_title:
-        plugin_id: node_title
-        weight: 1
-        label: hidden
-        formatter: default
-        settings:
-          link: false
-          'link class': ''
-          wrapper: h2
-          class: ''
   layout_builder:
     enabled: false
     allow_custom: false
@@ -78,7 +35,7 @@ content:
       field_formatter_class:
         class: ''
     weight: 5
-    region: card_body
+    region: content
   su_soe_department:
     type: entity_reference_label
     label: hidden
@@ -87,10 +44,8 @@ content:
     third_party_settings:
       field_formatter_class:
         class: 'field-content soe--person-title'
-      ds:
-        ds_limit: ''
     weight: 4
-    region: card_super_headline
+    region: content
   su_spotlight_degrees:
     type: wrapper_class
     label: hidden
@@ -105,7 +60,7 @@ content:
       field_formatter_class:
         class: ''
     weight: 3
-    region: card_super_headline
+    region: content
   su_spotlight_feature_image:
     type: media_image_formatter
     label: hidden
@@ -118,7 +73,7 @@ content:
       field_formatter_class:
         class: engineering-accent-color__image
     weight: 0
-    region: card_image
+    region: content
   su_spotlight_person_title:
     type: wrapper_class
     label: hidden
@@ -133,7 +88,7 @@ content:
       field_formatter_class:
         class: ''
     weight: 2
-    region: card_super_headline
+    region: content
 hidden:
   body: true
   links: true

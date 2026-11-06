@@ -81,6 +81,7 @@ partial_list:
   - core.entity_form_display.node.stanford_event.default
   - core.entity_form_display.node.stanford_event_series.default
   - core.entity_form_display.node.stanford_media.default
+  - core.entity_form_display.node.stanford_news.default
   - core.entity_form_display.node.stanford_opportunity.default
   - core.entity_form_display.node.stanford_page.default
   - core.entity_form_display.node.stanford_person.default
@@ -90,10 +91,11 @@ partial_list:
   - core.entity_view_display.node.stanford_news.search_indexing
   - core.entity_view_display.node.stanford_news.stanford_card
   - core.entity_view_display.node.stanford_news.stanford_h3_card
+  - core.entity_view_display.node.stanford_news.teaser
   - core.entity_view_display.node.stanford_page.stanford_card
   - core.entity_view_display.node.stanford_page.stanford_h3_card
   - field.field.paragraph.stanford_lists.su_list_view
-  - graphql_compose.settings
+  - graphql_compose.settings.graphql_compose_server
   - layout_paragraphs.settings
   - paragraphs.paragraphs_type.stanford_banner
   - paragraphs.paragraphs_type.stanford_page_title_banner
@@ -102,5 +104,6 @@ partial_list:
   - scheduler.settings
   - search_api.index.full_site_content
   - system.theme
+  - views.view.stanford_news
   - 'jsonapi_extras.jsonapi_resource_config.*'
   - 'metatag.*'

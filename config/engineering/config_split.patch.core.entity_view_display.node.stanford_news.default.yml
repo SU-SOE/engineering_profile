@@ -120,3 +120,4 @@ removing:
   dependencies:
     config:
       - field.field.node.stanford_news.layout_selection
+      - field.field.node.stanford_news.su_search_exclusion

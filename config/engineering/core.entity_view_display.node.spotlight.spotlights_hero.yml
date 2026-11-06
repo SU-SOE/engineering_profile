@@ -112,8 +112,6 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-      ds:
-        ds_limit: ''
     weight: 7
     region: content
   su_spotlight_degrees:

@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Spotlight card (stanford_card view mode).
+ *
+ * Replaces the Display Suite "pattern_card" layout. Same field order:
+ * - image: su_spotlight_feature_image
+ * - super headline: title (h2), su_spotlight_person_title,
+ *   su_spotlight_degrees, su_soe_department
+ * - body: su_people_spotlight_quote, then the "Read more" node link
+ *
+ * Fields come from the core display (all of them in "content"). The slots are
+ * captured here so the order is fixed by this template, not by field weights.
+ */
+#}
+{% set super_headline %}
+  <h2>{{ node.label }}</h2>
+  {{ content.su_spotlight_person_title }}
+  {{ content.su_spotlight_degrees }}
+  {{ content.su_soe_department }}
+{% endset %}
+
+{% set body %}
+  {{ content.su_people_spotlight_quote }}
+  <a href="{{ url }}" class="su-link su-link--external">
+    {{- 'Read more'|t -}}
+    <span class="sr-only"> {{ 'about @title'|t({'@title': node.label}) }}</span>
+  </a>
+{% endset %}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include('engineering_profile_helper:soe_card', {
+    variant: 'default',
+    image: content.su_spotlight_feature_image,
+    super_headline: super_headline,
+    body: body,
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>
