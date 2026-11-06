@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * News list item (teaser view mode), engineering version.
+ *
+ * Same as stanford_basic's cards/node--stanford-news--teaser.html.twig except
+ * the publishing date. Upstream passes the rendered field, which puts a <div>
+ * and <time> inside the SDC's date <p> and uses the "F j, Y" format.
+ * Production printed the plain date as "F d, Y" (for example
+ * "October 05, 2026"), so pass that string instead.
+ */
+#}
+{% set is_spotlight = node.layout_selection.target_id == "news_spotlight" %}
+
+{% set spotlight_filters = [] %}
+{% for filter_item in node.su_news_spotlight_filters %}
+  {% set spotlight_filters = spotlight_filters|merge([filter_item.entity.name.value]) %}
+{% endfor %}
+
+{#
+  Build the topic links from the rendered field instead of the raw field
+  items. The entity_reference_label formatter has already dropped deleted
+  terms and terms the user cannot view (unpublished or restricted, see
+  SOEOPS-1009). Each item is a link element with #title and #url. The Twig
+  sandbox does not allow entity.access(), so this is the only access check
+  available here. The markup is the same as stanford_basic's loop.
+#}
+{% set topic_links = content.su_news_topics|default({}) %}
+{% set topic_keys = topic_links|keys|filter(k => k matches '/^\\d+$/') %}
+{% set topics %}
+  {% for topic_key in topic_keys %}
+    <a href="{{ topic_links[topic_key]['#url'].toString() }}">
+      {{ topic_links[topic_key]['#title'] }}
+    </a>
+    {% if not loop.last %},&nbsp;{% endif %}
+  {% endfor %}
+{% endset %}
+{# Render the field without printing it, so its term cache tags and access cacheability still bubble. #}
+{% set topics_cache = content.su_news_topics|render %}
+
+{% set publishing_date = node.su_news_publishing_date.value ? node.su_news_publishing_date.value|date('F d, Y') : null %}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:news_list", {
+    header_tag: "h3",
+    is_spotlight: is_spotlight,
+    image: content.su_news_featured_media,
+    headline: node.label,
+    publishing_date: publishing_date,
+    dek: node.su_news_dek.value,
+    quote: is_spotlight ? node.su_news_quote.processed : null,
+    topics: is_spotlight ? spotlight_filters|join(", ")|default(null) : topics,
+    source: node.su_news_source.get(0).getUrl().toString(),
+    url: url,
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>

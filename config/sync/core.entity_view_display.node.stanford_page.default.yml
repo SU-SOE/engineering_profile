@@ -340,4 +340,5 @@ hidden:
   stanford_intranet__access: true
   su_department: true
   su_metatags: true
+  su_search_exclusion: true
   su_shared_tags: true

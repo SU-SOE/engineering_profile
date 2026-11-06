@@ -28,6 +28,7 @@ dependencies:
     - search_api.server.algolia_search
   module:
     - node
+    - search_api_exclude_entity
     - stanford_profile_helper
     - taxonomy
 id: algolia_search
@@ -423,6 +424,10 @@ processor_settings:
     tags: {  }
   language_with_fallback: {  }
   rendered_item: {  }
+  search_api_exclude_entity_processor:
+    fields:
+      node:
+        - su_search_exclusion
   space_tags:
     weights:
       preprocess_index: -49

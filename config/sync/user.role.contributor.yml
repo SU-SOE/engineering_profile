@@ -39,7 +39,6 @@ dependencies:
     - stanford_publication
     - system
     - toolbar
-    - ui_patterns_library
     - view_unpublished
 id: contributor
 label: Contributor
@@ -50,7 +49,6 @@ permissions:
   - 'access content overview'
   - 'access help pages'
   - 'access media overview'
-  - 'access patterns page'
   - 'access toolbar'
   - 'access user profiles'
   - 'add citation entities'

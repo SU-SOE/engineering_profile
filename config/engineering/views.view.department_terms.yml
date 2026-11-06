@@ -11,8 +11,10 @@ dependencies:
     - node.type.stanford_news
   module:
     - datetime
+    - engineering_profile_helper
     - node
     - stanford_media
+    - ui_patterns
     - ui_patterns_views
     - user
     - views_infinite_scroll
@@ -499,45 +501,57 @@ display:
       row:
         type: ui_patterns
         options:
-          default_field_elements: 0
-          inline:
-            su_news_banner: 0
-            created: 0
-            title: 0
-            su_soe_mag_topics: 0
-            su_news_publishing_date: 0
-            su_magazine_issue: 0
-            su_soe_department: 0
-          separator: ''
-          hide_empty: 0
-          pattern: card
-          pattern_mapping:
-            'views_row:su_news_banner':
-              destination: card_image
-              weight: 0
-              plugin: views_row
-              source: su_news_banner
-            'views_row:su_news_publishing_date':
-              destination: card_super_headline
-              weight: 1
-              plugin: views_row
-              source: su_news_publishing_date
-            'views_row:title':
-              destination: card_headline
-              weight: 2
-              plugin: views_row
-              source: title
-            'views_row:su_soe_mag_topics':
-              destination: card_body
-              weight: 3
-              plugin: views_row
-              source: su_soe_mag_topics
-            'views_row:su_magazine_issue':
-              destination: card_body
-              weight: 4
-              plugin: views_row
-              source: su_magazine_issue
-          pattern_variant: default
+          hide_empty: false
+          ui_patterns:
+            component_id: 'engineering_profile_helper:soe_card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              link:
+                source_id: entity_link
+                source:
+                  template: canonical
+            slots:
+              image:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_news_banner
+                    _weight: 0
+                    node_id: ''
+              super_headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_news_publishing_date
+                    _weight: 0
+                    node_id: ''
+              headline:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: title
+                    _weight: 0
+                    node_id: ''
+              body:
+                sources:
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: soe_topics_wrapper
+                    _weight: 0
+                    node_id: ''
+                  -
+                    source_id: view_field
+                    source:
+                      ui_patterns_views_field: su_magazine_issue
+                    _weight: 1
+                    node_id: ''
       query:
         type: views_query
         options:
@@ -726,8 +740,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="soe-mag-card__title engineering-accent-color__link">{{ title }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -787,7 +801,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -841,6 +855,55 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        soe_topics_wrapper:
+          id: soe_topics_wrapper
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Topics (wrapper)'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if su_soe_mag_topics is not empty %}<span class="soe-mag-card__topics">{{ su_soe_mag_topics }}</span>{% endif %}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
         su_news_publishing_date:
           id: su_news_publishing_date
           table: node__su_news_publishing_date
@@ -852,8 +915,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="soe-mag-card__date-published">{{ su_news_publishing_date }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -916,8 +979,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="soe-mag-card__issue engineering-accent-color__background">{{ su_magazine_issue }}</span>'
             make_link: false
             path: ''
             absolute: false
@@ -1039,7 +1102,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: default
           exception:
             value: all
@@ -1070,6 +1133,7 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
       defaults:
         title: false
         relationships: false

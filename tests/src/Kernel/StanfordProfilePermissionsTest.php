@@ -6,6 +6,8 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\layout_builder\Entity\LayoutBuilderEntityViewDisplay;
 use Drupal\node\Entity\NodeType;
 use Drupal\engineering_profile\StanfordProfilePermissions;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Class StanfordProfilePermissionsTest.
@@ -13,6 +15,8 @@ use Drupal\engineering_profile\StanfordProfilePermissions;
  * @group engineering_profile
  * @coversDefaultClass \Drupal\engineering_profile\StanfordProfilePermissions
  */
+#[Group('stanford_profile')]
+#[RunTestsInSeparateProcesses]
 class StanfordProfilePermissionsTest extends KernelTestBase {
 
   /**
@@ -32,7 +36,7 @@ class StanfordProfilePermissionsTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public function setup(): void {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('user');

@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Engineering override of stanford_basic's paragraph--stanford-card.
+ *
+ * Same jumpstart_ui:card SDC and behaviors as upstream, but the media, super
+ * header and body are printed without their field wrappers. This matches the
+ * old Display Suite "only_content" card markup on production. Upstream's
+ * field wrapper on the body (.su-wysiwyg-text) restyles links and lists
+ * inside cards.
+ */
+#}
+{% set heading_behavior = paragraph.getBehaviorSetting("su_card_styles", "heading", "h2")|split(".") %}
+{% set link_style = paragraph.getBehaviorSetting("su_card_styles", "link_style", "button") %}
+
+{% set card_body %}
+  {%- if content.su_card_super_header.0|render|striptags|trim is not empty -%}
+    <div class="su-card__superhead">{{ content.su_card_super_header.0 }}</div>
+  {%- endif -%}
+  {{- content.su_card_body.0 -}}
+{% endset %}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:card", {
+    header_tag: heading_behavior.0,
+    header_classes: heading_behavior|slice(1)|join(" "),
+    visually_hide_header: paragraph.getBehaviorSetting("su_card_styles", "hide_heading", false),
+    image: content.su_card_media.0,
+    headline: paragraph.su_card_header.value,
+    body: card_body,
+    link: paragraph.su_card_link.get(0).getUrl().toString(),
+    button_label: link_style != "action" ? content.su_card_link[0]['#title'] : null,
+    cta_label: link_style == "action" ? content.su_card_link[0]['#title'] : null,
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>

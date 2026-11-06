@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * SOE Card component.
+ *
+ * Reproduces the UI Patterns 1 "card" pattern markup that engineering used
+ * before the SDC migration (stanford_profile_helper 10 / Decanter 6 card plus
+ * the engineering spotlight block_1 and block_4 overrides).
+ *
+ * Variants:
+ * - default: SPH 10 card. <article> when a headline exists, otherwise <div>.
+ * - spotlight_main: Spotlight landing grid. Always <article>.
+ * - spotlight_featured: Featured spotlight banner. Content inside <section>.
+ *
+ * Props: link, headline_tag, modifier_class.
+ * Slots: image, super_headline, headline, body, cta_label, cta_context.
+ */
+#}
+{%- set variant = variant|default('default') -%}
+{%- set headline_tag = headline_tag|default('h2') -%}
+
+{# Render the slots once. Rendered values stay Markup, so they are not escaped
+   again when printed. The trimmed copies are only used for empty checks. #}
+{%- set image_out = image|render -%}
+{%- set super_out = super_headline|render -%}
+{%- set headline_out = headline|render -%}
+{%- set body_out = body|render -%}
+
+{%- set has_image = image_out|trim is not empty -%}
+{%- set has_super = super_out|trim is not empty -%}
+{%- set has_headline = headline_out|striptags('<img><drupal-render-placeholder>')|trim is not empty -%}
+
+{# Like the old pattern: strip the Drupal markup from the CTA label. #}
+{%- set cta_text = cta_label is empty ? null : cta_label|render_clean -%}
+{%- set cta_suffix = cta_context is empty ? null : cta_context|render_clean -%}
+{%- set has_cta = cta_text is not empty and link is not empty -%}
+
+{%- set attributes = attributes.addClass('su-card', modifier_class) -%}
+
+{%- set cta_markup -%}
+  {%- if has_cta -%}
+    <a href="{{ link }}" class="su-link su-card__link su-link--action">
+      {{- cta_text -}}
+      {%- if cta_suffix is not empty %} <span class="sr-only">{{ 'for'|t }} {{ cta_suffix }}</span>{% endif -%}
+    </a>
+  {%- endif -%}
+{%- endset -%}
+
+{%- if variant == 'spotlight_featured' -%}
+
+<article{{ attributes }}>
+  <section class="su-card__contents">
+    {%- if has_image %}
+    {{ image_out }}
+    {%- endif %}
+    {%- if has_super %}
+    <div class="su-spotlight--superhead">{{ super_out }}</div>
+    {%- endif %}
+    {%- if has_headline %}
+    <h2>{{ headline_out }}</h2>
+    {%- endif %}
+    {{ body_out }}
+    {{ cta_markup }}
+  </section>
+</article>
+
+{%- else -%}
+
+{%- set wrapper_tag = variant == 'spotlight_main' or has_headline ? 'article' : 'div' -%}
+<{{ wrapper_tag }}{{ attributes }}>
+  {%- if has_image %}
+  {{ image_out }}
+  {%- endif %}
+  <div class="su-card__contents">
+    {%- if has_super %}
+    <div class="su-card__superhead">{{ super_out }}</div>
+    {%- endif %}
+    {%- if has_headline %}
+    <{{ headline_tag }}>{{ headline_out }}</{{ headline_tag }}>
+    {%- endif %}
+    {{ body_out }}
+    {{ cta_markup }}
+  </div>
+</{{ wrapper_tag }}>
+
+{%- endif -%}

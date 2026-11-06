@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * CTA list paragraph, engineering version (SOEOPS-866).
+ *
+ * Overrides soe_basic, which renders soe_paragraphs:soe_cta_list with two
+ * column divs. Engineering keeps the pre-SDC markup: one list of links that
+ * CSS lays out in two columns (one column on small screens), and no empty
+ * heading when the paragraph has no header.
+ *
+ * Styles: engineering lib/scss/components/cta-list.
+ */
+#}
+{%- set link_classes = ['su-link--action', 'su-image-cta-paragraph__link'] -%}
+{%- set header = paragraph.stanford_cta_list_header.value|default('')|trim -%}
+{%- set list_classes = ['su-cta-list-paragraph'] -%}
+{%- if paragraph.getBehaviorSetting('su_cta_list_styles', 'top_border', false) -%}
+  {%- set list_classes = list_classes|merge(['su-cta-list--without-border']) -%}
+{%- endif -%}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  <div{{ create_attribute({'class': list_classes}) }}>
+    {%- if header is not empty %}
+    <div class="su-cta-list-paragraph__header">
+      <h2>{{ header }}</h2>
+    </div>
+    {%- endif %}
+
+    {{ content.stanford_cta_list_deck }}
+
+    {%- if not paragraph.stanford_cta_list_links.isEmpty() %}
+    <div class="su-cta-list__links">
+      <ul>
+        {%- for item in paragraph.stanford_cta_list_links %}
+          {%- set item_url = item.getUrl() %}
+          <li>{{ link(item.title|default(item_url.toString()), item_url, {'class': link_classes}) }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+  </div>
+  {{ title_suffix }}
+</div>
