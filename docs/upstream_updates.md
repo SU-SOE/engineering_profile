@@ -158,7 +158,9 @@ current base branch.
    ```bash
    lando drush --uri=https://soegryphon.lndo.site php:script hooks/common/scripts/pre-deploy-update-workarounds.php  # only while graphql updates are pending
    lando drush --uri=https://soegryphon.lndo.site deploy -y
-   lando drush --uri=https://soegryphon.lndo.site php:eval 'if (node_access_needs_rebuild()) { node_access_rebuild(); }'
+   lando drush --uri=https://soegryphon.lndo.site php:eval '$r = \Drupal::service(\Drupal\node\NodeAccessRebuild::class); if ($r->needsRebuild()) { $r->rebuild(TRUE); drush_backend_batch_process(); }'
+   lando drush --uri=https://soegryphon.lndo.site cr
+   lando drush --uri=https://soegryphon.lndo.site config:status
    ```
 
 5. Fix the config and templates, then repeat from the snapshot until `deploy` runs cleanly the first time.
