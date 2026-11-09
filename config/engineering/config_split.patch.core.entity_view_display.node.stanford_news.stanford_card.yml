@@ -8,6 +8,8 @@ adding:
       - field.field.node.stanford_news.su_soe_external_source_text
       - field.field.node.stanford_news.su_soe_mag_collection
       - field.field.node.stanford_news.su_soe_mag_topics
+    module:
+      - element_class_formatter
   content:
     su_soe_external_source_text:
       type: wrapper_class
@@ -27,8 +29,8 @@ adding:
         field_label:
           label_value: ''
           label_tag: ''
-      weight: 4
-      region: news_topics
+      weight: 13
+      region: content
     su_soe_mag_topics:
       type: entity_reference_list_label_class
       label: above
@@ -44,21 +46,12 @@ adding:
         field_label:
           label_value: ''
           label_tag: ''
-        ds:
-          ds_limit: ''
-      weight: 3
-      region: news_topics
+      weight: 14
+      region: content
   hidden:
     su_mag_featured: true
     su_magazine_issue: true
     su_magazine_story: true
     su_soe_department: true
     su_soe_mag_collection: true
-removing:
-  dependencies:
-    config:
-      - field.field.node.stanford_news.body
-      - field.field.node.stanford_news.layout_selection
-      - field.field.node.stanford_news.su_news_person
-      - field.field.node.stanford_news.su_news_quote
-      - field.field.node.stanford_news.su_news_spotlight_filters
+removing: {  }

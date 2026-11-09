@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Engineering page template.
+ *
+ * Extends stanford_basic's page.html.twig and only replaces the footer block.
+ * The jumpstart_ui:global_footer SDC supports an external link label for
+ * screen readers, but stanford_basic passes no props, so the Stanford global
+ * footer links lost the " (link is external)" text that production (Decanter
+ * global footer) provides. Pass it here to keep the same link names.
+ */
+#}
+{% extends "@stanford_basic/page.html.twig" %}
+
+{%- block block_footer -%}
+  {% set external_link_text %}<span class="su-global-footer__link-a11y"> {{ '(link is external)'|t }}</span>{% endset %}
+  <footer id="footer" data-nosnippet>
+    {{ page.footer }}
+
+    {{ include("jumpstart_ui:global_footer", {external_link_text: external_link_text}, with_context = false) }}
+
+  </footer>
+{%- endblock -%}

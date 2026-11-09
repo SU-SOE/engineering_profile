@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+// Card heading and paragraph spacing (SWSDEVOPS-351).
+// The jumpstart_ui:card SDC CSS (stanford_profile_helper 11) adds
+// margin-bottom 1.3rem to h3 and 1rem to h4 inside .su-card__contents, and
+// soe_basic 13.x (SRC-253) sets card paragraphs to margin-bottom 1.8rem.
+// Production had neither rule: headings used the browser default margin and
+// paragraphs the base `p` margin (1em). Put those values back so card text
+// keeps its production spacing.
+.su-card {
+  .su-card__contents {
+    h3 {
+      margin-bottom: 1em;
+    }
+
+    h4 {
+      margin-bottom: 1.33em;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+}

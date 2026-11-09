@@ -30,6 +30,20 @@
   }
 }
 
+// soe_basic 13.x (SOEOPS-895) reduced the space under news card titles from
+// modular-spacing 2 to 0, which removed about 18px between the title and the
+// topics. Engineering production keeps the larger gap (SWSDEVOPS-351), so put
+// back the previous value for the same contexts soe_basic styles.
+.stanford-news--cards:not(:has(.news-spotlight)),
+.stanford-news-vertical-teaser-term:not(.news-spotlight),
+.ds-entity--stanford-news:not(.news-spotlight) {
+  .su-news-vertical-teaser {
+    .su-news-header {
+      @include modular-spacing('margin-bottom', 2);
+    }
+  }
+}
+
 .news-card__external-source-text {
   background-color: $su-color-black;
   color: $su-color-white;

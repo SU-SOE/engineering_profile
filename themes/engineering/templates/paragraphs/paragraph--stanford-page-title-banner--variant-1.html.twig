@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Page title banner paragraph, variant_1 view mode, engineering version.
+ *
+ * Same as stanford_basic's template, plus the banner style class chosen in the
+ * react_paragraphs:page_title_variant_info behavior (SOEOPS-664). The old
+ * soe_basic preprocess added it for every view mode of this paragraph type.
+ */
+#}
+{%- set banner_style = paragraph.getBehaviorSetting('react_paragraphs:page_title_variant_info', 'banner_style') -%}
+{%- if banner_style is not empty -%}
+  {%- set attributes = attributes.addClass(banner_style|clean_class) -%}
+{%- endif -%}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ content.su_title_banner_image }}
+  {{ title_suffix }}
+</div>

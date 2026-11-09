@@ -5,34 +5,21 @@
  * engineering_profile.profile
  */
 
-use Drupal\config_pages\ConfigPagesInterface;
-use Drupal\Core\Installer\InstallerKernel;
+use Drupal\engineering_profile\Hook\InstallHooks;
 
 /**
  * Implements hook_install_tasks().
+ *
+ * This must remain procedural — Drupal core's
+ * HookCollectorPass::checkForProceduralOnlyHooks() explicitly denies OOP
+ * #[Hook] attribute support for install_tasks. The task callback resolves
+ * InstallHooks via the class resolver and calls InstallHooks::finalTask(),
+ * which runs the profile's InstallTask plugins.
  */
 function engineering_profile_install_tasks(&$install_state) {
-  return ['engineering_profile_final_task' => []];
-}
-
-/**
- * Perform final tasks after the profile has completed installing.
- *
- * @param array $install_state
- *   Current install state.
- */
-function engineering_profile_final_task(array &$install_state) {
-  \Drupal::service('plugin.manager.install_tasks')->runTasks($install_state);
-}
-
-/**
- * Implements hook_ENTITY_TYPE_presave().
- */
-function engineering_profile_config_pages_presave(ConfigPagesInterface $config_page) {
-  // During install, rebuild the router when saving a config page. This prevents
-  // an error if the config page route doesn't exist for it yet. Event
-  // subscriber doesn't work for this since it's during installation.
-  if (InstallerKernel::installationAttempted()) {
-    \Drupal::service('router.builder')->rebuild();
-  }
+  return [
+    'engineering_profile_final_task' => [
+      'function' => [\Drupal::classResolver(InstallHooks::class), 'finalTask'],
+    ],
+  ];
 }

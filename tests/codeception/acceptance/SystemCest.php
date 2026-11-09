@@ -15,7 +15,7 @@ class SystemCest {
     $I->runDrush('xmlsitemap:rebuild');
     $I->logInWithRole('administrator');
     $I->amOnPage('/admin/reports/status');
-    $I->canSee('11.3', '.system-status-general-info');
+    $I->canSee('11.4', '.system-status-general-info');
     if ($I->grabMultiple('.system-status-counter--error')) {
       // Assert the specific error we expect rather than the total count. The
       // count is brittle: unrelated errors from contrib/upstream modules (e.g.

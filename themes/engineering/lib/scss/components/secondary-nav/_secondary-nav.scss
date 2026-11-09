@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+// Sidebar (secondary) menu (SWSDEVOPS-351).
+// stanford_basic 13.x added a restyle to components/secondary-nav: 1.7rem
+// regular-weight links for every level and, from the lg breakpoint, a Font
+// Awesome chevron after parent items (flex layout, 2rem left padding, no
+// right padding, transparent hover/focus bar). The engineering sidebar is a
+// static menu with no expand/collapse, so the chevron implies a control that
+// does not exist. These rules put back the stanford_basic base values that
+// production uses. Keep the selectors in sync with
+// themes/stanford_basic/src/scss/components/secondary-nav/_secondary-nav.scss.
+
+.su-secondary-nav {
+  .su-secondary-nav__link {
+    font-size: 2rem;
+    font-weight: $su-font-semi-bold;
+  }
+
+  .su-secondary-nav__menu-lv2 .su-secondary-nav__link {
+    font-size: 1.8rem;
+  }
+
+  .su-secondary-nav__menu-lv3 .su-secondary-nav__link {
+    font-size: 1.6rem;
+  }
+
+  @include grid-media('lg') {
+    .su-secondary-nav__item--parent > .su-secondary-nav__link {
+      display: block;
+      padding-left: 2.4rem;
+      padding-right: 4.8rem;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    // Upstream sets the parent link bar to transparent, which also removes
+    // the keyboard focus bar. Restore the light variant colors.
+    &.su-secondary-nav--light .su-secondary-nav__item--parent > .su-secondary-nav__link {
+      &:focus::before {
+        background-color: $su-color-digital-red;
+      }
+
+      &:hover::before,
+      &:active::before {
+        background-color: $su-color-black;
+      }
+    }
+
+    &.su-secondary-nav--light .su-secondary-nav__item--parent.su-secondary-nav__item--current > .su-secondary-nav__link {
+      &::before,
+      &:hover::before,
+      &:focus::before,
+      &:active::before {
+        background-color: $su-color-black;
+      }
+    }
+  }
+}

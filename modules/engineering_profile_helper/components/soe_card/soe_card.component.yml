@@ -1,0 +1,67 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: SOE Card
+status: stable
+group: Engineering
+description: >-
+  Engineering card. Reproduces the markup of the UI Patterns 1 "card" pattern
+  (stanford_profile_helper 10 / Decanter 6) and the engineering spotlight
+  overrides, so the existing engineering card CSS keeps working. Ships no CSS:
+  card styles live in the engineering theme.
+variants:
+  default:
+    title: Default
+    description: >-
+      SPH 10 card. <article> when a headline is present, <div> otherwise.
+      Spotlights block_2, block_3, cardgrid, the spotlight stanford_card
+      display, and the magazine/department lists.
+  spotlight_main:
+    title: Spotlight main
+    description: >-
+      Spotlight landing page grid (spotlights block_1). Always an <article>;
+      the CTA can carry a visually hidden date suffix (cta_context).
+  spotlight_featured:
+    title: Spotlight featured
+    description: >-
+      Featured spotlight banner (spotlights block_4). Image and text in a
+      <section class="su-card__contents">, superhead uses
+      su-spotlight--superhead.
+props:
+  type: object
+  properties:
+    link:
+      title: Link URL
+      description: 'URL for the call to action link. In views use the entity_link source (template: canonical).'
+      type: string
+      format: iri-reference
+    headline_tag:
+      title: Headline tag
+      description: 'Tag for the headline (default and spotlight_main variants). Defaults to h2.'
+      type: string
+      enum:
+        - h2
+        - h3
+        - h4
+        - div
+    modifier_class:
+      title: Modifier classes
+      description: 'Extra classes for the card wrapper.'
+      type: string
+slots:
+  image:
+    title: Image
+    description: 'Rendered media/image. Printed as is (no wrapper).'
+  super_headline:
+    title: Super headline
+    description: 'One or more rendered fields, printed in order inside the superhead div.'
+  headline:
+    title: Headline
+    description: 'Rendered headline. Wrapped in headline_tag. Treated as empty when it has no text.'
+  body:
+    title: Body
+    description: 'One or more rendered fields, printed in order after the headline.'
+  cta_label:
+    title: CTA label
+    description: 'Link text for the call to action. Tags are stripped, like the old render_clean filter. Needs link.'
+  cta_context:
+    title: CTA context
+    description: 'Optional extra context for screen readers, printed as a visually hidden " for {text}" inside the CTA link (spotlights block_1 uses the created date).'

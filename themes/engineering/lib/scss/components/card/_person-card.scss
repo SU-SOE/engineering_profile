@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// Person cards (SWSDEVOPS-351).
+// stanford_basic now renders person cards with the jumpstart_ui:card SDC, so
+// the SDC's card.css loads on people pages. Production rendered them with a
+// Display Suite layout that did not load that file, so the name used the
+// stanford_profile_styles person heading (1.25em, 0.5rem below) and the card
+// contents were not a flex column. Restore those values for person cards.
+.ds-entity--stanford-person .su-card {
+  .su-card__contents {
+    display: block;
+
+    h3 {
+      font-size: 1.25em;
+      letter-spacing: -0.01em;
+      line-height: 1.2em;
+      margin-bottom: 0.5rem;
+
+      &:first-child {
+        margin-top: -0.3em;
+      }
+
+      // The short title is a text node, so the h3 is the last element child
+      // and card CSS (`> :last-child`) would remove its bottom margin.
+      &:last-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

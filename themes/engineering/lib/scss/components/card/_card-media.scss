@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// Card images on small screens (SWSDEVOPS-351).
+// stanford_basic's base CSS hides `.su-card img` and `.su-card figure` below
+// the sm breakpoint. jumpstart_ui's card CSS shows them again for media
+// entities (`.su-card .image img`), but that CSS only loads on pages that
+// render the jumpstart_ui:card SDC. Views rows that now use
+// engineering_profile_helper:soe_card (no CSS of its own) lost their images
+// on phones, while production shows them. Repeat the jumpstart_ui rule here.
+.su-card {
+  .image {
+    figure,
+    img {
+      display: block;
+    }
+  }
+}

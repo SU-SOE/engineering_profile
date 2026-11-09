@@ -48,17 +48,12 @@ function engineering_profile_helper_preprocess_views_view_field(&$vars){
   if (isset($vars['view']) && ($vars['view']->id() == 'spotlights')) {
     if ($vars['field']->field == 'su_people_spotlight_quote') {
       // Modify the field for the regular view
-      if ($vars['view']->current_display == 'block_1') {
-        $new_output = _engineering_profile_helper_trim_spotlight_quote($vars['output']);
-        $vars['output'] = Markup::create($new_output);
-      }
-      // Modify the field for the highlighted view at the top of the landing page
-      if ($vars['view']->current_display == 'block_2') {
-        // we have to do this one as HTML.
-        $html = Html::load($vars['output']);
-        $new_output = _engineering_profile_helper_trim_spotlight_quote($html->getElementsByTagName('div')->item(0)->nodeValue);
-        $html->getElementsByTagName('div')->item(0)->nodeValue = $new_output;
-        $vars['output'] = Markup::create($html->saveHTML($html->getElementsByTagName('div')->item(0)));
+      // The block_1 output is wrapped in <div class="soe-quote"> by the
+      // field's "Rewrite results" text, and the block_2 output is wrapped in
+      // <div class="spotlight__quote"> by its formatter. Trim only the text
+      // inside the wrapper so the markup stays intact.
+      if (in_array($vars['view']->current_display, ['block_1', 'block_2'])) {
+        $vars['output'] = Markup::create(_engineering_profile_helper_trim_spotlight_quote_markup((string) $vars['output']));
       }
 
       // Modify the field for the inclusion on the Magazine page.
@@ -78,12 +73,59 @@ function engineering_profile_helper_preprocess_views_view_field(&$vars){
  * @return string
  */
 function _engineering_profile_helper_trim_spotlight_quote(string $quote) {
+  // Add an ellipsis and return.
+  return _engineering_profile_helper_shorten_spotlight_quote($quote) . ' &hellip;';
+}
+
+/**
+ * Shorten a Spotlight quote to 100 characters, without adding an ellipsis.
+ *
+ * @param string $quote
+ *   The full string value to truncate.
+ *
+ * @return string
+ *   The quote cut at a word boundary, without trailing ?!. punctuation.
+ */
+function _engineering_profile_helper_shorten_spotlight_quote(string $quote): string {
   // Break the string at 100 characters, and explode that into an array.
   $string_array = explode("::", wordwrap(trim($quote), 100, "::"));
-  // Take the first element of the array, and trim any EOL punctuation
-  $trimmed_punct = trim($string_array[0], '?!.');
-  // Add an ellipsis and return.
-  return $trimmed_punct . ' &hellip;';
+  // Take the first element of the array, and trim any EOL punctuation.
+  return trim($string_array[0], '?!.');
+}
+
+/**
+ * Trim the text inside the first <div> of a rendered Spotlight quote.
+ *
+ * @param string $markup
+ *   The rendered field output, e.g. '<div class="soe-quote">Quote</div>'.
+ *
+ * @return string
+ *   The markup with the text of the first <div> trimmed. Markup without a
+ *   <div> is reduced to its escaped, trimmed text content. Empty markup is
+ *   returned unchanged.
+ */
+function _engineering_profile_helper_trim_spotlight_quote_markup(string $markup): string {
+  if (trim($markup) === '') {
+    return $markup;
+  }
+  $html = Html::load($markup);
+  $div = $html->getElementsByTagName('div')->item(0);
+  if (!$div) {
+    // Trim the decoded text rather than the raw markup, so a cut can't leave
+    // unclosed tags or broken entities, and escape it for safe output.
+    $body = $html->getElementsByTagName('body')->item(0);
+    $text = _engineering_profile_helper_shorten_spotlight_quote($body ? $body->textContent : '');
+    return Html::escape($text) . ' &hellip;';
+  }
+  // Replace the children with an escaped text node and an &hellip; entity, so
+  // the quote text can't be re-parsed as markup or entities.
+  $text = _engineering_profile_helper_shorten_spotlight_quote($div->textContent);
+  while ($div->firstChild) {
+    $div->removeChild($div->firstChild);
+  }
+  $div->appendChild($html->createTextNode($text . ' '));
+  $div->appendChild($html->createEntityReference('hellip'));
+  return $html->saveHTML($div);
 }
 
 function _engineering_profile_helper_modify_spotlight_quote_for_magazine(string $html): string {

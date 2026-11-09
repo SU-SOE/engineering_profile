@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * News card (stanford_card view mode), engineering version.
+ *
+ * Based on stanford_basic's cards/node--stanford-news--stanford-card.html.twig,
+ * but keeps the markup of the old Display Suite "news-vertical-teaser" layout:
+ * - featured image only, no field wrapper (DS "only content")
+ * - no date and no dek
+ * - topics area: su_news_topics (first 3), then su_soe_mag_topics, then
+ *   su_soe_external_source_text
+ * - su_news_source, when set, replaces the node URL and marks the card as
+ *   external (handled by jumpstart_ui:news_vertical_teaser)
+ * - headline ends with a space, like the old DS title output. The space keeps
+ *   the underlined gap before the arrow icon, which can then wrap to its own
+ *   line as on production.
+ *
+ * node--stanford-news--stanford-h3-card.html.twig includes this file with
+ * news_header_tag set to h3.
+ */
+#}
+{% macro field_items(field, limit) %}
+  {%- set item_keys = field|default({})|keys|filter(k => k matches '/^\\d+$/') -%}
+  {%- if limit -%}
+    {%- set item_keys = item_keys|slice(0, limit) -%}
+  {%- endif -%}
+  {%- for item_key in item_keys -%}
+    {{ field[item_key] }}
+  {%- endfor -%}
+{% endmacro %}
+
+{% macro term_list(field, limit) %}
+  {#- Supports the plain label formatter and the list formatter. -#}
+  {%- if field['#formatter']|default('') == 'entity_reference_list_label_class' -%}
+    {%- set links = field[0]['#items']|default({}) -%}
+  {%- else -%}
+    {%- set links = field|default({}) -%}
+  {%- endif -%}
+  {%- set link_keys = links|keys|filter(k => k matches '/^\\d+$/') -%}
+  {%- if limit -%}
+    {%- set link_keys = link_keys|slice(0, limit) -%}
+  {%- endif -%}
+  {%- if link_keys is not empty -%}
+    <ul class="su-list-unstyled">
+      {%- for link_key in link_keys -%}
+        <li>{{ links[link_key] }}</li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+{% endmacro %}
+
+{% import _self as news_card %}
+
+{% set topics %}
+  {{- news_card.term_list(content.su_news_topics, 3) -}}
+  {{- news_card.term_list(content.su_soe_mag_topics) -}}
+  {%- if node.su_soe_external_source_text is defined and not node.su_soe_external_source_text.isEmpty() -%}
+    {{- news_card.field_items(content.su_soe_external_source_text) -}}
+  {%- endif -%}
+{% endset %}
+
+{% set image %}{{ news_card.field_items(content.su_news_featured_media, 1) }}{% endset %}
+
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:news_vertical_teaser", {
+    header_tag: news_header_tag|default('h2'),
+    is_spotlight: false,
+    image: image,
+    headline: node.label ~ ' ',
+    date: null,
+    dek: null,
+    quote: null,
+    topics: topics,
+    source: node.su_news_source.isEmpty() ? null : node.su_news_source.get(0).getUrl().toString(),
+    url: url,
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>
