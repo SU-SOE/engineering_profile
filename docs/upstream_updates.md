@@ -17,7 +17,7 @@ Keep engineering-specific config in the split, not in `config/sync/`, so upstrea
 
 - **Merge, never squash.** Upstream syncs must be real merge commits, and the PR that brings them into the base
   branch must be merged with a merge commit. Squash merges throw away the upstream ancestry and the next merge
-  then conflicts on hundreds of files (see [Background](#background-the-1300-12-update)).
+  then conflicts on hundreds of files (see [Background](#background-the-13012-update)).
 - **Don't use `-X ours` / `-X theirs`.** Resolve every conflict by hand.
 - **Commit or push the profile before running composer in the stack.** The stack sets `discard-changes: true`
   and installs this profile from source, so `composer install/update` can wipe uncommitted profile changes.
@@ -145,8 +145,8 @@ current base branch.
 ### 6. Point the stack at the branch and deploy locally
 
 1. Push the profile branch.
-2. In the stack `composer.json`, set `"su-soe/engineering_profile": "dev-<branch> as <upstream-version>"`
-   (for example `dev-SWSDEVOPS-351 as 13.0.12`).
+2. In the stack `composer.json`, set `"su-soe/engineering_profile": "dev-<branch> as <version>"`, where
+   `<version>` is the upstream release being merged.
 3. Update the profile through the system composer in Lando (see the stack's `docs/upstream_update.md`):
 
    ```bash
@@ -156,7 +156,6 @@ current base branch.
 4. Restore the DB snapshot, then deploy:
 
    ```bash
-   lando drush --uri=https://soegryphon.lndo.site php:script hooks/common/scripts/pre-deploy-update-workarounds.php  # only while graphql updates are pending
    lando drush --uri=https://soegryphon.lndo.site deploy -y
    lando drush --uri=https://soegryphon.lndo.site php:eval '$r = \Drupal::service(\Drupal\node\NodeAccessRebuild::class); if ($r->needsRebuild()) { $r->rebuild(TRUE); drush_backend_batch_process(); }'
    lando drush --uri=https://soegryphon.lndo.site cr
@@ -225,22 +224,10 @@ parent, so later merges don't need the graft.
 
 ## Background: the 13.0.12 update
 
-SWSDEVOPS-351 moved this profile from 12.2.1 to soe_profile 13.0.12 (Drupal 11.4, stanford_profile 13,
-stanford_profile_helper 11).
-
-- Earlier upstream syncs had been squash-merged, so `git merge-base` with soe_profile pointed back at 10.0.0
-  and a plain merge produced 263 conflicts.
-- `3ba3011e` ("Upstream updates (#207)") had synced soe_profile 12.2.4. The graft used was:
-
-  ```bash
-  git replace --graft 3ba3011e 6efa0aa9 6ab7bee25a68a2cfbc8fe5f79fc8dcdc61399479
-  ```
-
-  (sync commit, its original parent, soe_profile `12.2.4`). With it, `git merge 13.0.12` had 39 conflicts.
-- The result is merge commit `c74d1fab`, whose second parent is `40016190` (tag `13.0.12`).
-- **UI Patterns 1 to 2 / SDC.** stanford_profile_helper 11 disables the `ui_patterns_legacy` migrator, so
-  engineering-only views and displays that used UIP1 patterns or Display Suite were migrated by hand. The
-  spotlights, magazine, magazine_issues, magazine_article_collection and department_terms views now use UIP2
-  rows with the SDC `engineering_profile_helper:soe_card`
-  (`modules/engineering_profile_helper/components/soe_card`). Engineering theme template overrides keep the prod
-  markup. Display Suite and related modules were uninstalled.
+SWSDEVOPS-351 moved this profile from 12.2.1 to soe_profile 13.0.12 (Drupal 11.4, stanford_profile 13). Earlier
+upstream syncs had been squash-merged, so it needed the graft above, anchored on `3ba3011e`, the soe_profile
+12.2.4 sync commit:
+`git replace --graft 3ba3011e 6efa0aa9 6ab7bee25a68a2cfbc8fe5f79fc8dcdc61399479`. The resulting merge commit
+`c74d1fab` records tag `13.0.12` as a real parent, so later merges don't need a graft. The same update
+replaced UI Patterns 1 / Display Suite displays with UIP2 rows and the `engineering_profile_helper:soe_card` SDC,
+and uninstalled Display Suite (see `CHANGELOG.md`).
