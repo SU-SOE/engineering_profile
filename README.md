@@ -1,6 +1,6 @@
 # [Engineering Profile](https://github.com/SU-SOE/engineering_profile)
 
-##### 8.x
+##### 13.x
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)
 
@@ -27,15 +27,16 @@ Nothing special needed.
 
 Steps to build a new release:
 
-- Checkout the latest commit from the `12.x` branch.
+- Checkout the latest commit from the `13.x` branch.
 - Create a new branch for the release.
 - Commit any necessary changes to the release branch.
   - These may include, but are not necessarily limited to:
   - Update the version in any `info.yml` files, including in any submodules.
   - Update the CHANGELOG to reflect the changes made in the new release.
-- Make a PR to merge your release branch into `main`
-- Give the PR a semver-compliant label, e.g., (`patch`, `minor`, `major`). This may happen automatically via Github actions (if a labeler action is configured).
-- When the PR is merged to `main`, a new tag will be created automatically, bumping the version by the semver label.
+- Make a PR to merge your release branch into `13.x`
+- Give the PR a semver label (`major`, `minor` or `patch`); the release workflow uses it to compute the tag. The PR Labeler workflow (`.github/auto-label.json`) may add `patch` automatically when an `info.yml` file changes; otherwise add the label by hand.
+- When the PR is merged to `13.x`, a new tag (`13.<minor>.<patch>`) and GitHub release are created automatically on the merge commit, bumping the version by the semver label.
+- Merging into `13.x` also notifies the stack (`SU-SWS/ace-soegryphon`), which updates the profile in its `composer.lock` on `next-release`; that deploys to dev.
 - The github action is built from: [semver-release-action](https://github.com/K-Phoen/semver-release-action), and further documentation is available there.
 
 ## Troubleshooting

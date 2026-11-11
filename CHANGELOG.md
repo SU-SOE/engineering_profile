@@ -1,5 +1,12 @@
 # Engineering Profile
 
+Unreleased
+
+---
+
+- `trigger_stack_update.yml` now notifies the stack on pushes to `13.x` (was `12.x`)
+- Docs: removed SWSDEVOPS-351 one-time deploy workaround references
+
 13.0.0
 
 ---
